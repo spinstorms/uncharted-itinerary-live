@@ -1,29 +1,30 @@
 /* ==========================================================================
    The Uncharted Itinerary — Live Hub & Affiliate Directory
-   Matched to uncharteditinerary.com design tokens (Squarespace 7.1)
+   Matched to uncharteditinerary.com (white body, #FF5D22 orange headlines,
+   Poppins typography, and #191A1A dark-bold footer)
    ========================================================================== */
 
 :root {
-  --bg-canvas: #fafaf7;          /* exact --white-hsl: 60, 9.09%, 97.84% */
+  --bg-canvas: #ffffff;          /* clean white page body matching main site */
   --bg-surface: #ffffff;
-  --bg-subtle: #f3f2ec;
+  --bg-subtle: #fafaf7;          /* exact --white-hsl: 60, 9.09%, 97.84% */
   --bg-warm-tint: #fff4ec;
   --bg-dark: #191a1a;            /* exact --darkAccent-hsl: 180, 1.96%, 10% */
   --ink-primary: #0d0d0d;        /* exact --black-hsl: 0, 0%, 5.1% */
-  --ink-secondary: #55534e;
-  --ink-muted: #78756e;
+  --ink-secondary: #4a4844;
+  --ink-muted: #76736c;
   --ink-inverse: #fafaf7;
   --accent: #ff5d22;             /* exact --accent-hsl: 16.91, 100%, 56.86% */
   --accent-hover: #e44b12;
   --accent-soft: #facb9b;        /* exact --lightAccent-hsl: 31.65, 90.1%, 80.2% */
   --border-hairline: rgba(13, 13, 13, 0.09);
   --border-strong: rgba(13, 13, 13, 0.16);
-  --shadow-sm: 0 2px 10px rgba(13, 13, 13, 0.04);
+  --shadow-sm: 0 2px 12px rgba(13, 13, 13, 0.045);
   --shadow-md: 0 12px 32px rgba(13, 13, 13, 0.08);
   --shadow-lg: 0 24px 56px rgba(13, 13, 13, 0.16);
   --radius-sm: 8px;
   --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-lg: 18px;
   --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --max-width: 1220px;
   --transition: 180ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -76,12 +77,12 @@ button {
   padding: 0 24px;
 }
 
-/* ---------- Header / Seamless Squarespace-matched Navigation ---------- */
+/* ---------- Header / Seamless uncharteditinerary.com Navigation ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(250, 250, 247, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-hairline);
 }
@@ -91,7 +92,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  min-height: 74px;
+  min-height: 76px;
 }
 
 .brand {
@@ -101,10 +102,10 @@ button {
 }
 
 .brand-name {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--ink-primary);
+  color: var(--accent);
 }
 
 .brand-sub {
@@ -124,7 +125,7 @@ button {
 .nav-links a {
   font-size: 14px;
   font-weight: 400;
-  color: var(--ink-secondary);
+  color: var(--ink-primary);
   padding: 6px 0;
   position: relative;
   transition: color var(--transition);
@@ -132,7 +133,7 @@ button {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--ink-primary);
+  color: var(--accent);
   font-weight: 500;
 }
 
@@ -158,7 +159,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
   font-size: 13.5px;
   font-weight: 500;
@@ -181,28 +182,28 @@ button {
 }
 
 .btn-dark {
-  background: var(--ink-primary);
-  color: var(--ink-inverse);
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .btn-dark:hover {
-  background: #2b2c2c;
+  background: var(--accent-hover);
 }
 
 .btn-outline {
-  background: var(--bg-surface);
-  color: var(--ink-primary);
-  border-color: var(--border-strong);
+  background: #ffffff;
+  color: var(--accent);
+  border-color: rgba(255, 93, 34, 0.45);
 }
 
 .btn-outline:hover {
-  border-color: var(--ink-primary);
-  background: var(--bg-subtle);
+  border-color: var(--accent);
+  background: var(--bg-warm-tint);
 }
 
 .mobile-menu-btn {
   display: none;
-  background: none;
+  background: #ffffff;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   padding: 8px 10px;
@@ -215,7 +216,7 @@ button {
   gap: 4px;
   padding: 12px 24px 20px;
   border-top: 1px solid var(--border-hairline);
-  background: var(--bg-canvas);
+  background: #ffffff;
 }
 
 .mobile-nav.open {
@@ -225,7 +226,7 @@ button {
 .mobile-nav a {
   padding: 10px 0;
   font-size: 15px;
-  color: var(--ink-secondary);
+  color: var(--ink-primary);
   border-bottom: 1px solid var(--border-hairline);
 }
 
@@ -234,9 +235,9 @@ button {
   font-weight: 600;
 }
 
-/* ---------- Page Intro & Editorial Featured Video Hero ---------- */
+/* ---------- Page Intro & Compact Featured Episode ---------- */
 .page-intro {
-  padding: 40px 0 24px;
+  padding: 42px 0 24px;
 }
 
 .intro-row {
@@ -249,15 +250,16 @@ button {
 
 .page-title {
   margin: 0;
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(30px, 4.2vw, 44px);
   font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+  color: var(--accent);
 }
 
 .page-lead {
   margin: 10px 0 0;
-  max-width: 640px;
+  max-width: 650px;
   color: var(--ink-secondary);
   font-size: 15.5px;
 }
@@ -266,7 +268,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: 4px;
   font-size: 12.5px;
   color: var(--ink-muted);
 }
@@ -278,7 +280,7 @@ button {
 
 /* Featured Latest Video Spotlight */
 .featured-section {
-  padding: 8px 0 32px;
+  padding: 6px 0 34px;
 }
 
 .featured-card {
@@ -287,10 +289,10 @@ button {
   align-items: start;
   gap: 28px;
   padding: 24px;
-  background: var(--bg-surface);
+  background: var(--bg-subtle);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .featured-media {
@@ -348,7 +350,7 @@ button {
   background: var(--accent);
   display: grid;
   place-items: center;
-  box-shadow: 0 8px 22px rgba(255, 93, 34, 0.4);
+  box-shadow: 0 8px 22px rgba(255, 93, 34, 0.42);
   transition: transform var(--transition), background var(--transition);
 }
 
@@ -392,29 +394,30 @@ button {
   border-radius: 999px;
   font-size: 11.5px;
   font-weight: 500;
-  background: var(--bg-subtle);
+  background: #f2f1ec;
   color: var(--ink-primary);
 }
 
 .tag-accent {
   background: var(--bg-warm-tint);
-  color: #c23b0a;
+  color: var(--accent);
 }
 
 .featured-title {
   margin: 6px 0 0;
-  font-size: clamp(21px, 2.2vw, 26px);
+  font-size: clamp(20px, 2.2vw, 25px);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.26;
   letter-spacing: -0.02em;
+  color: var(--accent);
 }
 
 .ai-summary-box {
-  background: var(--bg-canvas);
+  background: #ffffff;
   border: 1px solid var(--border-hairline);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-sm);
-  padding: 16px 18px;
+  padding: 15px 18px;
 }
 
 .ai-summary-label {
@@ -430,7 +433,7 @@ button {
   margin: 0;
   font-size: 14px;
   color: var(--ink-primary);
-  line-height: 1.6;
+  line-height: 1.62;
 }
 
 .highlights-list {
@@ -465,7 +468,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding-top: 6px;
+  padding-top: 4px;
 }
 
 /* ---------- Controls Bar (Filter Pills + Search) ---------- */
@@ -475,7 +478,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 0 24px;
+  padding: 20px 0 24px;
   border-top: 1px solid var(--border-hairline);
 }
 
@@ -489,7 +492,7 @@ button {
   padding: 8px 15px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  background: var(--bg-surface);
+  background: #ffffff;
   color: var(--ink-secondary);
   font-size: 13px;
   font-weight: 500;
@@ -497,14 +500,14 @@ button {
 }
 
 .pill:hover {
-  border-color: var(--ink-primary);
-  color: var(--ink-primary);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .pill.active {
-  background: var(--ink-primary);
-  border-color: var(--ink-primary);
-  color: var(--ink-inverse);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
 }
 
 .search-wrap {
@@ -527,7 +530,7 @@ button {
   padding: 10px 14px 10px 40px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  background: var(--bg-surface);
+  background: #ffffff;
   font-family: inherit;
   font-size: 13.5px;
   color: var(--ink-primary);
@@ -549,7 +552,7 @@ button {
 }
 
 .video-card {
-  background: var(--bg-surface);
+  background: #ffffff;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -562,7 +565,7 @@ button {
 .video-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
+  border-color: rgba(255, 93, 34, 0.35);
 }
 
 .card-thumb {
@@ -628,6 +631,12 @@ button {
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.015em;
+  color: var(--ink-primary);
+  transition: color var(--transition);
+}
+
+.video-card:hover .card-title {
+  color: var(--accent);
 }
 
 .card-summary {
@@ -674,7 +683,7 @@ button {
 
 /* ---------- Shorts Horizontal Strip ---------- */
 .shorts-section {
-  padding: 36px 0 56px;
+  padding: 38px 0 56px;
   border-top: 1px solid var(--border-hairline);
 }
 
@@ -688,9 +697,10 @@ button {
 
 .section-title {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  color: var(--accent);
 }
 
 .section-subtitle {
@@ -711,18 +721,19 @@ button {
 
 .short-card {
   scroll-snap-align: start;
-  background: var(--bg-surface);
+  background: #ffffff;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .short-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  border-color: rgba(255, 93, 34, 0.35);
 }
 
 .short-thumb {
@@ -792,18 +803,19 @@ button {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.02em;
+  color: var(--accent);
 }
 
 .promo-banner p {
   margin: 0;
-  color: rgba(250, 250, 247, 0.76);
+  color: rgba(250, 250, 247, 0.8);
   max-width: 580px;
   font-size: 14.5px;
 }
 
 /* ---------- Affiliate Directory Page Styles ---------- */
 .affiliate-hero {
-  padding: 40px 0 28px;
+  padding: 42px 0 28px;
 }
 
 .featured-deals-grid {
@@ -814,7 +826,7 @@ button {
 }
 
 .deal-card {
-  background: var(--bg-surface);
+  background: #ffffff;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
   padding: 22px 24px;
@@ -828,12 +840,12 @@ button {
 .deal-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--border-strong);
+  border-color: rgba(255, 93, 34, 0.35);
 }
 
 .deal-card.is-featured {
   background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
-  border-color: rgba(255, 93, 34, 0.28);
+  border-color: rgba(255, 93, 34, 0.32);
 }
 
 .deal-top {
@@ -849,6 +861,11 @@ button {
   font-weight: 600;
   line-height: 1.32;
   letter-spacing: -0.015em;
+  color: var(--ink-primary);
+}
+
+.deal-card.is-featured .deal-title {
+  color: var(--accent);
 }
 
 .deal-desc {
@@ -865,7 +882,7 @@ button {
   gap: 10px;
   padding: 9px 12px;
   background: var(--bg-subtle);
-  border: 1px dashed var(--border-strong);
+  border: 1px dashed rgba(255, 93, 34, 0.45);
   border-radius: var(--radius-sm);
   font-size: 12.5px;
 }
@@ -922,7 +939,7 @@ button {
   margin-bottom: 48px;
 }
 
-/* ---------- Modal (Full AI Summary + Player + Chapters + Video Links) ---------- */
+/* ---------- Modal (Full Notes + Player + Chapters + Video Links) ---------- */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -940,7 +957,7 @@ button {
 }
 
 .modal-dialog {
-  background: var(--bg-surface);
+  background: #ffffff;
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 920px;
@@ -969,7 +986,7 @@ button {
   height: 36px;
   border-radius: 50%;
   border: 1px solid var(--border-strong);
-  background: var(--bg-surface);
+  background: #ffffff;
   color: var(--ink-primary);
   display: grid;
   place-items: center;
@@ -977,7 +994,9 @@ button {
 }
 
 .modal-close:hover {
-  background: var(--bg-subtle);
+  background: var(--bg-warm-tint);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .modal-video-wrap {
@@ -1007,6 +1026,7 @@ button {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--accent);
 }
 
 .modal-grid {
@@ -1033,7 +1053,7 @@ button {
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-hairline);
-  background: var(--bg-canvas);
+  background: var(--bg-subtle);
   font-size: 13px;
   color: var(--ink-primary);
   transition: border-color var(--transition), background var(--transition);
@@ -1065,7 +1085,7 @@ button {
   padding: 11px 14px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-hairline);
-  background: var(--bg-canvas);
+  background: var(--bg-subtle);
   font-size: 13px;
   font-weight: 500;
   transition: border-color var(--transition), background var(--transition);
@@ -1100,7 +1120,7 @@ button {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (Matched to uncharteditinerary.com dark-bold footer) ---------- */
 .site-footer {
   background: var(--bg-dark);
   color: var(--ink-inverse);
@@ -1118,13 +1138,14 @@ button {
 }
 
 .footer-brand {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 6px;
+  color: var(--accent);
 }
 
 .footer-muted {
-  color: rgba(250, 250, 247, 0.65);
+  color: rgba(250, 250, 247, 0.7);
   font-size: 13.5px;
   margin: 0;
   max-width: 380px;
@@ -1135,11 +1156,11 @@ button {
   flex-wrap: wrap;
   gap: 20px;
   font-size: 13.5px;
-  color: rgba(250, 250, 247, 0.8);
+  color: rgba(250, 250, 247, 0.85);
 }
 
 .footer-links a:hover {
-  color: var(--accent-soft);
+  color: var(--accent);
 }
 
 .footer-bottom {
@@ -1157,7 +1178,7 @@ button {
   text-align: center;
   padding: 48px 20px;
   color: var(--ink-muted);
-  background: var(--bg-surface);
+  background: var(--bg-subtle);
   border: 1px dashed var(--border-strong);
   border-radius: var(--radius-md);
 }
@@ -1188,8 +1209,9 @@ button {
   .sync-meta {
     align-items: flex-start;
   }
-  .featured-body {
-    padding: 22px 20px;
+  .featured-card {
+    padding: 16px;
+    gap: 18px;
   }
   .video-grid,
   .deals-grid,
