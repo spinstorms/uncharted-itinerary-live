@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T16:59:00Z",
+  "updatedAt": "2026-11-21T17:10:11Z",
   "sheetConnected": true,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
@@ -468,6 +468,20 @@
           "date": "2026-11-19"
         }
       ]
+    },
+    {
+      "id": "sheet-13",
+      "source": "curated",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket 4P Vlog Combo, Dual-Lens Vlog Camera, Cinematic 4K",
+      "badge": "Gear Essential",
+      "description": "Osmo Pocket 4P features a 1-inch wide-angle camera with 17-stop dynamic range* and D-Log 2* for stunning light and shadow, plus a 60mm lens with an f/1.8 aperture for natural portraits. With 3-axis stabilization, ActiveTrack 8.0*, and up to 8× ultra HD slow motion*, cinematic 4K footage* is always within reach.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0i23UUah",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 15
     }
   ],
   "fromVideos": []
