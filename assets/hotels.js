@@ -1,11 +1,32 @@
+import {
+  computeStayOdds,
+  formatPersonalScore,
+  isFirstHandVerified,
+  isVisitedProperty,
+} from "./stayodds-engine.js?v=3";
+
+const PAGE_SIZE = 24;
+const oddsCache = new WeakMap();
+
+function getOdds(h) {
+  let c = oddsCache.get(h);
+  if (!c) {
+    c = computeStayOdds(h);
+    oddsCache.set(h, c);
+  }
+  return c;
+}
+
 const state = {
   hotels: [],
+  scope: "all", // "all" | "visited" | "global" | "michelin" | "w50"
   region: "All",
   brand: "All",
   coverage: "All",
-  sortBy: "overall",
+  sortBy: "stayodds",
   search: "",
   viewMode: "cards",
+  visibleLimit: PAGE_SIZE,
   map: null,
   markersLayer: null,
   markerById: new Map(),
@@ -22,68 +43,30 @@ function escapeHtml(str = "") {
     .replaceAll("'", "&#39;");
 }
 
-function getReviewHref(hotel) {
-  if (hotel.coverageType === "Short Tour" && hotel.videoId) {
-    return `https://www.youtube.com/shorts/${encodeURIComponent(hotel.videoId)}`;
-  }
-  if (hotel.inLiveFeed && hotel.videoId) {
-    return `../?video=${encodeURIComponent(hotel.videoId)}`;
-  }
-  if (hotel.videoId) {
-    return `https://www.youtube.com/watch?v=${encodeURIComponent(hotel.videoId)}`;
-  }
-  return "https://www.uncharteditinerary.com/";
+function getSeoHref(h) {
+  return `../stayodds/${encodeURIComponent(h.id)}/`;
 }
 
-function isExternalReview(hotel) {
-  if (hotel.coverageType === "Short Tour") return true;
-  return !(hotel.inLiveFeed && hotel.videoId);
+function getReviewHref(h) {
+  if (!h.videoId) return "";
+  if (h.coverageType === "Short Tour") {
+    return `https://www.youtube.com/shorts/${encodeURIComponent(h.videoId)}`;
+  }
+  if (h.inLiveFeed) return `../?video=${encodeURIComponent(h.videoId)}`;
+  return `https://www.youtube.com/watch?v=${encodeURIComponent(h.videoId)}`;
 }
 
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
-  let field = "";
-  let inQuotes = false;
-  for (let i = 0; i < text.length; i++) {
-    const ch = text[i];
-    const next = text[i + 1];
-    if (inQuotes) {
-      if (ch === '"' && next === '"') {
-        field += '"';
-        i++;
-      } else if (ch === '"') {
-        inQuotes = false;
-      } else {
-        field += ch;
-      }
-    } else if (ch === '"') {
-      inQuotes = true;
-    } else if (ch === ",") {
-      row.push(field.trim());
-      field = "";
-    } else if (ch === "\n") {
-      row.push(field.trim());
-      if (row.some((c) => c !== "")) rows.push(row);
-      row = [];
-      field = "";
-    } else if (ch !== "\r") {
-      field += ch;
-    }
-  }
-  if (field.length || row.length) {
-    row.push(field.trim());
-    if (row.some((c) => c !== "")) rows.push(row);
-  }
-  if (rows.length < 2) return [];
-  const headers = rows[0].map((h) => h.toLowerCase().trim());
-  return rows.slice(1).map((vals) => {
-    const o = {};
-    headers.forEach((h, i) => {
-      o[h] = (vals[i] || "").trim();
-    });
-    return o;
-  });
+function isExternalReview(h) {
+  if (h.coverageType === "Short Tour") return true;
+  return !(h.inLiveFeed && h.videoId);
+}
+
+function hasMichelinKey(h) {
+  return (h.officialAwards || []).some((a) => String(a.awardBody || "").includes("MICHELIN"));
+}
+
+function hasW50Best(h) {
+  return (h.officialAwards || []).some((a) => String(a.awardBody || "").includes("50 Best"));
 }
 
 function initCommonUi() {
@@ -110,20 +93,22 @@ function initMap() {
   const map = L.map("hotelMap", {
     scrollWheelZoom: false,
     worldCopyJump: true,
-  }).setView([4.0, 96.0], 3);
+    preferCanvas: true,
+  }).setView([20.0, 20.0], 2);
 
   const cartoLayer = L.tileLayer(
-    "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_5db3_1_c3957b21042bb79553569521",
+    "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
     {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       maxZoom: 19,
     }
   );
 
-  let switchedToFallback = false;
+  let switched = false;
   cartoLayer.on("tileerror", () => {
-    if (switchedToFallback) return;
-    switchedToFallback = true;
+    if (switched) return;
+    switched = true;
     map.removeLayer(cartoLayer);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -132,29 +117,37 @@ function initMap() {
   });
 
   cartoLayer.addTo(map);
-
   state.map = map;
   state.markersLayer = L.layerGroup().addTo(map);
 }
 
-function formatMyScore(val) {
-  if (val == null || Number.isNaN(Number(val))) return "—";
-  const num = Number(val);
-  return Number.isInteger(num) ? String(num) : num.toFixed(1);
-}
-
-function isRatedHotel(h) {
-  return h.overall != null && h.scores != null;
+function getScopedHotels() {
+  if (state.scope === "visited") return state.hotels.filter(isVisitedProperty);
+  if (state.scope === "global") return state.hotels.filter((h) => !isVisitedProperty(h));
+  if (state.scope === "michelin") return state.hotels.filter(hasMichelinKey);
+  if (state.scope === "w50") return state.hotels.filter(hasW50Best);
+  return state.hotels;
 }
 
 function getFilteredHotels() {
   const q = state.search.trim().toLowerCase();
-  const list = state.hotels.filter((h) => {
+  const list = getScopedHotels().filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.brand !== "All" && h.brand !== state.brand) return false;
-    if (state.coverage !== "All" && (h.coverageType || "Full Review") !== state.coverage) return false;
+    if (state.coverage !== "All" && (h.coverageType || "Global Directory") !== state.coverage) {
+      return false;
+    }
     if (!q) return true;
-    const hay = [h.name, h.location, h.country, h.region, h.brand, h.verdict, h.standout]
+    const hay = [
+      h.name,
+      h.location,
+      h.country,
+      h.region,
+      h.brand,
+      h.verdict,
+      h.standout,
+      ...(h.officialAwards || []).map((a) => a.label),
+    ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
@@ -162,113 +155,88 @@ function getFilteredHotels() {
   });
 
   list.sort((a, b) => {
-    if (state.sortBy === "newest") {
-      return (b.reviewedDate || "").localeCompare(a.reviewedDate || "");
+    const oa = getOdds(a);
+    const ob = getOdds(b);
+    if (state.sortBy === "name") return a.name.localeCompare(b.name);
+    if (state.sortBy === "odds") {
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
-    const aRated = isRatedHotel(a) ? 1 : 0;
-    const bRated = isRatedHotel(b) ? 1 : 0;
-    if (bRated !== aRated) return bRated - aRated;
     if (state.sortBy === "overall") {
-      return (
-        (b.overall || 0) - (a.overall || 0) ||
-        (b.scores?.value || 0) - (a.scores?.value || 0) ||
-        a.name.localeCompare(b.name)
-      );
+      const av = oa.firstHand ? Number(a.overall || 0) : -1;
+      const bv = ob.firstHand ? Number(b.overall || 0) : -1;
+      if (bv !== av) return bv - av;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
-    return (
-      (b.scores?.[state.sortBy] || 0) - (a.scores?.[state.sortBy] || 0) ||
-      (b.overall || 0) - (a.overall || 0)
-    );
+    if (state.sortBy === "awards") {
+      const aa = (a.officialAwards || []).length;
+      const ba = (b.officialAwards || []).length;
+      if (ba !== aa) return ba - aa;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+    // Default "stayodds": First-Hand Verified first, then Short Tours, then Global Directory by StayOdds %
+    const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
+    if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
+    return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
   });
+
   return list;
 }
 
-function renderMapMarkers(hotels, fitBounds = true) {
-  if (!state.map || !state.markersLayer) return;
-  state.markersLayer.clearLayers();
-  state.markerById.clear();
+function renderScopeTabs() {
+  const container = qs("#mapScopeTabs");
+  if (!container) return;
+  const visitedCnt = state.hotels.filter(isVisitedProperty).length;
+  const globalCnt = state.hotels.length - visitedCnt;
+  const michelinCnt = state.hotels.filter(hasMichelinKey).length;
+  const w50Cnt = state.hotels.filter(hasW50Best).length;
 
-  const bounds = [];
-  for (const h of hotels) {
-    if (typeof h.lat !== "number" || typeof h.lng !== "number") continue;
-    bounds.push([h.lat, h.lng]);
+  const tabs = [
+    { id: "all", label: `All Luxury Hotels (${state.hotels.length})` },
+    { id: "visited", label: `My First-Hand Stays (${visitedCnt})` },
+    { id: "global", label: `Global Directory (${globalCnt})` },
+    { id: "michelin", label: `2026 MICHELIN Keys (${michelinCnt})` },
+    { id: "w50", label: `World's 50 Best (${w50Cnt})` },
+  ];
 
-    const rated = isRatedHotel(h);
-    const pinText = rated ? `${formatMyScore(h.overall)}/5` : "Short";
-    const icon = L.divIcon({
-      className: "hotel-score-pin-wrap",
-      html: `<div class="hotel-score-pin ${rated ? "" : "is-short"}"><span>${pinText}</span></div>`,
-      iconSize: [46, 34],
-      iconAnchor: [23, 34],
-      popupAnchor: [0, -32],
+  container.innerHTML = tabs
+    .map(
+      (t) =>
+        `<button class="scope-pill ${state.scope === t.id ? "active" : ""}" data-scope="${t.id}" type="button">${escapeHtml(
+          t.label
+        )}</button>`
+    )
+    .join("");
+
+  container.querySelectorAll("[data-scope]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.scope = btn.dataset.scope || "all";
+      state.region = "All";
+      state.visibleLimit = PAGE_SIZE;
+      renderScopeTabs();
+      renderRegionPills();
+      renderAll(true);
     });
-
-    const popupScore = rated
-      ? `${formatMyScore(h.overall)} / 5`
-      : "Short Preview · Unrated";
-    const popupHtml = `
-      <div class="map-popup-card">
-        <img class="map-popup-img" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
-        <div class="map-popup-body">
-          <div class="map-popup-top">
-            <span class="map-popup-loc">${escapeHtml(h.location)}</span>
-            <span class="map-popup-score">${escapeHtml(popupScore)}</span>
-          </div>
-          <h4>${escapeHtml(h.name)}</h4>
-          <p>${escapeHtml(h.verdict)}</p>
-          <div class="map-popup-actions">
-            <a class="map-btn-primary" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">Score Breakdown</a>
-            <a class="map-btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
-          </div>
-        </div>
-      </div>
-    `;
-
-    const marker = L.marker([h.lat, h.lng], { icon }).bindPopup(popupHtml, {
-      maxWidth: 300,
-      className: "uncharted-popup",
-    });
-    marker.addTo(state.markersLayer);
-    state.markerById.set(h.id, marker);
-  }
-
-  if (fitBounds && bounds.length) {
-    if (bounds.length === 1) {
-      state.map.setView(bounds[0], 11, { animate: true });
-    } else {
-      state.map.fitBounds(bounds, { padding: [45, 45], maxZoom: 11, animate: true });
-    }
-  }
+  });
 }
 
 function renderRegionPills() {
   const container = qs("#regionPills");
   if (!container) return;
-
-  const counts = new Map();
-  for (const h of state.hotels) {
-    counts.set(h.region, (counts.get(h.region) || 0) + 1);
-  }
-  const order = ["All", "Bali & Indonesia", "Maldives", "Thailand", "Europe", "Bora Bora"].filter(
-    (r) => r === "All" || counts.has(r)
-  );
-  for (const r of counts.keys()) {
-    if (!order.includes(r)) order.push(r);
-  }
-
-  container.innerHTML = order
+  const scoped = getScopedHotels();
+  const regions = ["All", ...Array.from(new Set(scoped.map((h) => h.region)))];
+  container.innerHTML = regions
     .map((r) => {
-      const count = r === "All" ? state.hotels.length : counts.get(r) || 0;
-      const active = state.region === r;
-      return `<button class="pill ${active ? "active" : ""}" data-region="${escapeHtml(
+      const cnt = r === "All" ? scoped.length : scoped.filter((h) => h.region === r).length;
+      return `<button class="pill ${state.region === r ? "active" : ""}" data-region="${escapeHtml(
         r
-      )}" role="tab" aria-selected="${active}">${escapeHtml(r)} (${count})</button>`;
+      )}" role="tab">${escapeHtml(r)} (${cnt})</button>`;
     })
     .join("");
 
   container.querySelectorAll(".pill").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
+      state.visibleLimit = PAGE_SIZE;
       renderRegionPills();
       renderAll(true);
     });
@@ -280,20 +248,110 @@ function populateBrands() {
   if (!sel) return;
   const brands = Array.from(new Set(state.hotels.map((h) => h.brand).filter(Boolean))).sort();
   sel.innerHTML =
-    `<option value="All">All Hotel Brands</option>` +
+    `<option value="All">All Hotel Brands (${brands.length})</option>` +
     brands.map((b) => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("");
 }
 
-function renderScoreBar(label, value) {
-  const num = Number(value || 0);
-  const pct = Math.max(0, Math.min(100, (num / 5) * 100));
-  return `
-    <div class="score-bar-row">
-      <span class="score-bar-label">${escapeHtml(label)}</span>
-      <div class="score-bar-track"><div class="score-bar-fill" style="width:${pct}%"></div></div>
-      <span class="score-bar-val">${escapeHtml(formatMyScore(num))}</span>
-    </div>
-  `;
+function renderMapMarkers(hotels, fitBounds = true) {
+  if (!state.map || !state.markersLayer) return;
+  state.markersLayer.clearLayers();
+  state.markerById.clear();
+
+  const bounds = [];
+  for (const h of hotels) {
+    if (typeof h.lat !== "number" || typeof h.lng !== "number" || (h.lat === 0 && h.lng === 0)) {
+      continue;
+    }
+    bounds.push([h.lat, h.lng]);
+
+    const o = getOdds(h);
+    const isVisited = isVisitedProperty(h);
+    const isMichelin = hasMichelinKey(h);
+
+    let pinClass = "is-global";
+    let pinText = o.greatStayOdds != null ? `${o.greatStayOdds}%` : "★";
+    let zOffset = 100;
+
+    if (o.firstHand) {
+      pinClass = "";
+      pinText = `${formatPersonalScore(h.overall)}/5`;
+      zOffset = 600;
+    } else if (isVisited) {
+      pinClass = "is-short";
+      pinText = "Short";
+      zOffset = 500;
+    } else if (isMichelin) {
+      pinClass = "is-global is-michelin";
+      zOffset = 250;
+    }
+
+    const icon = L.divIcon({
+      className: "hotel-score-pin-wrap",
+      html: `<div class="hotel-score-pin ${pinClass}"><span>${pinText}</span></div>`,
+      iconSize: isVisited ? [40, 34] : [38, 30],
+      iconAnchor: isVisited ? [20, 34] : [19, 30],
+      popupAnchor: [0, -30],
+    });
+
+    const awardsBadges = (h.officialAwards || [])
+      .slice(0, 2)
+      .map((a) => `<span class="tag tag-accent" style="font-size:10.5px;">${escapeHtml(a.label)}</span>`)
+      .join(" ");
+
+    const reviewHref = getReviewHref(h);
+    const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+
+    const popupHtml = `
+      <div class="map-popup-card">
+        <div class="map-popup-media">
+          <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+          <span class="map-popup-score">${
+            o.firstHand
+              ? `${formatPersonalScore(h.overall)}/5 First-Hand`
+              : o.greatStayOdds != null
+              ? `${o.greatStayOdds}% StayOdds`
+              : escapeHtml(o.tierLabel)
+          }</span>
+        </div>
+        <div class="map-popup-body">
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
+            <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}" style="font-size:10.5px;">${escapeHtml(o.tierLabel)}</span>
+            ${awardsBadges}
+          </div>
+          <h4>${escapeHtml(h.name)}</h4>
+          <div class="map-popup-loc">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${
+      h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""
+    }</div>
+          <p>${escapeHtml(h.verdict || h.standout || o.opinionGap.headline)}</p>
+          <div class="map-popup-actions">
+            <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
+            <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
+            ${
+              reviewHref
+                ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Video</a>`
+                : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
+            }
+          </div>
+        </div>
+      </div>
+    `;
+
+    const marker = L.marker([h.lat, h.lng], { icon, zIndexOffset: zOffset })
+      .bindPopup(popupHtml, { className: "uncharted-popup", maxWidth: 310 })
+      .addTo(state.markersLayer);
+
+    state.markerById.set(h.id, marker);
+  }
+
+  if (fitBounds && bounds.length) {
+    if (state.region === "All" && state.scope === "all" && !state.search && state.brand === "All") {
+      state.map.setView([20.0, 20.0], 2, { animate: true });
+    } else if (bounds.length === 1) {
+      state.map.setView(bounds[0], 11, { animate: true });
+    } else {
+      state.map.fitBounds(bounds, { padding: [36, 36], maxZoom: 11, animate: true });
+    }
+  }
 }
 
 function renderScorecards(hotels) {
@@ -304,9 +362,12 @@ function renderScorecards(hotels) {
   if (!hotels.length) {
     grid.style.display = "";
     tableWrap.style.display = "none";
-    grid.innerHTML = `<div class="empty-state">No hotels matched your filter. Try selecting "All" regions or clearing your search.</div>`;
+    grid.innerHTML = `<div class="empty-state">No hotels matched those filters. Try switching back to "All Luxury Hotels".</div>`;
     return;
   }
+
+  const visible = hotels.slice(0, state.visibleLimit);
+  const remaining = hotels.length - visible.length;
 
   if (state.viewMode === "table") {
     grid.style.display = "none";
@@ -315,42 +376,31 @@ function renderScorecards(hotels) {
       <table class="comparison-table">
         <thead>
           <tr>
-            <th>Resort / Hotel</th>
-            <th>Region</th>
-            <th>Overall</th>
-            <th>Rooms</th>
-            <th>Grounds</th>
-            <th>Food</th>
-            <th>Service</th>
-            <th>Value</th>
+            <th>Hotel</th>
+            <th>Destination</th>
+            <th>StayOdds</th>
+            <th>First-Hand</th>
+            <th>Guests</th>
+            <th>2026 Awards</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          ${hotels
+          ${visible
             .map((h) => {
-              const rated = isRatedHotel(h);
-              const s = h.scores || {};
+              const o = getOdds(h);
+              const aw = (h.officialAwards || []).map((a) => a.label).join(" • ") || "—";
               return `
                 <tr>
-                  <td>
-                    <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}" style="color:var(--ink-primary);font-weight:600;">${escapeHtml(h.name)}</a><br />
-                    <span style="font-size:12px;color:var(--ink-muted);">${escapeHtml(h.location)} &bull; ${escapeHtml(h.brand || "")}</span>
-                  </td>
-                  <td>${escapeHtml(h.region)}</td>
-                  <td>${
-                    rated
-                      ? `<strong style="color:var(--accent);">${escapeHtml(formatMyScore(h.overall))} / 5</strong>`
-                      : `<span class="tag">Short · Unrated</span>`
-                  }</td>
-                  <td>${rated ? escapeHtml(formatMyScore(s.rooms)) : "—"}</td>
-                  <td>${rated ? escapeHtml(formatMyScore(s.grounds)) : "—"}</td>
-                  <td>${rated ? escapeHtml(formatMyScore(s.food)) : "—"}</td>
-                  <td>${rated ? escapeHtml(formatMyScore(s.service)) : "—"}</td>
-                  <td>${rated ? escapeHtml(formatMyScore(s.value)) : "—"}</td>
+                  <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
+                  <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
+                  <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
+                  <td>${o.firstHand ? `<strong>${formatPersonalScore(h.overall)} / 5</strong>` : escapeHtml(o.tierLabel)}</td>
+                  <td>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "Live"}</td>
+                  <td><small>${escapeHtml(aw)}</small></td>
                   <td style="white-space:nowrap;">
-                    <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}" style="color:var(--accent);font-weight:600;margin-right:10px;">Breakdown</a>
-                    <a href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" style="font-weight:500;">Rates &nearr;</a>
+                    <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
+                    <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
                   </td>
                 </tr>
               `;
@@ -358,95 +408,134 @@ function renderScorecards(hotels) {
             .join("")}
         </tbody>
       </table>
+      ${
+        remaining > 0
+          ? `<div style="display:flex;gap:12px;justify-content:center;padding:18px 0;">
+              <button class="btn btn-primary" id="mapLoadMoreBtn" type="button">Show ${Math.min(PAGE_SIZE, remaining)} More (${visible.length} of ${hotels.length})</button>
+              <button class="btn btn-outline" id="mapShowAllBtn" type="button">Show All ${hotels.length}</button>
+            </div>`
+          : ""
+      }
     `;
-    return;
+  } else {
+    grid.style.display = "";
+    tableWrap.style.display = "none";
+
+    const cardsHtml = visible
+      .map((h) => {
+        const o = getOdds(h);
+        const reviewHref = getReviewHref(h);
+        const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+        const s = h.scores;
+
+        const bar = (lbl, val) => {
+          const pct = Math.round((Number(val || 0) / 5) * 100);
+          return `
+            <div class="score-bar-row">
+              <div class="score-bar-top"><span>${lbl}</span><strong>${formatPersonalScore(val)}/5</strong></div>
+              <div class="score-bar-track"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+            </div>
+          `;
+        };
+
+        const awardsHtml = (h.officialAwards || [])
+          .slice(0, 3)
+          .map((a) => `<span class="tag tag-accent">${escapeHtml(a.label)}</span>`)
+          .join("");
+
+        return `
+          <article class="scorecard-card">
+            <div class="scorecard-media">
+              <a href="${getSeoHref(h)}">
+                <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+              </a>
+              <div class="scorecard-badge-overall ${o.firstHand ? "" : "is-short"}">
+                <strong>${
+                  o.firstHand
+                    ? formatPersonalScore(h.overall)
+                    : o.greatStayOdds != null
+                    ? `${o.greatStayOdds}%`
+                    : "Live"
+                }</strong>
+                <span>${o.firstHand ? "/ 5 Stay" : "StayOdds"}</span>
+              </div>
+              <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
+                📍 Map
+              </button>
+            </div>
+
+            <div class="scorecard-body">
+              <div class="meta-line">
+                <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
+                ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
+                ${awardsHtml}
+              </div>
+              <h3 class="scorecard-title"><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
+              <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}</div>
+
+              ${
+                o.firstHand && s
+                  ? `<div class="score-bars-list">
+                      ${bar("Rooms & Villas", s.rooms)}
+                      ${bar("Grounds & Pool", s.grounds)}
+                      ${bar("Food & Breakfast", s.food)}
+                      ${bar("Service", s.service)}
+                      ${bar("Value", s.value)}
+                    </div>`
+                  : `<div class="card-opinion-strip" style="margin:10px 0;">
+                      <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
+                    </div>`
+              }
+
+              <div class="scorecard-notes">
+                ${h.standout ? `<div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>` : ""}
+                ${h.watchOut ? `<div><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>` : ""}
+              </div>
+
+              <div class="scorecard-actions">
+                <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Breakdown</a>
+                ${
+                  reviewHref
+                    ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Short" : "Review"}</a>`
+                    : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>`
+                }
+                <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+              </div>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+
+    const pagerHtml =
+      remaining > 0
+        ? `<div style="grid-column:1 / -1;display:flex;gap:12px;justify-content:center;padding:18px 0;flex-wrap:wrap;">
+            <button class="btn btn-primary" id="mapLoadMoreBtn" type="button">Show ${Math.min(PAGE_SIZE, remaining)} More (${visible.length} of ${hotels.length} shown)</button>
+            <button class="btn btn-outline" id="mapShowAllBtn" type="button">Show All ${hotels.length}</button>
+          </div>`
+        : "";
+
+    grid.innerHTML = cardsHtml + pagerHtml;
+
+    grid.querySelectorAll("[data-focus-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const marker = state.markerById.get(btn.dataset.focusId);
+        if (marker && state.map) {
+          qs("#hotelMap")?.scrollIntoView({ behavior: "smooth", block: "center" });
+          state.map.setView(marker.getLatLng(), 11, { animate: true });
+          setTimeout(() => marker.openPopup(), 350);
+        }
+      });
+    });
   }
 
-  tableWrap.style.display = "none";
-  grid.style.display = "";
-  grid.innerHTML = hotels
-    .map((h) => {
-      const rated = isRatedHotel(h);
-      const s = h.scores || {};
-      const reviewHref = getReviewHref(h);
-      const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
-      return `
-        <article class="scorecard-card">
-          <div class="scorecard-top">
-            <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}">
-              <img class="scorecard-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
-            </a>
-            <div class="scorecard-badge-overall ${rated ? "" : "is-short"}">
-              ${
-                rated
-                  ? `<strong>${escapeHtml(formatMyScore(h.overall))}</strong><span>/ 5</span>`
-                  : `<strong>Short</strong><span>Unrated</span>`
-              }
-            </div>
-            <button class="pin-focus-btn" data-focus-id="${escapeHtml(h.id)}" title="Show on map">
-              Show on Map
-            </button>
-          </div>
-
-          <div class="scorecard-body">
-            <div class="meta-line">
-              <span class="tag tag-accent">${escapeHtml(h.brand || "Luxury Stay")}</span>
-              ${h.coverageType === "Short Tour" ? `<span class="tag">Short Tour · Unrated</span>` : ""}
-              ${Array.isArray(h.shorts) && h.shorts.length ? `<span class="tag">${h.shorts.length} Short${h.shorts.length === 1 ? "" : "s"}</span>` : ""}
-              <span class="tag">${escapeHtml(h.priceRange || "")}</span>
-            </div>
-
-            <h3 class="scorecard-title">
-              <a class="consensus-title-link" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a>
-            </h3>
-            <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}</div>
-
-            <p class="scorecard-verdict">${escapeHtml(h.verdict)}</p>
-
-            ${
-              rated
-                ? `
-            <div class="score-bars">
-              ${renderScoreBar("Rooms", s.rooms)}
-              ${renderScoreBar("Grounds", s.grounds)}
-              ${renderScoreBar("Food", s.food)}
-              ${renderScoreBar("Service", s.service)}
-              ${renderScoreBar("Value", s.value)}
-            </div>
-                `
-                : `
-            <div class="scorecard-unrated-box">
-              <strong>Featured in a YouTube Short (Not Scored Yet)</strong>
-              <p style="margin:0;">We haven’t filmed a full 5-axis scored stay review yet. Open <em>StayOdds Breakdown</em> to view property notes, our Shorts, and live rates.</p>
-            </div>
-                `
-            }
-
-            <div class="scorecard-notes">
-              <div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>
-              <div><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>
-            </div>
-
-            <div class="scorecard-actions">
-              <a class="btn btn-primary" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">Score Breakdown</a>
-              <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>
-              <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
-            </div>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-
-  grid.querySelectorAll("[data-focus-id]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const marker = state.markerById.get(btn.dataset.focusId);
-      if (marker && state.map) {
-        qs("#hotelMap")?.scrollIntoView({ behavior: "smooth", block: "center" });
-        state.map.setView(marker.getLatLng(), 11, { animate: true });
-        setTimeout(() => marker.openPopup(), 350);
-      }
-    });
+  qs("#mapLoadMoreBtn")?.addEventListener("click", () => {
+    state.visibleLimit += PAGE_SIZE;
+    renderScorecards(hotels);
+  });
+  qs("#mapShowAllBtn")?.addEventListener("click", () => {
+    state.visibleLimit = hotels.length;
+    renderScorecards(hotels);
   });
 }
 
@@ -475,7 +564,7 @@ function renderHotelShorts(hotels) {
       (sh) => `
       <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
         <div class="short-thumb">
-          <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" />
+          <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" decoding="async" />
           <span class="short-badge">Short</span>
         </div>
         <div class="short-info">
@@ -491,57 +580,44 @@ function renderHotelShorts(hotels) {
 function renderAll(fitBounds = false) {
   const filtered = getFilteredHotels();
   const badge = qs("#hotelCountBadge");
-  if (badge) badge.textContent = `${filtered.length} Reviewed Stay${filtered.length === 1 ? "" : "s"}`;
+  if (badge) {
+    badge.textContent = `${filtered.length} Mapped Hotel${filtered.length === 1 ? "" : "s"}`;
+  }
   renderMapMarkers(filtered, fitBounds);
   renderScorecards(filtered);
   renderHotelShorts(filtered);
-}
-
-async function applyLiveBookingSheet(csvUrl) {
-  if (!csvUrl) return;
-  try {
-    const res = await fetch(csvUrl, { cache: "no-store" });
-    if (!res.ok) return;
-    const rows = parseCsv(await res.text());
-    const byName = new Map();
-    for (const r of rows) {
-      const name = (r["hotel name"] || r.name || "").toLowerCase();
-      const url = (r["booking affiliate url"] || r["booking.com / travelpayouts url"] || r["agoda / trip.com url"] || r.url || "").trim();
-      if (name && url) byName.set(name, url);
-    }
-    let updated = 0;
-    for (const h of state.hotels) {
-      const custom = byName.get(h.name.toLowerCase());
-      if (custom) {
-        h.bookingUrl = custom;
-        updated++;
-      }
-    }
-    if (updated) renderAll(false);
-  } catch (err) {
-    console.warn("Hotel booking sheet refresh skipped:", err);
-  }
 }
 
 async function boot() {
   initCommonUi();
   initMap();
 
+  const params = new URLSearchParams(window.location.search);
+  if (["all", "visited", "global", "michelin", "w50"].includes(params.get("scope"))) {
+    state.scope = params.get("scope");
+  }
+
   qs("#brandFilter")?.addEventListener("change", (e) => {
     state.brand = e.target.value || "All";
+    state.visibleLimit = PAGE_SIZE;
     renderAll(true);
   });
   qs("#coverageFilter")?.addEventListener("change", (e) => {
     state.coverage = e.target.value || "All";
+    state.visibleLimit = PAGE_SIZE;
     renderAll(true);
   });
   qs("#sortControl")?.addEventListener("change", (e) => {
-    state.sortBy = e.target.value || "overall";
+    state.sortBy = e.target.value || "stayodds";
+    state.visibleLimit = PAGE_SIZE;
     renderAll(false);
   });
+  let searchTimer = null;
   qs("#hotelSearch")?.addEventListener("input", (e) => {
     state.search = e.target.value || "";
-    renderAll(false);
+    state.visibleLimit = PAGE_SIZE;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => renderAll(false), 120);
   });
   qs("#viewCardsBtn")?.addEventListener("click", () => {
     state.viewMode = "cards";
@@ -557,27 +633,19 @@ async function boot() {
   });
 
   try {
-    const [hRes, cfgRes] = await Promise.all([
-      fetch(`../data/hotels.json?v=${Date.now()}`),
-      fetch(`../config.json?v=${Date.now()}`).catch(() => null),
-    ]);
-    if (!hRes.ok) throw new Error(`HTTP ${hRes.status}`);
-    const data = await hRes.json();
-    const cfg = cfgRes && cfgRes.ok ? await cfgRes.json() : null;
+    const res = await fetch(`../data/stayodds-directory.json?v=20261121b`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const payload = await res.json();
+    state.hotels = payload.hotels || [];
 
-    state.hotels = data.hotels || [];
+    renderScopeTabs();
     renderRegionPills();
     populateBrands();
     renderAll(true);
-
-    const sheetUrl = (cfg?.affiliates?.hotelBookingSheetCsvUrl || "").trim();
-    if (sheetUrl) {
-      applyLiveBookingSheet(sheetUrl);
-    }
   } catch (err) {
     const grid = qs("#scorecardGrid");
-    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load hotel scorecards right now.</div>`;
-    console.error("Failed to load hotels.json:", err);
+    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the 300-hotel world map right now.</div>`;
+    console.error("Failed to load stayodds-directory.json:", err);
   }
 }
 

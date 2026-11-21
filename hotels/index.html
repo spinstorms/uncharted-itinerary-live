@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
-  <title>Luxury Hotel Map &amp; Uncharted Scorecards | The Uncharted Itinerary</title>
-  <meta name="description" content="Explore 36 luxury hotels and resorts across Bali, Indonesia, Maldives, Thailand, Europe, Singapore, and Bora Bora on an interactive map with honest 5-point scorecards and Shorts from The Uncharted Itinerary." />
+  <title>World Luxury Hotel Map (All 300 Hotels) &amp; Scorecards | StayOdds</title>
+  <meta name="description" content="Explore all 300 verified luxury hotels on an interactive world map — toggle between all 300 StayOdds icons, our 36 First-Hand stays, 2026 MICHELIN Key winners, and The World's 50 Best Hotels." />
   <link rel="canonical" href="https://live.uncharteditinerary.com/hotels/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Luxury Hotel Map &amp; Uncharted Scorecards | The Uncharted Itinerary" />
-  <meta property="og:description" content="Interactive luxury resort map and 5-axis Uncharted Scorecards for Bali, Maldives, Thailand, Europe, and Bora Bora." />
+  <meta property="og:title" content="World Luxury Hotel Map (All 300 Hotels) &amp; Scorecards | StayOdds" />
+  <meta property="og:description" content="Interactive world map of all 300 StayOdds luxury hotels — color-coded for First-Hand stays, 2026 MICHELIN Key winners, and Global Directory icons." />
   <meta property="og:image" content="https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg" />
   <meta property="og:url" content="https://live.uncharteditinerary.com/hotels/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +18,7 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Luxury Hotel Map & Uncharted Scorecards",
+    "name": "StayOdds World Luxury Hotel Map (All 300 Hotels)",
     "url": "https://live.uncharteditinerary.com/hotels/",
     "publisher": {
       "@type": "Organization",
@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#ff5d22!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.css?v=15" />
+  <link rel="stylesheet" href="../assets/styles.css?v=18" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
@@ -95,7 +95,7 @@
         </a>
         <a class="hub-tab active" href="./" aria-current="page">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Hotel Map &amp; Scores
+          Hotel Map (300)
         </a>
         <a class="hub-tab" href="../compare/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
@@ -120,32 +120,37 @@
         <div class="hero-banner-card" style="--hero-bg: url('https://i.ytimg.com/vi/ZlsSigaKhwc/maxresdefault.jpg');">
           <div class="intro-row">
             <div class="hero-title-group">
-              <img class="hero-emblem" src="../assets/logo.jpg" alt="The Uncharted Itinerary" width="64" height="64" />
+              <img class="hero-emblem" src="../assets/logo.jpg" alt="StayOdds by The Uncharted Itinerary" width="64" height="64" />
               <div>
-          <h1 class="page-title">Hotel Map &amp; Uncharted Scorecards</h1>
-          <p class="page-lead">
-            Compare every luxury resort and boutique villa we’ve stayed in — explore our interactive destination map, filter by loyalty brand, and see how each property scored on rooms, grounds, food, service, and value.
-          </p>
-        </div>
+                <h1 class="page-title">World Luxury Hotel Map — All 300 Hotels</h1>
+                <p class="page-lead">
+                  Explore every single hotel in the StayOdds collection on one interactive map — switch instantly between <strong>All 300 Luxury Hotels</strong>, our <strong>36 First-Hand Stays</strong>, <strong>2026 MICHELIN Key</strong> winners, and <strong>The World’s 50 Best Hotels</strong>.
+                </p>
+              </div>
             </div>
             <div class="sync-meta">
-          <span id="hotelCountBadge">36 Reviewed Stays</span>
-          <strong>Rooms &bull; Grounds &bull; Food &bull; Service &bull; Value</strong>
-        </div>
+              <span id="hotelCountBadge">300 Mapped Hotels</span>
+              <strong>First-Hand Stays &bull; Global Directory</strong>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive World / Region Map -->
+    <!-- Interactive World / Region Map (All 300 Hotels) -->
     <section class="map-section">
       <div class="container">
+        <div class="scope-tabs-row" id="mapScopeTabs" style="margin-bottom:12px;"></div>
         <div class="map-toolbar">
           <div class="filter-pills" id="regionPills" role="tablist" aria-label="Jump to region"></div>
-          <div class="map-hint">Click any orange score pin for our verdict &amp; rates</div>
+          <div class="map-legend">
+            <span><i class="map-legend-dot" style="background:#ff5d22;"></i>First-Hand Stays (36)</span>
+            <span><i class="map-legend-dot" style="background:#0f766e;"></i>Global Directory (264)</span>
+            <span><i class="map-legend-dot" style="background:#0f766e;border:2px solid #fbbf24;"></i>2026 MICHELIN Key</span>
+          </div>
         </div>
         <div class="map-shell">
-          <div id="hotelMap" aria-label="Interactive map of reviewed luxury hotels"></div>
+          <div id="hotelMap" aria-label="Interactive world map of all 300 StayOdds luxury hotels"></div>
         </div>
       </div>
     </section>
@@ -159,17 +164,17 @@
               <option value="All">All Hotel Brands</option>
             </select>
             <select id="sortControl" class="select-control" aria-label="Sort hotels">
-              <option value="overall">Sort: Highest Overall Score</option>
-              <option value="value">Sort: Best Value</option>
-              <option value="food">Sort: Best Food &amp; Breakfast</option>
-              <option value="service">Sort: Best Service</option>
-              <option value="rooms">Sort: Best Rooms &amp; Villas</option>
-              <option value="newest">Sort: Most Recently Reviewed</option>
+              <option value="stayodds">Sort: First-Hand &amp; Highest StayOdds</option>
+              <option value="odds">Sort: Highest StayOdds %</option>
+              <option value="overall">Sort: Highest First-Hand Score</option>
+              <option value="awards">Sort: Most 2026 Official Awards</option>
+              <option value="name">Sort: A &ndash; Z</option>
             </select>
-            <select id="coverageFilter" class="select-control" aria-label="Filter by review format">
-              <option value="All">All Stays (Reviews + Shorts)</option>
-              <option value="Full Review">Full Video Reviews</option>
-              <option value="Short Tour">Featured in Shorts</option>
+            <select id="coverageFilter" class="select-control" aria-label="Filter by award or coverage">
+              <option value="All">All 300 Properties</option>
+              <option value="Full Review">First-Hand Full Reviews (26)</option>
+              <option value="Short Tour">First-Hand Short Tours (10)</option>
+              <option value="Global Directory">Global Directory (264)</option>
             </select>
             <div class="view-toggle" role="group" aria-label="Switch scorecard layout">
               <button class="view-toggle-btn active" id="viewCardsBtn" type="button">Scorecards</button>
@@ -241,6 +246,6 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script type="module" src="../assets/hotels.js?v=5"></script>
+  <script type="module" src="../assets/hotels.js?v=6"></script>
 </body>
 </html>

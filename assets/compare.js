@@ -6,6 +6,18 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=2";
 
+const PAGE_SIZE = 24;
+const oddsCache = new WeakMap();
+
+function getOdds(h) {
+  let cached = oddsCache.get(h);
+  if (!cached) {
+    cached = computeStayOdds(h);
+    oddsCache.set(h, cached);
+  }
+  return cached;
+}
+
 const state = {
   hotels: [],
   visitedCount: 0,
@@ -15,6 +27,7 @@ const state = {
   verdict: "All",
   sortBy: "visited",
   search: "",
+  visibleLimit: PAGE_SIZE,
   idA: "taaktana-labuan-bajo",
   idB: "ritz-carlton-bali",
 };
@@ -214,6 +227,7 @@ function renderScopeTabs() {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
       state.region = "All";
+      state.visibleLimit = PAGE_SIZE;
       renderScopeTabs();
       renderRegionPills();
       renderLeaderboard();
@@ -238,6 +252,7 @@ function renderRegionPills() {
   container.querySelectorAll(".pill").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
+      state.visibleLimit = PAGE_SIZE;
       renderRegionPills();
       renderLeaderboard();
     });
@@ -250,7 +265,7 @@ function renderLeaderboard() {
 
   const q = state.search.trim().toLowerCase();
   const list = getScopedHotels().filter((h) => {
-    const o = computeStayOdds(h);
+    const o = getOdds(h);
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
     if (!q) return true;
@@ -275,8 +290,8 @@ function renderLeaderboard() {
   });
 
   list.sort((a, b) => {
-    const oa = computeStayOdds(a);
-    const ob = computeStayOdds(b);
+    const oa = getOdds(a);
+    const ob = getOdds(b);
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -291,9 +306,12 @@ function renderLeaderboard() {
     return;
   }
 
-  container.innerHTML = list
+  const visibleList = list.slice(0, state.visibleLimit);
+  const remaining = list.length - visibleList.length;
+
+  const cardsHtml = visibleList
     .map((h, i) => {
-      const o = computeStayOdds(h);
+      const o = getOdds(h);
       const reviewHref = getReviewHref(h);
       const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
       const isShortOnly = h.coverageType === "Short Tour";
@@ -366,13 +384,11 @@ function renderLeaderboard() {
               </div>
             </div>
 
-            <!-- Restored Opinion Gap Strip -->
             <div class="card-opinion-strip">
               <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
               ${o.opinionGap.delta100 != null ? `<span class="card-opinion-delta">${escapeHtml(o.opinionGap.deltaLabel)}</span>` : ""}
             </div>
 
-            <!-- Restored Middle Key Facts Strip -->
             ${keyFactChips ? `<div class="card-key-facts-strip">${keyFactChips}</div>` : ""}
 
             <div class="consensus-compare-notes">
@@ -388,7 +404,7 @@ function renderLeaderboard() {
 
           <div class="consensus-cta-col">
             <a href="${getSeoHref(h)}">
-              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" />
+              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
             </a>
             <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
             ${
@@ -403,6 +419,25 @@ function renderLeaderboard() {
       `;
     })
     .join("");
+
+  const pagerHtml =
+    remaining > 0
+      ? `<div class="load-more-bar" style="display:flex;gap:12px;justify-content:center;align-items:center;padding:20px 0 8px;flex-wrap:wrap;">
+          <button class="btn btn-primary" id="loadMoreHotelsBtn" type="button">Show ${Math.min(PAGE_SIZE, remaining)} More (${visibleList.length} of ${list.length} shown)</button>
+          <button class="btn btn-outline" id="showAllHotelsBtn" type="button">Show All ${list.length}</button>
+        </div>`
+      : "";
+
+  container.innerHTML = cardsHtml + pagerHtml;
+
+  qs("#loadMoreHotelsBtn")?.addEventListener("click", () => {
+    state.visibleLimit += PAGE_SIZE;
+    renderLeaderboard();
+  });
+  qs("#showAllHotelsBtn")?.addEventListener("click", () => {
+    state.visibleLimit = list.length;
+    renderLeaderboard();
+  });
 
   const shortsRail = qs("#compareShortsRail");
   const shortsSec = qs("#compareShortsSection");
@@ -427,7 +462,7 @@ function renderLeaderboard() {
           (sh) => `
           <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
             <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" />
+              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" decoding="async" />
               <span class="short-badge">Short</span>
             </div>
             <div class="short-info">
@@ -477,20 +512,24 @@ async function boot() {
   });
   qs("#verdictFilter")?.addEventListener("change", (e) => {
     state.verdict = e.target.value || "All";
+    state.visibleLimit = PAGE_SIZE;
     renderLeaderboard();
   });
   qs("#consensusSort")?.addEventListener("change", (e) => {
     state.sortBy = e.target.value || "visited";
+    state.visibleLimit = PAGE_SIZE;
     renderLeaderboard();
   });
+  let searchTimer = null;
   qs("#consensusSearch")?.addEventListener("input", (e) => {
     state.search = e.target.value || "";
-    renderLeaderboard();
+    state.visibleLimit = PAGE_SIZE;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => renderLeaderboard(), 120);
   });
 
   try {
-    const bust = Date.now();
-    const res = await fetch(`../data/stayodds-directory.json?v=${bust}`);
+    const res = await fetch(`../data/stayodds-directory.json?v=20261121b`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 

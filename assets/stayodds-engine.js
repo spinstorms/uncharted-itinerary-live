@@ -155,7 +155,7 @@ export async function fetchLiveGoogleRating(googlePlaceId) {
     );
     if (!res.ok) return null;
     const data = await res.json();
-    if (typeof data.rating !== "number") return null;
+    if (data.status !== "ok" || typeof data.rating !== "number") return null;
     return data;
   } catch {
     return null;

@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg" />
   <meta property="og:url" content="https://live.uncharteditinerary.com/stayodds/pendry-west-hollywood/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Pendry West Hollywood", "url": "https://live.uncharteditinerary.com/stayodds/pendry-west-hollywood/", "image": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg", "address": {"@type": "PostalAddress", "addressLocality": "West Hollywood", "addressCountry": "United States"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Pendry West Hollywood", "url": "https://live.uncharteditinerary.com/stayodds/pendry-west-hollywood/", "image": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg", "address": {"@type": "PostalAddress", "addressLocality": "West Hollywood", "addressCountry": "United States"}, "geo": {"@type": "GeoCoordinates", "latitude": 34.0939, "longitude": -118.3742}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -303,34 +303,68 @@
   </footer>
 
   <script type="module">
-    const placeId = "";
+    const placeId = "ChIJ4aYkLLS_woARzhWOyU2Jiiw";
     const left100 = null;
-    const isFirstHand = false;
+    const mapsFallbackUrl = placeId
+      ? "https://www.google.com/maps/place/?q=place_id:" + encodeURIComponent(placeId)
+      : "";
+
+    function showMapsFallback(mapsUrl) {
+      const strip = document.getElementById("liveGoogleStrip");
+      const gDisp = document.getElementById("gapGuestDisplay");
+      const kpiVal = document.getElementById("kpiGuestVal");
+      if (gDisp && gDisp.textContent.includes("Checking")) {
+        gDisp.textContent = "Google Maps ↗";
+      }
+      if (kpiVal && kpiVal.textContent.includes("Live")) {
+        kpiVal.innerHTML = mapsUrl
+          ? `<a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Maps ↗</a>`
+          : "—";
+      }
+      if (strip && mapsUrl) {
+        strip.style.display = "flex";
+        strip.innerHTML = `<span><a href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Check live reviews on Google Maps ↗</a></span><span class="powered-google">Google Maps</span>`;
+      }
+    }
+
     if (placeId) {
       fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
         .then((r) => (r.ok ? r.json() : null))
         .then((g) => {
-          if (!g || typeof g.rating !== "number") return;
+          if (!g || g.status !== "ok" || typeof g.rating !== "number") {
+            showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
+            return;
+          }
           const strip = document.getElementById("liveGoogleStrip");
+          const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {
             strip.style.display = "flex";
             const revText = g.reviewCount ? ` (${g.reviewCount.toLocaleString("en-GB")} reviews)` : "";
-            const link = g.googleMapsUri ? ` · <a href="${g.googleMapsUri}" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>` : "";
-            strip.innerHTML = `<span><strong>Live Google Rating:</strong> ${g.rating.toFixed(1)} ★${revText}${link}</span><span class="powered-google">Powered by Google</span>`;
+            const link = mapsUrl ? ` · <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>` : "";
+            const notice = g.policyNotice || "Reviews are not verified by Google.";
+            strip.innerHTML = `<span><strong>Live Google Rating:</strong> ${g.rating.toFixed(1)} ★${revText}${link}<br><small style="color:#64748b;font-weight:400;">${notice}</small></span><span class="powered-google">Powered by Google</span>`;
           }
           if (left100 != null && typeof g.normalized100 === "number") {
             const gBar = document.getElementById("gapGuestBar");
             const gDisp = document.getElementById("gapGuestDisplay");
             const pill = document.getElementById("gapDeltaPill");
+            const kpiVal = document.getElementById("kpiGuestVal");
+            const kpiLbl = document.getElementById("kpiGuestLbl");
             if (gDisp && gDisp.textContent.includes("Checking")) {
               gDisp.textContent = `${g.rating.toFixed(1)} ★ (${g.normalized100}/100)`;
               if (gBar) gBar.style.width = `${g.normalized100}%`;
               const d = left100 - g.normalized100;
               if (pill) pill.innerHTML = `<strong>${d > 0 ? "+" + d : d} pts</strong><span>vs. Google Live</span>`;
             }
+            if (kpiVal && kpiVal.textContent.includes("Live")) {
+              kpiVal.innerHTML = `${g.rating.toFixed(1)}<span>/5★</span>`;
+              if (kpiLbl) kpiLbl.textContent = g.reviewCount ? `Google (${g.reviewCount.toLocaleString("en-GB")})` : "Google Live";
+            }
           }
         })
-        .catch(() => {});
+        .catch(() => showMapsFallback(mapsFallbackUrl));
+    } else {
+      showMapsFallback("");
     }
   </script>
 </body>
