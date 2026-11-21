@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
   <title>Luxury Hotel Map &amp; Uncharted Scorecards | The Uncharted Itinerary</title>
   <meta name="description" content="Explore 36 luxury hotels and resorts across Bali, Indonesia, Maldives, Thailand, Europe, Singapore, and Bora Bora on an interactive map with honest 5-point scorecards and Shorts from The Uncharted Itinerary." />
   <link rel="canonical" href="https://live.uncharteditinerary.com/hotels/" />
@@ -32,14 +33,17 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#ff5d22!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.css?v=10" />
+  <link rel="stylesheet" href="../assets/styles.css?v=11" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="https://www.uncharteditinerary.com/" rel="noopener">
-        <span class="brand-name">The Uncharted Itinerary</span>
-        <span class="brand-sub">Luxury Stays &amp; Savvy Travel Guides</span>
+        <img class="brand-logo" src="../assets/logo.jpg" alt="The Uncharted Itinerary" width="44" height="44" />
+        <span class="brand-text">
+          <span class="brand-name">The Uncharted Itinerary</span>
+          <span class="brand-sub">Luxury Stays &amp; Savvy Travel Guides</span>
+        </span>
       </a>
 
       <nav class="nav-links" aria-label="Main site navigation">
@@ -103,16 +107,23 @@
 
   <main>
     <section class="page-intro">
-      <div class="container intro-row">
-        <div>
+      <div class="container">
+        <div class="hero-banner-card" style="--hero-bg: url('https://i.ytimg.com/vi/ZlsSigaKhwc/maxresdefault.jpg');">
+          <div class="intro-row">
+            <div class="hero-title-group">
+              <img class="hero-emblem" src="../assets/logo.jpg" alt="The Uncharted Itinerary" width="64" height="64" />
+              <div>
           <h1 class="page-title">Hotel Map &amp; Uncharted Scorecards</h1>
           <p class="page-lead">
             Compare every luxury resort and boutique villa we’ve stayed in — explore our interactive destination map, filter by loyalty brand, and see how each property scored on rooms, grounds, food, service, and value.
           </p>
         </div>
-        <div class="sync-meta">
-          <span id="hotelCountBadge">17 Reviewed Stays</span>
+            </div>
+            <div class="sync-meta">
+          <span id="hotelCountBadge">36 Reviewed Stays</span>
           <strong>Rooms &bull; Grounds &bull; Food &bull; Service &bull; Value</strong>
+        </div>
+          </div>
         </div>
       </div>
     </section>
