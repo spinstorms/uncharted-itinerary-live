@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T15:48:33Z",
+  "updatedAt": "2026-11-21T16:33:44Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 857,
+      "views": 858,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1676,7 +1676,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6173,
+      "views": 6165,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -1830,7 +1830,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4628,
+      "views": 4629,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -4906,7 +4906,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
-      "views": 124,
+      "views": 126,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -5254,7 +5254,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 283,
+      "views": 271,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
