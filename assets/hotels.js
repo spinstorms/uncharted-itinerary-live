@@ -43,8 +43,34 @@ function escapeHtml(str = "") {
     .replaceAll("'", "&#39;");
 }
 
+const isEmbedParam = new URLSearchParams(window.location.search).get("embed") === "1";
+
 function getSeoHref(h) {
-  return `../stayodds/${encodeURIComponent(h.id)}/`;
+  const q = new URLSearchParams({ from: "map" });
+  if (isEmbedParam) q.set("embed", "1");
+  return `../stayodds/${encodeURIComponent(h.id)}/?${q.toString()}`;
+}
+
+function matchRegionParam(rawRegion, hotels) {
+  if (!rawRegion) return null;
+  const target = rawRegion.trim().toLowerCase();
+  if (!target || target === "all") return "All";
+  const regions = Array.from(new Set(hotels.map((h) => h.region).filter(Boolean)));
+  const exact = regions.find((r) => r.toLowerCase() === target);
+  if (exact) return exact;
+  const partial = regions.find((r) => r.toLowerCase().includes(target));
+  return partial || null;
+}
+
+function syncUrlParams() {
+  try {
+    const url = new URL(window.location.href);
+    if (state.region && state.region !== "All") url.searchParams.set("region", state.region);
+    else url.searchParams.delete("region");
+    if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
+    else url.searchParams.delete("scope");
+    window.history.replaceState({}, "", url.toString());
+  } catch (_) {}
 }
 
 function resolveThumb(thumb) {
@@ -217,8 +243,12 @@ function renderScopeTabs() {
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
-      state.region = "All";
+      const scoped = getScopedHotels();
+      if (state.region !== "All" && !scoped.some((h) => h.region === state.region)) {
+        state.region = "All";
+      }
       state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
       renderScopeTabs();
       renderRegionPills();
       renderAll(true);
@@ -244,6 +274,7 @@ function renderRegionPills() {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
       state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
       renderRegionPills();
       renderAll(true);
     });
@@ -673,6 +704,11 @@ async function boot() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];
+
+    const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());
+    if (matchedRegion) {
+      state.region = matchedRegion;
+    }
 
     renderScopeTabs();
     renderRegionPills();

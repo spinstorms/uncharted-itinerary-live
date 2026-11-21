@@ -43,8 +43,34 @@ function escapeHtml(str = "") {
     .replaceAll("'", "&#39;");
 }
 
+const isEmbedParam = new URLSearchParams(window.location.search).get("embed") === "1";
+
 function getSeoHref(h) {
-  return `../stayodds/${encodeURIComponent(h.id)}/`;
+  return isEmbedParam
+    ? `../stayodds/${encodeURIComponent(h.id)}/?embed=1`
+    : `../stayodds/${encodeURIComponent(h.id)}/`;
+}
+
+function matchRegionParam(rawRegion, hotels) {
+  if (!rawRegion) return null;
+  const target = rawRegion.trim().toLowerCase();
+  if (!target || target === "all") return "All";
+  const regions = Array.from(new Set(hotels.map((h) => h.region).filter(Boolean)));
+  const exact = regions.find((r) => r.toLowerCase() === target);
+  if (exact) return exact;
+  const partial = regions.find((r) => r.toLowerCase().includes(target));
+  return partial || null;
+}
+
+function syncUrlParams() {
+  try {
+    const url = new URL(window.location.href);
+    if (state.region && state.region !== "All") url.searchParams.set("region", state.region);
+    else url.searchParams.delete("region");
+    if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
+    else url.searchParams.delete("scope");
+    window.history.replaceState({}, "", url.toString());
+  } catch (_) {}
 }
 
 function resolveThumb(thumb) {
@@ -259,8 +285,12 @@ function renderScopeTabs() {
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
-      state.region = "All";
+      const scoped = getScopedHotels();
+      if (state.region !== "All" && !scoped.some((h) => h.region === state.region)) {
+        state.region = "All";
+      }
       state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
       renderScopeTabs();
       renderRegionPills();
       renderLeaderboard();
@@ -286,6 +316,7 @@ function renderRegionPills() {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
       state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
       renderRegionPills();
       renderLeaderboard();
     });
@@ -639,11 +670,22 @@ async function boot() {
       statEl.textContent = `${hotels.length} Luxury Properties • ${ratedCount} First-Hand Verified`;
     }
 
+    const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());
+    if (matchedRegion) {
+      state.region = matchedRegion;
+    }
+
     populateH2HSelectors();
     renderH2H();
     renderScopeTabs();
     renderRegionPills();
     renderLeaderboard();
+
+    if (matchedRegion && matchedRegion !== "All" && !params.get("a") && !params.get("b")) {
+      requestAnimationFrame(() => {
+        qs(".leaderboard-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
   } catch (err) {
     const el = qs("#consensusList");
     if (el) el.innerHTML = `<div class="empty-state">Unable to load ${escapeHtml(BRAND.name)} right now.</div>`;

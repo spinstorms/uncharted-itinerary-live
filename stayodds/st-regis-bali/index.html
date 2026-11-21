@@ -59,8 +59,8 @@
     <div class="container hub-tabs-inner">
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab" href="../../">Latest Videos</a>
-        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds</a>
+        <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds</a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
       </nav>
@@ -71,11 +71,12 @@
   <main>
     <div class="container">
       <div class="detail-breadcrumb">
-        <a href="../../compare/">&larr; All StayOdds Hotels</a>
+        <a id="crumbAllLink" href="../../compare/">&larr; All StayOdds Hotels</a>
         <span>/</span>
-        <span>Bali &amp; Indonesia</span>
+        <a id="crumbRegionLink" href="../../compare/?region=Bali%20%26%20Indonesia">Bali &amp; Indonesia</a>
         <span>/</span>
         <strong>The St. Regis Bali Resort</strong>
+        <a id="crumbAltViewLink" href="../../hotels/?region=Bali%20%26%20Indonesia" style="margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap;">&#x1F4CD; Bali &amp; Indonesia Map &rarr;</a>
       </div>
 
       <section class="detail-hero">
@@ -228,10 +229,14 @@
       </section>
 
       <section class="detail-section" style="margin-bottom:56px;">
-        <div class="section-header" style="margin-bottom:18px;">
+        <div class="section-header" style="margin-bottom:18px;flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">Compare Nearby Luxury Stays</h2>
             <p class="section-subtitle">Explore other personally curated properties in Bali &amp; Indonesia.</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="btn btn-outline" id="nearbyMapLink" href="../../hotels/?region=Bali%20%26%20Indonesia">&#x1F4CD; All Bali &amp; Indonesia on Map &rarr;</a>
+            <a class="btn btn-outline" id="nearbyListLink" href="../../compare/?region=Bali%20%26%20Indonesia">All Bali &amp; Indonesia in StayOdds &rarr;</a>
           </div>
         </div>
         <div class="related-grid">
@@ -306,6 +311,50 @@
   </footer>
 
   <script type="module">
+    const pageRegion = "Bali & Indonesia";
+    const qsParams = new URLSearchParams(window.location.search);
+    const isEmbed = qsParams.get("embed") === "1";
+    const fromMap = qsParams.get("from") === "map" || (document.referrer || "").includes("/hotels");
+    const regionQ = encodeURIComponent(pageRegion);
+    const embedSuffix = isEmbed ? "&embed=1" : "";
+    const embedOnly = isEmbed ? "?embed=1" : "";
+
+    const crumbAll = document.getElementById("crumbAllLink");
+    const crumbRegion = document.getElementById("crumbRegionLink");
+    const crumbAlt = document.getElementById("crumbAltViewLink");
+    const nearbyMap = document.getElementById("nearbyMapLink");
+    const nearbyList = document.getElementById("nearbyListLink");
+
+    if (fromMap) {
+      if (crumbAll) {
+        crumbAll.href = "../../hotels/" + embedOnly;
+        crumbAll.textContent = "← World Hotel Map";
+      }
+      if (crumbRegion) {
+        crumbRegion.href = "../../hotels/?region=" + regionQ + embedSuffix;
+      }
+      if (crumbAlt) {
+        crumbAlt.href = "../../compare/?region=" + regionQ + embedSuffix;
+        crumbAlt.textContent = pageRegion + " in StayOdds →";
+      }
+      document.getElementById("hubTabStayOdds")?.classList.remove("active");
+      document.getElementById("hubTabStayOdds")?.removeAttribute("aria-current");
+      document.getElementById("hubTabMap")?.classList.add("active");
+      document.getElementById("hubTabMap")?.setAttribute("aria-current", "page");
+      document.querySelectorAll('.related-grid a[href^="../"]').forEach((a) => {
+        const href = a.getAttribute("href") || "";
+        if (!href.includes("?")) a.setAttribute("href", href + "?from=map" + embedSuffix);
+      });
+    } else if (isEmbed) {
+      if (crumbAll) crumbAll.href = "../../compare/?embed=1";
+      if (crumbRegion) crumbRegion.href = "../../compare/?region=" + regionQ + "&embed=1";
+      if (crumbAlt) crumbAlt.href = "../../hotels/?region=" + regionQ + "&embed=1";
+    }
+    if (isEmbed) {
+      if (nearbyMap) nearbyMap.href = "../../hotels/?region=" + regionQ + "&embed=1";
+      if (nearbyList) nearbyList.href = "../../compare/?region=" + regionQ + "&embed=1";
+    }
+
     const placeId = "ChIJlxcgYM1c0i0RIbLfYRwiJDo";
     const left100 = 88;
     const mapsFallbackUrl = placeId

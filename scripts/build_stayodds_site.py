@@ -430,6 +430,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           </article>"""
 
     google_place_id = h.get("googlePlaceId") or ""
+    region_q = urllib.parse.quote(h["region"])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -492,8 +493,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     <div class="container hub-tabs-inner">
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab" href="../../">Latest Videos</a>
-        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds</a>
+        <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds</a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
       </nav>
@@ -504,11 +505,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <main>
     <div class="container">
       <div class="detail-breadcrumb">
-        <a href="../../compare/">&larr; All StayOdds Hotels</a>
+        <a id="crumbAllLink" href="../../compare/">&larr; All StayOdds Hotels</a>
         <span>/</span>
-        <span>{esc(h['region'])}</span>
+        <a id="crumbRegionLink" href="../../compare/?region={region_q}">{esc(h['region'])}</a>
         <span>/</span>
         <strong>{esc(h['name'])}</strong>
+        <a id="crumbAltViewLink" href="../../hotels/?region={region_q}" style="margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap;">&#x1F4CD; {esc(h['region'])} Map &rarr;</a>
       </div>
 
       <section class="detail-hero">
@@ -664,10 +666,14 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       </section>
 
       <section class="detail-section" style="margin-bottom:56px;">
-        <div class="section-header" style="margin-bottom:18px;">
+        <div class="section-header" style="margin-bottom:18px;flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">Compare Nearby Luxury Stays</h2>
             <p class="section-subtitle">Explore other personally curated properties in {esc(h['region'])}.</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="btn btn-outline" id="nearbyMapLink" href="../../hotels/?region={region_q}">&#x1F4CD; All {esc(h['region'])} on Map &rarr;</a>
+            <a class="btn btn-outline" id="nearbyListLink" href="../../compare/?region={region_q}">All {esc(h['region'])} in StayOdds &rarr;</a>
           </div>
         </div>
         <div class="related-grid">{related_html}</div>
@@ -697,6 +703,50 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   </footer>
 
   <script type="module">
+    const pageRegion = {json.dumps(h['region'])};
+    const qsParams = new URLSearchParams(window.location.search);
+    const isEmbed = qsParams.get("embed") === "1";
+    const fromMap = qsParams.get("from") === "map" || (document.referrer || "").includes("/hotels");
+    const regionQ = encodeURIComponent(pageRegion);
+    const embedSuffix = isEmbed ? "&embed=1" : "";
+    const embedOnly = isEmbed ? "?embed=1" : "";
+
+    const crumbAll = document.getElementById("crumbAllLink");
+    const crumbRegion = document.getElementById("crumbRegionLink");
+    const crumbAlt = document.getElementById("crumbAltViewLink");
+    const nearbyMap = document.getElementById("nearbyMapLink");
+    const nearbyList = document.getElementById("nearbyListLink");
+
+    if (fromMap) {{
+      if (crumbAll) {{
+        crumbAll.href = "../../hotels/" + embedOnly;
+        crumbAll.textContent = "← World Hotel Map";
+      }}
+      if (crumbRegion) {{
+        crumbRegion.href = "../../hotels/?region=" + regionQ + embedSuffix;
+      }}
+      if (crumbAlt) {{
+        crumbAlt.href = "../../compare/?region=" + regionQ + embedSuffix;
+        crumbAlt.textContent = pageRegion + " in StayOdds →";
+      }}
+      document.getElementById("hubTabStayOdds")?.classList.remove("active");
+      document.getElementById("hubTabStayOdds")?.removeAttribute("aria-current");
+      document.getElementById("hubTabMap")?.classList.add("active");
+      document.getElementById("hubTabMap")?.setAttribute("aria-current", "page");
+      document.querySelectorAll('.related-grid a[href^="../"]').forEach((a) => {{
+        const href = a.getAttribute("href") || "";
+        if (!href.includes("?")) a.setAttribute("href", href + "?from=map" + embedSuffix);
+      }});
+    }} else if (isEmbed) {{
+      if (crumbAll) crumbAll.href = "../../compare/?embed=1";
+      if (crumbRegion) crumbRegion.href = "../../compare/?region=" + regionQ + "&embed=1";
+      if (crumbAlt) crumbAlt.href = "../../hotels/?region=" + regionQ + "&embed=1";
+    }}
+    if (isEmbed) {{
+      if (nearbyMap) nearbyMap.href = "../../hotels/?region=" + regionQ + "&embed=1";
+      if (nearbyList) nearbyList.href = "../../compare/?region=" + regionQ + "&embed=1";
+    }}
+
     const placeId = {json.dumps(google_place_id)};
     const left100 = {json.dumps(o['left100'])};
     const mapsFallbackUrl = placeId
