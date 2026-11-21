@@ -1,0 +1,881 @@
+#!/usr/bin/env python3
+"""
+StayOdds Static SEO & Directory Builder (250+ Verified Luxury Hotels from Supabase)
+- Reads the single source of truth from Supabase Postgres (zero AI-estimated data).
+- Generates:
+    1) data/stayodds-directory.json  (verified directory snapshot for fast initial paint)
+    2) stayodds/<slug>/index.html    (250 real indexable SEO pages with JSON-LD Hotel/Review schema,
+                                      Consensus Badge, Dual-Mode Opinion Gap, Middle Key Facts,
+                                      Travelpayouts Drive monetization, and live Google Places hydration)
+    3) sitemap.xml                   (256+ clean indexable URLs)
+"""
+
+from __future__ import annotations
+
+import html
+import json
+import os
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parent.parent
+SITE_URL = "https://live.uncharteditinerary.com"
+
+
+def load_env_local() -> None:
+    env_path = ROOT / ".env.local"
+    if not env_path.exists():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip())
+
+
+def sb_get_all(sb_url: str, key: str, table: str, select: str = "*") -> list[dict[str, Any]]:
+    url = f"{sb_url}/rest/v1/{table}?select={urllib.parse.quote(select)}&limit=1000"
+    req = urllib.request.Request(
+        url,
+        headers={"apikey": key, "Authorization": f"Bearer {key}", "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def esc(val: Any) -> str:
+    return html.escape(str(val or ""), quote=True)
+
+
+def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
+    first_hand = bool(h.get("visitedByUs") and h.get("overall") is not None and h.get("scores"))
+    visited = bool(h.get("visitedByUs"))
+    ours100 = int(round(float(h["overall"]) * 20)) if first_hand else None
+
+    editorial = [e for e in (h.get("editorialRatings") or []) if str(e.get("sourceUrl", "")).startswith("http")]
+    awards = [a for a in (h.get("officialAwards") or []) if str(a.get("sourceUrl", "")).startswith("http")]
+    yt_reviews = [y for y in (h.get("youtubeReviews") or []) if str(y.get("sourceUrl", "")).startswith("http")]
+
+    critic_scores = [int(e["normalized100"]) for e in editorial if e.get("normalized100") is not None] + [
+        int(a["normalized100"]) for a in awards if a.get("normalized100") is not None
+    ]
+    critic100 = int(round(sum(critic_scores) / len(critic_scores))) if critic_scores else None
+
+    vg = (h.get("verifiedGuest") or {}).get("licensed")
+    guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
+
+    weights = {"firstHand": 0, "critics": 0, "guests": 0}
+    overall_idx = None
+    odds = None
+    spread100 = None
+    status_badge = "Live Ratings Pending"
+    status_tone = "slate"
+    is_consensus = False
+    formula = "Awaiting live verified guest ratings & sourced awards."
+
+    active = [v for v in [ours100, critic100, guest100] if v is not None]
+    src_cnt = len(active)
+
+    if first_hand and ours100 is not None:
+        if critic100 is not None and guest100 is not None:
+            weights = {"firstHand": 40, "critics": 30, "guests": 30}
+            overall_idx = int(round(ours100 * 0.4 + critic100 * 0.3 + guest100 * 0.3))
+            formula = "40% First-Hand Stay • 30% Sourced Critics & Awards • 30% Verified Guests"
+        elif guest100 is not None:
+            weights = {"firstHand": 55, "critics": 0, "guests": 45}
+            overall_idx = int(round(ours100 * 0.55 + guest100 * 0.45))
+            formula = "55% First-Hand Stay • 45% Verified Guests (auto-reweighted)"
+        elif critic100 is not None:
+            weights = {"firstHand": 55, "critics": 45, "guests": 0}
+            overall_idx = int(round(ours100 * 0.55 + critic100 * 0.45))
+            formula = "55% First-Hand Stay • 45% Sourced Critics & Awards (auto-reweighted)"
+        else:
+            weights = {"firstHand": 100, "critics": 0, "guests": 0}
+            overall_idx = ours100
+            odds = ours100
+            status_badge = "First-Hand Only"
+            status_tone = "accent"
+            formula = "100% First-Hand Verified Stay — live Google rating loads on this page."
+    else:
+        if critic100 is not None and guest100 is not None:
+            if len(critic_scores) >= 2:
+                weights = {"firstHand": 0, "critics": 40, "guests": 60}
+                overall_idx = int(round(critic100 * 0.4 + guest100 * 0.6))
+                formula = "40% Sourced Critics & Awards (2+) • 60% Verified Guests"
+            else:
+                weights = {"firstHand": 0, "critics": 25, "guests": 75}
+                overall_idx = int(round(critic100 * 0.25 + guest100 * 0.75))
+                formula = "25% Sourced Award/Critic • 75% Verified Guests"
+        elif guest100 is not None:
+            weights = {"firstHand": 0, "critics": 0, "guests": 100}
+            overall_idx = guest100
+            odds = guest100
+            status_badge = "Guest Data Only"
+            status_tone = "teal"
+            formula = "100% Verified Guest Ratings (no sourced critic/award linked yet)."
+        elif critic100 is not None:
+            weights = {"firstHand": 0, "critics": 100, "guests": 0}
+            overall_idx = critic100
+            odds = critic100
+            status_badge = "Editorial Only"
+            status_tone = "slate"
+            formula = "100% Sourced Official Awards & Critics (live Google rating loads on page)."
+
+    if src_cnt >= 2 and overall_idx is not None:
+        is_consensus = True
+        spread100 = max(active) - min(active)
+        if spread100 <= 6:
+            status_badge, status_tone, odds = "Strong Consensus", "accent", min(98, overall_idx + 2)
+        elif spread100 <= 12:
+            status_badge, status_tone, odds = "Mostly Aligned", "teal", overall_idx
+        else:
+            status_badge, status_tone, odds = "Split Verdict", "amber", max(50, overall_idx - 4)
+
+    left100 = ours100 if first_hand else critic100
+    right100 = guest100
+    delta100 = (left100 - right100) if (left100 is not None and right100 is not None) else None
+
+    if delta100 is not None:
+        if abs(delta100) <= 5:
+            gap_head = (
+                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched real guest scores"
+                if first_hand
+                else f"Hype matches reality ({'+' if delta100 >= 0 else ''}{delta100} pts) — critics & real guests agree"
+            )
+        elif delta100 > 5:
+            gap_head = (
+                f"I rated this +{delta100} pts higher than real guests"
+                if first_hand
+                else f"Critics & awards rate this +{delta100} pts higher than real guests (Watch for hype)"
+            )
+        else:
+            gap_head = (
+                f"I rated this {delta100} pts stricter than real guests — read caveats"
+                if first_hand
+                else f"Real guests rate this +{abs(delta100)} pts higher than critics (Quiet overachiever)"
+            )
+    else:
+        gap_head = (
+            "Live Google guest score loads below to show My Score vs. Real Guests delta"
+            if first_hand
+            else "Real guest ratings & official awards compared side-by-side"
+        )
+
+    return {
+        "firstHand": first_hand,
+        "visited": visited,
+        "tierLabel": "First-Hand Verified" if first_hand else ("Short Tour Preview" if visited else "Global Directory"),
+        "ours100": ours100,
+        "critic100": critic100,
+        "guest100": guest100,
+        "overallIndex": overall_idx,
+        "greatStayOdds": odds,
+        "spread100": spread100,
+        "sourceCount": src_cnt,
+        "isConsensus": is_consensus,
+        "statusBadge": status_badge,
+        "statusTone": status_tone,
+        "weights": weights,
+        "formula": formula,
+        "left100": left100,
+        "right100": right100,
+        "delta100": delta100,
+        "gapHeadline": gap_head,
+        "editorial": editorial,
+        "awards": awards,
+        "ytReviews": yt_reviews,
+        "vg": vg,
+    }
+
+
+def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str, Any]]) -> str:
+    slug = h["id"]
+    canonical = f"{SITE_URL}/stayodds/{slug}/"
+    vg = o["vg"]
+    tag_class = {
+        "amber": "tag-caution",
+        "accent": "tag-accent",
+        "teal": "tag-teal",
+    }.get(o["statusTone"], "tag-slate")
+
+    odds_str = f"{o['greatStayOdds']}%" if o["greatStayOdds"] is not None else "Live"
+    title_text = f"{h['name']} — StayOdds Score ({odds_str}) & Honest Review | Worth It?"
+    meta_desc = (
+        f"Is {h['name']} in {h['location']}, {h['country']} worth it? Compare verified guest ratings, "
+        f"official awards, key hotel facts, and {'first-hand stay scores' if o['firstHand'] else 'hype vs. reality opinion gap'} on StayOdds."
+    )
+    img_url = h.get("thumbnail") or "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg"
+
+    # Build JSON-LD structured data (Hotel + Review if First-Hand Verified)
+    ld: dict[str, Any] = {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": h["name"],
+        "url": canonical,
+        "image": img_url,
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": h["location"],
+            "addressCountry": h["country"],
+        },
+    }
+    if h.get("lat") and h.get("lng"):
+        ld["geo"] = {"@type": "GeoCoordinates", "latitude": h["lat"], "longitude": h["lng"]}
+    if vg and vg.get("rating"):
+        ld["aggregateRating"] = {
+            "@type": "AggregateRating",
+            "ratingValue": vg["rating"],
+            "bestRating": vg.get("scale", 10),
+            "reviewCount": vg.get("reviewCount") or 1,
+        }
+    if o["firstHand"] and h.get("overall") is not None:
+        ld["review"] = {
+            "@type": "Review",
+            "author": {"@type": "Organization", "name": "The Uncharted Itinerary"},
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": h["overall"],
+                "bestRating": 5,
+                "worstRating": 1,
+            },
+            "reviewBody": h.get("verdict") or "",
+        }
+
+    # Build Middle Key Facts tiles (strictly non-blank verified fields only!)
+    kf = h.get("keyFacts") or {}
+    fact_tiles = []
+    if kf.get("poolHeating"):
+        fact_tiles.append(("Pool & Heating", kf["poolHeating"]))
+    if kf.get("beachOrReef"):
+        fact_tiles.append(("Beach & Reef", kf["beachOrReef"]))
+    if kf.get("renovationYear"):
+        fact_tiles.append(("Opened / Renovated", str(kf["renovationYear"])))
+    if kf.get("transferLogistics"):
+        fact_tiles.append(("Transfer Logistics", kf["transferLogistics"]))
+    if h.get("priceRange"):
+        fact_tiles.append(("Price Tier", h["priceRange"]))
+    if h.get("brand"):
+        fact_tiles.append(("Brand / Collection", h["brand"]))
+
+    facts_html = "".join(
+        f'<div class="key-fact-tile"><small>{esc(lbl)}</small><strong>{esc(val)}</strong></div>'
+        for lbl, val in fact_tiles
+    )
+    red_flags_html = "".join(
+        f'<span class="tag tag-caution">⚠ {esc(rf)}</span>' for rf in (h.get("redFlags") or [])
+    )
+
+    # First-hand 5-axis bars
+    scores_html = ""
+    if o["firstHand"] and h.get("scores"):
+        s = h["scores"]
+        for lbl, key in [
+            ("Rooms & Villas", "rooms"),
+            ("Grounds, Pools & Beach", "grounds"),
+            ("Food & Breakfast", "food"),
+            ("Service & Hospitality", "service"),
+            ("Value for Money", "value"),
+        ]:
+            val = int(s.get(key, 4))
+            pct = int(round((val / 5) * 100))
+            scores_html += (
+                f'<div class="detail-bar-row"><div class="detail-bar-top"><span>{lbl}</span>'
+                f'<strong>{val} / 5</strong></div><div class="detail-bar-track">'
+                f'<div class="detail-bar-fill" style="width:{pct}%"></div></div></div>'
+            )
+
+    review_href = ""
+    if h.get("videoId"):
+        if h.get("coverageType") == "Short Tour":
+            review_href = f"https://www.youtube.com/shorts/{urllib.parse.quote(h['videoId'])}"
+        else:
+            review_href = f"https://www.youtube.com/watch?v={urllib.parse.quote(h['videoId'])}"
+
+    left_label = "My First-Hand Stay" if o["firstHand"] else "Critics & Official Awards"
+    left_display = (
+        f"{h['overall']} / 5 ({o['ours100']}/100)"
+        if o["firstHand"]
+        else (f"{o['critic100']} / 100" if o["critic100"] is not None else "0 sourced yet")
+    )
+    right_display = (
+        f"{vg['rating']} / {vg.get('scale', 10)} ({o['guest100']}/100)"
+        if vg and vg.get("rating")
+        else "Checking Live Google API…"
+    )
+    delta_badge = (
+        f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
+        if o["delta100"] is not None
+        else "Live Compare"
+    )
+    delta_tone = (
+        "is-caution"
+        if (o["delta100"] is not None and abs(o["delta100"]) > 12)
+        else ("is-aligned" if o["delta100"] is not None else "")
+    )
+
+    awards_html = "".join(
+        f'<article class="channel-row"><div class="channel-row-head"><div>'
+        f'<span class="tag tag-accent">{esc(a.get("awardBody") or "Official Award")}</span>'
+        f'<h4><a href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(a["label"])} ↗</a></h4>'
+        f'</div><div class="channel-row-score"><strong>{esc(a.get("year") or "Verified")}</strong>'
+        f'<span>{esc(a.get("normalized100") or "")}/100</span></div></div></article>'
+        for a in o["awards"]
+    )
+    editorial_parts = []
+    for e in o["editorial"]:
+        tk = f'<p class="channel-takeaway">{esc(e.get("takeaway"))}</p>' if e.get("takeaway") else ""
+        editorial_parts.append(
+            f'<article class="channel-row"><div class="channel-row-head"><div>'
+            f'<span class="tag">Editorial</span>'
+            f'<h4><a href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(e["sourceName"])} ↗</a></h4>'
+            f'</div><div class="channel-row-score"><strong>{esc(e.get("rawScore") or "")}</strong>'
+            f'<span>{esc(e["normalized100"])}/100</span></div></div>{tk}</article>'
+        )
+    editorial_html = "".join(editorial_parts)
+
+    yt_html = ""
+    if review_href:
+        fh_score_lbl = f"{h['overall']} / 5" if o["firstHand"] else "Short"
+        yt_html += (
+            f'<article class="channel-row"><div class="channel-row-head"><div>'
+            f'<span class="tag tag-accent">Founding Contributor</span>'
+            f'<h4><a href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">The Uncharted Itinerary — {esc(h.get("coverageType"))} ↗</a></h4>'
+            f'</div><div class="channel-row-score"><strong>{fh_score_lbl}</strong></div></div>'
+            f'<p class="channel-takeaway">{esc(h.get("verdict") or "")}</p></article>'
+        )
+    for y in o["ytReviews"]:
+        tk = f'<p class="channel-takeaway">{esc(y.get("takeaway"))}</p>' if y.get("takeaway") else ""
+        yt_html += (
+            f'<article class="channel-row"><div class="channel-row-head"><div>'
+            f'<span class="tag">{esc(y.get("sentiment") or "Review")}</span>'
+            f'<h4><a href="{esc(y["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(y["creatorName"])} ↗</a></h4>'
+            f'</div></div>{tk}</article>'
+        )
+
+    related_html = ""
+    for r in related:
+        ro = compute_stayodds_py(r)
+        r_odds = f"{ro['greatStayOdds']}% StayOdds" if ro["greatStayOdds"] is not None else ro["tierLabel"]
+        related_html += f"""
+          <article class="related-card">
+            <img src="{esc(r.get('thumbnail') or img_url)}" alt="{esc(r['name'])}" loading="lazy" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag {'tag-accent' if ro['firstHand'] else 'tag-slate'}">{esc(r_odds)}</span>
+                <span>{esc(ro['statusBadge'])}</span>
+              </div>
+              <h4>{esc(r['name'])}</h4>
+              <p>{esc(r['location'])}, {esc(r['country'])}</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../{esc(r['id'])}/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a={esc(slug)}&amp;b={esc(r['id'])}">Compare VS</a>
+              </div>
+            </div>
+          </article>"""
+
+    google_place_id = h.get("googlePlaceId") or ""
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <title>{esc(title_text)}</title>
+  <meta name="description" content="{esc(meta_desc)}" />
+  <link rel="canonical" href="{esc(canonical)}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{esc(title_text)}" />
+  <meta property="og:description" content="{esc(meta_desc)}" />
+  <meta property="og:image" content="{esc(img_url)}" />
+  <meta property="og:url" content="{esc(canonical)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
+  <style>.site-header{{background:#ff5d22!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
+  <link rel="stylesheet" href="../../assets/styles.css?v=17" />
+  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+    (function () {{
+        var script = document.createElement("script");
+        script.async = 1;
+        script.setAttribute("data-cmp-ab","2");
+        script.src = 'https://emrld.ltd/NjA0NzQ3.js?t=604747';
+        document.head.appendChild(script);
+    }})();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://www.uncharteditinerary.com/" rel="noopener">
+        <img class="brand-logo" src="../../assets/logo.jpg" alt="StayOdds by The Uncharted Itinerary" width="44" height="44" />
+        <span class="brand-text">
+          <span class="brand-name">StayOdds</span>
+          <span class="brand-sub">Critics vs Real Guest Reviews</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main site navigation">
+        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="../../compare/">StayOdds Directory</a>
+        <a href="../../hotels/">Hotel Map</a>
+        <a href="../../">Videos</a>
+        <a href="../../links/">Deals &amp; Gear</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="../../compare/?a={esc(slug)}">Compare VS</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="hub-tabs-bar">
+    <div class="container hub-tabs-inner">
+      <nav class="hub-tabs" aria-label="Switch hub sections">
+        <a class="hub-tab" href="../../">Latest Videos</a>
+        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds</a>
+        <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
+        <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
+      </nav>
+      <a class="hub-back-link" href="../../compare/">&larr; All 250 StayOdds Hotels</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="detail-breadcrumb">
+        <a href="../../compare/">&larr; All StayOdds Hotels</a>
+        <span>/</span>
+        <span>{esc(h['region'])}</span>
+        <span>/</span>
+        <strong>{esc(h['name'])}</strong>
+      </div>
+
+      <section class="detail-hero">
+        <div class="detail-hero-media">
+          <img src="{esc(img_url)}" alt="{esc(h['name'])}" />
+          <div class="detail-hero-badges">
+            <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
+            <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
+          </div>
+        </div>
+        <div class="detail-hero-body">
+          <div class="meta-line">
+            <span>{esc(h['location'])}, {esc(h['country'])}</span>
+            {f"<span>&bull;</span><span>{esc(h['brand'])}</span>" if h.get('brand') else ""}
+            {f"<span>&bull;</span><span>{esc(h['priceRange'])}</span>" if h.get('priceRange') else ""}
+          </div>
+          <h1 class="detail-title">{esc(h['name'])}</h1>
+          <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Verified StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
+
+          <div class="detail-kpi-row">
+            <div class="detail-kpi is-primary {'is-caution' if o['statusTone'] == 'amber' else ''}">
+              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else "Live"}</strong>
+              <span>StayOdds</span>
+            </div>
+            <div class="detail-kpi">
+              <strong>{f"{o['overallIndex']}<span>/100</span>" if o['overallIndex'] is not None else "—"}</strong>
+              <span>StayOdds Index</span>
+            </div>
+            <div class="detail-kpi">
+              <strong>{f"{h['overall']}<span>/5</span>" if o['firstHand'] else ("Short" if o['visited'] else "Global")}</strong>
+              <span>{'First-Hand Stay' if o['firstHand'] else o['tierLabel']}</span>
+            </div>
+            <div class="detail-kpi">
+              <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
+              <span id="kpiGuestLbl">{f"Verified Guests ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Verified Guests"}</span>
+            </div>
+          </div>
+
+          <div class="detail-actions">
+            <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
+            {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
+            <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
+          </div>
+          <div class="vip-perks-note">
+            <strong>Luxury Advisor VIP Perks Slot:</strong> Coming soon — book eligible 5-star stays with complimentary breakfast, resort credit &amp; room upgrades.
+          </div>
+        </div>
+      </section>
+
+      <!-- RESTORED: Dual-Mode Consensus & Opinion Gap Module -->
+      <section class="detail-section">
+        <div class="opinion-gap-card {delta_tone}">
+          <div class="opinion-gap-head">
+            <div>
+              <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
+              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Critics & Official Awards vs. Real Guest Score'}</h2>
+              <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
+            </div>
+            <div class="opinion-gap-delta" id="gapDeltaPill">
+              <strong>{esc(delta_badge)}</strong>
+              <span>Opinion Gap</span>
+            </div>
+          </div>
+
+          <div class="opinion-gap-bars">
+            <div class="gap-side">
+              <div class="gap-side-top"><span>{esc(left_label)}</span><strong>{esc(left_display)}</strong></div>
+              <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['left100'] or 0}%"></div></div>
+            </div>
+            <div class="gap-side">
+              <div class="gap-side-top"><span>Real Guest Score</span><strong id="gapGuestDisplay">{esc(right_display)}</strong></div>
+              <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>
+            </div>
+          </div>
+
+          <div class="live-google-bar" id="liveGoogleStrip" style="display:none;"></div>
+          {f'<p class="opinion-gap-narrative"><strong>Why our take matches or differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
+        </div>
+      </section>
+
+      <!-- RESTORED: Structured Middle Key Facts Panel (Strictly Verified Specs) -->
+      <section class="detail-section">
+        <div class="key-facts-panel">
+          <div class="detail-panel-head" style="margin-bottom:14px;">
+            <div>
+              <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
+              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+            </div>
+          </div>
+          {f'<div class="key-facts-grid">{facts_html}</div>' if facts_html else ''}
+          {f'<div class="key-facts-flags">{red_flags_html}</div>' if red_flags_html else ''}
+          <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+            {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
+            {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
+          </div>
+        </div>
+      </section>
+
+      <!-- Formula Transparency & First-Hand Scorecard -->
+      <section class="detail-section">
+        <div class="detail-two-col">
+          <div class="detail-panel">
+            <div class="detail-panel-head">
+              <h3>Dynamic StayOdds Formula</h3>
+              <span class="tag">{esc(o['tierLabel'])}</span>
+            </div>
+            <p class="detail-panel-sub">{esc(o['formula'])}</p>
+            <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
+              <div class="formula-step"><span class="formula-weight">{o['weights']['firstHand']}%</span><strong>{f"{o['ours100']}/100" if o['ours100'] is not None else "—"}</strong><small>First-Hand</small></div>
+              <div class="formula-step"><span class="formula-weight">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}/100" if o['critic100'] is not None else "0"}</strong><small>Critics &amp; Awards</small></div>
+              <div class="formula-step"><span class="formula-weight">{o['weights']['guests']}%</span><strong>{f"{o['guest100']}/100" if o['guest100'] is not None else "Live"}</strong><small>Verified Guests</small></div>
+            </div>
+          </div>
+
+          <div class="detail-panel">
+            <div class="detail-panel-head">
+              <h3>First-Hand 5-Axis Scorecard</h3>
+              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{h['overall']} / 5 Overall" if o['firstHand'] else o['tierLabel']}</span>
+            </div>
+            {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else '<p class="detail-panel-sub" style="margin-top:12px;">The Uncharted Itinerary has not scored a full stay here yet. When filmed, our whole-number 5-axis scores will automatically merge into Tier 1.</p>'}
+          </div>
+        </div>
+      </section>
+
+      <!-- Separated Source-URL Enforced Layers -->
+      <section class="detail-section">
+        <div class="detail-two-col">
+          <div class="detail-panel">
+            <div class="detail-panel-head">
+              <h3>Official Awards &amp; Editorial Ratings</h3>
+              <span class="tag">{len(o['awards']) + len(o['editorial'])} sourced</span>
+            </div>
+            <div class="channel-breakdown-list" style="margin-top:12px;">
+              {awards_html + editorial_html if (awards_html or editorial_html) else '<p class="detail-panel-sub">No source-linked editorial ratings logged yet. StayOdds strictly requires a verified HTTP source URL before displaying any critic score.</p>'}
+            </div>
+          </div>
+          <div class="detail-panel">
+            <div class="detail-panel-head">
+              <h3>Linked YouTube Video Reviews</h3>
+              <span class="tag">{(1 if review_href else 0) + len(o['ytReviews'])} linked</span>
+            </div>
+            <div class="channel-breakdown-list" style="margin-top:12px;">
+              {yt_html if yt_html else '<p class="detail-panel-sub">No YouTube reviews linked yet. Creators are never attributed without a direct verified YouTube video URL.</p>'}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-section" style="margin-bottom:56px;">
+        <div class="section-header" style="margin-bottom:18px;">
+          <div>
+            <h2 class="section-title">Compare Nearby Luxury Stays</h2>
+            <p class="section-subtitle">Explore other verified properties in {esc(h['region'])}.</p>
+          </div>
+        </div>
+        <div class="related-grid">{related_html}</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">StayOdds &bull; by The Uncharted Itinerary</div>
+          <p class="footer-muted">Critics vs Real Guest Reviews — verified luxury hotel scores with zero estimated ratings.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../../compare/">StayOdds Directory</a>
+          <a href="../../hotels/">Hotel Map</a>
+          <a href="../../">Videos</a>
+          <a href="../../links/">Deals &amp; Gear</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {datetime.now().year} StayOdds &amp; The Uncharted Itinerary</span>
+        <span>Disclosure: Booking links may earn an affiliate commission at no extra cost to you.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    const placeId = {json.dumps(google_place_id)};
+    const left100 = {json.dumps(o['left100'])};
+    const isFirstHand = {json.dumps(o['firstHand'])};
+    if (placeId) {{
+      fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
+        .then((r) => (r.ok ? r.json() : null))
+        .then((g) => {{
+          if (!g || typeof g.rating !== "number") return;
+          const strip = document.getElementById("liveGoogleStrip");
+          if (strip) {{
+            strip.style.display = "flex";
+            const revText = g.reviewCount ? ` (${{g.reviewCount.toLocaleString("en-GB")}} reviews)` : "";
+            const link = g.googleMapsUri ? ` · <a href="${{g.googleMapsUri}}" target="_blank" rel="noopener noreferrer">View on Google Maps ↗</a>` : "";
+            strip.innerHTML = `<span><strong>Live Google Rating:</strong> ${{g.rating.toFixed(1)}} ★${{revText}}${{link}}</span><span class="powered-google">Powered by Google</span>`;
+          }}
+          if (left100 != null && typeof g.normalized100 === "number") {{
+            const gBar = document.getElementById("gapGuestBar");
+            const gDisp = document.getElementById("gapGuestDisplay");
+            const pill = document.getElementById("gapDeltaPill");
+            if (gDisp && gDisp.textContent.includes("Checking")) {{
+              gDisp.textContent = `${{g.rating.toFixed(1)}} ★ (${{g.normalized100}}/100)`;
+              if (gBar) gBar.style.width = `${{g.normalized100}}%`;
+              const d = left100 - g.normalized100;
+              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>vs. Google Live</span>`;
+            }}
+          }}
+        }})
+        .catch(() => {{}});
+    }}
+  </script>
+</body>
+</html>
+"""
+
+
+def main() -> None:
+    load_env_local()
+    sb_url = os.environ["SUPABASE_URL"].rstrip("/")
+    sb_key = os.environ["SUPABASE_SECRET_KEY"]
+
+    props = sb_get_all(sb_url, sb_key, "properties")
+    facts = {r["property_id"]: r for r in sb_get_all(sb_url, sb_key, "property_facts")}
+    fh_map = {r["property_id"]: r for r in sb_get_all(sb_url, sb_key, "first_hand_reviews")}
+    guest_map: dict[str, dict[str, Any]] = {}
+    for r in sb_get_all(sb_url, sb_key, "licensed_guest_scores"):
+        guest_map[r["property_id"]] = r
+
+    awards_map: dict[str, list[dict[str, Any]]] = {}
+    for r in sb_get_all(sb_url, sb_key, "official_awards"):
+        awards_map.setdefault(r["property_id"], []).append(
+            {
+                "awardBody": r.get("award_body", ""),
+                "label": r["label"],
+                "year": r.get("award_year", ""),
+                "normalized100": r.get("normalized_100"),
+                "sourceUrl": r["source_url"],
+            }
+        )
+
+    ed_map: dict[str, list[dict[str, Any]]] = {}
+    for r in sb_get_all(sb_url, sb_key, "editorial_ratings"):
+        ed_map.setdefault(r["property_id"], []).append(
+            {
+                "sourceName": r["source_name"],
+                "sourceUrl": r["source_url"],
+                "rawScore": r.get("raw_score", ""),
+                "normalized100": r["normalized_100"],
+                "takeaway": r.get("takeaway", ""),
+            }
+        )
+
+    yt_map: dict[str, list[dict[str, Any]]] = {}
+    for r in sb_get_all(sb_url, sb_key, "youtube_reviews"):
+        yt_map.setdefault(r["property_id"], []).append(
+            {
+                "creatorName": r["creator_name"],
+                "sourceUrl": r["source_url"],
+                "sentiment": r.get("sentiment", "Review"),
+                "takeaway": r.get("takeaway", ""),
+            }
+        )
+
+    bk_map: dict[str, list[dict[str, Any]]] = {}
+    for r in sb_get_all(sb_url, sb_key, "booking_links"):
+        bk_map.setdefault(r["property_id"], []).append(
+            {
+                "channelType": r["channel_type"],
+                "partnerName": r["partner_name"],
+                "url": r["url"],
+                "mobileAllowed": bool(r.get("mobile_allowed", True)),
+                "perksSummary": r.get("perks_summary", ""),
+                "priority": r.get("priority", 1),
+            }
+        )
+
+    directory: list[dict[str, Any]] = []
+    for p in props:
+        pid = p["id"]
+        f = facts.get(pid) or {}
+        fh = fh_map.get(pid)
+        gs = guest_map.get(pid)
+        bks = sorted(bk_map.get(pid) or [], key=lambda x: x.get("priority", 1))
+        web_booking = next((b["url"] for b in bks if b["channelType"] == "ota_affiliate"), "") or (
+            bks[0]["url"] if bks else ""
+        )
+
+        rated = bool(fh and fh.get("overall_score") is not None)
+        scores = (
+            {
+                "rooms": fh["rooms_score"],
+                "grounds": fh["grounds_score"],
+                "food": fh["food_score"],
+                "service": fh["service_score"],
+                "value": fh["value_score"],
+            }
+            if rated
+            else None
+        )
+
+        rec = {
+            "id": pid,
+            "name": p["name"],
+            "location": p["city"],
+            "country": p["country"],
+            "region": p["region"],
+            "lat": p.get("lat"),
+            "lng": p.get("lng"),
+            "brand": p.get("brand", ""),
+            "priceRange": p.get("price_tier", ""),
+            "tier": p["tier"],
+            "visitedByUs": bool(p.get("visited_by_founder")),
+            "coverageType": fh["coverage_type"] if fh else "Global Directory",
+            "googlePlaceId": p.get("google_place_id"),
+            "nuiteeHotelId": p.get("nuitee_hotel_id"),
+            "thumbnail": p.get("hero_image_url") or "",
+            "videoId": fh.get("youtube_video_id", "") if fh else "",
+            "inLiveFeed": bool(fh.get("in_live_feed")) if fh else False,
+            "reviewedDate": fh.get("reviewed_date") if fh else None,
+            "scores": scores,
+            "overall": fh.get("overall_score") if rated else None,
+            "verdict": fh.get("verdict", "") if fh else "",
+            "whereWeDiffer": fh.get("where_we_differ", "") if fh else "",
+            "shorts": fh.get("shorts", []) if fh else [],
+            "standout": f.get("standout", ""),
+            "watchOut": f.get("watch_out", ""),
+            "keyFacts": {
+                "poolHeating": f.get("pool_heating", ""),
+                "beachOrReef": f.get("beach_or_reef", ""),
+                "renovationYear": f.get("renovation_year"),
+                "transferLogistics": f.get("transfer_logistics", ""),
+            },
+            "redFlags": f.get("red_flag_tags") or [],
+            "bookingUrl": web_booking,
+            "bookingLinks": bks,
+            "verifiedGuest": {
+                "licensed": {
+                    "sourceName": "Verified Guests",
+                    "rating": float(gs["rating"]),
+                    "scale": float(gs.get("scale") or 10.0),
+                    "normalized100": int(gs["normalized_100"]),
+                    "reviewCount": gs.get("review_count"),
+                    "attribution": gs.get("attribution", "Verified Guest Score"),
+                    "verifiedAt": gs.get("verified_at"),
+                }
+            }
+            if gs
+            else None,
+            "editorialRatings": ed_map.get(pid) or [],
+            "youtubeReviews": yt_map.get(pid) or [],
+            "officialAwards": awards_map.get(pid) or [],
+        }
+        directory.append(rec)
+
+    # Sort: First-Hand Verified first, then Short Tours, then Global Directory by licensed score desc
+    def sort_key(r: dict[str, Any]) -> tuple[int, int, str]:
+        tier_rank = 0 if r["tier"] == "first_hand_verified" else (1 if r["tier"] == "short_preview" else 2)
+        g_score = -int(((r.get("verifiedGuest") or {}).get("licensed") or {}).get("normalized100") or 0)
+        return (tier_rank, g_score, r["name"])
+
+    directory.sort(key=sort_key)
+
+    now_iso = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    out_json = ROOT / "data" / "stayodds-directory.json"
+    out_json.write_text(
+        json.dumps(
+            {
+                "updatedAt": now_iso,
+                "brand": "StayOdds",
+                "totalProperties": len(directory),
+                "hotels": directory,
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    # Generate static SEO HTML pages at /stayodds/<slug>/index.html
+    stayodds_dir = ROOT / "stayodds"
+    stayodds_dir.mkdir(exist_ok=True)
+    for h in directory:
+        o = compute_stayodds_py(h)
+        same_reg = [r for r in directory if r["id"] != h["id"] and r["region"] == h["region"]][:3]
+        if len(same_reg) < 3:
+            same_reg += [r for r in directory if r["id"] != h["id"] and r not in same_reg][: 3 - len(same_reg)]
+        pdir = stayodds_dir / h["id"]
+        pdir.mkdir(parents=True, exist_ok=True)
+        (pdir / "index.html").write_text(render_seo_page(h, o, same_reg), encoding="utf-8")
+
+    # Build sitemap.xml covering all hub pages + all 250 /stayodds/<slug>/ pages
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    urls = [
+        (f"{SITE_URL}/", "1.0", "daily"),
+        (f"{SITE_URL}/compare/", "1.0", "daily"),
+        (f"{SITE_URL}/hotels/", "0.9", "weekly"),
+        (f"{SITE_URL}/cameras/", "0.8", "weekly"),
+        (f"{SITE_URL}/links/", "0.8", "daily"),
+    ]
+    for h in directory:
+        prio = "0.9" if h["tier"] == "first_hand_verified" else "0.8"
+        urls.append((f"{SITE_URL}/stayodds/{h['id']}/", prio, "weekly"))
+
+    sm_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, prio, freq in urls:
+        sm_lines.append(
+            f"  <url><loc>{esc(loc)}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{prio}</priority></url>"
+        )
+    sm_lines.append("</urlset>\n")
+    (ROOT / "sitemap.xml").write_text("\n".join(sm_lines), encoding="utf-8")
+
+    print(
+        f"BUILT STAYODDS SITE!\n"
+        f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json\n"
+        f"  Static SEO Pages: {len(directory)} pages -> stayodds/<slug>/index.html\n"
+        f"  Sitemap URLs: {len(urls)} URLs -> sitemap.xml"
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -4,7 +4,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=1";
+} from "./stayodds-engine.js?v=2";
 
 const state = {
   hotels: [],
@@ -28,6 +28,10 @@ function escapeHtml(str = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function getSeoHref(h) {
+  return `../stayodds/${encodeURIComponent(h.id)}/`;
 }
 
 function getReviewHref(h) {
@@ -103,7 +107,7 @@ function renderH2HCard(h, opponent) {
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  const metricRow = (label, a, b, suffix = "", missingText = "Pending live data") => {
+  const metricRow = (label, a, b, suffix = "", missingText = "—") => {
     const aMissing = a == null;
     const bMissing = b == null;
     const wins = !aMissing && !bMissing && Number(a) > Number(b);
@@ -116,52 +120,53 @@ function renderH2HCard(h, opponent) {
     `;
   };
 
-  const guestLabel = o.verifiedGuest
+  const guestDisplay = o.verifiedGuest
     ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}`
     : null;
-  const oppGuestLabel = oo.verifiedGuest
+  const oppGuestDisplay = oo.verifiedGuest
     ? `${oo.verifiedGuest.rating.toFixed(1)} / ${oo.verifiedGuest.scale}`
     : null;
-
-  const unratedLabel = o.visited ? "Short Tour (Unrated)" : "Not Visited Yet";
+  const unratedLabel = o.visited ? "Short Tour" : "Not Visited";
 
   return `
     <article class="h2h-card">
       <div class="h2h-card-head">
-        <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
+        <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" />
         <div>
           <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
-          <h3><a class="consensus-title-link" href="./hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a></h3>
-          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.priceRange ? ` &bull; ${escapeHtml(h.priceRange)}` : ""}</div>
+          <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
+          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""}</div>
         </div>
       </div>
 
       <div class="h2h-odds-strip">
         <div class="odds-big">
-          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "—"}</strong>
+          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong>
           <span>${escapeHtml(o.statusBadge)}</span>
         </div>
         <div class="index-big">
-          <strong>${o.overallIndex != null ? `${o.overallIndex}<span>/100</span>` : "Pending"}</strong>
-          <span>${escapeHtml(BRAND.name)} Index</span>
+          <strong>${o.opinionGap.deltaLabel}</strong>
+          <span>Opinion Gap</span>
         </div>
       </div>
 
       <div class="h2h-metrics-list">
-        ${metricRow("First-Hand Verified Score", o.firstHand ? formatPersonalScore(h.overall) : null, oo.firstHand ? formatPersonalScore(opponent.overall) : null, " / 5", unratedLabel)}
-        ${metricRow("Live Verified Guests", o.guest100 != null ? guestLabel : null, oo.guest100 != null ? oppGuestLabel : null, "", "Phase 1B Live API")}
-        ${metricRow("Sourced Editorial Critics", o.critic100, oo.critic100, " / 100", "0 linked yet")}
+        ${metricRow("First-Hand Score", o.firstHand ? formatPersonalScore(h.overall) : null, oo.firstHand ? formatPersonalScore(opponent.overall) : null, " / 5", unratedLabel)}
+        ${metricRow("Verified Guest Score", o.guest100, oo.guest100, "", "Open Breakdown").replace(
+          `${o.guest100}`,
+          guestDisplay || "Open Breakdown"
+        )}
+        ${metricRow("Critics & Awards", o.critic100, oo.critic100, " / 100", "0 sourced")}
         ${metricRow("Rooms & Villas", o.firstHand ? formatPersonalScore(s.rooms) : null, oo.firstHand ? formatPersonalScore(os.rooms) : null, " / 5", unratedLabel)}
-        ${metricRow("Grounds & Pools", o.firstHand ? formatPersonalScore(s.grounds) : null, oo.firstHand ? formatPersonalScore(os.grounds) : null, " / 5", unratedLabel)}
         ${metricRow("Food & Breakfast", o.firstHand ? formatPersonalScore(s.food) : null, oo.firstHand ? formatPersonalScore(os.food) : null, " / 5", unratedLabel)}
         ${metricRow("Service", o.firstHand ? formatPersonalScore(s.service) : null, oo.firstHand ? formatPersonalScore(os.service) : null, " / 5", unratedLabel)}
         ${metricRow("Value for Money", o.firstHand ? formatPersonalScore(s.value) : null, oo.firstHand ? formatPersonalScore(os.value) : null, " / 5", unratedLabel)}
       </div>
 
-      <p class="h2h-diff"><strong>Formula:</strong> ${escapeHtml(o.formulaSummary)}</p>
+      <p class="h2h-diff"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</p>
 
       <div class="scorecard-actions">
-        <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
+        <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
         ${
           reviewHref
             ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>`
@@ -260,6 +265,8 @@ function renderLeaderboard() {
       h.watchOut,
       o.tierLabel,
       o.statusBadge,
+      ...o.keyFacts.map((f) => f.value),
+      ...o.redFlags,
     ]
       .filter(Boolean)
       .join(" ")
@@ -274,7 +281,6 @@ function renderLeaderboard() {
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
-    // Default: First-Hand Verified first, then Short Tours, then Global Directory
     const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
     if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
     return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -310,16 +316,21 @@ function renderLeaderboard() {
           ? "tag-teal"
           : "tag-slate";
 
+      const keyFactChips = [
+        ...o.keyFacts.slice(0, 3).map((kf) => `<span class="card-key-fact-chip"><strong>${escapeHtml(kf.label)}:</strong> ${escapeHtml(kf.value)}</span>`),
+        ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">⚠ ${escapeHtml(rf)}</span>`),
+      ].join("");
+
       return `
         <article class="consensus-row-card ${toneClass}">
           <div class="consensus-rank-col">
             <span class="consensus-rank-num">#${i + 1}</span>
             <div class="consensus-chance-ring ${toneClass}">
-              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "—"}</strong>
-              <span>${o.greatStayOdds != null ? "StayOdds" : "Live API Pending"}</span>
+              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong>
+              <span>${o.greatStayOdds != null ? "StayOdds" : "Open Page"}</span>
             </div>
             <div class="consensus-index-chip">
-              ${o.sourceCount > 0 ? `<strong>${o.sourceCount}</strong> verified layer${o.sourceCount === 1 ? "" : "s"}` : "Global Metadata"}
+              ${o.sourceCount > 0 ? `<strong>${o.sourceCount}</strong> verified layer${o.sourceCount === 1 ? "" : "s"}` : "Live Google Ready"}
             </div>
           </div>
 
@@ -330,11 +341,10 @@ function renderLeaderboard() {
               ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
               ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
               <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
-              ${h.priceRange ? `<span>&bull;</span><span>${escapeHtml(h.priceRange)}</span>` : ""}
             </div>
 
             <h3 class="consensus-title">
-              <a class="consensus-title-link" href="./hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a>
+              <a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a>
             </h3>
 
             <div class="three-pillar-strip">
@@ -343,35 +353,44 @@ function renderLeaderboard() {
                 <strong>${o.firstHand ? `${formatPersonalScore(h.overall)} / 5` : o.visited ? "Short Preview" : "Not Visited"}</strong>
               </div>
               <div class="pillar-box is-critics">
-                <small>Sourced Critics (${o.weights.critics}%)</small>
-                <strong>${o.critic100 != null ? `${o.critic100} / 100` : "0 linked"}</strong>
+                <small>Critics &amp; Awards (${o.weights.critics}%)</small>
+                <strong>${o.critic100 != null ? `${o.critic100} / 100` : "0 sourced"}</strong>
               </div>
               <div class="pillar-box is-google">
-                <small>Live Guests (${o.weights.guests}%)</small>
-                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Phase 1B API"}</strong>
+                <small>Verified Guests (${o.weights.guests}%)</small>
+                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Live on Detail"}</strong>
               </div>
               <div class="pillar-box is-booking">
-                <small>Linked Videos</small>
-                <strong>${(reviewHref ? 1 : 0) + o.youtubeReviews.length} video${(reviewHref ? 1 : 0) + o.youtubeReviews.length === 1 ? "" : "s"}</strong>
+                <small>Opinion Gap</small>
+                <strong>${escapeHtml(o.opinionGap.deltaLabel)}</strong>
               </div>
             </div>
 
+            <!-- Restored Opinion Gap Strip -->
+            <div class="card-opinion-strip">
+              <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
+              ${o.opinionGap.delta100 != null ? `<span class="card-opinion-delta">${escapeHtml(o.opinionGap.deltaLabel)}</span>` : ""}
+            </div>
+
+            <!-- Restored Middle Key Facts Strip -->
+            ${keyFactChips ? `<div class="card-key-facts-strip">${keyFactChips}</div>` : ""}
+
             <div class="consensus-compare-notes">
-              <p><strong>${o.firstHand ? "First-Hand Verdict:" : "Property Overview:"}</strong> ${escapeHtml(h.verdict || h.standout || "")}</p>
+              ${h.standout ? `<p><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
               ${h.watchOut ? `<p><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
             </div>
 
             <div class="consensus-sources">
-              <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
               ${o.officialAwards.map((a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)} ↗</a>`).join("")}
+              <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
             </div>
           </div>
 
           <div class="consensus-cta-col">
-            <a href="./hotel/?id=${encodeURIComponent(h.id)}">
-              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
+            <a href="${getSeoHref(h)}">
+              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" />
             </a>
-            <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
+            <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
             ${
               reviewHref
                 ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Our Review"}</a>`
@@ -385,7 +404,6 @@ function renderLeaderboard() {
     })
     .join("");
 
-  // Populate Quick Hotel Shorts rail from all filtered stays
   const shortsRail = qs("#compareShortsRail");
   const shortsSec = qs("#compareShortsSection");
   if (shortsRail && shortsSec) {
@@ -472,30 +490,19 @@ async function boot() {
 
   try {
     const bust = Date.now();
-    const [resVisited, resWorld] = await Promise.all([
-      fetch(`../data/hotels.json?v=${bust}`),
-      fetch(`../data/world-hotels.json?v=${bust}`).catch(() => null),
-    ]);
-    if (!resVisited.ok) throw new Error(`HTTP ${resVisited.status}`);
-    const visitedData = await resVisited.json();
-    const worldData = resWorld && resWorld.ok ? await resWorld.json() : { hotels: [] };
+    const res = await fetch(`../data/stayodds-directory.json?v=${bust}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const payload = await res.json();
 
-    const visitedHotels = (visitedData.hotels || []).map((h) => ({ ...h, visitedByUs: true }));
-    const visitedIds = new Set(visitedHotels.map((h) => h.id));
-    const visitedNames = new Set(visitedHotels.map((h) => h.name.toLowerCase()));
+    const hotels = payload.hotels || [];
+    state.hotels = hotels;
+    state.visitedCount = hotels.filter(isVisitedProperty).length;
+    state.worldCount = hotels.length - state.visitedCount;
 
-    const worldHotels = (worldData.hotels || [])
-      .filter((h) => !visitedIds.has(h.id) && !visitedNames.has((h.name || "").toLowerCase()))
-      .map((h) => ({ ...h, visitedByUs: false }));
-
-    state.visitedCount = visitedHotels.length;
-    state.worldCount = worldHotels.length;
-    state.hotels = [...visitedHotels, ...worldHotels];
-
-    const ratedCount = visitedHotels.filter(isFirstHandVerified).length;
+    const ratedCount = hotels.filter(isFirstHandVerified).length;
     const statEl = qs("#consensusSummaryStat");
     if (statEl) {
-      statEl.textContent = `${ratedCount} First-Hand Verified • ${state.worldCount} Global Directory`;
+      statEl.textContent = `${hotels.length} Luxury Properties • ${ratedCount} First-Hand Verified`;
     }
 
     populateH2HSelectors();
@@ -506,7 +513,7 @@ async function boot() {
   } catch (err) {
     const el = qs("#consensusList");
     if (el) el.innerHTML = `<div class="empty-state">Unable to load ${escapeHtml(BRAND.name)} right now.</div>`;
-    console.error("Failed to load StayOdds data:", err);
+    console.error("Failed to load StayOdds directory:", err);
   }
 }
 
