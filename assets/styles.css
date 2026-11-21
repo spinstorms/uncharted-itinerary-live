@@ -2269,17 +2269,447 @@ button {
   text-align: center;
 }
 
+.consensus-title-link {
+  color: inherit;
+  transition: color var(--transition);
+}
+
+.consensus-title-link:hover {
+  color: var(--accent);
+}
+
+.three-pillar-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.channels-strip {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.channels-strip-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.channels-strip-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ---------- Detailed Resort Breakdown Page (/compare/hotel/) ---------- */
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 0 14px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.detail-breadcrumb a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.detail-breadcrumb strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.detail-hero {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 32px;
+}
+
+.detail-hero-media {
+  position: relative;
+}
+
+.detail-hero-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.detail-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.detail-title {
+  margin: 8px 0 10px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.18;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.detail-verdict {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: var(--ink-secondary);
+}
+
+.detail-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-kpi {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-kpi strong {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  line-height: 1.1;
+}
+
+.detail-kpi strong span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.detail-kpi span {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+.detail-kpi.is-primary {
+  background: var(--bg-warm-tint);
+  border-color: rgba(255, 93, 34, 0.35);
+}
+
+.detail-kpi.is-primary strong {
+  color: var(--accent);
+}
+
+.detail-kpi.is-primary.is-caution {
+  background: #fef3c7;
+  border-color: rgba(217, 119, 6, 0.4);
+}
+
+.detail-kpi.is-primary.is-caution strong {
+  color: #b45309;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-section {
+  margin-bottom: 36px;
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.formula-step {
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formula-weight {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.formula-step strong {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.formula-step small {
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+}
+
+.formula-step.is-result {
+  background: var(--bg-warm-tint);
+  border-color: rgba(255, 93, 34, 0.35);
+}
+
+.formula-step.is-result strong {
+  color: var(--accent);
+}
+
+.formula-step.is-result.is-caution {
+  background: #fef3c7;
+  border-color: rgba(217, 119, 6, 0.4);
+}
+
+.formula-step.is-result.is-caution .formula-weight,
+.formula-step.is-result.is-caution strong {
+  color: #b45309;
+}
+
+.detail-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.detail-panel {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-panel-head h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink-primary);
+}
+
+.detail-panel-sub {
+  margin: 6px 0 18px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.detail-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail-bar-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  margin-bottom: 5px;
+}
+
+.detail-bar-top span {
+  color: var(--ink-secondary);
+  font-weight: 500;
+}
+
+.detail-bar-top strong {
+  color: var(--ink-primary);
+}
+
+.detail-bar-track {
+  height: 9px;
+  width: 100%;
+  background: #f1efea;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.detail-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.detail-bar-fill.is-secondary {
+  background: #191a1a;
+}
+
+.channel-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.channel-row {
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+}
+
+.channel-row-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.channel-row-head h4 {
+  margin: 6px 0 0;
+  font-size: 16.5px;
+  color: var(--ink-primary);
+}
+
+.channel-row-score {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.channel-row-score strong {
+  display: block;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.channel-row-score span {
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.channel-takeaway {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+.verdict-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.verdict-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+}
+
+.verdict-card.is-warn {
+  background: #fffaf0;
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+.verdict-card h3 {
+  margin: 10px 0 8px;
+  font-size: 16.5px;
+  color: var(--ink-primary);
+}
+
+.verdict-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.related-card {
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.related-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.related-card-body h4 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+  color: var(--ink-primary);
+}
+
+.related-card-body p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.related-card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .featured-card,
   .review-hero-card,
   .review-article-grid,
   .h2h-cards,
-  .consensus-row-card {
+  .consensus-row-card,
+  .detail-hero,
+  .detail-two-col {
     grid-template-columns: 1fr;
   }
-  .methodology-grid {
+  .methodology-grid,
+  .formula-grid,
+  .three-pillar-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .verdict-trio,
+  .related-grid {
+    grid-template-columns: 1fr;
   }
   .consensus-rank-col {
     flex-direction: row;
@@ -2301,6 +2731,8 @@ button {
 
 @media (max-width: 760px) {
   .methodology-grid,
+  .formula-grid,
+  .detail-kpi-row,
   .three-pillar-strip,
   .h2h-selectors {
     grid-template-columns: 1fr;

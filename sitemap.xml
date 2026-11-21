@@ -19,6 +19,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://spinstorms.github.io/uncharted-itinerary-live/compare/hotel/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://spinstorms.github.io/uncharted-itinerary-live/cameras/</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>

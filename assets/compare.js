@@ -116,7 +116,7 @@ function renderH2HCard(h, opponent) {
         <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div>
           <span class="tag tag-accent">${escapeHtml(c.award || h.brand || "")}</span>
-          <h3>${escapeHtml(h.name)}</h3>
+          <h3><a class="consensus-title-link" href="./hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a></h3>
           <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)} &bull; ${escapeHtml(h.priceRange || "")}</div>
         </div>
       </div>
@@ -134,6 +134,7 @@ function renderH2HCard(h, opponent) {
 
       <div class="h2h-metrics-list">
         ${metricRow("Our First-Hand Score", Number(h.overall).toFixed(1), Number(opponent.overall).toFixed(1), " / 5")}
+        ${metricRow("Booking.com Guests", Number(c.bookingOverall || c.googleRating * 2).toFixed(1), Number(oc.bookingOverall || oc.googleRating * 2).toFixed(1), " / 10")}
         ${metricRow("Google Guests", Number(c.googleRating).toFixed(1), Number(oc.googleRating).toFixed(1), " ★")}
         ${metricRow("Critics & YouTube", Number(c.criticScore).toFixed(1), Number(oc.criticScore).toFixed(1), " / 5")}
         ${metricRow("Rooms & Villas", Number(s.rooms || 0).toFixed(1), Number(os.rooms || 0).toFixed(1), " / 5")}
@@ -145,8 +146,9 @@ function renderH2HCard(h, opponent) {
       <p class="h2h-diff"><strong>Our take vs. others:</strong> ${escapeHtml(c.whereWeDiffer)}</p>
 
       <div class="scorecard-actions">
-        <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
-        <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
+        <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
+        <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
+        <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
       </div>
     </article>
   `;
@@ -241,7 +243,9 @@ function renderLeaderboard() {
               <span>${escapeHtml(h.priceRange || "")}</span>
             </div>
 
-            <h3 class="consensus-title">${escapeHtml(h.name)}</h3>
+            <h3 class="consensus-title">
+              <a class="consensus-title-link" href="./hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a>
+            </h3>
 
             <div class="three-pillar-strip">
               <div class="pillar-box">
@@ -249,11 +253,15 @@ function renderLeaderboard() {
                 <strong>${Number(h.overall).toFixed(1)} / 5.0</strong>
               </div>
               <div class="pillar-box">
-                <small>Google Guests (${escapeHtml(formatReviews(c.googleReviews))})</small>
+                <small>Booking.com Guests</small>
+                <strong>${Number(c.bookingOverall || c.googleRating * 2).toFixed(1)} / 10</strong>
+              </div>
+              <div class="pillar-box">
+                <small>Google (${escapeHtml(formatReviews(c.googleReviews))})</small>
                 <strong>${Number(c.googleRating).toFixed(1)} / 5.0</strong>
               </div>
               <div class="pillar-box">
-                <small>Top Critics &amp; YouTube</small>
+                <small>Critics &amp; YouTube</small>
                 <strong>${Number(c.criticScore).toFixed(1)} / 5.0</strong>
               </div>
             </div>
@@ -269,8 +277,11 @@ function renderLeaderboard() {
           </div>
 
           <div class="consensus-cta-col">
-            <img class="consensus-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
-            <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Review</a>
+            <a href="./hotel/?id=${encodeURIComponent(h.id)}">
+              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
+            </a>
+            <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
+            <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Review</a>
             <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
             <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
           </div>
@@ -297,6 +308,10 @@ function renderLeaderboard() {
 
 async function boot() {
   initCommonUi();
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("a")) state.idA = params.get("a");
+  if (params.get("b")) state.idB = params.get("b");
 
   qs("#compareSelectA")?.addEventListener("change", (e) => {
     state.idA = e.target.value;

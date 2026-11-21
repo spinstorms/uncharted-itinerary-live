@@ -188,8 +188,8 @@ function renderMapMarkers(hotels, fitBounds = true) {
           <h4>${escapeHtml(h.name)}</h4>
           <p>${escapeHtml(h.verdict)}</p>
           <div class="map-popup-actions">
-            <a class="map-btn-primary" href="${escapeHtml(reviewHref)}"${reviewTarget}>Watch Review</a>
-            <a class="map-btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
+            <a class="map-btn-primary" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">Score Breakdown</a>
+            <a class="map-btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
           </div>
         </div>
       </div>
@@ -301,12 +301,10 @@ function renderScorecards(hotels) {
           ${hotels
             .map((h) => {
               const s = h.scores || {};
-              const reviewHref = getReviewHref(h);
-              const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
               return `
                 <tr>
                   <td>
-                    <strong>${escapeHtml(h.name)}</strong><br />
+                    <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}" style="color:var(--ink-primary);font-weight:600;">${escapeHtml(h.name)}</a><br />
                     <span style="font-size:12px;color:var(--ink-muted);">${escapeHtml(h.location)} &bull; ${escapeHtml(h.brand || "")}</span>
                   </td>
                   <td>${escapeHtml(h.region)}</td>
@@ -317,7 +315,7 @@ function renderScorecards(hotels) {
                   <td>${Number(s.service || 0).toFixed(1)}</td>
                   <td>${Number(s.value || 0).toFixed(1)}</td>
                   <td style="white-space:nowrap;">
-                    <a href="${escapeHtml(reviewHref)}"${ext} style="color:var(--accent);font-weight:600;margin-right:10px;">Review</a>
+                    <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}" style="color:var(--accent);font-weight:600;margin-right:10px;">Breakdown</a>
                     <a href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" style="font-weight:500;">Rates &nearr;</a>
                   </td>
                 </tr>
@@ -340,7 +338,9 @@ function renderScorecards(hotels) {
       return `
         <article class="scorecard-card">
           <div class="scorecard-top">
-            <img class="scorecard-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
+            <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}">
+              <img class="scorecard-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
+            </a>
             <div class="scorecard-badge-overall">
               <strong>${Number(h.overall || 0).toFixed(1)}</strong>
               <span>/ 5.0</span>
@@ -356,7 +356,9 @@ function renderScorecards(hotels) {
               <span class="tag">${escapeHtml(h.priceRange || "")}</span>
             </div>
 
-            <h3 class="scorecard-title">${escapeHtml(h.name)}</h3>
+            <h3 class="scorecard-title">
+              <a class="consensus-title-link" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a>
+            </h3>
             <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}</div>
 
             <p class="scorecard-verdict">${escapeHtml(h.verdict)}</p>
@@ -375,8 +377,9 @@ function renderScorecards(hotels) {
             </div>
 
             <div class="scorecard-actions">
-              <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
-              <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
+              <a class="btn btn-primary" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">Score Breakdown</a>
+              <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
+              <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
             </div>
           </div>
         </article>
