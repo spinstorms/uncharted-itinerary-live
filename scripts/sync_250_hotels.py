@@ -312,33 +312,41 @@ def main() -> None:
     sb_url = os.environ["SUPABASE_URL"].rstrip("/")
     sb_secret = os.environ["SUPABASE_SECRET_KEY"]
     nuitee_key = os.environ["NUITEE_API_KEY"].strip()
+    new_only = "--new-only" in sys.argv
 
     master = build_master_250()
-    print(f"Syncing {len(master)} luxury properties against FREE Nuitée Connect endpoints...")
 
-    # Fetch existing google_place_id map from Supabase so we preserve all 111 already resolved!
+    # Fetch existing properties & google_place_id map from Supabase
     existing_pids: dict[str, str] = {}
+    existing_ids: set[str] = set()
     try:
         req = urllib.request.Request(
-            f"{sb_url}/rest/v1/properties?select=id,google_place_id",
+            f"{sb_url}/rest/v1/properties?select=id,google_place_id&limit=1000",
             headers={"apikey": sb_secret, "Authorization": f"Bearer {sb_secret}"},
         )
         with urllib.request.urlopen(req, timeout=20) as resp:
             for row in json.loads(resp.read().decode("utf-8")):
+                existing_ids.add(row["id"])
                 if row.get("google_place_id"):
                     existing_pids[row["id"]] = row["google_place_id"]
     except Exception:
         pass
 
+    targets = [h for h in master if h["id"] not in existing_ids] if new_only else master
+    print(f"Master catalog: {len(master)} | Syncing {len(targets)} luxury properties against FREE Nuitée Connect endpoints...", flush=True)
+    if not targets:
+        print("All properties already synced!")
+        return
+
     results: list[dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=8) as pool:
-        futs = [pool.submit(process_one_hotel, h, nuitee_key) for h in master]
+        futs = [pool.submit(process_one_hotel, h, nuitee_key) for h in targets]
         done = 0
         for fut in as_completed(futs):
             results.append(fut.result())
             done += 1
-            if done % 25 == 0 or done == len(master):
-                print(f"  Nuitée Connect sync: {done}/{len(master)} complete...", flush=True)
+            if done % 15 == 0 or done == len(targets):
+                print(f"  Nuitée Connect sync: {done}/{len(targets)} complete...", flush=True)
 
     now_iso = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     prop_rows: list[dict[str, Any]] = []

@@ -444,7 +444,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 250 StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 300 StayOdds Hotels</a>
     </div>
   </div>
 

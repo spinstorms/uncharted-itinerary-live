@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-21T19:58:37Z",
+  "updatedAt": "2026-11-21T20:12:12Z",
   "brand": "StayOdds",
-  "totalProperties": 241,
+  "totalProperties": 300,
   "hotels": [
     {
       "id": "bask-gili-meno",
@@ -2918,6 +2918,73 @@
       ]
     },
     {
+      "id": "cheval-blanc-seychelles",
+      "name": "Cheval Blanc Seychelles",
+      "location": "Mahé",
+      "country": "Seychelles",
+      "region": "Indian Ocean & Africa",
+      "lat": -4.782623,
+      "lng": 55.497683,
+      "brand": "LVMH / Cheval Blanc",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6580f881",
+      "thumbnail": "https://static.cupid.travel/hotels/616000801.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Stunning views • Exceptional service",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Cheval+Blanc+Seychelles+Mah%C3%A9",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Cheval+Blanc+Seychelles+Mah%C3%A9",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/cheval-blanc-seychelles/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 10.0,
+          "scale": 10.0,
+          "normalized100": 100,
+          "reviewCount": 24,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "four-seasons-tented-camp-golden-triangle",
       "name": "Four Seasons Tented Camp Golden Triangle",
       "location": "Chiang Rai",
@@ -3045,6 +3112,207 @@
           "reviewCount": 12,
           "attribution": "Verified Guest Score",
           "verifiedAt": "2026-11-21T19:57:10+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "nayara-tented-camp-costa-rica",
+      "name": "Nayara Tented Camp",
+      "location": "Arenal",
+      "country": "Costa Rica",
+      "region": "Los Angeles & Americas",
+      "lat": 10.503738,
+      "lng": -84.687322,
+      "brand": "Relais & Châteaux",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp2937dc",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/233881859.jpg?k=cace6488a69c71b4503eee7f41034bb87a87a777d09e64efefebd9b3c7acfd27&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Luxurious accommodations • Friendly and attentive staff",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Infinity pool on property",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Nayara+Tented+Camp+Arenal",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Nayara+Tented+Camp+Arenal",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/nayara-tented-camp-costa-rica/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 10.0,
+          "scale": 10.0,
+          "normalized100": 100,
+          "reviewCount": 242,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "nujuma-ritz-carlton-reserve",
+      "name": "Nujuma, a Ritz-Carlton Reserve",
+      "location": "Red Sea",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "lat": 25.52856,
+      "lng": 36.77331,
+      "brand": "Marriott / Ritz-Carlton Reserve",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp65752412",
+      "thumbnail": "https://static.cupid.travel/hotels/560366697.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Friendly staff • Beautiful location",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Nujuma%2C+a+Ritz-Carlton+Reserve+Red+Sea",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Nujuma%2C+a+Ritz-Carlton+Reserve+Red+Sea",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/nujuma-ritz-carlton-reserve/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 10.0,
+          "scale": 10.0,
+          "normalized100": 100,
+          "reviewCount": 21,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "one-and-only-nyungwe-house",
+      "name": "One&Only Nyungwe House",
+      "location": "Nyungwe Forest",
+      "country": "Rwanda",
+      "region": "Indian Ocean & Africa",
+      "lat": -2.44738,
+      "lng": 29.104217,
+      "brand": "One&Only",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp7698e",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/552388103.jpg?k=d1116bfd89792680b56ea6c8617d18a48c83145982228230f5d7fd03c9c31448&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: KGL)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=One%26Only+Nyungwe+House+Nyungwe+Forest",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=One%26Only+Nyungwe+House+Nyungwe+Forest",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/one-and-only-nyungwe-house/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 10.0,
+          "scale": 10.0,
+          "normalized100": 100,
+          "reviewCount": 2,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
         }
       },
       "editorialRatings": [],
@@ -3606,6 +3874,73 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "four-seasons-serengeti",
+      "name": "Four Seasons Safari Lodge Serengeti",
+      "location": "Serengeti",
+      "country": "Tanzania",
+      "region": "Indian Ocean & Africa",
+      "lat": -2.234546,
+      "lng": 34.919479,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp739aa",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_90c9afe1_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: JRO"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Safari+Lodge+Serengeti+Serengeti",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Safari+Lodge+Serengeti+Serengeti",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/four-seasons-serengeti/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.8,
+          "scale": 10.0,
+          "normalized100": 98,
+          "reviewCount": 21,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "gili-lankanfushi-maldives",
@@ -4403,6 +4738,229 @@
       "officialAwards": []
     },
     {
+      "id": "capella-sydney",
+      "name": "Capella Sydney",
+      "location": "Sydney",
+      "country": "Australia",
+      "region": "Asia",
+      "lat": -33.863539,
+      "lng": 151.210631,
+      "brand": "Capella",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp656ce70c",
+      "thumbnail": "https://static.cupid.travel/hotels/464560671.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Outstanding service • Beautiful property",
+      "watchOut": "Price can be steep • Some minor issues with room features",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: SYD"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Capella+Sydney+Sydney",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Capella+Sydney+Sydney",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/capella-sydney/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.7,
+          "scale": 10.0,
+          "normalized100": 97,
+          "reviewCount": 951,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "World's 50 Best Hotels",
+          "label": "World's 50 Best Hotels",
+          "year": "2024",
+          "normalized100": 95,
+          "sourceUrl": "https://www.theworlds50best.com/hotels/"
+        }
+      ]
+    },
+    {
+      "id": "four-seasons-lanai",
+      "name": "Four Seasons Resort Lanai",
+      "location": "Lanai, Hawaii",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 20.742414,
+      "lng": -156.896777,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1f0a8",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_76d8e607_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional, attentive service • Beautiful, well-maintained grounds and location",
+      "watchOut": "Premium prices / can be expensive • Nobu food/selection noted as slightly below expectations",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: LNY"
+      },
+      "redFlags": [
+        "High On-Property Pricing"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Lanai+Lanai%2C+Hawaii",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Lanai+Lanai%2C+Hawaii",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/four-seasons-lanai/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.7,
+          "scale": 10.0,
+          "normalized100": 97,
+          "reviewCount": 137,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "intercontinental-maldives",
+      "name": "InterContinental Maldives Maamunagau Resort",
+      "location": "Raa Atoll",
+      "country": "Maldives",
+      "region": "Maldives",
+      "lat": 5.359831,
+      "lng": 72.91949,
+      "brand": "IHG / InterContinental",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1c74dc",
+      "thumbnail": "https://static.cupid.travel/hotels/433905810.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional, highly attentive service and personalized butler/curator support • Beautiful property and design; pools and views praised",
+      "watchOut": "Occasional disruptive guest noise (several guests mentioned loud groups) • Some find the resort expensive / value concerns for certain retail offerings",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: MLE"
+      },
+      "redFlags": [
+        "High On-Property Pricing",
+        "Transfer Logistics",
+        "Noise / Crowds Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=InterContinental+Maldives+Maamunagau+Resort+Raa+Atoll",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=InterContinental+Maldives+Maamunagau+Resort+Raa+Atoll",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/intercontinental-maldives/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.7,
+          "scale": 10.0,
+          "normalized100": 97,
+          "reviewCount": 34,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "le-sirenuse-positano",
       "name": "Le Sirenuse",
       "location": "Positano, Amalfi Coast",
@@ -4788,6 +5346,73 @@
       "officialAwards": []
     },
     {
+      "id": "portrait-milano",
+      "name": "Portrait Milano",
+      "location": "Milan",
+      "country": "Italy",
+      "region": "Europe",
+      "lat": 45.468101,
+      "lng": 9.197267,
+      "brand": "Lungarno Collection",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6558521f",
+      "thumbnail": "https://www.lungarnocollection.com/media/ss4fqrkf/240324-pomi-duco-aperitivo-53.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Excellent service • Great location",
+      "watchOut": "Value for money concerns",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Portrait+Milano+Milan",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Portrait+Milano+Milan",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/portrait-milano/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.7,
+          "scale": 10.0,
+          "normalized100": 97,
+          "reviewCount": 179,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "post-ranch-inn",
       "name": "Post Ranch Inn",
       "location": "Big Sur, California",
@@ -5003,6 +5628,226 @@
       "editorialRatings": [],
       "youtubeReviews": [],
       "officialAwards": []
+    },
+    {
+      "id": "vakkaru-maldives",
+      "name": "Vakkaru Maldives",
+      "location": "Baa Atoll",
+      "country": "Maldives",
+      "region": "Maldives",
+      "lat": 5.133896,
+      "lng": 72.910021,
+      "brand": "Independent",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lpab022",
+      "thumbnail": "https://static.cupid.travel/hotels/545696431.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Food • Service/Butler",
+      "watchOut": "High price / poor value complaints • Hidden fees and extra charges (transfers, menu items)",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: MLE)"
+      },
+      "redFlags": [
+        "High On-Property Pricing",
+        "Transfer Logistics"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Vakkaru+Maldives+Baa+Atoll",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Vakkaru+Maldives+Baa+Atoll",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/vakkaru-maldives/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.7,
+          "scale": 10.0,
+          "normalized100": 97,
+          "reviewCount": 123,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "auberge-du-soleil-napa",
+      "name": "Auberge du Soleil",
+      "location": "Rutherford, Napa",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 38.493436,
+      "lng": -122.406019,
+      "brand": "Auberge",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp83829",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_83941c0a_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Excellent service • Relaxing environment",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: SMF"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Auberge+du+Soleil+Rutherford%2C+Napa",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Auberge+du+Soleil+Rutherford%2C+Napa",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/auberge-du-soleil-napa/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 53,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
+    },
+    {
+      "id": "borgo-egnazia-puglia",
+      "name": "Borgo Egnazia",
+      "location": "Puglia",
+      "country": "Italy",
+      "region": "Europe",
+      "lat": 40.8752,
+      "lng": 17.396765,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp4fecb",
+      "thumbnail": "https://static.cupid.travel/hotels/216032535.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Borgo+Egnazia+Puglia",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Borgo+Egnazia+Puglia",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/borgo-egnazia-puglia/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 424,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
     },
     {
       "id": "cap-juluca-anguilla",
@@ -5512,6 +6357,140 @@
       "officialAwards": []
     },
     {
+      "id": "gstaad-palace",
+      "name": "Gstaad Palace",
+      "location": "Gstaad",
+      "country": "Switzerland",
+      "region": "Europe",
+      "lat": 46.473245,
+      "lng": 7.289826,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp52880",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_5c5e0896_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service • Breathtaking views",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: GVA"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Gstaad+Palace+Gstaad",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Gstaad+Palace+Gstaad",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/gstaad-palace/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 45,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "hotel-de-russie-rome",
+      "name": "Hotel de Russie, a Rocco Forte Hotel",
+      "location": "Rome",
+      "country": "Italy",
+      "region": "Europe",
+      "lat": 41.909911,
+      "lng": 12.477362,
+      "brand": "Rocco Forte",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp60049",
+      "thumbnail": "https://static.cupid.travel/hotels/78273596.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service and attentive staff (Mario, Sufiyan, Barbara highlighted) • Outstanding breakfast and food (buffet, presentation, luxurious experience)",
+      "watchOut": "Perceived poor value for money / price too high • Gym noted as an issue by some (though trainer praised)",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: FCO)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Hotel+de+Russie%2C+a+Rocco+Forte+Hotel+Rome",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Hotel+de+Russie%2C+a+Rocco+Forte+Hotel+Rome",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/hotel-de-russie-rome/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 367,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "jade-mountain-st-lucia",
       "name": "Jade Mountain",
       "location": "Soufrière",
@@ -5799,6 +6778,140 @@
       "officialAwards": []
     },
     {
+      "id": "mandarin-oriental-doha",
+      "name": "Mandarin Oriental, Doha",
+      "location": "Doha",
+      "country": "Qatar",
+      "region": "Middle East",
+      "lat": 25.286257,
+      "lng": 51.525674,
+      "brand": "Mandarin Oriental",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp18dad4",
+      "thumbnail": "https://static.cupid.travel/hotels/589089251.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service • Beautiful location",
+      "watchOut": "Room insulation issues • Value for room size compared to price",
+      "keyFacts": {
+        "poolHeating": "Indoor & outdoor pools",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: DOH"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Mandarin+Oriental%2C+Doha+Doha",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Mandarin+Oriental%2C+Doha+Doha",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/mandarin-oriental-doha/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 2152,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "meadowood-napa-valley",
+      "name": "Meadowood Napa Valley",
+      "location": "St. Helena, Napa",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 38.522678,
+      "lng": -122.465981,
+      "brand": "Relais & Châteaux",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1c18f",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_509be99b_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional Service • Gorgeous Rooms",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: OAK"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Meadowood+Napa+Valley+St.+Helena%2C+Napa",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Meadowood+Napa+Valley+St.+Helena%2C+Napa",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/meadowood-napa-valley/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 93,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "montage-los-cabos",
       "name": "Montage Los Cabos",
       "location": "Los Cabos",
@@ -6007,18 +7120,18 @@
       "youtubeReviews": [],
       "officialAwards": [
         {
-          "awardBody": "World's 50 Best Hotels",
-          "label": "World's 50 Best Hotels",
-          "year": "2024",
-          "normalized100": 96,
-          "sourceUrl": "https://www.theworlds50best.com/hotels/"
-        },
-        {
           "awardBody": "MICHELIN Guide",
           "label": "3 MICHELIN Keys",
           "year": "2024",
           "normalized100": 98,
           "sourceUrl": "https://guide.michelin.com/en/hotels"
+        },
+        {
+          "awardBody": "World's 50 Best Hotels",
+          "label": "World's 50 Best Hotels",
+          "year": "2024",
+          "normalized100": 96,
+          "sourceUrl": "https://www.theworlds50best.com/hotels/"
         }
       ]
     },
@@ -6405,6 +7518,73 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "six-senses-douro-valley",
+      "name": "Six Senses Douro Valley",
+      "location": "Douro Valley",
+      "country": "Portugal",
+      "region": "Europe",
+      "lat": 41.14111,
+      "lng": -7.81773,
+      "brand": "IHG / Six Senses",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp4f0c9",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/53158114.jpg?k=38a39d28d78762d774653c32976aa85df931fe847b47171df0adae756a10c171&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Magical ambiance • Beautifully redone estate",
+      "watchOut": "Not worth the price • Freezing pool",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: OPO)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Six+Senses+Douro+Valley+Douro+Valley",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Six+Senses+Douro+Valley+Douro+Valley",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/six-senses-douro-valley/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 84,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "six-senses-laamu",
@@ -6909,6 +8089,140 @@
       ]
     },
     {
+      "id": "qualia-hamilton-island",
+      "name": "qualia",
+      "location": "Hamilton Island",
+      "country": "Australia",
+      "region": "Asia",
+      "lat": -20.332913,
+      "lng": 148.947734,
+      "brand": "Luxury Lodges of Australia",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp3fdee",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_fdb869b7_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Professional handling of room issues • Great overall stay",
+      "watchOut": "Slow service around the pool • Breakfast order forgetfulness",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: HTI)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=qualia+Hamilton+Island",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=qualia+Hamilton+Island",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/qualia-hamilton-island/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.6,
+          "scale": 10.0,
+          "normalized100": 96,
+          "reviewCount": 53,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "alila-kothaifaru-maldives",
+      "name": "Alila Kothaifaru Maldives",
+      "location": "Raa Atoll",
+      "country": "Maldives",
+      "region": "Maldives",
+      "lat": 5.525987,
+      "lng": 72.843882,
+      "brand": "Hyatt / Alila",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6557c437",
+      "thumbnail": "https://static.cupid.travel/hotels/463048763.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Great service • Beautiful location",
+      "watchOut": "Dinner quality below expectation • Bathtub issue",
+      "keyFacts": {
+        "poolHeating": "Infinity pool on property",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Alila+Kothaifaru+Maldives+Raa+Atoll",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Alila+Kothaifaru+Maldives+Raa+Atoll",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/alila-kothaifaru-maldives/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 81,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "badrutts-palace",
       "name": "Badrutt's Palace Hotel",
       "location": "St. Moritz",
@@ -7347,6 +8661,240 @@
       ]
     },
     {
+      "id": "four-seasons-hualalai",
+      "name": "Four Seasons Resort Hualalai",
+      "location": "Big Island, Hawaii",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 19.827025,
+      "lng": -155.99012,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1f121",
+      "thumbnail": "https://static.cupid.travel/hotels/130946907.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Beautiful setting • Family-friendly amenities",
+      "watchOut": "Slow service at some restaurants • Mixed food experiences",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Direct beachfront access",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: KOA"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Hualalai+Big+Island%2C+Hawaii",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Hualalai+Big+Island%2C+Hawaii",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/four-seasons-hualalai/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 157,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "grand-hotel-du-cap-ferrat",
+      "name": "Grand-Hôtel du Cap-Ferrat, A Four Seasons Hotel",
+      "location": "Saint-Jean-Cap-Ferrat",
+      "country": "France",
+      "region": "Europe",
+      "lat": 43.676835,
+      "lng": 7.331545,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp874eb",
+      "thumbnail": "https://www.fourseasons.com/alt/img-opt/~75.701.0,0000-156,2500-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/GHF/GHF_3398_original.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Beautiful location and scenic views • Attentive and friendly staff",
+      "watchOut": "High prices for certain services • Concern about the kids' club location",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: NCE"
+      },
+      "redFlags": [
+        "High On-Property Pricing"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Grand-H%C3%B4tel+du+Cap-Ferrat%2C+A+Four+Seasons+Hotel+Saint-Jean-Cap-Ferrat",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Grand-H%C3%B4tel+du+Cap-Ferrat%2C+A+Four+Seasons+Hotel+Saint-Jean-Cap-Ferrat",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/grand-hotel-du-cap-ferrat/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 194,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        },
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "hotel-sacher-vienna",
+      "name": "Hotel Sacher Wien",
+      "location": "Vienna",
+      "country": "Austria",
+      "region": "Europe",
+      "lat": 48.203881,
+      "lng": 16.369687,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1f59a",
+      "thumbnail": "https://www.sacher.com/en/wp-content/uploads/sites/4/fly-images/18436/Lobby-Grune-Bar-Side%C2%A9Hotel-Sacher-1920x9999.jpg.webp",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Location • Staff",
+      "watchOut": "Cleanliness issues • Need for renovation",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: VIE"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Hotel+Sacher+Wien+Vienna",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Hotel+Sacher+Wien+Vienna",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/hotel-sacher-vienna/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 1555,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
+    },
+    {
       "id": "hotel-du-cap-eden-roc",
       "name": "Hotel du Cap-Eden-Roc",
       "location": "Cap d'Antibes",
@@ -7431,6 +8979,73 @@
       ]
     },
     {
+      "id": "kulm-hotel-st-moritz",
+      "name": "Kulm Hotel St. Moritz",
+      "location": "St. Moritz",
+      "country": "Switzerland",
+      "region": "Europe",
+      "lat": 46.499201,
+      "lng": 9.841733,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1c1f8",
+      "thumbnail": "https://static.cupid.travel/hotels/543103692.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Excellent location • Superb amenities",
+      "watchOut": "Restaurant booking issues • Initial reservation confusion",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: ZRH)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Kulm+Hotel+St.+Moritz+St.+Moritz",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Kulm+Hotel+St.+Moritz+St.+Moritz",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/kulm-hotel-st-moritz/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 149,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "la-residencia-mallorca",
       "name": "La Residencia, A Belmond Hotel, Mallorca",
       "location": "Deià, Mallorca",
@@ -7496,6 +9111,90 @@
       "editorialRatings": [],
       "youtubeReviews": [],
       "officialAwards": []
+    },
+    {
+      "id": "mandarin-oriental-ritz-madrid",
+      "name": "Mandarin Oriental Ritz, Madrid",
+      "location": "Madrid",
+      "country": "Spain",
+      "region": "Europe",
+      "lat": 40.415747,
+      "lng": -3.692644,
+      "brand": "Mandarin Oriental",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp2a6ba",
+      "thumbnail": "https://static.cupid.travel/hotels/583566695.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service • Beautiful hotel and location",
+      "watchOut": "High price • Small room for luggage",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: MAD)"
+      },
+      "redFlags": [
+        "High On-Property Pricing"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Mandarin+Oriental+Ritz%2C+Madrid+Madrid",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Mandarin+Oriental+Ritz%2C+Madrid+Madrid",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/mandarin-oriental-ritz-madrid/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 282,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        },
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "2 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 92,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
     },
     {
       "id": "palace-hotel-tokyo",
@@ -7653,6 +9352,91 @@
           "year": "2024",
           "normalized100": 95,
           "sourceUrl": "https://www.theworlds50best.com/hotels/"
+        }
+      ]
+    },
+    {
+      "id": "san-domenico-palace-taormina",
+      "name": "San Domenico Palace, Taormina, A Four Seasons Hotel",
+      "location": "Taormina, Sicily",
+      "country": "Italy",
+      "region": "Europe",
+      "lat": 37.851171,
+      "lng": 15.28357,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1f02e",
+      "thumbnail": "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-356,0280-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/SDH/SDH_228_original.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Luxury experience • Beautiful views",
+      "watchOut": "Cold pool • Rude staff reported",
+      "keyFacts": {
+        "poolHeating": "Infinity pool on property",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: CTA)"
+      },
+      "redFlags": [
+        "Aging Finish Noted",
+        "Pool Temperature Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=San+Domenico+Palace%2C+Taormina%2C+A+Four+Seasons+Hotel+Taormina%2C+Sicily",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=San+Domenico+Palace%2C+Taormina%2C+A+Four+Seasons+Hotel+Taormina%2C+Sicily",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/san-domenico-palace-taormina/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 304,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        },
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
     },
@@ -7960,6 +9744,73 @@
           "reviewCount": 121,
           "attribution": "Verified Guest Score",
           "verifiedAt": "2026-11-21T19:57:10+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "trisara-phuket",
+      "name": "Trisara",
+      "location": "Phuket",
+      "country": "Thailand",
+      "region": "Thailand",
+      "lat": 8.039513,
+      "lng": 98.275183,
+      "brand": "Independent",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp4fe17",
+      "thumbnail": "https://static.cupid.travel/hotels/361751114.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Luxury • Friendly staff",
+      "watchOut": "Inconvenient beach access • Food quality inconsistent",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Beachfront with snorkeling/diving",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: HKT)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Trisara+Phuket",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Trisara+Phuket",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/trisara-phuket/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.5,
+          "scale": 10.0,
+          "normalized100": 95,
+          "reviewCount": 174,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
         }
       },
       "editorialRatings": [],
@@ -8410,6 +10261,88 @@
       "editorialRatings": [],
       "youtubeReviews": [],
       "officialAwards": [
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "four-seasons-surfside-miami",
+      "name": "Four Seasons Hotel at The Surf Club",
+      "location": "Surfside, Miami",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 25.877476,
+      "lng": -80.121344,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp99e39",
+      "thumbnail": "https://www.fourseasons.com/alt/img-opt/~75.430.609,0484-0,0000-1687,5000-2250,0000/publish/content/dam/fourseasons/images/web/MFL/MFL_1370_original.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Elegant hotel • Attentive staff",
+      "watchOut": "High food prices • Inconsistent restaurant quality",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "Direct beachfront access",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: MIA"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+at+The+Surf+Club+Surfside%2C+Miami",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+at+The+Surf+Club+Surfside%2C+Miami",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/four-seasons-surfside-miami/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.4,
+          "scale": 10.0,
+          "normalized100": 94,
+          "reviewCount": 128,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "World's 50 Best Hotels",
+          "label": "World's 50 Best Hotels",
+          "year": "2024",
+          "normalized100": 96,
+          "sourceUrl": "https://www.theworlds50best.com/hotels/"
+        },
         {
           "awardBody": "Forbes Travel Guide",
           "label": "Forbes Five-Star",
@@ -8970,6 +10903,212 @@
           "reviewCount": 57,
           "attribution": "Verified Guest Score",
           "verifiedAt": "2026-11-21T19:57:10+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "park-hyatt-sydney",
+      "name": "Park Hyatt Sydney",
+      "location": "Sydney",
+      "country": "Australia",
+      "region": "Asia",
+      "lat": -33.855663,
+      "lng": 151.209391,
+      "brand": "Hyatt / Park Hyatt",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1dd2b",
+      "thumbnail": "https://static.cupid.travel/hotels/481509510.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Magnificent location • Outstanding service",
+      "watchOut": "Issues with cleanliness • Misleading room view",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: SYD)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Park+Hyatt+Sydney+Sydney",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Park+Hyatt+Sydney+Sydney",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/park-hyatt-sydney/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.4,
+          "scale": 10.0,
+          "normalized100": 94,
+          "reviewCount": 694,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "raffles-doha",
+      "name": "Raffles Doha",
+      "location": "Lusail, Doha",
+      "country": "Qatar",
+      "region": "Middle East",
+      "lat": 25.38953,
+      "lng": 51.5315,
+      "brand": "Accor / Raffles",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6558c818",
+      "thumbnail": "https://static.cupid.travel/hotels/557348434.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Luxury • Excellent service",
+      "watchOut": "Noise insulation issues • Room maintenance issues",
+      "keyFacts": {
+        "poolHeating": "Infinity pool on property",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: DOH"
+      },
+      "redFlags": [
+        "Aging Finish Noted",
+        "Noise / Crowds Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Raffles+Doha+Lusail%2C+Doha",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Raffles+Doha+Lusail%2C+Doha",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/raffles-doha/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.4,
+          "scale": 10.0,
+          "normalized100": 94,
+          "reviewCount": 873,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "rosewood-little-dix-bay",
+      "name": "Rosewood Little Dix Bay",
+      "location": "Virgin Gorda",
+      "country": "British Virgin Islands",
+      "region": "Los Angeles & Americas",
+      "lat": 18.458824,
+      "lng": -64.43469,
+      "brand": "Rosewood",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp21538",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_08889353_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional staff and service • Beautiful, well-maintained property and beaches",
+      "watchOut": "Occasional unhelpful/annoyed butler interactions • Mosquito swarms reported during some stays",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: EIS"
+      },
+      "redFlags": [
+        "Aging Finish Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Rosewood+Little+Dix+Bay+Virgin+Gorda",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Rosewood+Little+Dix+Bay+Virgin+Gorda",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/rosewood-little-dix-bay/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.4,
+          "scale": 10.0,
+          "normalized100": 94,
+          "reviewCount": 52,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
         }
       },
       "editorialRatings": [],
@@ -9776,6 +11915,73 @@
       "officialAwards": []
     },
     {
+      "id": "six-senses-ninh-van-bay",
+      "name": "Six Senses Ninh Van Bay",
+      "location": "Nha Trang",
+      "country": "Vietnam",
+      "region": "Asia",
+      "lat": 12.358348,
+      "lng": 109.277382,
+      "brand": "IHG / Six Senses",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp37c0a",
+      "thumbnail": "https://static.cupid.travel/hotels/18886020.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service • Beautiful location",
+      "watchOut": "Issues with guest experience maker • Presence of lizards in rooms",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: CXR)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Six+Senses+Ninh+Van+Bay+Nha+Trang",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Six+Senses+Ninh+Van+Bay+Nha+Trang",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/six-senses-ninh-van-bay/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.3,
+          "scale": 10.0,
+          "normalized100": 93,
+          "reviewCount": 151,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "six-senses-zighy-bay",
       "name": "Six Senses Zighy Bay",
       "location": "Musandam Peninsula",
@@ -9916,6 +12122,73 @@
           "sourceUrl": "https://guide.michelin.com/en/hotels"
         }
       ]
+    },
+    {
+      "id": "the-chedi-muscat",
+      "name": "The Chedi Muscat",
+      "location": "Muscat",
+      "country": "Oman",
+      "region": "Middle East",
+      "lat": 23.602072,
+      "lng": 58.399013,
+      "brand": "GHM / LHW",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp33beb",
+      "thumbnail": "https://static.cupid.travel/hotels/196999280.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Excellent service • High-quality food",
+      "watchOut": "Limited transportation access • Varied portion sizes of meals",
+      "keyFacts": {
+        "poolHeating": "Infinity pool on property",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: MCT)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Chedi+Muscat+Muscat",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Chedi+Muscat+Muscat",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/the-chedi-muscat/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.3,
+          "scale": 10.0,
+          "normalized100": 93,
+          "reviewCount": 1628,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "maybourne-beverly-hills",
@@ -10199,6 +12472,73 @@
       "officialAwards": []
     },
     {
+      "id": "four-seasons-seoul",
+      "name": "Four Seasons Hotel Seoul",
+      "location": "Seoul",
+      "country": "South Korea",
+      "region": "Asia",
+      "lat": 37.570283,
+      "lng": 126.975225,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp87528",
+      "thumbnail": "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-176,7717-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/SKO/SKO_260_original.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Excellent service and staff (concierge, parking attendants, housekeeping) • Very clean rooms",
+      "watchOut": "Indoor pool lane policy/availability made pool use uncomfortable for some guests • No significant negatives otherwise reported",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: ICN"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+Seoul+Seoul",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+Seoul+Seoul",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/four-seasons-seoul/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.2,
+          "scale": 10.0,
+          "normalized100": 92,
+          "reviewCount": 1088,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "four-seasons-singapore",
       "name": "Four Seasons Hotel Singapore",
       "location": "Singapore",
@@ -10421,6 +12761,77 @@
       "officialAwards": []
     },
     {
+      "id": "keemala-phuket",
+      "name": "Keemala",
+      "location": "Phuket",
+      "country": "Thailand",
+      "region": "Thailand",
+      "lat": 7.939764,
+      "lng": 98.281277,
+      "brand": "SLH",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp7c795",
+      "thumbnail": "https://www.hilton.com/im/en/HKTKRLX/20986716/71558892-tree-pool-houses-exterior-4890x3024.jpg?impolicy=crop&cw=4536&ch=3024&gravity=NorthWest&xposition=177&yposition=0",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Unique, luxurious design and décor • Exceptional room and bathroom quality",
+      "watchOut": "Perceived poor value for money / overpriced • Small gym and small restaurant space",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: HKT)"
+      },
+      "redFlags": [
+        "High On-Property Pricing",
+        "Transfer Logistics",
+        "Noise / Crowds Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Keemala+Phuket",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Keemala+Phuket",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/keemala-phuket/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.2,
+          "scale": 10.0,
+          "normalized100": 92,
+          "reviewCount": 1293,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "mandarin-oriental-tokyo",
       "name": "Mandarin Oriental, Tokyo",
       "location": "Tokyo",
@@ -10496,6 +12907,73 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "one-and-only-kea-island",
+      "name": "One&Only Kéa Island",
+      "location": "Kéa",
+      "country": "Greece",
+      "region": "Europe",
+      "lat": 37.608825,
+      "lng": 24.271158,
+      "brand": "One&Only",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp656d2226",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/837460839.jpg?k=fee5abc7ba18e0fd74a1bf9d3093d8b69c84ad5d6cb8e0a5ee780a5e83d7e208&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Amazing views • Beautiful grounds",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "Beachfront with snorkeling/diving",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=One%26Only+K%C3%A9a+Island+K%C3%A9a",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=One%26Only+K%C3%A9a+Island+K%C3%A9a",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/one-and-only-kea-island/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.2,
+          "scale": 10.0,
+          "normalized100": 92,
+          "reviewCount": 7,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "park-hyatt-bangkok",
@@ -10631,6 +13109,73 @@
           "reviewCount": 2252,
           "attribution": "Verified Guest Score",
           "verifiedAt": "2026-11-21T19:57:10+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "rosewood-matakauri-queenstown",
+      "name": "Rosewood Matakauri",
+      "location": "Queenstown",
+      "country": "New Zealand",
+      "region": "Asia",
+      "lat": -45.058994,
+      "lng": 168.588601,
+      "brand": "Rosewood",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp79826",
+      "thumbnail": "https://static.cupid.travel/hotels/514298833.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Attentive and personalised service • Spacious, well-appointed rooms (size, layout, fit-out)",
+      "watchOut": "None noted • Had to leave",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: ZQN"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Rosewood+Matakauri+Queenstown",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Rosewood+Matakauri+Queenstown",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/rosewood-matakauri-queenstown/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.2,
+          "scale": 10.0,
+          "normalized100": 92,
+          "reviewCount": 17,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
         }
       },
       "editorialRatings": [],
@@ -11702,6 +14247,151 @@
       "officialAwards": []
     },
     {
+      "id": "little-nell-aspen",
+      "name": "The Little Nell",
+      "location": "Aspen",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 39.186637,
+      "lng": -106.81722,
+      "brand": "Relais & Châteaux",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp1f153",
+      "thumbnail": "https://www.thelittlenell.com/-/media/thelittlenell/images/2526_hero_summer_images_1/tln_s26_hp_hero/tln_f26_hp_hero.jpeg?h=809&w=1920&hash=4AE74685388C14C014FE6C50DC1C8A9B",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional service and friendly staff • Beautiful, well-appointed rooms",
+      "watchOut": "Intermittent hallway odor reported • Restaurant slow service and occasional poor food quality",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: ASE)"
+      },
+      "redFlags": [
+        "High On-Property Pricing",
+        "Noise / Crowds Noted"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Little+Nell+Aspen",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Little+Nell+Aspen",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/little-nell-aspen/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.1,
+          "scale": 10.0,
+          "normalized100": 91,
+          "reviewCount": 18,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "setai-miami-beach",
+      "name": "The Setai, Miami Beach",
+      "location": "Miami Beach",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 25.795513,
+      "lng": -80.128091,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp65736e55",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/33411648.jpg?k=81600e8f83ad7fb82b6765c743106e169616577e30f24bccc8c3cbdfc0389bb5&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Setai%2C+Miami+Beach+Miami+Beach",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Setai%2C+Miami+Beach+Miami+Beach",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/setai-miami-beach/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.1,
+          "scale": 10.0,
+          "normalized100": 91,
+          "reviewCount": 177,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "hotel-plaza-athenee-paris",
       "name": "Hôtel Plaza Athénée",
       "location": "Paris",
@@ -11784,6 +14474,73 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "kona-village-rosewood",
+      "name": "Kona Village, A Rosewood Resort",
+      "location": "Big Island, Hawaii",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": 19.831945,
+      "lng": -155.984617,
+      "brand": "Rosewood",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6558a9a2",
+      "thumbnail": "https://static.cupid.travel/hotels/491324051.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Location • Authenticity",
+      "watchOut": "Had to leave early due to approaching hurricane • No cons noted (one reviewer)",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "Direct beachfront access",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Kona+Village%2C+A+Rosewood+Resort+Big+Island%2C+Hawaii",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Kona+Village%2C+A+Rosewood+Resort+Big+Island%2C+Hawaii",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/kona-village-rosewood/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.0,
+          "scale": 10.0,
+          "normalized100": 90,
+          "reviewCount": 71,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "la-mamounia-marrakech",
@@ -11936,6 +14693,73 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "six-senses-ibiza",
+      "name": "Six Senses Ibiza",
+      "location": "Ibiza",
+      "country": "Spain",
+      "region": "Europe",
+      "lat": 39.110388,
+      "lng": 1.508859,
+      "brand": "IHG / Six Senses",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp65571061",
+      "thumbnail": "https://q-xx.bstatic.com/xdata/images/hotel/max500/608469724.jpg?k=86fcf1b965d1a1300c4af6cda2cdf6b45bcf1c8e044c0c75e776d213162ab570&o=&a=2002366",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Beautiful location • Excellent service",
+      "watchOut": "High food pricing • Check-in issues",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "Beachfront with snorkeling/diving",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: IBZ)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Six+Senses+Ibiza+Ibiza",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Six+Senses+Ibiza+Ibiza",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/six-senses-ibiza/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 9.0,
+          "scale": 10.0,
+          "normalized100": 90,
+          "reviewCount": 301,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "peninsula-beverly-hills",
@@ -12159,6 +14983,73 @@
           "reviewCount": 157,
           "attribution": "Verified Guest Score",
           "verifiedAt": "2026-11-21T19:57:10+00:00"
+        }
+      },
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "the-ocean-club-bahamas",
+      "name": "The Ocean Club, A Four Seasons Resort, Bahamas",
+      "location": "Paradise Island",
+      "country": "Bahamas",
+      "region": "Los Angeles & Americas",
+      "lat": 25.083656,
+      "lng": -77.311346,
+      "brand": "Four Seasons",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp22731",
+      "thumbnail": "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-312,4986-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/BOC/BOC_1696_original.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Exceptional location • Friendly staff",
+      "watchOut": "Room refurbishment needed • Mixed food quality",
+      "keyFacts": {
+        "poolHeating": "Heated pool confirmed",
+        "beachOrReef": "Private beach with snorkeling/diving access",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: NAS)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Ocean+Club%2C+A+Four+Seasons+Resort%2C+Bahamas+Paradise+Island",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Ocean+Club%2C+A+Four+Seasons+Resort%2C+Bahamas+Paradise+Island",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/the-ocean-club-bahamas/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": {
+        "licensed": {
+          "sourceName": "Verified Guests",
+          "rating": 8.9,
+          "scale": 10.0,
+          "normalized100": 89,
+          "reviewCount": 152,
+          "attribution": "Verified Guest Score",
+          "verifiedAt": "2026-11-21T20:11:31+00:00"
         }
       },
       "editorialRatings": [],
@@ -13158,6 +16049,143 @@
       "officialAwards": []
     },
     {
+      "id": "adare-manor-ireland",
+      "name": "Adare Manor",
+      "location": "Limerick",
+      "country": "Ireland",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Adare+Manor+Limerick",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Adare+Manor+Limerick",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/adare-manor-ireland/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        },
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
+    },
+    {
+      "id": "airelles-courchevel",
+      "name": "Airelles Courchevel, Les Airelles",
+      "location": "Courchevel",
+      "country": "France",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "Airelles",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Airelles+Courchevel%2C+Les+Airelles+Courchevel",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Airelles+Courchevel%2C+Les+Airelles+Courchevel",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/airelles-courchevel/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
+    },
+    {
       "id": "al-maha-dubai",
       "name": "Al Maha, a Luxury Collection Desert Resort",
       "location": "Dubai Desert Conservation Reserve",
@@ -13204,6 +16232,63 @@
           "channelType": "direct_brand",
           "partnerName": "StayOdds Web Rates",
           "url": "https://live.uncharteditinerary.com/stayodds/al-maha-dubai/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "alila-jabal-akhdar",
+      "name": "Alila Jabal Akhdar",
+      "location": "Jabal Akhdar",
+      "country": "Oman",
+      "region": "Middle East",
+      "lat": 23.1428,
+      "lng": 57.532536,
+      "brand": "Hyatt / Alila",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp6e751",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_59b11877_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Quiet and relaxing environment • Friendly and lovely staff",
+      "watchOut": "Possibly higher pricing • Limited variety in dining options",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Nearest airport code: MCT"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Alila+Jabal+Akhdar+Jabal+Akhdar",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Alila+Jabal+Akhdar+Jabal+Akhdar",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/alila-jabal-akhdar/",
           "mobileAllowed": true,
           "perksSummary": "Compare live rates & verified reviews on StayOdds web",
           "priority": 2
@@ -13618,6 +16703,120 @@
       ]
     },
     {
+      "id": "amanera-dominican-republic",
+      "name": "Amanera",
+      "location": "Playa Grande",
+      "country": "Dominican Republic",
+      "region": "Los Angeles & Americas",
+      "lat": null,
+      "lng": null,
+      "brand": "Aman",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Amanera+Playa+Grande",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Amanera+Playa+Grande",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/amanera-dominican-republic/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "amangani-jackson-hole",
+      "name": "Amangani",
+      "location": "Jackson Hole",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": null,
+      "lng": null,
+      "brand": "Aman",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Amangani+Jackson+Hole",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Amangani+Jackson+Hole",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/amangani-jackson-hole/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "amangiri-utah",
       "name": "Amangiri",
       "location": "Canyon Point, Utah",
@@ -13919,6 +17118,63 @@
       ]
     },
     {
+      "id": "amanruya-bodrum",
+      "name": "Amanruya",
+      "location": "Bodrum",
+      "country": "Turkey",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "Aman",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Amanruya+Bodrum",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Amanruya+Bodrum",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/amanruya-bodrum/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "amanyara-turks-caicos",
       "name": "Amanyara",
       "location": "Providenciales",
@@ -14106,6 +17362,66 @@
       ]
     },
     {
+      "id": "banyan-tree-alula",
+      "name": "Banyan Tree AlUla",
+      "location": "AlUla",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "lat": 26.603087,
+      "lng": 37.929555,
+      "brand": "Banyan Tree",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp65589a9d",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_6065033b_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Close to Maraya • Excellent location and facilities",
+      "watchOut": "Expensive transfer from the airport • No outside restaurants",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [
+        "High On-Property Pricing",
+        "Transfer Logistics"
+      ],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Banyan+Tree+AlUla+AlUla",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Banyan+Tree+AlUla+AlUla",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/banyan-tree-alula/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "banyan-tree-samui",
       "name": "Banyan Tree Samui",
       "location": "Koh Samui",
@@ -14161,6 +17477,71 @@
       "editorialRatings": [],
       "youtubeReviews": [],
       "officialAwards": []
+    },
+    {
+      "id": "bulgari-hotel-roma",
+      "name": "Bulgari Hotel Roma",
+      "location": "Rome",
+      "country": "Italy",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "Bulgari",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Bulgari+Hotel+Roma+Rome",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Bulgari+Hotel+Roma+Rome",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/bulgari-hotel-roma/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "World's 50 Best Hotels",
+          "label": "World's 50 Best Hotels",
+          "year": "2024",
+          "normalized100": 95,
+          "sourceUrl": "https://www.theworlds50best.com/hotels/"
+        }
+      ]
     },
     {
       "id": "bulgari-hotel-tokyo",
@@ -14493,6 +17874,71 @@
       ]
     },
     {
+      "id": "cheval-blanc-courchevel",
+      "name": "Cheval Blanc Courchevel",
+      "location": "Courchevel",
+      "country": "France",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "LVMH / Cheval Blanc",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Cheval+Blanc+Courchevel+Courchevel",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Cheval+Blanc+Courchevel+Courchevel",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/cheval-blanc-courchevel/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        }
+      ]
+    },
+    {
       "id": "cheval-blanc-randheli",
       "name": "Cheval Blanc Randheli",
       "location": "Noonu Atoll",
@@ -14734,6 +18180,63 @@
           "channelType": "direct_brand",
           "partnerName": "StayOdds Web Rates",
           "url": "https://live.uncharteditinerary.com/stayodds/emirates-palace-abu-dhabi/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "faena-hotel-miami-beach",
+      "name": "Faena Hotel Miami Beach",
+      "location": "Miami Beach",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": null,
+      "lng": null,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Faena+Hotel+Miami+Beach+Miami+Beach",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Faena+Hotel+Miami+Beach+Miami+Beach",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/faena-hotel-miami-beach/",
           "mobileAllowed": true,
           "perksSummary": "Compare live rates & verified reviews on StayOdds web",
           "priority": 2
@@ -15689,6 +19192,120 @@
       ]
     },
     {
+      "id": "kuda-villingili-maldives",
+      "name": "Kuda Villingili Resort Maldives",
+      "location": "North Malé Atoll",
+      "country": "Maldives",
+      "region": "Maldives",
+      "lat": null,
+      "lng": null,
+      "brand": "SLH",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Kuda+Villingili+Resort+Maldives+North+Mal%C3%A9+Atoll",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Kuda+Villingili+Resort+Maldives+North+Mal%C3%A9+Atoll",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/kuda-villingili-maldives/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "marbella-club-hotel",
+      "name": "Marbella Club Hotel",
+      "location": "Marbella",
+      "country": "Spain",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "Leading Hotels",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Marbella+Club+Hotel+Marbella",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Marbella+Club+Hotel+Marbella",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/marbella-club-hotel/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "milaidhoo-maldives",
       "name": "Milaidhoo Island Maldives",
       "location": "Baa Atoll",
@@ -16275,6 +19892,63 @@
       "officialAwards": []
     },
     {
+      "id": "signiel-seoul",
+      "name": "Signiel Seoul",
+      "location": "Seoul",
+      "country": "South Korea",
+      "region": "Asia",
+      "lat": 37.512703,
+      "lng": 127.102439,
+      "brand": "Lotte",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lpa75d2",
+      "thumbnail": "https://static.cupid.travel/hotels/ex_6868b8f8_z.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "Helpful staff • Beautiful views",
+      "watchOut": "Poor food quality • Communication issues with staff",
+      "keyFacts": {
+        "poolHeating": "Outdoor pool (heating not listed)",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": "Airport transfers available (nearest code: ICN)"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Signiel+Seoul+Seoul",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Signiel+Seoul+Seoul",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/signiel-seoul/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "singita-kruger",
       "name": "Singita Lebombo Lodge",
       "location": "Kruger National Park",
@@ -16503,6 +20177,63 @@
       "officialAwards": []
     },
     {
+      "id": "soneva-secret-maldives",
+      "name": "Soneva Secret",
+      "location": "Haa Dhaalu Atoll",
+      "country": "Maldives",
+      "region": "Maldives",
+      "lat": 0,
+      "lng": 0,
+      "brand": "Soneva",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": "lp65892383",
+      "thumbnail": "https://static.cupid.travel/hotels/1mc1112000t0rvoni28DB_R_960_660_R5_D.jpg",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "Private beach area",
+        "renovationYear": null,
+        "transferLogistics": "Airport shuttle / transfer service listed"
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Soneva+Secret+Haa+Dhaalu+Atoll",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Soneva+Secret+Haa+Dhaalu+Atoll",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/soneva-secret-maldives/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "the-berkeley-london",
       "name": "The Berkeley",
       "location": "London",
@@ -16558,6 +20289,78 @@
       "editorialRatings": [],
       "youtubeReviews": [],
       "officialAwards": []
+    },
+    {
+      "id": "the-chedi-andermatt",
+      "name": "The Chedi Andermatt",
+      "location": "Andermatt",
+      "country": "Switzerland",
+      "region": "Europe",
+      "lat": null,
+      "lng": null,
+      "brand": "GHM / LHW",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Chedi+Andermatt+Andermatt",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Chedi+Andermatt+Andermatt",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/the-chedi-andermatt/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [
+        {
+          "awardBody": "MICHELIN Guide",
+          "label": "3 MICHELIN Keys",
+          "year": "2024",
+          "normalized100": 98,
+          "sourceUrl": "https://guide.michelin.com/en/hotels"
+        },
+        {
+          "awardBody": "Forbes Travel Guide",
+          "label": "Forbes Five-Star",
+          "year": "2025",
+          "normalized100": 96,
+          "sourceUrl": "https://www.forbestravelguide.com/"
+        }
+      ]
     },
     {
       "id": "the-mark-new-york",
@@ -16741,6 +20544,63 @@
       ]
     },
     {
+      "id": "st-regis-aspen",
+      "name": "The St. Regis Aspen Resort",
+      "location": "Aspen",
+      "country": "United States",
+      "region": "Los Angeles & Americas",
+      "lat": null,
+      "lng": null,
+      "brand": "Marriott / St. Regis",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Aspen+Resort+Aspen",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Aspen+Resort+Aspen",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/st-regis-aspen/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
       "id": "st-regis-maldives",
       "name": "The St. Regis Maldives Vommuli Resort",
       "location": "Dhaalu Atoll",
@@ -16804,6 +20664,63 @@
           "sourceUrl": "https://www.forbestravelguide.com/"
         }
       ]
+    },
+    {
+      "id": "st-regis-red-sea",
+      "name": "The St. Regis Red Sea Resort",
+      "location": "Ummahat Island",
+      "country": "Saudi Arabia",
+      "region": "Middle East",
+      "lat": null,
+      "lng": null,
+      "brand": "Marriott / St. Regis",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Red+Sea+Resort+Ummahat+Island",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Red+Sea+Resort+Ummahat+Island",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/st-regis-red-sea/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
     },
     {
       "id": "the-upper-house-hk",
@@ -16917,6 +20834,63 @@
           "channelType": "direct_brand",
           "partnerName": "StayOdds Web Rates",
           "url": "https://live.uncharteditinerary.com/stayodds/velaa-private-island/",
+          "mobileAllowed": true,
+          "perksSummary": "Compare live rates & verified reviews on StayOdds web",
+          "priority": 2
+        }
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": []
+    },
+    {
+      "id": "zannier-bai-san-ho",
+      "name": "Zannier Hotels Bãi San Hô",
+      "location": "Phu Yen",
+      "country": "Vietnam",
+      "region": "Asia",
+      "lat": null,
+      "lng": null,
+      "brand": "Zannier",
+      "priceRange": "",
+      "tier": "global_directory",
+      "visitedByUs": false,
+      "coverageType": "Global Directory",
+      "googlePlaceId": null,
+      "nuiteeHotelId": null,
+      "thumbnail": "",
+      "videoId": "",
+      "inLiveFeed": false,
+      "reviewedDate": null,
+      "scores": null,
+      "overall": null,
+      "verdict": "",
+      "whereWeDiffer": "",
+      "shorts": [],
+      "standout": "",
+      "watchOut": "",
+      "keyFacts": {
+        "poolHeating": "",
+        "beachOrReef": "",
+        "renovationYear": null,
+        "transferLogistics": ""
+      },
+      "redFlags": [],
+      "bookingUrl": "https://www.booking.com/searchresults.html?ss=Zannier+Hotels+B%C3%A3i+San+H%C3%B4+Phu+Yen",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Zannier+Hotels+B%C3%A3i+San+H%C3%B4+Phu+Yen",
+          "mobileAllowed": false,
+          "perksSummary": "",
+          "priority": 1
+        },
+        {
+          "channelType": "direct_brand",
+          "partnerName": "StayOdds Web Rates",
+          "url": "https://live.uncharteditinerary.com/stayodds/zannier-bai-san-ho/",
           "mobileAllowed": true,
           "perksSummary": "Compare live rates & verified reviews on StayOdds web",
           "priority": 2
