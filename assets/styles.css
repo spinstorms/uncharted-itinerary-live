@@ -1199,10 +1199,196 @@ button {
   border-radius: var(--radius-md);
 }
 
+/* ---------- Camera Review Editorial Page ---------- */
+.review-hero-card {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  align-items: start;
+  gap: 30px;
+  padding: 26px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-video-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.review-verdict-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-intro-copy {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-secondary);
+  line-height: 1.65;
+}
+
+.verdict-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.verdict-pill-box {
+  background: #ffffff;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.verdict-pill-box.is-winner {
+  border-color: rgba(255, 93, 34, 0.45);
+  background: var(--bg-warm-tint);
+}
+
+.verdict-kicker {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.verdict-pill-box strong {
+  font-size: 15px;
+  color: var(--ink-primary);
+}
+
+.verdict-pill-box span:last-child {
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+  line-height: 1.45;
+}
+
+.chapter-chips-wrap {
+  padding-top: 4px;
+}
+
+.chapter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.chapter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+  font-size: 12px;
+  color: var(--ink-primary);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.chapter-chip:hover {
+  border-color: var(--accent);
+  background: var(--bg-warm-tint);
+}
+
+.review-article-section {
+  padding: 16px 0 46px;
+}
+
+.review-article-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 36px;
+  align-items: start;
+}
+
+.review-prose h3 {
+  margin: 24px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  letter-spacing: -0.015em;
+}
+
+.review-prose p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  color: var(--ink-secondary);
+  line-height: 1.72;
+}
+
+.review-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 96px;
+}
+
+.sidebar-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  margin-top: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  background: #ffffff;
+}
+
+.comparison-table th,
+.comparison-table td {
+  text-align: left;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border-hairline);
+  vertical-align: top;
+}
+
+.comparison-table thead th {
+  background: var(--bg-subtle);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .featured-card {
+  .featured-card,
+  .review-hero-card,
+  .review-article-grid {
     grid-template-columns: 1fr;
+  }
+  .review-sidebar {
+    position: static;
   }
   .video-grid,
   .deals-grid,
@@ -1225,9 +1411,13 @@ button {
   .sync-meta {
     align-items: flex-start;
   }
-  .featured-card {
+  .featured-card,
+  .review-hero-card {
     padding: 16px;
     gap: 18px;
+  }
+  .verdict-grid {
+    grid-template-columns: 1fr;
   }
   .video-grid,
   .deals-grid,
