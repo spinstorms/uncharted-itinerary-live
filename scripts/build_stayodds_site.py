@@ -54,16 +54,29 @@ def esc(val: Any) -> str:
 def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     first_hand = bool(h.get("visitedByUs") and h.get("overall") is not None and h.get("scores"))
     visited = bool(h.get("visitedByUs"))
-    ours100 = int(round(float(h["overall"]) * 20)) if first_hand else None
+    personal_score_25 = None
+    if first_hand and h.get("scores"):
+        s = h["scores"]
+        try:
+            personal_score_25 = sum(int(s[k]) for k in ("value", "rooms", "grounds", "food", "service"))
+        except Exception:
+            personal_score_25 = None
+    ours100 = (
+        int(round(personal_score_25 * 4))
+        if personal_score_25 is not None
+        else (int(round(float(h["overall"]) * 20)) if first_hand else None)
+    )
 
     editorial = [e for e in (h.get("editorialRatings") or []) if str(e.get("sourceUrl", "")).startswith("http")]
     awards = [a for a in (h.get("officialAwards") or []) if str(a.get("sourceUrl", "")).startswith("http")]
     yt_reviews = [y for y in (h.get("youtubeReviews") or []) if str(y.get("sourceUrl", "")).startswith("http")]
 
-    critic_scores = [int(e["normalized100"]) for e in editorial if e.get("normalized100") is not None] + [
-        int(a["normalized100"]) for a in awards if a.get("normalized100") is not None
-    ]
+    # STRICT RULE: Numeric critic score ONLY comes from published numeric critic reviews (e.g. 9/10, 18/20).
+    # Official awards (MICHELIN Keys, Forbes Five-Star, World's 50 Best) are NEVER turned into fake /100 numbers —
+    # they are displayed by exact award name with a direct official link.
+    critic_scores = [int(e["normalized100"]) for e in editorial if e.get("normalized100") is not None]
     critic100 = int(round(sum(critic_scores) / len(critic_scores))) if critic_scores else None
+    primary_critic = editorial[0] if editorial else None
 
     vg = (h.get("verifiedGuest") or {}).get("licensed")
     guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
@@ -72,10 +85,14 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     overall_idx = None
     odds = None
     spread100 = None
-    status_badge = "Live Ratings Pending"
-    status_tone = "slate"
+    status_badge = "Award-Winning" if awards else "Global Directory"
+    status_tone = "teal" if awards else "slate"
     is_consensus = False
-    formula = "Awaiting live verified guest ratings & sourced awards."
+    formula = (
+        f"Awarded {' • '.join(a['label'] for a in awards)} — live Google reviews check on this page."
+        if awards
+        else "Live Google guest reviews check on this page."
+    )
 
     active = [v for v in [ours100, critic100, guest100] if v is not None]
     src_cnt = len(active)
@@ -84,93 +101,96 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         if critic100 is not None and guest100 is not None:
             weights = {"firstHand": 40, "critics": 30, "guests": 30}
             overall_idx = int(round(ours100 * 0.4 + critic100 * 0.3 + guest100 * 0.3))
-            formula = "40% First-Hand Stay • 30% Sourced Critics & Awards • 30% Verified Guests"
+            formula = "40% My Stay • 30% Published Critics • 30% Verified Guests"
         elif guest100 is not None:
             weights = {"firstHand": 55, "critics": 0, "guests": 45}
             overall_idx = int(round(ours100 * 0.55 + guest100 * 0.45))
-            formula = "55% First-Hand Stay • 45% Verified Guests (weighted)"
+            formula = "55% My Stay • 45% Verified Guests"
         elif critic100 is not None:
             weights = {"firstHand": 55, "critics": 45, "guests": 0}
             overall_idx = int(round(ours100 * 0.55 + critic100 * 0.45))
-            formula = "55% First-Hand Stay • 45% Sourced Critics & Awards (weighted)"
+            formula = "55% My Stay • 45% Published Critics"
         else:
             weights = {"firstHand": 100, "critics": 0, "guests": 0}
             overall_idx = ours100
             odds = ours100
-            status_badge = "First-Hand Only"
+            status_badge = "First-Hand Verified"
             status_tone = "accent"
-            formula = "100% First-Hand Verified Stay — live Google rating loads on this page."
+            formula = "100% My First-Hand Stay — live Google reviews check on this page."
     else:
         if critic100 is not None and guest100 is not None:
-            if len(critic_scores) >= 2:
-                weights = {"firstHand": 0, "critics": 40, "guests": 60}
-                overall_idx = int(round(critic100 * 0.4 + guest100 * 0.6))
-                formula = "40% Sourced Critics & Awards (2+) • 60% Verified Guests"
-            else:
-                weights = {"firstHand": 0, "critics": 25, "guests": 75}
-                overall_idx = int(round(critic100 * 0.25 + guest100 * 0.75))
-                formula = "25% Sourced Award/Critic • 75% Verified Guests"
+            weights = {"firstHand": 0, "critics": 35, "guests": 65}
+            overall_idx = int(round(critic100 * 0.35 + guest100 * 0.65))
+            formula = "35% Published Critics • 65% Verified Guests"
         elif guest100 is not None:
             weights = {"firstHand": 0, "critics": 0, "guests": 100}
             overall_idx = guest100
             odds = guest100
-            status_badge = "Guest Data Only"
+            status_badge = "Verified Guest Score"
             status_tone = "teal"
-            formula = "100% Verified Guest Ratings (no sourced critic/award linked yet)."
+            formula = "100% Verified Guest Ratings"
         elif critic100 is not None:
             weights = {"firstHand": 0, "critics": 100, "guests": 0}
             overall_idx = critic100
             odds = critic100
-            status_badge = "Editorial Only"
+            status_badge = "Critic Reviewed"
             status_tone = "slate"
-            formula = "100% Sourced Official Awards & Critics (live Google rating loads on page)."
+            formula = "100% Published Critic Reviews — live Google reviews check on this page."
 
     if src_cnt >= 2 and overall_idx is not None:
         is_consensus = True
         spread100 = max(active) - min(active)
         if spread100 <= 6:
-            status_badge, status_tone, odds = "Strong Consensus", "accent", min(98, overall_idx + 2)
+            status_badge, status_tone, odds = "Strong Agreement", "accent", min(98, overall_idx + 2)
         elif spread100 <= 12:
             status_badge, status_tone, odds = "Mostly Aligned", "teal", overall_idx
         else:
-            status_badge, status_tone, odds = "Split Verdict", "amber", max(50, overall_idx - 4)
+            status_badge, status_tone, odds = "Opinions Differ", "amber", max(50, overall_idx - 4)
 
     left100 = ours100 if first_hand else critic100
     right100 = guest100
     delta100 = (left100 - right100) if (left100 is not None and right100 is not None) else None
 
     if delta100 is not None:
+        critic_name = (
+            primary_critic["sourceName"]
+            if len(editorial) == 1 and primary_critic
+            else f"{len(editorial)} published critics"
+        )
         if abs(delta100) <= 5:
             gap_head = (
-                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched real guest scores"
+                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched real guest reviews."
                 if first_hand
-                else f"Hype matches reality ({'+' if delta100 >= 0 else ''}{delta100} pts) — critics & real guests agree"
+                else f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — {critic_name} and real guests agree."
             )
         elif delta100 > 5:
             gap_head = (
-                f"I rated this +{delta100} pts higher than real guests"
+                f"I rated this +{delta100} pts higher than real guests — see what I loved below."
                 if first_hand
-                else f"Critics & awards rate this +{delta100} pts higher than real guests (Watch for hype)"
+                else f"{critic_name} rated this +{delta100} pts higher than real guests."
             )
         else:
             gap_head = (
-                f"I rated this {delta100} pts stricter than real guests — read caveats"
+                f"I rated this {delta100} pts stricter than real guests — see what stood out & what held it back."
                 if first_hand
-                else f"Real guests rate this +{abs(delta100)} pts higher than critics (Quiet overachiever)"
+                else f"Real guests rated this +{abs(delta100)} pts higher than {critic_name}."
             )
     else:
-        gap_head = (
-            "Live Google guest score loads below to show My Score vs. Real Guests delta"
-            if first_hand
-            else "Real guest ratings & official awards compared side-by-side"
-        )
+        if first_hand:
+            gap_head = "My first-hand stay notes below — compare directly with real guest reviews."
+        elif awards:
+            gap_head = f"Recognised with {' • '.join(a['label'] for a in awards)} — compare with real guest reviews below."
+        else:
+            gap_head = "Real guest ratings, official awards, and linked reviews compared side-by-side."
 
     return {
         "firstHand": first_hand,
         "visited": visited,
         "tierLabel": "First-Hand Verified" if first_hand else ("Short Tour Preview" if visited else "Global Directory"),
+        "personalScore25": personal_score_25,
         "ours100": ours100,
         "critic100": critic100,
+        "primaryCritic": primary_critic,
         "guest100": guest100,
         "overallIndex": overall_idx,
         "greatStayOdds": odds,
@@ -241,17 +261,17 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             "bestRating": vg.get("scale", 10),
             "reviewCount": vg.get("reviewCount") or 1,
         }
-    if o["firstHand"] and h.get("overall") is not None:
+    if o["firstHand"] and o.get("personalScore25") is not None:
         ld["review"] = {
             "@type": "Review",
             "author": {"@type": "Organization", "name": "The Uncharted Itinerary"},
             "reviewRating": {
                 "@type": "Rating",
-                "ratingValue": h["overall"],
-                "bestRating": 5,
-                "worstRating": 1,
+                "ratingValue": o["personalScore25"],
+                "bestRating": 25,
+                "worstRating": 5,
             },
-            "reviewBody": h.get("verdict") or "",
+            "reviewBody": h.get("whereWeDiffer") or h.get("verdict") or "",
         }
 
     # Build Middle Key Facts tiles (strictly non-blank verified fields only!)
@@ -278,16 +298,16 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         f'<span class="tag tag-caution">⚠ {esc(rf)}</span>' for rf in (h.get("redFlags") or [])
     )
 
-    # First-hand 5-axis bars
+    # First-hand 5-axis bars matching exact YouTube video categories (/25 total)
     scores_html = ""
     if o["firstHand"] and h.get("scores"):
         s = h["scores"]
         for lbl, key in [
-            ("Rooms & Villas", "rooms"),
-            ("Grounds, Pools & Beach", "grounds"),
-            ("Food & Breakfast", "food"),
-            ("Service & Hospitality", "service"),
-            ("Value for Money", "value"),
+            ("Value", "value"),
+            ("Room Quality", "rooms"),
+            ("Vibe", "grounds"),
+            ("Food", "food"),
+            ("Service", "service"),
         ]:
             val = int(s.get(key, 4))
             pct = int(round((val / 5) * 100))
@@ -304,12 +324,25 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         else:
             review_href = f"https://www.youtube.com/watch?v={urllib.parse.quote(h['videoId'])}"
 
-    left_label = "My First-Hand Stay" if o["firstHand"] else "Critics & Official Awards"
-    left_display = (
-        f"{h['overall']} / 5 ({o['ours100']}/100)"
+    scored_ed = [e for e in o["editorial"] if e.get("normalized100") is not None]
+    pc = scored_ed[0] if scored_ed else None
+    left_label = (
+        "My First-Hand Stay"
         if o["firstHand"]
-        else (f"{o['critic100']} / 100" if o["critic100"] is not None else "0 sourced yet")
+        else (pc["sourceName"] if (len(scored_ed) == 1 and pc) else "Published Critics")
     )
+    if o["firstHand"] and o.get("personalScore25") is not None:
+        left_display = f"{o['personalScore25']} / 25 ({o['ours100']}/100)"
+    elif o["firstHand"]:
+        left_display = f"{h['overall']} / 5 ({o['ours100']}/100)"
+    elif len(scored_ed) == 1 and pc:
+        raw_sc = pc.get("rawScore") or f"{o['critic100']}/100"
+        left_display = f"{raw_sc} ({o['critic100']}/100)"
+    elif o["critic100"] is not None:
+        left_display = f"{o['critic100']} / 100 ({len(scored_ed)} critics)"
+    else:
+        left_display = "No numeric critic review yet"
+
     right_display = (
         f"{vg['rating']} / {vg.get('scale', 10)} ({o['guest100']}/100)"
         if vg and vg.get("rating")
@@ -318,7 +351,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
         if o["delta100"] is not None
-        else "Live Compare"
+        else "—"
     )
     delta_tone = (
         "is-caution"
@@ -326,29 +359,37 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         else ("is-aligned" if o["delta100"] is not None else "")
     )
 
+    hero_awards_html = "".join(
+        f'<a class="tag tag-accent" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 {esc(a["label"])} ↗</a>'
+        for a in o["awards"]
+    )
+
     awards_html = "".join(
         f'<article class="channel-row"><div class="channel-row-head"><div>'
         f'<span class="tag tag-accent">{esc(a.get("awardBody") or "Official Award")}</span>'
-        f'<h4><a href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(a["label"])} ↗</a></h4>'
-        f'</div><div class="channel-row-score"><strong>{esc(a.get("year") or "Verified")}</strong>'
-        f'<span>{esc(a.get("normalized100") or "")}/100</span></div></div></article>'
+        f'<h4><a href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">🏆 {esc(a["label"])} ↗</a></h4>'
+        f'</div><div class="channel-row-score"><strong>{esc(a.get("year") or "Official")}</strong>'
+        f'<span>Official Honour</span></div></div></article>'
         for a in o["awards"]
     )
     editorial_parts = []
     for e in o["editorial"]:
         tk = f'<p class="channel-takeaway">{esc(e.get("takeaway"))}</p>' if e.get("takeaway") else ""
+        if e.get("normalized100") is not None:
+            sc_html = f'<strong>{esc(e.get("rawScore") or "")}</strong><span>{esc(e["normalized100"])}/100</span>'
+        else:
+            sc_html = '<strong>Review</strong><span>Read Article ↗</span>'
         editorial_parts.append(
             f'<article class="channel-row"><div class="channel-row-head"><div>'
             f'<span class="tag">Editorial</span>'
             f'<h4><a href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(e["sourceName"])} ↗</a></h4>'
-            f'</div><div class="channel-row-score"><strong>{esc(e.get("rawScore") or "")}</strong>'
-            f'<span>{esc(e["normalized100"])}/100</span></div></div>{tk}</article>'
+            f'</div><div class="channel-row-score">{sc_html}</div></div>{tk}</article>'
         )
     editorial_html = "".join(editorial_parts)
 
     yt_html = ""
     if review_href:
-        fh_score_lbl = f"{h['overall']} / 5" if o["firstHand"] else "Short"
+        fh_score_lbl = f"{o['personalScore25']} / 25" if (o["firstHand"] and o.get("personalScore25") is not None) else "Short"
         yt_html += (
             f'<article class="channel-row"><div class="channel-row-head"><div>'
             f'<span class="tag tag-accent">Founding Contributor</span>'
@@ -484,21 +525,22 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             {f"<span>&bull;</span><span>{esc(h['brand'])}</span>" if h.get('brand') else ""}
             {f"<span>&bull;</span><span>{esc(h['priceRange'])}</span>" if h.get('priceRange') else ""}
           </div>
+          {f'<div class="meta-line" style="margin-top:8px;gap:6px;">{hero_awards_html}</div>' if hero_awards_html else ''}
           <h1 class="detail-title">{esc(h['name'])}</h1>
-          <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Verified StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
+          <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Personally curated StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
 
           <div class="detail-kpi-row">
             <div class="detail-kpi is-primary {'is-caution' if o['statusTone'] == 'amber' else ''}">
-              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else "Live"}</strong>
-              <span>StayOdds</span>
+              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else ("Award" if o['awards'] else "Open")}</strong>
+              <span>{'StayOdds' if o['greatStayOdds'] is not None else o['statusBadge']}</span>
             </div>
             <div class="detail-kpi">
               <strong>{f"{o['overallIndex']}<span>/100</span>" if o['overallIndex'] is not None else "—"}</strong>
               <span>StayOdds Index</span>
             </div>
             <div class="detail-kpi">
-              <strong>{f"{h['overall']}<span>/5</span>" if o['firstHand'] else ("Short" if o['visited'] else "Global")}</strong>
-              <span>{'First-Hand Stay' if o['firstHand'] else o['tierLabel']}</span>
+              <strong>{f"{o['personalScore25']}<span>/25</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if o['visited'] else "Global")}</strong>
+              <span>{'My Stay Score' if o['firstHand'] else o['tierLabel']}</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
@@ -517,13 +559,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         </div>
       </section>
 
-      <!-- RESTORED: Dual-Mode Consensus & Opinion Gap Module -->
+      <!-- Dual-Mode Comparison & Opinion Gap Module -->
       <section class="detail-section">
         <div class="opinion-gap-card {delta_tone}">
           <div class="opinion-gap-head">
             <div>
               <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Critics & Official Awards vs. Real Guest Score'}</h2>
+              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Published Critics vs. Real Guest Score'}</h2>
               <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -538,7 +580,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['left100'] or 0}%"></div></div>
             </div>
             {f'''<div class="gap-side">
-              <div class="gap-side-top"><span>Critics &amp; Official Awards ({len(o['awards']) + len(o['editorial'])} sourced)</span><strong>{o['critic100']} / 100</strong></div>
+              <div class="gap-side-top"><span>Published Critic{'' if len(scored_ed) == 1 else 's'} ({esc(', '.join(e['sourceName'] for e in scored_ed))})</span><strong>{o['critic100']} / 100</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['critic100']}%;background:#d97706;"></div></div>
             </div>''' if (o['firstHand'] and o['critic100'] is not None) else ''}
             <div class="gap-side">
@@ -547,12 +589,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             </div>
           </div>
 
+          {f'<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;"><strong style="font-size:13px;color:#334155;">Official Awards (Listed by Name, Never Scored):</strong> {hero_awards_html}</div>' if hero_awards_html else ''}
           <div class="live-google-bar" id="liveGoogleStrip" style="display:none;"></div>
-          {f'<p class="opinion-gap-narrative"><strong>Why our take matches or differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
+          {f'<p class="opinion-gap-narrative"><strong>What I Liked &amp; Where My Take Differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
         </div>
       </section>
 
-      <!-- RESTORED: Structured Middle Key Facts Panel (Strictly Verified Specs) -->
+      <!-- Structured Middle Key Facts Panel (Strictly Verified Specs) -->
       <section class="detail-section">
         <div class="key-facts-panel">
           <div class="detail-panel-head" style="margin-bottom:14px;">
@@ -580,16 +623,16 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             </div>
             <p class="detail-panel-sub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-              <div class="formula-step"><span class="formula-weight">{o['weights']['firstHand']}%</span><strong>{f"{o['ours100']}/100" if o['ours100'] is not None else "—"}</strong><small>First-Hand</small></div>
-              <div class="formula-step"><span class="formula-weight">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}/100" if o['critic100'] is not None else "0"}</strong><small>Critics &amp; Awards</small></div>
+              <div class="formula-step"><span class="formula-weight">{o['weights']['firstHand']}%</span><strong>{f"{o['ours100']}/100" if o['ours100'] is not None else "—"}</strong><small>My Stay</small></div>
+              <div class="formula-step"><span class="formula-weight">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}/100" if o['critic100'] is not None else "—"}</strong><small>Published Critics</small></div>
               <div class="formula-step"><span class="formula-weight">{o['weights']['guests']}%</span><strong>{f"{o['guest100']}/100" if o['guest100'] is not None else "Live"}</strong><small>Verified Guests</small></div>
             </div>
           </div>
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>First-Hand 5-Axis Scorecard</h3>
-              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{h['overall']} / 5 Overall" if o['firstHand'] else o['tierLabel']}</span>
+              <h3>My 5-Category Scorecard (/25)</h3>
+              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{o['personalScore25']} / 25 Total" if (o['firstHand'] and o.get('personalScore25') is not None) else o['tierLabel']}</span>
             </div>
             {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else '<p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>'}
           </div>
@@ -922,6 +965,8 @@ def main() -> None:
             item["overall"] = r["overall"]
         if r["verdict"]:
             item["verdict"] = r["verdict"]
+        if r["whereWeDiffer"]:
+            item["whereWeDiffer"] = r["whereWeDiffer"]
         if r["standout"]:
             item["standout"] = r["standout"]
         if r["watchOut"]:
@@ -946,7 +991,6 @@ def main() -> None:
                 {
                     "awardBody": a.get("awardBody", ""),
                     "label": a["label"],
-                    "normalized100": a.get("normalized100"),
                     "sourceUrl": a["sourceUrl"],
                 }
                 for a in r["officialAwards"]
@@ -955,10 +999,19 @@ def main() -> None:
             item["editorialRatings"] = [
                 {
                     "sourceName": e["sourceName"],
+                    "rawScore": e.get("rawScore", ""),
                     "normalized100": e["normalized100"],
                     "sourceUrl": e["sourceUrl"],
                 }
                 for e in r["editorialRatings"]
+            ]
+        if r["youtubeReviews"]:
+            item["youtubeReviews"] = [
+                {
+                    "creatorName": y["creatorName"],
+                    "sourceUrl": y["sourceUrl"],
+                }
+                for y in r["youtubeReviews"]
             ]
         lean_hotels.append(item)
 

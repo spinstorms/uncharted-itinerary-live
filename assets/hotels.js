@@ -3,7 +3,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=4";
+} from "./stayodds-engine.js?v=5";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -274,8 +274,8 @@ function buildPopupHtml(h) {
       <div class="map-popup-media">
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
         <span class="map-popup-score">${
-          o.firstHand
-            ? `${formatPersonalScore(h.overall)}/5 First-Hand`
+          o.personalScore25 != null
+            ? `${o.personalScore25}/25 My Stay`
             : o.greatStayOdds != null
             ? `${o.greatStayOdds}% StayOdds`
             : escapeHtml(o.tierLabel)
@@ -290,7 +290,7 @@ function buildPopupHtml(h) {
         <div class="map-popup-loc">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${
     h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""
   }</div>
-        <p>${escapeHtml(h.verdict || h.standout || o.opinionGap.headline)}</p>
+        <p>${escapeHtml(h.whereWeDiffer || h.verdict || h.standout || o.opinionGap.headline)}</p>
         <div class="map-popup-actions">
           <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
           <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
@@ -324,7 +324,7 @@ function renderMapMarkers(hotels, fitBounds = true) {
     let marker;
     if (isVisited) {
       const pinClass = o.firstHand ? "" : "is-short";
-      const pinText = o.firstHand ? `${formatPersonalScore(h.overall)}/5` : "Short";
+      const pinText = o.personalScore25 != null ? `${o.personalScore25}/25` : "Short";
       const zOffset = o.firstHand ? 600 : 500;
 
       const icon = L.divIcon({
@@ -412,7 +412,7 @@ function renderScorecards(hotels) {
                   <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
                   <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
                   <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
-                  <td>${o.firstHand ? `<strong>${formatPersonalScore(h.overall)} / 5</strong>` : escapeHtml(o.tierLabel)}</td>
+                  <td>${o.personalScore25 != null ? `<strong>${o.personalScore25} / 25</strong>` : escapeHtml(o.tierLabel)}</td>
                   <td>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "Live"}</td>
                   <td><small>${escapeHtml(aw)}</small></td>
                   <td style="white-space:nowrap;">
@@ -457,8 +457,22 @@ function renderScorecards(hotels) {
 
         const awardsHtml = (h.officialAwards || [])
           .slice(0, 3)
-          .map((a) => `<span class="tag tag-accent">${escapeHtml(a.label)}</span>`)
+          .map(
+            (a) =>
+              `<a class="tag tag-accent" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 ${escapeHtml(a.label)} ↗</a>`
+          )
           .join("");
+
+        const linkedReviewsHtml = [
+          ...(o.editorialRatings || []).map(
+            (e) =>
+              `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(e.sourceName)}${e.rawScore ? ` (${escapeHtml(e.rawScore)})` : ""} ↗</a>`
+          ),
+          ...(o.youtubeReviews || []).slice(0, 2).map(
+            (y) =>
+              `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(y.creatorName)} ↗</a>`
+          ),
+        ].join("");
 
         return `
           <article class="scorecard-card">
@@ -468,13 +482,15 @@ function renderScorecards(hotels) {
               </a>
               <div class="scorecard-badge-overall ${o.firstHand ? "" : "is-short"}">
                 <strong>${
-                  o.firstHand
-                    ? formatPersonalScore(h.overall)
+                  o.personalScore25 != null
+                    ? o.personalScore25
                     : o.greatStayOdds != null
                     ? `${o.greatStayOdds}%`
-                    : "Live"
+                    : o.officialAwards.length
+                    ? "Award"
+                    : "Open"
                 }</strong>
-                <span>${o.firstHand ? "/ 5 Stay" : "StayOdds"}</span>
+                <span>${o.personalScore25 != null ? "/ 25 Stay" : o.greatStayOdds != null ? "StayOdds" : "Details"}</span>
               </div>
               <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
                 📍 Map
@@ -493,11 +509,11 @@ function renderScorecards(hotels) {
               ${
                 o.firstHand && s
                   ? `<div class="score-bars-list">
-                      ${bar("Rooms & Villas", s.rooms)}
-                      ${bar("Grounds & Pool", s.grounds)}
-                      ${bar("Food & Breakfast", s.food)}
-                      ${bar("Service", s.service)}
                       ${bar("Value", s.value)}
+                      ${bar("Room Quality", s.rooms)}
+                      ${bar("Vibe", s.grounds)}
+                      ${bar("Food", s.food)}
+                      ${bar("Service", s.service)}
                     </div>`
                   : `<div class="card-opinion-strip" style="margin:10px 0;">
                       <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
@@ -505,9 +521,12 @@ function renderScorecards(hotels) {
               }
 
               <div class="scorecard-notes">
-                ${h.standout ? `<div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>` : ""}
+                ${h.whereWeDiffer ? `<div><strong>What I Liked &amp; Where I Differ:</strong> ${escapeHtml(h.whereWeDiffer)}</div>` : ""}
+                ${h.standout && h.standout !== h.whereWeDiffer ? `<div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>` : ""}
                 ${h.watchOut ? `<div><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>` : ""}
               </div>
+
+              ${linkedReviewsHtml ? `<div class="consensus-sources" style="margin:8px 0 12px;">${linkedReviewsHtml}</div>` : ""}
 
               <div class="scorecard-actions">
                 <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Breakdown</a>
@@ -650,7 +669,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261121c`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261121d`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];

@@ -32,7 +32,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261121c" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261121d" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
@@ -149,29 +149,29 @@
           <div class="method-pill">
             <strong>Tier 1</strong>
             <div>
-              <span>First-Hand Verified (40 / 30 / 30)</span>
-              <small>40% First-Hand Stay + 30% Sourced Critics + 30% Verified Guests — balanced fairly when a source isn’t linked yet</small>
+              <span>First-Hand Verified</span>
+              <small>My personal /25 stay score (Value, Room Quality, Vibe, Food, Service — plus what I liked &amp; where my take differs) compared directly against published critics &amp; real guests</small>
             </div>
           </div>
           <div class="method-pill">
-            <strong>Tier 2</strong>
+            <strong>Awards</strong>
             <div>
-              <span>Global Directory</span>
-              <small>40/60 Critics vs Guests (2+ critics), 25/75 (1 critic), or 100% Guest Data Only — never guesses missing scores</small>
+              <span>Named &amp; Linked — Never Scored</span>
+              <small>MICHELIN Keys, Forbes Five-Star, and World’s 50 Best are always listed by exact award name with a direct official link — never turned into a made-up number</small>
             </div>
           </div>
           <div class="method-pill">
             <strong>100%</strong>
             <div>
-              <span>Directly Sourced</span>
-              <small>Every award, editorial rating, and YouTube review is personally checked and linked straight to its original source</small>
+              <span>Backed by Real Links</span>
+              <small>Every award, critic review (e.g. 9/10, 18/20), and YouTube hotel tour links straight to the original source</small>
             </div>
           </div>
           <div class="method-pill is-highlight">
-            <strong>Status</strong>
+            <strong>Compare</strong>
             <div>
-              <span>Consensus Badges Only When Earned</span>
-              <small>Strong Consensus, Mostly Aligned, and Split Verdict only appear once 2+ independent verified sources agree or split</small>
+              <span>Agreement vs. Opinions Differ</span>
+              <small>Strong Agreement, Mostly Aligned, and Opinions Differ only appear when 2+ real numeric scores (my stay, published critics, or real guests) can be compared</small>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
           <div class="section-header" style="margin-bottom:16px;">
             <div>
               <h2 class="section-title">Compare Any Two Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Pick any two luxury stays below to compare verified first-hand scores, standout features, honest caveats, and live rate links side-by-side.</p>
+              <p class="section-subtitle">Pick any two luxury stays below to compare verified first-hand scores, official awards, standout features, honest caveats, and live rate links side-by-side.</p>
             </div>
           </div>
 
@@ -206,7 +206,7 @@
         <div class="section-header">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary and our Global Luxury Directory — click any property for its full transparent breakdown.</p>
+            <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary and our Global Luxury Directory — every award, critic score, and YouTube review links directly to its source.</p>
           </div>
         </div>
 
@@ -217,12 +217,12 @@
             <div class="filter-pills" id="consensusRegionPills" role="tablist" aria-label="Filter by region"></div>
             <select id="verdictFilter" class="select-control" aria-label="Filter by StayOdds status">
               <option value="All">All Statuses</option>
-              <option value="First-Hand Only">First-Hand Only (Verified Stay)</option>
-              <option value="Strong Consensus">Strong Consensus (2+ Sources)</option>
-              <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
-              <option value="Split Verdict">Split Verdict (Read Caveats)</option>
-              <option value="Guest Data Only">Guest Data Only</option>
-              <option value="Live Ratings Pending">Live Ratings Pending (Global Directory)</option>
+              <option value="Strong Agreement">Strong Agreement (2+ Scores)</option>
+              <option value="Mostly Aligned">Mostly Aligned (2+ Scores)</option>
+              <option value="Opinions Differ">Opinions Differ (See Why)</option>
+              <option value="First-Hand Verified">First-Hand Verified</option>
+              <option value="Verified Guest Score">Verified Guest Score</option>
+              <option value="Award-Winning">Award-Winning</option>
             </select>
             <select id="consensusSort" class="select-control" aria-label="Sort StayOdds directory">
               <option value="visited">Sort: First-Hand Verified First</option>
@@ -279,6 +279,6 @@
     </div>
   </footer>
 
-  <script type="module" src="../assets/compare.js?v=10"></script>
+  <script type="module" src="../assets/compare.js?v=11"></script>
 </body>
 </html>

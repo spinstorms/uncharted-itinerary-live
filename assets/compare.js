@@ -4,7 +4,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=4";
+} from "./stayodds-engine.js?v=5";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -147,6 +147,23 @@ function renderH2HCard(h, opponent) {
     : null;
   const unratedLabel = o.visited ? "Short Tour" : "Not Visited";
 
+  const criticDisplay =
+    o.scoredEditorial.length === 1
+      ? `${o.primaryCritic.rawScore || `${o.critic100}/100`} (${o.primaryCritic.sourceName})`
+      : o.scoredEditorial.length > 1
+      ? `${o.critic100}/100 (${o.scoredEditorial.length} critics)`
+      : null;
+
+  const awardsHtml =
+    o.officialAwards.length > 0
+      ? o.officialAwards
+          .map(
+            (a) =>
+              `<a href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">${escapeHtml(a.label)} ↗</a>`
+          )
+          .join(" • ")
+      : "None listed";
+
   return `
     <article class="h2h-card">
       <div class="h2h-card-head">
@@ -160,29 +177,39 @@ function renderH2HCard(h, opponent) {
 
       <div class="h2h-odds-strip">
         <div class="odds-big">
-          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong>
+          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Awarded" : "Open"}</strong>
           <span>${escapeHtml(o.statusBadge)}</span>
         </div>
         <div class="index-big">
-          <strong>${o.opinionGap.deltaLabel}</strong>
+          <strong>${escapeHtml(o.opinionGap.deltaLabel)}</strong>
           <span>Opinion Gap</span>
         </div>
       </div>
 
       <div class="h2h-metrics-list">
-        ${metricRow("First-Hand Score", o.firstHand ? formatPersonalScore(h.overall) : null, oo.firstHand ? formatPersonalScore(opponent.overall) : null, " / 5", unratedLabel)}
+        ${metricRow("My First-Hand Stay", o.personalScore25, oo.personalScore25, " / 25", unratedLabel)}
         ${metricRow("Verified Guest Score", o.guest100, oo.guest100, "", "Open Breakdown").replace(
           `${o.guest100}`,
           guestDisplay || "Open Breakdown"
         )}
-        ${metricRow("Critics & Awards", o.critic100, oo.critic100, " / 100", "0 sourced")}
-        ${metricRow("Rooms & Villas", o.firstHand ? formatPersonalScore(s.rooms) : null, oo.firstHand ? formatPersonalScore(os.rooms) : null, " / 5", unratedLabel)}
-        ${metricRow("Food & Breakfast", o.firstHand ? formatPersonalScore(s.food) : null, oo.firstHand ? formatPersonalScore(os.food) : null, " / 5", unratedLabel)}
+        ${metricRow("Published Critics", o.critic100, oo.critic100, "", "No critic score").replace(
+          `${o.critic100}`,
+          criticDisplay || "No critic score"
+        )}
+        <div class="h2h-metric">
+          <span>Official Awards</span>
+          <strong style="text-align:right;font-size:12.5px;">${awardsHtml}</strong>
+        </div>
+        ${metricRow("Value", o.firstHand ? formatPersonalScore(s.value) : null, oo.firstHand ? formatPersonalScore(os.value) : null, " / 5", unratedLabel)}
+        ${metricRow("Room Quality", o.firstHand ? formatPersonalScore(s.rooms) : null, oo.firstHand ? formatPersonalScore(os.rooms) : null, " / 5", unratedLabel)}
+        ${metricRow("Vibe", o.firstHand ? formatPersonalScore(s.grounds) : null, oo.firstHand ? formatPersonalScore(os.grounds) : null, " / 5", unratedLabel)}
+        ${metricRow("Food", o.firstHand ? formatPersonalScore(s.food) : null, oo.firstHand ? formatPersonalScore(os.food) : null, " / 5", unratedLabel)}
         ${metricRow("Service", o.firstHand ? formatPersonalScore(s.service) : null, oo.firstHand ? formatPersonalScore(os.service) : null, " / 5", unratedLabel)}
-        ${metricRow("Value for Money", o.firstHand ? formatPersonalScore(s.value) : null, oo.firstHand ? formatPersonalScore(os.value) : null, " / 5", unratedLabel)}
       </div>
 
-      <p class="h2h-diff"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</p>
+      <p class="h2h-diff"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}${
+        h.whereWeDiffer ? `<br><span style="color:#334155;"><strong>My Take:</strong> ${escapeHtml(h.whereWeDiffer)}</span>` : ""
+      }</p>
 
       <div class="scorecard-actions">
         <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
@@ -345,16 +372,75 @@ function renderLeaderboard() {
         ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">⚠ ${escapeHtml(rf)}</span>`),
       ].join("");
 
+      const criticBoxHtml =
+        o.scoredEditorial.length === 1
+          ? `<small>Published Critic (${o.weights.critics}%)</small>
+             <strong><a href="${escapeHtml(o.primaryCritic.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+               o.primaryCritic.rawScore || `${o.critic100}/100`
+             )} ↗</a></strong>`
+          : o.scoredEditorial.length > 1
+          ? `<small>${o.scoredEditorial.length} Published Critics (${o.weights.critics}%)</small>
+             <strong>${o.critic100} / 100</strong>`
+          : o.editorialRatings.length > 0
+          ? `<small>Website Review</small>
+             <strong style="font-size:13px;"><a href="${escapeHtml(o.editorialRatings[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+               o.editorialRatings[0].sourceName
+             )} ↗</a></strong>`
+          : `<small>Published Critics</small>
+             <strong>No critic score</strong>`;
+
+      const awardsBoxHtml =
+        o.officialAwards.length > 0
+          ? `<small>Official Awards</small>
+             <strong style="font-size:13px;line-height:1.25;">${o.officialAwards
+               .slice(0, 2)
+               .map(
+                 (a) =>
+                   `<a href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+                     a.label
+                   )} ↗</a>`
+               )
+               .join("<br>")}</strong>`
+          : `<small>Official Awards</small>
+             <strong>None listed</strong>`;
+
+      const sourceChips = [
+        ...o.officialAwards.map(
+          (a) =>
+            `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(
+              a.label
+            )} ↗</a>`
+        ),
+        ...o.editorialRatings.map(
+          (e) =>
+            `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
+              e.sourceName
+            )}${e.rawScore ? ` (${escapeHtml(e.rawScore)})` : ""} ↗</a>`
+        ),
+        ...o.youtubeReviews.slice(0, 3).map(
+          (y) =>
+            `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(
+              y.creatorName
+            )} ↗</a>`
+        ),
+      ].join("");
+
       return `
         <article class="consensus-row-card ${toneClass}">
           <div class="consensus-rank-col">
             <span class="consensus-rank-num">#${i + 1}</span>
             <div class="consensus-chance-ring ${toneClass}">
-              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong>
-              <span>${o.greatStayOdds != null ? "StayOdds" : "Open Page"}</span>
+              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Award" : "Open"}</strong>
+              <span>${o.greatStayOdds != null ? "StayOdds" : "See Details"}</span>
             </div>
             <div class="consensus-index-chip">
-              ${o.sourceCount > 0 ? `<strong>${o.sourceCount}</strong> verified layer${o.sourceCount === 1 ? "" : "s"}` : "Live Google Ready"}
+              ${
+                o.sourceCount > 0
+                  ? `<strong>${o.sourceCount}</strong> scored source${o.sourceCount === 1 ? "" : "s"}`
+                  : o.officialAwards.length
+                  ? `<strong>${o.officialAwards.length}</strong> official award${o.officialAwards.length === 1 ? "" : "s"}`
+                  : "Open for Google"
+              }
             </div>
           </div>
 
@@ -373,20 +459,18 @@ function renderLeaderboard() {
 
             <div class="three-pillar-strip">
               <div class="pillar-box is-ours">
-                <small>First-Hand (${o.weights.firstHand}%)</small>
-                <strong>${o.firstHand ? `${formatPersonalScore(h.overall)} / 5` : o.visited ? "Short Preview" : "Not Visited"}</strong>
+                <small>My Stay${o.weights.firstHand ? ` (${o.weights.firstHand}%)` : ""}</small>
+                <strong>${o.personalScore25 != null ? `${o.personalScore25} / 25` : o.visited ? "Short Preview" : "Not Visited"}</strong>
               </div>
               <div class="pillar-box is-critics">
-                <small>Critics &amp; Awards (${o.weights.critics}%)</small>
-                <strong>${o.critic100 != null ? `${o.critic100} / 100` : "0 sourced"}</strong>
+                ${criticBoxHtml}
               </div>
               <div class="pillar-box is-google">
-                <small>Verified Guests (${o.weights.guests}%)</small>
-                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Live on Detail"}</strong>
+                <small>Verified Guests${o.weights.guests ? ` (${o.weights.guests}%)` : ""}</small>
+                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Open Breakdown"}</strong>
               </div>
               <div class="pillar-box is-booking">
-                <small>Opinion Gap</small>
-                <strong>${escapeHtml(o.opinionGap.deltaLabel)}</strong>
+                ${awardsBoxHtml}
               </div>
             </div>
 
@@ -398,12 +482,17 @@ function renderLeaderboard() {
             ${keyFactChips ? `<div class="card-key-facts-strip">${keyFactChips}</div>` : ""}
 
             <div class="consensus-compare-notes">
-              ${h.standout ? `<p><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
+              ${
+                h.whereWeDiffer
+                  ? `<p><strong>What I Liked &amp; Where I Differ:</strong> ${escapeHtml(h.whereWeDiffer)}</p>`
+                  : ""
+              }
+              ${h.standout && h.standout !== h.whereWeDiffer ? `<p><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
               ${h.watchOut ? `<p><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
             </div>
 
             <div class="consensus-sources">
-              ${o.officialAwards.map((a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)} ↗</a>`).join("")}
+              ${sourceChips}
               <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
             </div>
           </div>
@@ -535,7 +624,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261121c`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261121d`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 

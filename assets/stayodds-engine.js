@@ -59,9 +59,7 @@ export function getVerifiedEditorialRatings(hotel) {
       entry &&
       isValidHttpUrl(entry.sourceUrl) &&
       typeof entry.sourceName === "string" &&
-      entry.sourceName.trim().length > 0 &&
-      entry.normalized100 != null &&
-      !Number.isNaN(Number(entry.normalized100))
+      entry.sourceName.trim().length > 0
   );
 }
 
@@ -162,6 +160,14 @@ export async function fetchLiveGoogleRating(googlePlaceId) {
   }
 }
 
+export function getPersonalScore25(hotel) {
+  if (!isFirstHandVerified(hotel) || !hotel?.scores) return null;
+  const s = hotel.scores;
+  const vals = [s.value, s.rooms, s.grounds, s.food, s.service].map(Number);
+  if (vals.some((v) => Number.isNaN(v))) return null;
+  return vals.reduce((a, b) => a + b, 0);
+}
+
 export function computeStayOdds(hotel) {
   const firstHand = isFirstHandVerified(hotel);
   const visited = isVisitedProperty(hotel);
@@ -172,30 +178,40 @@ export function computeStayOdds(hotel) {
   const keyFacts = getKeyFactsList(hotel);
   const redFlags = Array.isArray(hotel?.redFlags) ? hotel.redFlags.filter(Boolean) : [];
 
-  const ours100 = firstHand ? Math.round(Number(hotel.overall) * 20) : null;
+  const personalScore25 = getPersonalScore25(hotel);
+  const ours100 =
+    personalScore25 != null
+      ? Math.round(personalScore25 * 4)
+      : firstHand
+      ? Math.round(Number(hotel.overall) * 20)
+      : null;
 
-  // Combine sourced editorial ratings + scored official awards (both strictly require sourceUrl)
-  const scoredCriticInputs = [
-    ...editorialRatings.map((r) => Number(r.normalized100)),
-    ...officialAwards
-      .filter((a) => a.normalized100 != null && !Number.isNaN(Number(a.normalized100)))
-      .map((a) => Number(a.normalized100)),
-  ];
+  // STRICT RULE: Numeric critic score ONLY comes from published numeric critic reviews (e.g. 9/10, 18/20).
+  // Non-scored editorial articles (e.g. The Points Guy) and official awards (MICHELIN Keys, Forbes Five-Star,
+  // World's 50 Best) are ALWAYS displayed with direct clickable links, never turned into invented /100 scores.
+  const scoredEditorial = editorialRatings.filter(
+    (r) => r.normalized100 != null && !Number.isNaN(Number(r.normalized100))
+  );
+  const scoredCriticInputs = scoredEditorial.map((r) => Number(r.normalized100));
   const critic100 =
     scoredCriticInputs.length > 0
       ? Math.round(scoredCriticInputs.reduce((acc, v) => acc + v, 0) / scoredCriticInputs.length)
       : null;
 
+  const primaryCritic = scoredEditorial.length > 0 ? scoredEditorial[0] : null;
   const guest100 = verifiedGuest ? verifiedGuest.normalized100 : null;
 
   let weights = { firstHand: 0, critics: 0, guests: 0 };
   let overallIndex = null;
   let greatStayOdds = null;
   let spread100 = null;
-  let statusBadge = "Live Ratings Pending";
-  let statusTone = "slate";
+  let statusBadge = officialAwards.length > 0 ? "Award-Winning" : "Global Directory";
+  let statusTone = officialAwards.length > 0 ? "teal" : "slate";
   let isConsensusBadge = false;
-  let formulaSummary = "Awaiting live verified guest ratings & sourced critic links.";
+  let formulaSummary =
+    officialAwards.length > 0
+      ? `Awarded ${officialAwards.map((a) => a.label).join(" • ")} — open breakdown for live Google reviews.`
+      : "Open breakdown to check live Google guest reviews.";
 
   const activeScores = [ours100, critic100, guest100].filter((v) => v != null);
   const sourceCount = activeScores.length;
@@ -204,57 +220,51 @@ export function computeStayOdds(hotel) {
     if (critic100 != null && guest100 != null) {
       weights = { firstHand: 40, critics: 30, guests: 30 };
       overallIndex = Math.round(ours100 * 0.4 + critic100 * 0.3 + guest100 * 0.3);
-      formulaSummary = "40% First-Hand Stay • 30% Sourced Critics & Awards • 30% Live Verified Guests";
+      formulaSummary = "40% My Stay • 30% Published Critics • 30% Verified Guests";
     } else if (guest100 != null) {
       weights = { firstHand: 55, critics: 0, guests: 45 };
       overallIndex = Math.round(ours100 * 0.55 + guest100 * 0.45);
-      formulaSummary = "55% First-Hand Stay • 45% Verified Guests (weighted)";
+      formulaSummary = "55% My Stay • 45% Verified Guests";
     } else if (critic100 != null) {
       weights = { firstHand: 55, critics: 45, guests: 0 };
       overallIndex = Math.round(ours100 * 0.55 + critic100 * 0.45);
-      formulaSummary = "55% First-Hand Stay • 45% Sourced Critics & Awards (weighted)";
+      formulaSummary = "55% My Stay • 45% Published Critics";
     } else {
       weights = { firstHand: 100, critics: 0, guests: 0 };
       overallIndex = ours100;
       greatStayOdds = ours100;
-      statusBadge = "First-Hand Only";
+      statusBadge = "First-Hand Verified";
       statusTone = "accent";
-      formulaSummary = "100% First-Hand Verified Stay — open breakdown for live Google guest rating.";
+      formulaSummary = "100% My First-Hand Stay — open breakdown for live Google reviews.";
     }
   } else {
     if (critic100 != null && guest100 != null) {
-      if (scoredCriticInputs.length >= 2) {
-        weights = { firstHand: 0, critics: 40, guests: 60 };
-        overallIndex = Math.round(critic100 * 0.4 + guest100 * 0.6);
-        formulaSummary = "40% Sourced Critics & Awards (2+) • 60% Live Verified Guests";
-      } else {
-        weights = { firstHand: 0, critics: 25, guests: 75 };
-        overallIndex = Math.round(critic100 * 0.25 + guest100 * 0.75);
-        formulaSummary = "25% Sourced Critic/Award • 75% Live Verified Guests";
-      }
+      weights = { firstHand: 0, critics: 35, guests: 65 };
+      overallIndex = Math.round(critic100 * 0.35 + guest100 * 0.65);
+      formulaSummary = "35% Published Critics • 65% Verified Guests";
     } else if (guest100 != null) {
       weights = { firstHand: 0, critics: 0, guests: 100 };
       overallIndex = guest100;
       greatStayOdds = guest100;
-      statusBadge = "Guest Data Only";
+      statusBadge = "Verified Guest Score";
       statusTone = "teal";
-      formulaSummary = "100% Live Verified Guest Ratings (no sourced critic/award score linked yet).";
+      formulaSummary = "100% Verified Guest Ratings";
     } else if (critic100 != null) {
       weights = { firstHand: 0, critics: 100, guests: 0 };
       overallIndex = critic100;
       greatStayOdds = critic100;
-      statusBadge = "Editorial Only";
+      statusBadge = "Critic Reviewed";
       statusTone = "slate";
-      formulaSummary = "100% Sourced Editorial & Official Awards (live guest ratings pending).";
+      formulaSummary = "100% Published Critic Reviews — open breakdown for live Google reviews.";
     }
   }
 
-  // Consensus status badges unlock ONLY when >= 2 verified numeric layers exist
+  // Agreement / Difference badges ONLY unlock when >= 2 real numeric scores exist
   if (sourceCount >= 2 && overallIndex != null) {
     isConsensusBadge = true;
     spread100 = Math.max(...activeScores) - Math.min(...activeScores);
     if (spread100 <= 6) {
-      statusBadge = "Strong Consensus";
+      statusBadge = "Strong Agreement";
       statusTone = "accent";
       greatStayOdds = Math.min(98, overallIndex + 2);
     } else if (spread100 <= 12) {
@@ -262,53 +272,68 @@ export function computeStayOdds(hotel) {
       statusTone = "teal";
       greatStayOdds = overallIndex;
     } else {
-      statusBadge = "Split Verdict";
+      statusBadge = "Opinions Differ";
       statusTone = "amber";
       greatStayOdds = Math.max(50, overallIndex - 4);
     }
   }
 
-  // Dual-Mode Opinion Gap Module ("My Score vs Real Guests" OR "Critics & Awards vs Real Guests")
+  // Dual-Mode Opinion Gap Module ("My Score vs Real Guests" OR "Published Critics vs Real Guests")
   const left100 = firstHand ? ours100 : critic100;
   const right100 = guest100;
   const delta100 = left100 != null && right100 != null ? left100 - right100 : null;
 
   let gapHeadline = firstHand
-    ? "Awaiting live guest rating to calculate My Score vs. Crowd delta"
-    : "Awaiting both sourced critics/awards and live guest rating";
+    ? "My first-hand stay notes below — open breakdown to compare with live Google guest reviews."
+    : officialAwards.length > 0
+    ? `Recognised with ${officialAwards.map((a) => a.label).join(" • ")} — compare with real guest reviews below.`
+    : "Compare verified guest reviews and linked video tours below.";
+
   if (delta100 != null) {
+    const criticName =
+      scoredEditorial.length === 1 ? primaryCritic.sourceName : `${scoredEditorial.length} published critics`;
     if (Math.abs(delta100) <= 5) {
       gapHeadline = firstHand
-        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched real guest scores`
-        : `Hype matches reality (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — critics & guests agree`;
+        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched real guest reviews.`
+        : `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — ${criticName} and real guests agree.`;
     } else if (delta100 > 5) {
       gapHeadline = firstHand
-        ? `I rated this +${delta100} pts higher than real guests`
-        : `Critics & awards rate this +${delta100} pts higher than real guests (Watch for hype)`;
+        ? `I rated this +${delta100} pts higher than real guests — see what I loved below.`
+        : `${criticName} rated this +${delta100} pts higher than real guests.`;
     } else {
       gapHeadline = firstHand
-        ? `I rated this ${delta100} pts stricter than real guests — read caveats`
-        : `Real guests rate this +${Math.abs(delta100)} pts higher than critics (Quiet overachiever)`;
+        ? `I rated this ${delta100} pts stricter than real guests — see what stood out & what held it back.`
+        : `Real guests rated this +${Math.abs(delta100)} pts higher than ${criticName}.`;
     }
   }
 
+  const leftDisplay = firstHand
+    ? personalScore25 != null
+      ? `${personalScore25} / 25`
+      : `${formatPersonalScore(hotel.overall)} / 5`
+    : scoredEditorial.length === 1
+    ? primaryCritic.rawScore || `${critic100} / 100`
+    : scoredEditorial.length > 1
+    ? `${critic100} / 100 (${scoredEditorial.length} critics)`
+    : "No critic score";
+
   const opinionGap = {
     mode: firstHand ? "my_vs_guests" : "critics_vs_guests",
-    title: firstHand ? "My Score vs. Real Guest Score" : "Critics & Official Awards vs. Real Guest Score",
-    leftLabel: firstHand ? "My First-Hand Stay" : "Critics & Official Awards",
+    title: firstHand ? "My Score vs. Real Guest Score" : "Published Critics vs. Real Guest Score",
+    leftLabel: firstHand
+      ? "My First-Hand Stay"
+      : scoredEditorial.length === 1
+      ? primaryCritic.sourceName
+      : "Published Critics",
     left100,
-    leftDisplay: firstHand
-      ? `${formatPersonalScore(hotel.overall)} / 5`
-      : critic100 != null
-      ? `${critic100} / 100`
-      : "0 sourced yet",
+    leftDisplay,
     rightLabel: verifiedGuest ? `${verifiedGuest.sourceName}` : "Real Guest Score",
     right100,
     rightDisplay: verifiedGuest
       ? `${verifiedGuest.rating.toFixed(1)} / ${verifiedGuest.scale}`
-      : "Live API",
+      : "Open Breakdown",
     delta100,
-    deltaLabel: delta100 != null ? `${delta100 > 0 ? "+" : ""}${delta100} pts` : "Pending",
+    deltaLabel: delta100 != null ? `${delta100 > 0 ? "+" : ""}${delta100} pts` : "—",
     headline: gapHeadline,
     narrative: firstHand
       ? hotel.whereWeDiffer || hotel.verdict || ""
@@ -324,8 +349,11 @@ export function computeStayOdds(hotel) {
       : "Global Directory",
     firstHand,
     visited,
+    personalScore25,
     ours100,
     critic100,
+    primaryCritic,
+    scoredEditorial,
     guest100,
     overallIndex,
     greatStayOdds,

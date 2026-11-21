@@ -77,6 +77,14 @@ function initCommonUi() {
   }
 }
 
+function getScore25(hotel) {
+  if (!hotel || !hotel.scores) return null;
+  const s = hotel.scores;
+  const vals = [s.value, s.rooms, s.grounds, s.food, s.service].map(Number);
+  if (vals.some((v) => Number.isNaN(v))) return null;
+  return vals.reduce((a, b) => a + b, 0);
+}
+
 function renderFeatured(video) {
   const container = qs("#featuredContainer");
   if (!container || !video) return;
@@ -84,6 +92,7 @@ function renderFeatured(video) {
   const summary = video.summary || {};
   const highlights = (summary.highlights || []).slice(0, 3);
   const hotel = state.hotelByVideoId.get(video.id);
+  const score25 = getScore25(hotel);
 
   container.innerHTML = `
     <article class="featured-card">
@@ -106,7 +115,7 @@ function renderFeatured(video) {
         <div>
           <div class="meta-line">
             <span class="tag tag-accent">Latest Release</span>
-            ${hotel && hotel.overall != null ? `<span class="tag tag-accent">Score ${Number.isInteger(Number(hotel.overall)) ? hotel.overall : Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
+            ${score25 != null ? `<span class="tag tag-accent">My Score ${score25} / 25</span>` : ""}
             <span class="tag">${escapeHtml(video.category || "Hotel Reviews")}</span>
             <span>${escapeHtml(video.location || "")}</span>
             <span>&bull;</span>
@@ -134,7 +143,8 @@ function renderFeatured(video) {
           </button>
           ${
             hotel
-              ? `<a class="btn btn-outline" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Hotel Rates &nearr;</a>`
+              ? `<a class="btn btn-primary" href="./stayodds/${encodeURIComponent(hotel.id)}/">Full Scorecard &rarr;</a>
+                 <a class="btn btn-outline" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Hotel Rates &nearr;</a>`
               : `<a class="btn btn-outline" href="./links/">Travel Deals &amp; Gear</a>`
           }
         </div>
@@ -231,10 +241,8 @@ function renderVideoGrid() {
               loading="lazy"
             />
             ${
-              hotel && hotel.overall != null
-                ? `<span class="scorecard-badge-overall" style="top:10px;right:10px;"><strong>${
-                    Number.isInteger(Number(hotel.overall)) ? hotel.overall : Number(hotel.overall).toFixed(1)
-                  }</strong><span>/5</span></span>`
+              getScore25(hotel) != null
+                ? `<span class="scorecard-badge-overall" style="top:10px;right:10px;"><strong>${getScore25(hotel)}</strong><span>/25</span></span>`
                 : ""
             }
             <span class="thumb-location">${escapeHtml(v.location || "Travel")}</span>
@@ -334,11 +342,12 @@ function openModal(video, startSeconds = 0) {
   const chapters = video.chapters || [];
   const links = video.affiliateLinks || [];
   const hotel = state.hotelByVideoId.get(video.id);
+  const score25 = getScore25(hotel);
 
   meta.innerHTML = `
     <span class="tag tag-accent">${escapeHtml(video.category || "Review")}</span>
     <span class="tag">${escapeHtml(video.location || "Global")}</span>
-    ${hotel ? `<span class="tag tag-accent">Uncharted Score: ${Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
+    ${score25 != null ? `<span class="tag tag-accent">Uncharted Score: ${score25} / 25</span>` : ""}
     <span>${escapeHtml(formatDate(video.publishedDate))}</span>
   `;
 
@@ -359,12 +368,12 @@ function openModal(video, startSeconds = 0) {
       hotel
         ? `<div class="video-hotel-cta">
             <div>
-              <strong>${escapeHtml(hotel.name)} — ${Number(hotel.overall).toFixed(1)} / 5.0</strong>
-              <span>${escapeHtml(hotel.brand || "")} &bull; ${escapeHtml(hotel.priceRange || "")} &bull; ${escapeHtml(hotel.standout || "")}</span>
+              <strong>${escapeHtml(hotel.name)}${score25 != null ? ` — ${score25} / 25` : ""}</strong>
+              <span>${escapeHtml(hotel.brand || "")}${hotel.priceRange ? ` &bull; ${escapeHtml(hotel.priceRange)}` : ""}${hotel.standout ? ` &bull; ${escapeHtml(hotel.standout)}` : ""}</span>
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <a class="btn btn-primary" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
-              <a class="btn btn-outline" href="./hotels/">Full Scorecard</a>
+              <a class="btn btn-primary" href="./stayodds/${encodeURIComponent(hotel.id)}/">Full Scorecard &rarr;</a>
+              <a class="btn btn-outline" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
             </div>
           </div>`
         : ""
@@ -486,8 +495,8 @@ async function boot() {
 
   try {
     const [vRes, hRes] = await Promise.all([
-      fetch(`./data/videos.json?v=20261121c`),
-      fetch(`./data/hotels.json?v=20261121c`).catch(() => null),
+      fetch(`./data/videos.json?v=20261121d`),
+      fetch(`./data/stayodds-index.json?v=20261121d`).catch(() => null),
     ]);
     if (!vRes.ok) throw new Error(`HTTP ${vRes.status}`);
     const data = await vRes.json();
