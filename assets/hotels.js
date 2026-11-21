@@ -47,6 +47,12 @@ function getSeoHref(h) {
   return `../stayodds/${encodeURIComponent(h.id)}/`;
 }
 
+function resolveThumb(thumb) {
+  if (!thumb) return "../assets/logo.jpg";
+  if (/^https?:\/\//i.test(thumb) || thumb.startsWith("../") || thumb.startsWith("/")) return thumb;
+  return `../${thumb}`;
+}
+
 function getReviewHref(h) {
   if (!h.videoId) return "";
   if (h.coverageType === "Short Tour") {
@@ -97,7 +103,7 @@ function initMap() {
   }).setView([20.0, 20.0], 2);
 
   const cartoLayer = L.tileLayer(
-    "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+    "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_5db3_1_c3957b21042bb79553569521",
     {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
@@ -118,6 +124,7 @@ function initMap() {
 
   cartoLayer.addTo(map);
   state.map = map;
+  state.canvasRenderer = L.canvas({ padding: 0.5 });
   state.markersLayer = L.layerGroup().addTo(map);
 }
 
@@ -252,6 +259,52 @@ function populateBrands() {
     brands.map((b) => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("");
 }
 
+function buildPopupHtml(h) {
+  const o = getOdds(h);
+  const awardsBadges = (h.officialAwards || [])
+    .slice(0, 2)
+    .map((a) => `<span class="tag tag-accent" style="font-size:10.5px;">${escapeHtml(a.label)}</span>`)
+    .join(" ");
+
+  const reviewHref = getReviewHref(h);
+  const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+
+  return `
+    <div class="map-popup-card">
+      <div class="map-popup-media">
+        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+        <span class="map-popup-score">${
+          o.firstHand
+            ? `${formatPersonalScore(h.overall)}/5 First-Hand`
+            : o.greatStayOdds != null
+            ? `${o.greatStayOdds}% StayOdds`
+            : escapeHtml(o.tierLabel)
+        }</span>
+      </div>
+      <div class="map-popup-body">
+        <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
+          <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}" style="font-size:10.5px;">${escapeHtml(o.tierLabel)}</span>
+          ${awardsBadges}
+        </div>
+        <h4>${escapeHtml(h.name)}</h4>
+        <div class="map-popup-loc">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${
+    h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""
+  }</div>
+        <p>${escapeHtml(h.verdict || h.standout || o.opinionGap.headline)}</p>
+        <div class="map-popup-actions">
+          <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
+          <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
+          ${
+            reviewHref
+              ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Video</a>`
+              : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
+          }
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderMapMarkers(hotels, fitBounds = true) {
   if (!state.map || !state.markersLayer) return;
   state.markersLayer.clearLayers();
@@ -268,76 +321,40 @@ function renderMapMarkers(hotels, fitBounds = true) {
     const isVisited = isVisitedProperty(h);
     const isMichelin = hasMichelinKey(h);
 
-    let pinClass = "is-global";
-    let pinText = o.greatStayOdds != null ? `${o.greatStayOdds}%` : "★";
-    let zOffset = 100;
+    let marker;
+    if (isVisited) {
+      const pinClass = o.firstHand ? "" : "is-short";
+      const pinText = o.firstHand ? `${formatPersonalScore(h.overall)}/5` : "Short";
+      const zOffset = o.firstHand ? 600 : 500;
 
-    if (o.firstHand) {
-      pinClass = "";
-      pinText = `${formatPersonalScore(h.overall)}/5`;
-      zOffset = 600;
-    } else if (isVisited) {
-      pinClass = "is-short";
-      pinText = "Short";
-      zOffset = 500;
-    } else if (isMichelin) {
-      pinClass = "is-global is-michelin";
-      zOffset = 250;
+      const icon = L.divIcon({
+        className: "hotel-score-pin-wrap",
+        html: `<div class="hotel-score-pin ${pinClass}"><span>${pinText}</span></div>`,
+        iconSize: [40, 34],
+        iconAnchor: [20, 34],
+        popupAnchor: [0, -30],
+      });
+
+      marker = L.marker([h.lat, h.lng], { icon, zIndexOffset: zOffset });
+    } else {
+      // 60fps Canvas circleMarker for all 264 Global Directory properties (zero DOM lag!)
+      marker = L.circleMarker([h.lat, h.lng], {
+        renderer: state.canvasRenderer,
+        radius: isMichelin ? 7.5 : 6.5,
+        fillColor: "#0f766e",
+        color: isMichelin ? "#fbbf24" : "#ffffff",
+        weight: isMichelin ? 2.5 : 2,
+        opacity: 1,
+        fillOpacity: 0.92,
+      });
+      marker.bindTooltip(
+        `<strong>${escapeHtml(h.name)}</strong>${o.greatStayOdds != null ? ` • ${o.greatStayOdds}%` : ""}`,
+        { direction: "top", offset: [0, -8] }
+      );
     }
 
-    const icon = L.divIcon({
-      className: "hotel-score-pin-wrap",
-      html: `<div class="hotel-score-pin ${pinClass}"><span>${pinText}</span></div>`,
-      iconSize: isVisited ? [40, 34] : [38, 30],
-      iconAnchor: isVisited ? [20, 34] : [19, 30],
-      popupAnchor: [0, -30],
-    });
-
-    const awardsBadges = (h.officialAwards || [])
-      .slice(0, 2)
-      .map((a) => `<span class="tag tag-accent" style="font-size:10.5px;">${escapeHtml(a.label)}</span>`)
-      .join(" ");
-
-    const reviewHref = getReviewHref(h);
-    const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
-
-    const popupHtml = `
-      <div class="map-popup-card">
-        <div class="map-popup-media">
-          <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
-          <span class="map-popup-score">${
-            o.firstHand
-              ? `${formatPersonalScore(h.overall)}/5 First-Hand`
-              : o.greatStayOdds != null
-              ? `${o.greatStayOdds}% StayOdds`
-              : escapeHtml(o.tierLabel)
-          }</span>
-        </div>
-        <div class="map-popup-body">
-          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
-            <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}" style="font-size:10.5px;">${escapeHtml(o.tierLabel)}</span>
-            ${awardsBadges}
-          </div>
-          <h4>${escapeHtml(h.name)}</h4>
-          <div class="map-popup-loc">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${
-      h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""
-    }</div>
-          <p>${escapeHtml(h.verdict || h.standout || o.opinionGap.headline)}</p>
-          <div class="map-popup-actions">
-            <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
-            <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
-            ${
-              reviewHref
-                ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Video</a>`
-                : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
-            }
-          </div>
-        </div>
-      </div>
-    `;
-
-    const marker = L.marker([h.lat, h.lng], { icon, zIndexOffset: zOffset })
-      .bindPopup(popupHtml, { className: "uncharted-popup", maxWidth: 310 })
+    marker
+      .bindPopup(() => buildPopupHtml(h), { className: "uncharted-popup", maxWidth: 310 })
       .addTo(state.markersLayer);
 
     state.markerById.set(h.id, marker);
@@ -345,7 +362,7 @@ function renderMapMarkers(hotels, fitBounds = true) {
 
   if (fitBounds && bounds.length) {
     if (state.region === "All" && state.scope === "all" && !state.search && state.brand === "All") {
-      state.map.setView([20.0, 20.0], 2, { animate: true });
+      state.map.setView([20.0, 20.0], 2, { animate: false });
     } else if (bounds.length === 1) {
       state.map.setView(bounds[0], 11, { animate: true });
     } else {
@@ -447,7 +464,7 @@ function renderScorecards(hotels) {
           <article class="scorecard-card">
             <div class="scorecard-media">
               <a href="${getSeoHref(h)}">
-                <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+                <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
               </a>
               <div class="scorecard-badge-overall ${o.firstHand ? "" : "is-short"}">
                 <strong>${
@@ -633,7 +650,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-directory.json?v=20261121b`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261121c`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];
@@ -645,7 +662,7 @@ async function boot() {
   } catch (err) {
     const grid = qs("#scorecardGrid");
     if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the 300-hotel world map right now.</div>`;
-    console.error("Failed to load stayodds-directory.json:", err);
+    console.error("Failed to load stayodds-index.json:", err);
   }
 }
 

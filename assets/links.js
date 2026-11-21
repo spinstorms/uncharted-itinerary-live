@@ -375,9 +375,9 @@ async function boot() {
 
   try {
     const [affRes, cfgRes, vidRes] = await Promise.all([
-      fetch(`../data/affiliates.json?v=${Date.now()}`),
-      fetch(`../config.json?v=${Date.now()}`).catch(() => null),
-      fetch(`../data/videos.json?v=${Date.now()}`).catch(() => null),
+      fetch(`../data/affiliates.json?v=20261121c`),
+      fetch(`../config.json?v=20261121c`).catch(() => null),
+      fetch(`../data/videos.json?v=20261121c`).catch(() => null),
     ]);
     if (!affRes.ok) throw new Error(`HTTP ${affRes.status}`);
     const data = await affRes.json();

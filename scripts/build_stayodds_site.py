@@ -208,7 +208,16 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         f"Is {h['name']} in {h['location']}, {h['country']} worth it? Compare verified guest ratings, "
         f"official awards, key hotel facts, and {'first-hand stay scores' if o['firstHand'] else 'hype vs. reality opinion gap'} on StayOdds."
     )
-    img_url = h.get("thumbnail") or "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg"
+    raw_thumb = h.get("thumbnail") or ""
+    if raw_thumb.startswith("assets/"):
+        img_src = f"../../{raw_thumb}"
+        img_abs = f"{SITE_URL}/{raw_thumb}"
+    elif raw_thumb.startswith("http"):
+        img_src = raw_thumb
+        img_abs = raw_thumb
+    else:
+        img_src = "../../assets/logo.jpg"
+        img_abs = f"{SITE_URL}/assets/logo.jpg"
 
     # Build JSON-LD structured data (Hotel + Review if First-Hand Verified)
     ld: dict[str, Any] = {
@@ -216,7 +225,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         "@type": "Hotel",
         "name": h["name"],
         "url": canonical,
-        "image": img_url,
+        "image": img_abs,
         "address": {
             "@type": "PostalAddress",
             "addressLocality": h["location"],
@@ -360,9 +369,11 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     for r in related:
         ro = compute_stayodds_py(r)
         r_odds = f"{ro['greatStayOdds']}% StayOdds" if ro["greatStayOdds"] is not None else ro["tierLabel"]
+        r_thumb = r.get("thumbnail") or ""
+        r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/logo.jpg")
         related_html += f"""
           <article class="related-card">
-            <img src="{esc(r.get('thumbnail') or img_url)}" alt="{esc(r['name'])}" loading="lazy" />
+            <img src="{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
                 <span class="tag {'tag-accent' if ro['firstHand'] else 'tag-slate'}">{esc(r_odds)}</span>
@@ -392,16 +403,17 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{esc(title_text)}" />
   <meta property="og:description" content="{esc(meta_desc)}" />
-  <meta property="og:image" content="{esc(img_url)}" />
+  <meta property="og:image" content="{esc(img_abs)}" />
   <meta property="og:url" content="{esc(canonical)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#ff5d22!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=17" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=18" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {{
         var script = document.createElement("script");
@@ -460,7 +472,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="{esc(img_url)}" alt="{esc(h['name'])}" />
+          <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
@@ -795,6 +807,15 @@ def main() -> None:
             else None
         )
 
+        local_thumb = ROOT / "assets" / "thumbs" / f"{pid}.webp"
+        raw_hero = p.get("hero_image_url") or ""
+        if local_thumb.exists() and local_thumb.stat().st_size > 1500:
+            resolved_thumb = f"assets/thumbs/{pid}.webp"
+        elif any(bad in raw_hero for bad in ("www.fourseasons.com", "www.lungarnocollection.com")):
+            resolved_thumb = ""
+        else:
+            resolved_thumb = raw_hero
+
         rec = {
             "id": pid,
             "name": p["name"],
@@ -810,7 +831,7 @@ def main() -> None:
             "coverageType": fh["coverage_type"] if fh else "Global Directory",
             "googlePlaceId": p.get("google_place_id"),
             "nuiteeHotelId": p.get("nuitee_hotel_id"),
-            "thumbnail": p.get("hero_image_url") or "",
+            "thumbnail": resolved_thumb,
             "videoId": fh.get("youtube_video_id", "") if fh else "",
             "inLiveFeed": bool(fh.get("in_live_feed")) if fh else False,
             "reviewedDate": fh.get("reviewed_date") if fh else None,
@@ -873,6 +894,89 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # Build lean index JSON specifically for fast /hotels/ map & /compare/ directory initial load
+    lean_hotels = []
+    for r in directory:
+        vg_lic = (r.get("verifiedGuest") or {}).get("licensed")
+        lean_kf = {k: v for k, v in (r.get("keyFacts") or {}).items() if v}
+        item: dict[str, Any] = {
+            "id": r["id"],
+            "name": r["name"],
+            "location": r["location"],
+            "country": r["country"],
+            "region": r["region"],
+            "lat": r["lat"],
+            "lng": r["lng"],
+            "brand": r["brand"],
+            "priceRange": r["priceRange"],
+            "visitedByUs": r["visitedByUs"],
+            "coverageType": r["coverageType"],
+            "thumbnail": r["thumbnail"],
+            "bookingUrl": r["bookingUrl"],
+        }
+        if r["videoId"]:
+            item["videoId"] = r["videoId"]
+            item["inLiveFeed"] = r["inLiveFeed"]
+        if r["scores"]:
+            item["scores"] = r["scores"]
+            item["overall"] = r["overall"]
+        if r["verdict"]:
+            item["verdict"] = r["verdict"]
+        if r["standout"]:
+            item["standout"] = r["standout"]
+        if r["watchOut"]:
+            item["watchOut"] = r["watchOut"]
+        if lean_kf:
+            item["keyFacts"] = lean_kf
+        if r["redFlags"]:
+            item["redFlags"] = r["redFlags"]
+        if r["shorts"]:
+            item["shorts"] = r["shorts"]
+        if vg_lic:
+            item["verifiedGuest"] = {
+                "licensed": {
+                    "rating": vg_lic["rating"],
+                    "scale": vg_lic["scale"],
+                    "normalized100": vg_lic["normalized100"],
+                    "reviewCount": vg_lic.get("reviewCount"),
+                }
+            }
+        if r["officialAwards"]:
+            item["officialAwards"] = [
+                {
+                    "awardBody": a.get("awardBody", ""),
+                    "label": a["label"],
+                    "normalized100": a.get("normalized100"),
+                    "sourceUrl": a["sourceUrl"],
+                }
+                for a in r["officialAwards"]
+            ]
+        if r["editorialRatings"]:
+            item["editorialRatings"] = [
+                {
+                    "sourceName": e["sourceName"],
+                    "normalized100": e["normalized100"],
+                    "sourceUrl": e["sourceUrl"],
+                }
+                for e in r["editorialRatings"]
+            ]
+        lean_hotels.append(item)
+
+    lean_json = ROOT / "data" / "stayodds-index.json"
+    lean_json.write_text(
+        json.dumps(
+            {
+                "updatedAt": now_iso,
+                "brand": "StayOdds",
+                "totalProperties": len(lean_hotels),
+                "hotels": lean_hotels,
+            },
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
     # Generate static SEO HTML pages at /stayodds/<slug>/index.html
     stayodds_dir = ROOT / "stayodds"
     stayodds_dir.mkdir(exist_ok=True)
@@ -885,7 +989,7 @@ def main() -> None:
         pdir.mkdir(parents=True, exist_ok=True)
         (pdir / "index.html").write_text(render_seo_page(h, o, same_reg), encoding="utf-8")
 
-    # Build sitemap.xml covering all hub pages + all 250 /stayodds/<slug>/ pages
+    # Build sitemap.xml covering all hub pages + all 300 /stayodds/<slug>/ pages
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     urls = [
         (f"{SITE_URL}/", "1.0", "daily"),
@@ -908,7 +1012,8 @@ def main() -> None:
 
     print(
         f"BUILT STAYODDS SITE!\n"
-        f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json\n"
+        f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json ({out_json.stat().st_size/1024:.1f} KB)\n"
+        f"  Lean Index JSON: {len(lean_hotels)} verified properties -> data/stayodds-index.json ({lean_json.stat().st_size/1024:.1f} KB)\n"
         f"  Static SEO Pages: {len(directory)} pages -> stayodds/<slug>/index.html\n"
         f"  Sitemap URLs: {len(urls)} URLs -> sitemap.xml"
     )

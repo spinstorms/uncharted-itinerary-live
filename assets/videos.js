@@ -486,8 +486,8 @@ async function boot() {
 
   try {
     const [vRes, hRes] = await Promise.all([
-      fetch(`./data/videos.json?v=${Date.now()}`),
-      fetch(`./data/hotels.json?v=${Date.now()}`).catch(() => null),
+      fetch(`./data/videos.json?v=20261121c`),
+      fetch(`./data/hotels.json?v=20261121c`).catch(() => null),
     ]);
     if (!vRes.ok) throw new Error(`HTTP ${vRes.status}`);
     const data = await vRes.json();

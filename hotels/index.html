@@ -29,7 +29,11 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261121c" as="fetch" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#ff5d22!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
@@ -117,7 +121,7 @@
   <main>
     <section class="page-intro">
       <div class="container">
-        <div class="hero-banner-card" style="--hero-bg: url('https://i.ytimg.com/vi/ZlsSigaKhwc/maxresdefault.jpg');">
+        <div class="hero-banner-card" style="--hero-bg: url('https://i.ytimg.com/vi/ZlsSigaKhwc/hqdefault.jpg');">
           <div class="intro-row">
             <div class="hero-title-group">
               <img class="hero-emblem" src="../assets/logo.jpg" alt="StayOdds by The Uncharted Itinerary" width="64" height="64" />
@@ -246,6 +250,6 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script type="module" src="../assets/hotels.js?v=6"></script>
+  <script type="module" src="../assets/hotels.js?v=7"></script>
 </body>
 </html>

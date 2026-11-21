@@ -47,6 +47,12 @@ function getSeoHref(h) {
   return `../stayodds/${encodeURIComponent(h.id)}/`;
 }
 
+function resolveThumb(thumb) {
+  if (!thumb) return "../assets/logo.jpg";
+  if (/^https?:\/\//i.test(thumb) || thumb.startsWith("../") || thumb.startsWith("/")) return thumb;
+  return `../${thumb}`;
+}
+
 function getReviewHref(h) {
   if (!h.videoId) return "";
   if (h.coverageType === "Short Tour") {
@@ -113,8 +119,8 @@ function populateH2HSelectors() {
 }
 
 function renderH2HCard(h, opponent) {
-  const o = computeStayOdds(h);
-  const oo = computeStayOdds(opponent);
+  const o = getOdds(h);
+  const oo = getOdds(opponent);
   const s = h.scores || {};
   const os = opponent.scores || {};
   const reviewHref = getReviewHref(h);
@@ -144,7 +150,7 @@ function renderH2HCard(h, opponent) {
   return `
     <article class="h2h-card">
       <div class="h2h-card-head">
-        <img src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" />
+        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />
         <div>
           <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
           <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
@@ -404,7 +410,7 @@ function renderLeaderboard() {
 
           <div class="consensus-cta-col">
             <a href="${getSeoHref(h)}">
-              <img class="consensus-thumb" src="${escapeHtml(h.thumbnail || "../assets/logo.jpg")}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
             </a>
             <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
             ${
@@ -529,7 +535,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-directory.json?v=20261121b`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261121c`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
