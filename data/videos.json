@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:12:19Z",
+  "updatedAt": "2026-11-21T17:10:11Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -724,7 +724,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/5H-BBvM9O70/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/5H-BBvM9O70/hqdefault.jpg",
-      "views": 5617,
+      "views": 5616,
       "category": "Travel Gear",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -4406,7 +4406,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
-      "views": 60,
+      "views": 61,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [],
@@ -4531,7 +4531,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/7bIVgAuXsSI/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7bIVgAuXsSI/hqdefault.jpg",
-      "views": 660,
+      "views": 714,
       "category": "Hotel Reviews",
       "location": "Global Travel",
       "chapters": [],
@@ -5254,7 +5254,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 271,
+      "views": 283,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
