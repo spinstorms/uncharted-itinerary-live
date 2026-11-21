@@ -631,10 +631,16 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         "(warm, honest, conversational luxury travel reviewers — using 'we' and 'our stay').\n"
         "Never mention AI, 'this video', or 'in this review' — write it so it reads naturally like we typed our own stay notes.\n"
         "Use strictly the provided title, description, and chapters without inventing facts or prices.\n"
+        "If this is a hotel or resort review, also include a 'hotel' object with GPS coordinates and realistic 1-5 scores reflecting the review; otherwise set 'hotel' to null.\n"
         "Return ONLY valid JSON with keys:\n"
         '{"tldr": "2-3 natural first-person sentences sharing our honest take", "highlights": ["3 to 4 crisp bullet notes"], '
         '"bestFor": "short 6-12 word audience fit", "location": "City/Region, Country", '
-        '"category": "one of: Hotel Reviews, Bali & Indonesia, Maldives, Flights, Travel Gear, Travel Guides"}\n\n'
+        '"category": "one of: Hotel Reviews, Bali & Indonesia, Maldives, Flights, Travel Gear, Travel Guides", '
+        '"hotel": null OR {"name": "Hotel Name", "location": "Area/Island", "country": "Country", '
+        '"region": "Bali & Indonesia|Maldives|Thailand|Europe|Bora Bora|Asia|Global", "lat": 0.0, "lng": 0.0, '
+        '"brand": "Marriott Bonvoy|Four Seasons|IHG / Regent|Hilton|Boutique", "priceRange": "e.g. £400/night", '
+        '"scores": {"rooms": 4.5, "grounds": 4.5, "food": 4.5, "service": 4.5, "value": 4.5}, '
+        '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat"}}\n\n'
         f"TITLE: {title}\n"
         f"DESCRIPTION:\n{intro}\n"
         f"CHAPTERS:\n{chapter_text}\n"
@@ -668,6 +674,7 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
                 "bestFor": str(parsed.get("bestFor", "")).strip(),
                 "location": str(parsed.get("location", "")).strip(),
                 "category": str(parsed.get("category", "")).strip(),
+                "hotel": parsed.get("hotel") if isinstance(parsed.get("hotel"), dict) else None,
                 "aiGenerated": True,
                 "model": model,
             }
@@ -791,6 +798,7 @@ def main() -> None:
     openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
 
     merged: dict[str, dict[str, Any]] = dict(existing_by_id)
+    newly_extracted_hotels: list[dict[str, Any]] = []
 
     for raw in long_entries + short_entries:
         vid = raw["id"]
@@ -824,6 +832,41 @@ def main() -> None:
                     location = ai_res["location"]
                 if ai_res.get("category"):
                     category = ai_res["category"]
+                if isinstance(ai_res.get("hotel"), dict) and ai_res["hotel"].get("name"):
+                    h = ai_res["hotel"]
+                    scores = h.get("scores") or {}
+                    vals = [float(scores.get(k, 4.2)) for k in ("rooms", "grounds", "food", "service", "value")]
+                    overall = round(sum(vals) / len(vals), 1)
+                    slug = re.sub(r"[^a-z0-9]+", "-", str(h["name"]).lower()).strip("-")
+                    newly_extracted_hotels.append(
+                        {
+                            "id": slug or f"hotel-{vid}",
+                            "name": str(h["name"]).strip(),
+                            "location": str(h.get("location") or location).strip(),
+                            "country": str(h.get("country") or "").strip(),
+                            "region": str(h.get("region") or "Global").strip(),
+                            "lat": float(h.get("lat") or 0.0),
+                            "lng": float(h.get("lng") or 0.0),
+                            "brand": str(h.get("brand") or "Boutique").strip(),
+                            "priceRange": str(h.get("priceRange") or "").strip(),
+                            "reviewedDate": raw["publishedDate"],
+                            "videoId": vid,
+                            "inLiveFeed": True,
+                            "thumbnail": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                            "scores": {
+                                "rooms": round(vals[0], 1),
+                                "grounds": round(vals[1], 1),
+                                "food": round(vals[2], 1),
+                                "service": round(vals[3], 1),
+                                "value": round(vals[4], 1),
+                            },
+                            "overall": overall,
+                            "verdict": str(h.get("verdict") or summary["tldr"]).strip(),
+                            "standout": str(h.get("standout") or "").strip(),
+                            "watchOut": str(h.get("watchOut") or "").strip(),
+                            "bookingUrl": f"https://www.booking.com/searchresults.html?ss={urllib.parse.quote_plus(str(h['name']))}",
+                        }
+                    )
             elif prev_summary:
                 summary = prev_summary
             else:
@@ -865,6 +908,55 @@ def main() -> None:
     }
     VIDEOS_PATH.write_text(json.dumps(videos_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(videos)} videos and {len(shorts[:18])} shorts to {VIDEOS_PATH}")
+
+    # Sync data/hotels.json (append any newly AI-extracted hotels + apply custom booking affiliate URLs)
+    hotels_path = DATA_DIR / "hotels.json"
+    if hotels_path.exists():
+        hotels_data = json.loads(hotels_path.read_text(encoding="utf-8"))
+        hotels_list: list[dict[str, Any]] = hotels_data.get("hotels", [])
+        existing_hotel_vids = {h.get("videoId") for h in hotels_list if h.get("videoId")}
+        changed_hotels = False
+
+        for nh in newly_extracted_hotels:
+            if nh["videoId"] not in existing_hotel_vids and (nh["lat"] != 0.0 or nh["lng"] != 0.0):
+                hotels_list.insert(0, nh)
+                existing_hotel_vids.add(nh["videoId"])
+                changed_hotels = True
+
+        # Optional custom booking URLs from Hotel Booking Links Google Sheet CSV
+        hotel_sheet_csv = (
+            os.environ.get("HOTEL_BOOKING_SHEET_CSV_URL", "").strip()
+            or config.get("affiliates", {}).get("hotelBookingSheetCsvUrl", "").strip()
+        )
+        if hotel_sheet_csv:
+            try:
+                raw_csv = http_get_text(hotel_sheet_csv, timeout=20)
+                by_name: dict[str, str] = {}
+                for row in csv.DictReader(io.StringIO(raw_csv)):
+                    norm = {k.strip().lower(): (v or "").strip() for k, v in row.items() if k}
+                    hname = norm.get("hotel name", "").lower()
+                    burl = (
+                        norm.get("booking.com / travelpayouts url")
+                        or norm.get("booking affiliate url")
+                        or norm.get("agoda / trip.com url")
+                        or norm.get("url")
+                        or ""
+                    )
+                    if hname and burl:
+                        by_name[hname] = normalize_url(burl)
+                for h in hotels_list:
+                    override = by_name.get(h.get("name", "").lower())
+                    if override and override != h.get("bookingUrl"):
+                        h["bookingUrl"] = override
+                        changed_hotels = True
+            except Exception as exc:
+                print(f"[warn] Failed to sync hotel booking sheet CSV: {exc}", file=sys.stderr)
+
+        if changed_hotels:
+            hotels_data["updatedAt"] = now_iso
+            hotels_data["hotels"] = hotels_list
+            hotels_path.write_text(json.dumps(hotels_data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            print(f"Updated {len(hotels_list)} hotels in {hotels_path}")
 
     # Build live affiliates payload (Google Sheet curated + YouTube auto-extracted)
     sheet_csv_url = (

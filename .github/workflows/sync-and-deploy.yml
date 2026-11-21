@@ -30,11 +30,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Sync YouTube videos, AI summaries, and live affiliates
+      - name: Sync YouTube videos, travel notes, hotel map, and live affiliates
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AFFILIATE_SHEET_CSV_URL: ${{ vars.AFFILIATE_SHEET_CSV_URL }}
+          HOTEL_BOOKING_SHEET_CSV_URL: ${{ vars.HOTEL_BOOKING_SHEET_CSV_URL }}
         run: python3 scripts/sync.py
 
       - name: Commit updated feed data if changed
@@ -42,8 +43,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet data/; then
-            git add data/videos.json data/affiliates.json
-            git commit -m "chore: auto-sync YouTube videos, AI summaries & affiliates"
+            git add data/videos.json data/affiliates.json data/hotels.json
+            git commit -m "chore: auto-sync YouTube videos, hotel map & affiliates"
             git push
           else
             echo "No data changes to commit."

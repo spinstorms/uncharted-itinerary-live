@@ -1,6 +1,7 @@
 const state = {
   videos: [],
   shorts: [],
+  hotelByVideoId: new Map(),
   activeCategory: "All",
   searchQuery: "",
   activeModalVideo: null,
@@ -15,6 +16,15 @@ function escapeHtml(str = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function showToast(message) {
+  const toast = qs("#toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => toast.classList.remove("show"), 2400);
 }
 
 function formatDate(dateStr) {
@@ -73,7 +83,7 @@ function renderFeatured(video) {
 
   const summary = video.summary || {};
   const highlights = (summary.highlights || []).slice(0, 3);
-  const linkCount = (video.affiliateLinks || []).length;
+  const hotel = state.hotelByVideoId.get(video.id);
 
   container.innerHTML = `
     <article class="featured-card">
@@ -86,7 +96,7 @@ function renderFeatured(video) {
         />
         <button class="play-trigger" id="featuredPlayBtn" aria-label="Play ${escapeHtml(video.title)}">
           <span class="play-circle">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="7,4 20,12 7,20"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="7,4 20,12 7,20"/></svg>
           </span>
           <span class="play-label">Watch Latest Episode</span>
         </button>
@@ -96,6 +106,7 @@ function renderFeatured(video) {
         <div>
           <div class="meta-line">
             <span class="tag tag-accent">Latest Release</span>
+            ${hotel ? `<span class="tag tag-accent">Score ${Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
             <span class="tag">${escapeHtml(video.category || "Hotel Reviews")}</span>
             <span>${escapeHtml(video.location || "")}</span>
             <span>&bull;</span>
@@ -122,9 +133,9 @@ function renderFeatured(video) {
             Full Notes &amp; Chapters (${(video.chapters || []).length})
           </button>
           ${
-            linkCount
-              ? `<a class="btn btn-outline" href="./links/">Gear &amp; Deals (${linkCount})</a>`
-              : ""
+            hotel
+              ? `<a class="btn btn-outline" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Hotel Rates &nearr;</a>`
+              : `<a class="btn btn-outline" href="./links/">Travel Deals &amp; Gear</a>`
           }
         </div>
       </div>
@@ -209,6 +220,7 @@ function renderVideoGrid() {
     .map((v) => {
       const tldr = v.summary?.tldr || "";
       const chapterCount = (v.chapters || []).length;
+      const hotel = state.hotelByVideoId.get(v.id);
       return `
         <article class="video-card">
           <button class="card-thumb" data-open-id="${escapeHtml(v.id)}" aria-label="Watch and read notes for ${escapeHtml(v.title)}">
@@ -218,6 +230,13 @@ function renderVideoGrid() {
               alt="${escapeHtml(v.title)}"
               loading="lazy"
             />
+            ${
+              hotel
+                ? `<span class="scorecard-badge-overall" style="top:10px;right:10px;"><strong>${Number(
+                    hotel.overall
+                  ).toFixed(1)}</strong><span>/5</span></span>`
+                : ""
+            }
             <span class="thumb-location">${escapeHtml(v.location || "Travel")}</span>
             <span class="thumb-play" aria-hidden="true">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="7,4 20,12 7,20"/></svg>
@@ -286,8 +305,24 @@ function renderShorts() {
     .join("");
 }
 
+function updateUrlVideoParam(videoId) {
+  try {
+    const url = new URL(window.location.href);
+    if (videoId) {
+      url.searchParams.set("video", videoId);
+    } else {
+      url.searchParams.delete("video");
+    }
+    window.history.replaceState({}, "", url.toString());
+  } catch {
+    // Ignore history API restrictions
+  }
+}
+
 function openModal(video, startSeconds = 0) {
   state.activeModalVideo = video;
+  updateUrlVideoParam(video.id);
+
   const modal = qs("#videoModal");
   const meta = qs("#modalMeta");
   const player = qs("#modalPlayer");
@@ -298,10 +333,12 @@ function openModal(video, startSeconds = 0) {
   const highlights = summary.highlights || [];
   const chapters = video.chapters || [];
   const links = video.affiliateLinks || [];
+  const hotel = state.hotelByVideoId.get(video.id);
 
   meta.innerHTML = `
     <span class="tag tag-accent">${escapeHtml(video.category || "Review")}</span>
     <span class="tag">${escapeHtml(video.location || "Global")}</span>
+    ${hotel ? `<span class="tag tag-accent">Uncharted Score: ${Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
     <span>${escapeHtml(formatDate(video.publishedDate))}</span>
   `;
 
@@ -317,6 +354,21 @@ function openModal(video, startSeconds = 0) {
     <div>
       <h2 class="modal-title" id="modalVideoTitle">${escapeHtml(video.title)}</h2>
     </div>
+
+    ${
+      hotel
+        ? `<div class="video-hotel-cta">
+            <div>
+              <strong>${escapeHtml(hotel.name)} — ${Number(hotel.overall).toFixed(1)} / 5.0</strong>
+              <span>${escapeHtml(hotel.brand || "")} &bull; ${escapeHtml(hotel.priceRange || "")} &bull; ${escapeHtml(hotel.standout || "")}</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <a class="btn btn-primary" href="${escapeHtml(hotel.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
+              <a class="btn btn-outline" href="./hotels/">Full Scorecard</a>
+            </div>
+          </div>`
+        : ""
+    }
 
     <div class="modal-grid">
       <div class="ai-summary-box">
@@ -400,12 +452,25 @@ function closeModal() {
   if (player) player.innerHTML = "";
   document.body.style.overflow = "";
   state.activeModalVideo = null;
+  updateUrlVideoParam(null);
 }
 
 async function boot() {
   initCommonUi();
 
   qs("#modalCloseBtn")?.addEventListener("click", closeModal);
+  qs("#modalCopyLinkBtn")?.addEventListener("click", async () => {
+    if (!state.activeModalVideo) return;
+    const shareUrl = `${window.location.origin}${window.location.pathname}?video=${encodeURIComponent(
+      state.activeModalVideo.id
+    )}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      showToast("Review link copied!");
+    } catch {
+      showToast(shareUrl);
+    }
+  });
   qs("#videoModal")?.addEventListener("click", (e) => {
     if (e.target === qs("#videoModal")) closeModal();
   });
@@ -420,9 +485,19 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`./data/videos.json?v=${Date.now()}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const [vRes, hRes] = await Promise.all([
+      fetch(`./data/videos.json?v=${Date.now()}`),
+      fetch(`./data/hotels.json?v=${Date.now()}`).catch(() => null),
+    ]);
+    if (!vRes.ok) throw new Error(`HTTP ${vRes.status}`);
+    const data = await vRes.json();
+
+    if (hRes && hRes.ok) {
+      const hData = await hRes.json();
+      for (const h of hData.hotels || []) {
+        if (h.videoId) state.hotelByVideoId.set(h.videoId, h);
+      }
+    }
 
     state.videos = data.videos || [];
     state.shorts = data.shorts || [];
@@ -436,6 +511,13 @@ async function boot() {
     renderFilters();
     renderVideoGrid();
     renderShorts();
+
+    // Auto-open deep-linked video (?video=<id>) if present
+    const deepId = new URLSearchParams(window.location.search).get("video");
+    if (deepId) {
+      const found = state.videos.find((v) => v.id === deepId);
+      if (found) openModal(found);
+    }
   } catch (err) {
     const grid = qs("#videoGrid");
     if (grid) {
