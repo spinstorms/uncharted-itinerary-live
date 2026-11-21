@@ -20,13 +20,27 @@ function escapeHtml(str = "") {
 }
 
 function getReviewHref(h) {
+  if (h.coverageType === "Short Tour" && h.videoId) {
+    return `https://www.youtube.com/shorts/${encodeURIComponent(h.videoId)}`;
+  }
   if (h.inLiveFeed && h.videoId) return `../?video=${encodeURIComponent(h.videoId)}`;
   if (h.videoId) return `https://www.youtube.com/watch?v=${encodeURIComponent(h.videoId)}`;
   return "https://www.uncharteditinerary.com/";
 }
 
 function isExternalReview(h) {
+  if (h.coverageType === "Short Tour") return true;
   return !(h.inLiveFeed && h.videoId);
+}
+
+function formatMyScore(val) {
+  if (val == null || Number.isNaN(Number(val))) return null;
+  const num = Number(val);
+  return Number.isInteger(num) ? String(num) : num.toFixed(1);
+}
+
+function isRatedHotel(h) {
+  return h.overall != null && h.scores != null;
 }
 
 function formatReviews(n) {
@@ -37,19 +51,20 @@ function formatReviews(n) {
 
 function getConsensus(h) {
   if (h.consensus) return h.consensus;
-  const ours = Number(h.overall || 4.2);
-  const idx = Math.round(ours * 20);
+  const ours = h.overall != null ? Number(h.overall) : null;
+  const idx = ours != null ? Math.round(ours * 20) : 90;
   return {
     overallIndex: idx,
     greatStayChance: Math.min(95, idx),
-    agreement: "Mostly Aligned",
-    spread: 0.1,
-    googleRating: ours,
+    agreement: ours != null ? "Mostly Aligned" : "External Consensus",
+    spread: ours != null ? 0.1 : null,
+    oursIncluded: ours != null,
+    googleRating: ours || 4.5,
     googleReviews: 0,
-    criticScore: ours,
+    criticScore: ours || 4.5,
     award: h.brand || "Reviewed Stay",
     sources: ["The Uncharted Itinerary"],
-    otherReviewersSay: "Benchmarked against our first-hand stay.",
+    otherReviewersSay: "Benchmarked against verified guest & critic ratings.",
     whereWeDiffer: "First-hand review from The Uncharted Itinerary.",
   };
 }
@@ -97,15 +112,20 @@ function renderH2HCard(h, opponent) {
   const oc = getConsensus(opponent);
   const s = h.scores || {};
   const os = opponent.scores || {};
+  const rated = isRatedHotel(h);
+  const oppRated = isRatedHotel(opponent);
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  const metricRow = (label, a, b, suffix = "") => {
-    const wins = Number(a) > Number(b);
+  const metricRow = (label, a, b, suffix = "", unratedText = "Not rated yet") => {
+    const aMissing = a == null;
+    const bMissing = b == null;
+    const wins = !aMissing && !bMissing && Number(a) > Number(b);
+    const display = aMissing ? unratedText : `${a}${suffix}`;
     return `
       <div class="h2h-metric ${wins ? "is-best" : ""}">
         <span>${escapeHtml(label)}</span>
-        <strong>${escapeHtml(String(a))}${suffix} ${wins ? "★" : ""}</strong>
+        <strong>${escapeHtml(display)} ${wins ? "★" : ""}</strong>
       </div>
     `;
   };
@@ -124,30 +144,30 @@ function renderH2HCard(h, opponent) {
       <div class="h2h-odds-strip">
         <div class="odds-big">
           <strong>${c.greatStayChance}%</strong>
-          <span>Chance of a Great Stay</span>
+          <span>${rated ? "Chance of a Great Stay" : "External Great-Stay Odds"}</span>
         </div>
         <div class="index-big">
           <strong>${c.overallIndex}<span>/100</span></strong>
-          <span>Consensus Index</span>
+          <span>${rated ? "Consensus Index" : "External Index"}</span>
         </div>
       </div>
 
       <div class="h2h-metrics-list">
-        ${metricRow("Our First-Hand Score", Number(h.overall).toFixed(1), Number(opponent.overall).toFixed(1), " / 5")}
+        ${metricRow("Our First-Hand Score", rated ? formatMyScore(h.overall) : null, oppRated ? formatMyScore(opponent.overall) : null, " / 5", "Short (Unrated)")}
         ${metricRow("Booking.com Guests", Number(c.bookingOverall || c.googleRating * 2).toFixed(1), Number(oc.bookingOverall || oc.googleRating * 2).toFixed(1), " / 10")}
         ${metricRow("Google Guests", Number(c.googleRating).toFixed(1), Number(oc.googleRating).toFixed(1), " ★")}
         ${metricRow("Critics & YouTube", Number(c.criticScore).toFixed(1), Number(oc.criticScore).toFixed(1), " / 5")}
-        ${metricRow("Rooms & Villas", Number(s.rooms || 0).toFixed(1), Number(os.rooms || 0).toFixed(1), " / 5")}
-        ${metricRow("Food & Breakfast", Number(s.food || 0).toFixed(1), Number(os.food || 0).toFixed(1), " / 5")}
-        ${metricRow("Service", Number(s.service || 0).toFixed(1), Number(os.service || 0).toFixed(1), " / 5")}
-        ${metricRow("Value for Money", Number(s.value || 0).toFixed(1), Number(os.value || 0).toFixed(1), " / 5")}
+        ${metricRow("Rooms & Villas", rated ? formatMyScore(s.rooms) : null, oppRated ? formatMyScore(os.rooms) : null, " / 5", "Pending review")}
+        ${metricRow("Food & Breakfast", rated ? formatMyScore(s.food) : null, oppRated ? formatMyScore(os.food) : null, " / 5", "Pending review")}
+        ${metricRow("Service", rated ? formatMyScore(s.service) : null, oppRated ? formatMyScore(os.service) : null, " / 5", "Pending review")}
+        ${metricRow("Value for Money", rated ? formatMyScore(s.value) : null, oppRated ? formatMyScore(os.value) : null, " / 5", "Pending review")}
       </div>
 
       <p class="h2h-diff"><strong>Our take vs. others:</strong> ${escapeHtml(c.whereWeDiffer)}</p>
 
       <div class="scorecard-actions">
         <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
-        <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
+        <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>
         <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
       </div>
     </article>
@@ -206,7 +226,7 @@ function renderLeaderboard() {
     const ca = getConsensus(a);
     const cb = getConsensus(b);
     if (state.sortBy === "index") return cb.overallIndex - ca.overallIndex || cb.greatStayChance - ca.greatStayChance;
-    if (state.sortBy === "gap") return (cb.spread || 0) - (ca.spread || 0);
+    if (state.sortBy === "gap") return (cb.spread ?? -1) - (ca.spread ?? -1);
     if (state.sortBy === "reviews") return (cb.googleReviews || 0) - (ca.googleReviews || 0);
     return cb.greatStayChance - ca.greatStayChance || cb.overallIndex - ca.overallIndex;
   });
@@ -223,6 +243,7 @@ function renderLeaderboard() {
       const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
       const isContrarian = c.agreement === "Contrarian Verdict";
       const isShortOnly = h.coverageType === "Short Tour";
+      const rated = isRatedHotel(h);
       const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
 
       return `
@@ -231,15 +252,15 @@ function renderLeaderboard() {
             <span class="consensus-rank-num">#${i + 1}</span>
             <div class="consensus-chance-ring ${isContrarian ? "is-caution" : ""}">
               <strong>${c.greatStayChance}%</strong>
-              <span>Great-Stay Odds</span>
+              <span>${rated ? "Great-Stay Odds" : "External Odds"}</span>
             </div>
             <div class="consensus-index-chip">Overall: <strong>${c.overallIndex}/100</strong></div>
           </div>
 
           <div class="consensus-main-col">
             <div class="meta-line">
-              <span class="tag ${isContrarian ? "tag-caution" : "tag-accent"}">${escapeHtml(c.agreement)}</span>
-              ${isShortOnly ? `<span class="tag">Short Tour</span>` : ""}
+              <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : ""}">${escapeHtml(c.agreement)}</span>
+              ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
               ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
               <span class="tag">${escapeHtml(c.award || h.brand || "")}</span>
               <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
@@ -254,7 +275,7 @@ function renderLeaderboard() {
             <div class="three-pillar-strip">
               <div class="pillar-box">
                 <small>The Uncharted Itinerary</small>
-                <strong>${Number(h.overall).toFixed(1)} / 5.0</strong>
+                <strong>${rated ? `${formatMyScore(h.overall)} / 5` : "Not Rated Yet"}</strong>
               </div>
               <div class="pillar-box">
                 <small>Booking.com Guests</small>
@@ -272,7 +293,7 @@ function renderLeaderboard() {
 
             <div class="consensus-compare-notes">
               <p><strong>What top channels &amp; online reviewers say:</strong> ${escapeHtml(c.otherReviewersSay)}</p>
-              <p><strong>Our stay vs. consensus:</strong> ${escapeHtml(c.whereWeDiffer)}</p>
+              <p><strong>${rated ? "Our stay vs. consensus:" : "Our coverage status:"}</strong> ${escapeHtml(c.whereWeDiffer)}</p>
             </div>
 
             <div class="consensus-sources">

@@ -137,6 +137,16 @@ function initMap() {
   state.markersLayer = L.layerGroup().addTo(map);
 }
 
+function formatMyScore(val) {
+  if (val == null || Number.isNaN(Number(val))) return "—";
+  const num = Number(val);
+  return Number.isInteger(num) ? String(num) : num.toFixed(1);
+}
+
+function isRatedHotel(h) {
+  return h.overall != null && h.scores != null;
+}
+
 function getFilteredHotels() {
   const q = state.search.trim().toLowerCase();
   const list = state.hotels.filter((h) => {
@@ -155,10 +165,20 @@ function getFilteredHotels() {
     if (state.sortBy === "newest") {
       return (b.reviewedDate || "").localeCompare(a.reviewedDate || "");
     }
+    const aRated = isRatedHotel(a) ? 1 : 0;
+    const bRated = isRatedHotel(b) ? 1 : 0;
+    if (bRated !== aRated) return bRated - aRated;
     if (state.sortBy === "overall") {
-      return (b.overall || 0) - (a.overall || 0) || (b.scores?.value || 0) - (a.scores?.value || 0);
+      return (
+        (b.overall || 0) - (a.overall || 0) ||
+        (b.consensus?.greatStayChance || 0) - (a.consensus?.greatStayChance || 0) ||
+        (b.scores?.value || 0) - (a.scores?.value || 0)
+      );
     }
-    return (b.scores?.[state.sortBy] || 0) - (a.scores?.[state.sortBy] || 0) || (b.overall || 0) - (a.overall || 0);
+    return (
+      (b.scores?.[state.sortBy] || 0) - (a.scores?.[state.sortBy] || 0) ||
+      (b.overall || 0) - (a.overall || 0)
+    );
   });
   return list;
 }
@@ -173,23 +193,26 @@ function renderMapMarkers(hotels, fitBounds = true) {
     if (typeof h.lat !== "number" || typeof h.lng !== "number") continue;
     bounds.push([h.lat, h.lng]);
 
+    const rated = isRatedHotel(h);
+    const pinText = rated ? `${formatMyScore(h.overall)}/5` : "Short";
     const icon = L.divIcon({
       className: "hotel-score-pin-wrap",
-      html: `<div class="hotel-score-pin"><span>${Number(h.overall || 0).toFixed(1)}</span></div>`,
-      iconSize: [42, 34],
-      iconAnchor: [21, 34],
+      html: `<div class="hotel-score-pin ${rated ? "" : "is-short"}"><span>${pinText}</span></div>`,
+      iconSize: [46, 34],
+      iconAnchor: [23, 34],
       popupAnchor: [0, -32],
     });
 
-    const reviewHref = getReviewHref(h);
-    const reviewTarget = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+    const popupScore = rated
+      ? `${formatMyScore(h.overall)} / 5`
+      : "Short Preview · Unrated";
     const popupHtml = `
       <div class="map-popup-card">
         <img class="map-popup-img" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div class="map-popup-body">
           <div class="map-popup-top">
             <span class="map-popup-loc">${escapeHtml(h.location)}</span>
-            <span class="map-popup-score">${Number(h.overall || 0).toFixed(1)} / 5</span>
+            <span class="map-popup-score">${escapeHtml(popupScore)}</span>
           </div>
           <h4>${escapeHtml(h.name)}</h4>
           <p>${escapeHtml(h.verdict)}</p>
@@ -268,7 +291,7 @@ function renderScoreBar(label, value) {
     <div class="score-bar-row">
       <span class="score-bar-label">${escapeHtml(label)}</span>
       <div class="score-bar-track"><div class="score-bar-fill" style="width:${pct}%"></div></div>
-      <span class="score-bar-val">${num.toFixed(1)}</span>
+      <span class="score-bar-val">${escapeHtml(formatMyScore(num))}</span>
     </div>
   `;
 }
@@ -306,6 +329,7 @@ function renderScorecards(hotels) {
         <tbody>
           ${hotels
             .map((h) => {
+              const rated = isRatedHotel(h);
               const s = h.scores || {};
               return `
                 <tr>
@@ -314,12 +338,16 @@ function renderScorecards(hotels) {
                     <span style="font-size:12px;color:var(--ink-muted);">${escapeHtml(h.location)} &bull; ${escapeHtml(h.brand || "")}</span>
                   </td>
                   <td>${escapeHtml(h.region)}</td>
-                  <td><strong style="color:var(--accent);">${Number(h.overall || 0).toFixed(1)} / 5</strong></td>
-                  <td>${Number(s.rooms || 0).toFixed(1)}</td>
-                  <td>${Number(s.grounds || 0).toFixed(1)}</td>
-                  <td>${Number(s.food || 0).toFixed(1)}</td>
-                  <td>${Number(s.service || 0).toFixed(1)}</td>
-                  <td>${Number(s.value || 0).toFixed(1)}</td>
+                  <td>${
+                    rated
+                      ? `<strong style="color:var(--accent);">${escapeHtml(formatMyScore(h.overall))} / 5</strong>`
+                      : `<span class="tag">Short · Unrated</span>`
+                  }</td>
+                  <td>${rated ? escapeHtml(formatMyScore(s.rooms)) : "—"}</td>
+                  <td>${rated ? escapeHtml(formatMyScore(s.grounds)) : "—"}</td>
+                  <td>${rated ? escapeHtml(formatMyScore(s.food)) : "—"}</td>
+                  <td>${rated ? escapeHtml(formatMyScore(s.service)) : "—"}</td>
+                  <td>${rated ? escapeHtml(formatMyScore(s.value)) : "—"}</td>
                   <td style="white-space:nowrap;">
                     <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}" style="color:var(--accent);font-weight:600;margin-right:10px;">Breakdown</a>
                     <a href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" style="font-weight:500;">Rates &nearr;</a>
@@ -338,6 +366,7 @@ function renderScorecards(hotels) {
   grid.style.display = "";
   grid.innerHTML = hotels
     .map((h) => {
+      const rated = isRatedHotel(h);
       const s = h.scores || {};
       const reviewHref = getReviewHref(h);
       const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
@@ -347,9 +376,12 @@ function renderScorecards(hotels) {
             <a href="../compare/hotel/?id=${encodeURIComponent(h.id)}">
               <img class="scorecard-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
             </a>
-            <div class="scorecard-badge-overall">
-              <strong>${Number(h.overall || 0).toFixed(1)}</strong>
-              <span>/ 5.0</span>
+            <div class="scorecard-badge-overall ${rated ? "" : "is-short"}">
+              ${
+                rated
+                  ? `<strong>${escapeHtml(formatMyScore(h.overall))}</strong><span>/ 5</span>`
+                  : `<strong>Short</strong><span>Unrated</span>`
+              }
             </div>
             <button class="pin-focus-btn" data-focus-id="${escapeHtml(h.id)}" title="Show on map">
               Show on Map
@@ -359,7 +391,7 @@ function renderScorecards(hotels) {
           <div class="scorecard-body">
             <div class="meta-line">
               <span class="tag tag-accent">${escapeHtml(h.brand || "Luxury Stay")}</span>
-              ${h.coverageType === "Short Tour" ? `<span class="tag">Short Tour</span>` : ""}
+              ${h.coverageType === "Short Tour" ? `<span class="tag">Short Tour · Unrated</span>` : ""}
               ${Array.isArray(h.shorts) && h.shorts.length ? `<span class="tag">${h.shorts.length} Short${h.shorts.length === 1 ? "" : "s"}</span>` : ""}
               <span class="tag">${escapeHtml(h.priceRange || "")}</span>
             </div>
@@ -371,6 +403,9 @@ function renderScorecards(hotels) {
 
             <p class="scorecard-verdict">${escapeHtml(h.verdict)}</p>
 
+            ${
+              rated
+                ? `
             <div class="score-bars">
               ${renderScoreBar("Rooms", s.rooms)}
               ${renderScoreBar("Grounds", s.grounds)}
@@ -378,6 +413,14 @@ function renderScorecards(hotels) {
               ${renderScoreBar("Service", s.service)}
               ${renderScoreBar("Value", s.value)}
             </div>
+                `
+                : `
+            <div class="scorecard-unrated-box">
+              <strong>Featured in a YouTube Short (Not Ranked Yet)</strong>
+              <p style="margin:0;">We haven’t published a full scored video review yet. Open <em>Score Breakdown</em> to see verified Booking.com &amp; Google guest consensus (${h.consensus?.greatStayChance || 90}% external odds).</p>
+            </div>
+                `
+            }
 
             <div class="scorecard-notes">
               <div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>

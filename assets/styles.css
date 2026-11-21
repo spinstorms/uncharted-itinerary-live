@@ -2780,3 +2780,48 @@ button {
     padding: 26px 22px;
   }
 }
+
+/* ---------- Unrated Short-Tour Map Pins & Notice Boxes ---------- */
+.hotel-score-pin.is-short {
+  background: #191a1a;
+  color: #ffffff;
+  border-color: #ffffff;
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}
+
+.hotel-score-pin.is-short::after {
+  border-top-color: #191a1a;
+}
+
+.scorecard-badge-overall.is-short {
+  background: rgba(25, 26, 26, 0.92);
+}
+
+.scorecard-badge-overall.is-short strong {
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.scorecard-unrated-box {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-strong);
+  background: #fafafa;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+}
+
+.scorecard-unrated-box strong {
+  display: block;
+  color: var(--ink-primary);
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.scorecard-unrated-box p {
+  margin: 0 0 12px;
+}
+

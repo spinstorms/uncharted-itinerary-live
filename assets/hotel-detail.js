@@ -10,13 +10,23 @@ function escapeHtml(str = "") {
 }
 
 function getReviewHref(h) {
+  if (h.coverageType === "Short Tour" && h.videoId) {
+    return `https://www.youtube.com/shorts/${encodeURIComponent(h.videoId)}`;
+  }
   if (h.inLiveFeed && h.videoId) return `../../?video=${encodeURIComponent(h.videoId)}`;
   if (h.videoId) return `https://www.youtube.com/watch?v=${encodeURIComponent(h.videoId)}`;
   return "https://www.uncharteditinerary.com/";
 }
 
 function isExternalReview(h) {
+  if (h.coverageType === "Short Tour") return true;
   return !(h.inLiveFeed && h.videoId);
+}
+
+function formatMyScore(val) {
+  if (val == null || Number.isNaN(Number(val))) return "—";
+  const num = Number(val);
+  return Number.isInteger(num) ? String(num) : num.toFixed(1);
 }
 
 function initCommonUi() {
@@ -36,14 +46,15 @@ function initCommonUi() {
   }
 }
 
-function renderScoreBar(label, value, maxVal, suffix = "") {
+function renderScoreBar(label, value, maxVal, suffix = "", wholeNumbers = false) {
   const num = Number(value || 0);
   const pct = Math.max(0, Math.min(100, Math.round((num / maxVal) * 100)));
+  const formatted = wholeNumbers ? formatMyScore(num) : num.toFixed(1);
   return `
     <div class="detail-bar-row">
       <div class="detail-bar-top">
         <span>${escapeHtml(label)}</span>
-        <strong>${num.toFixed(1)}${escapeHtml(suffix)}</strong>
+        <strong>${escapeHtml(formatted)}${escapeHtml(suffix)}</strong>
       </div>
       <div class="detail-bar-track">
         <div class="detail-bar-fill" style="width:${pct}%"></div>
@@ -54,8 +65,10 @@ function renderScoreBar(label, value, maxVal, suffix = "") {
 
 function renderDetail(h, allHotels) {
   const c = h.consensus || {};
-  const s = h.scores || {};
+  const s = h.scores || null;
   const b = c.bookingSubscores || {};
+  const rated = h.overall != null && s != null;
+  const isShortOnly = h.coverageType === "Short Tour";
   const isContrarian = c.agreement === "Contrarian Verdict";
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
@@ -63,10 +76,12 @@ function renderDetail(h, allHotels) {
   document.title = `${h.name} — Score Breakdown (${c.greatStayChance || 90}% Great-Stay Odds) | The Uncharted Itinerary`;
 
   // Formula math transparency
-  const ours100 = Math.round(Number(h.overall || 4.5) * 20);
-  const critic100 = Math.round(Number(c.criticScore || h.overall || 4.5) * 20);
-  const google100 = Math.round(Number(c.googleRating || h.overall || 4.5) * 20);
-  const weightedRaw = Math.round(ours100 * 0.4 + critic100 * 0.3 + google100 * 0.3);
+  const ours100 = rated ? Math.round(Number(h.overall) * 20) : null;
+  const critic100 = Math.round(Number(c.criticScore || 4.5) * 20);
+  const google100 = Math.round(Number(c.googleRating || 4.5) * 20);
+  const weightedRaw = rated
+    ? Math.round(ours100 * 0.4 + critic100 * 0.3 + google100 * 0.3)
+    : Math.round(critic100 * 0.5 + google100 * 0.5);
   const chanceDelta = Number(c.greatStayChance || weightedRaw) - Number(c.overallIndex || weightedRaw);
   const deltaLabel = chanceDelta > 0 ? `+${chanceDelta}%` : `${chanceDelta}%`;
 
@@ -75,8 +90,8 @@ function renderDetail(h, allHotels) {
     : [
         {
           source: "The Uncharted Itinerary",
-          category: "Our Stay",
-          score: `${Number(h.overall || 0).toFixed(1)} / 5.0`,
+          category: rated ? "Our Stay" : "Our Stay (Short Preview)",
+          score: rated ? `${formatMyScore(h.overall)} / 5` : "Not Rated Yet",
           normalized100: ours100,
           takeaway: h.verdict || "",
         },
@@ -113,7 +128,8 @@ function renderDetail(h, allHotels) {
       <div class="detail-hero-media">
         <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div class="detail-hero-badges">
-          <span class="tag ${isContrarian ? "tag-caution" : "tag-accent"}">${escapeHtml(c.agreement || "Benchmarked")}</span>
+          <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : ""}">${escapeHtml(c.agreement || "Benchmarked")}</span>
+          ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
           ${c.award ? `<span class="tag">${escapeHtml(c.award)}</span>` : ""}
         </div>
       </div>
@@ -132,15 +148,18 @@ function renderDetail(h, allHotels) {
         <div class="detail-kpi-row">
           <div class="detail-kpi is-primary ${isContrarian ? "is-caution" : ""}">
             <strong>${c.greatStayChance || 90}%</strong>
-            <span>Chance of a Great Stay</span>
+            <span>${rated ? "Chance of a Great Stay" : "External Great-Stay Odds"}</span>
           </div>
           <div class="detail-kpi">
             <strong>${c.overallIndex || weightedRaw}<span>/100</span></strong>
-            <span>Consensus Index</span>
+            <span>${rated ? "Consensus Index" : "External Index"}</span>
           </div>
           <div class="detail-kpi">
-            <strong>${Number(h.overall || 0).toFixed(1)}<span>/5</span></strong>
-            <span>Our Stay Score</span>
+            ${
+              rated
+                ? `<strong>${formatMyScore(h.overall)}<span>/5</span></strong><span>Our Stay Score</span>`
+                : `<strong style="font-size:20px;">Unrated</strong><span>Short Preview Only</span>`
+            }
           </div>
           <div class="detail-kpi">
             <strong>${Number(c.bookingOverall || (c.googleRating * 2)).toFixed(1)}<span>/10</span></strong>
@@ -149,7 +168,7 @@ function renderDetail(h, allHotels) {
         </div>
 
         <div class="detail-actions">
-          <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Full Review</a>
+          <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Our Resort Short" : "Watch Our Full Review"}</a>
           <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
           <a class="btn btn-outline" href="../?a=${encodeURIComponent(h.id)}">Compare Head-to-Head</a>
           <button class="copy-link-btn" id="copyDetailLink" type="button">Copy Breakdown Link</button>
@@ -162,30 +181,34 @@ function renderDetail(h, allHotels) {
       <div class="section-header" style="margin-bottom:16px;">
         <div>
           <h2 class="section-title">How This Great-Stay Score Is Calculated</h2>
-          <p class="section-subtitle">Exact weighted math behind ${escapeHtml(h.name)}'s ${c.overallIndex || weightedRaw}/100 Consensus Index and ${c.greatStayChance || 90}% Great-Stay Odds.</p>
+          <p class="section-subtitle">${
+            rated
+              ? `Exact weighted math behind ${escapeHtml(h.name)}'s ${c.overallIndex || weightedRaw}/100 Consensus Index and ${c.greatStayChance || 90}% Great-Stay Odds.`
+              : `Because we have only featured ${escapeHtml(h.name)} in YouTube Shorts so far, our personal score is excluded — this ${c.overallIndex || weightedRaw}/100 External Consensus uses 50% Critics/YouTube + 50% Verified Guests.`
+          }</p>
         </div>
       </div>
 
       <div class="formula-grid">
         <div class="formula-step">
-          <span class="formula-weight">40% Weight</span>
-          <strong>${ours100} / 100</strong>
-          <small>Our First-Hand Stay (${Number(h.overall || 0).toFixed(1)} / 5.0)</small>
+          <span class="formula-weight">${rated ? "40% Weight" : "0% Weight (Pending)"}</span>
+          <strong>${rated ? `${ours100} / 100` : "Not Rated Yet"}</strong>
+          <small>${rated ? `Our First-Hand Stay (${formatMyScore(h.overall)} / 5)` : "Short preview only — full review pending"}</small>
         </div>
         <div class="formula-step">
-          <span class="formula-weight">30% Weight</span>
+          <span class="formula-weight">${rated ? "30% Weight" : "50% Weight"}</span>
           <strong>${critic100} / 100</strong>
           <small>Top YouTube &amp; Travel Critics (${Number(c.criticScore || 0).toFixed(1)} / 5.0)</small>
         </div>
         <div class="formula-step">
-          <span class="formula-weight">30% Weight</span>
+          <span class="formula-weight">${rated ? "30% Weight" : "50% Weight"}</span>
           <strong>${google100} / 100</strong>
           <small>Google &amp; Verified Guests (${Number(c.googleRating || 0).toFixed(1)} ★ &bull; ${Number(c.googleReviews || 0).toLocaleString("en-GB")} reviews)</small>
         </div>
         <div class="formula-step is-result ${isContrarian ? "is-caution" : ""}">
           <span class="formula-weight">${escapeHtml(c.agreement || "Consensus")} (${deltaLabel})</span>
           <strong>${c.greatStayChance || 90}% Odds</strong>
-          <small>Spread vs. mainstream: ${Number(c.spread || 0).toFixed(1)} pts</small>
+          <small>${rated && c.spread != null ? `Spread vs. mainstream: ${Number(c.spread).toFixed(1)} pts` : "External critics & verified guests only"}</small>
         </div>
       </div>
     </section>
@@ -196,16 +219,28 @@ function renderDetail(h, allHotels) {
         <div class="detail-panel">
           <div class="detail-panel-head">
             <h3>Our 5-Axis First-Hand Scorecard</h3>
-            <span class="tag tag-accent">${Number(h.overall || 0).toFixed(1)} / 5.0 Overall</span>
+            <span class="tag ${rated ? "tag-accent" : ""}">${rated ? `${formatMyScore(h.overall)} / 5 Overall` : "Not Rated Yet"}</span>
           </div>
-          <p class="detail-panel-sub">Scored directly from our stay at ${escapeHtml(h.name)}.</p>
+          ${
+            rated
+              ? `
+          <p class="detail-panel-sub">Whole-number scores directly from our stay at ${escapeHtml(h.name)}.</p>
           <div class="detail-bars">
-            ${renderScoreBar("Rooms & Villas", s.rooms, 5, " / 5")}
-            ${renderScoreBar("Grounds, Pools & Beach", s.grounds, 5, " / 5")}
-            ${renderScoreBar("Food & Breakfast", s.food, 5, " / 5")}
-            ${renderScoreBar("Service & Hospitality", s.service, 5, " / 5")}
-            ${renderScoreBar("Value for Money", s.value, 5, " / 5")}
+            ${renderScoreBar("Rooms & Villas", s.rooms, 5, " / 5", true)}
+            ${renderScoreBar("Grounds, Pools & Beach", s.grounds, 5, " / 5", true)}
+            ${renderScoreBar("Food & Breakfast", s.food, 5, " / 5", true)}
+            ${renderScoreBar("Service & Hospitality", s.service, 5, " / 5", true)}
+            ${renderScoreBar("Value for Money", s.value, 5, " / 5", true)}
           </div>
+              `
+              : `
+          <div class="scorecard-unrated-box" style="margin-top:12px;">
+            <strong>Short Preview — Not Personally Scored Yet</strong>
+            <p>We’ve shared quick YouTube Shorts from ${escapeHtml(h.name)}, so we haven’t assigned our 5-point Uncharted Itinerary scorecard yet. Until a full video review goes live, the Consensus Index above relies 100% on external critics and verified Booking.com / Google guests.</p>
+            <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Resort Short &nearr;</a>
+          </div>
+              `
+          }
         </div>
 
         <div class="detail-panel">
@@ -250,12 +285,16 @@ function renderDetail(h, allHotels) {
               </div>
               <div class="channel-row-score">
                 <strong>${escapeHtml(row.score)}</strong>
-                <span>${Number(row.normalized100 || 90)}/100</span>
+                <span>${row.normalized100 != null ? `${Number(row.normalized100)}/100` : "Unrated"}</span>
               </div>
             </div>
-            <div class="detail-bar-track" style="margin:10px 0;">
-              <div class="detail-bar-fill ${row.category === "Our Stay" ? "" : "is-secondary"}" style="width:${Math.max(0, Math.min(100, Number(row.normalized100 || 90)))}%"></div>
-            </div>
+            ${
+              row.normalized100 != null
+                ? `<div class="detail-bar-track" style="margin:10px 0;">
+              <div class="detail-bar-fill ${row.category === "Our Stay" ? "" : "is-secondary"}" style="width:${Math.max(0, Math.min(100, Number(row.normalized100)))}%"></div>
+            </div>`
+                : ""
+            }
             <p class="channel-takeaway">${escapeHtml(row.takeaway)}</p>
           </article>
         `

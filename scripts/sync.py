@@ -623,9 +623,15 @@ def build_fallback_summary(title: str, description: str, chapters: list[dict[str
 
 
 def call_gemini_summary(title: str, description: str, chapters: list[dict[str, Any]], api_key: str) -> dict[str, Any] | None:
-    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
-    endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={urllib.parse.quote(api_key)}"
-    intro = clean_description_intro(description)[:2200]
+    import time
+
+    preferred = os.environ.get("GEMINI_MODEL", "gemini-flash-latest").strip() or "gemini-flash-latest"
+    models_to_try = [preferred]
+    for fallback in ("gemini-flash-lite-latest", "gemini-flash-latest"):
+        if fallback not in models_to_try:
+            models_to_try.append(fallback)
+
+    intro = clean_description_intro(description)[:2400]
     chapter_text = "\n".join(f"{c['time']} - {c['label']}" for c in chapters[:15])
 
     prompt = (
@@ -633,7 +639,7 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         "(warm, honest, conversational luxury travel reviewers — using 'we' and 'our stay').\n"
         "Never mention AI, 'this video', or 'in this review' — write it so it reads naturally like we typed our own stay notes.\n"
         "Use strictly the provided title, description, and chapters without inventing facts or prices.\n"
-        "If this is a hotel or resort review, also include a 'hotel' object with GPS coordinates and realistic 1-5 scores reflecting the review; otherwise set 'hotel' to null.\n"
+        "If this is a full hotel or resort review, also include a 'hotel' object with GPS coordinates and WHOLE-NUMBER integer scores from 1 to 5 (NEVER decimals like 4.7 — round up or down to 1, 2, 3, 4, or 5 based on the review), plus realistic external guest/critic estimates; otherwise set 'hotel' to null.\n"
         "Return ONLY valid JSON with keys:\n"
         '{"tldr": "2-3 natural first-person sentences sharing our honest take", "highlights": ["3 to 4 crisp bullet notes"], '
         '"bestFor": "short 6-12 word audience fit", "location": "City/Region, Country", '
@@ -641,8 +647,10 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         '"hotel": null OR {"name": "Hotel Name", "location": "Area/Island", "country": "Country", '
         '"region": "Bali & Indonesia|Maldives|Thailand|Europe|Bora Bora|Asia|Global", "lat": 0.0, "lng": 0.0, '
         '"brand": "Marriott Bonvoy|Four Seasons|IHG / Regent|Hilton|Boutique", "priceRange": "e.g. £400/night", '
-        '"scores": {"rooms": 4.5, "grounds": 4.5, "food": 4.5, "service": 4.5, "value": 4.5}, '
-        '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat"}}\n\n'
+        '"scores": {"rooms": 5, "grounds": 5, "food": 4, "service": 5, "value": 4}, '
+        '"overall": 5, '
+        '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat", '
+        '"googleRating": 4.7, "bookingOverall": 9.3, "criticScore": 4.6, "otherReviewersSay": "1-sentence summary of what guests & critics say"}}\n\n'
         f"TITLE: {title}\n"
         f"DESCRIPTION:\n{intro}\n"
         f"CHAPTERS:\n{chapter_text}\n"
@@ -658,30 +666,43 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         }
     ).encode("utf-8")
 
-    req = urllib.request.Request(
-        endpoint,
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-        text = data["candidates"][0]["content"]["parts"][0]["text"]
-        parsed = json.loads(text)
-        if isinstance(parsed.get("tldr"), str) and isinstance(parsed.get("highlights"), list):
-            return {
-                "tldr": parsed["tldr"].strip(),
-                "highlights": [str(h).strip() for h in parsed["highlights"][:4] if str(h).strip()],
-                "bestFor": str(parsed.get("bestFor", "")).strip(),
-                "location": str(parsed.get("location", "")).strip(),
-                "category": str(parsed.get("category", "")).strip(),
-                "hotel": parsed.get("hotel") if isinstance(parsed.get("hotel"), dict) else None,
-                "aiGenerated": True,
-                "model": model,
-            }
-    except Exception as exc:
-        print(f"[warn] Gemini summary failed for '{title}': {exc}", file=sys.stderr)
+    for model in models_to_try:
+        endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        for attempt in range(2):
+            req = urllib.request.Request(
+                endpoint,
+                data=payload,
+                headers={
+                    "Content-Type": "application/json",
+                    "X-goog-api-key": api_key,
+                },
+                method="POST",
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                text = data["candidates"][0]["content"]["parts"][0]["text"]
+                parsed = json.loads(text)
+                if isinstance(parsed.get("tldr"), str) and isinstance(parsed.get("highlights"), list):
+                    return {
+                        "tldr": parsed["tldr"].strip(),
+                        "highlights": [str(h).strip() for h in parsed["highlights"][:4] if str(h).strip()],
+                        "bestFor": str(parsed.get("bestFor", "")).strip(),
+                        "location": str(parsed.get("location", "")).strip(),
+                        "category": str(parsed.get("category", "")).strip(),
+                        "hotel": parsed.get("hotel") if isinstance(parsed.get("hotel"), dict) else None,
+                        "aiGenerated": True,
+                        "model": model,
+                    }
+            except urllib.error.HTTPError as exc:
+                print(f"[warn] Gemini {model} attempt {attempt + 1} failed (HTTP {exc.code}) for '{title}'", file=sys.stderr)
+                if exc.code in (429, 500, 503) and attempt == 0:
+                    time.sleep(2)
+                    continue
+                break
+            except Exception as exc:
+                print(f"[warn] Gemini {model} failed for '{title}': {exc}", file=sys.stderr)
+                break
     return None
 
 
@@ -837,9 +858,38 @@ def main() -> None:
                 if isinstance(ai_res.get("hotel"), dict) and ai_res["hotel"].get("name"):
                     h = ai_res["hotel"]
                     scores = h.get("scores") or {}
-                    vals = [float(scores.get(k, 4.2)) for k in ("rooms", "grounds", "food", "service", "value")]
-                    overall = round(sum(vals) / len(vals), 1)
+                    def _clamp_int(val: Any, default: int = 4) -> int:
+                        try:
+                            return max(1, min(5, int(float(val) + 0.5)))
+                        except (TypeError, ValueError):
+                            return default
+
+                    int_scores = {
+                        "rooms": _clamp_int(scores.get("rooms"), 4),
+                        "grounds": _clamp_int(scores.get("grounds"), 4),
+                        "food": _clamp_int(scores.get("food"), 4),
+                        "service": _clamp_int(scores.get("service"), 4),
+                        "value": _clamp_int(scores.get("value"), 4),
+                    }
+                    overall = _clamp_int(h.get("overall"), int(sum(int_scores.values()) / 5.0 + 0.5))
                     slug = re.sub(r"[^a-z0-9]+", "-", str(h["name"]).lower()).strip("-")
+
+                    google_rating = round(max(1.0, min(5.0, float(h.get("googleRating") or 4.6))), 1)
+                    booking_overall = round(max(1.0, min(10.0, float(h.get("bookingOverall") or google_rating * 2))), 1)
+                    critic_score = round(max(1.0, min(5.0, float(h.get("criticScore") or google_rating))), 1)
+                    ours100 = overall * 20
+                    critic100 = round(critic_score * 20)
+                    google100 = round(google_rating * 20)
+                    overall_idx = round(ours100 * 0.4 + critic100 * 0.3 + google100 * 0.3)
+                    spread = round(abs(overall - ((critic_score + google_rating) / 2.0)), 1)
+                    if spread <= 0.35:
+                        agreement, delta = "Strong Consensus", 2
+                    elif spread <= 0.65:
+                        agreement, delta = "Mostly Aligned", 0
+                    else:
+                        agreement, delta = "Contrarian Verdict", -4
+                    great_chance = max(65, min(98, overall_idx + delta))
+
                     newly_extracted_hotels.append(
                         {
                             "id": slug or f"hotel-{vid}",
@@ -854,19 +904,53 @@ def main() -> None:
                             "reviewedDate": raw["publishedDate"],
                             "videoId": vid,
                             "inLiveFeed": True,
+                            "coverageType": "Full Review",
                             "thumbnail": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
-                            "scores": {
-                                "rooms": round(vals[0], 1),
-                                "grounds": round(vals[1], 1),
-                                "food": round(vals[2], 1),
-                                "service": round(vals[3], 1),
-                                "value": round(vals[4], 1),
-                            },
+                            "scores": int_scores,
                             "overall": overall,
                             "verdict": str(h.get("verdict") or summary["tldr"]).strip(),
                             "standout": str(h.get("standout") or "").strip(),
                             "watchOut": str(h.get("watchOut") or "").strip(),
                             "bookingUrl": f"https://www.booking.com/searchresults.html?ss={urllib.parse.quote_plus(str(h['name']))}",
+                            "shorts": [],
+                            "consensus": {
+                                "overallIndex": overall_idx,
+                                "greatStayChance": great_chance,
+                                "agreement": agreement,
+                                "spread": spread,
+                                "oursIncluded": True,
+                                "googleRating": google_rating,
+                                "googleReviews": 0,
+                                "criticScore": critic_score,
+                                "bookingOverall": booking_overall,
+                                "award": str(h.get("brand") or "Reviewed Luxury Stay").strip(),
+                                "sources": ["The Uncharted Itinerary", f"Google Reviews ({google_rating}★)", f"Booking.com ({booking_overall}/10)"],
+                                "otherReviewersSay": str(h.get("otherReviewersSay") or "Well regarded by verified guests and luxury travel reviewers.").strip(),
+                                "whereWeDiffer": str(h.get("verdict") or summary["tldr"]).strip(),
+                                "channelBenchmarks": [
+                                    {
+                                        "source": "The Uncharted Itinerary",
+                                        "category": "Our Stay",
+                                        "score": f"{overall} / 5",
+                                        "normalized100": ours100,
+                                        "takeaway": str(h.get("verdict") or summary["tldr"]).strip(),
+                                    },
+                                    {
+                                        "source": "Booking.com Verified Guests",
+                                        "category": "Verified Guests",
+                                        "score": f"{booking_overall} / 10",
+                                        "normalized100": round(booking_overall * 10),
+                                        "takeaway": str(h.get("otherReviewersSay") or "Verified guest stay scores.").strip(),
+                                    },
+                                    {
+                                        "source": "Google Reviews",
+                                        "category": "Verified Guests",
+                                        "score": f"{google_rating} ★",
+                                        "normalized100": google100,
+                                        "takeaway": str(h.get("otherReviewersSay") or "Aggregated Google guest feedback.").strip(),
+                                    },
+                                ],
+                            },
                         }
                     )
             elif prev_summary:
@@ -911,7 +995,7 @@ def main() -> None:
     VIDEOS_PATH.write_text(json.dumps(videos_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(videos)} videos and {len(shorts[:80])} shorts to {VIDEOS_PATH}")
 
-    # Sync data/hotels.json (append any newly AI-extracted hotels + apply custom booking affiliate URLs)
+    # Sync data/hotels.json (append newly extracted hotels, upgrade Short Tours if full review arrives, attach matching Shorts)
     hotels_path = DATA_DIR / "hotels.json"
     if hotels_path.exists():
         hotels_data = json.loads(hotels_path.read_text(encoding="utf-8"))
@@ -920,10 +1004,83 @@ def main() -> None:
         changed_hotels = False
 
         for nh in newly_extracted_hotels:
-            if nh["videoId"] not in existing_hotel_vids and (nh["lat"] != 0.0 or nh["lng"] != 0.0):
+            if nh["videoId"] in existing_hotel_vids:
+                continue
+            # Check if this full video upgrades a previously Short-only entry
+            upgraded = False
+            nh_norm = re.sub(r"[^a-z0-9]+", " ", nh["name"].lower()).strip()
+            for existing in hotels_list:
+                ex_norm = re.sub(r"[^a-z0-9]+", " ", existing.get("name", "").lower()).strip()
+                if existing.get("coverageType") == "Short Tour" and (
+                    existing.get("id") == nh["id"] or (len(nh_norm) >= 6 and (nh_norm in ex_norm or ex_norm in nh_norm))
+                ):
+                    existing["coverageType"] = "Full Review"
+                    existing["videoId"] = nh["videoId"]
+                    existing["inLiveFeed"] = True
+                    existing["reviewedDate"] = nh["reviewedDate"]
+                    existing["thumbnail"] = nh["thumbnail"]
+                    existing["scores"] = nh["scores"]
+                    existing["overall"] = nh["overall"]
+                    existing["verdict"] = nh["verdict"]
+                    if nh["standout"]:
+                        existing["standout"] = nh["standout"]
+                    if nh["watchOut"]:
+                        existing["watchOut"] = nh["watchOut"]
+                    # Recalculate consensus incorporating our new whole-number score
+                    c = existing.get("consensus") or nh["consensus"]
+                    critic = float(c.get("criticScore") or nh["overall"])
+                    google = float(c.get("googleRating") or nh["overall"])
+                    ours100 = nh["overall"] * 20
+                    overall_idx = round(ours100 * 0.4 + round(critic * 20) * 0.3 + round(google * 20) * 0.3)
+                    spread = round(abs(nh["overall"] - ((critic + google) / 2.0)), 1)
+                    agreement, delta = (
+                        ("Strong Consensus", 2)
+                        if spread <= 0.35
+                        else ("Mostly Aligned", 0)
+                        if spread <= 0.65
+                        else ("Contrarian Verdict", -4)
+                    )
+                    c["overallIndex"] = overall_idx
+                    c["greatStayChance"] = max(65, min(98, overall_idx + delta))
+                    c["agreement"] = agreement
+                    c["spread"] = spread
+                    c["oursIncluded"] = True
+                    for row in c.get("channelBenchmarks", []):
+                        if "Uncharted Itinerary" in row.get("source", ""):
+                            row["category"] = "Our Stay"
+                            row["score"] = f"{nh['overall']} / 5"
+                            row["normalized100"] = ours100
+                            row["takeaway"] = nh["verdict"]
+                    existing["consensus"] = c
+                    existing_hotel_vids.add(nh["videoId"])
+                    changed_hotels = True
+                    upgraded = True
+                    break
+            if not upgraded and (nh["lat"] != 0.0 or nh["lng"] != 0.0):
                 hotels_list.insert(0, nh)
                 existing_hotel_vids.add(nh["videoId"])
                 changed_hotels = True
+
+        # Auto-attach any newly synced Shorts that mention an existing hotel name
+        for sh in shorts[:80]:
+            sh_title_low = (sh.get("title") or "").lower()
+            for h in hotels_list:
+                base_name = h.get("name", "").split(",")[0].strip().lower()
+                if len(base_name) < 5:
+                    continue
+                if base_name in sh_title_low:
+                    h_shorts = h.setdefault("shorts", [])
+                    if not any(s.get("id") == sh["id"] for s in h_shorts):
+                        h_shorts.insert(
+                            0,
+                            {
+                                "id": sh["id"],
+                                "title": sh["title"],
+                                "url": sh.get("url") or f"https://www.youtube.com/shorts/{sh['id']}",
+                                "viewsText": sh.get("viewsText") or "",
+                            },
+                        )
+                        changed_hotels = True
 
         # Optional custom booking URLs from Hotel Booking Links Google Sheet CSV
         hotel_sheet_csv = (
@@ -1017,19 +1174,41 @@ def main() -> None:
     AFFILIATES_PATH.write_text(json.dumps(affiliates_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(curated)} curated + {len(extra_from_videos)} video-discovered affiliate links to {AFFILIATES_PATH}")
 
-    # Refresh sitemap.xml <lastmod> date so search engines see fresh updates
+    # Auto-generate sitemap.xml & robots.txt with all hub pages + individual hotel breakdown URLs
+    cname_path = ROOT / "CNAME"
+    base_url = "https://spinstorms.github.io/uncharted-itinerary-live"
+    if cname_path.exists():
+        custom_domain = cname_path.read_text(encoding="utf-8").strip().splitlines()[0].strip()
+        if custom_domain:
+            base_url = f"https://{custom_domain}".rstrip("/")
+
+    today_utc = now_iso[:10]
+    sitemap_entries = [
+        (f"{base_url}/", "daily", "1.0"),
+        (f"{base_url}/hotels/", "weekly", "0.95"),
+        (f"{base_url}/compare/", "weekly", "0.95"),
+        (f"{base_url}/compare/hotel/", "weekly", "0.90"),
+        (f"{base_url}/cameras/", "monthly", "0.85"),
+        (f"{base_url}/links/", "weekly", "0.85"),
+    ]
+    if hotels_path.exists():
+        current_hotels = json.loads(hotels_path.read_text(encoding="utf-8")).get("hotels", [])
+        for h in current_hotels:
+            hid = h.get("id")
+            if hid:
+                sitemap_entries.append((f"{base_url}/compare/hotel/?id={urllib.parse.quote(hid)}", "weekly", "0.80"))
+
+    url_blocks = "\n".join(
+        f"  <url>\n    <loc>{html.escape(loc)}</loc>\n    <lastmod>{today_utc}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>"
+        for loc, freq, prio in sitemap_entries
+    )
+    sitemap_xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{url_blocks}\n</urlset>\n'
     sitemap_path = ROOT / "sitemap.xml"
-    if sitemap_path.exists():
-        today_utc = now_iso[:10]
-        sitemap_text = sitemap_path.read_text(encoding="utf-8")
-        updated_sitemap = re.sub(
-            r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>",
-            f"<lastmod>{today_utc}</lastmod>",
-            sitemap_text,
-        )
-        if updated_sitemap != sitemap_text:
-            sitemap_path.write_text(updated_sitemap, encoding="utf-8")
-            print(f"Refreshed sitemap.xml lastmod to {today_utc}")
+    sitemap_path.write_text(sitemap_xml, encoding="utf-8")
+
+    robots_path = ROOT / "robots.txt"
+    robots_path.write_text(f"User-agent: *\nAllow: /\n\nSitemap: {base_url}/sitemap.xml\n", encoding="utf-8")
+    print(f"Wrote sitemap.xml ({len(sitemap_entries)} URLs) for {base_url}")
 
 
 if __name__ == "__main__":
