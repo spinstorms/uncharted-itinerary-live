@@ -3192,4 +3192,318 @@ body.embed-mode .affiliate-hero {
   background: #f0fdf4;
 }
 
+/* ---------- Site-Wide Editorial Color-Blocking (Videos, Hotels, Cameras, Deals) ---------- */
+
+/* 1. Latest Videos (/) — Charcoal Cinema Spotlight + Warm Alabaster Archive + Sunset Shorts */
+.featured-section {
+  padding: 8px 0 36px;
+}
+
+.featured-card {
+  background: radial-gradient(circle at top right, rgba(255, 93, 34, 0.18), transparent 48%), #191b1f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.16);
+  color: #ffffff;
+}
+
+.featured-card .featured-title,
+.featured-card .ai-summary-box strong {
+  color: #ffffff;
+}
+
+.featured-card .meta-line,
+.featured-card .ai-tldr,
+.featured-card .ai-highlights li {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.featured-card .tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.featured-card .tag-accent {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.featured-card .ai-summary-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.featured-card .chapter-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.featured-card .chapter-chip:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.featured-card .btn-outline {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.featured-card .btn-outline:hover {
+  background: #ffffff;
+  color: #191a1a;
+  border-color: #ffffff;
+}
+
+.archive-band {
+  background: #f5f3ef;
+  border-top: 1px solid #e7e2da;
+  border-bottom: 1px solid #e7e2da;
+  padding: 36px 0 48px;
+}
+
+.archive-band .controls-bar,
+.scorecards-band .controls-bar {
+  background: #ffffff;
+  border: 1px solid #e6e1d9;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: 0 3px 12px rgba(17, 17, 17, 0.04);
+}
+
+.archive-band .video-card {
+  border: 1px solid #e6e1d9;
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+}
+
+.archive-band .video-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 93, 34, 0.4);
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.09);
+}
+
+#shortsSection,
+#hotelShortsSection,
+#cameraClipsSection {
+  background: #fff8f3;
+  border-top: 1px solid #f5dfd2;
+  border-bottom: 1px solid #f5dfd2;
+  padding-top: 40px;
+  padding-bottom: 46px;
+}
+
+/* 2. Hotel Map & Scorecards (/hotels/) — Charcoal Map Arena + Warm Alabaster Scorecards */
+.map-section {
+  padding: 8px 0 38px;
+}
+
+.map-section .container {
+  background: radial-gradient(circle at top right, rgba(255, 93, 34, 0.16), transparent 46%), #191b1f;
+  border-radius: 22px;
+  padding: 24px 26px 26px;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.15);
+}
+
+.map-section .map-toolbar .pill {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.map-section .map-toolbar .pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.map-section .map-toolbar .pill.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.map-section .map-legend {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.map-section .map-frame {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+.scorecards-band {
+  background: #f5f3ef;
+  border-top: 1px solid #e7e2da;
+  border-bottom: 1px solid #e7e2da;
+  padding: 40px 0 48px;
+}
+
+.scorecards-band .scorecard-card {
+  border: 1px solid #e6e1d9;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 6px 20px rgba(17, 17, 17, 0.05);
+}
+
+.scorecards-band .scorecard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(17, 17, 17, 0.09);
+}
+
+.scorecards-band .scorecard-notes {
+  background: #faf8f5;
+  border: 1px solid #ece7df;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* 3. Camera Reviews (/cameras/) — Charcoal Shootout Hero + Warm Alabaster Review + Tinted Gear Bands */
+.review-hero-card {
+  background: radial-gradient(circle at top right, rgba(255, 93, 34, 0.18), transparent 46%), #191b1f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.16);
+  color: #ffffff;
+}
+
+.review-hero-card .featured-title {
+  color: #ffffff;
+}
+
+.review-hero-card .ai-tldr,
+.review-hero-card .meta-line {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.review-hero-card .tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.review-hero-card .tag-accent {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.review-hero-card .verdict-box {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.review-hero-card .verdict-box.is-winner {
+  background: rgba(255, 93, 34, 0.18);
+  border-color: rgba(255, 93, 34, 0.55);
+}
+
+.review-hero-card .verdict-box h3,
+.review-hero-card .verdict-box strong {
+  color: #ffffff;
+}
+
+.review-hero-card .verdict-box p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.review-hero-card .chapter-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.review-hero-card .chapter-chip:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.review-article-section {
+  background: #f5f3ef;
+  border-top: 1px solid #e7e2da;
+  border-bottom: 1px solid #e7e2da;
+  padding: 40px 0 48px;
+}
+
+.review-article-section .review-article {
+  background: #ffffff;
+  border: 1px solid #e6e1d9;
+  border-top: 4px solid var(--accent);
+  border-radius: 18px;
+  padding: 28px 30px;
+  box-shadow: 0 6px 20px rgba(17, 17, 17, 0.05);
+}
+
+.review-article-section .sidebar-card {
+  border: 1px solid #e6e1d9;
+  border-top: 3px solid #191a1a;
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+}
+
+#shopTestedGear {
+  background: #fff8f3;
+  border-bottom: 1px solid #f5dfd2;
+}
+
+#shopDjiGear {
+  background: #f3f6fa;
+  border-bottom: 1px solid #dfe6ef;
+}
+
+/* 4. Deals & Affiliate Links (/links/) — Distinct Sunset Promotions Band vs Alabaster Gear Band */
+.deals-controls-band {
+  background: #fff8f3;
+  border-top: 1px solid #f5dfd2;
+  padding: 18px 0 6px;
+}
+
+.deals-controls-band .controls-bar {
+  background: #ffffff;
+  border: 1px solid #eedad0;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 0;
+  box-shadow: 0 3px 10px rgba(17, 17, 17, 0.04);
+}
+
+#promotionsSection {
+  background: #fff8f3;
+  border-bottom: 1px solid #f5dfd2;
+  padding-top: 28px;
+  padding-bottom: 46px;
+}
+
+#promotionsSection .deal-card {
+  border: 1px solid #eedad0;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+}
+
+#shoppingSection {
+  background: #f5f3ef;
+  border-bottom: 1px solid #e7e2da;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+#shoppingSection .deal-card {
+  border: 1px solid #e6e1d9;
+  border-top: 4px solid #191a1a;
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+}
+
+#linksShortsSection {
+  background: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 44px;
+}
+
+@media (max-width: 720px) {
+  .map-section .container {
+    padding: 16px 14px 18px;
+    border-radius: 16px;
+  }
+  .review-article-section .review-article {
+    padding: 20px 18px;
+  }
+}
+
+
 
