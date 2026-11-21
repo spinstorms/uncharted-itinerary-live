@@ -525,6 +525,10 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <div class="gap-side-top"><span>{esc(left_label)}</span><strong>{esc(left_display)}</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['left100'] or 0}%"></div></div>
             </div>
+            {f'''<div class="gap-side">
+              <div class="gap-side-top"><span>Critics &amp; Official Awards ({len(o['awards']) + len(o['editorial'])} sourced)</span><strong>{o['critic100']} / 100</strong></div>
+              <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['critic100']}%;background:#d97706;"></div></div>
+            </div>''' if (o['firstHand'] and o['critic100'] is not None) else ''}
             <div class="gap-side">
               <div class="gap-side-top"><span>Real Guest Score</span><strong id="gapGuestDisplay">{esc(right_display)}</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>

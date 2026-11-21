@@ -633,17 +633,36 @@ def main() -> None:
 
     print(f"Prepared {len(editorial_rows)} live-verified editorial_ratings")
 
-    # --- C. LINKED HUMAN YOUTUBE VIDEO REVIEWS (oEmbed Verified, Zero Founder/AI-Slop) ---
+    # --- C. LINKED HUMAN YOUTUBE VIDEO REVIEWS (oEmbed Verified, Verbatim Titles/Comments Only, Zero Invented Scores) ---
     yt_rows: list[dict[str, Any]] = []
     seen_yt: set[tuple[str, str]] = set()
-    BLOCKED_YT_AUTHORS = {"the uncharted itinerary", "hotel review world", "triptalestoday"}
-    BLOCKED_YT_PAIRS = {("st-regis-bora-bora", "Rm6pwASGjTI")}  # Video is actually Four Seasons Bora Bora
+    BLOCKED_YT_AUTHORS = {
+        "the uncharted itinerary",
+        "hotel review world",
+        "triptalestoday",
+        "six star hotels",
+        "hotel critic",
+        "hotel guide",
+        "world hotel guide",
+        "five star finds",
+        "luxury hotels",
+        "via privata",
+    }
+    BLOCKED_YT_PAIRS = {("st-regis-bora-bora", "Rm6pwASGjTI")}
 
-    for p_str in ["/tmp/yt_verified.json", "/tmp/yt_verified_extra.json"]:
-        yp = Path(p_str)
-        if not yp.exists():
-            continue
-        for pid, vid, status, author, title, sent, takeaway in json.loads(yp.read_text(encoding="utf-8")):
+    # Verbatim creator quotes verified directly from video transcripts/comments
+    VERBATIM_QUOTES = {
+        ("capella-bangkok", "e5REBl7DSXs"): 'Creator quote: "Overall we\'ve got an 81 out of 100... I will come back for afternoon tea though, but I\'ll be sleeping at the Four Seasons next door."',
+        ("mandarin-oriental-bangkok", "neq_XCKFscM"): 'Creator quote: "No decent outdoor bar on the river... my advice: have drinks at the Bamboo Bar and stay at the Peninsula [or Four Seasons]."',
+        ("joali-being-maldives", "IYdhcQ_iSeA"): 'Creator quote: "Personally, I prefer the villas and dining at JOALI BEING, while the lagoon and beaches at JOALI Maldives remain more breathtaking."',
+        ("joali-maldives", "IYdhcQ_iSeA"): 'Creator quote: "Personally, I prefer the villas and dining at JOALI BEING, while the lagoon and beaches at JOALI Maldives remain more breathtaking."',
+    }
+
+    yp = Path("/tmp/yt_strict_verified.json")
+    if yp.exists():
+        for rec in json.loads(yp.read_text(encoding="utf-8")):
+            pid, vid, status, author, title = rec[0], rec[1], rec[2], rec[3], rec[4]
+            pub_date = rec[6] if len(rec) > 6 else None
             if status != "OK" or pid not in valid_ids or vid in founder_vids:
                 continue
             if (pid, vid) in BLOCKED_YT_PAIRS:
@@ -655,20 +674,22 @@ def main() -> None:
             if (pid, url) in seen_yt:
                 continue
             seen_yt.add((pid, url))
-            sentiment = sent if sent in ("Recommended", "Mixed", "Pass", "Review") else "Review"
-            tk_clean = str(takeaway or title or "").replace("\\$", "$").strip()
+            title_clean = str(title or "").strip()
+            extra_quote = VERBATIM_QUOTES.get((pid, vid))
+            takeaway = f'"{title_clean}" — {extra_quote}' if extra_quote else f'Video: "{title_clean}"'
             yt_rows.append(
                 {
                     "property_id": pid,
                     "creator_name": author_clean,
                     "source_url": url,
-                    "sentiment": sentiment,
-                    "takeaway": tk_clean[:260],
+                    "sentiment": "Review",
+                    "takeaway": takeaway[:260],
+                    "published_at": pub_date if (pub_date and re.match(r"^\d{4}-\d{2}-\d{2}$", str(pub_date))) else None,
                     "verified_at": now_iso,
                 }
             )
 
-    print(f"Prepared {len(yt_rows)} oEmbed-verified human youtube_reviews")
+    print(f"Prepared {len(yt_rows)} oEmbed-verified human youtube_reviews (strict verbatim titles/quotes only)")
 
     # --- D. CLEANLY REFRESH SUPABASE TABLES ---
     print("Refreshing official_awards (clearing stale pre-2026 rows)...")

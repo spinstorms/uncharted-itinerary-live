@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T20:35:54Z",
+  "updatedAt": "2026-11-21T20:48:30Z",
   "brand": "StayOdds",
   "totalProperties": 300,
   "hotels": [
@@ -150,14 +150,14 @@
         {
           "creatorName": "The Flip Flop Traveller",
           "sourceUrl": "https://www.youtube.com/watch?v=IwINJWzc6wY",
-          "sentiment": "Recommended",
-          "takeaway": "Detailed first-hand stay review of Phulay Bay, a Ritz-Carlton Reserve in Krabi."
+          "sentiment": "Review",
+          "takeaway": "Video: \"PHULAY BAY A Ritz-Carlton Reserve Review: The Real Deal! 🇹🇭\""
         },
         {
           "creatorName": "Don's Swank Guide",
           "sourceUrl": "https://www.youtube.com/watch?v=_EN61jKGv60",
           "sentiment": "Review",
-          "takeaway": "Honest pros & cons villa review of Phulay Bay Ritz-Carlton Reserve."
+          "takeaway": "Video: \"Ritz Carlton Phulay Bay: Best Room Yet...The Catch?\""
         }
       ],
       "officialAwards": [
@@ -240,7 +240,20 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "The Flip Flop Traveller",
+          "sourceUrl": "https://www.youtube.com/watch?v=tSpQU0MDbYI",
+          "sentiment": "Review",
+          "takeaway": "Video: \"THE SIRA LOMBOK 🇮🇩 Lombok, Indonesia  ❰ Resort Tour & Review ❱  New Luxury Done Right!\""
+        },
+        {
+          "creatorName": "AltitudeLux",
+          "sourceUrl": "https://www.youtube.com/watch?v=BGDXKTzEFgo",
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Sira Lombok Hotel Beachfront Villa Full tour\""
+        }
+      ],
       "officialAwards": []
     },
     {
@@ -327,8 +340,8 @@
         {
           "creatorName": "Uncut Travel by Alex",
           "sourceUrl": "https://www.youtube.com/watch?v=gst40eOQEko",
-          "sentiment": "Recommended",
-          "takeaway": "Full resort tour & stay review of Four Seasons Resort Koh Samui."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Luxury at its Finest: Four Seasons Hotel in Koh Samui FULL REVIEW\""
         }
       ],
       "officialAwards": [
@@ -427,7 +440,7 @@
           "creatorName": "UpgradedPoints",
           "sourceUrl": "https://www.youtube.com/watch?v=ZenUoI2BDVs",
           "sentiment": "Review",
-          "takeaway": "Honest stay walkthrough of dining, villas, and reef at Le Méridien Maldives."
+          "takeaway": "Video: \"Le Méridien Maldives Overwater Villa Review w/ Marriott Bonvoy Points\""
         }
       ],
       "officialAwards": []
@@ -512,14 +525,14 @@
         {
           "creatorName": "NOW! Bali Magazine",
           "sourceUrl": "https://www.youtube.com/watch?v=25Vvn6JNUyc",
-          "sentiment": "Recommended",
-          "takeaway": "Full experience tour & review of The St. Regis Bali Resort in Nusa Dua."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Inside The St. Regis Bali Resort: Full Experience Review\""
         },
         {
           "creatorName": "Rai Voyages",
           "sourceUrl": "https://www.youtube.com/watch?v=c9T_ObqHF4o",
-          "sentiment": "Recommended",
-          "takeaway": "Resort tour & stay review of The St. Regis Bali Resort."
+          "sentiment": "Review",
+          "takeaway": "Video: \"EXPLORE the St. Regis Bali | Classic Luxury in the Tropics\""
         }
       ],
       "officialAwards": [
@@ -625,8 +638,8 @@
         {
           "creatorName": "Experienced consumer",
           "sourceUrl": "https://www.youtube.com/watch?v=5bSOg-8OjVI",
-          "sentiment": "Recommended",
-          "takeaway": "In-depth villa tour and stay review at Four Seasons Resort Bali at Jimbaran Bay."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Four Seasons Resort Bali at Jimbaran Bay | Full Hotel Review | Luxury Bali Villas\""
         }
       ],
       "officialAwards": [
@@ -747,8 +760,8 @@
         {
           "creatorName": "The Points Guy | Arrivals",
           "sourceUrl": "https://www.youtube.com/watch?v=JGJAjhyQ6SE",
-          "sentiment": "Recommended",
-          "takeaway": "Full tour and review of W Maldives house reef and overwater villas."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Is the Newly Renovated W Maldives Actually Worth It?\""
         }
       ],
       "officialAwards": []
@@ -841,20 +854,20 @@
         {
           "creatorName": "The Flip Flop Traveller",
           "sourceUrl": "https://www.youtube.com/watch?v=rCG7ZLaeRHs",
-          "sentiment": "Recommended",
-          "takeaway": "Full review and riverfront walkthrough of Four Seasons Hotel Bangkok."
+          "sentiment": "Review",
+          "takeaway": "Video: \"FOUR SEASONS HOTEL Bangkok, Thailand【4K Tour & Review】SHOW STOPPING 5-Star Hotel\""
         },
         {
           "creatorName": "AdventuresWithGingerSpice",
           "sourceUrl": "https://www.youtube.com/watch?v=ZEpFpfn-5Ss",
           "sentiment": "Review",
-          "takeaway": "Room tour and dining review of Four Seasons Bangkok at Chao Phraya River."
+          "takeaway": "Video: \"The Four Seasons Bangkok - The ULTIMATE LUXURY stay\""
         },
         {
           "creatorName": "Wander-Wonder-Winder",
           "sourceUrl": "https://www.youtube.com/watch?v=_kY4nIq7PBc",
           "sentiment": "Review",
-          "takeaway": "Detailed look at pools, suites, and service at Four Seasons Bangkok."
+          "takeaway": "Video: \"🌟 Four Seasons Bangkok Review – Luxury Hotel Facilities & Dining Guide🌟\""
         }
       ],
       "officialAwards": [
@@ -948,14 +961,14 @@
         {
           "creatorName": "Luxury Travel Host",
           "sourceUrl": "https://www.youtube.com/watch?v=_MKfbf_e63I",
-          "sentiment": "Recommended",
-          "takeaway": "4K clifftop resort tour and review of The Ritz-Carlton, Bali in Nusa Dua."
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Ritz-Carlton Bali, Luxury 5-Star Resort in Bali (4K Hotel Tour & Review)\""
         },
         {
           "creatorName": "Eric & Leonard Explores Hotels",
           "sourceUrl": "https://www.youtube.com/watch?v=UzbIusqG7_s",
           "sentiment": "Review",
-          "takeaway": "Villa walkthrough and guest review of The Ritz-Carlton, Bali."
+          "takeaway": "Video: \"Hotel Review - Ritz-Carlton Bali, Nusa Dua - The Garden, 1 Bedroom Villa\""
         }
       ],
       "officialAwards": []
@@ -1137,7 +1150,7 @@
           "creatorName": "Luxury Travel Host",
           "sourceUrl": "https://www.youtube.com/watch?v=nuKpGLNPyN4",
           "sentiment": "Review",
-          "takeaway": "Full 4K resort walkthrough and review of COMO Uma Canggu in Bali."
+          "takeaway": "Video: \"COMO Canggu, Bali's Best 5-Star Luxury Hotel in Canggu (4K Full Tour)\""
         }
       ],
       "officialAwards": []
@@ -1225,13 +1238,13 @@
           "creatorName": "Elaine and Gabriel",
           "sourceUrl": "https://www.youtube.com/watch?v=YRabov4vi8o",
           "sentiment": "Review",
-          "takeaway": "First-hand stay review & honest takeaways from Radisson Blu Resort Maldives."
+          "takeaway": "Video: \"Is the Maldives worth it? Watch before you book! | Radisson Blu Maldives review\""
         },
         {
           "creatorName": "Travel anywhere in the world",
           "sourceUrl": "https://www.youtube.com/watch?v=euhe14Rg82I",
           "sentiment": "Review",
-          "takeaway": "Overwater pool villa walkthrough and review at Radisson Blu Maldives."
+          "takeaway": "Video: \"Water Villa Experience Revealed: Radisson Blu Maldives Resorts Overwater  Pool Villa | Review\""
         }
       ],
       "officialAwards": []
@@ -1643,7 +1656,7 @@
           "creatorName": "Giselle Chusan - Explore with GG",
           "sourceUrl": "https://www.youtube.com/watch?v=xYfWLYyPKzY",
           "sentiment": "Review",
-          "takeaway": "First-hand tour of Regent Bali Canggu pools, dining, and beachfront suites."
+          "takeaway": "Video: \"Inside One of the BEST 5 Star Resorts in Canggu, Bali 🇮🇩 | Regent Bali Canggu\""
         }
       ],
       "officialAwards": []
@@ -1733,8 +1746,8 @@
         {
           "creatorName": "Voyager Guru",
           "sourceUrl": "https://www.youtube.com/watch?v=zivElSt_ypQ",
-          "sentiment": "Recommended",
-          "takeaway": "Detailed resort tour and stay review of Seaside Finolhu Baa Atoll Maldives."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Hotel Review: Finolhu, Maldives\""
         }
       ],
       "officialAwards": []
@@ -1829,8 +1842,8 @@
         {
           "creatorName": "The Flip Flop Traveller",
           "sourceUrl": "https://www.youtube.com/watch?v=kY5N8Wn8TQM",
-          "sentiment": "Recommended",
-          "takeaway": "Full stay tour & honest review of TA'AKTANA Luxury Collection in Labuan Bajo."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Why I Gave TA'AKTANA a Perfect 100/100 Score | Full Review\""
         }
       ],
       "officialAwards": [
@@ -2045,13 +2058,13 @@
           "creatorName": "Mandy Roams",
           "sourceUrl": "https://www.youtube.com/watch?v=SFkmFACknYc",
           "sentiment": "Review",
-          "takeaway": "Honest stay review of the newly opened Westin Bora Bora Resort & Spa."
+          "takeaway": "Video: \"NEW The Westin Bora Bora: Worth $1,200?! 🌴\""
         },
         {
           "creatorName": "Sebby Fung",
           "sourceUrl": "https://www.youtube.com/watch?v=n-Vef_vlPl4",
           "sentiment": "Review",
-          "takeaway": "Full overwater bungalow tour and dining review of The Westin Bora Bora."
+          "takeaway": "Video: \"NEW The Westin Bora Bora: Overlooked or Overrated?! 🌴\""
         }
       ],
       "officialAwards": []
@@ -2120,14 +2133,14 @@
         {
           "creatorName": "“The W-Bs” Travel Diary",
           "sourceUrl": "https://www.youtube.com/watch?v=yJMxwRkXiDE",
-          "sentiment": "Recommended",
-          "takeaway": "Room tour and honest resort review of W Algarve in Portugal."
+          "sentiment": "Review",
+          "takeaway": "Video: \"W Algarve Hotel - Room Tour & Hotel Review\""
         },
         {
           "creatorName": "Luxury Travel Guru",
           "sourceUrl": "https://www.youtube.com/watch?v=_cWWHaIsmbU",
           "sentiment": "Review",
-          "takeaway": "5-star property walkthrough and suite tour of W Algarve."
+          "takeaway": "Video: \"W Algarve - 5-Star LUXURY Hotel in Portugal | Hotel Tour & Review\""
         }
       ],
       "officialAwards": []
@@ -2279,8 +2292,8 @@
         {
           "creatorName": "Chris chow eats",
           "sourceUrl": "https://www.youtube.com/watch?v=wMjkaXXnccI",
-          "sentiment": "Recommended",
-          "takeaway": "Full pool villa tour and stay review of W Koh Samui."
+          "sentiment": "Review",
+          "takeaway": "Video: \"W Koh Samui Hotel Review - Luxury resort with private beach in Thailand\""
         }
       ],
       "officialAwards": []
@@ -2365,16 +2378,16 @@
       ],
       "youtubeReviews": [
         {
-          "creatorName": "Go Go Travel With Josh",
-          "sourceUrl": "https://www.youtube.com/watch?v=Ffm5d-97aHg",
-          "sentiment": "Recommended",
-          "takeaway": "In-depth Ubud jungle villa review of Mandapa, a Ritz-Carlton Reserve."
-        },
-        {
           "creatorName": "Lux Traveler",
           "sourceUrl": "https://www.youtube.com/watch?v=l1KJHWvVbBQ",
-          "sentiment": "Recommended",
-          "takeaway": "Full stay walkthrough of Mandapa, a Ritz-Carlton Reserve in Ubud, Bali."
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Ultimate Stay at Mandapa, a Ritz-Carlton Reserve - Bali's Premier Luxury\""
+        },
+        {
+          "creatorName": "Go Go Travel With Josh",
+          "sourceUrl": "https://www.youtube.com/watch?v=Ffm5d-97aHg",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Staying at Bali's Most Luxurious Resort-Mandapa Ritz-Carlton CHANGED MY LIFE【4K Tour】\""
         }
       ],
       "officialAwards": [
@@ -2561,26 +2574,26 @@
         {
           "creatorName": "Adventures of Lauren & Jason",
           "sourceUrl": "https://www.youtube.com/watch?v=d8Y84PEN8Zo",
-          "sentiment": "Recommended",
-          "takeaway": "Complete resort & overwater villa tour of The St. Regis Bora Bora."
+          "sentiment": "Review",
+          "takeaway": "Video: \"St. Regis Bora Bora: Full Resort & Overwater Villa Tour\""
         },
         {
           "creatorName": "Project Time Off",
           "sourceUrl": "https://www.youtube.com/watch?v=NS1GILT94TM",
           "sentiment": "Review",
-          "takeaway": "Candid 2025 stay review & cost breakdown of The St. Regis Bora Bora overwater villas."
+          "takeaway": "Video: \"The Truth About St. Regis Bora Bora (2025 Review) (4K)\""
         },
         {
           "creatorName": "MITCHELLACO",
           "sourceUrl": "https://www.youtube.com/watch?v=IIqmjunhkAw",
-          "sentiment": "Recommended",
-          "takeaway": "In-depth overwater villa & resort review of The St. Regis Bora Bora."
+          "sentiment": "Review",
+          "takeaway": "Video: \"INDEPTH St. Regis Bora Bora Review (Blew Our Minds)\""
         },
         {
           "creatorName": "The Lovers Passport",
           "sourceUrl": "https://www.youtube.com/watch?v=vSMPGzq5z5E",
           "sentiment": "Review",
-          "takeaway": "Side-by-side comparison review of Four Seasons Bora Bora vs. St. Regis Bora Bora."
+          "takeaway": "Video: \"IS BORA BORA WORTH IT? Four Seasons vs. St. Regis Bora Bora Review\""
         }
       ],
       "officialAwards": []
@@ -2843,14 +2856,14 @@
         {
           "creatorName": "Voyager Guru",
           "sourceUrl": "https://www.youtube.com/watch?v=On04QhGx--k",
-          "sentiment": "Recommended",
-          "takeaway": "First-hand review of Park Hyatt Maldives Hadahaa and its 360-degree house reef."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Hotel Review: Park Hyatt Hadahaa Maldives\""
         },
         {
           "creatorName": "Angelfish Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=jqRiAXtCzrk",
-          "sentiment": "Recommended",
-          "takeaway": "Detailed snorkeling and villa tour of Park Hyatt Maldives Hadahaa."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Park Hyatt Maldives Hadahaa | A Peaceful Paradise for Snorkellers and Nature Lovers\""
         }
       ],
       "officialAwards": []
@@ -3281,14 +3294,7 @@
           "takeaway": "LVMH&#x27;s crown jewel on the Seine — where Parisian savoir-faire meets haute couture hospitality. Fat Approved, scored 16.5/20 by Fat Voyage in Paris, France."
         }
       ],
-      "youtubeReviews": [
-        {
-          "creatorName": "VIA PRIVATA",
-          "sourceUrl": "https://www.youtube.com/watch?v=QYwH0_umnKo",
-          "sentiment": "Recommended",
-          "takeaway": "Full suite tour and Seine-view stay review of Cheval Blanc Paris."
-        }
-      ],
+      "youtubeReviews": [],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -3850,7 +3856,14 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Tahiti By Carl",
+          "sourceUrl": "https://www.youtube.com/watch?v=QP47vZqS9Cw",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Inside The Brando’s 1‑Bedroom Beach Villa | Ultimate Tetiaroa Luxury Room Tour\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -4111,8 +4124,8 @@
         {
           "creatorName": "Chris Stead",
           "sourceUrl": "https://www.youtube.com/watch?v=5YX0RETNUQg",
-          "sentiment": "Recommended",
-          "takeaway": "Architectural villa tour and stay review at The Ritz-Carlton Maldives, Fari Islands."
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Ritz Carlton Maldives Review + Tour Fari Islands - Pure Luxury Resort\""
         }
       ],
       "officialAwards": [
@@ -4610,7 +4623,20 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Adore Maldives",
+          "sourceUrl": "https://www.youtube.com/watch?v=VK8bdJ0JRXs",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Review of GILI LANKANFUSHI by The Maldives Travel Counsellor [4K]\""
+        },
+        {
+          "creatorName": "Adore Maldives",
+          "sourceUrl": "https://www.youtube.com/watch?v=PsDnk-fzsfU",
+          "sentiment": "Review",
+          "takeaway": "Video: \"New Pool Villas at Gili Lankanfushi - Review by The Maldives Travel Counsellor [4K]\""
+        }
+      ],
       "officialAwards": []
     },
     {
@@ -4776,7 +4802,14 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Cyrus PGA",
+          "sourceUrl": "https://www.youtube.com/watch?v=25mvLYRNvmk",
+          "sentiment": "Review",
+          "takeaway": "Video: \"I Stayed in the Most Beautiful Hotel in Mexico! Las Ventanas al Paraiso\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -5122,7 +5155,14 @@
           "takeaway": "First-hand hotel verdict (8.5/10): Review: Rosewood Mayakoba, Riviera Maya (Mexico)"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Luxury Travel Expert",
+          "sourceUrl": "https://www.youtube.com/watch?v=NObxs23DLok",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Rosewood Mayakoba | Luxury Beach Resort in Mexico’s Riviera Maya (Full Tour in 4K)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -5527,7 +5567,26 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Wandering Nancy",
+          "sourceUrl": "https://www.youtube.com/watch?v=Bb9hOHzMwzI",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Where to stay in Sydney? Capella Sydney Hotel Review | Best Hotel in Australia?\""
+        },
+        {
+          "creatorName": "Exploring Sydney and Beyond",
+          "sourceUrl": "https://www.youtube.com/watch?v=sHvPZO6dM28",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Staying in One of Sydney’s Most Luxurious 5 Star Hotels - Capella Sydney\""
+        },
+        {
+          "creatorName": "Havewchairwilltravel",
+          "sourceUrl": "https://www.youtube.com/watch?v=kaZXodTsQKc",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Capella Sydney review\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -5881,7 +5940,20 @@
           "takeaway": "First-hand hotel verdict (8.8/10): Review: Mandarin Oriental Bangkok (Thailand)"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Don's Swank Guide",
+          "sourceUrl": "https://www.youtube.com/watch?v=neq_XCKFscM",
+          "sentiment": "Review",
+          "takeaway": "\"Inside The Mandarin Oriental Bangkok: Still the Best?\" — Creator quote: \"No decent outdoor bar on the river... my advice: have drinks at the Bamboo Bar and stay at the Peninsula [or Four Seasons].\""
+        },
+        {
+          "creatorName": "Vera Grace",
+          "sourceUrl": "https://www.youtube.com/watch?v=V87MDoA2s_k",
+          "sentiment": "Review",
+          "takeaway": "Video: \"THE MANDARIN ORIENTAL..... I stayed at the most iconic hotel in Asia\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -5982,8 +6054,8 @@
         {
           "creatorName": "Nicole's Travel Tips",
           "sourceUrl": "https://www.youtube.com/watch?v=CRXLYCFHYTg",
-          "sentiment": "Mixed",
-          "takeaway": "Honest value-for-points stay review of Park Hyatt Kyoto."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Park Hyatt Kyoto 🇯🇵 | Is It Worth 45,000+ Points a Night? (Full Tour + Honest Review)\""
         }
       ],
       "officialAwards": [
@@ -6165,7 +6237,20 @@
           "takeaway": "First-hand hotel verdict (8.7/10): Review: Patina Maldives, Fari Islands"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Adore Maldives",
+          "sourceUrl": "https://www.youtube.com/watch?v=cnXUkKP5IUc",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Review of PATINA MALDIVES Fari Islands by ADORE Maldives [4K]\""
+        },
+        {
+          "creatorName": "Luxury Travel Host",
+          "sourceUrl": "https://www.youtube.com/watch?v=Cuq33V-PaHA",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Patina Maldives, Phenomenal Luxury Resort (4K Hotel Tour & Vlog)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "Forbes Travel Guide",
@@ -6330,7 +6415,14 @@
           "takeaway": "Fat Favorite, scored 17.5/20 by Fat Voyage in Big Sur, USA. A cliffside luxury inn in Big Sur, California, with tree house and ocean-view rooms overlooking…"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Nick Gray",
+          "sourceUrl": "https://www.youtube.com/watch?v=pp-WFpISG2I",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Post Ranch Inn Full Hotel Review\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -6424,8 +6516,8 @@
         {
           "creatorName": "Motivated Travel | Family Reviews, Guides and Tips",
           "sourceUrl": "https://www.youtube.com/watch?v=GnDsZaqPccY",
-          "sentiment": "Recommended",
-          "takeaway": "Full island tour and villa review of Soneva Fushi in Baa Atoll."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Soneva Fushi Resort Maldives Review + Full Island Tour\""
         }
       ],
       "officialAwards": [
@@ -6509,7 +6601,14 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Beau Monde Traveler",
+          "sourceUrl": "https://www.youtube.com/watch?v=uf24WsnI6Ew",
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Nautilus Maldives | Private Island Luxury Resort in Baa Atoll (4K)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -6926,22 +7025,22 @@
       ],
       "youtubeReviews": [
         {
+          "creatorName": "The Flip Flop Traveller",
+          "sourceUrl": "https://www.youtube.com/watch?v=e5REBl7DSXs",
+          "sentiment": "Review",
+          "takeaway": "\"THE CAPELLA Bangkok, Thailand【4K Tour & Review】AWARD WINNING 5-Star Hotel\" — Creator quote: \"Overall we've got an 81 out of 100... I will come back for afternoon tea though, but I'll be sleeping at the Four Seasons next door.\""
+        },
+        {
           "creatorName": "Luxury Travel Host",
           "sourceUrl": "https://www.youtube.com/watch?v=b4hoOiTNCck",
-          "sentiment": "Recommended",
-          "takeaway": "Full stay review of Capella Bangkok on the Chao Phraya River."
+          "sentiment": "Review",
+          "takeaway": "Video: \"World's Best Hotel | Capella Bangkok, Thailand (4K Hotel Tour & Review)\""
         },
         {
           "creatorName": "Bonnie Rakhit",
           "sourceUrl": "https://www.youtube.com/watch?v=SZ6SQiMomjU",
           "sentiment": "Review",
-          "takeaway": "Riverside suite walkthrough and dining review at Capella Bangkok."
-        },
-        {
-          "creatorName": "The Flip Flop Traveller",
-          "sourceUrl": "https://www.youtube.com/watch?v=e5REBl7DSXs",
-          "sentiment": "Mixed",
-          "takeaway": "The Flip Flop Traveller scores Capella Bangkok 81/100 — praises service & river views, finds design more subdued than Four Seasons next door."
+          "takeaway": "Video: \"Officially The Best Hotel in the World - Capella Bangkok\""
         }
       ],
       "officialAwards": [
@@ -7236,16 +7335,16 @@
       ],
       "youtubeReviews": [
         {
-          "creatorName": "The Lovers Passport",
-          "sourceUrl": "https://www.youtube.com/watch?v=vSMPGzq5z5E",
-          "sentiment": "Recommended",
-          "takeaway": "Full overwater bungalow stay review of Four Seasons Resort Bora Bora."
-        },
-        {
           "creatorName": "Nick Koumalatsos",
           "sourceUrl": "https://www.youtube.com/watch?v=Rm6pwASGjTI",
-          "sentiment": "Recommended",
-          "takeaway": "Comprehensive stay review & overwater bungalow tour of Four Seasons Resort Bora Bora."
+          "sentiment": "Review",
+          "takeaway": "Video: \"COMPREHENSIVE REVIEW OF THE FOUR SEASONS BORA BORA | Nick Koumalatsos\""
+        },
+        {
+          "creatorName": "The Lovers Passport",
+          "sourceUrl": "https://www.youtube.com/watch?v=vSMPGzq5z5E",
+          "sentiment": "Review",
+          "takeaway": "Video: \"IS BORA BORA WORTH IT? Four Seasons vs. St. Regis Bora Bora Review\""
         }
       ],
       "officialAwards": [
@@ -8337,7 +8436,20 @@
           "takeaway": "Fat Favorite, scored 17/20 by Fat Voyage in Riviera Nayarit, Mexico. A cliffside jungle resort of private treehouse villas above the Pacific in Riviera…"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Ana Juárez Velázquez",
+          "sourceUrl": "https://www.youtube.com/watch?v=AwB5UhyYxn4",
+          "sentiment": "Review",
+          "takeaway": "Video: \"One&Only Mandarina Resort Tour\""
+        },
+        {
+          "creatorName": "Luxefarer TRAVEL",
+          "sourceUrl": "https://www.youtube.com/watch?v=c9GBhwm7ZGA",
+          "sentiment": "Review",
+          "takeaway": "Video: \"ONE&ONLY MANDARINA | Inside the most unique resort in Mexico\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -8602,8 +8714,8 @@
         {
           "creatorName": "We Like To Cruise and Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=JZLtcRK0zxM",
-          "sentiment": "Recommended",
-          "takeaway": "Full heritage suite tour and stay review of Raffles Singapore."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Review and Full Tour of Raffles Singapore\""
         }
       ],
       "officialAwards": [
@@ -8801,8 +8913,8 @@
         {
           "creatorName": "Yaël Isn’t Home",
           "sourceUrl": "https://www.youtube.com/watch?v=N_N768s6Krw",
-          "sentiment": "Recommended",
-          "takeaway": "Harbour-view suite tour and stay review of Rosewood Hong Kong."
+          "sentiment": "Review",
+          "takeaway": "Video: \"ROSEWOOD HONG KONG: My Honest Review\""
         }
       ],
       "officialAwards": [
@@ -9061,8 +9173,8 @@
         {
           "creatorName": "Adore Maldives",
           "sourceUrl": "https://www.youtube.com/watch?v=X0V4-G-KQsg",
-          "sentiment": "Recommended",
-          "takeaway": "Overwater villa with waterslide tour and review at Soneva Jani."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Review of SONEVA Jani by ADORE Maldives [4K]\""
         }
       ],
       "officialAwards": [
@@ -9231,7 +9343,14 @@
           "takeaway": "A Maybourne hotel in Mayfair, London, set back from the street behind a small driveway. Fat Legend, scored 18/20 by Fat Voyage in London, United Kingdom."
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Evan Pyle",
+          "sourceUrl": "https://www.youtube.com/watch?v=4zOuP5aEDqY",
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Connaught Hotel Review and Tour 🇬🇧🇬🇧🇬🇧🏨🏨🏨\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -9485,7 +9604,7 @@
           "creatorName": "Glow & Go | Luxury Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=Ik3NaZaiJm4",
           "sentiment": "Review",
-          "takeaway": "Full property tour of villas, spa, and dining at Waldorf Astoria Maldives Ithaafushi."
+          "takeaway": "Video: \"Waldorf Astoria Maldives Ithaafushi Full Tour | Hilton’s Most Expensive Luxury Resort or amanvari\""
         }
       ],
       "officialAwards": [
@@ -9876,7 +9995,20 @@
           "takeaway": "Fat Legend, scored 18.5/20 by Fat Voyage in Ubud, Indonesia. A 23-tent jungle camp in Ubud&#x27;s Keliki Valley, designed by Bill Bensley around a 19th-century…"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Be My Travel Muse",
+          "sourceUrl": "https://www.youtube.com/watch?v=dGwFVHgwT3E",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Is this Bali’s Best Hotel? Capella Ubud HONEST Review\""
+        },
+        {
+          "creatorName": "Family On The Run",
+          "sourceUrl": "https://www.youtube.com/watch?v=mVabgWQnYxk",
+          "sentiment": "Review",
+          "takeaway": "Video: \"CAPELLA UBUD - BALI (we stayed at the BEST HOTEL in the world)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -9966,13 +10098,13 @@
           "creatorName": "Walk With Me Tim",
           "sourceUrl": "https://www.youtube.com/watch?v=gcWzaYDLUzo",
           "sentiment": "Review",
-          "takeaway": "Walk With Me Tim reviews rooms, service, and dining at Claridge's in London."
+          "takeaway": "Video: \"I Stay At Claridge’s In London\""
         },
         {
           "creatorName": "Luxury Hotel Girl",
           "sourceUrl": "https://www.youtube.com/watch?v=BQoLulcPxuI",
-          "sentiment": "Recommended",
-          "takeaway": "Full stay review & behind-the-scenes look at service and afternoon tea at Claridge's London."
+          "sentiment": "Review",
+          "takeaway": "Video: \"INSIDE The London Hotel For The SUPER RICH | Claridge's FULL TOUR\""
         }
       ],
       "officialAwards": [
@@ -10917,14 +11049,7 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [
-        {
-          "creatorName": "Luxury Hotels",
-          "sourceUrl": "https://www.youtube.com/watch?v=UIbxxHc4aio",
-          "sentiment": "Recommended",
-          "takeaway": "Full tour and review of Raffles London at The OWO."
-        }
-      ],
+      "youtubeReviews": [],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -11024,7 +11149,26 @@
           "takeaway": "First-hand hotel verdict (9/10): Review: San Domenico Palace, a Four Seasons Hotel (Sicily)"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Crystal Kelly | POSHSCAPE",
+          "sourceUrl": "https://www.youtube.com/watch?v=KNBkIoOBKrk",
+          "sentiment": "Review",
+          "takeaway": "Video: \"I Visited the Real White Lotus Hotel in Sicily! San Domenico Palace, Taormina, A Four Seasons Hotel\""
+        },
+        {
+          "creatorName": "Elysium987",
+          "sourceUrl": "https://www.youtube.com/watch?v=08MDF9H3mHA",
+          "sentiment": "Review",
+          "takeaway": "Video: \"San Domenico Palace Taormina - Four Seasons Sicily 4K Tour |  Elysium987\""
+        },
+        {
+          "creatorName": "Luxury Travel Expert",
+          "sourceUrl": "https://www.youtube.com/watch?v=uWbnHj-O2cw",
+          "sentiment": "Review",
+          "takeaway": "Video: \"FOUR SEASONS TAORMINA (San Domenico Palace) | Iconic 5-star hotel in Sicily, Italy (full tour)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -11111,7 +11255,7 @@
           "creatorName": "Travel diaries",
           "sourceUrl": "https://www.youtube.com/watch?v=LP2zYUGg9oQ",
           "sentiment": "Review",
-          "takeaway": "Iconic bungalow & suite stay review at The Beverly Hills Hotel."
+          "takeaway": "Video: \"Beverly Hills Hotel Review\""
         }
       ],
       "officialAwards": [
@@ -11292,7 +11436,7 @@
           "creatorName": "Walk With Me Tim",
           "sourceUrl": "https://www.youtube.com/watch?v=W_NxcVEkX7c",
           "sentiment": "Review",
-          "takeaway": "Honest stay review of The Peninsula London by Walk With Me Tim."
+          "takeaway": "Video: \"I Stay In London's First Billion Pound Hotel!\""
         }
       ],
       "officialAwards": [
@@ -11876,7 +12020,15 @@
           "verifiedAt": "2026-11-21T19:57:10+00:00"
         }
       },
-      "editorialRatings": [],
+      "editorialRatings": [
+        {
+          "sourceName": "Fat Voyage",
+          "sourceUrl": "https://fat.voyage/hotels/four-seasons-kyoto",
+          "rawScore": "18.5/20",
+          "normalized100": 92,
+          "takeaway": "Fat Legend, scored 18.5/20 by Fat Voyage in Kyoto, Japan. A low-rise Four Seasons built around a historic pond garden, a short walk from Kyoto's Higashiyama…"
+        }
+      ],
       "youtubeReviews": [],
       "officialAwards": [
         {
@@ -12609,7 +12761,7 @@
           "creatorName": "We Like To Cruise and Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=mPJXFNrIDBc",
           "sentiment": "Review",
-          "takeaway": "Room tour, infinity pool walkthrough, and review of Marina Bay Sands."
+          "takeaway": "Video: \"Review of Marina Bay Sands Hotel, Singapore\""
         }
       ],
       "officialAwards": [
@@ -13327,7 +13479,7 @@
           "creatorName": "Walk With Me Tim",
           "sourceUrl": "https://www.youtube.com/watch?v=nlQOoinKiCk",
           "sentiment": "Review",
-          "takeaway": "Walk With Me Tim reviews a stay at London's historic Dorchester Hotel in Mayfair."
+          "takeaway": "Video: \"I Stay At The Dorchester, London's Iconic Luxury Hotel!\""
         }
       ],
       "officialAwards": [
@@ -13507,8 +13659,8 @@
         {
           "creatorName": "ST Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=4RgU4zjQp4M",
-          "sentiment": "Recommended",
-          "takeaway": "4K suite tour and stay review of The Ritz-Carlton, Kyoto."
+          "sentiment": "Review",
+          "takeaway": "Video: \"The Ritz-Carlton Kyoto, Luxury Hotel in Japan | $2,400 Japanese-style Suite (4K Tour & Review)\""
         }
       ],
       "officialAwards": [
@@ -14455,7 +14607,20 @@
         }
       },
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Karisha & Leroy",
+          "sourceUrl": "https://www.youtube.com/watch?v=z04lC24VjGs",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Conrad Maldives Rangali Island Review\""
+        },
+        {
+          "creatorName": "Genti On The Go",
+          "sourceUrl": "https://www.youtube.com/watch?v=hWmQ167lML4",
+          "sentiment": "Review",
+          "takeaway": "Video: \"CONRAD MALDIVES Resort Tour\""
+        }
+      ],
       "officialAwards": []
     },
     {
@@ -14689,8 +14854,8 @@
         {
           "creatorName": "Travel diaries",
           "sourceUrl": "https://www.youtube.com/watch?v=fJPWB94w7ys",
-          "sentiment": "Recommended",
-          "takeaway": "Property tour and stay review of Hotel Bel-Air in Los Angeles."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Hotel Bel Air Review\""
         }
       ],
       "officialAwards": [
@@ -15093,8 +15258,8 @@
         {
           "creatorName": "The Flip Flop Traveller",
           "sourceUrl": "https://www.youtube.com/watch?v=ARsRFM9g_Wo",
-          "sentiment": "Recommended",
-          "takeaway": "The Flip Flop Traveller reviews Park Hyatt Bangkok suites, pool, and Globalist value."
+          "sentiment": "Review",
+          "takeaway": "Video: \"PARK HYATT BANGKOK Review: Is it worth the luxury price? 🇹🇭\""
         }
       ],
       "officialAwards": [
@@ -18923,13 +19088,13 @@
           "creatorName": "Azraai Azuha",
           "sourceUrl": "https://www.youtube.com/watch?v=yUJFCicUaNk",
           "sentiment": "Review",
-          "takeaway": "First-hand stay review of Aman New York suites, spa, and Midtown value."
+          "takeaway": "Video: \"Staying at World’s MOST EXPENSIVE CITY HOTEL | AMAN New York Review (plus NYC Helicopter Tour)\""
         },
         {
           "creatorName": "Alexander The Guest",
           "sourceUrl": "https://www.youtube.com/watch?v=a2Upny7q8Uw",
           "sentiment": "Review",
-          "takeaway": "Testing whether Aman New York's $2,200+/night suites live up to the hype."
+          "takeaway": "Video: \"I TESTED the MOST EXPENSIVE Hotel in NEW YORK\""
         }
       ],
       "officialAwards": [
@@ -19022,8 +19187,8 @@
         {
           "creatorName": "Ryan Walker",
           "sourceUrl": "https://www.youtube.com/watch?v=7gFf_X0xGuc",
-          "sentiment": "Recommended",
-          "takeaway": "Detailed room tour and stay review of Aman Tokyo."
+          "sentiment": "Review",
+          "takeaway": "Video: \"What the Legendary Aman Tokyo is Really Like\""
         }
       ],
       "officialAwards": [
@@ -19110,7 +19275,7 @@
           "creatorName": "ST Travel",
           "sourceUrl": "https://www.youtube.com/watch?v=1mIt6w8iO4c",
           "sentiment": "Review",
-          "takeaway": "Full tour and candid review of Aman Venice on the Grand Canal."
+          "takeaway": "Video: \"Aman Venice, Most Expensive Hotel in Venice, Italy | Full Tour | 4K Travel Vlog\""
         }
       ],
       "officialAwards": [
@@ -19368,8 +19533,8 @@
         {
           "creatorName": "The Aesthetic Minimalist",
           "sourceUrl": "https://www.youtube.com/watch?v=sesK3UGWNVU",
-          "sentiment": "Recommended",
-          "takeaway": "First-hand stay experience and review of Amangiri in Utah."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Amangiri Experience | A Quiet Luxury Retreat in Utah\""
         }
       ],
       "officialAwards": [
@@ -19919,13 +20084,7 @@
           "creatorName": "JetSetDuo",
           "sourceUrl": "https://www.youtube.com/watch?v=vhi3DZ9IiT8",
           "sentiment": "Review",
-          "takeaway": "Full stay review & tour of Atlantis The Royal in Dubai."
-        },
-        {
-          "creatorName": "FIVE STAR FINDS",
-          "sourceUrl": "https://www.youtube.com/watch?v=hdoIxWRxokU",
-          "sentiment": "Review",
-          "takeaway": "Honest guest walkthrough of suites, pools, and dining at Atlantis The Royal."
+          "takeaway": "Video: \"We Stayed at Atlantis The Royal Dubai — Our Honest Review (Worth the Hype?)\""
         }
       ],
       "officialAwards": [
@@ -20219,7 +20378,26 @@
           "takeaway": "A Bulgari-branded skyscraper hotel with 98 rooms directly above Tokyo Station. Fat Legend, scored 18.5/20 by Fat Voyage in Tokyo, Japan."
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "The Asia Guy",
+          "sourceUrl": "https://www.youtube.com/watch?v=awMX5Seh3c8",
+          "sentiment": "Review",
+          "takeaway": "Video: \"BULGARI TOKYO Review | Staying at Japan's most expensive hotel\""
+        },
+        {
+          "creatorName": "Muslim Xplorer",
+          "sourceUrl": "https://www.youtube.com/watch?v=o6WJiB5VzWg",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Inside Bvlgari Tokyo - Japan's Most Luxurious Hotel\""
+        },
+        {
+          "creatorName": "Indochina Travel Company",
+          "sourceUrl": "https://www.youtube.com/watch?v=goSzqa15MSM",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Luxury Above Tokyo 🇯🇵 | Inside the Bulgari Hotel Tokyo & Tokyo Midtown Yaesu\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -20306,7 +20484,20 @@
           "takeaway": "First-hand hotel verdict (9/10): Review of the Bulgari Resort Bali"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Laura & Nicolas",
+          "sourceUrl": "https://www.youtube.com/watch?v=hTZgSeI9SQs",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Bali's most exceptional and stylish resort - Bulgari Resort Bali\""
+        },
+        {
+          "creatorName": "Luxury Travel Expert",
+          "sourceUrl": "https://www.youtube.com/watch?v=CGnizWLL8dU",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Bulgari Resort Bali: full tour (SPECTACULAR cliffside retreat)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -20695,14 +20886,14 @@
         {
           "creatorName": "BESVISOR",
           "sourceUrl": "https://www.youtube.com/watch?v=2Bl0HlO8aBM",
-          "sentiment": "Recommended",
-          "takeaway": "In-depth week-long stay review of Cheval Blanc Randheli Maldives."
+          "sentiment": "Review",
+          "takeaway": "Video: \"I stayed a week at the best Ultra Luxury Resort in the Maldives | Cheval Blanc Randheli\""
         },
         {
           "creatorName": "Benjamin Bryant",
           "sourceUrl": "https://www.youtube.com/watch?v=Rup2KDBzjKA",
-          "sentiment": "Recommended",
-          "takeaway": "Full island tour and villa vlog at Cheval Blanc Randheli."
+          "sentiment": "Review",
+          "takeaway": "Video: \"Cheval Blanc Randheli Maldives - TOUR, REVIEW & TRAVEL VLOG\""
         }
       ],
       "officialAwards": [
@@ -21080,7 +21271,14 @@
           "takeaway": "First-hand hotel verdict (9.3/10): Review: Four Seasons Resort Maldives at Landaa Giraavaru"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Luxury Travel Expert",
+          "sourceUrl": "https://www.youtube.com/watch?v=G_3icYBpqC0",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Four Seasons Maldives Landaa Giraavaru | Phenomenal luxury resort (full tour in 4K)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -21666,7 +21864,14 @@
           "takeaway": "First-hand hotel verdict (9/10): Review: JOALI BEING, Maldives"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "CL Kung",
+          "sourceUrl": "https://www.youtube.com/watch?v=IYdhcQ_iSeA",
+          "sentiment": "Review",
+          "takeaway": "\"JOALI BEING & JOALI Maldives 2026 | Ultimate Lifetime Twin-Island Tour\" — Creator quote: \"Personally, I prefer the villas and dining at JOALI BEING, while the lagoon and beaches at JOALI Maldives remain more breathtaking.\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -21738,7 +21943,20 @@
       ],
       "verifiedGuest": null,
       "editorialRatings": [],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "CL Kung",
+          "sourceUrl": "https://www.youtube.com/watch?v=IYdhcQ_iSeA",
+          "sentiment": "Review",
+          "takeaway": "\"JOALI BEING & JOALI Maldives 2026 | Ultimate Lifetime Twin-Island Tour\" — Creator quote: \"Personally, I prefer the villas and dining at JOALI BEING, while the lagoon and beaches at JOALI Maldives remain more breathtaking.\""
+        },
+        {
+          "creatorName": "Adore Maldives",
+          "sourceUrl": "https://www.youtube.com/watch?v=z7mUOmsxXGE",
+          "sentiment": "Review",
+          "takeaway": "Video: \"Review of JOALI Maldives by ADORE Maldives [4K]\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -22123,7 +22341,7 @@
           "creatorName": "Walk With Me Tim",
           "sourceUrl": "https://www.youtube.com/watch?v=iA_69g87Ilw",
           "sentiment": "Review",
-          "takeaway": "Walk With Me Tim stays at Dubai's iconic Burj Al Arab to test whether the suites and service justify the price."
+          "takeaway": "Video: \"I Stay In The World's Only 7 Star Hotel - Burj Al Arab Dubai\""
         }
       ],
       "officialAwards": [
@@ -22583,8 +22801,8 @@
         {
           "creatorName": "Dreamy Travels",
           "sourceUrl": "https://www.youtube.com/watch?v=NMJfqEyaRpQ",
-          "sentiment": "Recommended",
-          "takeaway": "Full island tour and review of One&Only Reethi Rah Maldives."
+          "sentiment": "Review",
+          "takeaway": "Video: \"ONE&ONLY MALDIVES (REETHI RAH) 🌴 Full Tour & Review of one of the most famous Maldivian resort (4K)\""
         }
       ],
       "officialAwards": [
@@ -22666,7 +22884,20 @@
           "takeaway": "Fat Legend, scored 18/20 by Fat Voyage in Dubai, UAE. A low-rise beachfront resort at the tip of a Palm Jumeirah frond in Dubai, with villas, three pools,…"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Luigi",
+          "sourceUrl": "https://www.youtube.com/watch?v=Ku7yzU75mmY",
+          "sentiment": "Review",
+          "takeaway": "Video: \"One&Only The Palm - Hotel Tour & Review - Dubai, UAE - by Luigi\""
+        },
+        {
+          "creatorName": "Luxury Travel and Food",
+          "sourceUrl": "https://www.youtube.com/watch?v=P2WFS5GWTLs",
+          "sentiment": "Review",
+          "takeaway": "Video: \"One&Only The Palm Dubai | Full Luxury Hotel Tour 4K\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -23322,7 +23553,14 @@
           "takeaway": "First-hand hotel verdict (9.6/10): Review: Soneva Secret Maldives"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Luxury Travel Expert",
+          "sourceUrl": "https://www.youtube.com/watch?v=OGlmcoj-k-4",
+          "sentiment": "Review",
+          "takeaway": "Video: \"SONEVA SECRET | Maldives' most exclusive luxury resort (full tour in 4K)\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "MICHELIN Guide",
@@ -23823,7 +24061,26 @@
           "takeaway": "First-hand hotel verdict (9.5/10): Review: The St Regis Maldives Vommuli Resort"
         }
       ],
-      "youtubeReviews": [],
+      "youtubeReviews": [
+        {
+          "creatorName": "Sebby Fung",
+          "sourceUrl": "https://www.youtube.com/watch?v=rzywzW3b2Gc",
+          "sentiment": "Review",
+          "takeaway": "Video: \"St. Regis Maldives: Worth $2,000?! The Ultimate Luxury Escape\""
+        },
+        {
+          "creatorName": "Azraai Azuha",
+          "sourceUrl": "https://www.youtube.com/watch?v=aNg70YWCaNU",
+          "sentiment": "Review",
+          "takeaway": "Video: \"SPECTACULAR St. Regis Maldives Vommuli Resort Review\""
+        },
+        {
+          "creatorName": "Motivated Travel | Family Reviews, Guides and Tips",
+          "sourceUrl": "https://www.youtube.com/watch?v=-bQL28JRhZ4",
+          "sentiment": "Review",
+          "takeaway": "Video: \"St Regis Maldives Vommuli Resort Review - Marriott - Villa Tours, Food, Restaurants and Snorkelling\""
+        }
+      ],
       "officialAwards": [
         {
           "awardBody": "Forbes Travel Guide",
