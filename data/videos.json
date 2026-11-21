@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T06:50:34Z",
+  "updatedAt": "2026-11-21T08:40:16Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 845,
+      "views": 849,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1151,7 +1151,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2824,
+      "views": 2827,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -1507,7 +1507,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4124,
+      "views": 4125,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -1676,7 +1676,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6149,
+      "views": 6155,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -1830,7 +1830,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4616,
+      "views": 4619,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -4281,7 +4281,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
-      "views": 49,
+      "views": 53,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [],
@@ -5129,7 +5129,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 271,
+      "views": 283,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
