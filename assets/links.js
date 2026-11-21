@@ -142,6 +142,62 @@ async function fetchLiveGoogleSheet(csvUrl) {
   return items;
 }
 
+function publicTrendingCopy(title, category, url) {
+  const low = `${title} ${category} ${url}`.toLowerCase();
+  if (low.includes("saily")) return ["Travel eSIM", "Fast, reliable international travel eSIM by Nord Security — install in minutes and skip roaming fees.", "Get Saily eSIM"];
+  if (low.includes("airalo")) return ["Travel eSIM", "Affordable global and regional travel eSIM data plans across 200+ destinations.", "Explore Airalo"];
+  if (low.includes("klook")) return ["Tours & Transfers", "Book airport transfers, island day trips, beach clubs, and local tours across Asia and worldwide.", "Browse Klook"];
+  if (low.includes("viator") || low.includes("getyourguide")) return ["Tours & Excursions", "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.", "Browse Experiences"];
+  if (low.includes("wise")) return ["Travel Money", "Multi-currency travel card with the real exchange rate and low fees in IDR, THB, EUR, and USD.", "Get Wise Card"];
+  if (low.includes("priority pass")) return ["Airport Lounges", "Access 1,500+ airport lounges worldwide on long-haul economy flights and layovers.", "Explore Priority Pass"];
+  if (low.includes("safetywing") || low.includes("heymondo") || low.includes("insurance")) return ["Travel Cover", "Flexible medical and trip protection built for frequent international travelers.", "Check Travel Cover"];
+  if (low.includes("nordvpn") || low.includes("surfshark")) return ["Travel Security", "Keep public hotel and airport Wi-Fi private and stream your home apps abroad.", "Get VPN Deal"];
+  if (/booking\.com|agoda|trip\.com|expedia|hotels\.com/.test(low)) return ["Hotel Partner", "Compare live luxury resort rates, member deals, and flexible cancellation options.", "Check Live Rates"];
+  if (low.includes("mic mini") || low.includes("microphone")) return ["Travel Audio", "Ultra-compact wireless microphone we tested head-to-head on our Bali camera shootout.", "Shop on Amazon"];
+  if (low.includes("pocket") || low.includes("dji")) return ["Filming Gear", "Compact 4K pocket gimbal camera gear featured in our real-world travel camera tests.", "Shop on Amazon"];
+  if (/amazon|amzn\.to|link\.amazon/.test(low)) return ["Travel Pick", `One of our go-to ${category.toLowerCase()} essentials we pack for luxury resort trips and long-haul flights.`, "Shop on Amazon"];
+  return ["Travel Pick", `Recommended ${category.toLowerCase()} partner we use on trips around the world.`, "Explore Offer"];
+}
+
+async function fetchTrendingGoogleSheet(csvUrl) {
+  const res = await fetch(csvUrl, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Trending Sheet HTTP ${res.status}`);
+  const csvText = await res.text();
+  const parsed = parseCsv(csvText);
+
+  const items = [];
+  for (const { obj, idx } of parsed) {
+    const rawLink = obj["your affiliate link (paste here)"] || obj["your generated affiliate link"] || obj["affiliate link"] || "";
+    const urlMatch = rawLink.match(/https?:\/\/[^\s<>"')\]]+/);
+    if (!urlMatch) continue;
+    const url = urlMatch[0].replace(/[.,;:!?)>\]]+$/, "");
+    const title = obj["travel product / affiliate program"] || obj["product / brand"] || obj.title || "";
+    if (!title) continue;
+    const codeMatch = rawLink.match(/code\s*[:=]?\s*([A-Z0-9]{4,16})/i);
+    const promoCode = codeMatch ? codeMatch[1].toUpperCase() : "";
+    const category = obj.category || "Travel & Gear";
+    const [badge, description, buttonLabel] = publicTrendingCopy(title, category, url);
+    const isPromo = /esim|points|money|tours|hotel|lounge|insurance|security|tpx\.lu|wise\.com|holafly/i.test(`${category} ${url}`);
+    const item = {
+      id: `live-trending-${idx}`,
+      source: "curated",
+      section: isPromo ? "Promotions & Codes" : "",
+      featured: /saily|airalo|klook|wise|pocket 4|mic mini/i.test(title),
+      category,
+      title,
+      badge,
+      description,
+      promoCode,
+      url,
+      buttonLabel,
+      sortOrder: 30 + idx,
+    };
+    item.section = inferSection(item);
+    items.push(item);
+  }
+  return items;
+}
+
 function getAllDeals() {
   return [...state.curated, ...state.fromVideos].map((item) => ({
     ...item,
@@ -355,6 +411,7 @@ async function boot() {
     state.curated = data.curated || [];
     state.fromVideos = data.fromVideos || [];
     liveCsvUrl = (cfg?.affiliates?.googleSheetCsvUrl || data.googleSheetCsvUrl || "").trim();
+    const trendingCsvUrl = (cfg?.affiliates?.trendingSheetCsvUrl || "").trim();
 
     if (data.disclosure) {
       const box = qs("#disclosureBox");
@@ -367,13 +424,25 @@ async function boot() {
     renderFilters();
     renderSections();
 
-    if (liveCsvUrl) {
+    if (liveCsvUrl || trendingCsvUrl) {
       try {
-        const liveItems = await fetchLiveGoogleSheet(liveCsvUrl);
-        if (liveItems.length) {
-          state.curated = liveItems;
+        const [liveItems, trendingItems] = await Promise.all([
+          liveCsvUrl ? fetchLiveGoogleSheet(liveCsvUrl).catch(() => []) : Promise.resolve([]),
+          trendingCsvUrl ? fetchTrendingGoogleSheet(trendingCsvUrl).catch(() => []) : Promise.resolve([]),
+        ]);
+        const merged = [...liveItems];
+        const seenUrls = new Set(merged.map((x) => (x.url || "").toLowerCase().replace(/\/+$/, "")));
+        for (const item of trendingItems) {
+          const key = (item.url || "").toLowerCase().replace(/\/+$/, "");
+          if (key && !seenUrls.has(key)) {
+            seenUrls.add(key);
+            merged.push(item);
+          }
+        }
+        if (merged.length) {
+          state.curated = merged;
           const statusEl = qs("#sheetStatusText");
-          if (statusEl) statusEl.textContent = "Live from Google Sheets + YouTube";
+          if (statusEl) statusEl.textContent = `Live from Google Sheets (${merged.length} active links)`;
           renderFilters();
           renderSections();
         }

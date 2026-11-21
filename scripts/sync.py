@@ -797,6 +797,93 @@ def fetch_curated_affiliates_from_sheet(csv_url: str) -> list[dict[str, Any]] | 
         return None
 
 
+def _public_trending_copy(title: str, category: str, url: str) -> tuple[str, str, str]:
+    """Return clean public-facing (badge, description, buttonLabel) for rows auto-synced from Trending Affiliate Ideas."""
+    low = f"{title} {category} {url}".lower()
+    if "saily" in low:
+        return ("Travel eSIM", "Fast, reliable international travel eSIM by Nord Security — install in minutes and skip roaming fees.", "Get Saily eSIM")
+    if "airalo" in low:
+        return ("Travel eSIM", "Affordable global and regional travel eSIM data plans across 200+ destinations.", "Explore Airalo")
+    if "klook" in low:
+        return ("Tours & Transfers", "Book airport transfers, island day trips, beach clubs, and local tours across Asia and worldwide.", "Browse Klook")
+    if "viator" in low or "getyourguide" in low:
+        return ("Tours & Excursions", "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.", "Browse Experiences")
+    if "wise" in low:
+        return ("Travel Money", "Multi-currency travel card with the real exchange rate and low fees in IDR, THB, EUR, and USD.", "Get Wise Card")
+    if "priority pass" in low:
+        return ("Airport Lounges", "Access 1,500+ airport lounges worldwide on long-haul economy flights and layovers.", "Explore Priority Pass")
+    if "safetywing" in low or "heymondo" in low or "insurance" in low:
+        return ("Travel Cover", "Flexible medical and trip protection built for frequent international travelers.", "Check Travel Cover")
+    if "nordvpn" in low or "surfshark" in low:
+        return ("Travel Security", "Keep public hotel and airport Wi-Fi private and stream your home apps abroad.", "Get VPN Deal")
+    if any(k in low for k in ["booking.com", "agoda", "trip.com", "expedia", "hotels.com"]):
+        return ("Hotel Partner", "Compare live luxury resort rates, member deals, and flexible cancellation options.", "Check Live Rates")
+    if "mic mini" in low or "microphone" in low:
+        return ("Travel Audio", "Ultra-compact wireless microphone we tested head-to-head on our Bali camera shootout.", "Shop on Amazon")
+    if "pocket" in low or "dji" in low:
+        return ("Filming Gear", "Compact 4K pocket gimbal camera gear featured in our real-world travel camera tests.", "Shop on Amazon")
+    if "amazon" in low or "amzn.to" in low or "link.amazon" in low:
+        return ("Travel Pick", f"One of our go-to {category.lower()} essentials we pack for luxury resort trips and long-haul flights.", "Shop on Amazon")
+    return ("Travel Pick", f"Recommended {category.lower()} partner we use on trips around the world.", "Explore Offer")
+
+
+def fetch_trending_affiliates_from_sheet(csv_url: str) -> list[dict[str, Any]]:
+    if not csv_url:
+        return []
+    try:
+        raw = http_get_text(csv_url, timeout=20)
+        reader = csv.DictReader(io.StringIO(raw))
+        items: list[dict[str, Any]] = []
+        for idx, row in enumerate(reader, start=1):
+            norm = {k.strip().lower(): (v or "").strip() for k, v in row.items() if k}
+            raw_link = (
+                norm.get("your affiliate link (paste here)")
+                or norm.get("your generated affiliate link")
+                or norm.get("affiliate link")
+                or ""
+            )
+            url_match = re.search(r"https?://[^\s<>\"'\)\]]+", raw_link)
+            if not url_match:
+                continue
+            url = normalize_url(url_match.group(0))
+            title = (
+                norm.get("travel product / affiliate program")
+                or norm.get("product / brand")
+                or norm.get("title")
+                or ""
+            )
+            if not title:
+                continue
+            promo_match = re.search(r"code\s*[:=]?\s*([A-Z0-9]{4,16})", raw_link, re.I)
+            promo_code = promo_match.group(1).upper() if promo_match else ""
+            cat = norm.get("category") or "Travel & Gear"
+            badge, desc, btn_label = _public_trending_copy(title, cat, url)
+            is_promo = any(
+                k in f"{cat} {url}".lower()
+                for k in ["esim", "points", "money", "tours", "hotel", "lounge", "insurance", "security", "tpx.lu", "wise.com", "holafly"]
+            )
+            items.append(
+                {
+                    "id": f"trending-{idx}",
+                    "source": "curated",
+                    "section": "Promotions & Codes" if is_promo else infer_section(cat, url),
+                    "featured": any(k in title.lower() for k in ["saily", "airalo", "klook", "wise", "pocket 4", "mic mini"]),
+                    "category": cat,
+                    "title": title,
+                    "badge": badge,
+                    "description": desc,
+                    "promoCode": promo_code,
+                    "url": url,
+                    "buttonLabel": btn_label,
+                    "sortOrder": 30 + idx,
+                }
+            )
+        return items
+    except Exception as exc:
+        print(f"[warn] Failed to fetch Trending Affiliate Ideas CSV: {exc}", file=sys.stderr)
+        return []
+
+
 def main() -> None:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -1117,14 +1204,24 @@ def main() -> None:
             hotels_path.write_text(json.dumps(hotels_data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
             print(f"Updated {len(hotels_list)} hotels in {hotels_path}")
 
-    # Build live affiliates payload (Google Sheet curated + YouTube auto-extracted)
+    # Build live affiliates payload (Google Sheet Curated + Trending Ideas + YouTube auto-extracted)
     sheet_csv_url = (
         os.environ.get("AFFILIATE_SHEET_CSV_URL", "").strip()
         or config.get("affiliates", {}).get("googleSheetCsvUrl", "").strip()
     )
+    trending_csv_url = (
+        os.environ.get("TRENDING_SHEET_CSV_URL", "").strip()
+        or config.get("affiliates", {}).get("trendingSheetCsvUrl", "").strip()
+    )
     sheet_items = fetch_curated_affiliates_from_sheet(sheet_csv_url)
-    curated = sheet_items if sheet_items is not None else DEFAULT_CURATED_AFFILIATES
+    curated = list(sheet_items) if sheet_items is not None else list(DEFAULT_CURATED_AFFILIATES)
     curated_keys = {url_dedupe_key(item["url"]) for item in curated}
+
+    for t_item in fetch_trending_affiliates_from_sheet(trending_csv_url):
+        t_key = url_dedupe_key(t_item["url"])
+        if t_key not in curated_keys:
+            curated.append(t_item)
+            curated_keys.add(t_key)
 
     # Aggregate unique affiliate links found across videos
     video_link_map: dict[str, dict[str, Any]] = {}

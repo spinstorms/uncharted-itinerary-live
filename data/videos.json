@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:16:54Z",
+  "updatedAt": "2026-11-21T17:48:28Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 858,
+      "views": 859,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -4281,7 +4281,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 513,
+      "views": 611,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -4406,7 +4406,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
-      "views": 58,
+      "views": 60,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [],
