@@ -1015,6 +1015,20 @@ def main() -> None:
     AFFILIATES_PATH.write_text(json.dumps(affiliates_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(curated)} curated + {len(extra_from_videos)} video-discovered affiliate links to {AFFILIATES_PATH}")
 
+    # Refresh sitemap.xml <lastmod> date so search engines see fresh updates
+    sitemap_path = ROOT / "sitemap.xml"
+    if sitemap_path.exists():
+        today_utc = now_iso[:10]
+        sitemap_text = sitemap_path.read_text(encoding="utf-8")
+        updated_sitemap = re.sub(
+            r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>",
+            f"<lastmod>{today_utc}</lastmod>",
+            sitemap_text,
+        )
+        if updated_sitemap != sitemap_text:
+            sitemap_path.write_text(updated_sitemap, encoding="utf-8")
+            print(f"Refreshed sitemap.xml lastmod to {today_utc}")
+
 
 if __name__ == "__main__":
     main()

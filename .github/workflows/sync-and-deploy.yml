@@ -42,8 +42,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet data/; then
-            git add data/videos.json data/affiliates.json data/hotels.json
+          if ! git diff --quiet data/ sitemap.xml; then
+            git add data/videos.json data/affiliates.json data/hotels.json sitemap.xml
             git commit -m "chore: auto-sync YouTube videos, hotel map & affiliates"
             git push
           else
