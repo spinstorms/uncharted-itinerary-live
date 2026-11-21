@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T04:41:23Z",
+  "updatedAt": "2026-11-21T04:50:10Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -99,6 +99,7 @@
       "affiliateLinks": [
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -107,6 +108,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -115,6 +117,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -123,6 +126,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -131,6 +135,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -139,6 +144,7 @@
         },
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -147,6 +153,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -154,15 +161,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -171,16 +171,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -311,6 +313,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -319,6 +322,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -326,15 +330,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -343,16 +340,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -428,6 +427,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -436,6 +436,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -443,15 +444,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -460,16 +454,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -545,6 +541,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -553,6 +550,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -560,15 +558,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -577,16 +568,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -677,6 +670,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -685,6 +679,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -692,15 +687,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -709,16 +697,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -839,6 +829,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -847,6 +838,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -854,15 +846,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -871,16 +856,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -981,6 +968,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -989,6 +977,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -996,15 +985,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1013,16 +995,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1113,6 +1097,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1121,6 +1106,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1128,15 +1114,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1145,16 +1124,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1245,6 +1226,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1253,6 +1235,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1260,15 +1243,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1277,16 +1253,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1321,6 +1299,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1329,6 +1308,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1336,15 +1316,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1353,16 +1326,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1478,6 +1453,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1486,6 +1462,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1493,15 +1470,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1510,16 +1480,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1650,6 +1622,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1658,6 +1631,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1665,15 +1639,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1682,16 +1649,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1807,6 +1776,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1815,6 +1785,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1822,15 +1793,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -1839,16 +1803,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -1984,6 +1950,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -1992,6 +1959,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -1999,15 +1967,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2016,16 +1977,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2096,6 +2059,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2104,6 +2068,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2111,15 +2076,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2128,16 +2086,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2171,7 +2131,17 @@
       },
       "affiliateLinks": [
         {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2180,6 +2150,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2188,6 +2159,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2196,6 +2168,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2204,6 +2177,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2212,6 +2186,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2220,6 +2195,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2227,15 +2203,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2244,16 +2213,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2285,7 +2256,17 @@
       },
       "affiliateLinks": [
         {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2294,6 +2275,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2302,6 +2284,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2310,6 +2293,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2318,6 +2302,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2326,6 +2311,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2334,6 +2320,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2341,15 +2328,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2358,16 +2338,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2399,7 +2381,17 @@
       },
       "affiliateLinks": [
         {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2408,6 +2400,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2416,6 +2409,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2424,6 +2418,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2432,6 +2427,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2440,6 +2436,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2448,6 +2445,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2455,15 +2453,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2472,16 +2463,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2513,7 +2506,17 @@
       },
       "affiliateLinks": [
         {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2522,6 +2525,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2530,6 +2534,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2538,6 +2543,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2546,6 +2552,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2554,6 +2561,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2562,6 +2570,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2569,15 +2578,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2586,16 +2588,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2628,6 +2632,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2636,6 +2641,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2644,6 +2650,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2652,6 +2659,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2660,6 +2668,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2668,6 +2677,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2676,6 +2686,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2683,15 +2694,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2700,16 +2704,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2742,6 +2748,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2750,6 +2757,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2758,6 +2766,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2766,6 +2775,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2774,6 +2784,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2782,6 +2793,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2790,6 +2802,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2797,15 +2810,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2814,16 +2820,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2856,6 +2864,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2864,6 +2873,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2872,6 +2882,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2880,6 +2891,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2888,6 +2900,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2896,6 +2909,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2904,6 +2918,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2911,15 +2926,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -2928,16 +2936,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -2970,6 +2980,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -2978,6 +2989,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -2986,6 +2998,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -2994,6 +3007,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3002,6 +3016,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3010,6 +3025,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3018,6 +3034,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3025,15 +3042,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3042,16 +3052,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3084,6 +3096,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3092,6 +3105,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3100,6 +3114,7 @@
         },
         {
           "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3108,6 +3123,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3116,6 +3132,7 @@
         },
         {
           "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3124,6 +3141,7 @@
         },
         {
           "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3132,6 +3150,7 @@
         },
         {
           "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
           "buttonLabel": "Shop on Amazon",
@@ -3139,15 +3158,8 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3156,16 +3168,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3198,6 +3212,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3206,6 +3221,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3213,15 +3229,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3230,16 +3239,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3272,6 +3283,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3280,6 +3292,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3287,15 +3300,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3304,16 +3310,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3346,6 +3354,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3354,6 +3363,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3361,15 +3371,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3378,16 +3381,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3420,6 +3425,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3428,6 +3434,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3435,15 +3442,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3452,16 +3452,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3494,6 +3496,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3502,6 +3505,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3509,15 +3513,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3526,16 +3523,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"
@@ -3568,6 +3567,7 @@
       "affiliateLinks": [
         {
           "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Bonus Points",
           "buttonLabel": "Claim Referral Bonus",
@@ -3576,6 +3576,7 @@
         },
         {
           "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
           "category": "Points & Cards",
           "badge": "Up to 2,000 Bonus Pts",
           "buttonLabel": "Get Card & Bonus",
@@ -3583,15 +3584,8 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Octopus Energy (UK)",
-          "category": "Everyday Perks",
-          "badge": "£50 Credit",
-          "buttonLabel": "Claim £50 Credit",
-          "promoCode": "",
-          "url": "https://share.octopus.energy/jolly-skunk-453"
-        },
-        {
           "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
@@ -3600,16 +3594,18 @@
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
-          "category": "Creator Tools",
-          "badge": "Creator Referral",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
         },
         {
           "title": "TubeBuddy — YouTube Growth Tool",
-          "category": "Creator Tools",
-          "badge": "Creator Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
           "buttonLabel": "Explore TubeBuddy",
           "promoCode": "",
           "url": "https://www.tubebuddy.com/Techinthecar"

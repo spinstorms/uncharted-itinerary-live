@@ -815,7 +815,23 @@ button {
 
 /* ---------- Affiliate Directory Page Styles ---------- */
 .affiliate-hero {
-  padding: 42px 0 28px;
+  padding: 42px 0 24px;
+}
+
+.section-jump-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.deals-section {
+  padding: 12px 0 18px;
+}
+
+.deals-section-bordered {
+  padding-top: 38px;
+  border-top: 1px solid var(--border-hairline);
 }
 
 .featured-deals-grid {

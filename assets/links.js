@@ -36,6 +36,28 @@ function formatSyncTime(iso) {
   })}`;
 }
 
+function inferSection(item) {
+  const explicit = (item.section || "").toLowerCase();
+  if (explicit.includes("shop") || explicit.includes("gear")) return "Shopping & Gear";
+  if (explicit.includes("promo") || explicit.includes("offer") || explicit.includes("code")) {
+    return "Promotions & Codes";
+  }
+  const cat = (item.category || "").toLowerCase();
+  const url = (item.url || "").toLowerCase();
+  if (
+    url.includes("amazon") ||
+    url.includes("amzn.to") ||
+    url.includes("geni.us") ||
+    cat.includes("gear") ||
+    cat.includes("luggage") ||
+    cat.includes("shopping") ||
+    cat.includes("resort & beach")
+  ) {
+    return "Shopping & Gear";
+  }
+  return "Promotions & Codes";
+}
+
 function parseCsv(text) {
   const rows = [];
   let row = [];
@@ -99,9 +121,10 @@ async function fetchLiveGoogleSheet(csvUrl) {
     const title = (obj.title || "").trim();
     if (!url || !title) continue;
 
-    items.push({
+    const item = {
       id: `live-sheet-${idx}`,
       source: "curated",
+      section: obj.section || "",
       featured: ["true", "1", "yes"].includes((obj.featured || "").toLowerCase()),
       category: obj.category || "Travel & Perks",
       title,
@@ -111,31 +134,37 @@ async function fetchLiveGoogleSheet(csvUrl) {
       url,
       buttonLabel: obj["button label"] || "Explore Deal",
       sortOrder: Number(obj["sort order"] || obj.sort || idx) || idx,
-    });
+    };
+    item.section = inferSection(item);
+    items.push(item);
   }
   items.sort((a, b) => Number(b.featured) - Number(a.featured) || a.sortOrder - b.sortOrder);
   return items;
 }
 
 function getAllDeals() {
-  return [...state.curated, ...state.fromVideos];
+  return [...state.curated, ...state.fromVideos].map((item) => ({
+    ...item,
+    section: inferSection(item),
+  }));
 }
 
-function renderDealCard(deal, highlightFeatured = false) {
+function renderDealCard(deal) {
   const mentions = deal.mentionedIn || [];
+  const isShop = deal.section === "Shopping & Gear";
   const mentionLabel =
     mentions.length > 1
       ? `Featured in ${mentions.length}+ videos`
       : mentions.length === 1
-      ? `From: ${mentions[0].title.slice(0, 34)}${mentions[0].title.length > 34 ? "…" : ""}`
-      : deal.source === "youtube"
-      ? "Auto-pulled from YouTube"
-      : "Curated pick";
+      ? `From: ${mentions[0].title.slice(0, 32)}${mentions[0].title.length > 32 ? "…" : ""}`
+      : isShop
+      ? "Travel & filming kit"
+      : "Active offer";
 
   return `
-    <article class="deal-card ${highlightFeatured && deal.featured ? "is-featured" : ""}">
+    <article class="deal-card ${deal.featured ? "is-featured" : ""}">
       <div class="deal-top">
-        <span class="tag">${escapeHtml(deal.category || "Travel")}</span>
+        <span class="tag">${escapeHtml(deal.category || (isShop ? "Travel Gear" : "Promotion"))}</span>
         ${deal.badge ? `<span class="tag tag-accent">${escapeHtml(deal.badge)}</span>` : ""}
       </div>
 
@@ -153,10 +182,10 @@ function renderDealCard(deal, highlightFeatured = false) {
 
       <div class="deal-footer">
         <span class="deal-mentions">${escapeHtml(mentionLabel)}</span>
-        <a class="btn ${highlightFeatured ? "btn-primary" : "btn-dark"}" href="${escapeHtml(
+        <a class="btn ${isShop ? "btn-outline" : "btn-primary"}" href="${escapeHtml(
           deal.url
         )}" target="_blank" rel="sponsored noopener noreferrer">
-          ${escapeHtml(deal.buttonLabel || "Open Deal")} &nearr;
+          ${escapeHtml(deal.buttonLabel || (isShop ? "Shop Now" : "Claim Offer"))} &nearr;
         </a>
       </div>
     </article>
@@ -177,21 +206,6 @@ function wireCopyButtons(root) {
   });
 }
 
-function renderFeaturedDeals() {
-  const section = qs("#featuredDealsSection");
-  const grid = qs("#featuredDealsGrid");
-  if (!section || !grid) return;
-
-  const featured = state.curated.filter((d) => d.featured).slice(0, 3);
-  if (!featured.length) {
-    section.style.display = "none";
-    return;
-  }
-  section.style.display = "";
-  grid.innerHTML = featured.map((d) => renderDealCard(d, true)).join("");
-  wireCopyButtons(grid);
-}
-
 function renderFilters() {
   const container = qs("#dealCategoryFilters");
   if (!container) return;
@@ -201,9 +215,6 @@ function renderFilters() {
   for (const d of all) {
     const cat = d.category || "Travel & Perks";
     counts.set(cat, (counts.get(cat) || 0) + 1);
-  }
-  if (state.fromVideos.length) {
-    counts.set("From Recent Videos", state.fromVideos.length);
   }
 
   const ordered = ["All", ...Array.from(counts.keys())];
@@ -221,41 +232,62 @@ function renderFilters() {
     btn.addEventListener("click", () => {
       state.activeCategory = btn.dataset.cat || "All";
       renderFilters();
-      renderDealsGrid();
+      renderSections();
     });
   });
 }
 
-function renderDealsGrid() {
-  const grid = qs("#dealsGrid");
-  if (!grid) return;
+function renderSections() {
+  const promosSection = qs("#promotionsSection");
+  const promosGrid = qs("#promotionsGrid");
+  const shopSection = qs("#shoppingSection");
+  const shopGrid = qs("#shoppingGrid");
+  if (!promosGrid || !shopGrid) return;
 
   const q = state.searchQuery.trim().toLowerCase();
-  const sourceList =
-    state.activeCategory === "From Recent Videos"
-      ? state.fromVideos
-      : getAllDeals().filter(
-          (d) => state.activeCategory === "All" || d.category === state.activeCategory
-        );
-
-  const filtered = sourceList.filter((d) => {
+  const filtered = getAllDeals().filter((d) => {
+    const catOk = state.activeCategory === "All" || d.category === state.activeCategory;
+    if (!catOk) return false;
     if (!q) return true;
-    const hay = [d.title, d.category, d.badge, d.description, d.promoCode]
+    const hay = [d.title, d.section, d.category, d.badge, d.description, d.promoCode]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
     return hay.includes(q);
   });
 
+  const promos = filtered
+    .filter((d) => d.section === "Promotions & Codes")
+    .sort((a, b) => Number(b.featured) - Number(a.featured) || (a.sortOrder || 99) - (b.sortOrder || 99));
+
+  const shopping = filtered
+    .filter((d) => d.section === "Shopping & Gear")
+    .sort((a, b) => Number(b.featured) - Number(a.featured) || (a.sortOrder || 99) - (b.sortOrder || 99));
+
   if (!filtered.length) {
-    grid.innerHTML = `<div class="empty-state">No deals matched "${escapeHtml(
+    promosSection.style.display = "";
+    shopSection.style.display = "none";
+    promosGrid.innerHTML = `<div class="empty-state">No promotions or gear matched "${escapeHtml(
       state.searchQuery
     )}". Try clearing your search.</div>`;
     return;
   }
 
-  grid.innerHTML = filtered.map((d) => renderDealCard(d, false)).join("");
-  wireCopyButtons(grid);
+  if (promos.length) {
+    promosSection.style.display = "";
+    promosGrid.innerHTML = promos.map((d) => renderDealCard(d)).join("");
+    wireCopyButtons(promosGrid);
+  } else {
+    promosSection.style.display = "none";
+  }
+
+  if (shopping.length) {
+    shopSection.style.display = "";
+    shopGrid.innerHTML = shopping.map((d) => renderDealCard(d)).join("");
+    wireCopyButtons(shopGrid);
+  } else {
+    shopSection.style.display = "none";
+  }
 }
 
 function initCommonUi() {
@@ -280,7 +312,7 @@ async function boot() {
 
   qs("#dealSearch")?.addEventListener("input", (e) => {
     state.searchQuery = e.target.value || "";
-    renderDealsGrid();
+    renderSections();
   });
 
   let liveCsvUrl = "";
@@ -306,11 +338,9 @@ async function boot() {
     const updatedEl = qs("#affiliatesUpdatedText");
     if (updatedEl) updatedEl.textContent = formatSyncTime(data.updatedAt);
 
-    renderFeaturedDeals();
     renderFilters();
-    renderDealsGrid();
+    renderSections();
 
-    // If a published Google Sheet CSV URL is configured, refresh live in the browser too!
     if (liveCsvUrl) {
       try {
         const liveItems = await fetchLiveGoogleSheet(liveCsvUrl);
@@ -318,16 +348,15 @@ async function boot() {
           state.curated = liveItems;
           const statusEl = qs("#sheetStatusText");
           if (statusEl) statusEl.textContent = "Live from Google Sheets + YouTube";
-          renderFeaturedDeals();
           renderFilters();
-          renderDealsGrid();
+          renderSections();
         }
       } catch (sheetErr) {
         console.warn("Live sheet refresh skipped, using synced snapshot:", sheetErr);
       }
     }
   } catch (err) {
-    const grid = qs("#dealsGrid");
+    const grid = qs("#promotionsGrid");
     if (grid) {
       grid.innerHTML = `<div class="empty-state">Unable to load deals right now. Please refresh in a moment.</div>`;
     }

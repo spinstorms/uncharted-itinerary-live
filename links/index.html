@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Travel Deals, Points &amp; Gear Links | The Uncharted Itinerary</title>
-  <meta name="description" content="Live-updating affiliate links, credit card referral bonuses, filming gear, and travel perks recommended by The Uncharted Itinerary." />
+  <title>Promotions, Codes &amp; Travel Gear | The Uncharted Itinerary</title>
+  <meta name="description" content="Exclusive travel promo codes, Holafly eSIM discount, points card referrals, and the filming & travel gear we actually use on The Uncharted Itinerary." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -53,27 +53,19 @@
     <section class="affiliate-hero">
       <div class="container intro-row">
         <div>
-          <h1 class="page-title">Travel Perks, Points &amp; Gear</h1>
+          <h1 class="page-title">Promotions, Offer Codes &amp; Travel Gear</h1>
           <p class="page-lead">
-            Every points card, hotel perk, travel camera, and creator tool we genuinely use on our trips — kept live from our curated sheet and latest YouTube videos.
+            Exclusive travel discounts, referral bonuses, and the exact cameras and gear we pack — neatly separated so you can grab an offer code or shop our kit in seconds.
           </p>
-        </div>
-        <div class="sync-meta">
-          <span id="sheetStatusText">Synced live</span>
-          <strong id="affiliatesUpdatedText">Loading deals…</strong>
-        </div>
-      </div>
-    </section>
-
-    <section id="featuredDealsSection">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Top Picks Right Now</h2>
-            <p class="section-subtitle">Our highest-value points referrals and daily filming kit.</p>
+          <div class="section-jump-bar">
+            <a class="btn btn-primary" href="#promotionsSection">Promotions &amp; Offer Codes</a>
+            <a class="btn btn-outline" href="#shoppingSection">Shop Travel &amp; Filming Gear</a>
           </div>
         </div>
-        <div class="featured-deals-grid" id="featuredDealsGrid"></div>
+        <div class="sync-meta">
+          <span id="sheetStatusText">Updated live</span>
+          <strong id="affiliatesUpdatedText">Loading deals…</strong>
+        </div>
       </div>
     </section>
 
@@ -83,12 +75,40 @@
           <div class="filter-pills" id="dealCategoryFilters" role="tablist" aria-label="Filter deals by category"></div>
           <div class="search-wrap">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="dealSearch" class="search-input" placeholder="Search Amex, Marriott, Insta360, gear…" aria-label="Search deals" />
+            <input type="search" id="dealSearch" class="search-input" placeholder="Search Holafly, Amex, Marriott, Fuse, Insta360…" aria-label="Search deals" />
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="deals-grid" id="dealsGrid"></div>
+    <!-- Section 1: Promotions, Offer Codes & Referrals -->
+    <section id="promotionsSection" class="deals-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Promotions, Offer Codes &amp; Referrals</h2>
+            <p class="section-subtitle">Travel eSIM discounts, points cards, and referral bonuses you can claim right now.</p>
+          </div>
+        </div>
+        <div class="deals-grid" id="promotionsGrid"></div>
+      </div>
+    </section>
 
+    <!-- Section 2: Shopping & Travel Gear -->
+    <section id="shoppingSection" class="deals-section deals-section-bordered">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Shop Our Travel &amp; Filming Gear</h2>
+            <p class="section-subtitle">The cameras, lenses, and accessories we actually travel and film resort tours with.</p>
+          </div>
+        </div>
+        <div class="deals-grid" id="shoppingGrid"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
         <div class="disclosure-box" id="disclosureBox">
           <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.
         </div>
@@ -113,7 +133,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="yearNow"></span> The Uncharted Itinerary</span>
-        <span>Live affiliate &amp; travel perks hub</span>
+        <span>Live promotions, offer codes &amp; travel gear</span>
       </div>
     </div>
   </footer>

@@ -57,12 +57,29 @@ SOCIAL_IGNORE_HOSTS = {
     "x.com",
     "uncharteditinerary.com",
     "www.uncharteditinerary.com",
+    "share.octopus.energy",
+    "octopus.energy",
 }
 
 DEFAULT_CURATED_AFFILIATES = [
     {
+        "id": "curated-holafly-esim",
+        "source": "curated",
+        "section": "Promotions & Codes",
+        "featured": True,
+        "category": "eSIM & Travel",
+        "title": "Holafly Unlimited Travel eSIM",
+        "badge": "Discount Code",
+        "description": "Stay connected in 200+ destinations with unlimited travel data—no SIM swapping or roaming charges. Use code TRIPREADY at checkout for a discount.",
+        "promoCode": "TRIPREADY",
+        "url": "https://holafly.sjv.io/Tripready",
+        "buttonLabel": "Get Holafly Discount",
+        "sortOrder": 1,
+    },
+    {
         "id": "curated-amex-gold-uk",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": True,
         "category": "Points & Cards",
         "title": "American Express Preferred Rewards Gold (UK)",
@@ -71,11 +88,12 @@ DEFAULT_CURATED_AFFILIATES = [
         "promoCode": "",
         "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w",
         "buttonLabel": "Claim Referral Bonus",
-        "sortOrder": 1,
+        "sortOrder": 2,
     },
     {
         "id": "curated-marriott-currensea",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": True,
         "category": "Points & Cards",
         "title": "Marriott Bonvoy Currensea Debit Card",
@@ -84,115 +102,54 @@ DEFAULT_CURATED_AFFILIATES = [
         "promoCode": "OKM2ZH",
         "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH",
         "buttonLabel": "Get Card & Bonus",
-        "sortOrder": 2,
-    },
-    {
-        "id": "curated-insta360-standard",
-        "source": "curated",
-        "featured": True,
-        "category": "Camera & Travel Gear",
-        "title": "Insta360 Luna Ultra — Standard Kit",
-        "badge": "Filming Setup",
-        "description": "Our compact main travel camera used to film resort walkthroughs, room tours, and island adventures.",
-        "promoCode": "",
-        "url": "https://link.amazon/B0fpiIMTi",
-        "buttonLabel": "Shop on Amazon",
         "sortOrder": 3,
     },
     {
-        "id": "curated-insta360-creator-black",
+        "id": "curated-fuse-energy",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": False,
-        "category": "Camera & Travel Gear",
-        "title": "Insta360 Luna Ultra — Creator Kit (Black)",
-        "badge": "Filming Setup",
-        "description": "Complete Creator Kit in Matte Black with extra accessories for travel vlogging.",
-        "promoCode": "",
-        "url": "https://link.amazon/B03YstgcC",
-        "buttonLabel": "Shop on Amazon",
+        "category": "Everyday Perks",
+        "title": "Fuse Energy UK",
+        "badge": "£100 Credit",
+        "description": "Switch to Fuse Energy UK and enter referral code OLIVER97690 to get £100 credit toward your energy bill.",
+        "promoCode": "OLIVER97690",
+        "url": "https://www.fuseenergy.com/",
+        "buttonLabel": "Join Fuse Energy",
         "sortOrder": 4,
-    },
-    {
-        "id": "curated-insta360-creator-white",
-        "source": "curated",
-        "featured": False,
-        "category": "Camera & Travel Gear",
-        "title": "Insta360 Luna Ultra — Creator Kit (White)",
-        "badge": "Filming Setup",
-        "description": "Complete Creator Kit in Arctic White—lightweight and easy to pack for long-haul trips.",
-        "promoCode": "",
-        "url": "https://link.amazon/B09TARLyD",
-        "buttonLabel": "Shop on Amazon",
-        "sortOrder": 5,
-    },
-    {
-        "id": "curated-insta360-wide-lens",
-        "source": "curated",
-        "featured": False,
-        "category": "Camera & Travel Gear",
-        "title": "Insta360 Luna Ultra Wide Angle Lens",
-        "badge": "Gear Essential",
-        "description": "Essential ultra-wide attachment for capturing full hotel suites, villas, and ocean views in tight spaces.",
-        "promoCode": "",
-        "url": "https://link.amazon/B00hjVInJ",
-        "buttonLabel": "Shop on Amazon",
-        "sortOrder": 6,
-    },
-    {
-        "id": "curated-insta360-battery",
-        "source": "curated",
-        "featured": False,
-        "category": "Camera & Travel Gear",
-        "title": "Insta360 Luna Ultra Battery Handle",
-        "badge": "Gear Essential",
-        "description": "All-day battery grip for shooting full-property resort tours without running out of charge.",
-        "promoCode": "",
-        "url": "https://link.amazon/B0cxr0rKz",
-        "buttonLabel": "Shop on Amazon",
-        "sortOrder": 7,
     },
     {
         "id": "curated-epidemic-sound",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": False,
-        "category": "Creator Tools",
+        "category": "Creator Offers",
         "title": "Epidemic Sound — Royalty-Free Travel Music",
-        "badge": "Creator Referral",
-        "description": "The music library behind our cinematic resort tours and travel guides. Start a free trial via our link.",
+        "badge": "Free Trial Referral",
+        "description": "The music library behind our resort tours and travel guides. Start a free trial via our referral link.",
         "promoCode": "",
         "url": "https://www.epidemicsound.com/referral/vo2tr9/",
         "buttonLabel": "Try Epidemic Sound",
-        "sortOrder": 8,
+        "sortOrder": 5,
     },
     {
         "id": "curated-tubebuddy",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": False,
-        "category": "Creator Tools",
+        "category": "Creator Offers",
         "title": "TubeBuddy — YouTube SEO & Growth",
-        "badge": "Creator Tool",
+        "badge": "Creator Offer",
         "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
         "promoCode": "",
         "url": "https://www.tubebuddy.com/Techinthecar",
         "buttonLabel": "Explore TubeBuddy",
-        "sortOrder": 9,
-    },
-    {
-        "id": "curated-octopus-energy",
-        "source": "curated",
-        "featured": False,
-        "category": "Everyday Perks",
-        "title": "Octopus Energy (UK)",
-        "badge": "£50 Credit",
-        "description": "Switch to Octopus Energy with our referral link and we both receive £50 credit toward your energy bill.",
-        "promoCode": "",
-        "url": "https://share.octopus.energy/jolly-skunk-453",
-        "buttonLabel": "Claim £50 Credit",
-        "sortOrder": 10,
+        "sortOrder": 6,
     },
     {
         "id": "curated-freetrade",
         "source": "curated",
+        "section": "Promotions & Codes",
         "featured": False,
         "category": "Everyday Perks",
         "title": "Freetrade — Commission-Free Investing",
@@ -201,7 +158,77 @@ DEFAULT_CURATED_AFFILIATES = [
         "promoCode": "",
         "url": "https://magic.freetrade.io/join/oliver/238af2d9",
         "buttonLabel": "Get Free Share",
+        "sortOrder": 7,
+    },
+    {
+        "id": "curated-insta360-standard",
+        "source": "curated",
+        "section": "Shopping & Gear",
+        "featured": True,
+        "category": "Camera & Travel Gear",
+        "title": "Insta360 Luna Ultra — Standard Kit",
+        "badge": "Filming Setup",
+        "description": "Our compact main travel camera used to film resort walkthroughs, room tours, and island adventures.",
+        "promoCode": "",
+        "url": "https://link.amazon/B0fpiIMTi",
+        "buttonLabel": "Shop on Amazon",
+        "sortOrder": 10,
+    },
+    {
+        "id": "curated-insta360-creator-black",
+        "source": "curated",
+        "section": "Shopping & Gear",
+        "featured": False,
+        "category": "Camera & Travel Gear",
+        "title": "Insta360 Luna Ultra — Creator Kit (Black)",
+        "badge": "Filming Setup",
+        "description": "Complete Creator Kit in Matte Black with extra accessories for travel vlogging.",
+        "promoCode": "",
+        "url": "https://link.amazon/B03YstgcC",
+        "buttonLabel": "Shop on Amazon",
         "sortOrder": 11,
+    },
+    {
+        "id": "curated-insta360-creator-white",
+        "source": "curated",
+        "section": "Shopping & Gear",
+        "featured": False,
+        "category": "Camera & Travel Gear",
+        "title": "Insta360 Luna Ultra — Creator Kit (White)",
+        "badge": "Filming Setup",
+        "description": "Complete Creator Kit in Arctic White—lightweight and easy to pack for long-haul trips.",
+        "promoCode": "",
+        "url": "https://link.amazon/B09TARLyD",
+        "buttonLabel": "Shop on Amazon",
+        "sortOrder": 12,
+    },
+    {
+        "id": "curated-insta360-wide-lens",
+        "source": "curated",
+        "section": "Shopping & Gear",
+        "featured": False,
+        "category": "Camera & Travel Gear",
+        "title": "Insta360 Luna Ultra Wide Angle Lens",
+        "badge": "Gear Essential",
+        "description": "Essential ultra-wide attachment for capturing full hotel suites, villas, and ocean views in tight spaces.",
+        "promoCode": "",
+        "url": "https://link.amazon/B00hjVInJ",
+        "buttonLabel": "Shop on Amazon",
+        "sortOrder": 13,
+    },
+    {
+        "id": "curated-insta360-battery",
+        "source": "curated",
+        "section": "Shopping & Gear",
+        "featured": False,
+        "category": "Camera & Travel Gear",
+        "title": "Insta360 Luna Ultra Battery Handle",
+        "badge": "Gear Essential",
+        "description": "All-day battery grip for shooting full-property resort tours without running out of charge.",
+        "promoCode": "",
+        "url": "https://link.amazon/B0cxr0rKz",
+        "buttonLabel": "Shop on Amazon",
+        "sortOrder": 14,
     },
 ]
 
@@ -356,13 +383,45 @@ def infer_location(title: str, description: str) -> str:
     return "Global Travel"
 
 
+def infer_section(category: str, url: str, explicit: str = "") -> str:
+    low_exp = explicit.strip().lower()
+    if "shop" in low_exp or "gear" in low_exp:
+        return "Shopping & Gear"
+    if any(k in low_exp for k in ["promo", "offer", "code"]):
+        return "Promotions & Codes"
+    low_cat = category.lower()
+    low_url = url.lower()
+    if any(k in low_url for k in ["amazon", "amzn.to", "geni.us"]) or any(
+        k in low_cat for k in ["gear", "luggage", "shopping", "resort & beach"]
+    ):
+        return "Shopping & Gear"
+    return "Promotions & Codes"
+
+
 def classify_link(url: str, context_line: str) -> dict[str, str]:
     low_url = url.lower()
     low_ctx = context_line.lower()
 
+    if "holafly" in low_url:
+        return {
+            "title": "Holafly Unlimited Travel eSIM",
+            "section": "Promotions & Codes",
+            "category": "eSIM & Travel",
+            "badge": "Discount Code",
+            "buttonLabel": "Get Holafly Discount",
+        }
+    if "fuseenergy" in low_url:
+        return {
+            "title": "Fuse Energy UK",
+            "section": "Promotions & Codes",
+            "category": "Everyday Perks",
+            "badge": "£100 Credit",
+            "buttonLabel": "Join Fuse Energy",
+        }
     if "americanexpress.com" in low_url:
         return {
             "title": "American Express Preferred Rewards Gold (UK)",
+            "section": "Promotions & Codes",
             "category": "Points & Cards",
             "badge": "Bonus Points",
             "buttonLabel": "Claim Referral Bonus",
@@ -370,20 +429,15 @@ def classify_link(url: str, context_line: str) -> dict[str, str]:
     if "currensea" in low_url or "marriottbonvoy" in low_url:
         return {
             "title": "Marriott Bonvoy Currensea Debit Card",
+            "section": "Promotions & Codes",
             "category": "Points & Cards",
             "badge": "Up to 2,000 Bonus Pts",
             "buttonLabel": "Get Card & Bonus",
         }
-    if "octopus.energy" in low_url:
-        return {
-            "title": "Octopus Energy (UK)",
-            "category": "Everyday Perks",
-            "badge": "£50 Credit",
-            "buttonLabel": "Claim £50 Credit",
-        }
     if "freetrade" in low_url:
         return {
             "title": "Freetrade Commission-Free Investing",
+            "section": "Promotions & Codes",
             "category": "Everyday Perks",
             "badge": "Free Share £3–£200",
             "buttonLabel": "Get Free Share",
@@ -391,18 +445,20 @@ def classify_link(url: str, context_line: str) -> dict[str, str]:
     if "epidemicsound" in low_url:
         return {
             "title": "Epidemic Sound — Royalty-Free Music",
-            "category": "Creator Tools",
-            "badge": "Creator Referral",
+            "section": "Promotions & Codes",
+            "category": "Creator Offers",
+            "badge": "Free Trial Referral",
             "buttonLabel": "Try Epidemic Sound",
         }
     if "tubebuddy" in low_url:
         return {
             "title": "TubeBuddy — YouTube Growth Tool",
-            "category": "Creator Tools",
-            "badge": "Creator Tool",
+            "section": "Promotions & Codes",
+            "category": "Creator Offers",
+            "badge": "Creator Offer",
             "buttonLabel": "Explore TubeBuddy",
         }
-    if "amazon" in low_url or "amzn.to" in low_url:
+    if "amazon" in low_url or "amzn.to" in low_url or "geni.us" in low_url:
         label = re.sub(r"https?://\S+", "", context_line).strip(" :-–—•")
         if label.lower() in {"black", "white"}:
             label = f"Insta360 Luna Ultra Creator Kit ({label.title()})"
@@ -410,6 +466,7 @@ def classify_link(url: str, context_line: str) -> dict[str, str]:
             label = "Featured Travel Gear (Amazon)"
         return {
             "title": label,
+            "section": "Shopping & Gear",
             "category": "Camera & Travel Gear",
             "badge": "Filming Gear",
             "buttonLabel": "Shop on Amazon",
@@ -418,6 +475,7 @@ def classify_link(url: str, context_line: str) -> dict[str, str]:
         label = re.sub(r"https?://\S+", "", context_line).strip(" :-–—•") or "Book Featured Hotel"
         return {
             "title": label[:80],
+            "section": "Promotions & Codes",
             "category": "Hotels & Booking",
             "badge": "Hotel Partner",
             "buttonLabel": "Check Rates",
@@ -430,6 +488,7 @@ def classify_link(url: str, context_line: str) -> dict[str, str]:
     category = "Hotels & Booking" if any(k in low_ctx for k in ["book", "hotel", "resort", "stay", "villa"]) else "Travel & Perks"
     return {
         "title": title,
+        "section": infer_section(category, url),
         "category": category,
         "badge": "From Video",
         "buttonLabel": "Open Link",
@@ -443,6 +502,10 @@ def extract_affiliate_links(description: str) -> list[dict[str, Any]]:
 
     for idx, line in enumerate(lines):
         found = re.findall(r"https?://[^\s<>\"'\)\]]+", line)
+        # Also detect bare partner links without https:// (e.g. holafly.sjv.io/Tripready)
+        bare = re.findall(r"(?<!://)\b([a-z0-9.-]+\.(?:sjv\.io|amzn\.to|geni\.us)/[^\s<>\"'\)\]]+)", line, re.I)
+        found.extend(f"https://{b}" for b in bare)
+
         for raw_url in found:
             url = normalize_url(raw_url)
             host = urllib.parse.urlsplit(url).netloc.lower()
@@ -466,6 +529,7 @@ def extract_affiliate_links(description: str) -> list[dict[str, Any]]:
             links.append(
                 {
                     "title": meta["title"],
+                    "section": meta["section"],
                     "category": meta["category"],
                     "badge": meta["badge"],
                     "buttonLabel": meta["buttonLabel"],
@@ -679,12 +743,14 @@ def fetch_curated_affiliates_from_sheet(csv_url: str) -> list[dict[str, Any]] | 
                 sort_order = int(norm.get("sort order") or norm.get("sort") or idx)
             except ValueError:
                 sort_order = idx
+            cat = norm.get("category") or "Travel & Perks"
             items.append(
                 {
                     "id": f"sheet-{idx}",
                     "source": "curated",
+                    "section": infer_section(cat, url, norm.get("section", "")),
                     "featured": norm.get("featured", "false").lower() in {"true", "1", "yes"},
-                    "category": norm.get("category") or "Travel & Perks",
+                    "category": cat,
                     "title": title,
                     "badge": norm.get("offer badge") or norm.get("badge") or "",
                     "description": norm.get("description") or "",
@@ -815,11 +881,13 @@ def main() -> None:
         for lnk in v.get("affiliateLinks", []):
             key = url_dedupe_key(lnk["url"])
             if key not in video_link_map:
+                cat = lnk.get("category", "From Recent Videos")
                 video_link_map[key] = {
                     "id": f"yt-{abs(hash(key)) % 10000000}",
                     "source": "youtube",
+                    "section": lnk.get("section") or infer_section(cat, lnk["url"]),
                     "featured": False,
-                    "category": lnk.get("category", "From Recent Videos"),
+                    "category": cat,
                     "title": lnk["title"],
                     "badge": lnk.get("badge", "From Video"),
                     "description": f"Featured in \"{v['title']}\"",
