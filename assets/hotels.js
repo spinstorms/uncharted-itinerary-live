@@ -107,11 +107,26 @@ function initMap() {
     worldCopyJump: true,
   }).setView([4.0, 96.0], 3);
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: "abcd",
-    maxZoom: 18,
-  }).addTo(map);
+  const cartoLayer = L.tileLayer(
+    "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_5db3_1_c3957b21042bb79553569521",
+    {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 19,
+    }
+  );
+
+  let switchedToFallback = false;
+  cartoLayer.on("tileerror", () => {
+    if (switchedToFallback) return;
+    switchedToFallback = true;
+    map.removeLayer(cartoLayer);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+  });
+
+  cartoLayer.addTo(map);
 
   state.map = map;
   state.markersLayer = L.layerGroup().addTo(map);

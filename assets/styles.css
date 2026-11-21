@@ -79,13 +79,14 @@ button {
   padding: 0 24px;
 }
 
-/* ---------- Header / Seamless uncharteditinerary.com Navigation ---------- */
+/* ---------- Header / Signature Orange Bar with Crisp White Controls ---------- */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 40;
-  background: #ffffff;
-  border-bottom: 1px solid var(--border-hairline);
+  z-index: 1100;
+  background: var(--accent);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(255, 93, 34, 0.18);
 }
 
 .header-inner {
@@ -106,7 +107,7 @@ button {
   font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: #ffffff;
 }
 
 .brand-sub {
@@ -114,38 +115,40 @@ button {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-muted);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
 }
 
 .nav-links a {
   font-size: 14px;
-  font-weight: 400;
-  color: var(--ink-primary);
-  padding: 6px 0;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  padding: 7px 13px;
+  border-radius: 999px;
   position: relative;
-  transition: color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--accent);
-  font-weight: 500;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 600;
 }
 
 .nav-links a.active::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
+  left: 13px;
+  right: 13px;
+  bottom: 2px;
   height: 2px;
-  background: var(--accent);
+  background: #ffffff;
   border-radius: 2px;
 }
 
@@ -153,6 +156,21 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.site-header .btn-primary {
+  background: #ffffff;
+  color: var(--accent);
+  font-weight: 600;
+  border-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .btn-primary:hover {
+  background: #fff5ee;
+  color: var(--accent-hover);
+  border-color: #fff5ee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
 }
 
 .btn {
@@ -204,11 +222,16 @@ button {
 
 .mobile-menu-btn {
   display: none;
-  background: #ffffff;
-  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: var(--radius-sm);
   padding: 8px 10px;
-  color: var(--ink-primary);
+  color: #ffffff;
+  transition: background var(--transition);
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .mobile-nav {
@@ -216,8 +239,9 @@ button {
   flex-direction: column;
   gap: 4px;
   padding: 12px 24px 20px;
-  border-top: 1px solid var(--border-hairline);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
   background: #ffffff;
+  box-shadow: var(--shadow-md);
 }
 
 .mobile-nav.open {
