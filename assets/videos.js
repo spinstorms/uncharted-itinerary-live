@@ -40,10 +40,10 @@ function formatDate(dateStr) {
 }
 
 function formatSyncTime(iso) {
-  if (!iso) return "Updated recently";
+  if (!iso) return "Recently updated";
   const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "Updated recently";
-  return `Last synced ${d.toLocaleDateString("en-GB", {
+  if (Number.isNaN(d.getTime())) return "Recently updated";
+  return `Updated ${d.toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -521,7 +521,7 @@ async function boot() {
   } catch (err) {
     const grid = qs("#videoGrid");
     if (grid) {
-      grid.innerHTML = `<div class="empty-state">Unable to load the live video feed right now. Visit <a href="https://www.youtube.com/@TheUnchartedItinerary" style="color:var(--accent);text-decoration:underline;">@TheUnchartedItinerary on YouTube</a>.</div>`;
+      grid.innerHTML = `<div class="empty-state">Unable to load the latest videos right now. Visit <a href="https://www.youtube.com/@TheUnchartedItinerary" style="color:var(--accent);text-decoration:underline;">@TheUnchartedItinerary on YouTube</a>.</div>`;
     }
     console.error("Failed to load videos.json:", err);
   }

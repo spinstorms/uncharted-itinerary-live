@@ -4,7 +4,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=2";
+} from "./stayodds-engine.js?v=4";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();

@@ -208,11 +208,11 @@ export function computeStayOdds(hotel) {
     } else if (guest100 != null) {
       weights = { firstHand: 55, critics: 0, guests: 45 };
       overallIndex = Math.round(ours100 * 0.55 + guest100 * 0.45);
-      formulaSummary = "55% First-Hand Stay • 45% Live Verified Guests (auto-reweighted)";
+      formulaSummary = "55% First-Hand Stay • 45% Verified Guests (weighted)";
     } else if (critic100 != null) {
       weights = { firstHand: 55, critics: 45, guests: 0 };
       overallIndex = Math.round(ours100 * 0.55 + critic100 * 0.45);
-      formulaSummary = "55% First-Hand Stay • 45% Sourced Critics & Awards (auto-reweighted)";
+      formulaSummary = "55% First-Hand Stay • 45% Sourced Critics & Awards (weighted)";
     } else {
       weights = { firstHand: 100, critics: 0, guests: 0 };
       overallIndex = ours100;

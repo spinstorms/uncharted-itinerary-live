@@ -26,10 +26,10 @@ function showToast(message) {
 }
 
 function formatSyncTime(iso) {
-  if (!iso) return "Updated recently";
+  if (!iso) return "Recently updated";
   const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "Updated recently";
-  return `Last synced ${d.toLocaleDateString("en-GB", {
+  if (Number.isNaN(d.getTime())) return "Recently updated";
+  return `Updated ${d.toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -442,12 +442,12 @@ async function boot() {
         if (merged.length) {
           state.curated = merged;
           const statusEl = qs("#sheetStatusText");
-          if (statusEl) statusEl.textContent = `Live from Google Sheets (${merged.length} active links)`;
+          if (statusEl) statusEl.textContent = `Personally curated (${merged.length} active offers)`;
           renderFilters();
           renderSections();
         }
       } catch (sheetErr) {
-        console.warn("Live sheet refresh skipped, using synced snapshot:", sheetErr);
+        console.warn("Curated offers refresh skipped:", sheetErr);
       }
     }
   } catch (err) {

@@ -88,11 +88,11 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         elif guest100 is not None:
             weights = {"firstHand": 55, "critics": 0, "guests": 45}
             overall_idx = int(round(ours100 * 0.55 + guest100 * 0.45))
-            formula = "55% First-Hand Stay • 45% Verified Guests (auto-reweighted)"
+            formula = "55% First-Hand Stay • 45% Verified Guests (weighted)"
         elif critic100 is not None:
             weights = {"firstHand": 55, "critics": 45, "guests": 0}
             overall_idx = int(round(ours100 * 0.55 + critic100 * 0.45))
-            formula = "55% First-Hand Stay • 45% Sourced Critics & Awards (auto-reweighted)"
+            formula = "55% First-Hand Stay • 45% Sourced Critics & Awards (weighted)"
         else:
             weights = {"firstHand": 100, "critics": 0, "guests": 0}
             overall_idx = ours100
@@ -313,7 +313,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     right_display = (
         f"{vg['rating']} / {vg.get('scale', 10)} ({o['guest100']}/100)"
         if vg and vg.get("rating")
-        else "Checking Live Google API…"
+        else "Checking Google Reviews…"
     )
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
@@ -575,7 +575,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <div class="detail-two-col">
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>Dynamic StayOdds Formula</h3>
+              <h3>StayOdds Weighting</h3>
               <span class="tag">{esc(o['tierLabel'])}</span>
             </div>
             <p class="detail-panel-sub">{esc(o['formula'])}</p>
@@ -591,12 +591,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <h3>First-Hand 5-Axis Scorecard</h3>
               <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{h['overall']} / 5 Overall" if o['firstHand'] else o['tierLabel']}</span>
             </div>
-            {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else '<p class="detail-panel-sub" style="margin-top:12px;">The Uncharted Itinerary has not scored a full stay here yet. When filmed, our whole-number 5-axis scores will automatically merge into Tier 1.</p>'}
+            {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else '<p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>'}
           </div>
         </div>
       </section>
 
-      <!-- Separated Source-URL Enforced Layers -->
+      <!-- Curated Awards, Critics & YouTube Reviews -->
       <section class="detail-section">
         <div class="detail-two-col">
           <div class="detail-panel">
@@ -605,7 +605,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <span class="tag">{len(o['awards']) + len(o['editorial'])} sourced</span>
             </div>
             <div class="channel-breakdown-list" style="margin-top:12px;">
-              {awards_html + editorial_html if (awards_html or editorial_html) else '<p class="detail-panel-sub">No source-linked editorial ratings logged yet. StayOdds strictly requires a verified HTTP source URL before displaying any critic score.</p>'}
+              {awards_html + editorial_html if (awards_html or editorial_html) else '<p class="detail-panel-sub">No editorial reviews added yet — we only include awards and critic scores with a direct link to the published review.</p>'}
             </div>
           </div>
           <div class="detail-panel">
@@ -614,7 +614,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <span class="tag">{(1 if review_href else 0) + len(o['ytReviews'])} linked</span>
             </div>
             <div class="channel-breakdown-list" style="margin-top:12px;">
-              {yt_html if yt_html else '<p class="detail-panel-sub">No YouTube reviews linked yet. Creators are never attributed without a direct verified YouTube video URL.</p>'}
+              {yt_html if yt_html else '<p class="detail-panel-sub">No video tours linked yet — we only feature full hotel walkthroughs we have personally checked.</p>'}
             </div>
           </div>
         </div>
@@ -624,7 +624,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <div class="section-header" style="margin-bottom:18px;">
           <div>
             <h2 class="section-title">Compare Nearby Luxury Stays</h2>
-            <p class="section-subtitle">Explore other verified properties in {esc(h['region'])}.</p>
+            <p class="section-subtitle">Explore other personally curated properties in {esc(h['region'])}.</p>
           </div>
         </div>
         <div class="related-grid">{related_html}</div>
@@ -637,7 +637,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       <div class="footer-grid">
         <div>
           <div class="footer-brand">StayOdds &bull; by The Uncharted Itinerary</div>
-          <p class="footer-muted">Critics vs Real Guest Reviews — verified luxury hotel scores with zero estimated ratings.</p>
+          <p class="footer-muted">Critics vs Real Guest Reviews — personally curated luxury hotel comparisons with verified sources.</p>
         </div>
         <div class="footer-links">
           <a href="../../compare/">StayOdds Directory</a>
