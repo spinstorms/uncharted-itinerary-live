@@ -10,12 +10,12 @@ function escapeHtml(str = "") {
 }
 
 function getReviewHref(h) {
-  if (h.coverageType === "Short Tour" && h.videoId) {
+  if (!h.videoId) return "";
+  if (h.coverageType === "Short Tour") {
     return `https://www.youtube.com/shorts/${encodeURIComponent(h.videoId)}`;
   }
-  if (h.inLiveFeed && h.videoId) return `../../?video=${encodeURIComponent(h.videoId)}`;
-  if (h.videoId) return `https://www.youtube.com/watch?v=${encodeURIComponent(h.videoId)}`;
-  return "https://www.uncharteditinerary.com/";
+  if (h.inLiveFeed) return `../../?video=${encodeURIComponent(h.videoId)}`;
+  return `https://www.youtube.com/watch?v=${encodeURIComponent(h.videoId)}`;
 }
 
 function isExternalReview(h) {
@@ -69,11 +69,12 @@ function renderDetail(h, allHotels) {
   const b = c.bookingSubscores || {};
   const rated = h.overall != null && s != null;
   const isShortOnly = h.coverageType === "Short Tour";
+  const isGlobalOnly = h.coverageType === "Global Directory" || h.visitedByUs === false;
   const isContrarian = c.agreement === "Contrarian Verdict";
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  document.title = `${h.name} — Score Breakdown (${c.greatStayChance || 90}% Great-Stay Odds) | The Uncharted Itinerary`;
+  document.title = `${h.name} — StayScore Breakdown (${c.greatStayChance || 90}% Great-Stay Odds) | The Uncharted Itinerary`;
 
   // Formula math transparency
   const ours100 = rated ? Math.round(Number(h.overall) * 20) : null;
@@ -90,8 +91,8 @@ function renderDetail(h, allHotels) {
     : [
         {
           source: "The Uncharted Itinerary",
-          category: rated ? "Our Stay" : "Our Stay (Short Preview)",
-          score: rated ? `${formatMyScore(h.overall)} / 5` : "Not Rated Yet",
+          category: rated ? "Our Stay" : isGlobalOnly ? "Global Directory (Unvisited)" : "Our Stay (Short Preview)",
+          score: rated ? `${formatMyScore(h.overall)} / 5` : isGlobalOnly ? "Not Visited Yet" : "Not Rated Yet",
           normalized100: ours100,
           takeaway: h.verdict || "",
         },
@@ -117,7 +118,7 @@ function renderDetail(h, allHotels) {
   const root = qs("#detailRoot");
   root.innerHTML = `
     <div class="detail-breadcrumb">
-      <a href="../">&larr; All Stay Consensus Scores</a>
+      <a href="../">&larr; All StayScore Rankings</a>
       <span>/</span>
       <a href="../../hotels/">Hotel Map</a>
       <span>/</span>
@@ -128,8 +129,9 @@ function renderDetail(h, allHotels) {
       <div class="detail-hero-media">
         <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div class="detail-hero-badges">
-          <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : ""}">${escapeHtml(c.agreement || "Benchmarked")}</span>
+          <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : "tag-slate"}">${escapeHtml(c.agreement || "StayScore")}</span>
           ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
+          ${isGlobalOnly ? `<span class="tag tag-slate">Global Luxury Directory</span>` : ""}
           ${c.award ? `<span class="tag">${escapeHtml(c.award)}</span>` : ""}
         </div>
       </div>
@@ -148,17 +150,17 @@ function renderDetail(h, allHotels) {
         <div class="detail-kpi-row">
           <div class="detail-kpi is-primary ${isContrarian ? "is-caution" : ""}">
             <strong>${c.greatStayChance || 90}%</strong>
-            <span>${rated ? "Chance of a Great Stay" : "External Great-Stay Odds"}</span>
+            <span>${rated ? "Chance of a Great Stay" : "Global Great-Stay Odds"}</span>
           </div>
           <div class="detail-kpi">
             <strong>${c.overallIndex || weightedRaw}<span>/100</span></strong>
-            <span>${rated ? "Consensus Index" : "External Index"}</span>
+            <span>StayScore Index</span>
           </div>
           <div class="detail-kpi">
             ${
               rated
                 ? `<strong>${formatMyScore(h.overall)}<span>/5</span></strong><span>Our Stay Score</span>`
-                : `<strong style="font-size:20px;">Unrated</strong><span>Short Preview Only</span>`
+                : `<strong style="font-size:19px;">${isGlobalOnly ? "Unvisited" : "Unrated"}</strong><span>${isGlobalOnly ? "Global Directory" : "Short Preview Only"}</span>`
             }
           </div>
           <div class="detail-kpi">
@@ -168,8 +170,12 @@ function renderDetail(h, allHotels) {
         </div>
 
         <div class="detail-actions">
-          <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Our Resort Short" : "Watch Our Full Review"}</a>
-          <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
+          ${
+            reviewHref
+              ? `<a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Our Resort Short" : "Watch Our Full Review"}</a>
+                 <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>`
+              : `<a class="btn btn-primary" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>`
+          }
           <a class="btn btn-outline" href="../?a=${encodeURIComponent(h.id)}">Compare Head-to-Head</a>
           <button class="copy-link-btn" id="copyDetailLink" type="button">Copy Breakdown Link</button>
         </div>
@@ -235,9 +241,17 @@ function renderDetail(h, allHotels) {
               `
               : `
           <div class="scorecard-unrated-box" style="margin-top:12px;">
-            <strong>Short Preview — Not Personally Scored Yet</strong>
-            <p>We’ve shared quick YouTube Shorts from ${escapeHtml(h.name)}, so we haven’t assigned our 5-point Uncharted Itinerary scorecard yet. Until a full video review goes live, the Consensus Index above relies 100% on external critics and verified Booking.com / Google guests.</p>
-            <a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Resort Short &nearr;</a>
+            <strong>${isGlobalOnly ? "Global Luxury Directory — Not Visited Yet" : "Short Preview — Not Personally Scored Yet"}</strong>
+            <p>${
+              isGlobalOnly
+                ? `We haven’t filmed a first-hand stay at ${escapeHtml(h.name)} yet, so our 5-point Uncharted Itinerary scorecard is currently pending. The StayScore above blends top travel critics, YouTube hotel reviewers, and verified Booking.com / Google guests (50/50). When we stay here, our personal scores will automatically appear here!`
+                : `We’ve shared quick YouTube Shorts from ${escapeHtml(h.name)}, so we haven’t assigned our 5-point Uncharted Itinerary scorecard yet. Until a full video review goes live, the StayScore above relies 100% on external critics and verified Booking.com / Google guests.`
+            }</p>
+            ${
+              reviewHref
+                ? `<a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Resort Short &nearr;</a>`
+                : `<a class="btn btn-primary" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>`
+            }
           </div>
               `
           }
@@ -269,7 +283,7 @@ function renderDetail(h, allHotels) {
       <div class="section-header" style="margin-bottom:18px;">
         <div>
           <h2 class="section-title">Channel-by-Channel &amp; Platform Breakdown</h2>
-          <p class="section-subtitle">How our stay stacks up against top YouTube hotel reviewers, travel critics, and verified booking platforms.</p>
+          <p class="section-subtitle">How this property stacks up across top YouTube hotel reviewers, travel critics, and verified booking platforms.</p>
         </div>
       </div>
 
@@ -285,7 +299,7 @@ function renderDetail(h, allHotels) {
               </div>
               <div class="channel-row-score">
                 <strong>${escapeHtml(row.score)}</strong>
-                <span>${row.normalized100 != null ? `${Number(row.normalized100)}/100` : "Unrated"}</span>
+                <span>${row.normalized100 != null ? `${Number(row.normalized100)}/100` : "Pending"}</span>
               </div>
             </div>
             ${
@@ -343,7 +357,7 @@ function renderDetail(h, allHotels) {
       <div class="verdict-trio">
         <div class="verdict-card">
           <span class="tag tag-accent">Standout Highlight</span>
-          <h3>What We Loved Most</h3>
+          <h3>${isGlobalOnly ? "What Guests & Critics Love" : "What We Loved Most"}</h3>
           <p>${escapeHtml(h.standout || h.verdict || "")}</p>
         </div>
         <div class="verdict-card is-warn">
@@ -352,8 +366,8 @@ function renderDetail(h, allHotels) {
           <p>${escapeHtml(h.watchOut || "Check seasonal weather and meal plan inclusions before locking in your rate.")}</p>
         </div>
         <div class="verdict-card">
-          <span class="tag">Consensus Comparison</span>
-          <h3>Where We Agree or Differ</h3>
+          <span class="tag">StayScore Takeaway</span>
+          <h3>${isGlobalOnly ? "Global Consensus Context" : "Where We Agree or Differ"}</h3>
           <p>${escapeHtml(c.whereWeDiffer || c.otherReviewersSay || "")}</p>
         </div>
       </div>
@@ -412,15 +426,27 @@ async function boot() {
   const targetId = params.get("id");
 
   try {
-    const res = await fetch(`../../data/hotels.json?v=${Date.now()}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    const hotels = data.hotels || [];
+    const bust = Date.now();
+    const [resVisited, resWorld] = await Promise.all([
+      fetch(`../../data/hotels.json?v=${bust}`),
+      fetch(`../../data/world-hotels.json?v=${bust}`).catch(() => null),
+    ]);
+    if (!resVisited.ok) throw new Error(`HTTP ${resVisited.status}`);
+    const visitedData = await resVisited.json();
+    const worldData = resWorld && resWorld.ok ? await resWorld.json() : { hotels: [] };
+
+    const visitedHotels = (visitedData.hotels || []).map((h) => ({ ...h, visitedByUs: true }));
+    const visitedIds = new Set(visitedHotels.map((h) => h.id));
+    const worldHotels = (worldData.hotels || [])
+      .filter((h) => !visitedIds.has(h.id))
+      .map((h) => ({ ...h, visitedByUs: false }));
+
+    const hotels = [...visitedHotels, ...worldHotels];
     const hotel = hotels.find((h) => h.id === targetId) || hotels[0];
     if (!hotel) throw new Error("No hotels found");
     renderDetail(hotel, hotels);
   } catch (err) {
-    qs("#detailRoot").innerHTML = `<div class="empty-state" style="margin:48px 0;">Unable to load this hotel breakdown right now. <a href="../" style="color:var(--accent);text-decoration:underline;">Back to Stay Consensus</a></div>`;
+    qs("#detailRoot").innerHTML = `<div class="empty-state" style="margin:48px 0;">Unable to load this StayScore breakdown right now. <a href="../" style="color:var(--accent);text-decoration:underline;">Back to StayScore</a></div>`;
     console.error(err);
   }
 }

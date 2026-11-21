@@ -3551,5 +3551,41 @@ body.embed-mode .affiliate-hero {
   }
 }
 
+/* ---------- StayScore Global vs Visited Scope Switcher ---------- */
+.scope-tabs-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  border: 1px solid #e6e1d9;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(17, 17, 17, 0.04);
+}
+
+.scope-pill {
+  border: none;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 10px;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.scope-pill:hover {
+  background: #fff5ef;
+  color: var(--accent);
+}
+
+.scope-pill.active {
+  background: #191a1a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(25, 26, 26, 0.22);
+}
+
+
 
 
