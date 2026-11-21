@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
   <title>Luxury Hotel Map &amp; Uncharted Scorecards | The Uncharted Itinerary</title>
-  <meta name="description" content="Explore 17 luxury hotels and resorts across Bali, Maldives, Thailand, Europe, and Bora Bora on an interactive map with honest 5-point scorecards from The Uncharted Itinerary." />
+  <meta name="description" content="Explore 36 luxury hotels and resorts across Bali, Indonesia, Maldives, Thailand, Europe, Singapore, and Bora Bora on an interactive map with honest 5-point scorecards and Shorts from The Uncharted Itinerary." />
   <link rel="canonical" href="https://spinstorms.github.io/uncharted-itinerary-live/hotels/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Luxury Hotel Map &amp; Uncharted Scorecards | The Uncharted Itinerary" />
@@ -145,6 +145,11 @@
               <option value="rooms">Sort: Best Rooms &amp; Villas</option>
               <option value="newest">Sort: Most Recently Reviewed</option>
             </select>
+            <select id="coverageFilter" class="select-control" aria-label="Filter by review format">
+              <option value="All">All Stays (Reviews + Shorts)</option>
+              <option value="Full Review">Full Video Reviews</option>
+              <option value="Short Tour">Featured in Shorts</option>
+            </select>
             <div class="view-toggle" role="group" aria-label="Switch scorecard layout">
               <button class="view-toggle-btn active" id="viewCardsBtn" type="button">Scorecards</button>
               <button class="view-toggle-btn" id="viewTableBtn" type="button">Comparison Table</button>
@@ -153,12 +158,26 @@
 
           <div class="search-wrap">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="hotelSearch" class="search-input" placeholder="Search St. Regis, W Bali, Maldives, Sardinia…" aria-label="Search hotels" />
+            <input type="search" id="hotelSearch" class="search-input" placeholder="Search St. Regis, Sira, Cap Karoso, Maldives, Bangkok…" aria-label="Search hotels" />
           </div>
         </div>
 
         <div class="scorecard-grid" id="scorecardGrid"></div>
         <div class="comparison-table-wrap" id="scorecardTableWrap" style="display:none; margin-bottom: 48px;"></div>
+      </div>
+    </section>
+
+    <!-- Hotel & Resort Shorts Section -->
+    <section class="shorts-section" id="hotelShortsSection">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Hotel &amp; Resort Shorts</h2>
+            <p class="section-subtitle">Quick 60-second glimpses of the suites, pools, beaches, and views at these properties — updates automatically with your region filter.</p>
+          </div>
+          <a class="btn btn-outline" href="https://www.youtube.com/@TheUnchartedItinerary/shorts" target="_blank" rel="noopener noreferrer">All Shorts on YouTube &nearr;</a>
+        </div>
+        <div class="shorts-rail" id="hotelShortsRail"></div>
       </div>
     </section>
 
@@ -201,6 +220,6 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script type="module" src="../assets/hotels.js?v=3"></script>
+  <script type="module" src="../assets/hotels.js?v=4"></script>
 </body>
 </html>

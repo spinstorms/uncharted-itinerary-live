@@ -222,6 +222,8 @@ function renderLeaderboard() {
       const reviewHref = getReviewHref(h);
       const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
       const isContrarian = c.agreement === "Contrarian Verdict";
+      const isShortOnly = h.coverageType === "Short Tour";
+      const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
 
       return `
         <article class="consensus-row-card">
@@ -237,6 +239,8 @@ function renderLeaderboard() {
           <div class="consensus-main-col">
             <div class="meta-line">
               <span class="tag ${isContrarian ? "tag-caution" : "tag-accent"}">${escapeHtml(c.agreement)}</span>
+              ${isShortOnly ? `<span class="tag">Short Tour</span>` : ""}
+              ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
               <span class="tag">${escapeHtml(c.award || h.brand || "")}</span>
               <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
               <span>&bull;</span>
@@ -281,7 +285,7 @@ function renderLeaderboard() {
               <img class="consensus-thumb" src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" loading="lazy" />
             </a>
             <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
-            <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Our Review</a>
+            <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Our Review"}</a>
             <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
             <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
           </div>
@@ -289,6 +293,44 @@ function renderLeaderboard() {
       `;
     })
     .join("");
+
+  // Populate Quick Hotel Shorts rail from all filtered stays
+  const shortsRail = qs("#compareShortsRail");
+  const shortsSec = qs("#compareShortsSection");
+  if (shortsRail && shortsSec) {
+    const collected = [];
+    const seenS = new Set();
+    for (const h of list) {
+      for (const sh of h.shorts || []) {
+        if (!seenS.has(sh.id)) {
+          seenS.add(sh.id);
+          collected.push({ ...sh, hotelName: h.name, hotelId: h.id });
+        }
+      }
+    }
+    if (!collected.length) {
+      shortsSec.style.display = "none";
+    } else {
+      shortsSec.style.display = "";
+      shortsRail.innerHTML = collected
+        .slice(0, 24)
+        .map(
+          (sh) => `
+          <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" />
+              <span class="short-badge">Short</span>
+            </div>
+            <div class="short-info">
+              <h3 class="short-title">${escapeHtml(sh.title)}</h3>
+              <div class="short-date">${escapeHtml(sh.hotelName.split(",")[0])} &bull; ${escapeHtml(sh.viewsText || "Short")}</div>
+            </div>
+          </a>
+        `
+        )
+        .join("");
+    }
+  }
 
   container.querySelectorAll("[data-compare-id]").forEach((btn) => {
     btn.addEventListener("click", () => {

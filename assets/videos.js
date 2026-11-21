@@ -297,7 +297,7 @@ function renderShorts() {
         </div>
         <div class="short-info">
           <h3 class="short-title">${escapeHtml(s.title)}</h3>
-          <div class="short-date">${escapeHtml(formatDate(s.publishedDate))}</div>
+          <div class="short-date">${escapeHtml(s.publishedDate ? formatDate(s.publishedDate) : (s.viewsText || s.location || "YouTube Short"))}</div>
         </div>
       </a>
     `

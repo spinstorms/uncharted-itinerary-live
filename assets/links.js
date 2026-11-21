@@ -318,13 +318,39 @@ async function boot() {
   let liveCsvUrl = "";
 
   try {
-    const [affRes, cfgRes] = await Promise.all([
+    const [affRes, cfgRes, vidRes] = await Promise.all([
       fetch(`../data/affiliates.json?v=${Date.now()}`),
       fetch(`../config.json?v=${Date.now()}`).catch(() => null),
+      fetch(`../data/videos.json?v=${Date.now()}`).catch(() => null),
     ]);
     if (!affRes.ok) throw new Error(`HTTP ${affRes.status}`);
     const data = await affRes.json();
     const cfg = cfgRes && cfgRes.ok ? await cfgRes.json() : null;
+    const vidData = vidRes && vidRes.ok ? await vidRes.json() : null;
+
+    const rail = qs("#linksShortsRail");
+    const sec = qs("#linksShortsSection");
+    if (rail && vidData?.shorts?.length) {
+      rail.innerHTML = vidData.shorts
+        .slice(0, 14)
+        .map(
+          (s) => `
+          <a class="short-card" href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">
+            <div class="short-thumb">
+              <img src="${escapeHtml(s.thumbnail)}" alt="${escapeHtml(s.title)}" loading="lazy" />
+              <span class="short-badge">Short</span>
+            </div>
+            <div class="short-info">
+              <h3 class="short-title">${escapeHtml(s.title)}</h3>
+              <div class="short-date">${escapeHtml(s.viewsText || s.location || "YouTube Short")}</div>
+            </div>
+          </a>
+        `
+        )
+        .join("");
+    } else if (sec) {
+      sec.style.display = "none";
+    }
 
     state.curated = data.curated || [];
     state.fromVideos = data.fromVideos || [];

@@ -264,6 +264,41 @@ function renderDetail(h, allHotels) {
       </div>
     </section>
 
+    ${
+      Array.isArray(h.shorts) && h.shorts.length
+        ? `
+    <!-- Quick Shorts From This Resort -->
+    <section class="detail-section">
+      <div class="section-header" style="margin-bottom:16px;">
+        <div>
+          <h2 class="section-title">Quick Shorts From ${escapeHtml(h.name.split(",")[0])}</h2>
+          <p class="section-subtitle">${h.shorts.length} vertical 60-second clip${h.shorts.length === 1 ? "" : "s"} filmed right on property.</p>
+        </div>
+        <a class="btn btn-outline" href="https://www.youtube.com/@TheUnchartedItinerary/shorts" target="_blank" rel="noopener noreferrer">All YouTube Shorts &nearr;</a>
+      </div>
+      <div class="shorts-rail">
+        ${h.shorts
+          .map(
+            (sh) => `
+          <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
+            <div class="short-thumb">
+              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" />
+              <span class="short-badge">Short</span>
+            </div>
+            <div class="short-info">
+              <h3 class="short-title">${escapeHtml(sh.title)}</h3>
+              <div class="short-date">${escapeHtml(sh.viewsText || h.location)}</div>
+            </div>
+          </a>
+        `
+          )
+          .join("")}
+      </div>
+    </section>
+        `
+        : ""
+    }
+
     <!-- Standout vs Caveat vs Consensus Gap -->
     <section class="detail-section">
       <div class="verdict-trio">

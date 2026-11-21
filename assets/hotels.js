@@ -2,6 +2,7 @@ const state = {
   hotels: [],
   region: "All",
   brand: "All",
+  coverage: "All",
   sortBy: "overall",
   search: "",
   viewMode: "cards",
@@ -22,6 +23,9 @@ function escapeHtml(str = "") {
 }
 
 function getReviewHref(hotel) {
+  if (hotel.coverageType === "Short Tour" && hotel.videoId) {
+    return `https://www.youtube.com/shorts/${encodeURIComponent(hotel.videoId)}`;
+  }
   if (hotel.inLiveFeed && hotel.videoId) {
     return `../?video=${encodeURIComponent(hotel.videoId)}`;
   }
@@ -32,6 +36,7 @@ function getReviewHref(hotel) {
 }
 
 function isExternalReview(hotel) {
+  if (hotel.coverageType === "Short Tour") return true;
   return !(hotel.inLiveFeed && hotel.videoId);
 }
 
@@ -137,6 +142,7 @@ function getFilteredHotels() {
   const list = state.hotels.filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.brand !== "All" && h.brand !== state.brand) return false;
+    if (state.coverage !== "All" && (h.coverageType || "Full Review") !== state.coverage) return false;
     if (!q) return true;
     const hay = [h.name, h.location, h.country, h.region, h.brand, h.verdict, h.standout]
       .filter(Boolean)
@@ -353,6 +359,8 @@ function renderScorecards(hotels) {
           <div class="scorecard-body">
             <div class="meta-line">
               <span class="tag tag-accent">${escapeHtml(h.brand || "Luxury Stay")}</span>
+              ${h.coverageType === "Short Tour" ? `<span class="tag">Short Tour</span>` : ""}
+              ${Array.isArray(h.shorts) && h.shorts.length ? `<span class="tag">${h.shorts.length} Short${h.shorts.length === 1 ? "" : "s"}</span>` : ""}
               <span class="tag">${escapeHtml(h.priceRange || "")}</span>
             </div>
 
@@ -378,7 +386,7 @@ function renderScorecards(hotels) {
 
             <div class="scorecard-actions">
               <a class="btn btn-primary" href="../compare/hotel/?id=${encodeURIComponent(h.id)}">Score Breakdown</a>
-              <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Watch Review</a>
+              <a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>
               <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
             </div>
           </div>
@@ -399,12 +407,51 @@ function renderScorecards(hotels) {
   });
 }
 
+function renderHotelShorts(hotels) {
+  const rail = qs("#hotelShortsRail");
+  const sec = qs("#hotelShortsSection");
+  if (!rail || !sec) return;
+  const items = [];
+  const seen = new Set();
+  for (const h of hotels) {
+    for (const sh of h.shorts || []) {
+      if (!seen.has(sh.id)) {
+        seen.add(sh.id);
+        items.push({ ...sh, hotelName: h.name });
+      }
+    }
+  }
+  if (!items.length) {
+    sec.style.display = "none";
+    return;
+  }
+  sec.style.display = "";
+  rail.innerHTML = items
+    .slice(0, 24)
+    .map(
+      (sh) => `
+      <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
+        <div class="short-thumb">
+          <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" />
+          <span class="short-badge">Short</span>
+        </div>
+        <div class="short-info">
+          <h3 class="short-title">${escapeHtml(sh.title)}</h3>
+          <div class="short-date">${escapeHtml(sh.hotelName.split(",")[0])} &bull; ${escapeHtml(sh.viewsText || "Short")}</div>
+        </div>
+      </a>
+    `
+    )
+    .join("");
+}
+
 function renderAll(fitBounds = false) {
   const filtered = getFilteredHotels();
   const badge = qs("#hotelCountBadge");
   if (badge) badge.textContent = `${filtered.length} Reviewed Stay${filtered.length === 1 ? "" : "s"}`;
   renderMapMarkers(filtered, fitBounds);
   renderScorecards(filtered);
+  renderHotelShorts(filtered);
 }
 
 async function applyLiveBookingSheet(csvUrl) {
@@ -439,6 +486,10 @@ async function boot() {
 
   qs("#brandFilter")?.addEventListener("change", (e) => {
     state.brand = e.target.value || "All";
+    renderAll(true);
+  });
+  qs("#coverageFilter")?.addEventListener("change", (e) => {
+    state.coverage = e.target.value || "All";
     renderAll(true);
   });
   qs("#sortControl")?.addEventListener("change", (e) => {

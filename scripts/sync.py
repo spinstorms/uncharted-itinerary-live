@@ -507,6 +507,8 @@ def extract_affiliate_links(description: str) -> list[dict[str, Any]]:
         found.extend(f"https://{b}" for b in bare)
 
         for raw_url in found:
+            if "..." in raw_url or "…" in raw_url:
+                continue
             url = normalize_url(raw_url)
             host = urllib.parse.urlsplit(url).netloc.lower()
             if not host or host in SOCIAL_IGNORE_HOSTS:
@@ -902,12 +904,12 @@ def main() -> None:
         "updatedAt": now_iso,
         "channel": yt_cfg,
         "totalVideos": len(videos),
-        "totalShorts": len(shorts),
+        "totalShorts": len(shorts[:80]),
         "videos": videos,
-        "shorts": shorts[:18],
+        "shorts": shorts[:80],
     }
     VIDEOS_PATH.write_text(json.dumps(videos_payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(videos)} videos and {len(shorts[:18])} shorts to {VIDEOS_PATH}")
+    print(f"Wrote {len(videos)} videos and {len(shorts[:80])} shorts to {VIDEOS_PATH}")
 
     # Sync data/hotels.json (append any newly AI-extracted hotels + apply custom booking affiliate URLs)
     hotels_path = DATA_DIR / "hotels.json"
