@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T20:12:38Z",
+  "updatedAt": "2026-11-21T20:30:00Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 859,
+      "views": 861,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -481,7 +481,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 449,
+      "views": 450,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -1507,7 +1507,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4139,
+      "views": 4141,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -1676,7 +1676,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6182,
+      "views": 6186,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -1830,7 +1830,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4630,
+      "views": 4633,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5628,7 +5628,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/p8hotG9r0vE/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/p8hotG9r0vE/hqdefault.jpg",
-      "views": 1131,
+      "views": 1132,
       "category": "Hotel Reviews",
       "location": "Ubud, Bali",
       "chapters": [],
