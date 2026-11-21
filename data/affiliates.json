@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:17:24Z",
+  "updatedAt": "2026-11-21T19:59:18Z",
   "sheetConnected": true,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
@@ -498,6 +498,62 @@
       "sortOrder": 16
     },
     {
+      "id": "trending-1",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Booking.com (via Travelpayouts)",
+      "badge": "Hotel Partner",
+      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
+      "promoCode": "",
+      "url": "https://booking.tpx.lu/dddKFSMf",
+      "buttonLabel": "Check Live Rates",
+      "sortOrder": 31
+    },
+    {
+      "id": "trending-2",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Agoda Hotel Partner (via Travelpayouts)",
+      "badge": "Hotel Partner",
+      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
+      "promoCode": "",
+      "url": "https://agoda.tpx.lu/p5JSiiU0",
+      "buttonLabel": "Check Live Rates",
+      "sortOrder": 32
+    },
+    {
+      "id": "trending-3",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Trip.com Hotels & Flights",
+      "badge": "Hotel Partner",
+      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
+      "promoCode": "",
+      "url": "https://trip.tpx.lu/BbtDtE5w",
+      "buttonLabel": "Check Live Rates",
+      "sortOrder": 33
+    },
+    {
+      "id": "trending-4",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Expedia / Hotels.com Partner Program",
+      "badge": "Hotel Partner",
+      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
+      "promoCode": "",
+      "url": "https://expedia.tpx.lu/9LHschol",
+      "buttonLabel": "Check Live Rates",
+      "sortOrder": 34
+    },
+    {
       "id": "trending-5",
       "source": "curated",
       "section": "Promotions & Codes",
@@ -512,6 +568,20 @@
       "sortOrder": 35
     },
     {
+      "id": "trending-7",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Tours & Experiences",
+      "title": "GetYourGuide Partner Program",
+      "badge": "Tours & Excursions",
+      "description": "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.",
+      "promoCode": "",
+      "url": "https://getyourguide.tpx.lu/q0UlPSkz",
+      "buttonLabel": "Browse Experiences",
+      "sortOrder": 37
+    },
+    {
       "id": "trending-8",
       "source": "curated",
       "section": "Promotions & Codes",
@@ -524,6 +594,20 @@
       "url": "https://klook.tpx.lu/TsCmTC1L",
       "buttonLabel": "Browse Klook",
       "sortOrder": 38
+    },
+    {
+      "id": "trending-9",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Tours & Experiences",
+      "title": "Viator (TripAdvisor Experiences)",
+      "badge": "Tours & Excursions",
+      "description": "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.",
+      "promoCode": "",
+      "url": "https://viator.tpx.lu/ByHwSqC5",
+      "buttonLabel": "Browse Experiences",
+      "sortOrder": 39
     },
     {
       "id": "trending-10",
