@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
   <title>Latest Episodes &amp; Travel Notes | The Uncharted Itinerary</title>
   <meta name="description" content="Watch the latest luxury hotel reviews, resort tours, flight guides, and honest travel notes from The Uncharted Itinerary YouTube channel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/styles.css?v=4" />
 </head>
 <body>
   <header class="site-header">
@@ -18,18 +19,15 @@
         <span class="brand-sub">Luxury Stays &amp; Savvy Travel Guides</span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="./" class="active">Live Videos</a>
-        <a href="./cameras/">Camera Reviews</a>
-        <a href="./links/">Deals &amp; Links</a>
+      <nav class="nav-links" aria-label="Main site navigation">
         <a href="https://www.uncharteditinerary.com/home">Home</a>
         <a href="https://www.uncharteditinerary.com/travel">Travel</a>
         <a href="https://www.uncharteditinerary.com/about">About</a>
+        <a href="https://www.uncharteditinerary.com/faq">FAQ</a>
         <a href="https://www.uncharteditinerary.com/contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-outline" href="./links/">Deals &amp; Gear</a>
         <a class="btn btn-primary" href="https://www.youtube.com/@TheUnchartedItinerary?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
           Subscribe
         </a>
@@ -40,15 +38,35 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="./" class="active">Live Videos &amp; Reviews</a>
+      <a href="./" class="active">Latest Videos</a>
       <a href="./cameras/">Camera Reviews</a>
-      <a href="./links/">Deals &amp; Affiliate Links</a>
+      <a href="./links/">Promotions &amp; Gear</a>
       <a href="https://www.uncharteditinerary.com/home">Main Site Home</a>
       <a href="https://www.uncharteditinerary.com/travel">Travel Guides</a>
       <a href="https://www.uncharteditinerary.com/about">About</a>
       <a href="https://www.uncharteditinerary.com/contact">Contact</a>
     </nav>
   </header>
+
+  <div class="hub-tabs-bar">
+    <div class="container hub-tabs-inner">
+      <nav class="hub-tabs" aria-label="Switch hub sections">
+        <a class="hub-tab active" href="./" aria-current="page">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Latest Videos
+        </a>
+        <a class="hub-tab" href="./cameras/">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Camera Reviews
+        </a>
+        <a class="hub-tab" href="./links/">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Deals &amp; Gear
+        </a>
+      </nav>
+      <a class="hub-back-link" href="https://www.uncharteditinerary.com/">&larr; Back to uncharteditinerary.com</a>
+    </div>
+  </div>
 
   <main>
     <section class="page-intro">
