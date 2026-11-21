@@ -245,12 +245,26 @@ function renderLeaderboard() {
       const isShortOnly = h.coverageType === "Short Tour";
       const rated = isRatedHotel(h);
       const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
+      const verdictClass = isContrarian
+        ? "is-contrarian"
+        : !rated || c.agreement === "External Consensus"
+        ? "is-external"
+        : c.agreement === "Strong Consensus"
+        ? "is-strong"
+        : "is-aligned";
+      const tagClass = isContrarian
+        ? "tag-caution"
+        : verdictClass === "is-strong"
+        ? "tag-accent"
+        : verdictClass === "is-aligned"
+        ? "tag-teal"
+        : "tag-slate";
 
       return `
-        <article class="consensus-row-card">
+        <article class="consensus-row-card ${verdictClass}">
           <div class="consensus-rank-col">
             <span class="consensus-rank-num">#${i + 1}</span>
-            <div class="consensus-chance-ring ${isContrarian ? "is-caution" : ""}">
+            <div class="consensus-chance-ring ${verdictClass}">
               <strong>${c.greatStayChance}%</strong>
               <span>${rated ? "Great-Stay Odds" : "External Odds"}</span>
             </div>
@@ -259,7 +273,7 @@ function renderLeaderboard() {
 
           <div class="consensus-main-col">
             <div class="meta-line">
-              <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : ""}">${escapeHtml(c.agreement)}</span>
+              <span class="tag ${tagClass}">${escapeHtml(c.agreement)}</span>
               ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
               ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
               <span class="tag">${escapeHtml(c.award || h.brand || "")}</span>
@@ -273,19 +287,19 @@ function renderLeaderboard() {
             </h3>
 
             <div class="three-pillar-strip">
-              <div class="pillar-box">
+              <div class="pillar-box is-ours">
                 <small>The Uncharted Itinerary</small>
                 <strong>${rated ? `${formatMyScore(h.overall)} / 5` : "Not Rated Yet"}</strong>
               </div>
-              <div class="pillar-box">
+              <div class="pillar-box is-booking">
                 <small>Booking.com Guests</small>
                 <strong>${Number(c.bookingOverall || c.googleRating * 2).toFixed(1)} / 10</strong>
               </div>
-              <div class="pillar-box">
+              <div class="pillar-box is-google">
                 <small>Google (${escapeHtml(formatReviews(c.googleReviews))})</small>
                 <strong>${Number(c.googleRating).toFixed(1)} / 5.0</strong>
               </div>
-              <div class="pillar-box">
+              <div class="pillar-box is-critics">
                 <small>Critics &amp; YouTube</small>
                 <strong>${Number(c.criticScore).toFixed(1)} / 5.0</strong>
               </div>
