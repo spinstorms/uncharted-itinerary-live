@@ -256,7 +256,7 @@ async function boot() {
                 </div>
                 <div class="short-info">
                   <h3 class="short-title">${escapeHtml(s.title)}</h3>
-                  <div class="short-date">${escapeHtml(formatDate(s.publishedDate))}</div>
+                  <div class="short-date">${escapeHtml(formatDate(s.publishedDate) || s.viewsText || "YouTube Short")}</div>
                 </div>
               </a>`
             )

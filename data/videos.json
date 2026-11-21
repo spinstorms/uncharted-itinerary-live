@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T05:52:54Z",
+  "updatedAt": "2026-11-21T05:54:04Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -7,8 +7,8 @@
     "longFormPlaylistId": "UULFtSEMj7vSYDUYbDeIumnEOw",
     "shortsPlaylistId": "UUSHtSEMj7vSYDUYbDeIumnEOw"
   },
-  "totalVideos": 15,
-  "totalShorts": 15,
+  "totalVideos": 37,
+  "totalShorts": 75,
   "videos": [
     {
       "id": "E_DfGSAMeTU",
@@ -2103,6 +2103,2172 @@
           "url": "https://www.tubebuddy.com/Techinthecar"
         }
       ]
+    },
+    {
+      "id": "YvWtI_Bb4BQ",
+      "title": "Rayavadee: A Jungle Resort You Can Only Reach by BOAT",
+      "url": "https://www.youtube.com/watch?v=YvWtI_Bb4BQ",
+      "publishedAt": "2026-03-28T12:00:00Z",
+      "publishedDate": "2026-03-28",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/YvWtI_Bb4BQ/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/YvWtI_Bb4BQ/hqdefault.jpg",
+      "views": 3389,
+      "category": "Hotel Reviews",
+      "location": "Railay / Krabi, Thailand",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Arrival at Rayavadee: The \"Boat Only\" Entrance"
+        },
+        {
+          "time": "01:10",
+          "seconds": 70,
+          "label": "A \"Jurassic Park\" Style Jungle Resort"
+        },
+        {
+          "time": "01:30",
+          "seconds": 90,
+          "label": "Main Infinity Pool & Railay Beach Views"
+        },
+        {
+          "time": "02:04",
+          "seconds": 124,
+          "label": "Railay Beach vs. Phra Nang Beach"
+        },
+        {
+          "time": "03:04",
+          "seconds": 184,
+          "label": "Understanding the Resort Map & Pavilion Types"
+        },
+        {
+          "time": "04:23",
+          "seconds": 263,
+          "label": "The Grotto: Famous Dining under Limestone Cliffs"
+        },
+        {
+          "time": "05:25",
+          "seconds": 325,
+          "label": "Phra Nang Beach: Why it's the neater side"
+        },
+        {
+          "time": "06:37",
+          "seconds": 397,
+          "label": "Deluxe Pavilion Room Tour (Full Walkthrough)"
+        },
+        {
+          "time": "07:38",
+          "seconds": 458,
+          "label": "Two-Floor Living: The \"Saloon Style\" Bathroom"
+        },
+        {
+          "time": "08:42",
+          "seconds": 522,
+          "label": "Traditional Thai Dinner & Mango Sticky Rice"
+        },
+        {
+          "time": "09:47",
+          "seconds": 587,
+          "label": "Breakfast Buffet & Al-a-Carte Menu Options"
+        },
+        {
+          "time": "11:14",
+          "seconds": 674,
+          "label": "Returning to the Dock: Final Thoughts"
+        },
+        {
+          "time": "12:18",
+          "seconds": 738,
+          "label": "Pros & Cons: Old Rooms vs. Unique Experience"
+        }
+      ],
+      "summary": {
+        "tldr": "We arrived by speedboat into Railay's dramatic limestone cliffs to stay at Rayavadee — one of Thailand's most iconic jungle-meets-beach hideaways. From the two-story pavilions surrounded by wild monkeys to sunset dinner inside The Grotto cave restaurant, it truly feels like another world.",
+        "highlights": [
+          "Only reachable by boat, bordered by three stunning Krabi beaches",
+          "Two-story circular pavilions tucked inside lush tropical jungle",
+          "Bucket-list cave dining at The Grotto overlooking Phra Nang Beach",
+          "Honest tip: Phra Nang Beach gets busy with day-trippers mid-afternoon"
+        ],
+        "bestFor": "Couples and luxury travelers seeking iconic scenery in Krabi, Thailand",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "8ck7ZCsdtCQ",
+      "title": "Finolhu Maldives Review: The Longest Sandbank in the Maldives (Marriott)",
+      "url": "https://www.youtube.com/watch?v=8ck7ZCsdtCQ",
+      "publishedAt": "2026-03-14T12:00:00Z",
+      "publishedDate": "2026-03-14",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/8ck7ZCsdtCQ/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/8ck7ZCsdtCQ/hqdefault.jpg",
+      "views": 3939,
+      "category": "Maldives",
+      "location": "Baa Atoll, Maldives",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Finolhu: Baa Atoll UNESCO Reserve"
+        },
+        {
+          "time": "00:57",
+          "seconds": 57,
+          "label": "The 1-Mile Sandbank: Longest in the Maldives"
+        },
+        {
+          "time": "01:46",
+          "seconds": 106,
+          "label": "The Crab Shack: Dining at the end of the world"
+        },
+        {
+          "time": "02:30",
+          "seconds": 150,
+          "label": "Important: Why you need water shoes here"
+        },
+        {
+          "time": "03:04",
+          "seconds": 184,
+          "label": "Arrival Jetty & Resort Layout"
+        },
+        {
+          "time": "03:51",
+          "seconds": 231,
+          "label": "Beach Kitchen & High-Season Weather Tips"
+        },
+        {
+          "time": "05:15",
+          "seconds": 315,
+          "label": "Water Villa Tour: Colorful Design & Tile Work"
+        },
+        {
+          "time": "06:33",
+          "seconds": 393,
+          "label": "Double Vanities & Outdoor Showers"
+        },
+        {
+          "time": "07:15",
+          "seconds": 435,
+          "label": "Ocean Water Villa with Private Pool Walkthrough"
+        },
+        {
+          "time": "08:15",
+          "seconds": 495,
+          "label": "The Main Infinity Pool & Swim-up Bar"
+        },
+        {
+          "time": "09:12",
+          "seconds": 552,
+          "label": "Pizza Counter & Dessert Pizzas"
+        },
+        {
+          "time": "09:32",
+          "seconds": 572,
+          "label": "Library & Shisha Bar (Second Floor View)"
+        },
+        {
+          "time": "10:42",
+          "seconds": 642,
+          "label": "Beach Activities: Giant Chess & Bouncy Castles"
+        },
+        {
+          "time": "11:53",
+          "seconds": 713,
+          "label": "The Milk Lab: Coffee, Shakes & Convenience"
+        },
+        {
+          "time": "13:00",
+          "seconds": 780,
+          "label": "Gym, Yoga & The Art Lab (Painting & Pottery)"
+        },
+        {
+          "time": "14:05",
+          "seconds": 845,
+          "label": "Boat Ride to the Crab Shack (Traditional Dhoni)"
+        },
+        {
+          "time": "15:23",
+          "seconds": 923,
+          "label": "Kanusan: Japanese Fine Dining & Sushi Review"
+        },
+        {
+          "time": "16:21",
+          "seconds": 981,
+          "label": "Teens Hut: Drums, Piano & Chill Zones"
+        },
+        {
+          "time": "17:38",
+          "seconds": 1058,
+          "label": "Final Verdict: Lagoon vs. Ocean side"
+        },
+        {
+          "time": "19:57",
+          "seconds": 1197,
+          "label": "Practical Costs: Is a Meal Plan worth $250/night?"
+        }
+      ],
+      "summary": {
+        "tldr": "We flew out to Baa Atoll to review Seaside Finolhu — home to the longest natural sandbank in the Maldives and now bookable through Marriott Bonvoy. Its playful, colourful barefoot-chic vibe, Crab Shack lunches on the sandbank, and vibrant UNESCO reef make it refreshingly different from stuffy islands.",
+        "highlights": [
+          "Walk the iconic 2km natural sandbank straight to the Crab Shack",
+          "Full tour of the overwater and beachfront pool villas",
+          "Bookable via Marriott Bonvoy Design Hotels with strong dining variety",
+          "Fun, vibrant island energy that works for both couples and families"
+        ],
+        "bestFor": "Travelers wanting a stylish, lively Maldives island in Baa Atoll",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "CE__WCDevjQ",
+      "title": "Canggu's Best Secret: $200 Luxury at COMO Uma Canggu",
+      "url": "https://www.youtube.com/watch?v=CE__WCDevjQ",
+      "publishedAt": "2026-03-10T12:00:00Z",
+      "publishedDate": "2026-03-10",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/CE__WCDevjQ/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/CE__WCDevjQ/hqdefault.jpg",
+      "views": 2129,
+      "category": "Hotel Reviews",
+      "location": "Canggu, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Canggu: The Heart of Bali"
+        },
+        {
+          "time": "01:02",
+          "seconds": 62,
+          "label": "Room Tour: Modern Design & Amenities"
+        },
+        {
+          "time": "02:45",
+          "seconds": 165,
+          "label": "Wardrobe, Mini-bar & Tea Selection"
+        },
+        {
+          "time": "04:39",
+          "seconds": 279,
+          "label": "Balcony Tour & Outside Shower Feature"
+        },
+        {
+          "time": "05:34",
+          "seconds": 334,
+          "label": "Noise Check: Can you sleep in busy Canggu?"
+        },
+        {
+          "time": "06:39",
+          "seconds": 399,
+          "label": "Gym, Pilates & Wellness Facilities"
+        },
+        {
+          "time": "08:29",
+          "seconds": 509,
+          "label": "Resort Grounds & Landscaping Walkthrough"
+        },
+        {
+          "time": "11:29",
+          "seconds": 689,
+          "label": "COMO Beach Club & Main Lagoon Pool"
+        },
+        {
+          "time": "13:32",
+          "seconds": 812,
+          "label": "Full Breakfast Menu & Specialty Dishes"
+        },
+        {
+          "time": "14:32",
+          "seconds": 872,
+          "label": "Breakfast Buffet Tour"
+        },
+        {
+          "time": "16:56",
+          "seconds": 1016,
+          "label": "Honest Taste Test: Smoothie Bowls"
+        },
+        {
+          "time": "19:29",
+          "seconds": 1169,
+          "label": "Daybeds & Cabanas overlooking Echo Beach"
+        },
+        {
+          "time": "20:12",
+          "seconds": 1212,
+          "label": "Surfing at Echo Beach"
+        },
+        {
+          "time": "21:39",
+          "seconds": 1299,
+          "label": "Location Hack: Walking distance to La Brisa"
+        },
+        {
+          "time": "22:50",
+          "seconds": 1370,
+          "label": "Final Verdict: Is it worth $200 a night?"
+        }
+      ],
+      "summary": {
+        "tldr": "Right on Echo Beach, COMO Uma Canggu surprised us as one of the smartest ~£160–£200/night luxury bases in Canggu. Modern rooms with outdoor showers, surprisingly peaceful sleep despite busy Canggu outside, a gorgeous lagoon pool, and standout healthy breakfasts make it hard to beat for the price.",
+        "highlights": [
+          "Modern surf-side rooms featuring a surprise outdoor shower & great soundproofing",
+          "Lagoon pool, COMO Beach Club cabanas, and top-tier gym & Pilates studio",
+          "Fresh healthy breakfast buffet & smoothie bowls overlooking Echo Beach",
+          "Easy walking distance to La Brisa and Canggu's best sunset spots"
+        ],
+        "bestFor": "Style-conscious travelers and surfers seeking great-value luxury in Canggu",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "aWGdX_oA4no",
+      "title": "The Ultimate 2-Day Bali Island Escape on Nusa Lembongan!",
+      "url": "https://www.youtube.com/watch?v=aWGdX_oA4no",
+      "publishedAt": "2026-02-26T12:00:00Z",
+      "publishedDate": "2026-02-26",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/aWGdX_oA4no/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/aWGdX_oA4no/hqdefault.jpg",
+      "views": 310,
+      "category": "Bali & Indonesia",
+      "location": "Nusa Lembongan, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Escaping the Bali Mainland: First Impressions"
+        },
+        {
+          "time": "00:32",
+          "seconds": 32,
+          "label": "How to Get Here: Sanur Harbor & Boat Logistics"
+        },
+        {
+          "time": "01:19",
+          "seconds": 79,
+          "label": "Song Lambung: A Hidden Slice of Paradise"
+        },
+        {
+          "time": "01:43",
+          "seconds": 103,
+          "label": "IMPORTANT SAFETY: Rip Currents & Ocean Awareness"
+        },
+        {
+          "time": "02:28",
+          "seconds": 148,
+          "label": "The Deck: Iconic Views of Mount Agung"
+        },
+        {
+          "time": "03:37",
+          "seconds": 217,
+          "label": "Mahagiri Beach: Crystal Clear Water & Windy Vibe"
+        },
+        {
+          "time": "04:23",
+          "seconds": 263,
+          "label": "Getting Around: Scooters, Bemos & Golf Buggies"
+        },
+        {
+          "time": "05:04",
+          "seconds": 304,
+          "label": "Crossing the Yellow Bridge to Nusa Ceningan"
+        },
+        {
+          "time": "05:30",
+          "seconds": 330,
+          "label": "Seaweed Farming: The Heartbeat of the Island"
+        },
+        {
+          "time": "07:02",
+          "seconds": 422,
+          "label": "Dream Beach: Soft Sand & Famous Swells"
+        },
+        {
+          "time": "07:40",
+          "seconds": 460,
+          "label": "Secret Point Beach: Sanctuary for Surfers"
+        },
+        {
+          "time": "08:13",
+          "seconds": 493,
+          "label": "Devil's Tears: Raw Power of the Indian Ocean"
+        },
+        {
+          "time": "09:41",
+          "seconds": 581,
+          "label": "Blue Lagoon & Cliff Cafe: The Neon Turquoise Inlet"
+        },
+        {
+          "time": "10:28",
+          "seconds": 628,
+          "label": "Best Time to Visit: Rainy Season vs. Dry Season"
+        },
+        {
+          "time": "11:48",
+          "seconds": 708,
+          "label": "Where to Stay: Indigo Blue Ceningan Review"
+        },
+        {
+          "time": "12:50",
+          "seconds": 770,
+          "label": "Final Verdict: Why 2 Days is the Perfect Stay"
+        },
+        {
+          "time": "13:00",
+          "seconds": 780,
+          "label": "Pro Tips: Cash, Card, and Slowing Down"
+        }
+      ],
+      "summary": {
+        "tldr": "Need a breather from Bali's traffic? We hopped on a quick boat over to Nusa Lembongan for a 2-day island escape — cruising the coastline, checking out cliffside beach clubs above the Blue Lagoon, and sharing the easiest way to get there and get around.",
+        "highlights": [
+          "Fast boat logistics from Bali to Nusa Lembongan made simple",
+          "Blue Lagoon, Dream Beach viewpoints, and cliffside beach clubs",
+          "Relaxed, traffic-free island pace just 30–40 minutes from Sanur",
+          "Practical 2-day itinerary you can copy straight into your Bali trip"
+        ],
+        "bestFor": "Bali travelers looking for an easy 2-day island getaway without traffic",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "dR55gdbs_zo",
+      "title": "The Sira Lombok: Worth the Trip from Bali?",
+      "url": "https://www.youtube.com/watch?v=dR55gdbs_zo",
+      "publishedAt": "2026-02-20T12:00:00Z",
+      "publishedDate": "2026-02-20",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/dR55gdbs_zo/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/dR55gdbs_zo/hqdefault.jpg",
+      "views": 2266,
+      "category": "Hotel Reviews",
+      "location": "Sire Beach, Lombok, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Arrival at The Sira: Lobby & Architecture"
+        },
+        {
+          "time": "01:46",
+          "seconds": 106,
+          "label": "10 out of 10 Breakfast: Why it’s the best ever"
+        },
+        {
+          "time": "03:03",
+          "seconds": 183,
+          "label": "The Three Swimming Pools & Kids Area"
+        },
+        {
+          "time": "04:07",
+          "seconds": 247,
+          "label": "Exploring the Private Beach & Ocean Views"
+        },
+        {
+          "time": "06:31",
+          "seconds": 391,
+          "label": "Lunch & Snacks at the Third Restaurant"
+        },
+        {
+          "time": "06:55",
+          "seconds": 415,
+          "label": "Standard Suite Tour"
+        },
+        {
+          "time": "09:32",
+          "seconds": 572,
+          "label": "Booking with Marriott Bonvoy Points & Value"
+        },
+        {
+          "time": "11:04",
+          "seconds": 664,
+          "label": "Walking the Tropical Treelined Paths"
+        },
+        {
+          "time": "12:12",
+          "seconds": 732,
+          "label": "Full Beachfront Villa Tour"
+        },
+        {
+          "time": "14:43",
+          "seconds": 883,
+          "label": "The Giant Shower & Outdoor Bathtub"
+        },
+        {
+          "time": "15:24",
+          "seconds": 924,
+          "label": "Private Pool & Garden Oasis Walkthrough"
+        },
+        {
+          "time": "18:08",
+          "seconds": 1088,
+          "label": "Final Verdict: Is it better than Krabi?"
+        },
+        {
+          "time": "20:17",
+          "seconds": 1217,
+          "label": "Practical Lombok Tips: Boats to Gili Islands"
+        },
+        {
+          "time": "20:51",
+          "seconds": 1251,
+          "label": "Transportation Hack: GoJek, Grab vs. Bluebird"
+        }
+      ],
+      "summary": {
+        "tldr": "The Sira, a Luxury Collection Resort & Spa in Lombok genuinely blew us away — including a 10/10 breakfast that ranks as the best we have ever had in any hotel. Between the private beachfront pool villas, butler service, Bose sound systems, and incredible Marriott Bonvoy points value, it is well worth the hop from Bali.",
+        "highlights": [
+          "Our 10/10 hotel breakfast — genuinely one of the best we have ever tried",
+          "Full tours of both the standard suite and beachfront private pool villa",
+          "Direct boat access to Gili Trawangan and Gili Meno from the resort",
+          "Incredible Marriott Bonvoy points value (~£700/week equivalent)"
+        ],
+        "bestFor": "Marriott Bonvoy members & luxury travelers exploring Lombok beyond Bali",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "SBnS6gon20Y",
+      "title": "I Slept in a Bookshelf in Singapore!",
+      "url": "https://www.youtube.com/watch?v=SBnS6gon20Y",
+      "publishedAt": "2026-02-13T12:00:00Z",
+      "publishedDate": "2026-02-13",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/SBnS6gon20Y/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/SBnS6gon20Y/hqdefault.jpg",
+      "views": 502,
+      "category": "Hotel Reviews",
+      "location": "Kampong Glam, Singapore",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Moving into a Bookshelf: Singapore's Most Expensive City?"
+        },
+        {
+          "time": "00:49",
+          "seconds": 49,
+          "label": "Location: Beach Road & Kampong Glam District"
+        },
+        {
+          "time": "01:27",
+          "seconds": 87,
+          "label": "Inside the Pod: Privacy Blinds & Keycard Lockers"
+        },
+        {
+          "time": "01:54",
+          "seconds": 114,
+          "label": "Included Amenities: Toothbrushes to Earplugs"
+        },
+        {
+          "time": "02:35",
+          "seconds": 155,
+          "label": "Freebies: Pantry, Coffee & Hot Chocolate"
+        },
+        {
+          "time": "02:57",
+          "seconds": 177,
+          "label": "Transport Hack: Changi Airport to Bugis (MRT vs. Grab)"
+        },
+        {
+          "time": "03:20",
+          "seconds": 200,
+          "label": "Shared Bathroom Tour: Hair Dryers & Curling Irons"
+        },
+        {
+          "time": "05:00",
+          "seconds": 300,
+          "label": "Shoe-Free Zone: Logistics & Lockers"
+        },
+        {
+          "time": "05:15",
+          "seconds": 315,
+          "label": "Best Budget Food: Hawker Centers & Legendary Murtabak"
+        },
+        {
+          "time": "06:14",
+          "seconds": 374,
+          "label": "Final Verdict: Distance, Cleanliness & Safety"
+        },
+        {
+          "time": "07:27",
+          "seconds": 447,
+          "label": "The Noise Factor: Can a light sleeper survive here?"
+        },
+        {
+          "time": "08:35",
+          "seconds": 515,
+          "label": "Pricing & Room Categories: Mixed vs. All-Female Pods"
+        }
+      ],
+      "summary": {
+        "tldr": "In one of the most expensive cities on earth, we put Singapore's famous 'bookshelf' capsule hotel — The Pod @ Beach Road — to the test. Right in Kampong Glam near Sultan Mosque and $10 Murtabak, it proved surprisingly spotless with privacy blinds, free-flow coffee, and well-kept shared bathrooms.",
+        "highlights": [
+          "Inside the 'bookshelf' pods with privacy blinds and keycard lockers",
+          "Spotless shared bathrooms stocked with hair dryers, irons & toiletries",
+          "Prime Kampong Glam location — take the MRT from Changi instead of Grab",
+          "Honest noise & sleep test for budget-savvy layovers in Singapore"
+        ],
+        "bestFor": "Solo travelers & stopover guests saving money in central Singapore",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "GYA3bGTBlk0",
+      "title": "BASK Gili Meno Review: The Best Luxury Resort in the Gili Islands?",
+      "url": "https://www.youtube.com/watch?v=GYA3bGTBlk0",
+      "publishedAt": "2026-02-06T12:00:00Z",
+      "publishedDate": "2026-02-06",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/GYA3bGTBlk0/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/GYA3bGTBlk0/hqdefault.jpg",
+      "views": 2462,
+      "category": "Hotel Reviews",
+      "location": "Gili Meno, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Gili Meno: Arriving at BASK"
+        },
+        {
+          "time": "01:19",
+          "seconds": 79,
+          "label": "The Infinity Pool: A Four Seasons Comparison"
+        },
+        {
+          "time": "02:14",
+          "seconds": 134,
+          "label": "Essential Tip: Why you need water shoes"
+        },
+        {
+          "time": "02:53",
+          "seconds": 173,
+          "label": "Snorkeling with Turtles & Underwater Statues"
+        },
+        {
+          "time": "03:41",
+          "seconds": 221,
+          "label": "Open Kitchen & Beach Club Tour"
+        },
+        {
+          "time": "05:03",
+          "seconds": 303,
+          "label": "The Underwater Bar"
+        },
+        {
+          "time": "05:40",
+          "seconds": 340,
+          "label": "Wine Cellar Tour & Sommelier Interview"
+        },
+        {
+          "time": "07:18",
+          "seconds": 438,
+          "label": "Beachfront Villa Tour"
+        },
+        {
+          "time": "08:51",
+          "seconds": 531,
+          "label": "The Bedroom & Pillow Menu Details"
+        },
+        {
+          "time": "09:37",
+          "seconds": 577,
+          "label": "Final Verdict: Is it worth the price?"
+        },
+        {
+          "time": "10:47",
+          "seconds": 647,
+          "label": "The Truth about Cycling around Gili Meno"
+        }
+      ],
+      "summary": {
+        "tldr": "We took the boat to peaceful Gili Meno to review BASK — a sleek, modern beachfront resort that punches well above its weight against big luxury chains. With private pool villas, zero room-service delivery fees, a proper wine cellar, an underwater bar, and sea turtles right offshore, it is a genuine island gem.",
+        "highlights": [
+          "Modern beachfront villas with large private pools and pillow menu",
+          "Unique underwater bar, curated wine cellar, and zero room-service fees",
+          "Snorkeling with sea turtles and the famous underwater statues right off the beach",
+          "Honest tips: pack water shoes and expect sandy cycling paths"
+        ],
+        "bestFor": "Couples wanting quiet barefoot luxury and turtle snorkeling on Gili Meno",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "AzHqcQ8bKqs",
+      "title": "I Paid Double for British Airways Economy... Was it a Nightmare?",
+      "url": "https://www.youtube.com/watch?v=AzHqcQ8bKqs",
+      "publishedAt": "2026-01-30T12:00:00Z",
+      "publishedDate": "2026-01-30",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/AzHqcQ8bKqs/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/AzHqcQ8bKqs/hqdefault.jpg",
+      "views": 3780,
+      "category": "Flights",
+      "location": "London to Singapore",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "I Paid £1,150 for a £600 Ticket: The BA Experiment"
+        },
+        {
+          "time": "01:02",
+          "seconds": 62,
+          "label": "Heathrow Terminal 5: First Impressions & Vibes"
+        },
+        {
+          "time": "02:18",
+          "seconds": 138,
+          "label": "Walking to Gate B48: Shops & Amenities"
+        },
+        {
+          "time": "03:06",
+          "seconds": 186,
+          "label": "Boarding the British Airways Boeing 777"
+        },
+        {
+          "time": "03:15",
+          "seconds": 195,
+          "label": "Seat Tour: Legroom & Tech (USBC vs USB)"
+        },
+        {
+          "time": "03:44",
+          "seconds": 224,
+          "label": "Drinks & Snacks: The \"Amazing\" BA Apple Juice"
+        },
+        {
+          "time": "04:15",
+          "seconds": 255,
+          "label": "First Meal Review: Chicken Oyster Sauce & Apple Crumble"
+        },
+        {
+          "time": "04:58",
+          "seconds": 298,
+          "label": "Airline Comparisons: BA vs. Cathay Pacific & Malaysia Airlines"
+        },
+        {
+          "time": "05:42",
+          "seconds": 342,
+          "label": "5 Hours In: Sleep Quality, Crying Babies & Turbulence"
+        },
+        {
+          "time": "06:16",
+          "seconds": 376,
+          "label": "Breakfast Service: Omelettes, Muffins & Lost Magnets"
+        },
+        {
+          "time": "07:24",
+          "seconds": 444,
+          "label": "First Class Flush Review: The British Airways Economy Lavatory"
+        },
+        {
+          "time": "08:24",
+          "seconds": 504,
+          "label": "Arriving at Singapore Changi: Immigration Tips"
+        },
+        {
+          "time": "09:08",
+          "seconds": 548,
+          "label": "Final Verdict: Dirty Toilets & Old Planes?"
+        },
+        {
+          "time": "09:41",
+          "seconds": 581,
+          "label": "Is BA Economy Worth Business Class Prices?"
+        }
+      ],
+      "summary": {
+        "tldr": "We paid double the usual fare to fly British Airways Economy to Singapore to see whether the legacy carrier still justifies the price tag. Here is our honest seat, cabin, food, and service verdict from boarding to touchdown.",
+        "highlights": [
+          "Honest cabin, legroom, and seat-comfort test on the long-haul London–Singapore route",
+          "In-flight meals, drinks service, and entertainment review",
+          "Side-by-side value verdict vs. Middle East and Asian competitors",
+          "Practical tips before booking BA Economy on long-haul routes"
+        ],
+        "bestFor": "UK travelers comparing long-haul economy flights to Singapore & Asia",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "m-KxX6tXE0s",
+      "title": "Maldives on a Budget? Radisson Blu in Paradise",
+      "url": "https://www.youtube.com/watch?v=m-KxX6tXE0s",
+      "publishedAt": "2026-01-27T12:00:00Z",
+      "publishedDate": "2026-01-27",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/m-KxX6tXE0s/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/m-KxX6tXE0s/hqdefault.jpg",
+      "views": 2706,
+      "category": "Maldives",
+      "location": "Alifu Dhaalu Atoll, Maldives",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "The Journey to Paradise: Seaplane over the Atolls"
+        },
+        {
+          "time": "00:31",
+          "seconds": 31,
+          "label": "Arriving at Radisson Blu Resort Maldives"
+        },
+        {
+          "time": "00:53",
+          "seconds": 53,
+          "label": "Crossing the Jetty: Driving on Top of the Ocean"
+        },
+        {
+          "time": "01:25",
+          "seconds": 85,
+          "label": "Beach Villa vs. Overwater Villa (Room Categories)"
+        },
+        {
+          "time": "01:46",
+          "seconds": 106,
+          "label": "The Ocean Swing & Waist-Deep Lagoon"
+        },
+        {
+          "time": "02:26",
+          "seconds": 146,
+          "label": "Dining Guide: Eats & Beats, Alifan, and Raha"
+        },
+        {
+          "time": "02:51",
+          "seconds": 171,
+          "label": "The Main Infinity Pool (Sun-Warmed & Stunning)"
+        },
+        {
+          "time": "03:08",
+          "seconds": 188,
+          "label": "Water Villa Tour: High Ceilings & Spacious Layout"
+        },
+        {
+          "time": "04:03",
+          "seconds": 243,
+          "label": "Bathroom Walkthrough: Passing the TPG Shower Test"
+        },
+        {
+          "time": "04:28",
+          "seconds": 268,
+          "label": "Private Deck Tour: Infinity Pool & Overwater Netting"
+        },
+        {
+          "time": "04:56",
+          "seconds": 296,
+          "label": "Crystal Clear Water & Direct Sea Access"
+        },
+        {
+          "time": "06:15",
+          "seconds": 375,
+          "label": "Privacy & Final Thoughts on Island Life"
+        }
+      ],
+      "summary": {
+        "tldr": "Can you do private-pool Maldives luxury without spending £2,000 a night? We took the seaplane out to Radisson Blu Resort Maldives to test both the upgraded Beach Villa and standard Overwater Pool Villa — and found spacious decks, overwater hammocks, and a crystal-clear waist-deep lagoon for far less than ultra-luxury rivals.",
+        "highlights": [
+          "Private infinity pool in EVERY villa category, plus overwater netting",
+          "Scenic seaplane transfer over the atolls to Alifu Dhaalu Atoll",
+          "Honest walkthrough of Eats & Beats, Alifan, and Raha dining venues",
+          "Great entry-level luxury option with warm, calm lagoon swimming"
+        ],
+        "bestFor": "Travelers wanting a private-pool Maldives water villa at a sharper price",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "Rtk5XhYnA0k",
+      "title": "W Koh Samui: Free Ice Cream & Private Pools (Full Tour)",
+      "url": "https://www.youtube.com/watch?v=Rtk5XhYnA0k",
+      "publishedAt": "2026-01-23T12:00:00Z",
+      "publishedDate": "2026-01-23",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/Rtk5XhYnA0k/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/Rtk5XhYnA0k/hqdefault.jpg",
+      "views": 3086,
+      "category": "Hotel Reviews",
+      "location": "Koh Samui, Thailand",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro & The Optical Illusion Entrance"
+        },
+        {
+          "time": "01:28",
+          "seconds": 88,
+          "label": "The W Vibe: Hip, Fun, and Lively"
+        },
+        {
+          "time": "02:45",
+          "seconds": 165,
+          "label": "Breakfast with a View"
+        },
+        {
+          "time": "03:50",
+          "seconds": 230,
+          "label": "The Beach: Sand Quality & Ocean Views"
+        },
+        {
+          "time": "05:22",
+          "seconds": 322,
+          "label": "Resort History & Architecture"
+        },
+        {
+          "time": "06:18",
+          "seconds": 378,
+          "label": "Observations on Water Quality"
+        },
+        {
+          "time": "08:18",
+          "seconds": 498,
+          "label": "Marriott Bonvoy Status: Upgrades & Benefits"
+        },
+        {
+          "time": "09:12",
+          "seconds": 552,
+          "label": "Giant Chess & Beach Activities"
+        },
+        {
+          "time": "09:48",
+          "seconds": 588,
+          "label": "Full Ocean View Villa Walkthrough"
+        },
+        {
+          "time": "11:26",
+          "seconds": 686,
+          "label": "The Sweet Spot: Unlimited Free Ice Cream!"
+        },
+        {
+          "time": "12:09",
+          "seconds": 729,
+          "label": "Private Pool Tour & Depth Check"
+        },
+        {
+          "time": "14:30",
+          "seconds": 870,
+          "label": "Honest Take: Is the Hotel Showing its Age?"
+        },
+        {
+          "time": "16:09",
+          "seconds": 969,
+          "label": "Using the Buggy Service"
+        },
+        {
+          "time": "17:22",
+          "seconds": 1042,
+          "label": "Final Verdict & Pricing Comparison"
+        }
+      ],
+      "summary": {
+        "tldr": "Every single one of W Koh Samui's 75 villas comes with its own private pool — plus the famous 'Sweet Spots' stocked with unlimited free ice cream and cold drinks across the hillside. We checked whether this iconic 2010 resort still holds up against Koh Samui's newer luxury openings.",
+        "highlights": [
+          "Private pools in all 75 villas + iconic sunken WOOBAR arrival views",
+          "Unlimited free ice cream and chilled drinks at resort 'Sweet Spots'",
+          "Honest check on beach sand, ocean clarity, and whether the 2010 villas show age",
+          "Breakdown of Marriott Bonvoy Elite upgrades and breakfast perks"
+        ],
+        "bestFor": "Marriott Bonvoy members & couples wanting private pool villas in Koh Samui",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "CqQ9jTxWSyA",
+      "title": "The CHEAPEST (Secret) Way to Fly Business to Bali!",
+      "url": "https://www.youtube.com/watch?v=CqQ9jTxWSyA",
+      "publishedAt": "2026-01-15T12:00:00Z",
+      "publishedDate": "2026-01-15",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/CqQ9jTxWSyA/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/CqQ9jTxWSyA/hqdefault.jpg",
+      "views": 4515,
+      "category": "Flights",
+      "location": "London to Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro: The Most Bizarre Way to Get to Bali"
+        },
+        {
+          "time": "00:43",
+          "seconds": 43,
+          "label": "What is a Fifth Freedom Flight?"
+        },
+        {
+          "time": "01:00",
+          "seconds": 60,
+          "label": "The \"Catch\": No Alcohol on Saudia"
+        },
+        {
+          "time": "01:40",
+          "seconds": 100,
+          "label": "Changi Terminal 3 & SATS Premier Lounge Tour"
+        },
+        {
+          "time": "03:32",
+          "seconds": 212,
+          "label": "Boarding the Saudia Boeing 787 Dreamliner"
+        },
+        {
+          "time": "04:06",
+          "seconds": 246,
+          "label": "Seat Tour: 1-2-1 Reverse Herringbone Walkthrough"
+        },
+        {
+          "time": "05:34",
+          "seconds": 334,
+          "label": "Welcome Drink: Trying Saudi Arabian Coffee"
+        },
+        {
+          "time": "06:17",
+          "seconds": 377,
+          "label": "Takeoff & Departure Prayer Ceremony"
+        },
+        {
+          "time": "06:33",
+          "seconds": 393,
+          "label": "Surprise: The Only Passenger in Business Class!"
+        },
+        {
+          "time": "06:58",
+          "seconds": 418,
+          "label": "Full Dinner Review: Spiced Chicken & Garlic Yogurt"
+        },
+        {
+          "time": "08:35",
+          "seconds": 515,
+          "label": "Mid-Flight Thoughts & Service Quality"
+        },
+        {
+          "time": "09:16",
+          "seconds": 556,
+          "label": "First Class Flush Lavatory Review: Exclusive Saudia Amenities"
+        },
+        {
+          "time": "10:41",
+          "seconds": 641,
+          "label": "Legroom Check for 164cm Traveler"
+        },
+        {
+          "time": "11:05",
+          "seconds": 665,
+          "label": "Final Verdict: Is a 2-Hour Flight worth £430?"
+        }
+      ],
+      "summary": {
+        "tldr": "Looking to fly lie-flat Business Class to Bali without paying £4,000+ cash? We break down our real-world strategy for unlocking cheap Business Class seats to Denpasar using smart positioning, points sweet spots, and timing.",
+        "highlights": [
+          "Step-by-step look at how we book Business Class to Bali for a fraction of retail",
+          "Best airline transfer partners and positioning hub tricks from the UK/Europe",
+          "Real flight experience, lounge access, and lie-flat seat review",
+          "Mistakes to avoid when redeeming points for peak-season Bali flights"
+        ],
+        "bestFor": "Points collectors & savvy UK travelers hunting Business Class deals to Bali",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "OUBoO0NUats",
+      "title": "Is Four Seasons Koh Samui Worth it? ‪@fourseasons‬",
+      "url": "https://www.youtube.com/watch?v=OUBoO0NUats",
+      "publishedAt": "2026-01-08T12:00:00Z",
+      "publishedDate": "2026-01-08",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/OUBoO0NUats/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/OUBoO0NUats/hqdefault.jpg",
+      "views": 1097,
+      "category": "Hotel Reviews",
+      "location": "Koh Samui, Thailand",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Arrival & Breathtaking Reception Views"
+        },
+        {
+          "time": "01:35",
+          "seconds": 95,
+          "label": "Private Beach: The Hot Bath Water Experience"
+        },
+        {
+          "time": "02:22",
+          "seconds": 142,
+          "label": "Paddleboarding & Marine Life Tips"
+        },
+        {
+          "time": "02:50",
+          "seconds": 170,
+          "label": "The Main Infinity Pool & Bar"
+        },
+        {
+          "time": "03:37",
+          "seconds": 217,
+          "label": "White Lotus Season 3 Filming Locations"
+        },
+        {
+          "time": "03:55",
+          "seconds": 235,
+          "label": "Premier Ocean View Villa Tour (Room 206)"
+        },
+        {
+          "time": "04:15",
+          "seconds": 255,
+          "label": "The Room Problem: Insects & Dated Decor"
+        },
+        {
+          "time": "05:50",
+          "seconds": 350,
+          "label": "Exclusive Feature: The Heart-Shaped Pool"
+        },
+        {
+          "time": "07:34",
+          "seconds": 454,
+          "label": "Full Breakfast Buffet & Juice Bar Tour"
+        },
+        {
+          "time": "09:47",
+          "seconds": 587,
+          "label": "Cold Brew Coffee & Stunning Views"
+        },
+        {
+          "time": "10:10",
+          "seconds": 610,
+          "label": "The Spa: A Real Jungle Experience"
+        },
+        {
+          "time": "10:52",
+          "seconds": 652,
+          "label": "Final Verdict: Experience vs. Room Quality"
+        }
+      ],
+      "summary": {
+        "tldr": "Before and after its White Lotus Season 3 fame, we stayed at Four Seasons Resort Koh Samui to see if it truly lives up to the hype. Perched on a coconut-palm hillside with private infinity pools, a secluded cove beach, and effortless Four Seasons care, it is one of Thailand's most breathtaking resorts.",
+        "highlights": [
+          "Hillside private pool villas framed by lush palms and Gulf of Thailand views",
+          "Secluded powder-soft cove beach with complimentary water sports",
+          "Impeccable Four Seasons service and memorable beachfront dining",
+          "Honest value verdict now that White Lotus demand has pushed rates higher"
+        ],
+        "bestFor": "Honeymooners & bucket-list travelers splurging in Koh Samui",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "ifcQOTuO05k",
+      "title": "I’m from Bali & This Video is 100% Right (Mostly!)",
+      "url": "https://www.youtube.com/watch?v=ifcQOTuO05k",
+      "publishedAt": "2026-01-01T12:00:00Z",
+      "publishedDate": "2026-01-01",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/ifcQOTuO05k/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/ifcQOTuO05k/hqdefault.jpg",
+      "views": 316,
+      "category": "Bali & Indonesia",
+      "location": "Bali, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro: Why a Local Reaction to Bali is Useful"
+        },
+        {
+          "time": "01:36",
+          "seconds": 96,
+          "label": "Fact Check: Is Bali more than just one island?"
+        },
+        {
+          "time": "02:14",
+          "seconds": 134,
+          "label": "Understanding Nyepi: The 24-Hour Day of Silence"
+        },
+        {
+          "time": "03:19",
+          "seconds": 199,
+          "label": "Beyond Tegallalang: The 3 Best Rice Paddies in Bali"
+        },
+        {
+          "time": "03:41",
+          "seconds": 221,
+          "label": "Mount Agung Tip: Why beginners should think twice"
+        },
+        {
+          "time": "04:26",
+          "seconds": 266,
+          "label": "Lempuyang Temple & The \"Gates of Heaven\" Queue"
+        },
+        {
+          "time": "05:18",
+          "seconds": 318,
+          "label": "Besakih Mother Temple: Biggest in Bali"
+        },
+        {
+          "time": "05:49",
+          "seconds": 349,
+          "label": "Padang Bai: The Ferry Gateway to Lombok & Gili"
+        },
+        {
+          "time": "06:27",
+          "seconds": 387,
+          "label": "Jatiluwih Rice Terrace: Why it's better than Tegallalang"
+        },
+        {
+          "time": "06:54",
+          "seconds": 414,
+          "label": "Ulun Danu Beratan: The Iconic (but Crowded) Water Temple"
+        },
+        {
+          "time": "07:20",
+          "seconds": 440,
+          "label": "North Bali Waterfalls: Sekumpul, Fiji & Aling-Aling"
+        },
+        {
+          "time": "08:35",
+          "seconds": 515,
+          "label": "Menjangan Island: The \"Maldives of Bali\" (4.5hr Trip)"
+        },
+        {
+          "time": "09:22",
+          "seconds": 562,
+          "label": "Uluwatu Temple & The Best Kecak Dance"
+        },
+        {
+          "time": "09:44",
+          "seconds": 584,
+          "label": "Monkey Barter Alert: Why you need a big bag"
+        },
+        {
+          "time": "10:10",
+          "seconds": 610,
+          "label": "Tanah Lot: The Floating Sunset Temple"
+        },
+        {
+          "time": "10:48",
+          "seconds": 648,
+          "label": "Nusa Penida: T-Rex Beach & The Canceled Elevator"
+        },
+        {
+          "time": "11:15",
+          "seconds": 675,
+          "label": "Angel’s Billabong Warning: Why high tide is dangerous"
+        },
+        {
+          "time": "11:51",
+          "seconds": 711,
+          "label": "Final Verdict: Novi’s Personal Recommendations"
+        }
+      ],
+      "summary": {
+        "tldr": "Novi is from Bali, so we sat down to give an unfiltered local perspective on what visitors get right — and completely wrong — about traveling to Bali in 2026. From traffic and areas to stay to local etiquette, this is the honest reality check before you fly.",
+        "highlights": [
+          "Genuine Balinese local perspective from Novi on Bali's biggest travel myths",
+          "Which areas actually match your vibe (Uluwatu vs. Canggu vs. Nusa Dua vs. Ubud)",
+          "Practical tips on tipping, drivers, temples, and avoiding tourist traps",
+          "How to plan a balanced trip combining luxury resorts with authentic local culture"
+        ],
+        "bestFor": "First-time and repeat Bali visitors wanting honest local insights",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "MfoPIeImgZs",
+      "title": "Westfield London Christmas Guide: The Ultimate One-Stop Shopping Tour!",
+      "url": "https://www.youtube.com/watch?v=MfoPIeImgZs",
+      "publishedAt": "2025-12-26T12:00:00Z",
+      "publishedDate": "2025-12-26",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/MfoPIeImgZs/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/MfoPIeImgZs/hqdefault.jpg",
+      "views": 101,
+      "category": "Travel Guides",
+      "location": "London, UK",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro: Is Westfield London the Best Place for Christmas Shopping?"
+        },
+        {
+          "time": "00:21",
+          "seconds": 21,
+          "label": "The Wicked Movie Set: Elphaba & Glinda’s Costumes"
+        },
+        {
+          "time": "00:46",
+          "seconds": 46,
+          "label": "Ground Floor Tour: Tesla, Jewelry & Luxury Pop-ups"
+        },
+        {
+          "time": "01:40",
+          "seconds": 100,
+          "label": "Lego Store & Intricate Star Trek Models"
+        },
+        {
+          "time": "02:20",
+          "seconds": 140,
+          "label": "Gift Ideas for Loved Ones: Pandora, Dior & Beauty"
+        },
+        {
+          "time": "03:00",
+          "seconds": 180,
+          "label": "Bookstores & Home Decor: Waterstones & H&M Home"
+        },
+        {
+          "time": "03:40",
+          "seconds": 220,
+          "label": "Second Floor Walkthrough: Fashion & Bubbleology"
+        },
+        {
+          "time": "04:45",
+          "seconds": 285,
+          "label": "Toy Shop Adventure: \"Spinning Bears\" & Red Pandas"
+        },
+        {
+          "time": "05:54",
+          "seconds": 354,
+          "label": "Bath & Body Works: The \"Smell Like Heaven\" Tip"
+        },
+        {
+          "time": "06:23",
+          "seconds": 383,
+          "label": "The Food Corner: Chipotle, Blue Room & More"
+        },
+        {
+          "time": "06:53",
+          "seconds": 413,
+          "label": "Gift Sets & Festive Chocolate: Luxury Penguin Treats"
+        },
+        {
+          "time": "07:54",
+          "seconds": 474,
+          "label": "The White Company: Home Fragrance & Cozy Pajamas"
+        },
+        {
+          "time": "08:58",
+          "seconds": 538,
+          "label": "Final Verdict: Why I had to take my jacket off!"
+        }
+      ],
+      "summary": {
+        "tldr": "We toured Westfield London during the festive season to share a practical one-stop Christmas shopping guide — including the Wicked movie set installation, dining picks, and how to tackle London's biggest mall without the stress.",
+        "highlights": [
+          "Full festive walkthrough including the Wicked display and seasonal pop-ups",
+          "Best luxury and high-street shopping zones under one roof",
+          "Food court and sit-down dining stops for a full day out",
+          "Timing tips to beat weekend Christmas crowds in West London"
+        ],
+        "bestFor": "London visitors planning festive Christmas shopping days",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "XBCz5IGpOiU",
+      "title": "I Spent a Night at Winter Wonderland and Regretted Only One Thing...",
+      "url": "https://www.youtube.com/watch?v=XBCz5IGpOiU",
+      "publishedAt": "2025-12-25T12:00:00Z",
+      "publishedDate": "2025-12-25",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/XBCz5IGpOiU/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/XBCz5IGpOiU/hqdefault.jpg",
+      "views": 202,
+      "category": "Travel Guides",
+      "location": "London, UK",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Entering Winter Wonderland 2025"
+        },
+        {
+          "time": "00:15",
+          "seconds": 15,
+          "label": "Entrance Map & Logistics"
+        },
+        {
+          "time": "00:40",
+          "seconds": 40,
+          "label": "Chocolate World & Childhood Magic"
+        },
+        {
+          "time": "01:13",
+          "seconds": 73,
+          "label": "What is Winter Wonderland? (Hyde Park History)"
+        },
+        {
+          "time": "01:53",
+          "seconds": 113,
+          "label": "Stepping into a Christmas Film: Vibes & Atmosphere"
+        },
+        {
+          "time": "02:38",
+          "seconds": 158,
+          "label": "Festive Food Guide: Hot Churros & Nutella"
+        },
+        {
+          "time": "03:07",
+          "seconds": 187,
+          "label": "The One Regret... (Honest Food Review)"
+        },
+        {
+          "time": "03:30",
+          "seconds": 210,
+          "label": "Fairy Tale Magic: Giant Oversized Dolls"
+        },
+        {
+          "time": "04:32",
+          "seconds": 272,
+          "label": "Exploring Santa Land"
+        },
+        {
+          "time": "05:27",
+          "seconds": 327,
+          "label": "Final Thoughts: See you in 2026!"
+        }
+      ],
+      "summary": {
+        "tldr": "We spent an evening at Hyde Park Winter Wonderland in London to see whether the rides, Bavarian Village, and food stalls are worth the steep prices — and share the one thing we genuinely regretted so you can plan smarter.",
+        "highlights": [
+          "Honest cost breakdown of entry tickets, rides, mulled wine, and street food",
+          "Best zones to visit after dark for lights and festive atmosphere",
+          "The one big regret from our night — and how to avoid it",
+          "Practical tips on booking off-peak slots and transport in central London"
+        ],
+        "bestFor": "Visitors deciding if Hyde Park Winter Wonderland is worth the spend",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "-jBV9Gn21ZM",
+      "title": "Phulay Bay Ritz-Carlton Reserve: Why there is NO Beach (Full Review)",
+      "url": "https://www.youtube.com/watch?v=-jBV9Gn21ZM",
+      "publishedAt": "2025-12-24T12:00:00Z",
+      "publishedDate": "2025-12-24",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/-jBV9Gn21ZM/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/-jBV9Gn21ZM/hqdefault.jpg",
+      "views": 2602,
+      "category": "Hotel Reviews",
+      "location": "Krabi, Thailand",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "The World's First Ritz-Carlton Reserve"
+        },
+        {
+          "time": "00:46",
+          "seconds": 46,
+          "label": "Filming Location for The Hangover Part II"
+        },
+        {
+          "time": "01:20",
+          "seconds": 80,
+          "label": "The Incredible Floating Entrance"
+        },
+        {
+          "time": "02:40",
+          "seconds": 160,
+          "label": "Luxury Garden Villa Tour"
+        },
+        {
+          "time": "04:45",
+          "seconds": 285,
+          "label": "Outdoor Bathtub & Private Pool"
+        },
+        {
+          "time": "06:14",
+          "seconds": 374,
+          "label": "The Catch: Why there is no beach"
+        },
+        {
+          "time": "06:38",
+          "seconds": 398,
+          "label": "Booking with Marriott Bonvoy Points"
+        },
+        {
+          "time": "07:38",
+          "seconds": 458,
+          "label": "Main Infinity Pool & Bar"
+        },
+        {
+          "time": "08:42",
+          "seconds": 522,
+          "label": "Hong Island Excursion"
+        },
+        {
+          "time": "10:06",
+          "seconds": 606,
+          "label": "Full Breakfast Buffet Tour"
+        },
+        {
+          "time": "11:15",
+          "seconds": 675,
+          "label": "Vitality Pool & Spa Facilities"
+        },
+        {
+          "time": "11:47",
+          "seconds": 707,
+          "label": "Final Verdict: Better than Four Seasons?"
+        }
+      ],
+      "summary": {
+        "tldr": "We redeemed ~80,000 Marriott Bonvoy points a night at the world's very first Ritz-Carlton Reserve — Phulay Bay in Krabi (famous from The Hangover Part II). The 20-foot-ceiling villas, floating candlelit arrival, and Hong Island boat trip are extraordinary, with one crucial catch: there is no swimmable resort beach.",
+        "highlights": [
+          "Cavernous Garden Pool Villas with 20ft ceilings and huge outdoor baths",
+          "Iconic floating pavilion arrival and sunset longtail boat to Hong Island",
+          "Major caveat: rocky coastline means no swimmable beach directly on-site",
+          "Outstanding Marriott Bonvoy points redemption compared to cash rates"
+        ],
+        "bestFor": "Marriott Bonvoy collectors & luxury couples who love architecture and pools",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "FrsCQh1hzes",
+      "title": "Four Seasons Bangkok: The Second Best Hotel in the World! ‪@fourseasons‬",
+      "url": "https://www.youtube.com/watch?v=FrsCQh1hzes",
+      "publishedAt": "2025-12-21T12:00:00Z",
+      "publishedDate": "2025-12-21",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/FrsCQh1hzes/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/FrsCQh1hzes/hqdefault.jpg",
+      "views": 1395,
+      "category": "Hotel Reviews",
+      "location": "Bangkok, Thailand",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to the Four Seasons Bangkok: The World's #2 Hotel"
+        },
+        {
+          "time": "00:26",
+          "seconds": 26,
+          "label": "Grand Entrance & Stunning Lobby Design"
+        },
+        {
+          "time": "01:36",
+          "seconds": 96,
+          "label": "Deluxe Room Tour: Modern Chic & Leather Accents"
+        },
+        {
+          "time": "02:18",
+          "seconds": 138,
+          "label": "Luxury Bathroom: Bidet & 7-Person Shower"
+        },
+        {
+          "time": "03:02",
+          "seconds": 182,
+          "label": "Mini Bar Walkthrough: Cocktail Station & Gummy Bears"
+        },
+        {
+          "time": "04:27",
+          "seconds": 267,
+          "label": "Views from the Room: Courtyard vs. River"
+        },
+        {
+          "time": "05:58",
+          "seconds": 358,
+          "label": "Tech & iPad Controls: Managing Your Stay"
+        },
+        {
+          "time": "06:53",
+          "seconds": 413,
+          "label": "BKK Social Club & The \"Social\" Bar Vibe"
+        },
+        {
+          "time": "07:22",
+          "seconds": 442,
+          "label": "Architecture: The Iconic Water Features & Relaxation Ponds"
+        },
+        {
+          "time": "07:50",
+          "seconds": 470,
+          "label": "Riva del Fiume: Italian Riverside Dining"
+        },
+        {
+          "time": "08:08",
+          "seconds": 488,
+          "label": "The Infinity Pool: Sunbed Service & Jacuzzi"
+        },
+        {
+          "time": "09:04",
+          "seconds": 544,
+          "label": "Riverside Vibe: Comparing the Views (Day vs. Night)"
+        },
+        {
+          "time": "10:03",
+          "seconds": 603,
+          "label": "Art Gallery & Creative Spaces"
+        },
+        {
+          "time": "10:40",
+          "seconds": 640,
+          "label": "Free Shuttle Boat: Yacht Experience to IconSiam"
+        },
+        {
+          "time": "12:21",
+          "seconds": 741,
+          "label": "Transport Hacks: Airport Traffic, Grab, and Boats"
+        },
+        {
+          "time": "13:59",
+          "seconds": 839,
+          "label": "Final Verdict: Does it live up to the hype?"
+        },
+        {
+          "time": "15:10",
+          "seconds": 910,
+          "label": "The \"Most Comfortable\" Spa Bed in the World"
+        },
+        {
+          "time": "16:07",
+          "seconds": 967,
+          "label": "Comparing FS Bangkok to FS Koh Samui"
+        }
+      ],
+      "summary": {
+        "tldr": "Ranked among the very best hotels in the world, Four Seasons Hotel Bangkok at Chao Phraya River feels like a serene riverside resort dropped into the heart of the city. From leather-trimmed Deluxe Rooms and the famous BKK Social Club to the free river shuttle boat to ICONSIAM, the hardware is phenomenal.",
+        "highlights": [
+          "Stunning Jean-Michel Gathy architecture with tranquil courtyards and river pools",
+          "Sleek Deluxe Rooms with automated blinds, massive showers, and cocktail bars",
+          "Free luxury river shuttle boat to ICONSIAM & easy access to BKK Social Club",
+          "Pro tip: take an $11 Grab instead of pricey hotel transfers through Bangkok traffic"
+        ],
+        "bestFor": "Design-loving city travelers seeking world-class luxury in Bangkok",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "mCtQH-ZIjyk",
+      "title": "How to Survive a 16-Hour Layover at Kuala Lumpur Airport!",
+      "url": "https://www.youtube.com/watch?v=mCtQH-ZIjyk",
+      "publishedAt": "2025-12-21T12:00:00Z",
+      "publishedDate": "2025-12-21",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/mCtQH-ZIjyk/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/mCtQH-ZIjyk/hqdefault.jpg",
+      "views": 1132,
+      "category": "Flights",
+      "location": "Kuala Lumpur, Malaysia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro: Why a 16-Hour Layover Doesn't Have to Be a Nightmare"
+        },
+        {
+          "time": "00:38",
+          "seconds": 38,
+          "label": "Murah Rai (Bali) Check-in & Automatic Gate Tips"
+        },
+        {
+          "time": "01:18",
+          "seconds": 78,
+          "label": "Flight 1: Bali to KLIA (3 Hours) - Hospitality & Food"
+        },
+        {
+          "time": "02:13",
+          "seconds": 133,
+          "label": "Free Wi-Fi & In-flight Entertainment Review"
+        },
+        {
+          "time": "03:07",
+          "seconds": 187,
+          "label": "Arriving at KLIA Terminal 1 (KLIA1) vs. Terminal 2"
+        },
+        {
+          "time": "04:01",
+          "seconds": 241,
+          "label": "Walking KLIA1: Shops, Restaurants & Jamie Oliver"
+        },
+        {
+          "time": "05:15",
+          "seconds": 315,
+          "label": "Transit Hotel Tour: Capsule Transit Sleep Lounge (Terminal 1)"
+        },
+        {
+          "time": "06:20",
+          "seconds": 380,
+          "label": "Inside the Pod: Lockers, Charging & Comfort"
+        },
+        {
+          "time": "07:25",
+          "seconds": 445,
+          "label": "Landside vs. Airside Transit Hotels"
+        },
+        {
+          "time": "08:03",
+          "seconds": 483,
+          "label": "Navigating KLIA: Free Trains & Terminal C Gates"
+        },
+        {
+          "time": "09:50",
+          "seconds": 590,
+          "label": "Malaysia Airlines Crew & Service Review"
+        },
+        {
+          "time": "11:00",
+          "seconds": 660,
+          "label": "The \"Poor Man's Business Class\" Hack: Getting 3 Seats to Yourself"
+        },
+        {
+          "time": "11:13",
+          "seconds": 673,
+          "label": "Long-Haul Meal Review: Omelette & Beef Ragu"
+        },
+        {
+          "time": "11:45",
+          "seconds": 705,
+          "label": "Arriving in London: Flying over the Big Ben & London Eye"
+        },
+        {
+          "time": "12:10",
+          "seconds": 730,
+          "label": "Final Verdict: Why the Bali-KL-UK route saves you money"
+        }
+      ],
+      "summary": {
+        "tldr": "Stuck with a marathon 16-hour layover at Kuala Lumpur International Airport (KLIA)? We share our exact survival guide — from lounges, showers, and quiet nap zones to whether it is worth heading into KL for a few hours.",
+        "highlights": [
+          "Best airport lounges, rest pods, and shower spots inside KLIA",
+          "How to plan a quick city hop via KLIA Ekspres vs. staying airside",
+          "Food spots and transit-hotel options for overnight connections",
+          "Essential carry-on checklist to stay fresh on ultra-long-haul itineraries"
+        ],
+        "bestFor": "Long-haul travelers facing a long transit through Kuala Lumpur (KLIA)",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "3cNs_ybsnPE",
+      "title": "Le Méridien Maldives Review: Best Marriott Bonvoy Points Value? (Full Tour)",
+      "url": "https://www.youtube.com/watch?v=3cNs_ybsnPE",
+      "publishedAt": "2025-12-20T12:00:00Z",
+      "publishedDate": "2025-12-20",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/3cNs_ybsnPE/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/3cNs_ybsnPE/hqdefault.jpg",
+      "views": 3928,
+      "category": "Maldives",
+      "location": "Lhaviyani Atoll, Maldives",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Arrival & Sea Plane Experience"
+        },
+        {
+          "time": "01:54",
+          "seconds": 114,
+          "label": "Dive Center & Entrance Jetty"
+        },
+        {
+          "time": "03:25",
+          "seconds": 205,
+          "label": "The Greenhouse: Fresh Salads Grown on Island"
+        },
+        {
+          "time": "04:33",
+          "seconds": 273,
+          "label": "Overwater Pool Villa Full Walkthrough"
+        },
+        {
+          "time": "08:23",
+          "seconds": 503,
+          "label": "Overwater Villa (No Pool) & Netting Area"
+        },
+        {
+          "time": "09:51",
+          "seconds": 591,
+          "label": "Safety Tip: Tides, Currents & Life Jackets"
+        },
+        {
+          "time": "11:21",
+          "seconds": 681,
+          "label": "Tabemasu: Japanese Fine Dining Review"
+        },
+        {
+          "time": "13:52",
+          "seconds": 832,
+          "label": "Turquoise Restaurant Breakfast Buffet Tour"
+        },
+        {
+          "time": "16:30",
+          "seconds": 990,
+          "label": "Overwater Spa & Treatment Rooms"
+        },
+        {
+          "time": "16:51",
+          "seconds": 1011,
+          "label": "Waves Cafe & Riviera Tapas Bar"
+        },
+        {
+          "time": "18:21",
+          "seconds": 1101,
+          "label": "Adults-Only Pool & Bar Area"
+        },
+        {
+          "time": "20:01",
+          "seconds": 1201,
+          "label": "Marine Center & Sports Facilities"
+        },
+        {
+          "time": "20:38",
+          "seconds": 1238,
+          "label": "Kids Club & Family Amenities"
+        },
+        {
+          "time": "21:33",
+          "seconds": 1293,
+          "label": "South Side Jetty & Lagoon Villas"
+        },
+        {
+          "time": "24:20",
+          "seconds": 1460,
+          "label": "Renting Bikes & Getting Around"
+        },
+        {
+          "time": "25:01",
+          "seconds": 1501,
+          "label": "Final Verdict: Is it worth the points?"
+        }
+      ],
+      "summary": {
+        "tldr": "We stayed at Le Méridien Maldives Resort & Spa in Lhaviyani Atoll to test its reputation as the smartest Marriott Bonvoy points sweet spot in the Maldives. Crisp mid-century overwater villas, a turquoise house lagoon, and generous Elite perks deliver true Maldives magic at a fraction of ultra-luxury prices.",
+        "highlights": [
+          "Arguably the best-value Marriott Bonvoy overwater villa redemption in the Maldives",
+          "Bright mid-century villas with glass floor panels and overwater hammocks",
+          "Fresh dining (including the resort's hydroponic greenhouse) & friendly staff",
+          "Honest seaplane transfer and meal-plan cost tips before you book"
+        ],
+        "bestFor": "Points travelers & first-time Maldives visitors maximizing luxury value",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "X_KxJ_k9-NE",
+      "title": "Is This 14th-Century Manor England’s Best Luxury Hotel?",
+      "url": "https://www.youtube.com/watch?v=X_KxJ_k9-NE",
+      "publishedAt": "2025-12-13T12:00:00Z",
+      "publishedDate": "2025-12-13",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/X_KxJ_k9-NE/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/X_KxJ_k9-NE/hqdefault.jpg",
+      "views": 1444,
+      "category": "Hotel Reviews",
+      "location": "Castle Combe, Cotswolds, UK",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to The Manor House!"
+        },
+        {
+          "time": "01:00",
+          "seconds": 60,
+          "label": "Front Desk"
+        },
+        {
+          "time": "02:07",
+          "seconds": 127,
+          "label": "Italian Garden"
+        },
+        {
+          "time": "05:27",
+          "seconds": 327,
+          "label": "Baker's Cottage Line up"
+        },
+        {
+          "time": "07:18",
+          "seconds": 438,
+          "label": "Electric Car Charger by the car Park"
+        },
+        {
+          "time": "07:37",
+          "seconds": 457,
+          "label": "The Flint Room"
+        },
+        {
+          "time": "08:33",
+          "seconds": 513,
+          "label": "The Homestead Room"
+        },
+        {
+          "time": "11:05",
+          "seconds": 665,
+          "label": "Dinner at Bybrook, a Michelin one-star restaurant"
+        },
+        {
+          "time": "19:32",
+          "seconds": 1172,
+          "label": "Final thoughts"
+        }
+      ],
+      "summary": {
+        "tldr": "We escaped to the Cotswolds for a quintessential English country-house stay at The Manor House in Castle Combe — a 14th-century estate complete with Italian gardens, picturesque cottages, EV charging, and a memorable tasting dinner at its one-Michelin-star restaurant, Bybrook.",
+        "highlights": [
+          "14th-century Cotswolds manor house set in Castle Combe's fairytale valley",
+          "Full walkthrough of the Italian gardens, cottages, and historic rooms",
+          "Michelin-starred dinner experience at Bybrook right inside the manor",
+          "Practical UK weekend notes including on-site EV chargers and golf grounds"
+        ],
+        "bestFor": "UK weekenders & foodies seeking a romantic Michelin-starred Cotswolds escape",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "ZlsSigaKhwc",
+      "title": "W Maldives: Alone on a Private Island for 3 Hours!",
+      "url": "https://www.youtube.com/watch?v=ZlsSigaKhwc",
+      "publishedAt": "2025-12-06T12:00:00Z",
+      "publishedDate": "2025-12-06",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/ZlsSigaKhwc/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/ZlsSigaKhwc/hqdefault.jpg",
+      "views": 5475,
+      "category": "Maldives",
+      "location": "North Ari Atoll, Maldives",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "The Reimagined W Maldives: First Impressions"
+        },
+        {
+          "time": "01:52",
+          "seconds": 112,
+          "label": "Superior Overwater Villa Tour"
+        },
+        {
+          "time": "04:01",
+          "seconds": 241,
+          "label": "Premier Overwater Villa Tour"
+        },
+        {
+          "time": "05:40",
+          "seconds": 340,
+          "label": "Lagoon Side vs. Ocean Side: Which is better?"
+        },
+        {
+          "time": "06:33",
+          "seconds": 393,
+          "label": "Pro Tip: The truth about wind speed"
+        },
+        {
+          "time": "08:04",
+          "seconds": 484,
+          "label": "The Hub: Wet Bar, Infinity Pool & Slide"
+        },
+        {
+          "time": "09:44",
+          "seconds": 584,
+          "label": "Gym & Games Area"
+        },
+        {
+          "time": "11:00",
+          "seconds": 660,
+          "label": "Fire Steakhouse Review"
+        },
+        {
+          "time": "12:49",
+          "seconds": 769,
+          "label": "Full Breakfast Buffet & Al-a-Carte Options"
+        },
+        {
+          "time": "15:20",
+          "seconds": 920,
+          "label": "Private Island Adventure: Gaathafushi Tour"
+        },
+        {
+          "time": "18:52",
+          "seconds": 1132,
+          "label": "Gaathafushi Cost & Experience"
+        },
+        {
+          "time": "21:09",
+          "seconds": 1269,
+          "label": "Away Spa & 2-Bedroom Oasis Beach Villa"
+        },
+        {
+          "time": "22:30",
+          "seconds": 1350,
+          "label": "Snorkeling at W Maldives"
+        },
+        {
+          "time": "24:34",
+          "seconds": 1474,
+          "label": "Final Verdict: Why a small island is better"
+        },
+        {
+          "time": "27:26",
+          "seconds": 1646,
+          "label": "Cost & Points Strategy"
+        }
+      ],
+      "summary": {
+        "tldr": "Fresh off its sweeping refurbishment, W Maldives gave us one of the best stays of our entire travels — incredible house-reef snorkeling right off our overwater deck, vibrant island energy, and three unforgettable hours completely alone on Gaathafushi private island.",
+        "highlights": [
+          "Newly refurbished overwater & beach villas with private plunge pools",
+          "Direct-from-deck snorkeling on one of the Maldives' best house reefs",
+          "Exclusive 3-hour castaway escape to Gaathafushi private island",
+          "Smart meal-plan and Bonvoy Elite breakfast tips to manage island spend"
+        ],
+        "bestFor": "Snorkelers, honeymooners & Bonvoy members wanting a vibrant Maldives island",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "5C-LADaIdRQ",
+      "title": "Westin Bora Bora Review: Better than the St. Regis Bora Bora ‪@westin‬",
+      "url": "https://www.youtube.com/watch?v=5C-LADaIdRQ",
+      "publishedAt": "2025-12-03T12:00:00Z",
+      "publishedDate": "2025-12-03",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/5C-LADaIdRQ/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/5C-LADaIdRQ/hqdefault.jpg",
+      "views": 17479,
+      "category": "Hotel Reviews",
+      "location": "Motu Tape, Bora Bora",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to the Westin Bora Bora"
+        },
+        {
+          "time": "01:22",
+          "seconds": 82,
+          "label": "Overwater Villa Tour: Mountain View & Pool"
+        },
+        {
+          "time": "02:30",
+          "seconds": 150,
+          "label": "Marriott Titanium Welcome Amenities"
+        },
+        {
+          "time": "03:58",
+          "seconds": 238,
+          "label": "The Infinity Pool & Lagoon Views"
+        },
+        {
+          "time": "06:21",
+          "seconds": 381,
+          "label": "Breakfast Buffet & Elite Member Benefits"
+        },
+        {
+          "time": "08:31",
+          "seconds": 511,
+          "label": "Main Beach vs. Lagoon Beach"
+        },
+        {
+          "time": "10:20",
+          "seconds": 620,
+          "label": "Jet Skiing & Bora Bora Activities"
+        },
+        {
+          "time": "13:00",
+          "seconds": 780,
+          "label": "Lobby, Bar, and Guest Facilities"
+        },
+        {
+          "time": "15:37",
+          "seconds": 937,
+          "label": "Comparing Westin to St. Regis & Four Seasons"
+        },
+        {
+          "time": "18:22",
+          "seconds": 1102,
+          "label": "Fitness Studio & TechnoGym Equipment"
+        },
+        {
+          "time": "19:50",
+          "seconds": 1190,
+          "label": "Turtle Sanctuary (Eco Center) Tour"
+        },
+        {
+          "time": "22:37",
+          "seconds": 1357,
+          "label": "Beach Villa vs. Overwater Villa"
+        },
+        {
+          "time": "25:15",
+          "seconds": 1515,
+          "label": "Which side of the resort to stay on?"
+        },
+        {
+          "time": "27:15",
+          "seconds": 1635,
+          "label": "The Verdict: Westin vs. St. Regis"
+        },
+        {
+          "time": "28:45",
+          "seconds": 1725,
+          "label": "Cost of Food & Drink in Bora Bora"
+        },
+        {
+          "time": "29:15",
+          "seconds": 1755,
+          "label": "Points Strategy: Using Amex & Marriott"
+        }
+      ],
+      "summary": {
+        "tldr": "Completely reborn from the former Le Méridien, The Westin Bora Bora Resort & Spa delivers jaw-dropping front-row views of Mount Otemanu from brand-new overwater bungalows — plus an on-site sea-turtle sanctuary — at a noticeably sharper price than St. Regis next door.",
+        "highlights": [
+          "Brand-new overwater bungalows with iconic glass floors & Mount Otemanu views",
+          "Direct comparison against St. Regis Bora Bora on price, points, and vibe",
+          "On-site ecological lagoon & sea-turtle sanctuary right on the motu",
+          "Honest tips on Bora Bora dining budgets and booking with Marriott points"
+        ],
+        "bestFor": "Bucket-list travelers wanting fresh Bora Bora overwater villas with Otemanu views",
+        "aiGenerated": true,
+        "model": "editorial-curated"
+      },
+      "affiliateLinks": []
     }
   ],
   "shorts": [
@@ -3611,6 +5777,1386 @@
           "url": "https://www.tubebuddy.com/Techinthecar"
         }
       ]
+    },
+    {
+      "id": "qmG3aEuPW-I",
+      "title": "You get both Taaktana and Silvia Hill here ❤️🤍",
+      "url": "https://www.youtube.com/shorts/qmG3aEuPW-I",
+      "publishedAt": "2026-01-01T00:59:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/qmG3aEuPW-I/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/qmG3aEuPW-I/hqdefault.jpg",
+      "views": 359,
+      "viewsText": "359 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "You get both Taaktana and Silvia Hill here ❤️🤍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "YzzmOXbHeJI",
+      "title": "Padar Island Labuan Bajo",
+      "url": "https://www.youtube.com/shorts/YzzmOXbHeJI",
+      "publishedAt": "2026-01-01T00:58:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/YzzmOXbHeJI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/YzzmOXbHeJI/hqdefault.jpg",
+      "views": 582,
+      "viewsText": "582 views",
+      "category": "Bali & Indonesia",
+      "location": "Labuan Bajo, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Padar Island Labuan Bajo",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "OQjTqSGtAQ8",
+      "title": "We love Ta’aktana and we’ll be back!! 💖",
+      "url": "https://www.youtube.com/shorts/OQjTqSGtAQ8",
+      "publishedAt": "2026-01-01T00:57:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/OQjTqSGtAQ8/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/OQjTqSGtAQ8/hqdefault.jpg",
+      "views": 2200,
+      "viewsText": "2.2K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "We love Ta’aktana and we’ll be back!! 💖",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "mIlXyKSecV4",
+      "title": "Did you say they have Olympic sized swimming pool too on Ta’aktana ??🏊 🤷🏻‍♂️🤷‍♀️",
+      "url": "https://www.youtube.com/shorts/mIlXyKSecV4",
+      "publishedAt": "2026-01-01T00:56:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/mIlXyKSecV4/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/mIlXyKSecV4/hqdefault.jpg",
+      "views": 142,
+      "viewsText": "142 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Did you say they have Olympic sized swimming pool too on Ta’aktana ??🏊 🤷🏻‍♂️🤷‍♀️",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "0Gi6_4MgstY",
+      "title": "Leros Restaurant at Ta’aktana Labuan Bajo",
+      "url": "https://www.youtube.com/shorts/0Gi6_4MgstY",
+      "publishedAt": "2026-01-01T00:55:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/0Gi6_4MgstY/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/0Gi6_4MgstY/hqdefault.jpg",
+      "views": 136,
+      "viewsText": "136 views",
+      "category": "Bali & Indonesia",
+      "location": "Labuan Bajo, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Leros Restaurant at Ta’aktana Labuan Bajo",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "wrfBORLjWmg",
+      "title": "You want coffee while staying in Ta’aktana ?? Don't worry, they have a good one🤩🤩",
+      "url": "https://www.youtube.com/shorts/wrfBORLjWmg",
+      "publishedAt": "2026-01-01T00:54:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/wrfBORLjWmg/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/wrfBORLjWmg/hqdefault.jpg",
+      "views": 2200,
+      "viewsText": "2.2K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "You want coffee while staying in Ta’aktana ?? Don't worry, they have a good one🤩🤩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "IAN_cl_LbLQ",
+      "title": "Ta’aktana Labuan Bajo 🤍 have you stayed here before???",
+      "url": "https://www.youtube.com/shorts/IAN_cl_LbLQ",
+      "publishedAt": "2026-01-01T00:53:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/IAN_cl_LbLQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/IAN_cl_LbLQ/hqdefault.jpg",
+      "views": 156,
+      "viewsText": "156 views",
+      "category": "Bali & Indonesia",
+      "location": "Labuan Bajo, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Ta’aktana Labuan Bajo 🤍 have you stayed here before???",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "MtDQHaq8ccs",
+      "title": "Is this the Maldives? No it's Indonesia!",
+      "url": "https://www.youtube.com/shorts/MtDQHaq8ccs",
+      "publishedAt": "2026-01-01T00:50:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/MtDQHaq8ccs/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/MtDQHaq8ccs/hqdefault.jpg",
+      "views": 2600,
+      "viewsText": "2.6K views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "Is this the Maldives? No it's Indonesia!",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "2G-tUwXluUs",
+      "title": "Mission Impossible: Lembongan Drift. Do you have the skills to survive?🫡",
+      "url": "https://www.youtube.com/shorts/2G-tUwXluUs",
+      "publishedAt": "2026-01-01T00:48:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/2G-tUwXluUs/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/2G-tUwXluUs/hqdefault.jpg",
+      "views": 126,
+      "viewsText": "126 views",
+      "category": "Bali & Indonesia",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Mission Impossible: Lembongan Drift. Do you have the skills to survive?🫡",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "r3mcXM8eJlA",
+      "title": "KLYF Club above the Blue Lagoon.. UNREAL🤯",
+      "url": "https://www.youtube.com/shorts/r3mcXM8eJlA",
+      "publishedAt": "2026-01-01T00:47:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/r3mcXM8eJlA/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/r3mcXM8eJlA/hqdefault.jpg",
+      "views": 178,
+      "viewsText": "178 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "KLYF Club above the Blue Lagoon.. UNREAL🤯",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "pWmmpEdZECQ",
+      "title": "Breathtaking view from Hiliwatu Ubud 🇮🇩",
+      "url": "https://www.youtube.com/shorts/pWmmpEdZECQ",
+      "publishedAt": "2026-01-01T00:44:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/pWmmpEdZECQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/pWmmpEdZECQ/hqdefault.jpg",
+      "views": 454,
+      "viewsText": "454 views",
+      "category": "Hotel Reviews",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Breathtaking view from Hiliwatu Ubud 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "wmW2ygdFcAc",
+      "title": "How to get to Nusa Lembongan from Bali you asked?? Here’s the answer 💪🏼",
+      "url": "https://www.youtube.com/shorts/wmW2ygdFcAc",
+      "publishedAt": "2026-01-01T00:44:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/wmW2ygdFcAc/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/wmW2ygdFcAc/hqdefault.jpg",
+      "views": 116,
+      "viewsText": "116 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Lembongan, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "How to get to Nusa Lembongan from Bali you asked?? Here’s the answer 💪🏼",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "sL1sThfKXVE",
+      "title": "Welcome to Element Ubud 🇮🇩",
+      "url": "https://www.youtube.com/shorts/sL1sThfKXVE",
+      "publishedAt": "2026-01-01T00:43:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/sL1sThfKXVE/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/sL1sThfKXVE/hqdefault.jpg",
+      "views": 1500,
+      "viewsText": "1.5K views",
+      "category": "Hotel Reviews",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Welcome to Element Ubud 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "1i0zK9J0M5M",
+      "title": "@taaktanalabuanbajo I’m here for the views and the villas.",
+      "url": "https://www.youtube.com/shorts/1i0zK9J0M5M",
+      "publishedAt": "2026-01-01T00:43:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/1i0zK9J0M5M/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/1i0zK9J0M5M/hqdefault.jpg",
+      "views": 1300,
+      "viewsText": "1.3K views",
+      "category": "Hotel Reviews",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "@taaktanalabuanbajo I’m here for the views and the villas.",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "HspgBFm1ono",
+      "title": "Diamond Beach path 🇮🇩",
+      "url": "https://www.youtube.com/shorts/HspgBFm1ono",
+      "publishedAt": "2026-01-01T00:42:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/HspgBFm1ono/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/HspgBFm1ono/hqdefault.jpg",
+      "views": 1200,
+      "viewsText": "1.2K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Diamond Beach path 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "6ZdND9eJGbo",
+      "title": "Mandapa Ubud.. where elegance met nature",
+      "url": "https://www.youtube.com/shorts/6ZdND9eJGbo",
+      "publishedAt": "2026-01-01T00:42:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/6ZdND9eJGbo/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/6ZdND9eJGbo/hqdefault.jpg",
+      "views": 920,
+      "viewsText": "920 views",
+      "category": "Bali & Indonesia",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Mandapa Ubud.. where elegance met nature",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "KLxWDIU-jZs",
+      "title": "Diamond Beach 🇮🇩",
+      "url": "https://www.youtube.com/shorts/KLxWDIU-jZs",
+      "publishedAt": "2026-01-01T00:41:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/KLxWDIU-jZs/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/KLxWDIU-jZs/hqdefault.jpg",
+      "views": 625,
+      "viewsText": "625 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Diamond Beach 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "7tgM8B2mA2Y",
+      "title": "Dream Beach view point in Nusa Lembongan 💙💙",
+      "url": "https://www.youtube.com/shorts/7tgM8B2mA2Y",
+      "publishedAt": "2026-01-01T00:41:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/7tgM8B2mA2Y/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/7tgM8B2mA2Y/hqdefault.jpg",
+      "views": 916,
+      "viewsText": "916 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Lembongan, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Dream Beach view point in Nusa Lembongan 💙💙",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "4nuVn0ERhaM",
+      "title": "Still Nusa Penida, this is Diamond Beach 🇮🇩",
+      "url": "https://www.youtube.com/shorts/4nuVn0ERhaM",
+      "publishedAt": "2026-01-01T00:40:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/4nuVn0ERhaM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/4nuVn0ERhaM/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Still Nusa Penida, this is Diamond Beach 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "gIlaTDpShEw",
+      "title": "Treehouse Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/gIlaTDpShEw",
+      "publishedAt": "2026-01-01T00:39:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/gIlaTDpShEw/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/gIlaTDpShEw/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Treehouse Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "FoIUYOFo_zs",
+      "title": "The Edge, one of the chillest beach club in Bali 🤍",
+      "url": "https://www.youtube.com/shorts/FoIUYOFo_zs",
+      "publishedAt": "2026-01-01T00:39:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/FoIUYOFo_zs/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/FoIUYOFo_zs/hqdefault.jpg",
+      "views": 401,
+      "viewsText": "401 views",
+      "category": "Bali & Indonesia",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "The Edge, one of the chillest beach club in Bali 🤍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "aQBR0rwHVaM",
+      "title": "Treehouse in Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/aQBR0rwHVaM",
+      "publishedAt": "2026-01-01T00:38:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/aQBR0rwHVaM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/aQBR0rwHVaM/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Treehouse in Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "iHQDfYWPI30",
+      "title": "W Koh Samui in 90 Secs",
+      "url": "https://www.youtube.com/shorts/iHQDfYWPI30",
+      "publishedAt": "2026-01-01T00:38:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/iHQDfYWPI30/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/iHQDfYWPI30/hqdefault.jpg",
+      "views": 278,
+      "viewsText": "278 views",
+      "category": "Shorts",
+      "location": "Koh Samui, Thailand",
+      "chapters": [],
+      "summary": {
+        "tldr": "W Koh Samui in 90 Secs",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "7zkgMynvJfY",
+      "title": "The local in Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/7zkgMynvJfY",
+      "publishedAt": "2026-01-01T00:37:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/7zkgMynvJfY/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/7zkgMynvJfY/hqdefault.jpg",
+      "views": 368,
+      "viewsText": "368 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "The local in Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "Ymzad0SaVN0",
+      "title": "The Ungasan Cliff Top Resort.. watch our video for more info 🤍",
+      "url": "https://www.youtube.com/shorts/Ymzad0SaVN0",
+      "publishedAt": "2026-01-01T00:37:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/Ymzad0SaVN0/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/Ymzad0SaVN0/hqdefault.jpg",
+      "views": 1800,
+      "viewsText": "1.8K views",
+      "category": "Hotel Reviews",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "The Ungasan Cliff Top Resort.. watch our video for more info 🤍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "Tip0c83USm4",
+      "title": "Casually witnessing family of Manta from Kelingking Beach 🏖️🇮🇩",
+      "url": "https://www.youtube.com/shorts/Tip0c83USm4",
+      "publishedAt": "2026-01-01T00:36:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/Tip0c83USm4/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/Tip0c83USm4/hqdefault.jpg",
+      "views": 295,
+      "viewsText": "295 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Casually witnessing family of Manta from Kelingking Beach 🏖️🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "rWKNqhAp86g",
+      "title": "The Surga which means Heaven in Indonesian word🤍",
+      "url": "https://www.youtube.com/shorts/rWKNqhAp86g",
+      "publishedAt": "2026-01-01T00:36:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/rWKNqhAp86g/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/rWKNqhAp86g/hqdefault.jpg",
+      "views": 328,
+      "viewsText": "328 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "The Surga which means Heaven in Indonesian word🤍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "72kAIEDU9sE",
+      "title": "Sorry, I have plans…  #travel #beach #maldives",
+      "url": "https://www.youtube.com/shorts/72kAIEDU9sE",
+      "publishedAt": "2026-01-01T00:36:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/72kAIEDU9sE/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/72kAIEDU9sE/hqdefault.jpg",
+      "views": 154,
+      "viewsText": "154 views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "Sorry, I have plans…  #travel #beach #maldives",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "wByYlmCMKhg",
+      "title": "Nusa Penida Indonesia 🇮🇩",
+      "url": "https://www.youtube.com/shorts/wByYlmCMKhg",
+      "publishedAt": "2026-01-01T00:35:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/wByYlmCMKhg/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/wByYlmCMKhg/hqdefault.jpg",
+      "views": 22,
+      "viewsText": "22 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Nusa Penida Indonesia 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "KHefCb9VZ0Q",
+      "title": "Summer just got better here 🇮🇩 Kelingking beach",
+      "url": "https://www.youtube.com/shorts/KHefCb9VZ0Q",
+      "publishedAt": "2026-01-01T00:34:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/KHefCb9VZ0Q/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/KHefCb9VZ0Q/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Summer just got better here 🇮🇩 Kelingking beach",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "eRSGuj4VXTQ",
+      "title": "No filter. Just Maldives magic 🌊✨ #IslandVibes @LeMeridien",
+      "url": "https://www.youtube.com/shorts/eRSGuj4VXTQ",
+      "publishedAt": "2026-01-01T00:34:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/eRSGuj4VXTQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/eRSGuj4VXTQ/hqdefault.jpg",
+      "views": 278,
+      "viewsText": "278 views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "No filter. Just Maldives magic 🌊✨ #IslandVibes @LeMeridien",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "XbkA9rE1uiM",
+      "title": "Nusa Penida and its breathtaking views 🇮🇩",
+      "url": "https://www.youtube.com/shorts/XbkA9rE1uiM",
+      "publishedAt": "2026-01-01T00:33:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/XbkA9rE1uiM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/XbkA9rE1uiM/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Nusa Penida and its breathtaking views 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "YOxJefaIOEM",
+      "title": "Save this for the day you escape to paradise 🌴🌊  Finolhu Maldives 🇲🇻",
+      "url": "https://www.youtube.com/shorts/YOxJefaIOEM",
+      "publishedAt": "2026-01-01T00:33:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/YOxJefaIOEM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/YOxJefaIOEM/hqdefault.jpg",
+      "views": 586,
+      "viewsText": "586 views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "Save this for the day you escape to paradise 🌴🌊  Finolhu Maldives 🇲🇻",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "gXp23-6khnk",
+      "title": "Seeing pod of Dolphins on our way to Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/gXp23-6khnk",
+      "publishedAt": "2026-01-01T00:32:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/gXp23-6khnk/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/gXp23-6khnk/hqdefault.jpg",
+      "views": 47,
+      "viewsText": "47 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Seeing pod of Dolphins on our way to Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "3eLTLT-r670",
+      "title": "If peace had a color, this would be it 💙 #MaldivesSea",
+      "url": "https://www.youtube.com/shorts/3eLTLT-r670",
+      "publishedAt": "2026-01-01T00:32:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/3eLTLT-r670/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/3eLTLT-r670/hqdefault.jpg",
+      "views": 1000,
+      "viewsText": "1K views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "If peace had a color, this would be it 💙 #MaldivesSea",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "iJjyV8LrNbI",
+      "title": "One of the best hotel… Sebali Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/iJjyV8LrNbI",
+      "publishedAt": "2026-01-01T00:31:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/iJjyV8LrNbI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/iJjyV8LrNbI/hqdefault.jpg",
+      "views": 1400,
+      "viewsText": "1.4K views",
+      "category": "Hotel Reviews",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "One of the best hotel… Sebali Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "RdIsHBw2m3Y",
+      "title": "This immaculate ground belongs to literal Heaven, yes, Khayangan Estate!In other words Heaven Estate",
+      "url": "https://www.youtube.com/shorts/RdIsHBw2m3Y",
+      "publishedAt": "2026-01-01T00:31:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/RdIsHBw2m3Y/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/RdIsHBw2m3Y/hqdefault.jpg",
+      "views": 1300,
+      "viewsText": "1.3K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "This immaculate ground belongs to literal Heaven, yes, Khayangan Estate!In other words Heaven Estate",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "zRh96Yz7B2g",
+      "title": "Sebali Nusa Penida 🇮🇩",
+      "url": "https://www.youtube.com/shorts/zRh96Yz7B2g",
+      "publishedAt": "2026-01-01T00:30:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/zRh96Yz7B2g/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/zRh96Yz7B2g/hqdefault.jpg",
+      "views": 335,
+      "viewsText": "335 views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Sebali Nusa Penida 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "H04VYpa77AE",
+      "title": "It’s a rainy day in St Regis Bali ☔️🌧️🌈",
+      "url": "https://www.youtube.com/shorts/H04VYpa77AE",
+      "publishedAt": "2026-01-01T00:29:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/H04VYpa77AE/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/H04VYpa77AE/hqdefault.jpg",
+      "views": 1200,
+      "viewsText": "1.2K views",
+      "category": "Bali & Indonesia",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "It’s a rainy day in St Regis Bali ☔️🌧️🌈",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "_qZCr8Yiknw",
+      "title": "Woke up with a view like this if you stay in Pandawa Cliff Estate Bali 🇮🇩",
+      "url": "https://www.youtube.com/shorts/_qZCr8Yiknw",
+      "publishedAt": "2026-01-01T00:29:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/_qZCr8Yiknw/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/_qZCr8Yiknw/hqdefault.jpg",
+      "views": 615,
+      "viewsText": "615 views",
+      "category": "Bali & Indonesia",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Woke up with a view like this if you stay in Pandawa Cliff Estate Bali 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "39hDLeMfdro",
+      "title": "Our next stay in Nusa Penida🇮🇩",
+      "url": "https://www.youtube.com/shorts/39hDLeMfdro",
+      "publishedAt": "2026-01-01T00:28:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/39hDLeMfdro/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/39hDLeMfdro/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Our next stay in Nusa Penida🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "f_OkeF6igbA",
+      "title": "We absolutely recommend to stay in cocana while visiting Gili Trawangan 🇮🇩",
+      "url": "https://www.youtube.com/shorts/f_OkeF6igbA",
+      "publishedAt": "2026-01-01T00:27:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/f_OkeF6igbA/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/f_OkeF6igbA/hqdefault.jpg",
+      "views": 1300,
+      "viewsText": "1.3K views",
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "We absolutely recommend to stay in cocana while visiting Gili Trawangan 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "7XOTFKb8Dlg",
+      "title": "The Ungasan Clifftop Resort Bali.. magical sunrise hour",
+      "url": "https://www.youtube.com/shorts/7XOTFKb8Dlg",
+      "publishedAt": "2026-01-01T00:27:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/7XOTFKb8Dlg/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/7XOTFKb8Dlg/hqdefault.jpg",
+      "views": 1500,
+      "viewsText": "1.5K views",
+      "category": "Hotel Reviews",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "The Ungasan Clifftop Resort Bali.. magical sunrise hour",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "VvZJNsbhbW8",
+      "title": "Living life in 4K across Nusa Penida. 🌊✨• #NusaPenida• #IslandLife• #BaliAesthetic",
+      "url": "https://www.youtube.com/shorts/VvZJNsbhbW8",
+      "publishedAt": "2026-01-01T00:25:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/VvZJNsbhbW8/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/VvZJNsbhbW8/hqdefault.jpg",
+      "views": 1100,
+      "viewsText": "1.1K views",
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Living life in 4K across Nusa Penida. 🌊✨• #NusaPenida• #IslandLife• #BaliAesthetic",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "2FdgsTY6Qvw",
+      "title": "Private Villa at Cocana Resort Gili T! 📍",
+      "url": "https://www.youtube.com/shorts/2FdgsTY6Qvw",
+      "publishedAt": "2026-01-01T00:23:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/2FdgsTY6Qvw/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/2FdgsTY6Qvw/hqdefault.jpg",
+      "views": 213,
+      "viewsText": "213 views",
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Private Villa at Cocana Resort Gili T! 📍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "J8n2fYw-rK0",
+      "title": "A piece of heaven in Sumba 🇮🇩💖🤍📍",
+      "url": "https://www.youtube.com/shorts/J8n2fYw-rK0",
+      "publishedAt": "2026-01-01T00:22:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/J8n2fYw-rK0/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/J8n2fYw-rK0/hqdefault.jpg",
+      "views": 482,
+      "viewsText": "482 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "A piece of heaven in Sumba 🇮🇩💖🤍📍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "KekO58GIaWk",
+      "title": "Sunday Beach Club Bali 🌴💜💙",
+      "url": "https://www.youtube.com/shorts/KekO58GIaWk",
+      "publishedAt": "2026-01-01T00:20:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/KekO58GIaWk/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/KekO58GIaWk/hqdefault.jpg",
+      "views": 2300,
+      "viewsText": "2.3K views",
+      "category": "Bali & Indonesia",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Sunday Beach Club Bali 🌴💜💙",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "FoIQiV9S16E",
+      "title": "This Maldives like vibe is in Sumba Indonesia 📍🇮🇩❤️",
+      "url": "https://www.youtube.com/shorts/FoIQiV9S16E",
+      "publishedAt": "2026-01-01T00:18:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/FoIQiV9S16E/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/FoIQiV9S16E/hqdefault.jpg",
+      "views": 482,
+      "viewsText": "482 views",
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "This Maldives like vibe is in Sumba Indonesia 📍🇮🇩❤️",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "U1676xiiq5I",
+      "title": "Cap Karoso Sumba 🇮🇩📍🤍",
+      "url": "https://www.youtube.com/shorts/U1676xiiq5I",
+      "publishedAt": "2026-01-01T00:17:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/U1676xiiq5I/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/U1676xiiq5I/hqdefault.jpg",
+      "views": 475,
+      "viewsText": "475 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Cap Karoso Sumba 🇮🇩📍🤍",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "oTeliRgoNWw",
+      "title": "Welcome to Cap Karoso Sumba 🥰",
+      "url": "https://www.youtube.com/shorts/oTeliRgoNWw",
+      "publishedAt": "2026-01-01T00:16:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/oTeliRgoNWw/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/oTeliRgoNWw/hqdefault.jpg",
+      "views": 175,
+      "viewsText": "175 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Welcome to Cap Karoso Sumba 🥰",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "vU0JfGLuUfM",
+      "title": "Are you ready for an adventure in Sumba 🇮🇩 Indonesia?",
+      "url": "https://www.youtube.com/shorts/vU0JfGLuUfM",
+      "publishedAt": "2026-01-01T00:14:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/vU0JfGLuUfM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/vU0JfGLuUfM/hqdefault.jpg",
+      "views": 274,
+      "viewsText": "274 views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Are you ready for an adventure in Sumba 🇮🇩 Indonesia?",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "FzBLtBLaIuk",
+      "title": "Sundays Beach Club, High tides and good vibes 😎",
+      "url": "https://www.youtube.com/shorts/FzBLtBLaIuk",
+      "publishedAt": "2026-01-01T00:14:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/FzBLtBLaIuk/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/FzBLtBLaIuk/hqdefault.jpg",
+      "views": 1900,
+      "viewsText": "1.9K views",
+      "category": "Shorts",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Sundays Beach Club, High tides and good vibes 😎",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "E9VjrlMbrME",
+      "title": "Sunset Beach Club at Cocana Gili Trawangan 🤍❤️💙",
+      "url": "https://www.youtube.com/shorts/E9VjrlMbrME",
+      "publishedAt": "2026-01-01T00:13:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/E9VjrlMbrME/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/E9VjrlMbrME/hqdefault.jpg",
+      "views": 147,
+      "viewsText": "147 views",
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Sunset Beach Club at Cocana Gili Trawangan 🤍❤️💙",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "rmNVDlVvzQI",
+      "title": "The serene atmosphere at Ungasan Clifftop Resort invites you to truly be in the moment 💙",
+      "url": "https://www.youtube.com/shorts/rmNVDlVvzQI",
+      "publishedAt": "2026-01-01T00:13:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/rmNVDlVvzQI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/rmNVDlVvzQI/hqdefault.jpg",
+      "views": 409,
+      "viewsText": "409 views",
+      "category": "Hotel Reviews",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "The serene atmosphere at Ungasan Clifftop Resort invites you to truly be in the moment 💙",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "UuVQGhhCpAk",
+      "title": "The sun, the water and the vibe.. 📍Cocana Gili Trawangan",
+      "url": "https://www.youtube.com/shorts/UuVQGhhCpAk",
+      "publishedAt": "2026-01-01T00:12:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/UuVQGhhCpAk/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/UuVQGhhCpAk/hqdefault.jpg",
+      "views": 346,
+      "viewsText": "346 views",
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "The sun, the water and the vibe.. 📍Cocana Gili Trawangan",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "PxN9nEm9jSA",
+      "title": "Cocana Gili Trawangan 🇮🇩",
+      "url": "https://www.youtube.com/shorts/PxN9nEm9jSA",
+      "publishedAt": "2026-01-01T00:08:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/PxN9nEm9jSA/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/PxN9nEm9jSA/hqdefault.jpg",
+      "views": 158,
+      "viewsText": "158 views",
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Cocana Gili Trawangan 🇮🇩",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "xOvdvDZfv5E",
+      "title": "Just a breathtaking cliff side resort in Jimbaran Bali❤️",
+      "url": "https://www.youtube.com/shorts/xOvdvDZfv5E",
+      "publishedAt": "2026-01-01T00:05:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/xOvdvDZfv5E/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/xOvdvDZfv5E/hqdefault.jpg",
+      "views": 2200,
+      "viewsText": "2.2K views",
+      "category": "Hotel Reviews",
+      "location": "Jimbaran, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Just a breathtaking cliff side resort in Jimbaran Bali❤️",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "WrGUV47y2jI",
+      "title": "View from the Regent Canggu Bali ❤️💙💜",
+      "url": "https://www.youtube.com/shorts/WrGUV47y2jI",
+      "publishedAt": "2026-01-01T00:04:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/WrGUV47y2jI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/WrGUV47y2jI/hqdefault.jpg",
+      "views": 708,
+      "viewsText": "708 views",
+      "category": "Hotel Reviews",
+      "location": "Canggu, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "View from the Regent Canggu Bali ❤️💙💜",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "VXS57v_NrWA",
+      "title": "Four Seasons Bali",
+      "url": "https://www.youtube.com/shorts/VXS57v_NrWA",
+      "publishedAt": "2026-01-01T00:03:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/VXS57v_NrWA/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/VXS57v_NrWA/hqdefault.jpg",
+      "views": 136,
+      "viewsText": "136 views",
+      "category": "Hotel Reviews",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Four Seasons Bali",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
+    },
+    {
+      "id": "bNnfThQnxcY",
+      "title": "Bizarre Business Class Journey to Bali #shorts",
+      "url": "https://www.youtube.com/shorts/bNnfThQnxcY",
+      "publishedAt": "2026-01-01T00:02:00Z",
+      "publishedDate": "",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/bNnfThQnxcY/hqdefault.jpg",
+      "fallbackThumbnail": "https://i.ytimg.com/vi/bNnfThQnxcY/hqdefault.jpg",
+      "views": 894,
+      "viewsText": "894 views",
+      "category": "Flights",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Bizarre Business Class Journey to Bali #shorts",
+        "highlights": [],
+        "bestFor": "Quick visual preview",
+        "aiGenerated": false,
+        "model": "short"
+      },
+      "affiliateLinks": []
     }
   ]
 }
