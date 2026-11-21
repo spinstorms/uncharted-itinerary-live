@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T16:33:44Z",
+  "updatedAt": "2026-11-21T16:58:49Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -481,7 +481,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 448,
+      "views": 449,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -883,7 +883,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/TMDrvTY7bKk/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/TMDrvTY7bKk/hqdefault.jpg",
-      "views": 1333,
+      "views": 1334,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [
@@ -1676,7 +1676,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6165,
+      "views": 6173,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -1830,7 +1830,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4629,
+      "views": 4628,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -4406,7 +4406,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
-      "views": 60,
+      "views": 61,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [],
@@ -5254,7 +5254,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 271,
+      "views": 283,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],

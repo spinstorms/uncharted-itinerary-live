@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-21T16:33:44Z",
-  "sheetConnected": false,
-  "googleSheetCsvUrl": "",
+  "updatedAt": "2026-11-21T16:58:49Z",
+  "sheetConnected": true,
+  "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
   "curated": [
     {
-      "id": "curated-holafly-esim",
+      "id": "sheet-1",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "curated-amex-gold-uk",
+      "id": "sheet-2",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "id": "curated-marriott-currensea",
+      "id": "sheet-3",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -128,144 +128,7 @@
       ]
     },
     {
-      "id": "curated-fuse-energy",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Everyday Perks",
-      "title": "Fuse Energy UK",
-      "badge": "£100 Credit",
-      "description": "Switch to Fuse Energy UK and enter referral code OLIVER97690 to get £100 credit toward your energy bill.",
-      "promoCode": "OLIVER97690",
-      "url": "https://www.fuseenergy.com/",
-      "buttonLabel": "Join Fuse Energy",
-      "sortOrder": 4
-    },
-    {
-      "id": "curated-epidemic-sound",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Creator Offers",
-      "title": "Epidemic Sound — Royalty-Free Travel Music",
-      "badge": "Free Trial Referral",
-      "description": "The music library behind our resort tours and travel guides. Start a free trial via our referral link.",
-      "promoCode": "",
-      "url": "https://www.epidemicsound.com/referral/vo2tr9/",
-      "buttonLabel": "Try Epidemic Sound",
-      "sortOrder": 5,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-tubebuddy",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Creator Offers",
-      "title": "TubeBuddy — YouTube SEO & Growth",
-      "badge": "Creator Offer",
-      "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
-      "promoCode": "",
-      "url": "https://www.tubebuddy.com/Techinthecar",
-      "buttonLabel": "Explore TubeBuddy",
-      "sortOrder": 6,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-freetrade",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Everyday Perks",
-      "title": "Freetrade — Commission-Free Investing",
-      "badge": "Free Share £3–£200",
-      "description": "Join Freetrade via our link to get a free share worth between £3 and £200 when you fund your account.",
-      "promoCode": "",
-      "url": "https://magic.freetrade.io/join/oliver/238af2d9",
-      "buttonLabel": "Get Free Share",
-      "sortOrder": 7,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-insta360-standard",
+      "id": "sheet-8",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": true,
@@ -306,7 +169,144 @@
       ]
     },
     {
-      "id": "curated-insta360-creator-black",
+      "id": "sheet-4",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Fuse Energy UK",
+      "badge": "£100 Credit",
+      "description": "Switch to Fuse Energy UK and enter referral code OLIVER97690 to get £100 credit toward your energy bill.",
+      "promoCode": "OLIVER97690",
+      "url": "https://www.fuseenergy.com/",
+      "buttonLabel": "Join Fuse Energy",
+      "sortOrder": 4
+    },
+    {
+      "id": "sheet-5",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Creator Offers",
+      "title": "Epidemic Sound — Royalty-Free Travel Music",
+      "badge": "Free Trial Referral",
+      "description": "The music library behind our resort tours and travel guides. Start a free trial via our referral link.",
+      "promoCode": "",
+      "url": "https://www.epidemicsound.com/referral/vo2tr9/",
+      "buttonLabel": "Try Epidemic Sound",
+      "sortOrder": 5,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-6",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Creator Offers",
+      "title": "TubeBuddy — YouTube SEO & Growth",
+      "badge": "Creator Offer",
+      "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
+      "promoCode": "",
+      "url": "https://www.tubebuddy.com/Techinthecar",
+      "buttonLabel": "Explore TubeBuddy",
+      "sortOrder": 6,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-7",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Freetrade — Commission-Free Investing",
+      "badge": "Free Share £3–£200",
+      "description": "Join Freetrade via our link to get a free share worth between £3 and £200 when you fund your account.",
+      "promoCode": "",
+      "url": "https://magic.freetrade.io/join/oliver/238af2d9",
+      "buttonLabel": "Get Free Share",
+      "sortOrder": 7,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-9",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -347,7 +347,7 @@
       ]
     },
     {
-      "id": "curated-insta360-creator-white",
+      "id": "sheet-10",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -388,7 +388,7 @@
       ]
     },
     {
-      "id": "curated-insta360-wide-lens",
+      "id": "sheet-11",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -429,7 +429,7 @@
       ]
     },
     {
-      "id": "curated-insta360-battery",
+      "id": "sheet-12",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
