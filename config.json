@@ -1,0 +1,21 @@
+{
+  "siteName": "The Uncharted Itinerary",
+  "tagline": "Luxury Stays & Savvy Travel Guides",
+  "mainSiteUrl": "https://www.uncharteditinerary.com",
+  "contactEmail": "hello@uncharteditinerary.com",
+  "instagramHandle": "@uncharted_itinerary",
+  "instagramUrl": "https://www.instagram.com/uncharted_itinerary/",
+  "youtube": {
+    "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
+    "handle": "@TheUnchartedItinerary",
+    "channelUrl": "https://www.youtube.com/@TheUnchartedItinerary",
+    "longFormPlaylistId": "UULFtSEMj7vSYDUYbDeIumnEOw",
+    "shortsPlaylistId": "UUSHtSEMj7vSYDUYbDeIumnEOw"
+  },
+  "affiliates": {
+    "googleSheetEditUrl": "https://docs.google.com/spreadsheets/d/1ddLytVKSMPWEZBHFAGctYrEBJF42R0XrHKidF3tV8bM/edit",
+    "googleSheetCsvUrl": "",
+    "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews."
+  },
+  "heroImageUrl": "https://images.squarespace-cdn.com/content/v1/69597bf2dbf12839d535484e/358d1476-18a5-48b2-b018-812e0564036b/IMG_1023.jpeg?format=2500w"
+}

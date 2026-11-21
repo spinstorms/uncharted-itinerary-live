@@ -1,0 +1,3620 @@
+{
+  "updatedAt": "2026-11-21T04:21:55Z",
+  "channel": {
+    "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
+    "handle": "@TheUnchartedItinerary",
+    "channelUrl": "https://www.youtube.com/@TheUnchartedItinerary",
+    "longFormPlaylistId": "UULFtSEMj7vSYDUYbDeIumnEOw",
+    "shortsPlaylistId": "UUSHtSEMj7vSYDUYbDeIumnEOw"
+  },
+  "totalVideos": 15,
+  "totalShorts": 15,
+  "videos": [
+    {
+      "id": "E_DfGSAMeTU",
+      "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+      "url": "https://www.youtube.com/watch?v=E_DfGSAMeTU",
+      "publishedAt": "2026-10-17T00:29:46+00:00",
+      "publishedDate": "2026-10-17",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
+      "views": 845,
+      "category": "Hotel Reviews",
+      "location": "Uluwatu, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to The Ungasan Clifftop Resort"
+        },
+        {
+          "time": "01:30",
+          "seconds": 90,
+          "label": "The Unique \"Neighborhood\" Villa Concept"
+        },
+        {
+          "time": "02:08",
+          "seconds": 128,
+          "label": "History of The Ungasan Clifftop Resort"
+        },
+        {
+          "time": "03:12",
+          "seconds": 192,
+          "label": "Garden Villa Room Tour"
+        },
+        {
+          "time": "05:00",
+          "seconds": 300,
+          "label": "Complimentary Mini Bar & Snacks"
+        },
+        {
+          "time": "06:26",
+          "seconds": 386,
+          "label": "Shared Neighborhood Lounge & Kitchen"
+        },
+        {
+          "time": "07:39",
+          "seconds": 459,
+          "label": "Our Private Neighborhood Infinity Pool"
+        },
+        {
+          "time": "11:33",
+          "seconds": 693,
+          "label": "In-Room Breakfast Experience"
+        },
+        {
+          "time": "12:25",
+          "seconds": 745,
+          "label": "Main Resort Pool & Watu Restaurant"
+        },
+        {
+          "time": "14:12",
+          "seconds": 852,
+          "label": "Gym and Cliffside Tennis Court"
+        },
+        {
+          "time": "15:12",
+          "seconds": 912,
+          "label": "Sundays Beach Club"
+        },
+        {
+          "time": "16:24",
+          "seconds": 984,
+          "label": "Final Thoughts & Hotel Review"
+        }
+      ],
+      "summary": {
+        "tldr": "Perched 100 meters above the Indian Ocean, The Ungasan Clifftop Resort stands out for its intimate 'neighborhood' villa clusters sharing private infinity pools, lounges, and kitchens. While the clifftop setting, Garden Villa, and direct access to Sundays Beach Club impress, the food is more solid than standout.",
+        "highlights": [
+          "Unique neighborhood layout: small villa clusters share a massive private infinity pool, kitchen, and lounge",
+          "Full walkthrough of the entry-level Garden Villa, complimentary minibar, and spacious bathroom",
+          "On-site facilities include a cliffside tennis court, gym, main pool, and Watu Restaurant",
+          "Seamless access down to Sundays Beach Club with honest pros and cons on dining"
+        ],
+        "bestFor": "Couples and small groups seeking quiet clifftop privacy in Uluwatu",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "pyfGUOlFr3A",
+      "title": "Is Cocana The Best Resort in Gili T?",
+      "url": "https://www.youtube.com/watch?v=pyfGUOlFr3A",
+      "publishedAt": "2026-09-29T20:05:14+00:00",
+      "publishedDate": "2026-09-29",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/pyfGUOlFr3A/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/pyfGUOlFr3A/hqdefault.jpg",
+      "views": 516,
+      "category": "Hotel Reviews",
+      "location": "Gili Trawangan, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Introduction to Cocana Resort (Gili Trawangan)"
+        },
+        {
+          "time": "00:48",
+          "seconds": 48,
+          "label": "Miami Vibes, Beach Club & Resort Layout"
+        },
+        {
+          "time": "01:15",
+          "seconds": 75,
+          "label": "The Heated Swimming Pool"
+        },
+        {
+          "time": "01:56",
+          "seconds": 116,
+          "label": "Spa & Treatment Pricing"
+        },
+        {
+          "time": "02:34",
+          "seconds": 154,
+          "label": "Lagoon Deluxe Room Tour"
+        },
+        {
+          "time": "03:37",
+          "seconds": 217,
+          "label": "1-Bedroom Private Pool Villa Tour"
+        },
+        {
+          "time": "04:44",
+          "seconds": 284,
+          "label": "Villa Open-Air Bathroom"
+        },
+        {
+          "time": "05:46",
+          "seconds": 346,
+          "label": "Villa Bedroom & Amenities"
+        },
+        {
+          "time": "07:46",
+          "seconds": 466,
+          "label": "Private Villa Plunge Pool"
+        },
+        {
+          "time": "08:12",
+          "seconds": 492,
+          "label": "Sunset Beach, Tides & Coral Reef"
+        },
+        {
+          "time": "09:08",
+          "seconds": 548,
+          "label": "Sunset Swim & Beach Horses"
+        },
+        {
+          "time": "10:53",
+          "seconds": 653,
+          "label": "Pacifica Beach Club & Bar"
+        },
+        {
+          "time": "11:25",
+          "seconds": 685,
+          "label": "Breakfast Buffet & À La Carte Review"
+        },
+        {
+          "time": "13:38",
+          "seconds": 818,
+          "label": "Final Verdict & Room Score"
+        },
+        {
+          "time": "16:03",
+          "seconds": 963,
+          "label": "Vibe & Heated Pool Discussion"
+        },
+        {
+          "time": "17:31",
+          "seconds": 1051,
+          "label": "Service Quality"
+        },
+        {
+          "time": "18:06",
+          "seconds": 1086,
+          "label": "Food & Dining Score"
+        },
+        {
+          "time": "19:30",
+          "seconds": 1170,
+          "label": "Pricing & Value for Money (£220 Villa)"
+        },
+        {
+          "time": "21:00",
+          "seconds": 1260,
+          "label": "Final Uncharted Score & Wrap-Up"
+        }
+      ],
+      "summary": {
+        "tldr": "A complete tour of Cocana Resort & Beach Club on Gili Trawangan, weighing its luxury price tag against its polished villas, heated pool, and spa facilities. Compared to standard island stays, Cocana delivers genuine full-resort comfort and strong luxury value on Gili T.",
+        "highlights": [
+          "Side-by-side walkthrough of the 1-Bedroom Pool Villa and Lagoon Deluxe Room",
+          "Tour of the heated swimming pool, on-site spa, and Pacifica Beach Club Bar",
+          "Honest breakdown of whether Gili T's upscale pricing delivers true 5-star value",
+          "Practical island arrival and location insights for planning a Gili getaway"
+        ],
+        "bestFor": "Travelers wanting modern 5-star resort comfort on Gili Trawangan",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "-YVVwwlUTTs",
+      "title": "The Brutal TRUTH About Nusa Penida!",
+      "url": "https://www.youtube.com/watch?v=-YVVwwlUTTs",
+      "publishedAt": "2026-09-18T16:39:29+00:00",
+      "publishedDate": "2026-09-18",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/-YVVwwlUTTs/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/-YVVwwlUTTs/hqdefault.jpg",
+      "views": 479,
+      "category": "Bali & Indonesia",
+      "location": "Nusa Penida, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Nusa Penida! (First Impressions)"
+        },
+        {
+          "time": "02:11",
+          "seconds": 131,
+          "label": "The Sebali Resort Tour & Honest Review"
+        },
+        {
+          "time": "07:24",
+          "seconds": 444,
+          "label": "Cafe Hopping at Secret Penida"
+        },
+        {
+          "time": "09:18",
+          "seconds": 558,
+          "label": "Kelingking Beach & The Controversial Elevator"
+        },
+        {
+          "time": "11:55",
+          "seconds": 715,
+          "label": "Spotting Giant Manta Rays!"
+        },
+        {
+          "time": "12:36",
+          "seconds": 756,
+          "label": "Exploring Diamond Beach & The Treehouse"
+        },
+        {
+          "time": "18:31",
+          "seconds": 1111,
+          "label": "Cheeky Monkeys at the Cliff"
+        },
+        {
+          "time": "20:13",
+          "seconds": 1213,
+          "label": "The TRUTH: Is Nusa Penida Worth It?"
+        }
+      ],
+      "summary": {
+        "tldr": "An unfiltered 48-hour look at Nusa Penida separating Instagram expectations from island reality. Covers staying at The Sebali Resort, cafe hopping at Secret Penida, and practical advice on whether the rugged crossing from Bali is worth your itinerary time.",
+        "highlights": [
+          "Honest 48-hour itinerary balancing iconic cliff viewpoints with real travel friction",
+          "Full tour and verdict on staying at The Sebali Resort",
+          "Local dining stop at Secret Penida and realistic tips on island roads and transport",
+          "Clear takeaway on who should stay overnight vs. skip or day-trip"
+        ],
+        "bestFor": "Bali travelers deciding if Nusa Penida deserves a spot on their itinerary",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "n9RsiNReoFI",
+      "title": "Komodo in One Day: Can You Actually See It All?",
+      "url": "https://www.youtube.com/watch?v=n9RsiNReoFI",
+      "publishedAt": "2026-07-30T22:42:30+00:00",
+      "publishedDate": "2026-07-30",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
+      "views": 447,
+      "category": "Bali & Indonesia",
+      "location": "Komodo National Park, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Introduction: A 12-hour adventure to 6 islands"
+        },
+        {
+          "time": "00:57",
+          "seconds": 57,
+          "label": "Padar Island: Hiking 850 steps for the iconic three-beach view"
+        },
+        {
+          "time": "05:51",
+          "seconds": 351,
+          "label": "Pink Beach: Discovering the red coral and rare pink sand"
+        },
+        {
+          "time": "07:41",
+          "seconds": 461,
+          "label": "Komodo Island: Trekking with the world's largest lizards"
+        },
+        {
+          "time": "10:31",
+          "seconds": 631,
+          "label": "Taka Makassar: The disappearing crescent sandbar"
+        },
+        {
+          "time": "13:06",
+          "seconds": 786,
+          "label": "Manta Point: Snorkeling with giant reef manta rays and vibrant coral"
+        },
+        {
+          "time": "14:53",
+          "seconds": 893,
+          "label": "Bukit Sylvia: The ultimate sunset viewpoint in Flores"
+        },
+        {
+          "time": "16:23",
+          "seconds": 983,
+          "label": "Closing: Planning your own Komodo journey"
+        }
+      ],
+      "summary": {
+        "tldr": "A packed 12-hour speedboat adventure from Labuan Bajo covering six iconic Komodo National Park stops in a single day. From the 850-step climb up Padar Island to Pink Beach, wild Komodo dragons, and snorkeling with manta rays, it proves how much you can realistically fit into one day.",
+        "highlights": [
+          "850-step morning hike up Padar Island for the famous tri-colored bay panorama",
+          "Stops at Pink Beach and guided wildlife encounter with wild Komodo dragons",
+          "Snorkeling session alongside giant manta rays in crystal-clear waters",
+          "Realistic pacing breakdown for booking a 1-day speedboat tour from Labuan Bajo"
+        ],
+        "bestFor": "Adventure-minded travelers maximizing Komodo National Park in one day",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "1y19wX4Varg",
+      "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+      "url": "https://www.youtube.com/watch?v=1y19wX4Varg",
+      "publishedAt": "2026-07-18T19:00:22+00:00",
+      "publishedDate": "2026-07-18",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
+      "views": 1880,
+      "category": "Hotel Reviews",
+      "location": "Jimbaran, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Four Seasons Jimbaran Bay"
+        },
+        {
+          "time": "00:46",
+          "seconds": 46,
+          "label": "Main Pools, Alu Restaurant & Waterfall Pool"
+        },
+        {
+          "time": "03:56",
+          "seconds": 236,
+          "label": "Coconut Grove Area & Water Sports"
+        },
+        {
+          "time": "04:56",
+          "seconds": 296,
+          "label": "Jala & Sundara Restaurants"
+        },
+        {
+          "time": "06:47",
+          "seconds": 407,
+          "label": "Garden Villa Room Tour"
+        },
+        {
+          "time": "09:08",
+          "seconds": 548,
+          "label": "Deluxe Villa Room Tour"
+        },
+        {
+          "time": "10:22",
+          "seconds": 622,
+          "label": "The Amazing Breakfast Buffet Spread"
+        },
+        {
+          "time": "13:59",
+          "seconds": 839,
+          "label": "Our Honest Thoughts (Pros & Cons)"
+        },
+        {
+          "time": "17:33",
+          "seconds": 1053,
+          "label": "Pool Design & Airport Noise"
+        },
+        {
+          "time": "19:25",
+          "seconds": 1165,
+          "label": "Comparisons: Bangkok & Koh Samui"
+        },
+        {
+          "time": "21:35",
+          "seconds": 1295,
+          "label": "The Uncharted Score (Final Ratings)"
+        }
+      ],
+      "summary": {
+        "tldr": "An honest check-in at the 30-year-old Four Seasons Resort Bali at Jimbaran Bay to see if it justifies its £500+/night rate. While the 50m infinity pool, grounds, breakfast spread, and warm service shine, aging villas and a pest issue drag down the room score.",
+        "highlights": [
+          "Rooms scored 3/5: compares Garden vs. Deluxe villas, noting bare decor and an unwanted pest sighting",
+          "Grounds & facilities (4/5): dramatic 50m infinity pool, waterfall pools, Coconut Grove, and free watersports",
+          "Dining (5/5): standout breakfast buffet and restaurant quality across Western and Asian dishes",
+          "Service (4/5): classic attentive Four Seasons hospitality throughout the sprawling hillside property"
+        ],
+        "bestFor": "Luxury travelers weighing heritage prestige against newer Bali resorts",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "5H-BBvM9O70",
+      "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+      "url": "https://www.youtube.com/watch?v=5H-BBvM9O70",
+      "publishedAt": "2026-07-05T16:22:27+00:00",
+      "publishedDate": "2026-07-05",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/5H-BBvM9O70/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/5H-BBvM9O70/hqdefault.jpg",
+      "views": 5616,
+      "category": "Travel Gear",
+      "location": "Uluwatu, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro & Comparing the newest gimbal cameras"
+        },
+        {
+          "time": "01:18",
+          "seconds": 78,
+          "label": "Akula Bingin Villa Tour (Bali)"
+        },
+        {
+          "time": "03:17",
+          "seconds": 197,
+          "label": "Night Mode & Low Light comparison (1x lens)"
+        },
+        {
+          "time": "03:59",
+          "seconds": 239,
+          "label": "Low Light comparison (3x lens)"
+        },
+        {
+          "time": "04:34",
+          "seconds": 274,
+          "label": "Sound quality test & Beach walk (built-in microphones)"
+        },
+        {
+          "time": "05:56",
+          "seconds": 356,
+          "label": "Tracking & Exposure test"
+        },
+        {
+          "time": "06:50",
+          "seconds": 410,
+          "label": "Audio test using the Luna Ultra detachable screen as a mic"
+        },
+        {
+          "time": "08:03",
+          "seconds": 483,
+          "label": "Build quality & Weight comparison"
+        },
+        {
+          "time": "08:50",
+          "seconds": 530,
+          "label": "3x Lens comparison"
+        },
+        {
+          "time": "09:58",
+          "seconds": 598,
+          "label": "12x Zoom test"
+        },
+        {
+          "time": "10:48",
+          "seconds": 648,
+          "label": "Bundle comparison: DJI Vlog Combo vs. Insta360 Creator Combo"
+        },
+        {
+          "time": "13:09",
+          "seconds": 789,
+          "label": "Summary & Final thoughts on the Insta360 Luna Ultra"
+        },
+        {
+          "time": "15:08",
+          "seconds": 908,
+          "label": "Microphone comparison: DJI Mic Mini 2 vs. Insta360 Mic Pro"
+        },
+        {
+          "time": "16:40",
+          "seconds": 1000,
+          "label": "Price point comparison"
+        },
+        {
+          "time": "17:33",
+          "seconds": 1053,
+          "label": "Summary & Final thoughts on the DJI Osmo Pocket 4P"
+        },
+        {
+          "time": "18:24",
+          "seconds": 1104,
+          "label": "Resolution & Zoom features (8K vs 4K)"
+        },
+        {
+          "time": "21:30",
+          "seconds": 1290,
+          "label": "Personal recommendation & Conclusion"
+        }
+      ],
+      "summary": {
+        "tldr": "A real-world travel creator shootout between the DJI Osmo Pocket 4P and Insta360 Luna Ultra tested across luxury villas, night walks, and windy Melasti Beach. Breaks down audio, low-light performance, the Luna Ultra's detachable screen, and which gimbal offers better travel value.",
+        "highlights": [
+          "Real resort-tour test inside Akula Bingin Villa rather than a studio desk review",
+          "Head-to-head low-light night walks and wind-handling audio tests at Melasti Beach",
+          "Highlights the Insta360 Luna Ultra's detachable screen vs. DJI Pocket 4P's strong value",
+          "Clear buying recommendation tailored to travel vloggers and hotel reviewers"
+        ],
+        "bestFor": "Travel vloggers choosing a pocket gimbal camera for 2026 trips",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "TMDrvTY7bKk",
+      "title": "Inside W Sardinia: €1,000 a Night for This?!",
+      "url": "https://www.youtube.com/watch?v=TMDrvTY7bKk",
+      "publishedAt": "2026-06-25T11:46:26+00:00",
+      "publishedDate": "2026-06-25",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/TMDrvTY7bKk/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/TMDrvTY7bKk/hqdefault.jpg",
+      "views": 1333,
+      "category": "Hotel Reviews",
+      "location": "Costa Smeralda, Sardinia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to the W Sardinia"
+        },
+        {
+          "time": "00:31",
+          "seconds": 31,
+          "label": "Luxury Room Tour & Design"
+        },
+        {
+          "time": "01:39",
+          "seconds": 99,
+          "label": "Bathroom Features & Shower Pressure"
+        },
+        {
+          "time": "04:47",
+          "seconds": 287,
+          "label": "Balcony View & Pool Area"
+        },
+        {
+          "time": "05:46",
+          "seconds": 346,
+          "label": "Swimming Pool Experience"
+        },
+        {
+          "time": "07:17",
+          "seconds": 437,
+          "label": "Exploring Porto Quatu Marina"
+        },
+        {
+          "time": "08:34",
+          "seconds": 514,
+          "label": "Breakfast at Tanit Restaurant"
+        },
+        {
+          "time": "09:51",
+          "seconds": 591,
+          "label": "Speedboat Trip to the Beach Club"
+        },
+        {
+          "time": "10:50",
+          "seconds": 650,
+          "label": "W Sardinia Beach Club Review"
+        },
+        {
+          "time": "13:48",
+          "seconds": 828,
+          "label": "Gym & Lounge Tour"
+        },
+        {
+          "time": "15:02",
+          "seconds": 902,
+          "label": "The History of Costa Smeralda"
+        },
+        {
+          "time": "16:52",
+          "seconds": 1012,
+          "label": "Tanit Dinner Review: Authentic Sardinian Food"
+        },
+        {
+          "time": "19:57",
+          "seconds": 1197,
+          "label": "Final Score: Is It Worth the Price?"
+        }
+      ],
+      "summary": {
+        "tldr": "An inside look at W Sardinia (Poltu Quatu) testing whether €1,000/night rates in Costa Smeralda deliver true value. Praises the stylish design, private speedboat beach club access, and relaxing pool cabanas, while flagging peak-season pricing and €18 ice creams.",
+        "highlights": [
+          "Full room and bathroom tour showcasing chic Mediterranean-modern W design",
+          "Private speedboat transfer to the resort's exclusive beach club",
+          "Relaxed poolside cabanas, thoughtful architecture, and Costa Smeralda local history",
+          "Candid verdict: classy and enjoyable, but hard to justify during peak-season pricing"
+        ],
+        "bestFor": "European luxury travelers eyeing Sardinia outside peak-summer rates",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "qUx1lEfMlRE",
+      "title": "Inside TA'AKTANA: Is This Asia’s New Best Luxury Resort?",
+      "url": "https://www.youtube.com/watch?v=qUx1lEfMlRE",
+      "publishedAt": "2026-06-14T13:09:35+00:00",
+      "publishedDate": "2026-06-14",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
+      "views": 1898,
+      "category": "Hotel Reviews",
+      "location": "Labuan Bajo, Indonesia",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Arriving at TA'AKTANA, Labuan Bajo"
+        },
+        {
+          "time": "01:18",
+          "seconds": 78,
+          "label": "The 24-Hour 50m Olympic-Style Pool"
+        },
+        {
+          "time": "01:48",
+          "seconds": 108,
+          "label": "Dining Venues & Resort Layout"
+        },
+        {
+          "time": "03:51",
+          "seconds": 231,
+          "label": "The Roastery (On-Site Specialty Coffee)"
+        },
+        {
+          "time": "06:14",
+          "seconds": 374,
+          "label": "The Jetty & Overwater Villas Walkthrough"
+        },
+        {
+          "time": "07:11",
+          "seconds": 431,
+          "label": "Kayaking & Marine Conservation Efforts"
+        },
+        {
+          "time": "09:09",
+          "seconds": 549,
+          "label": "The Overwater Bar Experience"
+        },
+        {
+          "time": "10:32",
+          "seconds": 632,
+          "label": "One-Bedroom Villa Full Room Tour"
+        },
+        {
+          "time": "13:34",
+          "seconds": 814,
+          "label": "A la Carte Breakfast at Leros"
+        },
+        {
+          "time": "15:50",
+          "seconds": 950,
+          "label": "Pricing, Marriott Points Value & Location"
+        },
+        {
+          "time": "19:44",
+          "seconds": 1184,
+          "label": "The Final Verdict: Value, Room, Food & Service"
+        }
+      ],
+      "summary": {
+        "tldr": "A deep dive into TA'AKTANA, a Luxury Collection Resort & Spa in Labuan Bajo, to see if 'Asia's newest luxury hotspot' lives up to the hype. Flawless 24/7 butler service, brand-new private pool villas, and an Olympic-sized 24-hour pool make it a standout—even if dining slightly trails Bali's very best.",
+        "highlights": [
+          "Tour of the brand-new 1-bedroom private pool villas and overwater villas",
+          "5/5 service with genuinely warm hospitality and dedicated 24/7 butler care",
+          "Standout amenities: 24-hour 50m Olympic pool, on-site coffee roastery, and lush breakfast",
+          "Honest note on shoreline conditions and dining (4/5 compared to The Sira & St. Regis)"
+        ],
+        "bestFor": "Luxury travelers pairing Komodo adventures with a brand-new 5-star resort",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "7UF4R3g8gjc",
+      "title": "Regent Bali Canggu: Is This The BEST Luxury Hotel in Bali?",
+      "url": "https://www.youtube.com/watch?v=7UF4R3g8gjc",
+      "publishedAt": "2026-06-04T16:33:41+00:00",
+      "publishedDate": "2026-06-04",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
+      "views": 2824,
+      "category": "Hotel Reviews",
+      "location": "Canggu, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Regent Bali Canggu"
+        },
+        {
+          "time": "00:53",
+          "seconds": 53,
+          "label": "The Lobby & Design"
+        },
+        {
+          "time": "01:23",
+          "seconds": 83,
+          "label": "Beach Club & Oceanfront Pool"
+        },
+        {
+          "time": "02:35",
+          "seconds": 155,
+          "label": "Main Infinity Pools"
+        },
+        {
+          "time": "05:42",
+          "seconds": 342,
+          "label": "Resort Grounds & Restaurant"
+        },
+        {
+          "time": "07:55",
+          "seconds": 475,
+          "label": "One-Bedroom Suite Living Room Tour"
+        },
+        {
+          "time": "11:15",
+          "seconds": 675,
+          "label": "Luxury Bedroom & Bathroom"
+        },
+        {
+          "time": "13:06",
+          "seconds": 786,
+          "label": "Balcony View & Lagoon Pool Access"
+        },
+        {
+          "time": "14:01",
+          "seconds": 841,
+          "label": "Regent Club Breakfast Experience"
+        },
+        {
+          "time": "19:03",
+          "seconds": 1143,
+          "label": "Final Thoughts & Review"
+        },
+        {
+          "time": "21:32",
+          "seconds": 1292,
+          "label": "Ratings Breakdown"
+        }
+      ],
+      "summary": {
+        "tldr": "Checking back into Regent Bali Canggu a year after opening to see how it performs once launch rates settle. Flawlessly designed 1-bedroom suites, serene infinity pools, and lightning-fast 5/5 service elevate the stay, though limited dining variety holds food back to 3/5.",
+        "highlights": [
+          "Detailed tour of the flawlessly designed 1-Bedroom Suite and manicured beachfront grounds",
+          "Service earns 5/5 with warm staff and ultra-fast buggy transfers",
+          "Inside the Regent Beach Club, infinity pools, and exclusive Regent Breakfast Club",
+          "Candid dining critique (3/5): strong quality, but overly limited menu variety"
+        ],
+        "bestFor": "Design-focused travelers wanting top-tier luxury right on Canggu's beachfront",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "Fl8gcliLk4Q",
+      "title": "W Algarve: Inside a $2,500/Night Suite Upgrade!",
+      "url": "https://www.youtube.com/watch?v=Fl8gcliLk4Q",
+      "publishedAt": "2026-05-29T13:30:06+00:00",
+      "publishedDate": "2026-05-29",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/Fl8gcliLk4Q/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/Fl8gcliLk4Q/hqdefault.jpg",
+      "views": 718,
+      "category": "Hotel Reviews",
+      "location": "Algarve, Portugal",
+      "chapters": [],
+      "summary": {
+        "tldr": "A comprehensive tour of W Algarve featuring a complimentary Marriott Bonvoy Titanium upgrade into a €2,000+ Supreme Two-Bedroom Suite. Highlights Benagil cave-inspired interiors, terraced pools, and effortless 2.5-hour flight access from London, plus a few quirky room details.",
+        "highlights": [
+          "Exclusive tour of the Supreme Two-Bedroom Suite with expansive ocean-view balconies",
+          "Walkthrough of the terraced pools, Away Spa, and dining venues",
+          "Marriott Bonvoy Titanium Elite upgrade perks and real-world points strategy",
+          "Practical comparison vs. flying long-haul to Bali for European luxury seekers"
+        ],
+        "bestFor": "UK & European travelers looking for an easy-reach luxury sunshine escape",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "20--ERbE5Ag",
+      "title": "The Reality of Airline Staff Travel: 30,000-Miles Home",
+      "url": "https://www.youtube.com/watch?v=20--ERbE5Ag",
+      "publishedAt": "2026-05-16T00:47:54+00:00",
+      "publishedDate": "2026-05-16",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/20--ERbE5Ag/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/20--ERbE5Ag/hqdefault.jpg",
+      "views": 92,
+      "category": "Flights",
+      "location": "Asia to London",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "The 30,000-Mile Detour: Why I'm Stuck in Asia"
+        },
+        {
+          "time": "01:08",
+          "seconds": 68,
+          "label": "How Airline Staff Travel Actually Works (The Good & Bad)"
+        },
+        {
+          "time": "02:22",
+          "seconds": 142,
+          "label": "Why Commercial Passengers Get Priority During a Crisis"
+        },
+        {
+          "time": "03:26",
+          "seconds": 206,
+          "label": "Stuck in Bali: Why I Can't Fly Through the Middle East"
+        },
+        {
+          "time": "04:22",
+          "seconds": 262,
+          "label": "The Insane Solution: Flying the Wrong Way Around the World"
+        },
+        {
+          "time": "05:30",
+          "seconds": 330,
+          "label": "Qantas Economy Review (Bali to Sydney)"
+        },
+        {
+          "time": "06:28",
+          "seconds": 388,
+          "label": "Stranded in Sydney: The Fiji Airways Backup Plan"
+        },
+        {
+          "time": "07:35",
+          "seconds": 455,
+          "label": "Sydney Opera House Detour (Stuck for 24 Hours)"
+        },
+        {
+          "time": "09:00",
+          "seconds": 540,
+          "label": "Qantas Flight to Honolulu, Hawaii"
+        },
+        {
+          "time": "10:31",
+          "seconds": 631,
+          "label": "Marriott Waikiki Beach Resort Check-In & Review"
+        },
+        {
+          "time": "11:45",
+          "seconds": 705,
+          "label": "The Truth About Swimming at Waikiki Beach"
+        },
+        {
+          "time": "13:30",
+          "seconds": 810,
+          "label": "The Best Poke Bowl in Hawaii (Tanioka's)"
+        },
+        {
+          "time": "14:55",
+          "seconds": 895,
+          "label": "Waiting for Standby on American Airlines"
+        },
+        {
+          "time": "16:17",
+          "seconds": 977,
+          "label": "Hawaiian Airlines Flight to San Francisco (SFO)"
+        },
+        {
+          "time": "17:33",
+          "seconds": 1053,
+          "label": "British Airways Club World (Business Class) to London"
+        },
+        {
+          "time": "19:08",
+          "seconds": 1148,
+          "label": "Final Thoughts: Was the Detour Worth It?"
+        }
+      ],
+      "summary": {
+        "tldr": "The unfiltered reality of flying airline staff travel (ID90) when Middle Eastern airspace closures wiped out direct routes back to London. Follows a dramatic 30,000-mile, 6-flight detour across 5 countries—showing both the 90%-off perks and the stress of never holding a confirmed seat.",
+        "highlights": [
+          "Explains how ID90 airline staff travel works—and why standby priority vanishes in disruptions",
+          "Follows a 30,000-mile reroute navigating packed Asian hubs like Singapore, Hong Kong, and Tokyo",
+          "Honest in-flight review of Qantas long-haul economy seating and meal service",
+          "Behind-the-scenes look at the real logistics of non-rev standby travel"
+        ],
+        "bestFor": "AvGeeks and travelers curious about the true highs and lows of standby flying",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "JV1HuujJJ4k",
+      "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+      "url": "https://www.youtube.com/watch?v=JV1HuujJJ4k",
+      "publishedAt": "2026-05-08T17:27:26+00:00",
+      "publishedDate": "2026-05-08",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
+      "views": 4124,
+      "category": "Hotel Reviews",
+      "location": "Nusa Dua, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to St. Regis Bali: Is this Nusa Dua's Finest?"
+        },
+        {
+          "time": "00:35",
+          "seconds": 35,
+          "label": "Grand Lobby & Traditional Balinese Fire Dance"
+        },
+        {
+          "time": "01:25",
+          "seconds": 85,
+          "label": "Personal Butlers & Buggy Tours"
+        },
+        {
+          "time": "02:30",
+          "seconds": 150,
+          "label": "The Deli: Macaroons, Cakes & Friendly Koi"
+        },
+        {
+          "time": "03:48",
+          "seconds": 228,
+          "label": "Iridium Spa Tour & \"Hidden Corners\""
+        },
+        {
+          "time": "04:32",
+          "seconds": 272,
+          "label": "Nusa Dua Beach: Soft Sand & Private Sunbeds"
+        },
+        {
+          "time": "05:51",
+          "seconds": 351,
+          "label": "One-Bedroom Beach Villa & Chlorine vs. Salt Pools"
+        },
+        {
+          "time": "06:58",
+          "seconds": 418,
+          "label": "Villa Suite Tour: Free Hats, Bags & Birthday Surprises"
+        },
+        {
+          "time": "08:23",
+          "seconds": 503,
+          "label": "The \"Honesty\" Check: Dealing with Musty Room Smells"
+        },
+        {
+          "time": "08:52",
+          "seconds": 532,
+          "label": "Lagoon Villa Tour: Massive 1,300 sq. ft. Luxury Walkthrough"
+        },
+        {
+          "time": "10:35",
+          "seconds": 635,
+          "label": "Dyson Hairdryers & Free St. Regis Swag"
+        },
+        {
+          "time": "11:22",
+          "seconds": 682,
+          "label": "The World's Biggest Bathtub? (Honeymoon Style)"
+        },
+        {
+          "time": "12:20",
+          "seconds": 740,
+          "label": "Unpacking Service & Garden Pool Tour"
+        },
+        {
+          "time": "13:48",
+          "seconds": 828,
+          "label": "The 40,000 sq. ft. Saltwater Lagoon Experience"
+        },
+        {
+          "time": "14:15",
+          "seconds": 855,
+          "label": "Gourmet Breakfast at Boneka: Lobster Omelette & Steak"
+        },
+        {
+          "time": "15:30",
+          "seconds": 930,
+          "label": "Donut Walls & Tropical Fruit Buffets"
+        },
+        {
+          "time": "16:55",
+          "seconds": 1015,
+          "label": "Final Verdict: Why the Villas beat the Suites"
+        },
+        {
+          "time": "18:12",
+          "seconds": 1092,
+          "label": "Pricing Strategy: Points vs. Travel Agents"
+        },
+        {
+          "time": "20:03",
+          "seconds": 1203,
+          "label": "Uncharted Score: Value, Room, Vibe, and Food"
+        }
+      ],
+      "summary": {
+        "tldr": "Testing whether the iconic 2008 St. Regis Bali still earns its $1,500/night crown in 2026. The 40,000 sq. ft. saltwater lagoon and legendary Boneka breakfast (complete with Lobster Omelette) remain world-class, though aging main-building rooms make upgrading to a villa essential.",
+        "highlights": [
+          "Walkthrough of both a Lagoon Villa and Villa Suite—plus how staff handled a smelly first suite",
+          "Pro Tip: skip the aging main-building suites and splurge on a private villa",
+          "Taste test of Boneka's celebrated breakfast, including the Lobster Omelette",
+          "Full tour of the 40,000 sq. ft. saltwater lagoon and Nusa Dua beachfront"
+        ],
+        "bestFor": "Foodies and classic-luxury fans deciding between St. Regis rooms vs. villas",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "3ll3ENeUxJg",
+      "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+      "url": "https://www.youtube.com/watch?v=3ll3ENeUxJg",
+      "publishedAt": "2026-05-05T21:10:38+00:00",
+      "publishedDate": "2026-05-05",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
+      "views": 6144,
+      "category": "Hotel Reviews",
+      "location": "Seminyak, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Intro: Is W Bali the Best Priced Luxury in Bali?"
+        },
+        {
+          "time": "00:35",
+          "seconds": 35,
+          "label": "The Most Secluded Entrance in Seminyak"
+        },
+        {
+          "time": "01:47",
+          "seconds": 107,
+          "label": "Wide-Open Lobby: Music, Vibes & Design History"
+        },
+        {
+          "time": "02:25",
+          "seconds": 145,
+          "label": "The Rice Paddy Inspired Pool Layout"
+        },
+        {
+          "time": "03:44",
+          "seconds": 224,
+          "label": "Beachfront Views: Volcanic Sand & Surf Conditions"
+        },
+        {
+          "time": "05:25",
+          "seconds": 325,
+          "label": "Walking to the Villas: Tropical Vibes & Paving Issues"
+        },
+        {
+          "time": "06:27",
+          "seconds": 387,
+          "label": "One-Bedroom Oasis Villa Tour: Private Pool & Deck"
+        },
+        {
+          "time": "07:50",
+          "seconds": 470,
+          "label": "Bedroom Walkthrough: Chemistry-Set Tea & Decor"
+        },
+        {
+          "time": "08:52",
+          "seconds": 532,
+          "label": "Luxury Bathroom: Bathtub, Japanese Toilet & Shower"
+        },
+        {
+          "time": "09:35",
+          "seconds": 575,
+          "label": "Breakfast at W Bali: Two Different Experiences"
+        },
+        {
+          "time": "09:55",
+          "seconds": 595,
+          "label": "Option 1: Starfish Bloo (Oceanfront Pan-Asian)"
+        },
+        {
+          "time": "11:18",
+          "seconds": 678,
+          "label": "Option 2: Fire (Dramatic Kitchen & Donut Wall)"
+        },
+        {
+          "time": "12:23",
+          "seconds": 743,
+          "label": "Final Verdict: Is W Bali worth it in the rain?"
+        },
+        {
+          "time": "13:19",
+          "seconds": 799,
+          "label": "Pricing & Points Strategy: DON'T use the Amex Portal!"
+        },
+        {
+          "time": "14:00",
+          "seconds": 840,
+          "label": "Communication Tips: Marriott App vs. WhatsApp"
+        },
+        {
+          "time": "14:31",
+          "seconds": 871,
+          "label": "Best Breakfast Comparison: W Bali vs. The Sira Lombok"
+        }
+      ],
+      "summary": {
+        "tldr": "An in-depth 2026 review of W Bali - Seminyak examining whether its £400/night Oasis Pool Villas represent Bali's best luxury value. Covers the secluded jungle entrance, rice-paddy-inspired pools, Starfish Bloo vs. FIRE breakfasts, and smart Amex/Marriott Bonvoy booking tips.",
+        "highlights": [
+          "Full walkthrough of the One-Bedroom Oasis Villa with private plunge pool",
+          "Comparison of both breakfast venues—Starfish Bloo and FIRE—plus poolside atmosphere",
+          "Booking Pro Tip: why to skip the Amex portal and maximize Marriott Bonvoy points directly",
+          "Honest verdict on Seminyak Beach swimming conditions and rainy-season weather"
+        ],
+        "bestFor": "Value-conscious luxury travelers wanting private villas in lively Seminyak",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "NL2ccUHteZs",
+      "title": "Ritz-Carlton Bali: HALF the Price of St. Regis & Better Views!",
+      "url": "https://www.youtube.com/watch?v=NL2ccUHteZs",
+      "publishedAt": "2026-04-27T16:22:04+00:00",
+      "publishedDate": "2026-04-27",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
+      "views": 4614,
+      "category": "Hotel Reviews",
+      "location": "Nusa Dua, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "The Selling Point: Breathtaking Ritz-Carlton Bali Views"
+        },
+        {
+          "time": "01:23",
+          "seconds": 83,
+          "label": "The 70-Meter Glass Elevator: Journey to the Bottom"
+        },
+        {
+          "time": "03:10",
+          "seconds": 190,
+          "label": "The \"Frustrating\" Buggy Drop-off Logic"
+        },
+        {
+          "time": "04:22",
+          "seconds": 262,
+          "label": "Architecture: The 70m Limestone Cliff Experience"
+        },
+        {
+          "time": "05:40",
+          "seconds": 340,
+          "label": "Koi Ponds & Lush Manicured Gardens"
+        },
+        {
+          "time": "06:50",
+          "seconds": 410,
+          "label": "Standard Room Types vs. Top-Floor Pool Suites"
+        },
+        {
+          "time": "08:02",
+          "seconds": 482,
+          "label": "Pavilion Pool Villa Tour: Full Walkthrough"
+        },
+        {
+          "time": "09:18",
+          "seconds": 558,
+          "label": "The Japanese Toilet & Massive Rainfall Shower"
+        },
+        {
+          "time": "10:21",
+          "seconds": 621,
+          "label": "Outdoor Bathroom & Private Soaking Tub"
+        },
+        {
+          "time": "10:48",
+          "seconds": 648,
+          "label": "Private Pool & Deck Area (Privacy Check)"
+        },
+        {
+          "time": "11:55",
+          "seconds": 715,
+          "label": "Resort History: Designing the \"Cliff to Ocean\" Experience"
+        },
+        {
+          "time": "13:30",
+          "seconds": 810,
+          "label": "Comparison: Ritz-Carlton vs. St. Regis Bali"
+        },
+        {
+          "time": "14:33",
+          "seconds": 873,
+          "label": "The Beach: Calm Waters & Protected Reefs"
+        },
+        {
+          "time": "16:45",
+          "seconds": 1005,
+          "label": "Dining Options: Beach Grill & Breezy Vibes"
+        },
+        {
+          "time": "17:28",
+          "seconds": 1048,
+          "label": "The All-Glass Wedding Chapel (Iconic Views)"
+        },
+        {
+          "time": "19:15",
+          "seconds": 1155,
+          "label": "Main Swimming Pool & Kid-Friendly Areas"
+        },
+        {
+          "time": "20:12",
+          "seconds": 1212,
+          "label": "Ritz-Carlton Suite with Lagoon Access (First Impressions)"
+        },
+        {
+          "time": "22:35",
+          "seconds": 1355,
+          "label": "Final Verdict: Better Grounds & Modern Aesthetic?"
+        },
+        {
+          "time": "24:50",
+          "seconds": 1490,
+          "label": "Honest Food Review: Breakfast & In-Villa Dining"
+        },
+        {
+          "time": "26:30",
+          "seconds": 1590,
+          "label": "Shower Pressure & Bed Quality Check"
+        }
+      ],
+      "summary": {
+        "tldr": "A direct head-to-head asking if The Ritz-Carlton Bali beats St. Regis Bali at roughly half the price. Features its dramatic 70m cliffside glass elevator, modern Pavilion Pool Villas, and calmer swimmable Nusa Dua beach—while candidly flagging recycled water quirks.",
+        "highlights": [
+          "Full tour of a modern Pavilion Pool Villa and the dramatic 70m limestone-cliff glass elevator",
+          "Direct value, grounds, and beach comparison against neighboring St. Regis Bali",
+          "Pro Tip: why the Ritz-Carlton shoreline is calmer and better for ocean swimming",
+          "Transparent critique of the resort's recycled 'brown water' toilet system and room odors"
+        ],
+        "bestFor": "Travelers comparing Nusa Dua's flagship 5-star resorts on value and views",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "Dj4WTXN9mO4",
+      "title": "Uluwatu Bali Travel Guide: Our $200 Beach Club Experience & Private Pool Villa!",
+      "url": "https://www.youtube.com/watch?v=Dj4WTXN9mO4",
+      "publishedAt": "2026-04-06T08:43:03+00:00",
+      "publishedDate": "2026-04-06",
+      "isShort": false,
+      "thumbnail": "https://i.ytimg.com/vi/Dj4WTXN9mO4/maxresdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/Dj4WTXN9mO4/hqdefault.jpg",
+      "views": 403,
+      "category": "Hotel Reviews",
+      "location": "Uluwatu, Bali",
+      "chapters": [
+        {
+          "time": "00:00",
+          "seconds": 0,
+          "label": "Welcome to Uluwatu, Bali!"
+        },
+        {
+          "time": "00:50",
+          "seconds": 50,
+          "label": "The Heights Melasti Villa Tour (2-Bedroom Luxury)"
+        },
+        {
+          "time": "06:01",
+          "seconds": 361,
+          "label": "Arriving at Sundays Beach Club"
+        },
+        {
+          "time": "06:55",
+          "seconds": 415,
+          "label": "Sundays Beach Club Prices, Sunbeds & Cabanas"
+        },
+        {
+          "time": "11:07",
+          "seconds": 667,
+          "label": "Kayaking & Exploring the Reef"
+        },
+        {
+          "time": "12:37",
+          "seconds": 757,
+          "label": "Sunset Bonfire & Fire Dance"
+        },
+        {
+          "time": "13:18",
+          "seconds": 798,
+          "label": "Honest Review: Is The Heights Villa & Sundays Beach Club Worth It?"
+        }
+      ],
+      "summary": {
+        "tldr": "A two-part Uluwatu guide touring The Heights Melasti—a sleek modern 2-bedroom pool villa—followed by a full day at Sundays Beach Club. Breaks down real entry fees, cabana pricing, reef kayaking, sunset fire dances, and open-air bathroom trade-offs.",
+        "highlights": [
+          "Tour of The Heights Melasti 2-bedroom pool villa: great design and food delivery vs. open-air bathrooms",
+          "Transparent cost breakdown of Sundays Beach Club entry passes and cabanas",
+          "Highlights kayaking over the clear reef and the evening sunset fire show",
+          "Practical Uluwatu advice (including why mosquito repellent is a must)"
+        ],
+        "bestFor": "Bali visitors pairing a private Uluwatu pool villa with a beach club day",
+        "aiGenerated": true,
+        "model": "editorial-ai"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "id": "w4QIjpjataQ",
+      "title": "Private Speedboat at W Sardinia",
+      "url": "https://www.youtube.com/shorts/w4QIjpjataQ",
+      "publishedAt": "2026-11-20T16:10:27+00:00",
+      "publishedDate": "2026-11-20",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
+      "views": 46,
+      "category": "Hotel Reviews",
+      "location": "Costa Smeralda, Sardinia",
+      "chapters": [],
+      "summary": {
+        "tldr": "📱 Stay connected wherever you travel! Get unlimited data with Holafly eSIMs. Use code TRIPREADY at checkout for a discount or visit holafly.sjv.io/Tripready and get a discount!",
+        "highlights": [
+          "Destination focus: Costa Smeralda, Sardinia",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Costa Smeralda, Sardinia",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "7bIVgAuXsSI",
+      "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+      "url": "https://www.youtube.com/shorts/7bIVgAuXsSI",
+      "publishedAt": "2026-11-20T10:00:20+00:00",
+      "publishedDate": "2026-11-20",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/7bIVgAuXsSI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/7bIVgAuXsSI/hqdefault.jpg",
+      "views": 714,
+      "category": "Hotel Reviews",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "📱 Stay connected wherever you travel! Get unlimited data with Holafly eSIMs. Use code TRIPREADY at checkout for a discount or visit holafly.sjv.io/Tripready and get a discount!",
+        "highlights": [
+          "Destination focus: Global Travel",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Global Travel",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "cRLxuHX5zec",
+      "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+      "url": "https://www.youtube.com/shorts/cRLxuHX5zec",
+      "publishedAt": "2026-11-19T10:00:07+00:00",
+      "publishedDate": "2026-11-19",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/cRLxuHX5zec/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/cRLxuHX5zec/hqdefault.jpg",
+      "views": 1315,
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "📱 Stay connected wherever you travel! Get unlimited data with Holafly eSIMs. Use code TRIPREADY at checkout for a discount or visit holafly.sjv.io/Tripready and get a discount!",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "f7l8i6x0lrI",
+      "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+      "url": "https://www.youtube.com/shorts/f7l8i6x0lrI",
+      "publishedAt": "2026-11-18T13:45:07+00:00",
+      "publishedDate": "2026-11-18",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/f7l8i6x0lrI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/f7l8i6x0lrI/hqdefault.jpg",
+      "views": 253,
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "📱 Stay connected wherever you travel! Get unlimited data with Holafly eSIMs. Use code TRIPREADY at checkout for a discount or visit holafly.sjv.io/Tripready and get a discount!",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "xdbtDDBGDAI",
+      "title": "Arriving at Radisson Blu Maldives! #travel #luxury #maldives",
+      "url": "https://www.youtube.com/shorts/xdbtDDBGDAI",
+      "publishedAt": "2026-11-16T21:55:42+00:00",
+      "publishedDate": "2026-11-16",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
+      "views": 124,
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "Arriving at Radisson Blu Maldives! #travel #luxury #maldives",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "hMGtFMVhoNI",
+      "title": "W Bali at Seminyak Beach",
+      "url": "https://www.youtube.com/shorts/hMGtFMVhoNI",
+      "publishedAt": "2026-11-09T10:00:39+00:00",
+      "publishedDate": "2026-11-09",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/hMGtFMVhoNI/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/hMGtFMVhoNI/hqdefault.jpg",
+      "views": 173,
+      "category": "Hotel Reviews",
+      "location": "Uluwatu, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "The honest truth about Seminyak Beach in Bali 🌊 Dark volcanic sand and rough waves mean it isn’t built for swimming. If you’re hunting for calm, white-sand waters in Bali, head down to Sundays Beach Club in Uluwatu or catch a boat over to the Gili Islands and Nusa Lembongan!",
+        "highlights": [
+          "Destination focus: Uluwatu, Bali",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Uluwatu, Bali",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "_Pr4JUsjzlA",
+      "title": "View at Ungasan Clifftop Resort",
+      "url": "https://www.youtube.com/shorts/_Pr4JUsjzlA",
+      "publishedAt": "2026-11-08T10:00:23+00:00",
+      "publishedDate": "2026-11-08",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/_Pr4JUsjzlA/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/_Pr4JUsjzlA/hqdefault.jpg",
+      "views": 10,
+      "category": "Hotel Reviews",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Waking up to endless ocean views at Ungasan Clifftop Resort in Bali 🌊✨ Would you stay here?",
+        "highlights": [
+          "Destination focus: Bali, Indonesia",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Bali, Indonesia",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "qCS6Ro-Qxp4",
+      "title": "Osmo Pocket 4P vs Insta360 Luna Ultra Compared! @DJI @insta360",
+      "url": "https://www.youtube.com/shorts/qCS6Ro-Qxp4",
+      "publishedAt": "2026-11-07T19:16:35+00:00",
+      "publishedDate": "2026-11-07",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
+      "views": 271,
+      "category": "Travel Gear",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Osmo Pocket 4P vs Insta360 Luna Ultra Compared! @DJI @insta360",
+        "highlights": [
+          "Destination focus: Global Travel",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Global Travel",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "8t4BFSC2cas",
+      "title": "Using the Insta360 screen as a mic",
+      "url": "https://www.youtube.com/shorts/8t4BFSC2cas",
+      "publishedAt": "2026-11-06T01:26:26+00:00",
+      "publishedDate": "2026-11-06",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/8t4BFSC2cas/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/8t4BFSC2cas/hqdefault.jpg",
+      "views": 231,
+      "category": "Travel Gear",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Using the Insta360 screen as a mic",
+        "highlights": [
+          "Destination focus: Global Travel",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Global Travel",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "SRcri7zJBf0",
+      "title": "Mount Agung Bali 🇮🇩",
+      "url": "https://www.youtube.com/shorts/SRcri7zJBf0",
+      "publishedAt": "2026-10-03T09:00:01+00:00",
+      "publishedDate": "2026-10-03",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/SRcri7zJBf0/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/SRcri7zJBf0/hqdefault.jpg",
+      "views": 1062,
+      "category": "Hotel Reviews",
+      "location": "Bali, Indonesia",
+      "chapters": [],
+      "summary": {
+        "tldr": "Mount Agung Bali 🇮🇩",
+        "highlights": [
+          "Destination focus: Bali, Indonesia",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Bali, Indonesia",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "Th50tmfG4MQ",
+      "title": "We’re at the Element by Westin Ubud 🇮🇩 Indonesia",
+      "url": "https://www.youtube.com/shorts/Th50tmfG4MQ",
+      "publishedAt": "2026-10-02T09:00:22+00:00",
+      "publishedDate": "2026-10-02",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/Th50tmfG4MQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/Th50tmfG4MQ/hqdefault.jpg",
+      "views": 143,
+      "category": "Hotel Reviews",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "We’re at the Element by Westin Ubud 🇮🇩 Indonesia",
+        "highlights": [
+          "Destination focus: Ubud, Bali",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Ubud, Bali",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "p8hotG9r0vE",
+      "title": "This genuinely impressed me @Hiliwatu Ubud 🇮🇩",
+      "url": "https://www.youtube.com/shorts/p8hotG9r0vE",
+      "publishedAt": "2026-09-30T09:00:40+00:00",
+      "publishedDate": "2026-09-30",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/p8hotG9r0vE/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/p8hotG9r0vE/hqdefault.jpg",
+      "views": 1131,
+      "category": "Hotel Reviews",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "This genuinely impressed me @Hiliwatu Ubud 🇮🇩",
+        "highlights": [
+          "Destination focus: Ubud, Bali",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Ubud, Bali",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "vY5s8rNaWrM",
+      "title": "Hiliwatu room tour 🇮🇩",
+      "url": "https://www.youtube.com/shorts/vY5s8rNaWrM",
+      "publishedAt": "2026-09-28T09:00:10+00:00",
+      "publishedDate": "2026-09-28",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/vY5s8rNaWrM/hqdefault.jpg",
+      "fallbackThumbnail": "https://i3.ytimg.com/vi/vY5s8rNaWrM/hqdefault.jpg",
+      "views": 250,
+      "category": "Hotel Reviews",
+      "location": "Global Travel",
+      "chapters": [],
+      "summary": {
+        "tldr": "Hiliwatu room tour 🇮🇩",
+        "highlights": [
+          "Destination focus: Global Travel",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Global Travel",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "dV6N5tnM3Fw",
+      "title": "The balcony view from our room 🇮🇩 Hiliwatu Ubud",
+      "url": "https://www.youtube.com/shorts/dV6N5tnM3Fw",
+      "publishedAt": "2026-09-27T09:00:16+00:00",
+      "publishedDate": "2026-09-27",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/dV6N5tnM3Fw/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/dV6N5tnM3Fw/hqdefault.jpg",
+      "views": 1258,
+      "category": "Hotel Reviews",
+      "location": "Ubud, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "The balcony view from our room 🇮🇩 Hiliwatu Ubud",
+        "highlights": [
+          "Destination focus: Ubud, Bali",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Ubud, Bali",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
+      "id": "PkzyD2qR87Q",
+      "title": "Courtyard Bali Seminyak 🇮🇩 indonesia",
+      "url": "https://www.youtube.com/shorts/PkzyD2qR87Q",
+      "publishedAt": "2026-09-26T09:00:35+00:00",
+      "publishedDate": "2026-09-26",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/PkzyD2qR87Q/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/PkzyD2qR87Q/hqdefault.jpg",
+      "views": 722,
+      "category": "Hotel Reviews",
+      "location": "Seminyak, Bali",
+      "chapters": [],
+      "summary": {
+        "tldr": "Courtyard Bali Seminyak 🇮🇩 indonesia",
+        "highlights": [
+          "Destination focus: Seminyak, Bali",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Seminyak, Bali",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Octopus Energy (UK)",
+          "category": "Everyday Perks",
+          "badge": "£50 Credit",
+          "buttonLabel": "Claim £50 Credit",
+          "promoCode": "",
+          "url": "https://share.octopus.energy/jolly-skunk-453"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "category": "Creator Tools",
+          "badge": "Creator Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "category": "Creator Tools",
+          "badge": "Creator Tool",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    }
+  ]
+}

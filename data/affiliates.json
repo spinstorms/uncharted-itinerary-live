@@ -1,0 +1,449 @@
+{
+  "updatedAt": "2026-11-21T04:21:55Z",
+  "sheetConnected": false,
+  "googleSheetCsvUrl": "",
+  "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
+  "curated": [
+    {
+      "id": "curated-amex-gold-uk",
+      "source": "curated",
+      "featured": true,
+      "category": "Points & Cards",
+      "title": "American Express Preferred Rewards Gold (UK)",
+      "badge": "Bonus Points",
+      "description": "Earn bonus Membership Rewards points toward luxury hotel stays and business class flights when applying via our referral link.",
+      "promoCode": "",
+      "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w",
+      "buttonLabel": "Claim Referral Bonus",
+      "sortOrder": 1,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-marriott-currensea",
+      "source": "curated",
+      "featured": true,
+      "category": "Points & Cards",
+      "title": "Marriott Bonvoy Currensea Debit Card",
+      "badge": "Up to 2,000 Bonus Pts",
+      "description": "Earn Marriott Bonvoy points on everyday spending with low foreign transaction fees—our go-to card for luxury hotel stays.",
+      "promoCode": "OKM2ZH",
+      "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH",
+      "buttonLabel": "Get Card & Bonus",
+      "sortOrder": 2,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-standard",
+      "source": "curated",
+      "featured": true,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra — Standard Kit",
+      "badge": "Filming Setup",
+      "description": "Our compact main travel camera used to film resort walkthroughs, room tours, and island adventures.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0fpiIMTi",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 3,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "w4QIjpjataQ",
+          "title": "Private Speedboat at W Sardinia",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "7bIVgAuXsSI",
+          "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "cRLxuHX5zec",
+          "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+          "date": "2026-11-19"
+        },
+        {
+          "id": "f7l8i6x0lrI",
+          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-creator-black",
+      "source": "curated",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra — Creator Kit (Black)",
+      "badge": "Filming Setup",
+      "description": "Complete Creator Kit in Matte Black with extra accessories for travel vlogging.",
+      "promoCode": "",
+      "url": "https://link.amazon/B03YstgcC",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 4,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "w4QIjpjataQ",
+          "title": "Private Speedboat at W Sardinia",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "7bIVgAuXsSI",
+          "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "cRLxuHX5zec",
+          "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+          "date": "2026-11-19"
+        },
+        {
+          "id": "f7l8i6x0lrI",
+          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-creator-white",
+      "source": "curated",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra — Creator Kit (White)",
+      "badge": "Filming Setup",
+      "description": "Complete Creator Kit in Arctic White—lightweight and easy to pack for long-haul trips.",
+      "promoCode": "",
+      "url": "https://link.amazon/B09TARLyD",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 5,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "w4QIjpjataQ",
+          "title": "Private Speedboat at W Sardinia",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "7bIVgAuXsSI",
+          "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "cRLxuHX5zec",
+          "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+          "date": "2026-11-19"
+        },
+        {
+          "id": "f7l8i6x0lrI",
+          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-wide-lens",
+      "source": "curated",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra Wide Angle Lens",
+      "badge": "Gear Essential",
+      "description": "Essential ultra-wide attachment for capturing full hotel suites, villas, and ocean views in tight spaces.",
+      "promoCode": "",
+      "url": "https://link.amazon/B00hjVInJ",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 6,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "w4QIjpjataQ",
+          "title": "Private Speedboat at W Sardinia",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "7bIVgAuXsSI",
+          "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "cRLxuHX5zec",
+          "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+          "date": "2026-11-19"
+        },
+        {
+          "id": "f7l8i6x0lrI",
+          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-battery",
+      "source": "curated",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra Battery Handle",
+      "badge": "Gear Essential",
+      "description": "All-day battery grip for shooting full-property resort tours without running out of charge.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0cxr0rKz",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 7,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "w4QIjpjataQ",
+          "title": "Private Speedboat at W Sardinia",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "7bIVgAuXsSI",
+          "title": "The afternoon you worked so hard for… lounging in that white sandy beach bath in sunshine 🤍 🇲🇻",
+          "date": "2026-11-20"
+        },
+        {
+          "id": "cRLxuHX5zec",
+          "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
+          "date": "2026-11-19"
+        },
+        {
+          "id": "f7l8i6x0lrI",
+          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
+          "date": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-epidemic-sound",
+      "source": "curated",
+      "featured": false,
+      "category": "Creator Tools",
+      "title": "Epidemic Sound — Royalty-Free Travel Music",
+      "badge": "Creator Referral",
+      "description": "The music library behind our cinematic resort tours and travel guides. Start a free trial via our link.",
+      "promoCode": "",
+      "url": "https://www.epidemicsound.com/referral/vo2tr9/",
+      "buttonLabel": "Try Epidemic Sound",
+      "sortOrder": 8,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-tubebuddy",
+      "source": "curated",
+      "featured": false,
+      "category": "Creator Tools",
+      "title": "TubeBuddy — YouTube SEO & Growth",
+      "badge": "Creator Tool",
+      "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
+      "promoCode": "",
+      "url": "https://www.tubebuddy.com/Techinthecar",
+      "buttonLabel": "Explore TubeBuddy",
+      "sortOrder": 9,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-octopus-energy",
+      "source": "curated",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Octopus Energy (UK)",
+      "badge": "£50 Credit",
+      "description": "Switch to Octopus Energy with our referral link and we both receive £50 credit toward your energy bill.",
+      "promoCode": "",
+      "url": "https://share.octopus.energy/jolly-skunk-453",
+      "buttonLabel": "Claim £50 Credit",
+      "sortOrder": 10,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "curated-freetrade",
+      "source": "curated",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Freetrade — Commission-Free Investing",
+      "badge": "Free Share £3–£200",
+      "description": "Join Freetrade via our link to get a free share worth between £3 and £200 when you fund your account.",
+      "promoCode": "",
+      "url": "https://magic.freetrade.io/join/oliver/238af2d9",
+      "buttonLabel": "Get Free Share",
+      "sortOrder": 11,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    }
+  ],
+  "fromVideos": []
+}

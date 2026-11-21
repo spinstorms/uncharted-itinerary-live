@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Videos &amp; AI Travel Summaries | The Uncharted Itinerary</title>
+  <meta name="description" content="Auto-updating luxury hotel reviews, resort tours, flight guides, and AI-powered travel summaries from The Uncharted Itinerary YouTube channel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://www.uncharteditinerary.com/" rel="noopener">
+        <span class="brand-name">The Uncharted Itinerary</span>
+        <span class="brand-sub">Luxury Stays &amp; Savvy Travel Guides</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="./" class="active">Live Videos</a>
+        <a href="./links/">Deals &amp; Links</a>
+        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="https://www.uncharteditinerary.com/travel">Travel</a>
+        <a href="https://www.uncharteditinerary.com/about">About</a>
+        <a href="https://www.uncharteditinerary.com/faq">FAQ</a>
+        <a href="https://www.uncharteditinerary.com/contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-outline" href="./links/">Affiliate Perks</a>
+        <a class="btn btn-primary" href="https://www.youtube.com/@TheUnchartedItinerary?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+          Subscribe
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="./" class="active">Live Videos &amp; AI Summaries</a>
+      <a href="./links/">Deals &amp; Affiliate Links</a>
+      <a href="https://www.uncharteditinerary.com/home">Main Site Home</a>
+      <a href="https://www.uncharteditinerary.com/travel">Travel Guides</a>
+      <a href="https://www.uncharteditinerary.com/about">About</a>
+      <a href="https://www.uncharteditinerary.com/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container intro-row">
+        <div>
+          <h1 class="page-title">Latest Episodes &amp; AI Summaries</h1>
+          <p class="page-lead">
+            Synced automatically from <strong>@TheUnchartedItinerary</strong> on YouTube — get the honest verdict, key resort highlights, chapter jumps, and travel links in seconds.
+          </p>
+        </div>
+        <div class="sync-meta" id="syncMeta">
+          <span>Auto-synced with YouTube</span>
+          <strong id="lastUpdatedText">Loading feed…</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="container">
+        <div id="featuredContainer"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="controls-bar">
+          <div class="filter-pills" id="categoryFilters" role="tablist" aria-label="Filter videos by category"></div>
+          <div class="search-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="videoSearch" class="search-input" placeholder="Search hotels, Bali, Maldives, flights…" aria-label="Search videos" />
+          </div>
+        </div>
+
+        <div class="video-grid" id="videoGrid"></div>
+      </div>
+    </section>
+
+    <section class="shorts-section" id="shortsSection">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Latest Travel Shorts</h2>
+            <p class="section-subtitle">Quick 60-second glimpses from our latest luxury stays and destinations.</p>
+          </div>
+          <a class="btn btn-outline" href="https://www.youtube.com/@TheUnchartedItinerary/shorts" target="_blank" rel="noopener noreferrer">View All Shorts</a>
+        </div>
+        <div class="shorts-rail" id="shortsRail"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="promo-banner">
+          <div>
+            <h2>Points Cards, Filming Gear &amp; Live Travel Deals</h2>
+            <p>Browse every referral bonus, Marriott Bonvoy &amp; Amex offer, and travel camera we actually use — updated live alongside our newest videos.</p>
+          </div>
+          <a class="btn btn-primary" href="./links/">Open Live Deals &amp; Links &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">The Uncharted Itinerary</div>
+          <p class="footer-muted">Honest, first-hand reviews of luxury resorts, boutique villas, flights, and travel gear around the world.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.uncharteditinerary.com/">uncharteditinerary.com</a>
+          <a href="./links/">Deals &amp; Affiliate Links</a>
+          <a href="https://www.youtube.com/@TheUnchartedItinerary" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/uncharted_itinerary/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="mailto:hello@uncharteditinerary.com">hello@uncharteditinerary.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="yearNow"></span> The Uncharted Itinerary</span>
+        <span>Live-synced YouTube feed &amp; AI summaries</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video & AI Summary Detail Modal -->
+  <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalVideoTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="meta-line" id="modalMeta"></div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-video-wrap" id="modalPlayer"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/videos.js"></script>
+</body>
+</html>
