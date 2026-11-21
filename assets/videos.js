@@ -106,7 +106,7 @@ function renderFeatured(video) {
         <div>
           <div class="meta-line">
             <span class="tag tag-accent">Latest Release</span>
-            ${hotel ? `<span class="tag tag-accent">Score ${Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
+            ${hotel && hotel.overall != null ? `<span class="tag tag-accent">Score ${Number.isInteger(Number(hotel.overall)) ? hotel.overall : Number(hotel.overall).toFixed(1)} / 5</span>` : ""}
             <span class="tag">${escapeHtml(video.category || "Hotel Reviews")}</span>
             <span>${escapeHtml(video.location || "")}</span>
             <span>&bull;</span>
@@ -231,10 +231,10 @@ function renderVideoGrid() {
               loading="lazy"
             />
             ${
-              hotel
-                ? `<span class="scorecard-badge-overall" style="top:10px;right:10px;"><strong>${Number(
-                    hotel.overall
-                  ).toFixed(1)}</strong><span>/5</span></span>`
+              hotel && hotel.overall != null
+                ? `<span class="scorecard-badge-overall" style="top:10px;right:10px;"><strong>${
+                    Number.isInteger(Number(hotel.overall)) ? hotel.overall : Number(hotel.overall).toFixed(1)
+                  }</strong><span>/5</span></span>`
                 : ""
             }
             <span class="thumb-location">${escapeHtml(v.location || "Travel")}</span>

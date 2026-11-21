@@ -3208,18 +3208,28 @@ body.embed-mode .affiliate-hero {
 }
 
 .featured-card .featured-title,
-.featured-card .ai-summary-box strong {
+.featured-card .ai-summary-box strong,
+.featured-card .ai-summary-tldr {
   color: #ffffff;
+}
+
+.featured-card .ai-summary-label {
+  color: #ff8c5a;
 }
 
 .featured-card .meta-line,
 .featured-card .ai-tldr,
+.featured-card .highlights-list li,
 .featured-card .ai-highlights li {
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.featured-card .highlights-list li::before {
+  background: var(--accent);
 }
 
 .featured-card .tag {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
 }
 
@@ -3229,13 +3239,24 @@ body.embed-mode .affiliate-hero {
 }
 
 .featured-card .ai-summary-box {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.featured-card .btn-dark {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.featured-card .btn-dark:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .featured-card .chapter-chip {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
   color: #ffffff;
 }
 
@@ -3244,13 +3265,15 @@ body.embed-mode .affiliate-hero {
   border-color: var(--accent);
 }
 
-.featured-card .btn-outline {
-  background: rgba(255, 255, 255, 0.1);
+.featured-card .btn-outline,
+.review-hero-card .btn-outline {
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.34);
+  border-color: rgba(255, 255, 255, 0.38);
 }
 
-.featured-card .btn-outline:hover {
+.featured-card .btn-outline:hover,
+.review-hero-card .btn-outline:hover {
   background: #ffffff;
   color: #191a1a;
   border-color: #ffffff;
@@ -3365,17 +3388,23 @@ body.embed-mode .affiliate-hero {
   color: #ffffff;
 }
 
-.review-hero-card .featured-title {
+.review-hero-card .featured-title,
+.review-hero-card .review-intro-copy strong {
   color: #ffffff;
 }
 
+.review-hero-card .review-intro-copy,
 .review-hero-card .ai-tldr,
 .review-hero-card .meta-line {
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.review-hero-card .ai-summary-label {
+  color: #ff8c5a;
 }
 
 .review-hero-card .tag {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   color: #ffffff;
 }
 
@@ -3384,35 +3413,51 @@ body.embed-mode .affiliate-hero {
   color: #ffffff;
 }
 
+.review-hero-card .verdict-pill-box,
 .review-hero-card .verdict-box {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
   color: rgba(255, 255, 255, 0.9);
 }
 
+.review-hero-card .verdict-pill-box.is-winner,
 .review-hero-card .verdict-box.is-winner {
-  background: rgba(255, 93, 34, 0.18);
-  border-color: rgba(255, 93, 34, 0.55);
+  background: rgba(255, 93, 34, 0.22);
+  border-color: rgba(255, 93, 34, 0.65);
 }
 
+.review-hero-card .verdict-kicker {
+  color: #ff9c70;
+}
+
+.review-hero-card .verdict-pill-box strong,
 .review-hero-card .verdict-box h3,
 .review-hero-card .verdict-box strong {
   color: #ffffff;
 }
 
+.review-hero-card .verdict-pill-box span,
 .review-hero-card .verdict-box p {
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .review-hero-card .chapter-chip {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
   color: #ffffff;
+}
+
+.review-hero-card .chapter-chip .chapter-time {
+  color: #ff9c70;
 }
 
 .review-hero-card .chapter-chip:hover {
   background: var(--accent);
   border-color: var(--accent);
+}
+
+.review-hero-card .chapter-chip:hover .chapter-time {
+  color: #ffffff;
 }
 
 .review-article-section {
@@ -3422,6 +3467,7 @@ body.embed-mode .affiliate-hero {
   padding: 40px 0 48px;
 }
 
+.review-article-section .review-prose,
 .review-article-section .review-article {
   background: #ffffff;
   border: 1px solid #e6e1d9;

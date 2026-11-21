@@ -221,8 +221,8 @@ async function boot() {
         lunaGrid.innerHTML = lunaLive.map((x) => renderGearCard(x, true)).join("");
       }
 
-      // If user adds real DJI Pocket 4P / Mic Mini links in their Google Sheet, swap them in automatically!
-      const djiLive = all.filter((x) => /dji|pocket\s*4/i.test(`${x.title} ${x.url}`));
+      // Show only the actual Pocket 4P & DJI Mic Mini 2 tested in this shootout
+      const djiLive = all.filter((x) => /pocket\s*4p|mic\s*mini\s*2/i.test(`${x.title} ${x.url}`));
       if (djiLive.length && djiGrid) {
         djiGrid.innerHTML = djiLive.map((x) => renderGearCard(x, true)).join("");
       }
