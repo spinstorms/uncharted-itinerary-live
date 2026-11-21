@@ -1,0 +1,11 @@
+{
+  "name": "StayOdds",
+  "appStoreTitle": "StayOdds: Hotel Score Compare",
+  "subtitle": "Critics vs Real Guest Reviews",
+  "tagline": "Transparent luxury hotel odds — verified first-hand stays, sourced critics, and live guest ratings.",
+  "bundleId": "com.stayodds.app",
+  "foundingContributor": "The Uncharted Itinerary",
+  "foundingContributorUrl": "https://www.uncharteditinerary.com/",
+  "youtubeChannelUrl": "https://www.youtube.com/@TheUnchartedItinerary",
+  "liveApiBaseUrl": "https://live.uncharteditinerary.com"
+}

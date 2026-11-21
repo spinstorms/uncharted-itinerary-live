@@ -1,3 +1,9 @@
+import {
+  BRAND,
+  computeStayOdds,
+  formatPersonalScore,
+} from "./stayodds-engine.js?v=1";
+
 const qs = (sel) => document.querySelector(sel);
 
 function escapeHtml(str = "") {
@@ -23,12 +29,6 @@ function isExternalReview(h) {
   return !(h.inLiveFeed && h.videoId);
 }
 
-function formatMyScore(val) {
-  if (val == null || Number.isNaN(Number(val))) return "—";
-  const num = Number(val);
-  return Number.isInteger(num) ? String(num) : num.toFixed(1);
-}
-
 function initCommonUi() {
   if (new URLSearchParams(window.location.search).get("embed") === "1") {
     document.body.classList.add("embed-mode");
@@ -49,7 +49,7 @@ function initCommonUi() {
 function renderScoreBar(label, value, maxVal, suffix = "", wholeNumbers = false) {
   const num = Number(value || 0);
   const pct = Math.max(0, Math.min(100, Math.round((num / maxVal) * 100)));
-  const formatted = wholeNumbers ? formatMyScore(num) : num.toFixed(1);
+  const formatted = wholeNumbers ? formatPersonalScore(num) || "—" : num.toFixed(1);
   return `
     <div class="detail-bar-row">
       <div class="detail-bar-top">
@@ -64,46 +64,23 @@ function renderScoreBar(label, value, maxVal, suffix = "", wholeNumbers = false)
 }
 
 function renderDetail(h, allHotels) {
-  const c = h.consensus || {};
+  const o = computeStayOdds(h);
   const s = h.scores || null;
-  const b = c.bookingSubscores || {};
-  const rated = h.overall != null && s != null;
   const isShortOnly = h.coverageType === "Short Tour";
-  const isGlobalOnly = h.coverageType === "Global Directory" || h.visitedByUs === false;
-  const isContrarian = c.agreement === "Contrarian Verdict";
+  const isGlobalOnly = !o.visited;
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  document.title = `${h.name} — StayScore Breakdown (${c.greatStayChance || 90}% Great-Stay Odds) | The Uncharted Itinerary`;
+  const tagClass =
+    o.statusTone === "amber"
+      ? "tag-caution"
+      : o.statusTone === "accent"
+      ? "tag-accent"
+      : o.statusTone === "teal"
+      ? "tag-teal"
+      : "tag-slate";
 
-  // Formula math transparency
-  const ours100 = rated ? Math.round(Number(h.overall) * 20) : null;
-  const critic100 = Math.round(Number(c.criticScore || 4.5) * 20);
-  const google100 = Math.round(Number(c.googleRating || 4.5) * 20);
-  const weightedRaw = rated
-    ? Math.round(ours100 * 0.4 + critic100 * 0.3 + google100 * 0.3)
-    : Math.round(critic100 * 0.5 + google100 * 0.5);
-  const chanceDelta = Number(c.greatStayChance || weightedRaw) - Number(c.overallIndex || weightedRaw);
-  const deltaLabel = chanceDelta > 0 ? `+${chanceDelta}%` : `${chanceDelta}%`;
-
-  const benchmarks = Array.isArray(c.channelBenchmarks) && c.channelBenchmarks.length
-    ? c.channelBenchmarks
-    : [
-        {
-          source: "The Uncharted Itinerary",
-          category: rated ? "Our Stay" : isGlobalOnly ? "Global Directory (Unvisited)" : "Our Stay (Short Preview)",
-          score: rated ? `${formatMyScore(h.overall)} / 5` : isGlobalOnly ? "Not Visited Yet" : "Not Rated Yet",
-          normalized100: ours100,
-          takeaway: h.verdict || "",
-        },
-        {
-          source: "Google Reviews",
-          category: "Verified Guests",
-          score: `${Number(c.googleRating || 0).toFixed(1)} ★`,
-          normalized100: google100,
-          takeaway: c.otherReviewersSay || "",
-        },
-      ];
+  document.title = `${h.name} — ${BRAND.name} Breakdown | ${BRAND.subtitle}`;
 
   const related = allHotels
     .filter((other) => other.id !== h.id)
@@ -111,14 +88,16 @@ function renderDetail(h, allHotels) {
       const sameRegA = a.region === h.region ? 1 : 0;
       const sameRegB = bItem.region === h.region ? 1 : 0;
       if (sameRegB !== sameRegA) return sameRegB - sameRegA;
-      return (bItem.consensus?.greatStayChance || 0) - (a.consensus?.greatStayChance || 0);
+      const oa = computeStayOdds(a);
+      const ob = computeStayOdds(bItem);
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1);
     })
     .slice(0, 3);
 
   const root = qs("#detailRoot");
   root.innerHTML = `
     <div class="detail-breadcrumb">
-      <a href="../">&larr; All StayScore Rankings</a>
+      <a href="../">&larr; All ${escapeHtml(BRAND.name)} Properties</a>
       <span>/</span>
       <a href="../../hotels/">Hotel Map</a>
       <span>/</span>
@@ -129,43 +108,41 @@ function renderDetail(h, allHotels) {
       <div class="detail-hero-media">
         <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div class="detail-hero-badges">
-          <span class="tag ${isContrarian ? "tag-caution" : rated ? "tag-accent" : "tag-slate"}">${escapeHtml(c.agreement || "StayScore")}</span>
-          ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
-          ${isGlobalOnly ? `<span class="tag tag-slate">Global Luxury Directory</span>` : ""}
-          ${c.award ? `<span class="tag">${escapeHtml(c.award)}</span>` : ""}
+          <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
+          <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
+          ${o.officialAwards.map((aw) => `<a class="tag" href="${escapeHtml(aw.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(aw.label)} ↗</a>`).join("")}
         </div>
       </div>
 
       <div class="detail-hero-body">
         <div class="meta-line">
           <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
-          <span>&bull;</span>
-          <span>${escapeHtml(h.brand || "")}</span>
+          ${h.brand ? `<span>&bull;</span><span>${escapeHtml(h.brand)}</span>` : ""}
           ${h.priceRange ? `<span>&bull;</span><span>${escapeHtml(h.priceRange)}</span>` : ""}
         </div>
 
         <h1 class="detail-title">${escapeHtml(h.name)}</h1>
-        <p class="detail-verdict">${escapeHtml(h.verdict || "")}</p>
+        <p class="detail-verdict">${escapeHtml(h.verdict || h.standout || "")}</p>
 
         <div class="detail-kpi-row">
-          <div class="detail-kpi is-primary ${isContrarian ? "is-caution" : ""}">
-            <strong>${c.greatStayChance || 90}%</strong>
-            <span>${rated ? "Chance of a Great Stay" : "Global Great-Stay Odds"}</span>
+          <div class="detail-kpi is-primary ${o.statusTone === "amber" ? "is-caution" : ""}">
+            <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Pending"}</strong>
+            <span>${escapeHtml(o.statusBadge)}</span>
           </div>
           <div class="detail-kpi">
-            <strong>${c.overallIndex || weightedRaw}<span>/100</span></strong>
-            <span>StayScore Index</span>
+            <strong>${o.overallIndex != null ? `${o.overallIndex}<span>/100</span>` : "—"}</strong>
+            <span>${escapeHtml(BRAND.name)} Index</span>
           </div>
           <div class="detail-kpi">
             ${
-              rated
-                ? `<strong>${formatMyScore(h.overall)}<span>/5</span></strong><span>Our Stay Score</span>`
-                : `<strong style="font-size:19px;">${isGlobalOnly ? "Unvisited" : "Unrated"}</strong><span>${isGlobalOnly ? "Global Directory" : "Short Preview Only"}</span>`
+              o.firstHand
+                ? `<strong>${formatPersonalScore(h.overall)}<span>/5</span></strong><span>First-Hand Verified</span>`
+                : `<strong style="font-size:18px;">${isGlobalOnly ? "Unvisited" : "Short Only"}</strong><span>${escapeHtml(o.tierLabel)}</span>`
             }
           </div>
           <div class="detail-kpi">
-            <strong>${Number(c.bookingOverall || (c.googleRating * 2)).toFixed(1)}<span>/10</span></strong>
-            <span>Booking.com</span>
+            <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}<span>/${o.verifiedGuest.scale}</span>` : "Phase 1B"}</strong>
+            <span>${o.verifiedGuest ? escapeHtml(o.verifiedGuest.sourceName) : "Live Guest API"}</span>
           </div>
         </div>
 
@@ -173,64 +150,60 @@ function renderDetail(h, allHotels) {
           ${
             reviewHref
               ? `<a class="btn btn-primary" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Our Resort Short" : "Watch Our Full Review"}</a>
-                 <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>`
-              : `<a class="btn btn-primary" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>`
+                 <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &amp; Reviews &nearr;</a>`
+              : `<a class="btn btn-primary" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &amp; Reviews &nearr;</a>`
           }
           <a class="btn btn-outline" href="../?a=${encodeURIComponent(h.id)}">Compare Head-to-Head</a>
-          <button class="copy-link-btn" id="copyDetailLink" type="button">Copy Breakdown Link</button>
+          <button class="copy-link-btn" id="copyDetailLink" type="button">Copy Link</button>
         </div>
       </div>
     </section>
 
-    <!-- Exact Formula Transparency -->
+    <!-- Dynamic Confidence-Weighted Formula Transparency -->
     <section class="detail-section">
       <div class="section-header" style="margin-bottom:16px;">
         <div>
-          <h2 class="section-title">How This Great-Stay Score Is Calculated</h2>
-          <p class="section-subtitle">${
-            rated
-              ? `Exact weighted math behind ${escapeHtml(h.name)}'s ${c.overallIndex || weightedRaw}/100 Consensus Index and ${c.greatStayChance || 90}% Great-Stay Odds.`
-              : `Because we have only featured ${escapeHtml(h.name)} in YouTube Shorts so far, our personal score is excluded — this ${c.overallIndex || weightedRaw}/100 External Consensus uses 50% Critics/YouTube + 50% Verified Guests.`
-          }</p>
+          <h2 class="section-title">How This ${escapeHtml(BRAND.name)} Rating Is Weighted</h2>
+          <p class="section-subtitle">${escapeHtml(o.formulaSummary)}</p>
         </div>
       </div>
 
       <div class="formula-grid">
         <div class="formula-step">
-          <span class="formula-weight">${rated ? "40% Weight" : "0% Weight (Pending)"}</span>
-          <strong>${rated ? `${ours100} / 100` : "Not Rated Yet"}</strong>
-          <small>${rated ? `Our First-Hand Stay (${formatMyScore(h.overall)} / 5)` : "Short preview only — full review pending"}</small>
+          <span class="formula-weight">${o.weights.firstHand}% Active Weight</span>
+          <strong>${o.ours100 != null ? `${o.ours100} / 100` : "Not Rated"}</strong>
+          <small>${o.firstHand ? `First-Hand Verified (${formatPersonalScore(h.overall)} / 5 by ${escapeHtml(BRAND.foundingContributor)})` : isShortOnly ? "Short preview only — full stay pending" : "Global Directory property — not stayed yet"}</small>
         </div>
         <div class="formula-step">
-          <span class="formula-weight">${rated ? "30% Weight" : "50% Weight"}</span>
-          <strong>${critic100} / 100</strong>
-          <small>Top YouTube &amp; Travel Critics (${Number(c.criticScore || 0).toFixed(1)} / 5.0)</small>
+          <span class="formula-weight">${o.weights.critics}% Active Weight</span>
+          <strong>${o.critic100 != null ? `${o.critic100} / 100` : "0 Sourced"}</strong>
+          <small>${o.editorialRatings.length ? `${o.editorialRatings.length} verified editorial link${o.editorialRatings.length === 1 ? "" : "s"}` : "Only source-linked editorial ratings count"}</small>
         </div>
         <div class="formula-step">
-          <span class="formula-weight">${rated ? "30% Weight" : "50% Weight"}</span>
-          <strong>${google100} / 100</strong>
-          <small>Google &amp; Verified Guests (${Number(c.googleRating || 0).toFixed(1)} ★ &bull; ${Number(c.googleReviews || 0).toLocaleString("en-GB")} reviews)</small>
+          <span class="formula-weight">${o.weights.guests}% Active Weight</span>
+          <strong>${o.guest100 != null ? `${o.guest100} / 100` : "Live API Pending"}</strong>
+          <small>${o.verifiedGuest ? `${o.verifiedGuest.sourceName} (${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}${o.verifiedGuest.reviewCount ? ` • ${o.verifiedGuest.reviewCount.toLocaleString("en-GB")} reviews` : ""})` : "Connecting live Google Places & licensed feed in Phase 1B"}</small>
         </div>
-        <div class="formula-step is-result ${isContrarian ? "is-caution" : ""}">
-          <span class="formula-weight">${escapeHtml(c.agreement || "Consensus")} (${deltaLabel})</span>
-          <strong>${c.greatStayChance || 90}% Odds</strong>
-          <small>${rated && c.spread != null ? `Spread vs. mainstream: ${Number(c.spread).toFixed(1)} pts` : "External critics & verified guests only"}</small>
+        <div class="formula-step is-result ${o.statusTone === "amber" ? "is-caution" : ""}">
+          <span class="formula-weight">${escapeHtml(o.statusBadge)}</span>
+          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}% Odds` : "Pending"}</strong>
+          <small>${o.isConsensusBadge && o.spread100 != null ? `Cross-source spread: ${o.spread100} pts` : "Consensus status unlocks at 2+ verified sources"}</small>
         </div>
       </div>
     </section>
 
-    <!-- Detailed Multi-Axis Breakdown -->
+    <!-- Detailed Breakdown: First-Hand Scorecard vs Live Guest Feed -->
     <section class="detail-section">
       <div class="detail-two-col">
         <div class="detail-panel">
           <div class="detail-panel-head">
-            <h3>Our 5-Axis First-Hand Scorecard</h3>
-            <span class="tag ${rated ? "tag-accent" : ""}">${rated ? `${formatMyScore(h.overall)} / 5 Overall` : "Not Rated Yet"}</span>
+            <h3>First-Hand 5-Axis Scorecard</h3>
+            <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${o.firstHand ? `${formatPersonalScore(h.overall)} / 5 Overall` : escapeHtml(o.tierLabel)}</span>
           </div>
           ${
-            rated
+            o.firstHand
               ? `
-          <p class="detail-panel-sub">Whole-number scores directly from our stay at ${escapeHtml(h.name)}.</p>
+          <p class="detail-panel-sub">Whole-number 1–5 scores from ${escapeHtml(BRAND.foundingContributor)}’s stay at ${escapeHtml(h.name)}.</p>
           <div class="detail-bars">
             ${renderScoreBar("Rooms & Villas", s.rooms, 5, " / 5", true)}
             ${renderScoreBar("Grounds, Pools & Beach", s.grounds, 5, " / 5", true)}
@@ -244,8 +217,8 @@ function renderDetail(h, allHotels) {
             <strong>${isGlobalOnly ? "Global Luxury Directory — Not Visited Yet" : "Short Preview — Not Personally Scored Yet"}</strong>
             <p>${
               isGlobalOnly
-                ? `We haven’t filmed a first-hand stay at ${escapeHtml(h.name)} yet, so our 5-point Uncharted Itinerary scorecard is currently pending. The StayScore above blends top travel critics, YouTube hotel reviewers, and verified Booking.com / Google guests (50/50). When we stay here, our personal scores will automatically appear here!`
-                : `We’ve shared quick YouTube Shorts from ${escapeHtml(h.name)}, so we haven’t assigned our 5-point Uncharted Itinerary scorecard yet. Until a full video review goes live, the StayScore above relies 100% on external critics and verified Booking.com / Google guests.`
+                ? `The Uncharted Itinerary has not filmed a full first-hand stay at ${escapeHtml(h.name)} yet. When a full stay is filmed, whole-number 5-axis scores will automatically unlock and upgrade this property to Tier 1 First-Hand Verified.`
+                : `We’ve filmed quick YouTube Shorts at ${escapeHtml(h.name)} without assigning a full 5-axis stay scorecard yet.`
             }</p>
             ${
               reviewHref
@@ -259,73 +232,135 @@ function renderDetail(h, allHotels) {
 
         <div class="detail-panel">
           <div class="detail-panel-head">
-            <h3>Booking.com Verified Guest Sub-Scores</h3>
-            <span class="tag">${Number(c.bookingOverall || 9.0).toFixed(1)} / 10 Overall</span>
+            <h3>Live Verified Guest Ratings &amp; Booking</h3>
+            <span class="tag ${o.verifiedGuest ? "tag-teal" : "tag-slate"}">${o.verifiedGuest ? escapeHtml(o.verifiedGuest.attribution) : "Phase 1B Live API"}</span>
           </div>
-          <p class="detail-panel-sub">
-            Verified post-stay ratings &bull; Google ${Number(c.googleRating || 0).toFixed(1)}★ (${Number(c.googleReviews || 0).toLocaleString("en-GB")})
-            ${c.tripadvisorRating ? ` &bull; TripAdvisor ${Number(c.tripadvisorRating).toFixed(1)}/5` : ""}
-          </p>
-          <div class="detail-bars">
-            ${renderScoreBar("Staff & Service", b.staff || 9.4, 10, " / 10")}
-            ${renderScoreBar("Cleanliness", b.cleanliness || 9.5, 10, " / 10")}
-            ${renderScoreBar("Comfort", b.comfort || 9.5, 10, " / 10")}
-            ${renderScoreBar("Facilities", b.facilities || 9.4, 10, " / 10")}
-            ${renderScoreBar("Location", b.location || 9.3, 10, " / 10")}
-            ${renderScoreBar("Value for Money", b.value || 8.6, 10, " / 10")}
+          ${
+            o.verifiedGuest
+              ? `
+          <p class="detail-panel-sub">Live API rating: <strong>${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}</strong>${o.verifiedGuest.reviewCount ? ` across ${o.verifiedGuest.reviewCount.toLocaleString("en-GB")} verified guest reviews` : ""}.</p>
+              `
+              : `
+          <div class="scorecard-unrated-box" style="margin-top:12px;">
+            <strong>Zero Guessed or Estimated Guest Scores</strong>
+            <p>${escapeHtml(BRAND.name)} never displays estimated Google, Booking.com, or TripAdvisor ratings. Live API guest ratings connect in Phase 1B via Google Places API and licensed hotel data feeds. In the meantime, check verified guest reviews and live nightly rates directly below.</p>
+            <a class="btn btn-primary" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &amp; Guest Reviews &nearr;</a>
           </div>
+              `
+          }
         </div>
       </div>
     </section>
 
-    <!-- Channel-by-Channel Comparison -->
+    <!-- Separated Layers: Structured Editorial Ratings/Awards vs Linked YouTube Reviews -->
     <section class="detail-section">
-      <div class="section-header" style="margin-bottom:18px;">
-        <div>
-          <h2 class="section-title">Channel-by-Channel &amp; Platform Breakdown</h2>
-          <p class="section-subtitle">How this property stacks up across top YouTube hotel reviewers, travel critics, and verified booking platforms.</p>
+      <div class="detail-two-col">
+        <div class="detail-panel">
+          <div class="detail-panel-head">
+            <h3>Structured Editorial Ratings &amp; Awards</h3>
+            <span class="tag">${o.editorialRatings.length + o.officialAwards.length} verified</span>
+          </div>
+          ${
+            o.editorialRatings.length || o.officialAwards.length
+              ? `
+          <div class="channel-breakdown-list" style="margin-top:12px;">
+            ${o.editorialRatings
+              .map(
+                (r) => `
+              <article class="channel-row">
+                <div class="channel-row-head">
+                  <div>
+                    <span class="tag">Editorial</span>
+                    <h4><a href="${escapeHtml(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.sourceName)} &nearr;</a></h4>
+                  </div>
+                  <div class="channel-row-score">
+                    <strong>${escapeHtml(r.rawScore || `${r.normalized100}/100`)}</strong>
+                    <span>${Number(r.normalized100)}/100</span>
+                  </div>
+                </div>
+                ${r.takeaway ? `<p class="channel-takeaway">${escapeHtml(r.takeaway)}</p>` : ""}
+              </article>
+            `
+              )
+              .join("")}
+            ${o.officialAwards
+              .map(
+                (a) => `
+              <article class="channel-row">
+                <div class="channel-row-head">
+                  <div>
+                    <span class="tag tag-accent">Official Award</span>
+                    <h4><a href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)} &nearr;</a></h4>
+                  </div>
+                  <div class="channel-row-score"><strong>${escapeHtml(a.year || "Verified")}</strong></div>
+                </div>
+              </article>
+            `
+              )
+              .join("")}
+          </div>
+              `
+              : `<p class="detail-panel-sub" style="margin-top:12px;">No source-linked editorial ratings or official award URLs logged for this property yet. ${escapeHtml(BRAND.name)} strictly requires a direct verified URL before displaying any editorial score.</p>`
+          }
         </div>
-      </div>
 
-      <div class="channel-breakdown-list">
-        ${benchmarks
-          .map(
-            (row) => `
-          <article class="channel-row">
-            <div class="channel-row-head">
-              <div>
-                <span class="tag ${row.category === "Our Stay" ? "tag-accent" : ""}">${escapeHtml(row.category)}</span>
-                <h4>${escapeHtml(row.source)}</h4>
-              </div>
-              <div class="channel-row-score">
-                <strong>${escapeHtml(row.score)}</strong>
-                <span>${row.normalized100 != null ? `${Number(row.normalized100)}/100` : "Pending"}</span>
-              </div>
-            </div>
+        <div class="detail-panel">
+          <div class="detail-panel-head">
+            <h3>Linked YouTube Video Reviews</h3>
+            <span class="tag">${(reviewHref ? 1 : 0) + o.youtubeReviews.length} linked</span>
+          </div>
+          <div class="channel-breakdown-list" style="margin-top:12px;">
             ${
-              row.normalized100 != null
-                ? `<div class="detail-bar-track" style="margin:10px 0;">
-              <div class="detail-bar-fill ${row.category === "Our Stay" ? "" : "is-secondary"}" style="width:${Math.max(0, Math.min(100, Number(row.normalized100)))}%"></div>
-            </div>`
+              reviewHref
+                ? `
+            <article class="channel-row">
+              <div class="channel-row-head">
+                <div>
+                  <span class="tag tag-accent">Founding Contributor</span>
+                  <h4><a href="${escapeHtml(reviewHref)}"${ext}>${escapeHtml(BRAND.foundingContributor)} — ${isShortOnly ? "Resort Short" : "Full Review"} &nearr;</a></h4>
+                </div>
+                <div class="channel-row-score">
+                  <strong>${o.firstHand ? `${formatPersonalScore(h.overall)} / 5` : "Short"}</strong>
+                </div>
+              </div>
+              <p class="channel-takeaway">${escapeHtml(h.verdict || "")}</p>
+            </article>
+                `
                 : ""
             }
-            <p class="channel-takeaway">${escapeHtml(row.takeaway)}</p>
-          </article>
-        `
-          )
-          .join("")}
+            ${o.youtubeReviews
+              .map(
+                (yt) => `
+              <article class="channel-row">
+                <div class="channel-row-head">
+                  <div>
+                    <span class="tag">${escapeHtml(yt.sentiment || "Video Review")}</span>
+                    <h4><a href="${escapeHtml(yt.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(yt.creatorName)} &nearr;</a></h4>
+                  </div>
+                </div>
+                ${yt.takeaway ? `<p class="channel-takeaway">${escapeHtml(yt.takeaway)}</p>` : ""}
+              </article>
+            `
+              )
+              .join("")}
+            ${
+              !reviewHref && !o.youtubeReviews.length
+                ? `<p class="detail-panel-sub">No third-party YouTube reviews linked yet. Every creator video added here requires a direct YouTube URL and represents their actual stated take without inventing synthetic scores.</p>`
+                : ""
+            }
+          </div>
+        </div>
       </div>
     </section>
 
     ${
       Array.isArray(h.shorts) && h.shorts.length
         ? `
-    <!-- Quick Shorts From This Resort -->
     <section class="detail-section">
       <div class="section-header" style="margin-bottom:16px;">
         <div>
           <h2 class="section-title">Quick Shorts From ${escapeHtml(h.name.split(",")[0])}</h2>
-          <p class="section-subtitle">${h.shorts.length} vertical 60-second clip${h.shorts.length === 1 ? "" : "s"} filmed right on property.</p>
+          <p class="section-subtitle">${h.shorts.length} vertical 60-second clip${h.shorts.length === 1 ? "" : "s"} filmed on property.</p>
         </div>
         <a class="btn btn-outline" href="https://www.youtube.com/@TheUnchartedItinerary/shorts" target="_blank" rel="noopener noreferrer">All YouTube Shorts &nearr;</a>
       </div>
@@ -352,57 +387,58 @@ function renderDetail(h, allHotels) {
         : ""
     }
 
-    <!-- Standout vs Caveat vs Consensus Gap -->
+    <!-- Standout vs Caveat -->
     <section class="detail-section">
       <div class="verdict-trio">
         <div class="verdict-card">
           <span class="tag tag-accent">Standout Highlight</span>
-          <h3>${isGlobalOnly ? "What Guests & Critics Love" : "What We Loved Most"}</h3>
+          <h3>${isGlobalOnly ? "Key Property Highlight" : "What Stood Out Most"}</h3>
           <p>${escapeHtml(h.standout || h.verdict || "")}</p>
         </div>
         <div class="verdict-card is-warn">
           <span class="tag tag-caution">Watch Out For</span>
           <h3>Honest Caveat Before Booking</h3>
-          <p>${escapeHtml(h.watchOut || "Check seasonal weather and meal plan inclusions before locking in your rate.")}</p>
+          <p>${escapeHtml(h.watchOut || "Check seasonal weather, transfer costs, and room categories before booking.")}</p>
         </div>
         <div class="verdict-card">
-          <span class="tag">StayScore Takeaway</span>
-          <h3>${isGlobalOnly ? "Global Consensus Context" : "Where We Agree or Differ"}</h3>
-          <p>${escapeHtml(c.whereWeDiffer || c.otherReviewersSay || "")}</p>
+          <span class="tag">${escapeHtml(BRAND.name)} Transparency</span>
+          <h3>Data Integrity Status</h3>
+          <p>${escapeHtml(o.formulaSummary)}</p>
         </div>
       </div>
     </section>
 
-    <!-- Related Resorts to Compare -->
+    <!-- Related Resorts -->
     <section class="detail-section" style="margin-bottom:56px;">
       <div class="section-header" style="margin-bottom:18px;">
         <div>
           <h2 class="section-title">Compare With Similar Resorts</h2>
-          <p class="section-subtitle">Explore detailed breakdowns for nearby luxury stays or run a direct side-by-side matchup.</p>
+          <p class="section-subtitle">Explore nearby luxury stays or run a direct head-to-head matchup.</p>
         </div>
       </div>
 
       <div class="related-grid">
         ${related
-          .map(
-            (r) => `
+          .map((r) => {
+            const ro = computeStayOdds(r);
+            return `
           <article class="related-card">
             <img src="${escapeHtml(r.thumbnail)}" alt="${escapeHtml(r.name)}" loading="lazy" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">${r.consensus?.greatStayChance || 90}% Odds</span>
-                <span>${r.consensus?.overallIndex || 90}/100</span>
+                <span class="tag ${ro.firstHand ? "tag-accent" : "tag-slate"}">${ro.greatStayOdds != null ? `${ro.greatStayOdds}% StayOdds` : escapeHtml(ro.tierLabel)}</span>
+                <span>${escapeHtml(ro.statusBadge)}</span>
               </div>
               <h4>${escapeHtml(r.name)}</h4>
-              <p>${escapeHtml(r.location)}, ${escapeHtml(r.country)} &bull; ${escapeHtml(r.priceRange || "")}</p>
+              <p>${escapeHtml(r.location)}, ${escapeHtml(r.country)}${r.priceRange ? ` &bull; ${escapeHtml(r.priceRange)}` : ""}</p>
               <div class="related-card-actions">
                 <a class="btn btn-primary" href="./?id=${encodeURIComponent(r.id)}">Full Breakdown</a>
                 <a class="btn btn-outline" href="../?a=${encodeURIComponent(h.id)}&b=${encodeURIComponent(r.id)}">VS ${escapeHtml(h.name.split(",")[0].slice(0, 14))}</a>
               </div>
             </div>
           </article>
-        `
-          )
+        `;
+          })
           .join("")}
       </div>
     </section>
@@ -413,7 +449,7 @@ function renderDetail(h, allHotels) {
     try {
       await navigator.clipboard.writeText(window.location.href);
       btn.textContent = "Copied Link ✓";
-      setTimeout(() => (btn.textContent = "Copy Breakdown Link"), 2000);
+      setTimeout(() => (btn.textContent = "Copy Link"), 2000);
     } catch {
       btn.textContent = "Copy failed";
     }
@@ -446,7 +482,7 @@ async function boot() {
     if (!hotel) throw new Error("No hotels found");
     renderDetail(hotel, hotels);
   } catch (err) {
-    qs("#detailRoot").innerHTML = `<div class="empty-state" style="margin:48px 0;">Unable to load this StayScore breakdown right now. <a href="../" style="color:var(--accent);text-decoration:underline;">Back to StayScore</a></div>`;
+    qs("#detailRoot").innerHTML = `<div class="empty-state" style="margin:48px 0;">Unable to load this ${escapeHtml(BRAND.name)} breakdown right now. <a href="../" style="color:var(--accent);text-decoration:underline;">Back to ${escapeHtml(BRAND.name)}</a></div>`;
     console.error(err);
   }
 }

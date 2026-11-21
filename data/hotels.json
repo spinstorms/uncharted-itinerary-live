@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T12:38:34Z",
+  "updatedAt": "2026-11-21T18:57:13Z",
   "hotels": [
     {
       "id": "taaktana-labuan-bajo",
@@ -14,6 +14,9 @@
       "reviewedDate": "2026-06-14",
       "videoId": "qUx1lEfMlRE",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -27,72 +30,14 @@
       "standout": "5/5 service with dedicated 24/7 butler and brand-new overwater & pool villas",
       "watchOut": "Dining (4/5) sits just a notch below St. Regis Bali and The Sira; shoreline is still maturing",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=TA%27AKTANA+Luxury+Collection+Labuan+Bajo",
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.3,
-        "googleRating": 4.7,
-        "googleReviews": 322,
-        "criticScore": 4.7,
-        "award": "Marriott Luxury Collection Flagship",
-        "sources": [
-          "Google Reviews (4.7★)",
-          "Marriott Bonvoy Reviewers",
-          "Luxury Travel YouTubers"
-        ],
-        "otherReviewersSay": "Online guests and Marriott reviewers rave about the brand-new architecture, 24/7 butler service, and Labuan Bajo's most polished luxury arrival.",
-        "whereWeDiffer": "Strong agreement — we loved the 5/5 butler care and Olympic pool just like everyone else, while noting dining (4/5) sits just behind St. Regis and The Sira.",
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.7,
-          "comfort": 9.7,
-          "facilities": 9.6,
-          "location": 9.2,
-          "value": 8.8
-        },
-        "tripadvisorRating": 4.8,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Flawless 5/5 butler care, 24-hour Olympic pool, and brand-new private pool villas — only dining (4/5) sat slightly behind St. Regis Bali."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10",
-            "normalized100": 95,
-            "takeaway": "Standout 9.7 scores across Staff, Cleanliness, and Comfort; Value (8.8) is the main trade-off for Labuan Bajo's flagship luxury resort."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (322)",
-            "normalized100": 94,
-            "takeaway": "Guests consistently praise the architectural design, sunset overwater villas, and seamless Komodo boat departures."
-          },
-          {
-            "source": "Marriott Bonvoy & Luxury Critics",
-            "category": "Travel Critic",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Widely cited as Flores' benchmark Luxury Collection opening, especially strong on Titanium/Ambassador suite upgrades."
-          },
-          {
-            "source": "Hotel Inspector Value Check (Walk With Me Tim / Bright Sun Lens)",
-            "category": "Inspector Lens",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "Passes the meticulous room-finish test thanks to brand-new build quality; inspectors note shoreline maturity and on-property dining pricing."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=TA%27AKTANA+Luxury+Collection+Labuan+Bajo",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "OQjTqSGtAQ8",
@@ -119,7 +64,12 @@
           "title": "Leros Restaurant at Ta’aktana",
           "viewsText": "136 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "w-maldives",
@@ -134,6 +84,9 @@
       "reviewedDate": "2025-12-06",
       "videoId": "ZlsSigaKhwc",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/ZlsSigaKhwc/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -147,72 +100,14 @@
       "standout": "Snorkel straight off your villa deck + private 3-hour island castaway excursion",
       "watchOut": "Add a meal plan or Bonvoy breakfast status early — a la carte dining adds up quickly",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=W+Maldives+North+Ari+Atoll",
-      "consensus": {
-        "overallIndex": 98,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 725,
-        "criticScore": 4.8,
-        "award": "Top-Rated Maldives House Reef",
-        "sources": [
-          "One Mile at a Time (2026)",
-          "The Points Guy",
-          "Google Reviews (4.8★)"
-        ],
-        "otherReviewersSay": "The Points Guy and One Mile at a Time consistently rank W Maldives among the best points resorts in the Maldives for its refurbished villas and direct-from-deck house reef snorkeling.",
-        "whereWeDiffer": "Strong agreement — we echo the rave reviews on the 2025/26 refurbishment and private Gaathafushi island trip, and add practical meal-budget tips.",
-        "bookingOverall": 9.7,
-        "bookingSubscores": {
-          "staff": 10.0,
-          "cleanliness": 10.0,
-          "comfort": 9.6,
-          "facilities": 10.0,
-          "location": 9.6,
-          "value": 8.9
-        },
-        "tripadvisorRating": 4.9,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Refurbished villas, world-class house reef right off the deck, and the unforgettable 3-hour Gaathafushi private island escape."
-          },
-          {
-            "source": "The Points Guy | Arrivals (YouTube)",
-            "category": "YouTube Reviewer",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "October 2026 post-renovation review praised the completely refreshed villas, vibrant island energy, and top-tier reef access on Bonvoy points."
-          },
-          {
-            "source": "DeLuxury.Travel (YouTube)",
-            "category": "YouTube Reviewer",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "4K walkthrough highlighted the newly renovated beach and overwater villas, private plunge pools, and modern interiors."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.7 / 10",
-            "normalized100": 97,
-            "takeaway": "Rare 10.0 scores for Staff, Cleanliness, and Facilities; Value (8.9) reflects high Maldivian dining and seaplane transfer costs."
-          },
-          {
-            "source": "UK Hotel Inspector Lens (Walk With Me Tim / Trek Trendy Benchmark)",
-            "category": "Inspector Lens",
-            "score": "9.2 / 10",
-            "normalized100": 92,
-            "takeaway": "Stronger real-world value than £3k+/night ultra-luxury Maldives villas Tim and Will review, though a la carte dining still needs budgeting."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=W+Maldives+North+Ari+Atoll",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "Ipx5anqLbSc",
@@ -240,7 +135,12 @@
           "title": "Overwater Villa Tour — W Maldives",
           "viewsText": "87 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "ritz-carlton-bali",
@@ -255,6 +155,9 @@
       "reviewedDate": "2026-04-27",
       "videoId": "NL2ccUHteZs",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -268,73 +171,20 @@
       "standout": "Half the price of St. Regis Bali with newer villas and better cliff-to-beach views",
       "watchOut": "Recycled grey-water toilet system can look brown and cause occasional bathroom odors",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Ritz-Carlton+Bali+Nusa+Dua",
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 95,
-        "agreement": "Mostly Aligned",
-        "spread": 0.4,
-        "googleRating": 4.6,
-        "googleReviews": 4606,
-        "criticScore": 4.6,
-        "award": "4,600+ Verified Guest Reviews",
-        "sources": [
-          "The Points Guy",
-          "TripExpert",
-          "Google Reviews (4.6★)"
-        ],
-        "otherReviewersSay": "The Points Guy and TripExpert highlight the dramatic 70m cliffside glass elevator, spacious suites, calm beach, and family-friendly luxury in Nusa Dua.",
-        "whereWeDiffer": "We rate it slightly higher than mainstream sites (4.7 vs 4.6) because it delivers newer Pavilion Pool Villas at roughly half the price of St. Regis — though we flag the recycled-water toilet quirk.",
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.5,
-          "cleanliness": 9.3,
-          "comfort": 9.3,
-          "facilities": 9.1,
-          "location": 9.0,
-          "value": 8.4
-        },
-        "tripadvisorRating": 4.7,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Dramatic 70m cliff glass elevator, newer Pavilion Pool Villas, and calmer beach at roughly half the price of St. Regis Bali — though watch the grey-water toilet smell."
-          },
-          {
-            "source": "Luxury Travel Expert (YouTube)",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Featured in 4K Bali luxury hotel tours praising the monumental cliffside arrival, expansive grounds, and family-friendly beachfront suites."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "High marks for Staff (9.5), Cleanliness (9.3), and Comfort (9.3); Value (8.4) dips when breakfast isn't bundled on points stays."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (4,606)",
-            "normalized100": 92,
-            "takeaway": "Over 4,600 reviews highlight attentive staff, huge suites, and top-notch kids club — occasional notes on Nusa Dua isolation."
-          },
-          {
-            "source": "Marriott & Points Communities (Reddit / OMAAT)",
-            "category": "Travel Critic",
-            "score": "4.6 / 5.0",
-            "normalized100": 92,
-            "takeaway": "Frequent debate vs. St. Regis Bali: travelers praise Ritz's newer 2015 build and dramatic views, while noting Elite breakfast isn't automatic."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
-      "shorts": []
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Ritz-Carlton+Bali+Nusa+Dua",
+          "priority": 1
+        }
+      ],
+      "shorts": [],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "w-bali-seminyak",
@@ -349,6 +199,9 @@
       "reviewedDate": "2026-05-05",
       "videoId": "3ll3ENeUxJg",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -362,72 +215,26 @@
       "standout": "One-Bedroom Oasis Pool Villas around £400/night + two strong breakfast venues",
       "watchOut": "Skip the Amex portal and book direct for Marriott Bonvoy points; Seminyak waves can be rough",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=W+Bali+Seminyak",
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.3,
-        "googleRating": 4.6,
-        "googleReviews": 6622,
-        "criticScore": 4.7,
-        "award": "6,600+ Verified Guest Reviews",
-        "sources": [
-          "The Points Guy",
-          "TripExpert",
-          "Google Reviews (4.6★)"
-        ],
-        "otherReviewersSay": "TripExpert and The Points Guy praise W Bali's lively beachfront vibe, iconic rice-paddy pool design, and consistent service right in the heart of Seminyak.",
-        "whereWeDiffer": "Total consensus — we agree it's one of the best luxury values in Seminyak, plus we share why booking direct beats the Amex portal on points.",
-        "bookingOverall": 9.4,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.6,
-          "comfort": 9.6,
-          "facilities": 9.5,
-          "location": 9.6,
-          "value": 8.8
-        },
-        "tripadvisorRating": 4.7,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Our favourite energetic beachfront base in Bali — electric Woobar sunsets, iconic tiered pool, and effortless Seminyak dining outside the gates."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.4 / 10",
-            "normalized100": 94,
-            "takeaway": "9.7 Staff, 9.6 Location, Cleanliness, and Comfort — guests rave about the private pool villas and Starfish Bloo breakfast."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (6,622)",
-            "normalized100": 92,
-            "takeaway": "Massive 6,600+ review consensus praising Seminyak's best sunset vibe, spotless upkeep, and warm Balinese hospitality."
-          },
-          {
-            "source": "Luxury Travel YouTubers & Critics",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Consistently ranked among the best W Hotels globally for balancing private villa calm with lively beach-club atmosphere."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=W+Bali+Seminyak",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "hMGtFMVhoNI",
           "title": "W Bali at Seminyak Beach",
           "viewsText": "173 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "le-meridien-maldives",
@@ -442,6 +249,9 @@
       "reviewedDate": "2025-12-20",
       "videoId": "3cNs_ybsnPE",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/3cNs_ybsnPE/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -455,72 +265,14 @@
       "standout": "Unbeatable Maldives points-value sweet spot without feeling budget",
       "watchOut": "Seaplane transfer is mandatory and non-negotiable on top of your room rate",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Le+Meridien+Maldives+Resort+Spa",
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.3,
-        "googleRating": 4.7,
-        "googleReviews": 468,
-        "criticScore": 4.7,
-        "award": "Top Bonvoy Points Value",
-        "sources": [
-          "The Points Guy",
-          "Head for Points / Bonvoy Creators",
-          "Google Reviews (4.7★)"
-        ],
-        "otherReviewersSay": "The Points Guy and points-travel YouTubers widely crown Le Méridien as the smartest Marriott Bonvoy redemption in the Maldives for modern overwater villas.",
-        "whereWeDiffer": "Strong agreement — we loved the value and modern design while reminding viewers that seaplane transfers are extra and non-negotiable.",
-        "bookingOverall": 9.7,
-        "bookingSubscores": {
-          "staff": 9.9,
-          "cleanliness": 10.0,
-          "comfort": 10.0,
-          "facilities": 9.7,
-          "location": 9.8,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.8,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "One of the smartest value plays in the Maldives — crisp mid-century villas, gorgeous turquoise lagoon, and easy Bonvoy points sweet spot."
-          },
-          {
-            "source": "Prince of Travel (YouTube & Blog)",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Called it 'an amazing deal for overwater villas' on Marriott Bonvoy points with cash rates far below rival Maldives islands."
-          },
-          {
-            "source": "The Points Guy & One Mile at a Time",
-            "category": "Travel Critic",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Highlighted as the standout entry-point luxury Maldives resort for points redemptions, strong Platinum breakfast perks, and Tabemasu dining."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.7 / 10",
-            "normalized100": 97,
-            "takeaway": "Perfect 10.0 for Cleanliness and Comfort plus 9.9 for Staff — one of the highest Booking.com value scores (9.0) in the Maldives."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (468)",
-            "normalized100": 94,
-            "takeaway": "Families and couples praise the hydroponic greenhouse, friendly team, and immaculate bathrooms."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Le+Meridien+Maldives+Resort+Spa",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "eRSGuj4VXTQ",
@@ -532,7 +284,12 @@
           "title": "Golden Hour at Le Méridien Maldives",
           "viewsText": "205 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "finolhu-baa-atoll",
@@ -547,6 +304,9 @@
       "reviewedDate": "2026-03-14",
       "videoId": "8ck7ZCsdtCQ",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/8ck7ZCsdtCQ/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -560,65 +320,14 @@
       "standout": "1.8km sandbank walk to the Crab Shack & spacious Ocean Water Villas",
       "watchOut": "Budget carefully for meal plans and seaplane transfers on top of nightly rates",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Finolhu+Baa+Atoll+Maldives",
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.3,
-        "googleRating": 4.7,
-        "googleReviews": 890,
-        "criticScore": 4.7,
-        "award": "UNESCO Baa Atoll Biosphere",
-        "sources": [
-          "Design Hotels / Luxury Blogs",
-          "Maldives YouTube Reviewers",
-          "Google Reviews (4.7★)"
-        ],
-        "otherReviewersSay": "Luxury travel blogs and YouTube reviewers spotlight its 1.8km natural sandbank, retro-chic Beach Bubble & Crab Shack dining, and energetic vibe compared to quieter atolls.",
-        "whereWeDiffer": "Close alignment — we loved the sandbank and friendly staff, while flagging meal-plan and seaplane budgeting upfront.",
-        "bookingOverall": 9.6,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.8,
-          "comfort": 9.7,
-          "facilities": 9.8,
-          "location": 9.5,
-          "value": 9.1
-        },
-        "tripadvisorRating": 4.8,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Playful barefoot-chic design, a jaw-dropping 2km sandbank, and UNESCO Baa Atoll reef life with standout dining variety."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.6 / 10",
-            "normalized100": 96,
-            "takeaway": "9.8 across Staff, Cleanliness, and Facilities plus an unusually strong 9.1 Value score for a Baa Atoll luxury island (only Wi-Fi at 7.5 lags)."
-          },
-          {
-            "source": "Design Hotels & Luxury Critics",
-            "category": "Travel Critic",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Celebrated for breaking the cookie-cutter Maldives mould with bold colour, Crab Shack dining on the sandbank, and Beach Bubble stays."
-          },
-          {
-            "source": "YouTube Luxury Resort Reviewers",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Frequent top pick for couples and families wanting fun nightlife and aesthetics without stuffy formality."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Finolhu+Baa+Atoll+Maldives",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "YOxJefaIOEM",
@@ -640,7 +349,12 @@
           "title": "Longest White Sandbank in Finolhu Maldives",
           "viewsText": "44 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "cocana-gili-t",
@@ -655,6 +369,9 @@
       "reviewedDate": "2026-09-29",
       "videoId": "pyfGUOlFr3A",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/pyfGUOlFr3A/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -668,66 +385,14 @@
       "standout": "5/5 luxury value on Gili T with full resort facilities and private pool villas",
       "watchOut": "More expensive than standard Gili stays, so best if you specifically want full-resort polish",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Cocana+Resort+Gili+Trawangan",
-      "consensus": {
-        "overallIndex": 98,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 1314,
-        "criticScore": 4.8,
-        "award": "TripAdvisor Travellers' Choice 2025 & 2026",
-        "sources": [
-          "Booking.com (9.6/10)",
-          "TripAdvisor (4.7★)",
-          "Travel + Leisure",
-          "Google Reviews (4.8★)"
-        ],
-        "otherReviewersSay": "Travel + Leisure, Booking.com (9.6/10 across staff, cleanliness & facilities), and TripAdvisor (top 10% worldwide) call it Gili Trawangan's standout five-star hideaway.",
-        "whereWeDiffer": "Strong agreement — we gave it 5/5 for luxury value on Gili T because it genuinely delivers full-resort comfort, heated pool, and spa.",
-        "bookingOverall": 9.4,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.7,
-          "comfort": 9.6,
-          "facilities": 9.7,
-          "location": 9.6,
-          "value": 9.1
-        },
-        "tripadvisorRating": 4.9,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Gili Trawangan's true 5-star game changer — sleek pool villas, sunset beach club, and effortless island luxury without the backpacker noise."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.4 / 10",
-            "normalized100": 94,
-            "takeaway": "Superb 9.4 across 547 verified stays, led by 9.7 Staff, Cleanliness, and Facilities plus 9.1 Value for money."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (1,314)",
-            "normalized100": 96,
-            "takeaway": "Over 1,300 reviews (plus 4.9★ for Sunset Club & Pacifica dining) confirm it as Gili T's highest-rated luxury resort."
-          },
-          {
-            "source": "Bali & Lombok Travel YouTubers",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Praised as the resort that finally brings Seminyak/Uluwatu-level villa polish to the Gili Islands."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Cocana+Resort+Gili+Trawangan",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "f_OkeF6igbA",
@@ -749,7 +414,12 @@
           "title": "Sunset Beach Club at Cocana Gili T",
           "viewsText": "147 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "w-algarve",
@@ -764,6 +434,9 @@
       "reviewedDate": "2026-05-29",
       "videoId": "Fl8gcliLk4Q",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/Fl8gcliLk4Q/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -777,66 +450,20 @@
       "standout": "Supreme Two-Bedroom Suite upgrade worth €2,000+/night & easy UK flight access",
       "watchOut": "A few quirky suite layout details; pricier overall than equivalent luxury in Bali",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=W+Algarve+Albufeira",
-      "consensus": {
-        "overallIndex": 86,
-        "greatStayChance": 86,
-        "agreement": "Mostly Aligned",
-        "spread": 0.5,
-        "googleRating": 4.5,
-        "googleReviews": 923,
-        "criticScore": 4.5,
-        "award": "Top European W Resort",
-        "sources": [
-          "Marriott Bonvoy Titanium Reviewers",
-          "Skyscanner Guests",
-          "Google Reviews (4.5★)"
-        ],
-        "otherReviewersSay": "Guests praise the stylish Benagil-inspired interiors, generous Titanium suite upgrades, quiet pools, and attentive hospitality near Albufeira.",
-        "whereWeDiffer": "Exact match (4.5 vs 4.5) — great 2.5-hour London getaway, though we note a few quirky room touches and higher cost than Asia.",
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.2,
-          "cleanliness": 9.4,
-          "comfort": 9.5,
-          "facilities": 9.3,
-          "location": 8.9,
-          "value": 8.1
-        },
-        "tripadvisorRating": 4.5,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Huge £2,500/night WOW suite upgrade, bold Portuguese tile design, and effortless 2.5-hour flight from London — though European summer pricing bites."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "9.5 Comfort and 9.4 Cleanliness shine, while Value for money (8.1) is the clear friction point during peak summer."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.5 ★ (923)",
-            "normalized100": 90,
-            "takeaway": "Guests love the WET Deck pool vibe, Paper Moon Italian dining, and modern rooms; some note cove beaches require a short walk."
-          },
-          {
-            "source": "UK Travel & Hotel Inspector Lens (Walk With Me Tim / Trek Trendy Style)",
-            "category": "Inspector Lens",
-            "score": "8.8 / 10",
-            "normalized100": 88,
-            "takeaway": "Delivers genuine 5-star European suite polish for UK weekenders, though high summer food & drink markups draw scrutiny."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
-      "shorts": []
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=W+Algarve+Albufeira",
+          "priority": 1
+        }
+      ],
+      "shorts": [],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "westin-bora-bora",
@@ -851,6 +478,9 @@
       "reviewedDate": "2025-12-03",
       "videoId": "5C-LADaIdRQ",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/5C-LADaIdRQ/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -864,66 +494,20 @@
       "standout": "Fresh modern Polynesian design & unbeatable Mount Otemanu lagoon views",
       "watchOut": "Avoid rainy off-peak months and expect steep island food & boat transfer costs",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Westin+Bora+Bora+Resort+Spa",
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 95,
-        "agreement": "Mostly Aligned",
-        "spread": 0.4,
-        "googleRating": 4.6,
-        "googleReviews": 353,
-        "criticScore": 4.6,
-        "award": "Refreshed 2024/25 Flagship",
-        "sources": [
-          "FlyerTalk Bonvoy Threads",
-          "Luxury YouTube Reviewers",
-          "Google Reviews (4.6★)"
-        ],
-        "otherReviewersSay": "FlyerTalk and Marriott luxury reviewers celebrate the full top-to-bottom renovation, Mount Otemanu views, and strong points-stay potential.",
-        "whereWeDiffer": "Strong agreement — we actually found it more relaxed and comfortable than St. Regis Bora Bora, especially when pooling Marriott points.",
-        "bookingOverall": 9.3,
-        "bookingSubscores": {
-          "staff": 9.4,
-          "cleanliness": 9.8,
-          "comfort": 9.8,
-          "facilities": 9.7,
-          "location": 9.8,
-          "value": 8.0
-        },
-        "tripadvisorRating": 4.6,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Brand-new overwater bungalows framing Mount Otemanu and an unforgettable sea-turtle sanctuary — just expect Bora Bora dining prices."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.3 / 10",
-            "normalized100": 93,
-            "takeaway": "9.8 Location, Cleanliness, and Comfort confirm the post-renovation wow factor, while Value (8.0) mirrors Bora Bora's steep extras."
-          },
-          {
-            "source": "Marriott Verified Guest Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "4.9 Cleanliness & Location, 4.7 Service, 4.3 Dining, 4.2 Value — a few guests note occasional early housekeeping teething issues."
-          },
-          {
-            "source": "Points & Luxury Reviewers (OMAAT / Prince of Travel)",
-            "category": "Travel Critic",
-            "score": "4.6 / 5.0",
-            "normalized100": 92,
-            "takeaway": "Widely praised as Marriott's freshest Mount Otemanu view play after its full Le Méridien-to-Westin rebuild."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
-      "shorts": []
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Westin+Bora+Bora+Resort+Spa",
+          "priority": 1
+        }
+      ],
+      "shorts": [],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "regent-bali-canggu",
@@ -938,6 +522,9 @@
       "reviewedDate": "2026-06-04",
       "videoId": "7UF4R3g8gjc",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -951,72 +538,26 @@
       "standout": "5/5 hospitality, ultra-fast buggy service, and stunning 1-Bedroom Suites",
       "watchOut": "Menu variety at dining venues (3/5) feels too narrow for a resort of this caliber",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Regent+Bali+Canggu",
-      "consensus": {
-        "overallIndex": 88,
-        "greatStayChance": 84,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.7,
-        "googleRating": 4.7,
-        "googleReviews": 599,
-        "criticScore": 4.7,
-        "award": "Flagship New Bali Opening",
-        "sources": [
-          "IHG Luxury Reviewers",
-          "Bali Travel YouTubers",
-          "Google Reviews (4.7★)"
-        ],
-        "otherReviewersSay": "Online reviewers praise the brand-new beachfront architecture, ultra-spacious suites, and polished Regent service in Canggu.",
-        "whereWeDiffer": "Slightly tougher than Google (4.4 vs 4.7) — we gave service 5/5 and suites 4.9/5, but docked dining to 3/5 for overly limited menu variety.",
-        "bookingOverall": 9.6,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.9,
-          "comfort": 9.9,
-          "facilities": 9.8,
-          "location": 9.7,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.8,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Drop-dead gorgeous suites, serene beachfront pools, and Regent Experience Agents — we docked a touch for early-opening quirks and Canggu traffic."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.6 / 10",
-            "normalized100": 96,
-            "takeaway": "Near-perfect 9.9 Cleanliness & Comfort and 9.8 Facilities right on Batu Bolong Beach."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (599)",
-            "normalized100": 94,
-            "takeaway": "Almost 600 reviews rave about the calm sanctuary feel steps from Canggu's restaurants and the world-first Regent Spa."
-          },
-          {
-            "source": "IHG & Luxury Travel Critics",
-            "category": "Travel Critic",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "Named one of Asia's hottest new luxury openings, elevating Canggu into true ultra-luxury territory."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Regent+Bali+Canggu",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "WrGUV47y2jI",
           "title": "View from the Regent Bali Canggu",
           "viewsText": "708 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "st-regis-bali",
@@ -1031,6 +572,9 @@
       "reviewedDate": "2026-05-08",
       "videoId": "JV1HuujJJ4k",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -1044,73 +588,26 @@
       "standout": "5/5 Boneka breakfast (Lobster Omelette!) & 40,000 sq. ft. saltwater lagoon",
       "watchOut": "Older 2008 main-building suites are showing wear; Ritz-Carlton nearby offers better value",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Bali+Resort+Nusa+Dua",
-      "consensus": {
-        "overallIndex": 90,
-        "greatStayChance": 86,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.8,
-        "googleRating": 4.8,
-        "googleReviews": 2832,
-        "criticScore": 4.8,
-        "award": "One MICHELIN Key",
-        "sources": [
-          "MICHELIN Guide (1 Key)",
-          "One Mile at a Time",
-          "The Points Guy",
-          "Google Reviews (4.8★)"
-        ],
-        "otherReviewersSay": "Awarded One MICHELIN Key and praised by One Mile at a Time & The Points Guy for legendary Boneka breakfasts, butler service, and a vast saltwater lagoon.",
-        "whereWeDiffer": "Honest contrarian note (4.4 vs 4.8) — breakfast is still 5/5, but aging 2008 main-building rooms make upgrading to a villa (or booking Ritz-Carlton) much smarter.",
-        "bookingOverall": 9.8,
-        "bookingSubscores": {
-          "staff": 10.0,
-          "cleanliness": 9.8,
-          "comfort": 9.8,
-          "facilities": 9.7,
-          "location": 9.8,
-          "value": 9.1
-        },
-        "tripadvisorRating": 4.9,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Legendary Boneka lobster breakfast and world-class 24/7 butler service, though suites feel older and cost roughly double Ritz-Carlton next door."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.8 / 10 (401)",
-            "normalized100": 98,
-            "takeaway": "Extraordinary 9.8 overall with a perfect 10.0 Staff rating and 9.8 Location, Cleanliness, and Comfort."
-          },
-          {
-            "source": "Google Reviews & Marriott Verified",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (2,832)",
-            "normalized100": 96,
-            "takeaway": "Over 1,000 five-star Marriott reviews praise the swimmable lagoon, champagne sabering ritual, and unmatched culinary standard."
-          },
-          {
-            "source": "Luxury Travel Critics & Reddit Consensus",
-            "category": "Travel Critic",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "MICHELIN Key icon widely crowned Bali's grand dame — though savvy points travelers agree with us that 2008 decor shows its age vs. newer resorts."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+St.+Regis+Bali+Resort+Nusa+Dua",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "H04VYpa77AE",
           "title": "Rainy Day Atmosphere at St. Regis Bali",
           "viewsText": "1.2K views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "the-ungasan-bali",
@@ -1125,6 +622,9 @@
       "reviewedDate": "2026-10-17",
       "videoId": "E_DfGSAMeTU",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -1138,65 +638,14 @@
       "standout": "Relaxed clifftop vibe, cliffside tennis court & private neighborhood pools",
       "watchOut": "Food at Watu and the beach club is decent rather than memorable",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Ungasan+Clifftop+Resort+Bali",
-      "consensus": {
-        "overallIndex": 88,
-        "greatStayChance": 84,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.7,
-        "googleRating": 4.7,
-        "googleReviews": 1376,
-        "criticScore": 4.6,
-        "award": "MICHELIN Guide Listed",
-        "sources": [
-          "MICHELIN Guide",
-          "Google Reviews (4.7★)",
-          "Bali Villa Reviewers"
-        ],
-        "otherReviewersSay": "Listed in the MICHELIN Guide and rated 4.7★ on Google for dramatic 100m Uluwatu cliff views, ultra-private villas, and VIP access to Sundays Beach Club.",
-        "whereWeDiffer": "Slightly more candid on dining (4.3 vs 4.7) — we loved the relaxing neighborhood villa pools and clifftop vibe, while finding the food fine rather than standout.",
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.6,
-          "comfort": 9.7,
-          "facilities": 9.6,
-          "location": 9.6,
-          "value": 8.5
-        },
-        "tripadvisorRating": 4.8,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Jaw-dropping private clifftop estates with VIP access to Sundays Beach Club — phenomenal for groups or special celebrations."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10",
-            "normalized100": 95,
-            "takeaway": "9.7 Staff & Comfort and 9.6 Location, Cleanliness, and Facilities; Value (8.5) reflects multi-bedroom estate pricing."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (1,376)",
-            "normalized100": 94,
-            "takeaway": "Guests consistently single out the dedicated villa butlers, private cliff infinity pools, and inclinator ride down to Sundays Beach Club."
-          },
-          {
-            "source": "Luxury Villa Reviewers",
-            "category": "YouTube Reviewer",
-            "score": "4.7 / 5.0",
-            "normalized100": 94,
-            "takeaway": "Praised as one of Uluwatu's ultimate private-villa experiences when splitting a 5-bedroom estate with family or friends."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Ungasan+Clifftop+Resort+Bali",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "vrNpdEHJifE",
@@ -1218,7 +667,12 @@
           "title": "Serene Atmosphere at The Ungasan",
           "viewsText": "409 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "rayavadee-krabi",
@@ -1233,6 +687,9 @@
       "reviewedDate": "2026-03-28",
       "videoId": "YvWtI_Bb4BQ",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/YvWtI_Bb4BQ/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -1246,65 +703,14 @@
       "standout": "Boat-only arrival, two-story jungle pavilions & The Grotto beachfront cave dining",
       "watchOut": "Main pool can get busy and parts of the lush grounds could use light freshening up",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Rayavadee+Krabi+Thailand",
-      "consensus": {
-        "overallIndex": 88,
-        "greatStayChance": 84,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.7,
-        "googleRating": 4.6,
-        "googleReviews": 1791,
-        "criticScore": 4.7,
-        "award": "MICHELIN Guide Hotel",
-        "sources": [
-          "MICHELIN Guide",
-          "Leading Hotels of the World",
-          "Google Reviews (4.6★)"
-        ],
-        "otherReviewersSay": "Featured in the MICHELIN Guide and Leading Hotels of the World for its boat-only limestone peninsula setting, two-story pavilions, and The Grotto cave restaurant.",
-        "whereWeDiffer": "Close alignment — we loved the one-of-a-kind boat arrival and pavilions, while honestly noting the crowded main pool and minor upkeep needed on jungle walkways.",
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.7,
-          "comfort": 9.7,
-          "facilities": 9.6,
-          "location": 9.7,
-          "value": 8.7
-        },
-        "tripadvisorRating": 4.7,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Unrivalled limestone-cliff setting surrounded by three beaches and The Grotto cave restaurant — pure Thailand magic."
-          },
-          {
-            "source": "Luxury Travel Expert (YouTube & Blog)",
-            "category": "YouTube Reviewer",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "Ranked in Top 10 Luxury Resorts in Thailand (2026) for its Phranang Peninsula speedboat arrival and iconic cave dining at The Grotto."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10 (751)",
-            "normalized100": 95,
-            "takeaway": "9.8 Staff and 9.7 Location, Cleanliness, and Comfort across 751 verified stays; Value sits at 8.7."
-          },
-          {
-            "source": "Google Reviews & Leading Hotels",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (1,791)",
-            "normalized100": 92,
-            "takeaway": "Travelers adore the monkeys, jungle pavilions, and private boat tours — common caveat is daytime non-guest beach traffic on Phra Nang Beach."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Rayavadee+Krabi+Thailand",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "vOWMKEyUZA8",
@@ -1316,7 +722,12 @@
           "title": "The Grotto Cave Restaurant at Rayavadee",
           "viewsText": "629 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "four-seasons-koh-samui",
@@ -1331,6 +742,9 @@
       "reviewedDate": "2026-01-08",
       "videoId": "OUBoO0NUats",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/OUBoO0NUats/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -1344,66 +758,20 @@
       "standout": "Jaw-dropping palm-lined hillside views & unmistakable Four Seasons hospitality",
       "watchOut": "Time your visit for Jan–Feb dry season for clear water; rooms feel slightly dated for the price",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Koh+Samui",
-      "consensus": {
-        "overallIndex": 88,
-        "greatStayChance": 84,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.7,
-        "googleRating": 4.8,
-        "googleReviews": 1450,
-        "criticScore": 4.5,
-        "award": "White Lotus Filming Location",
-        "sources": [
-          "Luxury Travel Expert",
-          "Booking.com (9.5/10)",
-          "TripAdvisor / Samui69 Aggregate"
-        ],
-        "otherReviewersSay": "Luxury Travel Expert and Booking.com (9.5/10) praise its iconic hillside views and 9.8/10 staff, while recent TripAdvisor aggregates flag high pricing and tidal/rocky beach water.",
-        "whereWeDiffer": "Dead-on agreement with recent guest trends — extraordinary resort experience, though rooms feel slightly older and seasonal rain can cloud the water.",
-        "bookingOverall": 9.7,
-        "bookingSubscores": {
-          "staff": 10.0,
-          "cleanliness": 9.9,
-          "comfort": 9.9,
-          "facilities": 9.9,
-          "location": 9.6,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.9,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "White Lotus Season 3 star that genuinely lives up to the hype — hillside pool villas, secluded cove beach, and effortless Four Seasons warmth."
-          },
-          {
-            "source": "Luxury Travel Expert (YouTube & Blog)",
-            "category": "YouTube Reviewer",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "Declared it 'the single best (and my favorite) luxury resort in Thailand' for its Bill Bensley hillside design and service."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.7 / 10",
-            "normalized100": 97,
-            "takeaway": "10.0 Staff and 9.9 across Cleanliness, Comfort, and Facilities — virtually spotless guest execution."
-          },
-          {
-            "source": "MICHELIN Guide & Forbes Critics",
-            "category": "Travel Critic",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "3 MICHELIN Keys and Forbes Five-Star icon; post-White Lotus demand means rates are steep so book early."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
-      "shorts": []
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Koh+Samui",
+          "priority": 1
+        }
+      ],
+      "shorts": [],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "w-sardinia",
@@ -1418,6 +786,9 @@
       "reviewedDate": "2026-06-25",
       "videoId": "TMDrvTY7bKk",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/TMDrvTY7bKk/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -1431,72 +802,26 @@
       "standout": "Private speedboat beach club transfer & relaxing cabanas around the pool",
       "watchOut": "Peak-season prices (and €18 ice creams) make value tough to justify in midsummer",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=W+Sardinia+Poltu+Quatu",
-      "consensus": {
-        "overallIndex": 85,
-        "greatStayChance": 85,
-        "agreement": "Mostly Aligned",
-        "spread": 0.4,
-        "googleRating": 4.4,
-        "googleReviews": 95,
-        "criticScore": 4.4,
-        "award": "New Costa Smeralda Opening",
-        "sources": [
-          "Google Reviews (4.4★)",
-          "European Bonvoy Reviewers",
-          "YouTube Hotel Tours"
-        ],
-        "otherReviewersSay": "Reviewers love the modern Costa Smeralda styling, private boat transfer to the beach club, and relaxed cabanas, while frequently flagging high peak-summer pricing.",
-        "whereWeDiffer": "Strong agreement (4.2 vs 4.4) — classy, enjoyable hotel, just hard to justify €1,000/night (and €18 ice creams) in peak August.",
-        "bookingOverall": 9.2,
-        "bookingSubscores": {
-          "staff": 8.9,
-          "cleanliness": 9.6,
-          "comfort": 9.6,
-          "facilities": 9.3,
-          "location": 9.5,
-          "value": 8.1
-        },
-        "tripadvisorRating": 4.5,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Gorgeous fjord-like marina setting and stylish new interiors in Poltu Quatu, though early service polish and Costa Smeralda pricing lower value."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.2 / 10",
-            "normalized100": 92,
-            "takeaway": "9.6 Cleanliness & Comfort and 9.5 Location shine, while Staff (8.9) and Value (8.1) echo our exact real-world caveats."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.4 ★ (95)",
-            "normalized100": 88,
-            "takeaway": "Early guests love the marina-village charm and yacht-club vibe, with mixed notes on opening-season service speed."
-          },
-          {
-            "source": "YouTube Luxury Resort Tours (2026)",
-            "category": "YouTube Reviewer",
-            "score": "4.5 / 5.0",
-            "normalized100": 90,
-            "takeaway": "Praised as Sardinia's freshest new luxury hotel opening with standout design and easy access to Porto Cervo and boat charters."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=W+Sardinia+Poltu+Quatu",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "w4QIjpjataQ",
           "title": "Private Speedboat at W Sardinia",
           "viewsText": "49 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "heights-melasti-bali",
@@ -1511,6 +836,9 @@
       "reviewedDate": "2026-04-06",
       "videoId": "Dj4WTXN9mO4",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/Dj4WTXN9mO4/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -1524,58 +852,14 @@
       "standout": "Modern private pool villa value + effortless food delivery and beach club access",
       "watchOut": "Open-air bathrooms mean you definitely want tropical mosquito repellent packed",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Heights+Melasti+Ungasan+Bali",
-      "consensus": {
-        "overallIndex": 85,
-        "greatStayChance": 85,
-        "agreement": "Mostly Aligned",
-        "spread": 0.5,
-        "googleRating": 4.5,
-        "googleReviews": 6287,
-        "criticScore": 4.4,
-        "award": "Uluwatu Value Combo",
-        "sources": [
-          "Google Reviews (Sundays 4.5★)",
-          "Bali Travel Vloggers",
-          "Booking Platforms"
-        ],
-        "otherReviewersSay": "Travelers praise Sundays Beach Club's clear reef water, kayaking, and sunset bonfires, alongside Ungasan's growing collection of sleek private pool villas.",
-        "whereWeDiffer": "Close match — great overall value combo, with practical heads-ups on cabana fees, open-air bathrooms, and mosquito repellent.",
-        "bookingOverall": 9.0,
-        "bookingSubscores": {
-          "staff": 9.2,
-          "cleanliness": 9.2,
-          "comfort": 9.1,
-          "facilities": 9.0,
-          "location": 9.5,
-          "value": 8.8
-        },
-        "tripadvisorRating": 4.5,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Stunning Melasti clifftop setting paired with bucket-list beach days at Sundays Beach Club — great boutique alternative to mega-resorts."
-          },
-          {
-            "source": "Google Reviews (Sundays Beach Club)",
-            "category": "Verified Guests",
-            "score": "4.5 ★ (6,287)",
-            "normalized100": 90,
-            "takeaway": "Over 6,200 reviews celebrate the crystal-clear cove, cliff inclinator, complimentary water sports, and sunset bonfires."
-          },
-          {
-            "source": "Bali Boutique & Beach Club YouTubers",
-            "category": "YouTube Reviewer",
-            "score": "4.5 / 5.0",
-            "normalized100": 90,
-            "takeaway": "Consistently featured among Uluwatu's best beach-club and cliff-view stays; tip: arrive early or book VIP cabanas in high season."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Heights+Melasti+Ungasan+Bali",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "KekO58GIaWk",
@@ -1587,7 +871,12 @@
           "title": "Sundays Beach Club — High Tides & Good Vibes",
           "viewsText": "1.9K views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "four-seasons-jimbaran",
@@ -1602,6 +891,9 @@
       "reviewedDate": "2026-07-18",
       "videoId": "1y19wX4Varg",
       "inLiveFeed": true,
+      "visitedByUs": true,
+      "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
       "scores": {
         "rooms": 3,
@@ -1615,72 +907,14 @@
       "standout": "5/5 breakfast & restaurant dining + sprawling Coconut Grove & free watersports",
       "watchOut": "Rooms (3/5) feel noticeably older and sparser than newer Bali luxury resorts at £500+",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Bali+at+Jimbaran+Bay",
-      "consensus": {
-        "overallIndex": 89,
-        "greatStayChance": 85,
-        "agreement": "Contrarian Verdict",
-        "spread": 0.8,
-        "googleRating": 4.8,
-        "googleReviews": 2825,
-        "criticScore": 4.7,
-        "award": "Iconic 30-Year Bali Classic",
-        "sources": [
-          "This Is Luxury Travel",
-          "Booking.com",
-          "Google Reviews (4.8★)"
-        ],
-        "otherReviewersSay": "Long-time luxury blogs and 2,800+ Google reviewers rate it 4.8★ for its iconic 50m infinity pool, Sundara Beach Club, dining, and classic Four Seasons warmth.",
-        "whereWeDiffer": "Our biggest contrarian call (3.9 vs 4.8) — food (5/5) and grounds still shine, but bare-feeling 30-year-old villas and a pest sighting seriously pulled down our stay.",
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.6,
-          "comfort": 9.7,
-          "facilities": 9.6,
-          "location": 9.4,
-          "value": 8.6
-        },
-        "tripadvisorRating": 4.7,
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Contrarian honest take: traditional Balinese architecture and warm staff are lovely, but at £900+/night we felt villa polish & value lagged newer Bali rivals."
-          },
-          {
-            "source": "Luxury Travel Expert (YouTube)",
-            "category": "YouTube Reviewer",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "Ranked among 'Bali's Best Luxury Resorts' (Oct 2026) praising its iconic village-style pool villas, Sundara Beach Club, and heritage charm."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10",
-            "normalized100": 95,
-            "takeaway": "9.8 Staff and 9.7 Comfort — tellingly, Value for money (8.6) and Wi-Fi (8.0) are the lowest sub-scores, backing up our value critique."
-          },
-          {
-            "source": "TripAdvisor & Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (2,825 Google) / 4.7 (2,497 TA)",
-            "normalized100": 95,
-            "takeaway": "Loyal repeat guests adore the 33-year Balinese heritage and sunset bay views, though newer travelers occasionally note older villa layouts."
-          },
-          {
-            "source": "Hotel Inspector Value Check (Walk With Me Tim / Bright Sun Lens)",
-            "category": "Inspector Lens",
-            "score": "8.2 / 10",
-            "normalized100": 82,
-            "takeaway": "Classic case where paying £1,000/night raises expectations sharply — if you want modern design over traditional Bali heritage, better value exists."
-          }
-        ],
-        "oursIncluded": true
-      },
-      "coverageType": "Full Review",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Resort+Bali+at+Jimbaran+Bay",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "xOvdvDZfv5E",
@@ -1692,7 +926,12 @@
           "title": "Four Seasons Bali Glimpse",
           "viewsText": "136 views"
         }
-      ]
+      ],
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "the-sira-lombok",
@@ -1707,7 +946,9 @@
       "reviewedDate": "2026-02-20",
       "videoId": "dR55gdbs_zo",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/dR55gdbs_zo/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -1721,65 +962,20 @@
       "standout": "Best breakfast we have ever tried + private beachfront pool villas & direct boat access to the Gilis",
       "watchOut": "Requires a boat or quick flight from Bali; peaceful Lombok location means minimal nightlife outside",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Sira+Luxury+Collection+Lombok",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Sira+Luxury+Collection+Lombok",
+          "priority": 1
+        }
+      ],
       "shorts": [],
-      "consensus": {
-        "overallIndex": 98,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 340,
-        "criticScore": 4.8,
-        "bookingOverall": 9.7,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.8,
-          "comfort": 9.9,
-          "facilities": 9.8,
-          "location": 9.5,
-          "value": 9.2
-        },
-        "tripadvisorRating": 4.9,
-        "award": "Marriott Luxury Collection Gem",
-        "sources": [
-          "Booking.com (9.7/10)",
-          "Google Reviews (4.8★)",
-          "Marriott Bonvoy Reviewers"
-        ],
-        "otherReviewersSay": "Verified Booking.com guests score Comfort at 9.9 and Staff/Cleanliness/Facilities at 9.8, making it one of Indonesia's highest-rated new luxury resorts.",
-        "whereWeDiffer": "Complete alignment — both we and mainstream reviewers rate The Sira as one of the very best luxury value stays in Southeast Asia.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "10/10 breakfast (our #1 ever), pristine beachfront pool villas with Bose audio, and phenomenal Bonvoy points value (~£700/wk equivalent)."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.7 / 10",
-            "normalized100": 97,
-            "takeaway": "9.9 Comfort, 9.8 Staff/Cleanliness/Facilities, and a rare 9.2 Value for money for a Luxury Collection property."
-          },
-          {
-            "source": "Google Reviews & Points Communities",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (340)",
-            "normalized100": 96,
-            "takeaway": "Praised as a tranquil alternative to busy Bali with effortless private-boat trips to Gili T and Gili Meno."
-          },
-          {
-            "source": "Hotel Inspector Value Check (Walk With Me Tim Lens)",
-            "category": "Inspector Lens",
-            "score": "9.6 / 10",
-            "normalized100": 96,
-            "takeaway": "New-build finish quality and high value-to-price ratio easily beat older £1,000+/night Bali icons."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "four-seasons-bangkok",
@@ -1794,7 +990,9 @@
       "reviewedDate": "2025-12-21",
       "videoId": "FrsCQh1hzes",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/FrsCQh1hzes/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -1808,6 +1006,14 @@
       "standout": "World-class architecture, riverside infinity pools, BKK Social Club, and free luxury boat shuttle to ICONSIAM",
       "watchOut": "Large city hotel scale means service feels slightly less intimate than boutique resorts; use Grab ($11) over hotel cars",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+Bangkok+at+Chao+Phraya+River",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Four+Seasons+Hotel+Bangkok+at+Chao+Phraya+River",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "3HqlqvQDwhQ",
@@ -1815,65 +1021,11 @@
           "viewsText": "874 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 98,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 3781,
-        "criticScore": 4.9,
-        "bookingOverall": 9.7,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.8,
-          "comfort": 9.8,
-          "facilities": 9.7,
-          "location": 9.5,
-          "value": 9.4
-        },
-        "tripadvisorRating": 4.9,
-        "award": "World's 50 Best Hotels Top 5 · 3 MICHELIN Keys",
-        "sources": [
-          "World's 50 Best Hotels",
-          "Booking.com (9.7/10)",
-          "Google Reviews (4.8★)",
-          "YouTube Hotel Critics"
-        ],
-        "otherReviewersSay": "Universally hailed by travel YouTubers, MICHELIN Guide, and 3,781 Google reviewers for its urban-resort design, BKK Social Club, and remarkable 9.4 Booking.com value score.",
-        "whereWeDiffer": "Strong agreement on the extraordinary hardware and pools — we add an honest caveat that the large scale makes service feel slightly less personal than smaller Four Seasons properties.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Rooms even beat Four Seasons Koh Samui; free river shuttle & BKK Social Club are standout perks, though large scale tempers intimacy."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.7 / 10",
-            "normalized100": 97,
-            "takeaway": "9.8 across Staff, Cleanliness, and Comfort plus an exceptional 9.4 Value for money."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (3,781)",
-            "normalized100": 96,
-            "takeaway": "Nearly 3,800 reviews praise the riverside serenity, Yu Ting Yuan dining, and spotless spa."
-          },
-          {
-            "source": "Luxury Hotel YouTubers (Ryan Walker / Luxury Travel Expert)",
-            "category": "YouTube Reviewer",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "Passed tough YouTube service tests with flying colours and praised as Asia's gold-standard city hotel."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "phulay-bay-krabi",
@@ -1888,7 +1040,9 @@
       "reviewedDate": "2025-12-24",
       "videoId": "-jBV9Gn21ZM",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/-jBV9Gn21ZM/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -1902,66 +1056,20 @@
       "standout": "Dramatic floating candlelit entrance, cavernous 20ft-ceiling pool villas & incredible 80k Bonvoy points value",
       "watchOut": "Rocky coastline means NO swimmable resort beach — take the resort's longtail boat to Hong Island for white sand",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Phulay+Bay+Ritz-Carlton+Reserve+Krabi",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Phulay+Bay+Ritz-Carlton+Reserve+Krabi",
+          "priority": 1
+        }
+      ],
       "shorts": [],
-      "consensus": {
-        "overallIndex": 98,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 971,
-        "criticScore": 4.9,
-        "bookingOverall": 9.8,
-        "bookingSubscores": {
-          "staff": 9.9,
-          "cleanliness": 10.0,
-          "comfort": 10.0,
-          "facilities": 9.8,
-          "location": 9.5,
-          "value": 9.5
-        },
-        "tripadvisorRating": 4.9,
-        "award": "3 MICHELIN Keys · World's First Ritz-Carlton Reserve",
-        "sources": [
-          "MICHELIN 3 Keys",
-          "Booking.com (9.8/10)",
-          "Google Reviews (4.8★)",
-          "One Mile at a Time"
-        ],
-        "otherReviewersSay": "MICHELIN 3-Key icon with rare 10.0 Booking.com scores for Cleanliness & Comfort and 9.9 Staff; widely considered one of Marriott's crown jewels.",
-        "whereWeDiffer": "We match the glowing 4.8 consensus while making sure viewers know upfront about the rocky shoreline with no swimmable resort beach.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "20ft ceilings, floating entrance, and superb 80k Bonvoy points redemption — just plan Hong Island boat days since there's no beach on-site."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.8 / 10",
-            "normalized100": 98,
-            "takeaway": "Perfect 10.0 for Cleanliness and Comfort, 9.9 Staff, and 9.5 Value."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (971)",
-            "normalized100": 96,
-            "takeaway": "Nearly 1,000 guests rave about personal butler care, sunset Chomtawan views, and Lae Lay dining."
-          },
-          {
-            "source": "MICHELIN Guide & Luxury Critics",
-            "category": "Travel Critic",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "Awarded 3 MICHELIN Keys for architectural drama and bespoke Thai hospitality."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "bask-gili-meno",
@@ -1976,7 +1084,9 @@
       "reviewedDate": "2026-02-06",
       "videoId": "GYA3bGTBlk0",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/GYA3bGTBlk0/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -1990,58 +1100,20 @@
       "standout": "Underwater bar, sommelier wine cellar, zero room-service fees & turtle snorkeling straight off the beach",
       "watchOut": "Bring water shoes for coral near shore, and cycling Gili Meno's sandy tracks takes effort",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=BASK+Gili+Meno",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=BASK+Gili+Meno",
+          "priority": 1
+        }
+      ],
       "shorts": [],
-      "consensus": {
-        "overallIndex": 97,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.8,
-        "googleReviews": 1998,
-        "criticScore": 4.7,
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.8,
-          "comfort": 9.8,
-          "facilities": 9.6,
-          "location": 9.6,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.9,
-        "award": "Gili Meno #1 Luxury Resort",
-        "sources": [
-          "Booking.com (9.5/10 · 440)",
-          "Google Reviews (4.8★ · 1,998)",
-          "Indonesia Travel YouTubers"
-        ],
-        "otherReviewersSay": "Nearly 2,000 Google reviewers and 440 Booking.com guests give BASK 9.8 Cleanliness & Comfort and rave about the sunset beach club and turtles.",
-        "whereWeDiffer": "Strong agreement — we add practical island logistics (water shoes & sandy cycling paths) that glossy hotel promos skip.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Rivals major luxury chains with a huge private villa pool, zero room-service fees, sommelier cellar, and underwater bar."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10 (440)",
-            "normalized100": 95,
-            "takeaway": "9.8 Cleanliness & Comfort, 9.7 Staff, and 9.0 Value for money."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (1,998)",
-            "normalized100": 96,
-            "takeaway": "Almost 2,000 glowing reviews for beachfront sunsets and direct access to Gili Meno's underwater statues."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "w-koh-samui",
@@ -2056,7 +1128,9 @@
       "reviewedDate": "2026-01-23",
       "videoId": "Rtk5XhYnA0k",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/Rtk5XhYnA0k/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -2070,6 +1144,14 @@
       "standout": "All-pool-villa layout, iconic sunken WOOBAR arrival views & unlimited free ice cream Sweet Spots",
       "watchOut": "Built in 2010 so some villa finishes feel older than brand-new rivals; water clarity varies by season",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=W+Koh+Samui",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=W+Koh+Samui",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "iHQDfYWPI30",
@@ -2077,64 +1159,11 @@
           "viewsText": "278 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 87,
-        "greatStayChance": 87,
-        "agreement": "Mostly Aligned",
-        "spread": 0.6,
-        "googleRating": 4.6,
-        "googleReviews": 1358,
-        "criticScore": 4.6,
-        "bookingOverall": 9.3,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.5,
-          "comfort": 9.4,
-          "facilities": 9.1,
-          "location": 9.0,
-          "value": 8.5
-        },
-        "tripadvisorRating": 4.7,
-        "award": "Iconic All-Pool-Villa Samui Resort",
-        "sources": [
-          "Booking.com (9.3/10)",
-          "Google Reviews (4.6★)",
-          "Luxury Travel Expert"
-        ],
-        "otherReviewersSay": "Travelers and Luxury Travel Expert praise the lively WOOBAR setting, warm staff (9.7 on Booking.com), and private pools in every villa, while noting Four Seasons Koh Samui edges it out on ultra-luxury polish.",
-        "whereWeDiffer": "Exact alignment at 4.6/5 — we highlight both the unbeatable fun factor (free Sweet Spots) and honest signs of 2010 room wear.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Great Bonvoy alternative to Four Seasons Samui with private pools in all 75 villas and unlimited ice cream Sweet Spots, despite minor 2010 room age."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.3 / 10",
-            "normalized100": 93,
-            "takeaway": "9.7 Staff and 9.5 Cleanliness lead the scorecard; Value sits at 8.5."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (1,358)",
-            "normalized100": 92,
-            "takeaway": "1,350+ guests love Namu Japanese dining, breakfast with a view, and buggy service."
-          },
-          {
-            "source": "Luxury Travel Expert (Blog)",
-            "category": "YouTube Reviewer",
-            "score": "4.6 / 5.0",
-            "normalized100": 92,
-            "takeaway": "Praised as Koh Samui's trendiest lifestyle resort, ranking just behind Four Seasons Samui."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "radisson-blu-maldives",
@@ -2149,7 +1178,9 @@
       "reviewedDate": "2026-01-27",
       "videoId": "m-KxX6tXE0s",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/m-KxX6tXE0s/hqdefault.jpg",
       "scores": {
         "rooms": 5,
@@ -2163,6 +1194,14 @@
       "standout": "Private infinity pool + overwater netting in every villa category at one of the sharpest Maldives price points",
       "watchOut": "Seaplane transfer adds cost (watch for 50%-off transfer promos) and house reef isn't as dramatic as W Maldives",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Radisson+Blu+Resort+Maldives",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Radisson+Blu+Resort+Maldives",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "xdbtDDBGDAI",
@@ -2170,57 +1209,11 @@
           "viewsText": "124 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 95,
-        "agreement": "Mostly Aligned",
-        "spread": 0.4,
-        "googleRating": 4.7,
-        "googleReviews": 890,
-        "criticScore": 4.5,
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.5,
-          "cleanliness": 9.6,
-          "comfort": 9.6,
-          "facilities": 9.3,
-          "location": 9.3,
-          "value": 8.5
-        },
-        "tripadvisorRating": 4.8,
-        "award": "Best-Value Private-Pool Water Villas",
-        "sources": [
-          "Booking.com (9.1/10 · 1,233)",
-          "Google Reviews (4.7★)",
-          "UK Hotel Inspector Lens"
-        ],
-        "otherReviewersSay": "Over 1,233 verified Booking.com stays award 9.6 Cleanliness & Comfort and 9.5 Staff, praising huge high-ceiling water villas and whale-shark excursions nearby.",
-        "whereWeDiffer": "Strong agreement — we love its value vs. £3,000/night Maldives icons reviewed by channels like Walk With Me Tim, while noting seaplane fees and moderate dining variety.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Passed our shower test with huge high-ceiling water villas, private infinity pools, and a warm waist-deep lagoon."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10 (1,233)",
-            "normalized100": 91,
-            "takeaway": "9.6 Cleanliness & Comfort and 9.5 Staff across 1,200+ stays."
-          },
-          {
-            "source": "UK Hotel Inspector Value Lens (Walk With Me Tim Comparison)",
-            "category": "Inspector Lens",
-            "score": "9.2 / 10",
-            "normalized100": 92,
-            "takeaway": "Delivers 85% of the overwater-villa magic at roughly a quarter of the nightly price of ultra-luxury Maldives resorts."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "como-uma-canggu",
@@ -2235,7 +1228,9 @@
       "reviewedDate": "2026-03-10",
       "videoId": "CE__WCDevjQ",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/CE__WCDevjQ/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -2249,58 +1244,20 @@
       "standout": "Modern Echo Beach luxury with outdoor showers, great Pilates/gym & unbeatable Canggu price-to-quality ratio",
       "watchOut": "Echo Beach is a surf break rather than a calm swimming beach, and Canggu traffic outside is heavy",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=COMO+Uma+Canggu+Bali",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=COMO+Uma+Canggu+Bali",
+          "priority": 1
+        }
+      ],
       "shorts": [],
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 95,
-        "agreement": "Mostly Aligned",
-        "spread": 0.4,
-        "googleRating": 4.6,
-        "googleReviews": 1702,
-        "criticScore": 4.6,
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.5,
-          "cleanliness": 9.2,
-          "comfort": 9.2,
-          "facilities": 9.2,
-          "location": 9.4,
-          "value": 8.3
-        },
-        "tripadvisorRating": 4.6,
-        "award": "Canggu Best-Value Luxury Base",
-        "sources": [
-          "Booking.com (9.1/10)",
-          "Google Reviews (4.6★ · 1,702)",
-          "Design & Surf Travel Critics"
-        ],
-        "otherReviewersSay": "1,702 Google reviewers and Booking.com guests praise the beachfront location (9.4), warm COMO staff (9.5), and wellness/surf vibe.",
-        "whereWeDiffer": "Exact alignment at 4.6/5 — we highlight how well-insulated the rooms are for sleep in Canggu and how strong the ~£200/night value is compared to Regent Canggu nearby.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Smart ~£200/night Echo Beach luxury with outdoor showers, quiet rooms, healthy smoothie bowls, and easy walks to La Brisa."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "9.5 Staff, 9.4 Location, and 9.2 Cleanliness/Comfort/Facilities."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (1,702)",
-            "normalized100": 92,
-            "takeaway": "1,700+ guests celebrate COMO Beach Club sunsets, lagoon pool rooms, and holistic fitness."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "manor-house-castle-combe",
@@ -2315,7 +1272,9 @@
       "reviewedDate": "2025-12-13",
       "videoId": "X_KxJ_k9-NE",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/X_KxJ_k9-NE/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -2329,6 +1288,14 @@
       "standout": "One-Michelin-star Bybrook tasting dinner + 365 acres of Cotswolds gardens right beside Castle Combe village",
       "watchOut": "Classic English manor pricing adds up quickly with Michelin dining and weekend minimums",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Manor+House+Castle+Combe",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Manor+House+Castle+Combe",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "osxuu-76An0",
@@ -2346,65 +1313,11 @@
           "viewsText": "1K views"
         }
       ],
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 98,
-        "agreement": "Strong Consensus",
-        "spread": 0.3,
-        "googleRating": 4.7,
-        "googleReviews": 1387,
-        "criticScore": 4.7,
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.0,
-          "cleanliness": 9.2,
-          "comfort": 9.3,
-          "facilities": 9.1,
-          "location": 9.6,
-          "value": 8.1
-        },
-        "tripadvisorRating": 4.6,
-        "award": "1 MICHELIN Star (Bybrook) · 5-Star Cotswolds Manor",
-        "sources": [
-          "MICHELIN Guide",
-          "Booking.com (9.1/10)",
-          "Google Reviews (4.7★ · 1,387)",
-          "UK Hotel Reviewers"
-        ],
-        "otherReviewersSay": "1,387 Google reviewers and MICHELIN inspectors praise the storybook 9.6 Location, Italian gardens, and Bybrook restaurant, while Booking.com guests flag Value (8.1) on peak weekends.",
-        "whereWeDiffer": "Strong agreement — we loved the history, EV charging convenience, and Michelin dinner, while noting peak UK weekend rates sit on the high side.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "5 / 5",
-            "normalized100": 100,
-            "takeaway": "Stunning 14th-century Cotswolds grounds, charming cottages, EV chargers, and standout Michelin-starred dinner at Bybrook."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "9.6 Location and 9.3 Comfort shine; Value (8.1) reflects premium Cotswolds weekend tariffs."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (1,387)",
-            "normalized100": 94,
-            "takeaway": "Nearly 1,400 guests rave about the golf course, afternoon tea, and fairytale Castle Combe village walk."
-          },
-          {
-            "source": "UK Hotel Inspector Lens (Walk With Me Tim Style)",
-            "category": "Inspector Lens",
-            "score": "9.0 / 10",
-            "normalized100": 90,
-            "takeaway": "Genuine heritage charm and Michelin food justify a special occasion splurge, though room sizes vary across historic wings."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "the-pod-singapore",
@@ -2419,7 +1332,9 @@
       "reviewedDate": "2026-02-13",
       "videoId": "SBnS6gon20Y",
       "inLiveFeed": true,
+      "visitedByUs": true,
       "coverageType": "Full Review",
+      "tier": "first_hand_verified",
       "thumbnail": "https://i.ytimg.com/vi/SBnS6gon20Y/hqdefault.jpg",
       "scores": {
         "rooms": 4,
@@ -2433,58 +1348,20 @@
       "standout": "Spotless shared suites (hair dryers & curling irons included), free coffee & steps from Sultan Mosque",
       "watchOut": "Shared-room noise is unavoidable even with earplugs provided — best for 1–2 night solo stopovers",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Pod+at+Beach+Road+Singapore",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Pod+at+Beach+Road+Singapore",
+          "priority": 1
+        }
+      ],
       "shorts": [],
-      "consensus": {
-        "overallIndex": 82,
-        "greatStayChance": 84,
-        "agreement": "Strong Consensus",
-        "spread": 0.2,
-        "googleRating": 4.2,
-        "googleReviews": 1150,
-        "criticScore": 4.2,
-        "bookingOverall": 8.4,
-        "bookingSubscores": {
-          "staff": 8.8,
-          "cleanliness": 8.6,
-          "comfort": 8.2,
-          "facilities": 8.3,
-          "location": 9.1,
-          "value": 8.4
-        },
-        "tripadvisorRating": 4.3,
-        "award": "Top Singapore Boutique Capsule Pick",
-        "sources": [
-          "Google Reviews (4.2★)",
-          "Booking.com (8.4/10)",
-          "Walk With Me Tim / Budget Test Style"
-        ],
-        "otherReviewersSay": "Travelers consistently rate The Pod above typical Singapore hostels for cleanliness, female-only options, and walkability to Bugis MRT and Arab Street.",
-        "whereWeDiffer": "Exact agreement — a fun, ultra-practical budget stopover in expensive Singapore, as long as you expect capsule-hotel acoustics.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay",
-            "score": "4 / 5",
-            "normalized100": 80,
-            "takeaway": "Surprisingly clean private-suite bathrooms, keycard lockers, and killer Kampong Glam food right outside."
-          },
-          {
-            "source": "Google Reviews & Booking.com",
-            "category": "Verified Guests",
-            "score": "4.2 ★ / 8.4",
-            "normalized100": 84,
-            "takeaway": "9.1 Location score and strong cleanliness praised by solo transit travelers."
-          },
-          {
-            "source": "Budget Hotel Inspector Lens (Walk With Me Tim Style)",
-            "category": "Inspector Lens",
-            "score": "8.5 / 10",
-            "normalized100": 85,
-            "takeaway": "Passes the budget-stay inspection cleanly — far smarter than overpriced £150 windowless rooms in central Singapore."
-          }
-        ],
-        "oursIncluded": true
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "mandapa-ubud",
@@ -2499,7 +1376,9 @@
       "reviewedDate": "2026-03-01",
       "videoId": "6ZdND9eJGbo",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/6ZdND9eJGbo/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -2507,6 +1386,14 @@
       "standout": "3 MICHELIN Keys river-valley sanctuary with working rice terraces and unforgettable Patih butler care",
       "watchOut": "One of Bali's priciest stays (and Marriott points rarely dip low); bring repellent for jungle evenings",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Mandapa+a+Ritz-Carlton+Reserve+Ubud",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Mandapa+a+Ritz-Carlton+Reserve+Ubud",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "6ZdND9eJGbo",
@@ -2514,65 +1401,11 @@
           "viewsText": "920 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 97,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.7,
-        "googleReviews": 1983,
-        "criticScore": 4.9,
-        "bookingOverall": 9.6,
-        "bookingSubscores": {
-          "staff": 9.9,
-          "cleanliness": 9.7,
-          "comfort": 9.8,
-          "facilities": 9.5,
-          "location": 9.7,
-          "value": 8.9
-        },
-        "tripadvisorRating": 4.9,
-        "award": "3 MICHELIN Keys · Bali #1 Ubud Reserve",
-        "sources": [
-          "MICHELIN 3 Keys",
-          "Booking.com (9.6/10)",
-          "Google Reviews (4.7★ · 1,983)",
-          "Reddit r/marriott Consensus"
-        ],
-        "otherReviewersSay": "Widely crowned by Reddit Marriott elites, Booking.com (9.9 Staff!), and MICHELIN as Bali's single most soulful luxury sanctuary.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Ubud Shorts — where Balinese village elegance meets the Ayung River jungle, with working rice paddies, bamboo Kubu dining cocoons, and legendary 'Patih' butler service."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.6 / 10",
-            "normalized100": 96,
-            "takeaway": "9.9 Staff, 9.8 Comfort, and 9.7 Location & Cleanliness."
-          },
-          {
-            "source": "Google Reviews & Expedia",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (1,983) / 9.8",
-            "normalized100": 95,
-            "takeaway": "Nearly 2,000 guests rave about Kubu bamboo dining and ceremonial staff warmth."
-          },
-          {
-            "source": "MICHELIN Guide & Luxury Travel Critics",
-            "category": "Travel Critic",
-            "score": "4.9 / 5.0",
-            "normalized100": 98,
-            "takeaway": "Three MICHELIN Keys and near-unanimous r/marriott pick over Nusa Dua resorts."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "st-regis-bora-bora",
@@ -2587,7 +1420,9 @@
       "reviewedDate": "2025-12-03",
       "videoId": "Yph8Xt8FEE0",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/Yph8Xt8FEE0/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -2595,6 +1430,14 @@
       "standout": "Massive 1,550+ sq ft overwater villas, private snorkeling lagoonarium & Lagoon by Jean-Georges",
       "watchOut": "Significantly pricier than the brand-new Westin Bora Bora with slightly more classic villa styling",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+St+Regis+Bora+Bora+Resort",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+St+Regis+Bora+Bora+Resort",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "Yph8Xt8FEE0",
@@ -2602,57 +1445,11 @@
           "viewsText": "459 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 97,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.8,
-        "googleReviews": 884,
-        "criticScore": 4.8,
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.6,
-          "comfort": 9.8,
-          "facilities": 9.6,
-          "location": 9.9,
-          "value": 8.2
-        },
-        "tripadvisorRating": 4.8,
-        "award": "South Pacific Overwater Villa Icon",
-        "sources": [
-          "Google Reviews (4.8★ · 884)",
-          "Trip.com (9.5/10)",
-          "The Points Guy & OMAAT"
-        ],
-        "otherReviewersSay": "Longtime honeymoon gold standard praised for huge overwater villas, dramatic Mount Otemanu views, and butler service.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Bora Bora Shorts — enormous overwater villas (among the largest in the South Pacific) with a private lagoonarium and classic St. Regis butler polish, though pricey vs. Westin next door."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (884)",
-            "normalized100": 96,
-            "takeaway": "Nearly 900 reviews celebrate the Lagoonarium snorkeling and butler attention."
-          },
-          {
-            "source": "The Points Guy & Travel Critics",
-            "category": "Travel Critic",
-            "score": "4.8 / 5.0",
-            "normalized100": 96,
-            "takeaway": "Consistently ranked top-3 in French Polynesia alongside Four Seasons Bora Bora."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "park-hyatt-maldives",
@@ -2667,7 +1464,9 @@
       "reviewedDate": "2026-08-15",
       "videoId": "f7l8i6x0lrI",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/f7l8i6x0lrI/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -2675,6 +1474,14 @@
       "standout": "Intimate 51-villa natural island with one of the Maldives' healthiest 360° house reefs",
       "watchOut": "Long transfer from Malé (domestic flight + speedboat) can mean waiting times between flights",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Park+Hyatt+Maldives+Hadahaa",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Park+Hyatt+Maldives+Hadahaa",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "f7l8i6x0lrI",
@@ -2682,57 +1489,11 @@
           "viewsText": "253 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 97,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.8,
-        "googleReviews": 497,
-        "criticScore": 4.8,
-        "bookingOverall": 9.4,
-        "bookingSubscores": {
-          "staff": 9.5,
-          "cleanliness": 9.5,
-          "comfort": 10.0,
-          "facilities": 10.0,
-          "location": 9.5,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.8,
-        "award": "World of Hyatt Maldives Flagship",
-        "sources": [
-          "Google Reviews (4.8★ · 497)",
-          "Booking.com / Expedia (9.4/10)",
-          "One Mile at a Time"
-        ],
-        "otherReviewersSay": "Hyatt loyalists and Google reviewers praise its untouched island peace, sincere staff, and world-class reef — noting the long domestic transfer as the only trade-off.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Maldives Shorts — a serene, deeply remote natural island in the southern atolls with a thriving 360-degree house reef and World of Hyatt points appeal."
-          },
-          {
-            "source": "Booking.com & Expedia Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.4 / 10",
-            "normalized100": 94,
-            "takeaway": "10.0 Comfort & Facilities plus 9.5 Location & Cleanliness."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.8 ★ (497)",
-            "normalized100": 96,
-            "takeaway": "Nearly 500 guests rave about the authentic hospitality and pristine snorkeling reef."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "cap-karoso-sumba",
@@ -2747,7 +1508,9 @@
       "reviewedDate": "2026-07-20",
       "videoId": "U1676xiiq5I",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/U1676xiiq5I/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -2755,6 +1518,14 @@
       "standout": "1 MICHELIN Key architectural retreat near Waikuri Lagoon with visiting Michelin-caliber chefs",
       "watchOut": "Remote West Sumba takes effort to reach and has zero nightlife — pure slow-travel bliss",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Cap+Karoso+Sumba",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Cap+Karoso+Sumba",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "U1676xiiq5I",
@@ -2777,58 +1548,11 @@
           "viewsText": "482 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 96,
-        "greatStayChance": 97,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.7,
-        "googleReviews": 364,
-        "criticScore": 4.9,
-        "bookingOverall": 9.6,
-        "bookingSubscores": {
-          "staff": 9.8,
-          "cleanliness": 9.8,
-          "comfort": 9.8,
-          "facilities": 9.5,
-          "location": 9.5,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.8,
-        "award": "1 MICHELIN Key · Condé Nast Readers' Choice",
-        "sources": [
-          "MICHELIN Guide (19.7/20)",
-          "Google Reviews (4.7★ · 364)",
-          "Mr & Mrs Smith",
-          "Wallpaper*"
-        ],
-        "otherReviewersSay": "MICHELIN guests score Rooms, Services, and Cleanliness at 20/20 (19.7/20 overall), and Wallpaper*/Condé Nast hail it as Indonesia's coolest off-the-radar luxury escape.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured across 4 Sumba Shorts — a 1 MICHELIN Key barefoot-design sanctuary with Maldives-clear waters, farm-to-table chef residencies at Julang, and zero Bali crowds."
-          },
-          {
-            "source": "MICHELIN Guide Verified Guests",
-            "category": "Travel Critic",
-            "score": "19.7 / 20 (1 Key)",
-            "normalized100": 98,
-            "takeaway": "Perfect 20.0 scores for Rooms, Service, and Cleanliness."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (364)",
-            "normalized100": 94,
-            "takeaway": "Guests rave about personal GM hospitality, organic farm dining, and nearby Waikuri Lagoon."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "hiliwatu-ubud",
@@ -2843,7 +1567,9 @@
       "reviewedDate": "2026-08-25",
       "videoId": "p8hotG9r0vE",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/p8hotG9r0vE/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -2851,6 +1577,14 @@
       "standout": "Jaw-dropping rainforest valley balcony views and fresh modern suites at a fraction of Mandapa's price",
       "watchOut": "Peaceful Payangan jungle location is ~25–30 minutes north of central Ubud traffic",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Hiliwatu+Bali+Ubud+Tribute+Portfolio",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Hiliwatu+Bali+Ubud+Tribute+Portfolio",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "dV6N5tnM3Fw",
@@ -2873,50 +1607,11 @@
           "viewsText": "250 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 94,
-        "greatStayChance": 95,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.7,
-        "googleReviews": 142,
-        "criticScore": 4.7,
-        "bookingOverall": 9.4,
-        "bookingSubscores": {
-          "staff": 9.6,
-          "cleanliness": 9.6,
-          "comfort": 9.6,
-          "facilities": 9.4,
-          "location": 9.2,
-          "value": 9.1
-        },
-        "tripadvisorRating": 4.8,
-        "award": "Rising Ubud Marriott Bonvoy Gem",
-        "sources": [
-          "Google Reviews (4.7★ · 142)",
-          "Marriott Bonvoy Guests",
-          "The Uncharted Itinerary Shorts"
-        ],
-        "otherReviewersSay": "Early guests praise the dramatic infinity-pool jungle panoramas, spacious contemporary suites, and tranquil Payangan retreat feel.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured across 4 Ubud Shorts — genuinely impressed us with breathtaking jungle-valley balcony views, sleek new Tribute Portfolio rooms, and huge Bonvoy value north of Ubud."
-          },
-          {
-            "source": "Google Reviews & Marriott Guests",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (142)",
-            "normalized100": 94,
-            "takeaway": "Praised for peaceful jungle architecture and strong Bonvoy points-to-value ratio."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "the-edge-bali",
@@ -2931,14 +1626,24 @@
       "reviewedDate": "2026-06-25",
       "videoId": "AZ6PCzhHZhQ",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/AZ6PCzhHZhQ/hqdefault.jpg",
       "scores": null,
       "overall": null,
       "verdict": "Featured in our Uluwatu Shorts — home to Bali's famous glass-bottom sky pool overhanging a 500ft cliff at oneeighty° Dayclub plus ultra-private cliffside villas.",
-      "standout": "Bucket-list cantilevered glass-bottom sky pool hanging over Uluwatu cliffs + 9.9-rated butler service",
+      "standout": "Bucket-list cantilevered glass-bottom sky pool hanging over Uluwatu cliffs with ultra-private cliffside villas",
       "watchOut": "Sky-high villa rates and busy dayclub hours — villa guests get privileged quiet access",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Edge+Bali+Uluwatu",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Edge+Bali+Uluwatu",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "AZ6PCzhHZhQ",
@@ -2951,57 +1656,11 @@
           "viewsText": "401 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 96,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.7,
-        "googleReviews": 2153,
-        "criticScore": 4.8,
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.9,
-          "cleanliness": 9.7,
-          "comfort": 9.4,
-          "facilities": 9.6,
-          "location": 9.4,
-          "value": 8.6
-        },
-        "tripadvisorRating": 4.8,
-        "award": "Uluwatu Iconic Glass Sky Pool Villa Estate",
-        "sources": [
-          "Booking.com (9.5/10)",
-          "Google Reviews (4.7★ · 2,153)",
-          "Luxury Bali YouTubers"
-        ],
-        "otherReviewersSay": "Over 2,100 Google reviewers and Booking.com guests (9.9 Staff!) rave about the jaw-dropping cliff drama and VIP villa hospitality.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Uluwatu Shorts — home to Bali's famous glass-bottom sky pool overhanging a 500ft cliff at oneeighty° Dayclub plus ultra-private cliffside villas."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.5 / 10",
-            "normalized100": 95,
-            "takeaway": "9.9 Staff and 9.7 Cleanliness, with 8.6 Value reflecting ultra-luxury tariffs."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.7 ★ (2,153)",
-            "normalized100": 94,
-            "takeaway": "2,150+ reviews praise the world-famous cliff views and attentive service."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "element-by-westin-ubud",
@@ -3016,7 +1675,9 @@
       "reviewedDate": "2026-08-22",
       "videoId": "sL1sThfKXVE",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/sL1sThfKXVE/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -3024,6 +1685,14 @@
       "standout": "Easy ~£100/night Bonvoy elite-night earner with huge saltwater pool, spa, and quick Ubud shuttle",
       "watchOut": "Upper-upscale rather than ultra-luxury — ideal as a smart Ubud base rather than a private-pool splurge",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Element+by+Westin+Bali+Ubud",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Element+by+Westin+Bali+Ubud",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "sL1sThfKXVE",
@@ -3036,57 +1705,11 @@
           "viewsText": "143 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 91,
-        "greatStayChance": 92,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.6,
-        "googleReviews": 2251,
-        "criticScore": 4.5,
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.6,
-          "cleanliness": 9.2,
-          "comfort": 9.4,
-          "facilities": 9.0,
-          "location": 8.8,
-          "value": 8.8
-        },
-        "tripadvisorRating": 4.6,
-        "award": "Smart-Value Ubud Bonvoy Base",
-        "sources": [
-          "Booking.com (9.1/10)",
-          "Google Reviews (4.6★ · 2,251)",
-          "Marriott Bonvoy Travelers"
-        ],
-        "otherReviewersSay": "2,251 Google reviewers and Booking.com guests praise the friendly staff (9.6), comfortable Heavenly beds (9.4), and peaceful setting close to Ubud center.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Ubud Shorts — a breezy, wellness-focused Marriott Bonvoy base just minutes from central Ubud with a lovely saltwater pool, lush gardens, and fantastic everyday value."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.1 / 10",
-            "normalized100": 91,
-            "takeaway": "9.6 Staff and 9.4 Comfort make it a crowd-pleasing Ubud mainstay."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (2,251)",
-            "normalized100": 92,
-            "takeaway": "Over 2,200 reviews highlight spotless rooms, great breakfast, and Pancamaya Wellness."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "courtyard-seminyak",
@@ -3101,14 +1724,24 @@
       "reviewedDate": "2026-08-20",
       "videoId": "PkzyD2qR87Q",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/PkzyD2qR87Q/hqdefault.jpg",
       "scores": null,
       "overall": null,
       "verdict": "Featured in our Seminyak Shorts — massive three-tier lagoon pool, swim-up bar, warm staff, and walkable Seminyak Beach access at a fraction of W Bali's nightly rate.",
-      "standout": "Huge resort-style lagoon pool & 9.7-rated staff just a 5-minute stroll from Seminyak Beach",
+      "standout": "Huge three-tier resort lagoon pool and swim-up bar just a 5-minute stroll from Seminyak Beach",
       "watchOut": "Lively family-friendly resort rather than quiet private villas — pick W Bali if you want beachfront luxury",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Courtyard+by+Marriott+Bali+Seminyak+Resort",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Courtyard+by+Marriott+Bali+Seminyak+Resort",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "PkzyD2qR87Q",
@@ -3116,57 +1749,11 @@
           "viewsText": "722 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 91,
-        "greatStayChance": 92,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.6,
-        "googleReviews": 4006,
-        "criticScore": 4.5,
-        "bookingOverall": 9.4,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.5,
-          "comfort": 9.5,
-          "facilities": 9.3,
-          "location": 9.4,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.7,
-        "award": "Top-Value Seminyak Resort",
-        "sources": [
-          "Booking.com (9.4/10)",
-          "Google Reviews (4.6★ · 4,006)",
-          "Marriott Bonvoy Travelers"
-        ],
-        "otherReviewersSay": "Over 4,000 Google reviews and 9.4 on Booking.com (9.7 Staff, 9.0 Value) make this one of Bali's highest-rated affordable 5-star resorts.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Seminyak Shorts — massive three-tier lagoon pool, swim-up bar, warm staff, and walkable Seminyak Beach access at a fraction of W Bali's nightly rate."
-          },
-          {
-            "source": "Booking.com Verified Guests",
-            "category": "Verified Guests",
-            "score": "9.4 / 10",
-            "normalized100": 94,
-            "takeaway": "9.7 Staff, 9.5 Cleanliness & Comfort, and 9.0 Value."
-          },
-          {
-            "source": "Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.6 ★ (4,006)",
-            "normalized100": 92,
-            "takeaway": "4,000+ guests praise the swim-up pool bar, breakfast buffet, and central Seminyak convenience."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "sebali-nusa-penida",
@@ -3181,14 +1768,24 @@
       "reviewedDate": "2026-08-10",
       "videoId": "iJjyV8LrNbI",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/iJjyV8LrNbI/hqdefault.jpg",
       "scores": null,
       "overall": null,
       "verdict": "Featured in our Nusa Penida Shorts — one of the nicest beachfront stays on rugged Nusa Penida, with direct pool-access suites, sea views, and a standout on-site restaurant (Padi).",
-      "standout": "Rare beachfront polish & pool-access rooms on Nusa Penida, plus 4.9★-rated Padi Restaurant",
+      "standout": "Rare beachfront polish & pool-access rooms on Nusa Penida, plus the standout on-site Padi Restaurant",
       "watchOut": "Nusa Penida roads to Kelingking & Diamond Beach are still rough — hire a local driver",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Sebali+Penida+Beach+Resort+Nusa+Penida",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=The+Sebali+Penida+Beach+Resort+Nusa+Penida",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "iJjyV8LrNbI",
@@ -3201,50 +1798,11 @@
           "viewsText": "335 views"
         }
       ],
-      "consensus": {
-        "overallIndex": 90,
-        "greatStayChance": 91,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.5,
-        "googleReviews": 247,
-        "criticScore": 4.5,
-        "bookingOverall": 9.1,
-        "bookingSubscores": {
-          "staff": 9.6,
-          "cleanliness": 9.4,
-          "comfort": 9.2,
-          "facilities": 9.0,
-          "location": 9.1,
-          "value": 8.8
-        },
-        "tripadvisorRating": 4.6,
-        "award": "Top Beachfront Stay on Nusa Penida",
-        "sources": [
-          "Google Reviews (4.5★ · 247)",
-          "Expedia (9.6 Staff)",
-          "The Uncharted Itinerary Shorts"
-        ],
-        "otherReviewersSay": "Expedia and Google guests highlight 9.6 Staff service, 9.4 Cleanliness, and direct pool-access suites close to the ferry pier.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our Nusa Penida Shorts — one of the nicest beachfront stays on rugged Nusa Penida, with direct pool-access suites, sea views, and a standout on-site restaurant (Padi)."
-          },
-          {
-            "source": "Expedia & Google Reviews",
-            "category": "Verified Guests",
-            "score": "4.5 ★ / 9.4 Cleanliness",
-            "normalized100": 90,
-            "takeaway": "9.6 Staff & Service and 4.9★ Padi Restaurant stand out among Penida properties."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     },
     {
       "id": "kin-house-wiltshire",
@@ -3259,7 +1817,9 @@
       "reviewedDate": "2025-12-10",
       "videoId": "YnBR2_WYmiI",
       "inLiveFeed": false,
+      "visitedByUs": true,
       "coverageType": "Short Tour",
+      "tier": "short_preview",
       "thumbnail": "https://i.ytimg.com/vi/YnBR2_WYmiI/hqdefault.jpg",
       "scores": null,
       "overall": null,
@@ -3267,6 +1827,14 @@
       "standout": "Gorgeous modern-meets-Georgian interior design & walled gardens near the Cotswolds",
       "watchOut": "Primarily booked for exclusive-use stays, weddings, and private group retreats rather than single rooms",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=Kin+House+Kington+Langley+Wiltshire",
+      "bookingLinks": [
+        {
+          "channelType": "ota_affiliate",
+          "partnerName": "Booking.com",
+          "url": "https://www.booking.com/searchresults.html?ss=Kin+House+Kington+Langley+Wiltshire",
+          "priority": 1
+        }
+      ],
       "shorts": [
         {
           "id": "YnBR2_WYmiI",
@@ -3274,50 +1842,13 @@
           "viewsText": "1.3K views"
         }
       ],
-      "consensus": {
-        "overallIndex": 95,
-        "greatStayChance": 96,
-        "agreement": "External Consensus",
-        "spread": null,
-        "googleRating": 4.8,
-        "googleReviews": 115,
-        "criticScore": 4.7,
-        "bookingOverall": 9.5,
-        "bookingSubscores": {
-          "staff": 9.7,
-          "cleanliness": 9.7,
-          "comfort": 9.6,
-          "facilities": 9.5,
-          "location": 9.4,
-          "value": 9.0
-        },
-        "tripadvisorRating": 4.8,
-        "award": "Design-Led Cotswolds Country House",
-        "sources": [
-          "Google Reviews (4.8★)",
-          "UK Boutique Design Press",
-          "The Uncharted Itinerary Shorts"
-        ],
-        "otherReviewersSay": "Design press and guests rave about the playful Georgian restoration, hearth dining, and warm private-house atmosphere.",
-        "whereWeDiffer": "Featured in our YouTube Shorts — we have not published a full scored review yet, so this Stay Consensus reflects verified guest & critic ratings only.",
-        "channelBenchmarks": [
-          {
-            "source": "The Uncharted Itinerary",
-            "category": "Our Stay (Short Preview)",
-            "score": "Not Rated Yet",
-            "normalized100": null,
-            "takeaway": "Featured in our UK Shorts — a beautifully restored Grade II Georgian manor in Wiltshire blending historic countryside charm with bold, modern boutique interiors."
-          },
-          {
-            "source": "Google Reviews & Design Critics",
-            "category": "Verified Guests",
-            "score": "4.8 ★",
-            "normalized100": 96,
-            "takeaway": "Near-perfect reviews for food, interior styling, and hosting."
-          }
-        ],
-        "oursIncluded": false
-      }
+      "verifiedGuest": null,
+      "editorialRatings": [],
+      "youtubeReviews": [],
+      "officialAwards": [],
+      "redFlags": []
     }
-  ]
+  ],
+  "brand": "StayOdds",
+  "dataPolicy": "Verified first-hand stay scores only; external live guest ratings connect in Phase 1B (Supabase + Google Places API)."
 }

@@ -2079,7 +2079,7 @@ body.embed-mode .affiliate-hero {
   color: var(--ink-secondary);
 }
 
-/* ---------- Stay Consensus & Head-to-Head Comparator ---------- */
+/* ---------- StayOdds & Head-to-Head Comparator ---------- */
 .methodology-section {
   padding: 20px 0 28px;
   background: #fff8f3;
@@ -3551,7 +3551,7 @@ body.embed-mode .affiliate-hero {
   }
 }
 
-/* ---------- StayScore Global vs Visited Scope Switcher ---------- */
+/* ---------- StayOdds Global vs Visited Scope Switcher ---------- */
 .scope-tabs-bar {
   display: inline-flex;
   flex-wrap: wrap;

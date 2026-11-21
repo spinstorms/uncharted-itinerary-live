@@ -639,7 +639,8 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         "(warm, honest, conversational luxury travel reviewers — using 'we' and 'our stay').\n"
         "Never mention AI, 'this video', or 'in this review' — write it so it reads naturally like we typed our own stay notes.\n"
         "Use strictly the provided title, description, and chapters without inventing facts or prices.\n"
-        "If this is a full hotel or resort review, also include a 'hotel' object with GPS coordinates and WHOLE-NUMBER integer scores from 1 to 5 (NEVER decimals like 4.7 — round up or down to 1, 2, 3, 4, or 5 based on the review), plus realistic external guest/critic estimates; otherwise set 'hotel' to null.\n"
+        "If this is a full hotel or resort review, also include a 'hotel' object with GPS coordinates and WHOLE-NUMBER integer scores from 1 to 5 (NEVER decimals like 4.7 — round up or down to 1, 2, 3, 4, or 5 based ONLY on our review); otherwise set 'hotel' to null.\n"
+        "NEVER guess, invent, or estimate external Google, Booking.com, TripAdvisor, or third-party YouTuber/critic ratings or review counts.\n"
         "Return ONLY valid JSON with keys:\n"
         '{"tldr": "2-3 natural first-person sentences sharing our honest take", "highlights": ["3 to 4 crisp bullet notes"], '
         '"bestFor": "short 6-12 word audience fit", "location": "City/Region, Country", '
@@ -649,8 +650,7 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         '"brand": "Marriott Bonvoy|Four Seasons|IHG / Regent|Hilton|Boutique", "priceRange": "e.g. £400/night", '
         '"scores": {"rooms": 5, "grounds": 5, "food": 4, "service": 5, "value": 4}, '
         '"overall": 5, '
-        '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat", '
-        '"googleRating": 4.7, "bookingOverall": 9.3, "criticScore": 4.6, "otherReviewersSay": "1-sentence summary of what guests & critics say"}}\n\n'
+        '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat"}}\n\n'
         f"TITLE: {title}\n"
         f"DESCRIPTION:\n{intro}\n"
         f"CHAPTERS:\n{chapter_text}\n"
@@ -960,22 +960,7 @@ def main() -> None:
                     }
                     overall = _clamp_int(h.get("overall"), int(sum(int_scores.values()) / 5.0 + 0.5))
                     slug = re.sub(r"[^a-z0-9]+", "-", str(h["name"]).lower()).strip("-")
-
-                    google_rating = round(max(1.0, min(5.0, float(h.get("googleRating") or 4.6))), 1)
-                    booking_overall = round(max(1.0, min(10.0, float(h.get("bookingOverall") or google_rating * 2))), 1)
-                    critic_score = round(max(1.0, min(5.0, float(h.get("criticScore") or google_rating))), 1)
-                    ours100 = overall * 20
-                    critic100 = round(critic_score * 20)
-                    google100 = round(google_rating * 20)
-                    overall_idx = round(ours100 * 0.4 + critic100 * 0.3 + google100 * 0.3)
-                    spread = round(abs(overall - ((critic_score + google_rating) / 2.0)), 1)
-                    if spread <= 0.35:
-                        agreement, delta = "Strong Consensus", 2
-                    elif spread <= 0.65:
-                        agreement, delta = "Mostly Aligned", 0
-                    else:
-                        agreement, delta = "Contrarian Verdict", -4
-                    great_chance = max(65, min(98, overall_idx + delta))
+                    booking_url = f"https://www.booking.com/searchresults.html?ss={urllib.parse.quote_plus(str(h['name']))}"
 
                     newly_extracted_hotels.append(
                         {
@@ -991,53 +976,30 @@ def main() -> None:
                             "reviewedDate": raw["publishedDate"],
                             "videoId": vid,
                             "inLiveFeed": True,
+                            "visitedByUs": True,
                             "coverageType": "Full Review",
+                            "tier": "first_hand_verified",
                             "thumbnail": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
                             "scores": int_scores,
                             "overall": overall,
                             "verdict": str(h.get("verdict") or summary["tldr"]).strip(),
                             "standout": str(h.get("standout") or "").strip(),
                             "watchOut": str(h.get("watchOut") or "").strip(),
-                            "bookingUrl": f"https://www.booking.com/searchresults.html?ss={urllib.parse.quote_plus(str(h['name']))}",
+                            "bookingUrl": booking_url,
+                            "bookingLinks": [
+                                {
+                                    "channelType": "ota_affiliate",
+                                    "partnerName": "Booking.com",
+                                    "url": booking_url,
+                                    "priority": 1,
+                                }
+                            ],
                             "shorts": [],
-                            "consensus": {
-                                "overallIndex": overall_idx,
-                                "greatStayChance": great_chance,
-                                "agreement": agreement,
-                                "spread": spread,
-                                "oursIncluded": True,
-                                "googleRating": google_rating,
-                                "googleReviews": 0,
-                                "criticScore": critic_score,
-                                "bookingOverall": booking_overall,
-                                "award": str(h.get("brand") or "Reviewed Luxury Stay").strip(),
-                                "sources": ["The Uncharted Itinerary", f"Google Reviews ({google_rating}★)", f"Booking.com ({booking_overall}/10)"],
-                                "otherReviewersSay": str(h.get("otherReviewersSay") or "Well regarded by verified guests and luxury travel reviewers.").strip(),
-                                "whereWeDiffer": str(h.get("verdict") or summary["tldr"]).strip(),
-                                "channelBenchmarks": [
-                                    {
-                                        "source": "The Uncharted Itinerary",
-                                        "category": "Our Stay",
-                                        "score": f"{overall} / 5",
-                                        "normalized100": ours100,
-                                        "takeaway": str(h.get("verdict") or summary["tldr"]).strip(),
-                                    },
-                                    {
-                                        "source": "Booking.com Verified Guests",
-                                        "category": "Verified Guests",
-                                        "score": f"{booking_overall} / 10",
-                                        "normalized100": round(booking_overall * 10),
-                                        "takeaway": str(h.get("otherReviewersSay") or "Verified guest stay scores.").strip(),
-                                    },
-                                    {
-                                        "source": "Google Reviews",
-                                        "category": "Verified Guests",
-                                        "score": f"{google_rating} ★",
-                                        "normalized100": google100,
-                                        "takeaway": str(h.get("otherReviewersSay") or "Aggregated Google guest feedback.").strip(),
-                                    },
-                                ],
-                            },
+                            "verifiedGuest": None,
+                            "editorialRatings": [],
+                            "youtubeReviews": [],
+                            "officialAwards": [],
+                            "redFlags": [],
                         }
                     )
             elif prev_summary:
@@ -1102,6 +1064,8 @@ def main() -> None:
                     existing.get("id") == nh["id"] or (len(nh_norm) >= 6 and (nh_norm in ex_norm or ex_norm in nh_norm))
                 ):
                     existing["coverageType"] = "Full Review"
+                    existing["tier"] = "first_hand_verified"
+                    existing["visitedByUs"] = True
                     existing["videoId"] = nh["videoId"]
                     existing["inLiveFeed"] = True
                     existing["reviewedDate"] = nh["reviewedDate"]
@@ -1113,32 +1077,13 @@ def main() -> None:
                         existing["standout"] = nh["standout"]
                     if nh["watchOut"]:
                         existing["watchOut"] = nh["watchOut"]
-                    # Recalculate consensus incorporating our new whole-number score
-                    c = existing.get("consensus") or nh["consensus"]
-                    critic = float(c.get("criticScore") or nh["overall"])
-                    google = float(c.get("googleRating") or nh["overall"])
-                    ours100 = nh["overall"] * 20
-                    overall_idx = round(ours100 * 0.4 + round(critic * 20) * 0.3 + round(google * 20) * 0.3)
-                    spread = round(abs(nh["overall"] - ((critic + google) / 2.0)), 1)
-                    agreement, delta = (
-                        ("Strong Consensus", 2)
-                        if spread <= 0.35
-                        else ("Mostly Aligned", 0)
-                        if spread <= 0.65
-                        else ("Contrarian Verdict", -4)
-                    )
-                    c["overallIndex"] = overall_idx
-                    c["greatStayChance"] = max(65, min(98, overall_idx + delta))
-                    c["agreement"] = agreement
-                    c["spread"] = spread
-                    c["oursIncluded"] = True
-                    for row in c.get("channelBenchmarks", []):
-                        if "Uncharted Itinerary" in row.get("source", ""):
-                            row["category"] = "Our Stay"
-                            row["score"] = f"{nh['overall']} / 5"
-                            row["normalized100"] = ours100
-                            row["takeaway"] = nh["verdict"]
-                    existing["consensus"] = c
+                    # Preserve any verified external arrays; never fabricate unverified scores
+                    existing.pop("consensus", None)
+                    existing.setdefault("verifiedGuest", None)
+                    existing.setdefault("editorialRatings", [])
+                    existing.setdefault("youtubeReviews", [])
+                    existing.setdefault("officialAwards", [])
+                    existing.setdefault("redFlags", [])
                     existing_hotel_vids.add(nh["videoId"])
                     changed_hotels = True
                     upgraded = True

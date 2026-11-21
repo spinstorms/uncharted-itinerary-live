@@ -1,3 +1,11 @@
+import {
+  BRAND,
+  computeStayOdds,
+  formatPersonalScore,
+  isFirstHandVerified,
+  isVisitedProperty,
+} from "./stayodds-engine.js?v=1";
+
 const state = {
   hotels: [],
   visitedCount: 0,
@@ -5,10 +13,10 @@ const state = {
   scope: "all", // "all" | "visited" | "world"
   region: "All",
   verdict: "All",
-  sortBy: "chance",
+  sortBy: "visited",
   search: "",
-  idA: "ritz-carlton-bali",
-  idB: "bulgari-resort-bali",
+  idA: "taaktana-labuan-bajo",
+  idB: "ritz-carlton-bali",
 };
 
 const qs = (sel) => document.querySelector(sel);
@@ -36,46 +44,6 @@ function isExternalReview(h) {
   return !(h.inLiveFeed && h.videoId);
 }
 
-function formatMyScore(val) {
-  if (val == null || Number.isNaN(Number(val))) return null;
-  const num = Number(val);
-  return Number.isInteger(num) ? String(num) : num.toFixed(1);
-}
-
-function isRatedHotel(h) {
-  return h.overall != null && h.scores != null;
-}
-
-function isVisitedHotel(h) {
-  return h.visitedByUs !== false && h.coverageType !== "Global Directory";
-}
-
-function formatReviews(n) {
-  const num = Number(n || 0);
-  if (!num) return "Verified guests";
-  return `${num.toLocaleString("en-GB")} reviews`;
-}
-
-function getConsensus(h) {
-  if (h.consensus) return h.consensus;
-  const ours = h.overall != null ? Number(h.overall) : null;
-  const idx = ours != null ? Math.round(ours * 20) : 90;
-  return {
-    overallIndex: idx,
-    greatStayChance: Math.min(95, idx),
-    agreement: ours != null ? "Mostly Aligned" : "Global StayScore",
-    spread: ours != null ? 0.1 : null,
-    oursIncluded: ours != null,
-    googleRating: ours || 4.6,
-    googleReviews: 0,
-    criticScore: ours || 4.6,
-    award: h.brand || "Luxury Stay",
-    sources: ["StayScore"],
-    otherReviewersSay: "Benchmarked against verified guest & critic ratings.",
-    whereWeDiffer: "First-hand review from The Uncharted Itinerary.",
-  };
-}
-
 function initCommonUi() {
   if (new URLSearchParams(window.location.search).get("embed") === "1") {
     document.body.classList.add("embed-mode");
@@ -98,14 +66,14 @@ function populateH2HSelectors() {
   const selB = qs("#compareSelectB");
   if (!selA || !selB) return;
 
-  const visited = state.hotels.filter(isVisitedHotel);
-  const globalOnly = state.hotels.filter((h) => !isVisitedHotel(h));
+  const visited = state.hotels.filter(isVisitedProperty);
+  const globalOnly = state.hotels.filter((h) => !isVisitedProperty(h));
 
   const renderOpt = (h) =>
     `<option value="${escapeHtml(h.id)}">${escapeHtml(h.name)} (${escapeHtml(h.location)}, ${escapeHtml(h.country)})</option>`;
 
   const opts = `
-    <optgroup label="★ Visited &amp; Filmed by Uncharted (${visited.length})">
+    <optgroup label="★ First-Hand Stays &amp; Shorts (${visited.length})">
       ${visited.map(renderOpt).join("")}
     </optgroup>
     <optgroup label="🌍 Global Luxury Directory (${globalOnly.length})">
@@ -128,21 +96,18 @@ function populateH2HSelectors() {
 }
 
 function renderH2HCard(h, opponent) {
-  const c = getConsensus(h);
-  const oc = getConsensus(opponent);
+  const o = computeStayOdds(h);
+  const oo = computeStayOdds(opponent);
   const s = h.scores || {};
   const os = opponent.scores || {};
-  const rated = isRatedHotel(h);
-  const oppRated = isRatedHotel(opponent);
-  const visited = isVisitedHotel(h);
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  const metricRow = (label, a, b, suffix = "", unratedText = "Not visited yet") => {
+  const metricRow = (label, a, b, suffix = "", missingText = "Pending live data") => {
     const aMissing = a == null;
     const bMissing = b == null;
     const wins = !aMissing && !bMissing && Number(a) > Number(b);
-    const display = aMissing ? unratedText : `${a}${suffix}`;
+    const display = aMissing ? missingText : `${a}${suffix}`;
     return `
       <div class="h2h-metric ${wins ? "is-best" : ""}">
         <span>${escapeHtml(label)}</span>
@@ -151,43 +116,49 @@ function renderH2HCard(h, opponent) {
     `;
   };
 
-  const unratedLabel = visited ? "Short (Unrated)" : "Not visited yet";
-  const pendingAxis = visited ? "Pending full review" : "Global StayScore";
+  const guestLabel = o.verifiedGuest
+    ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}`
+    : null;
+  const oppGuestLabel = oo.verifiedGuest
+    ? `${oo.verifiedGuest.rating.toFixed(1)} / ${oo.verifiedGuest.scale}`
+    : null;
+
+  const unratedLabel = o.visited ? "Short Tour (Unrated)" : "Not Visited Yet";
 
   return `
     <article class="h2h-card">
       <div class="h2h-card-head">
         <img src="${escapeHtml(h.thumbnail)}" alt="${escapeHtml(h.name)}" />
         <div>
-          <span class="tag ${visited ? "tag-accent" : "tag-slate"}">${visited ? "Visited by Uncharted" : "Global Directory"}</span>
+          <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
           <h3><a class="consensus-title-link" href="./hotel/?id=${encodeURIComponent(h.id)}">${escapeHtml(h.name)}</a></h3>
-          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)} &bull; ${escapeHtml(h.priceRange || "")}</div>
+          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.priceRange ? ` &bull; ${escapeHtml(h.priceRange)}` : ""}</div>
         </div>
       </div>
 
       <div class="h2h-odds-strip">
         <div class="odds-big">
-          <strong>${c.greatStayChance}%</strong>
-          <span>${rated ? "Chance of a Great Stay" : "Global Great-Stay Odds"}</span>
+          <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "—"}</strong>
+          <span>${escapeHtml(o.statusBadge)}</span>
         </div>
         <div class="index-big">
-          <strong>${c.overallIndex}<span>/100</span></strong>
-          <span>StayScore Index</span>
+          <strong>${o.overallIndex != null ? `${o.overallIndex}<span>/100</span>` : "Pending"}</strong>
+          <span>${escapeHtml(BRAND.name)} Index</span>
         </div>
       </div>
 
       <div class="h2h-metrics-list">
-        ${metricRow("Our First-Hand Score", rated ? formatMyScore(h.overall) : null, oppRated ? formatMyScore(opponent.overall) : null, " / 5", unratedLabel)}
-        ${metricRow("Booking.com Guests", Number(c.bookingOverall || c.googleRating * 2).toFixed(1), Number(oc.bookingOverall || oc.googleRating * 2).toFixed(1), " / 10")}
-        ${metricRow("Google Guests", Number(c.googleRating).toFixed(1), Number(oc.googleRating).toFixed(1), " ★")}
-        ${metricRow("Critics & YouTube", Number(c.criticScore).toFixed(1), Number(oc.criticScore).toFixed(1), " / 5")}
-        ${metricRow("Rooms & Villas", rated ? formatMyScore(s.rooms) : null, oppRated ? formatMyScore(os.rooms) : null, " / 5", pendingAxis)}
-        ${metricRow("Food & Breakfast", rated ? formatMyScore(s.food) : null, oppRated ? formatMyScore(os.food) : null, " / 5", pendingAxis)}
-        ${metricRow("Service", rated ? formatMyScore(s.service) : null, oppRated ? formatMyScore(os.service) : null, " / 5", pendingAxis)}
-        ${metricRow("Value for Money", rated ? formatMyScore(s.value) : null, oppRated ? formatMyScore(os.value) : null, " / 5", pendingAxis)}
+        ${metricRow("First-Hand Verified Score", o.firstHand ? formatPersonalScore(h.overall) : null, oo.firstHand ? formatPersonalScore(opponent.overall) : null, " / 5", unratedLabel)}
+        ${metricRow("Live Verified Guests", o.guest100 != null ? guestLabel : null, oo.guest100 != null ? oppGuestLabel : null, "", "Phase 1B Live API")}
+        ${metricRow("Sourced Editorial Critics", o.critic100, oo.critic100, " / 100", "0 linked yet")}
+        ${metricRow("Rooms & Villas", o.firstHand ? formatPersonalScore(s.rooms) : null, oo.firstHand ? formatPersonalScore(os.rooms) : null, " / 5", unratedLabel)}
+        ${metricRow("Grounds & Pools", o.firstHand ? formatPersonalScore(s.grounds) : null, oo.firstHand ? formatPersonalScore(os.grounds) : null, " / 5", unratedLabel)}
+        ${metricRow("Food & Breakfast", o.firstHand ? formatPersonalScore(s.food) : null, oo.firstHand ? formatPersonalScore(os.food) : null, " / 5", unratedLabel)}
+        ${metricRow("Service", o.firstHand ? formatPersonalScore(s.service) : null, oo.firstHand ? formatPersonalScore(os.service) : null, " / 5", unratedLabel)}
+        ${metricRow("Value for Money", o.firstHand ? formatPersonalScore(s.value) : null, oo.firstHand ? formatPersonalScore(os.value) : null, " / 5", unratedLabel)}
       </div>
 
-      <p class="h2h-diff"><strong>${rated ? "Our take vs. others:" : "Why it stands out:"}</strong> ${escapeHtml(rated ? c.whereWeDiffer : h.standout || c.otherReviewersSay)}</p>
+      <p class="h2h-diff"><strong>Formula:</strong> ${escapeHtml(o.formulaSummary)}</p>
 
       <div class="scorecard-actions">
         <a class="btn btn-primary" href="./hotel/?id=${encodeURIComponent(h.id)}">Full Breakdown &rarr;</a>
@@ -212,18 +183,18 @@ function renderH2H() {
 }
 
 function getScopedHotels() {
-  if (state.scope === "visited") return state.hotels.filter(isVisitedHotel);
-  if (state.scope === "world") return state.hotels.filter((h) => !isVisitedHotel(h));
+  if (state.scope === "visited") return state.hotels.filter(isVisitedProperty);
+  if (state.scope === "world") return state.hotels.filter((h) => !isVisitedProperty(h));
   return state.hotels;
 }
 
 function renderScopeTabs() {
-  const container = qs("#stayScoreScopeTabs");
+  const container = qs("#stayOddsScopeTabs");
   if (!container) return;
   const tabs = [
-    { id: "all", label: `All Global Luxury (${state.hotels.length})` },
-    { id: "visited", label: `Visited by Uncharted (${state.visitedCount})` },
-    { id: "world", label: `Global Directory Only (${state.worldCount})` },
+    { id: "all", label: `All Luxury Properties (${state.hotels.length})` },
+    { id: "visited", label: `First-Hand Verified & Shorts (${state.visitedCount})` },
+    { id: "world", label: `Global Directory (${state.worldCount})` },
   ];
   container.innerHTML = tabs
     .map(
@@ -274,11 +245,22 @@ function renderLeaderboard() {
 
   const q = state.search.trim().toLowerCase();
   const list = getScopedHotels().filter((h) => {
-    const c = getConsensus(h);
+    const o = computeStayOdds(h);
     if (state.region !== "All" && h.region !== state.region) return false;
-    if (state.verdict !== "All" && c.agreement !== state.verdict) return false;
+    if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
     if (!q) return true;
-    const hay = [h.name, h.location, h.country, h.region, h.brand, c.award, c.otherReviewersSay, c.whereWeDiffer, h.standout, ...(c.sources || [])]
+    const hay = [
+      h.name,
+      h.location,
+      h.country,
+      h.region,
+      h.brand,
+      h.verdict,
+      h.standout,
+      h.watchOut,
+      o.tierLabel,
+      o.statusBadge,
+    ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
@@ -286,70 +268,69 @@ function renderLeaderboard() {
   });
 
   list.sort((a, b) => {
-    const ca = getConsensus(a);
-    const cb = getConsensus(b);
-    if (state.sortBy === "index") return cb.overallIndex - ca.overallIndex || cb.greatStayChance - ca.greatStayChance;
-    if (state.sortBy === "gap") return (cb.spread ?? -1) - (ca.spread ?? -1);
-    if (state.sortBy === "reviews") return (cb.googleReviews || 0) - (ca.googleReviews || 0);
-    if (state.sortBy === "visited") {
-      const av = isVisitedHotel(a) ? 1 : 0;
-      const bv = isVisitedHotel(b) ? 1 : 0;
-      if (bv !== av) return bv - av;
+    const oa = computeStayOdds(a);
+    const ob = computeStayOdds(b);
+    if (state.sortBy === "name") return a.name.localeCompare(b.name);
+    if (state.sortBy === "odds") {
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
-    return cb.greatStayChance - ca.greatStayChance || cb.overallIndex - ca.overallIndex;
+    // Default: First-Hand Verified first, then Short Tours, then Global Directory
+    const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
+    if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
+    return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
   });
 
   if (!list.length) {
-    container.innerHTML = `<div class="empty-state">No resorts matched your filters. Try switching to "All Global Luxury" or clearing your search.</div>`;
+    container.innerHTML = `<div class="empty-state">No resorts matched your filters. Try switching to "All Luxury Properties" or clearing your search.</div>`;
     return;
   }
 
   container.innerHTML = list
     .map((h, i) => {
-      const c = getConsensus(h);
+      const o = computeStayOdds(h);
       const reviewHref = getReviewHref(h);
       const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
-      const isContrarian = c.agreement === "Contrarian Verdict";
       const isShortOnly = h.coverageType === "Short Tour";
-      const visited = isVisitedHotel(h);
-      const rated = isRatedHotel(h);
       const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
-      const verdictClass = isContrarian
-        ? "is-contrarian"
-        : !rated || c.agreement === "External Consensus" || c.agreement === "Global StayScore"
-        ? "is-external"
-        : c.agreement === "Strong Consensus"
-        ? "is-strong"
-        : "is-aligned";
-      const tagClass = isContrarian
-        ? "tag-caution"
-        : verdictClass === "is-strong"
-        ? "tag-accent"
-        : verdictClass === "is-aligned"
-        ? "tag-teal"
-        : "tag-slate";
+
+      const toneClass =
+        o.statusTone === "amber"
+          ? "is-contrarian"
+          : o.statusTone === "accent"
+          ? "is-strong"
+          : o.statusTone === "teal"
+          ? "is-aligned"
+          : "is-external";
+      const tagClass =
+        o.statusTone === "amber"
+          ? "tag-caution"
+          : o.statusTone === "accent"
+          ? "tag-accent"
+          : o.statusTone === "teal"
+          ? "tag-teal"
+          : "tag-slate";
 
       return `
-        <article class="consensus-row-card ${verdictClass}">
+        <article class="consensus-row-card ${toneClass}">
           <div class="consensus-rank-col">
             <span class="consensus-rank-num">#${i + 1}</span>
-            <div class="consensus-chance-ring ${verdictClass}">
-              <strong>${c.greatStayChance}%</strong>
-              <span>${rated ? "Great-Stay Odds" : "Global Odds"}</span>
+            <div class="consensus-chance-ring ${toneClass}">
+              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "—"}</strong>
+              <span>${o.greatStayOdds != null ? "StayOdds" : "Live API Pending"}</span>
             </div>
-            <div class="consensus-index-chip">StayScore: <strong>${c.overallIndex}/100</strong></div>
+            <div class="consensus-index-chip">
+              ${o.sourceCount > 0 ? `<strong>${o.sourceCount}</strong> verified layer${o.sourceCount === 1 ? "" : "s"}` : "Global Metadata"}
+            </div>
           </div>
 
           <div class="consensus-main-col">
             <div class="meta-line">
-              <span class="tag ${tagClass}">${escapeHtml(c.agreement)}</span>
-              ${visited ? `<span class="tag tag-accent">Visited by Uncharted</span>` : `<span class="tag tag-slate">Global Directory</span>`}
-              ${isShortOnly ? `<span class="tag">Short Tour · Unrated</span>` : ""}
+              <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
+              <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
               ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
-              <span class="tag">${escapeHtml(c.award || h.brand || "")}</span>
+              ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
               <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
-              <span>&bull;</span>
-              <span>${escapeHtml(h.priceRange || "")}</span>
+              ${h.priceRange ? `<span>&bull;</span><span>${escapeHtml(h.priceRange)}</span>` : ""}
             </div>
 
             <h3 class="consensus-title">
@@ -358,30 +339,31 @@ function renderLeaderboard() {
 
             <div class="three-pillar-strip">
               <div class="pillar-box is-ours">
-                <small>The Uncharted Itinerary</small>
-                <strong>${rated ? `${formatMyScore(h.overall)} / 5` : visited ? "Short · Unrated" : "Not Visited Yet"}</strong>
-              </div>
-              <div class="pillar-box is-booking">
-                <small>Booking.com Guests</small>
-                <strong>${Number(c.bookingOverall || c.googleRating * 2).toFixed(1)} / 10</strong>
-              </div>
-              <div class="pillar-box is-google">
-                <small>Google (${escapeHtml(formatReviews(c.googleReviews))})</small>
-                <strong>${Number(c.googleRating).toFixed(1)} / 5.0</strong>
+                <small>First-Hand (${o.weights.firstHand}%)</small>
+                <strong>${o.firstHand ? `${formatPersonalScore(h.overall)} / 5` : o.visited ? "Short Preview" : "Not Visited"}</strong>
               </div>
               <div class="pillar-box is-critics">
-                <small>Critics &amp; YouTube</small>
-                <strong>${Number(c.criticScore).toFixed(1)} / 5.0</strong>
+                <small>Sourced Critics (${o.weights.critics}%)</small>
+                <strong>${o.critic100 != null ? `${o.critic100} / 100` : "0 linked"}</strong>
+              </div>
+              <div class="pillar-box is-google">
+                <small>Live Guests (${o.weights.guests}%)</small>
+                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Phase 1B API"}</strong>
+              </div>
+              <div class="pillar-box is-booking">
+                <small>Linked Videos</small>
+                <strong>${(reviewHref ? 1 : 0) + o.youtubeReviews.length} video${(reviewHref ? 1 : 0) + o.youtubeReviews.length === 1 ? "" : "s"}</strong>
               </div>
             </div>
 
             <div class="consensus-compare-notes">
-              <p><strong>What top channels &amp; online reviewers say:</strong> ${escapeHtml(c.otherReviewersSay)}</p>
-              <p><strong>${rated ? "Our stay vs. consensus:" : visited ? "Our coverage status:" : "Standout & caveat:"}</strong> ${escapeHtml(rated || visited ? c.whereWeDiffer : `${h.standout} — Watch out: ${h.watchOut}`)}</p>
+              <p><strong>${o.firstHand ? "First-Hand Verdict:" : "Property Overview:"}</strong> ${escapeHtml(h.verdict || h.standout || "")}</p>
+              ${h.watchOut ? `<p><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
             </div>
 
             <div class="consensus-sources">
-              ${(c.sources || []).map((src) => `<span class="source-chip">${escapeHtml(src)}</span>`).join("")}
+              <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
+              ${o.officialAwards.map((a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)} ↗</a>`).join("")}
             </div>
           </div>
 
@@ -395,7 +377,7 @@ function renderLeaderboard() {
                 ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Our Review"}</a>`
                 : ""
             }
-            <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Rates &nearr;</a>
+            <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
             <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
           </div>
         </article>
@@ -480,7 +462,7 @@ async function boot() {
     renderLeaderboard();
   });
   qs("#consensusSort")?.addEventListener("change", (e) => {
-    state.sortBy = e.target.value || "chance";
+    state.sortBy = e.target.value || "visited";
     renderLeaderboard();
   });
   qs("#consensusSearch")?.addEventListener("input", (e) => {
@@ -510,10 +492,10 @@ async function boot() {
     state.worldCount = worldHotels.length;
     state.hotels = [...visitedHotels, ...worldHotels];
 
+    const ratedCount = visitedHotels.filter(isFirstHandVerified).length;
     const statEl = qs("#consensusSummaryStat");
     if (statEl) {
-      const totalReviews = state.hotels.reduce((acc, h) => acc + (h.consensus?.googleReviews || 0), 0);
-      statEl.textContent = `${state.hotels.length} Global Luxury Hotels • ${totalReviews.toLocaleString("en-GB")}+ Reviews`;
+      statEl.textContent = `${ratedCount} First-Hand Verified • ${state.worldCount} Global Directory`;
     }
 
     populateH2HSelectors();
@@ -523,8 +505,8 @@ async function boot() {
     renderLeaderboard();
   } catch (err) {
     const el = qs("#consensusList");
-    if (el) el.innerHTML = `<div class="empty-state">Unable to load StayScore ratings right now.</div>`;
-    console.error("Failed to load StayScore data:", err);
+    if (el) el.innerHTML = `<div class="empty-state">Unable to load ${escapeHtml(BRAND.name)} right now.</div>`;
+    console.error("Failed to load StayOdds data:", err);
   }
 }
 

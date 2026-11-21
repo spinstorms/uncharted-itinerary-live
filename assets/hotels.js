@@ -171,8 +171,8 @@ function getFilteredHotels() {
     if (state.sortBy === "overall") {
       return (
         (b.overall || 0) - (a.overall || 0) ||
-        (b.consensus?.greatStayChance || 0) - (a.consensus?.greatStayChance || 0) ||
-        (b.scores?.value || 0) - (a.scores?.value || 0)
+        (b.scores?.value || 0) - (a.scores?.value || 0) ||
+        a.name.localeCompare(b.name)
       );
     }
     return (
@@ -416,8 +416,8 @@ function renderScorecards(hotels) {
                 `
                 : `
             <div class="scorecard-unrated-box">
-              <strong>Featured in a YouTube Short (Not Ranked Yet)</strong>
-              <p style="margin:0;">We haven’t published a full scored video review yet. Open <em>Score Breakdown</em> to see verified Booking.com &amp; Google guest consensus (${h.consensus?.greatStayChance || 90}% external odds).</p>
+              <strong>Featured in a YouTube Short (Not Scored Yet)</strong>
+              <p style="margin:0;">We haven’t filmed a full 5-axis scored stay review yet. Open <em>StayOdds Breakdown</em> to view property notes, our Shorts, and live rates.</p>
             </div>
                 `
             }
