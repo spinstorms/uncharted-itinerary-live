@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T21:39:15Z",
+  "updatedAt": "2026-11-21T22:28:26Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -198,7 +198,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/pyfGUOlFr3A/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/pyfGUOlFr3A/hqdefault.jpg",
-      "views": 522,
+      "views": 523,
       "category": "Hotel Reviews",
       "location": "Gili Trawangan, Indonesia",
       "chapters": [
@@ -595,7 +595,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
-      "views": 1889,
+      "views": 1895,
       "category": "Hotel Reviews",
       "location": "Jimbaran, Bali",
       "chapters": [
@@ -4281,7 +4281,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 812,
+      "views": 855,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
