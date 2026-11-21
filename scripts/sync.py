@@ -563,10 +563,12 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
     chapter_text = "\n".join(f"{c['time']} - {c['label']}" for c in chapters[:15])
 
     prompt = (
-        "You are an editorial travel writer for 'The Uncharted Itinerary' (luxury hotels, resorts, flights, and travel gear).\n"
-        "Summarize this YouTube video strictly from the provided title, description, and chapters. Do not invent facts or prices not stated.\n"
+        "Write short, authentic travel notes in the first-person voice of Oliver & Novi from 'The Uncharted Itinerary' "
+        "(warm, honest, conversational luxury travel reviewers — using 'we' and 'our stay').\n"
+        "Never mention AI, 'this video', or 'in this review' — write it so it reads naturally like we typed our own stay notes.\n"
+        "Use strictly the provided title, description, and chapters without inventing facts or prices.\n"
         "Return ONLY valid JSON with keys:\n"
-        '{"tldr": "2-3 crisp editorial sentences", "highlights": ["3 to 4 concise bullet takeaways"], '
+        '{"tldr": "2-3 natural first-person sentences sharing our honest take", "highlights": ["3 to 4 crisp bullet notes"], '
         '"bestFor": "short 6-12 word audience fit", "location": "City/Region, Country", '
         '"category": "one of: Hotel Reviews, Bali & Indonesia, Maldives, Flights, Travel Gear, Travel Guides"}\n\n'
         f"TITLE: {title}\n"
@@ -578,7 +580,7 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
-                "temperature": 0.3,
+                "temperature": 0.35,
                 "responseMimeType": "application/json",
             },
         }
@@ -616,8 +618,9 @@ def call_openai_summary(title: str, description: str, chapters: list[dict[str, A
     chapter_text = "\n".join(f"{c['time']} - {c['label']}" for c in chapters[:15])
 
     prompt = (
-        "Summarize this luxury travel YouTube video strictly from the provided title, description, and chapters.\n"
-        "Return ONLY valid JSON with keys: tldr (2-3 crisp sentences), highlights (3-4 concise bullets), "
+        "Write authentic first-person travel notes ('we', 'our stay') from Oliver & Novi at The Uncharted Itinerary "
+        "strictly from the provided title, description, and chapters. Never say AI or 'in this video'.\n"
+        "Return ONLY valid JSON with keys: tldr (2-3 natural sentences), highlights (3-4 crisp bullets), "
         "bestFor (6-12 words), location (Region, Country), category (Hotel Reviews|Bali & Indonesia|Maldives|Flights|Travel Gear|Travel Guides).\n\n"
         f"TITLE: {title}\nDESCRIPTION:\n{intro}\nCHAPTERS:\n{chapter_text}\n"
     )

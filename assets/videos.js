@@ -106,7 +106,7 @@ function renderFeatured(video) {
         </div>
 
         <div class="ai-summary-box">
-          <div class="ai-summary-label">AI Editorial Summary</div>
+          <div class="ai-summary-label">Our Take</div>
           <p class="ai-summary-tldr">${escapeHtml(summary.tldr || "")}</p>
           ${
             highlights.length
@@ -119,7 +119,7 @@ function renderFeatured(video) {
 
         <div class="featured-actions">
           <button class="btn btn-dark" id="featuredDetailsBtn">
-            Full Summary &amp; Chapters (${(video.chapters || []).length})
+            Full Notes &amp; Chapters (${(video.chapters || []).length})
           </button>
           ${
             linkCount
@@ -211,7 +211,7 @@ function renderVideoGrid() {
       const chapterCount = (v.chapters || []).length;
       return `
         <article class="video-card">
-          <button class="card-thumb" data-open-id="${escapeHtml(v.id)}" aria-label="Watch and summarize ${escapeHtml(v.title)}">
+          <button class="card-thumb" data-open-id="${escapeHtml(v.id)}" aria-label="Watch and read notes for ${escapeHtml(v.title)}">
             <img
               src="${escapeHtml(v.thumbnail)}"
               onerror="this.onerror=null;this.src='${escapeHtml(v.fallbackThumbnail)}'"
@@ -235,7 +235,7 @@ function renderVideoGrid() {
 
             <div class="card-footer">
               <button class="summary-btn" data-open-id="${escapeHtml(v.id)}">
-                AI Summary &amp; Watch &rarr;
+                Read Notes &amp; Watch &rarr;
               </button>
               <span class="card-submeta">${chapterCount ? `${chapterCount} chapters` : "Full tour"}</span>
             </div>
@@ -320,7 +320,7 @@ function openModal(video, startSeconds = 0) {
 
     <div class="modal-grid">
       <div class="ai-summary-box">
-        <div class="ai-summary-label">AI Travel Summary</div>
+        <div class="ai-summary-label">Our Review Notes</div>
         <p class="ai-summary-tldr">${escapeHtml(summary.tldr || "")}</p>
         ${
           highlights.length
