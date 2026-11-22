@@ -248,6 +248,9 @@ function renderScopeTabs() {
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `scope:${state.scope}`);
+      }
       const scoped = getScopedHotels();
       if (state.region !== "All" && !scoped.some((h) => h.region === state.region)) {
         state.region = "All";
@@ -278,6 +281,9 @@ function renderRegionPills() {
   container.querySelectorAll(".pill").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `region:${state.region}`);
+      }
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderRegionPills();
@@ -447,7 +453,7 @@ function renderScorecards(hotels) {
               const o = getOdds(h);
               const aw = (h.officialAwards || []).map((a) => a.label).join(" • ") || "—";
               return `
-                <tr>
+                <tr data-resort-name="${escapeHtml(h.name)}">
                   <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
                   <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
                   <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
@@ -515,7 +521,7 @@ function renderScorecards(hotels) {
         ].join("");
 
         return `
-          <article class="scorecard-card">
+          <article class="scorecard-card" data-resort-name="${escapeHtml(h.name)}">
             <div class="scorecard-media">
               <a href="${getSeoHref(h)}">
                 <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
@@ -678,16 +684,25 @@ async function boot() {
 
   qs("#brandFilter")?.addEventListener("change", (e) => {
     state.brand = e.target.value || "All";
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "filter", `brand:${state.brand}`);
+    }
     state.visibleLimit = PAGE_SIZE;
     renderAll(true);
   });
   qs("#coverageFilter")?.addEventListener("change", (e) => {
     state.coverage = e.target.value || "All";
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "filter", `coverage:${state.coverage}`);
+    }
     state.visibleLimit = PAGE_SIZE;
     renderAll(true);
   });
   qs("#sortControl")?.addEventListener("change", (e) => {
     state.sortBy = e.target.value || "stayodds";
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "filter", `sort:${state.sortBy}`);
+    }
     state.visibleLimit = PAGE_SIZE;
     renderAll(false);
   });

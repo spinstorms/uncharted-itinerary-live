@@ -196,7 +196,7 @@ function renderH2HCard(h, opponent) {
       : "None listed";
 
   return `
-    <article class="h2h-card">
+    <article class="h2h-card" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />
         <div>
@@ -293,6 +293,9 @@ function renderScopeTabs() {
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `scope:${state.scope}`);
+      }
       const scoped = getScopedHotels();
       if (state.region !== "All" && !scoped.some((h) => h.region === state.region)) {
         state.region = "All";
@@ -323,6 +326,9 @@ function renderRegionPills() {
   container.querySelectorAll(".pill").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.region = btn.dataset.region || "All";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `region:${state.region}`);
+      }
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderRegionPills();
@@ -465,7 +471,7 @@ function renderLeaderboard() {
       ].join("");
 
       return `
-        <article class="consensus-row-card ${toneClass}">
+        <article class="consensus-row-card ${toneClass}" data-resort-name="${escapeHtml(h.name)}">
           <div class="consensus-rank-col">
             <span class="consensus-rank-num">#${i + 1}</span>
             <div class="consensus-chance-ring ${toneClass}">
@@ -611,6 +617,15 @@ function renderLeaderboard() {
     }
   }
 
+  function trackCompareSelection() {
+    if (typeof window.trackEvent !== "function") return;
+    const ha = state.hotels.find((h) => h.id === state.idA);
+    const hb = state.hotels.find((h) => h.id === state.idB);
+    if (ha && hb) {
+      window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
+    }
+  }
+
   container.querySelectorAll("[data-compare-id]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.compareId;
@@ -622,6 +637,7 @@ function renderLeaderboard() {
       if (selA) selA.value = state.idA;
       if (selB) selB.value = state.idB;
       renderH2H();
+      trackCompareSelection();
       qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
@@ -637,21 +653,38 @@ async function boot() {
     state.scope = params.get("scope");
   }
 
+  function trackH2HDropdown() {
+    if (typeof window.trackEvent !== "function") return;
+    const ha = state.hotels.find((h) => h.id === state.idA);
+    const hb = state.hotels.find((h) => h.id === state.idB);
+    if (ha && hb) {
+      window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
+    }
+  }
+
   qs("#compareSelectA")?.addEventListener("change", (e) => {
     state.idA = e.target.value;
     renderH2H();
+    trackH2HDropdown();
   });
   qs("#compareSelectB")?.addEventListener("change", (e) => {
     state.idB = e.target.value;
     renderH2H();
+    trackH2HDropdown();
   });
   qs("#verdictFilter")?.addEventListener("change", (e) => {
     state.verdict = e.target.value || "All";
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "filter", `verdict:${state.verdict}`);
+    }
     state.visibleLimit = PAGE_SIZE;
     renderLeaderboard();
   });
   qs("#consensusSort")?.addEventListener("change", (e) => {
     state.sortBy = e.target.value || "visited";
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "filter", `sort:${state.sortBy}`);
+    }
     state.visibleLimit = PAGE_SIZE;
     renderLeaderboard();
   });
