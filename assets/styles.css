@@ -3889,23 +3889,32 @@ body.embed-mode .affiliate-hero {
 }
 .hub-embed-brand {
   display: none;
-  align-items: center;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: #071323;
+  align-items: baseline;
+  gap: 8px;
+  padding: 2px 0;
+  border-radius: 0;
+  background: transparent;
   color: #ffffff !important;
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 3px 12px rgba(7, 19, 35, 0.16);
   flex-shrink: 0;
-  transition: background var(--transition), transform var(--transition);
+  transition: opacity var(--transition);
+}
+.hub-embed-brand::after {
+  content: "by The Uncharted Itinerary";
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.58);
 }
 .hub-embed-brand:hover {
-  background: #0f172a;
-  transform: translateY(-1px);
+  opacity: 0.9;
+}
+.hub-tab.active .stayodds-dot {
+  color: #ffffff !important;
 }
 html.is-embedded .hub-embed-brand {
   display: inline-flex;
@@ -3914,7 +3923,41 @@ html.is-embedded .hub-tabs-bar {
   position: sticky;
   top: 0;
   z-index: 120;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+/* Full-width Deep Navy StayOdds bar when embedded inside Squarespace */
+html.is-embedded .stayodds-site-header + .hub-tabs-bar {
+  background: #071323;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 0;
+  box-shadow: 0 6px 22px rgba(7, 19, 35, 0.24);
+}
+html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tabs-inner {
+  gap: 12px 18px;
+}
+html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tabs {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab {
+  color: rgba(255, 255, 255, 0.84);
+}
+html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab.active {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 93, 34, 0.36);
+}
+@media (max-width: 640px) {
+  .hub-embed-brand {
+    font-size: 21px;
+  }
+  .hub-embed-brand::after {
+    font-size: 10.5px;
+  }
 }
 
 /* ---------- StayOdds Calculation Explainer ---------- */
