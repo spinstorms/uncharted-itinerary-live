@@ -458,8 +458,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
-  <style>.site-header{{background:#ff5d22!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=20" />
+  <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
+  <link rel="stylesheet" href="../../assets/styles.css?v=21" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {{
         var script = document.createElement("script");
@@ -471,15 +471,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   </script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header stayodds-site-header">
     <div class="container header-inner">
-      <a class="brand" href="https://www.uncharteditinerary.com/" rel="noopener">
-        <span class="stayodds-header-badge">
-          <img src="../../assets/stayodds-logo.png" alt="StayOdds." width="34" height="34" />
-          <span class="stayodds-wordmark" style="font-size:18px;">StayOdds<span class="stayodds-dot">.</span></span>
-        </span>
-        <span class="brand-text">
-          <span class="brand-sub" style="opacity:0.95;">Critics vs Real Guest Reviews</span>
+      <a class="brand" href="../../compare/" rel="noopener">
+        <span class="stayodds-brand-stack">
+          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
+          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
@@ -497,6 +494,9 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
   <div class="hub-tabs-bar">
     <div class="container hub-tabs-inner">
+      <a class="hub-embed-brand" href="../../compare/" aria-label="StayOdds Home">
+        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
+      </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab" href="../../">Latest Videos</a>
         <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>

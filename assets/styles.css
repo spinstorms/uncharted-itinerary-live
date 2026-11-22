@@ -3845,23 +3845,77 @@ body.embed-mode .affiliate-hero {
   color: #ff5d22;
   font-weight: 900;
 }
-.stayodds-header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 12px 5px 6px;
-  border-radius: 12px;
-  background: #071323;
+.site-header.stayodds-site-header {
+  background: #071323 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.site-header.stayodds-site-header .nav-links a {
+  color: rgba(255, 255, 255, 0.86);
+}
+.site-header.stayodds-site-header .nav-links a:hover {
   color: #ffffff;
+}
+.site-header.stayodds-site-header .btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 3px 12px rgba(255, 93, 34, 0.28);
+}
+.site-header.stayodds-site-header .btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+  border-color: var(--accent-hover);
+}
+.site-header.stayodds-site-header .mobile-nav {
+  background: #071323;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.stayodds-brand-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.stayodds-wordmark-lg {
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: -0.025em;
-  box-shadow: 0 2px 10px rgba(7, 19, 35, 0.22);
+  color: #ffffff;
+  letter-spacing: -0.035em;
 }
-.stayodds-header-badge img {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  display: block;
+.stayodds-brand-by {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 2px;
 }
+.hub-embed-brand {
+  display: none;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #071323;
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 3px 12px rgba(7, 19, 35, 0.16);
+  flex-shrink: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+.hub-embed-brand:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+html.is-embedded .hub-embed-brand {
+  display: inline-flex;
+}
+html.is-embedded .hub-tabs-bar {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
 
 
