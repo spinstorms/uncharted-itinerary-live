@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T08:40:13Z",
+  "updatedAt": "2026-11-22T10:37:06Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -8,7 +8,7 @@
     "shortsPlaylistId": "UUSHtSEMj7vSYDUYbDeIumnEOw"
   },
   "totalVideos": 37,
-  "totalShorts": 76,
+  "totalShorts": 77,
   "videos": [
     {
       "id": "E_DfGSAMeTU",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 867,
+      "views": 868,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1021,7 +1021,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/5H-BBvM9O70/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/5H-BBvM9O70/hqdefault.jpg",
-      "views": 5617,
+      "views": 5618,
       "category": "Travel Gear",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1975,7 +1975,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4165,
+      "views": 4173,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -2297,7 +2297,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6210,
+      "views": 6216,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -2622,7 +2622,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4651,
+      "views": 4653,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5227,6 +5227,131 @@
   ],
   "shorts": [
     {
+      "id": "yaCsQJKNt7Q",
+      "title": "Over the water villa in Park Hyatt Maldives",
+      "url": "https://www.youtube.com/shorts/yaCsQJKNt7Q",
+      "publishedAt": "2026-11-22T10:00:15+00:00",
+      "publishedDate": "2026-11-22",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
+      "fallbackThumbnail": "https://i2.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
+      "views": 32,
+      "category": "Maldives",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "📱 Stay connected wherever you travel! Get unlimited data with Holafly eSIMs. Use code TRIPREADY at checkout for a discount or visit holafly.sjv.io/Tripready and get a discount!",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
       "id": "Ipx5anqLbSc",
       "title": "W Maldives 2 bedroom beach villa. 🇲🇻❤️",
       "url": "https://www.youtube.com/shorts/Ipx5anqLbSc",
@@ -5235,7 +5360,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 1034,
+      "views": 1049,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
