@@ -482,7 +482,59 @@
 
   window.openResortRequestModal = openResortModal;
 
+  // ---------- Rotating Tropical Hero Banners ----------
+  const HERO_BANNER_FILES = ["maldives.jpg", "bali.jpg", "bora-bora.jpg", "seychelles.jpg"];
+
+  function initHeroBannerRotator() {
+    const cards = document.querySelectorAll(".hero-banner-card[data-hero-rotate]");
+    if (!cards.length) return;
+    const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    cards.forEach((card) => {
+      const base = card.getAttribute("data-hero-base") || "../assets/banners/";
+      let idx = Math.max(0, parseInt(card.getAttribute("data-hero-start") || "0", 10) || 0) % HERO_BANNER_FILES.length;
+      const urls = HERO_BANNER_FILES.map((f) => base + f);
+
+      const layerA = document.createElement("div");
+      const layerB = document.createElement("div");
+      const scrim = document.createElement("div");
+      layerA.className = "hero-bg-layer is-active";
+      layerB.className = "hero-bg-layer";
+      scrim.className = "hero-bg-scrim";
+      layerA.style.backgroundImage = `url('${urls[idx]}')`;
+
+      card.insertBefore(scrim, card.firstChild);
+      card.insertBefore(layerB, card.firstChild);
+      card.insertBefore(layerA, card.firstChild);
+
+      if (reducedMotion || urls.length < 2) return;
+
+      let showingA = true;
+      setInterval(() => {
+        if (document.hidden) return;
+        const nextIdx = (idx + 1) % urls.length;
+        const nextUrl = urls[nextIdx];
+        const preloader = new Image();
+        preloader.onload = () => {
+          idx = nextIdx;
+          if (showingA) {
+            layerB.style.backgroundImage = `url('${nextUrl}')`;
+            layerB.classList.add("is-active");
+            layerA.classList.remove("is-active");
+          } else {
+            layerA.style.backgroundImage = `url('${nextUrl}')`;
+            layerA.classList.add("is-active");
+            layerB.classList.remove("is-active");
+          }
+          showingA = !showingA;
+        };
+        preloader.src = nextUrl;
+      }, 8500);
+    });
+  }
+
   function boot() {
+    initHeroBannerRotator();
     mountFeedbackWidget();
     trackBreakdownLanding();
   }

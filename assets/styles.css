@@ -410,19 +410,47 @@ body.embed-mode .affiliate-hero {
   border-radius: 22px;
   overflow: hidden;
   padding: 34px 36px;
-  background-color: #191a1a;
+  background-color: #071323;
   background-image:
     linear-gradient(
       105deg,
-      rgba(16, 18, 22, 0.86) 0%,
-      rgba(16, 18, 22, 0.66) 56%,
-      rgba(255, 93, 34, 0.34) 100%
+      rgba(7, 19, 35, 0.84) 0%,
+      rgba(7, 19, 35, 0.56) 56%,
+      rgba(7, 19, 35, 0.28) 100%
     ),
     var(--hero-bg);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 14px 36px rgba(17, 17, 17, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 36px rgba(7, 19, 35, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+  pointer-events: none;
+}
+
+.hero-bg-layer.is-active {
+  opacity: 1;
+}
+
+.hero-bg-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    rgba(7, 19, 35, 0.82) 0%,
+    rgba(7, 19, 35, 0.54) 55%,
+    rgba(7, 19, 35, 0.26) 100%
+  );
 }
 
 .hero-banner-card .intro-row {
