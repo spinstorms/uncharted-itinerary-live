@@ -1231,6 +1231,7 @@ def main() -> None:
         (f"{base_url}/compare/", "daily", "1.0"),
         (f"{base_url}/cameras/", "monthly", "0.85"),
         (f"{base_url}/links/", "weekly", "0.85"),
+        (f"{base_url}/about/", "monthly", "0.85"),
         (f"{base_url}/faq/", "monthly", "0.85"),
         (f"{base_url}/contact/", "monthly", "0.80"),
     ]

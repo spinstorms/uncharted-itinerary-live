@@ -492,7 +492,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=26" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=27" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -525,6 +525,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a href="../../compare/">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../">Videos</a>
+        <a href="../../about/">About</a>
         <a href="../../faq/">FAQ</a>
         <a href="../../contact/">Contact</a>
       </nav>
@@ -545,6 +546,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
+        <a class="hub-tab" href="../../about/">About</a>
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
@@ -762,6 +764,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <a href="../../hotels/">Hotel Map</a>
           <a href="../../">Videos</a>
           <a href="../../links/">Deals &amp; Gear</a>
+          <a href="../../about/">About</a>
           <a href="../../faq/">FAQ</a>
           <a href="../../contact/">Contact</a>
           <button type="button" class="so-request-footer-link" data-open-resort-request>+ Request a Resort</button>
@@ -1283,6 +1286,7 @@ def main() -> None:
         (f"{SITE_URL}/hotels/", "0.9", "weekly"),
         (f"{SITE_URL}/cameras/", "0.8", "weekly"),
         (f"{SITE_URL}/links/", "0.8", "daily"),
+        (f"{SITE_URL}/about/", "0.85", "monthly"),
         (f"{SITE_URL}/faq/", "0.85", "monthly"),
         (f"{SITE_URL}/contact/", "0.80", "monthly"),
     ]
