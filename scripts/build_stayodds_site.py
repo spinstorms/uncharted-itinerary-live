@@ -440,7 +440,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(title_text)}</title>
@@ -455,11 +455,11 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#ff5d22!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=19" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=20" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {{
         var script = document.createElement("script");
@@ -474,10 +474,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="https://www.uncharteditinerary.com/" rel="noopener">
-        <img class="brand-logo" src="../../assets/logo.jpg" alt="StayOdds by The Uncharted Itinerary" width="44" height="44" />
+        <span class="stayodds-header-badge">
+          <img src="../../assets/stayodds-logo.png" alt="StayOdds." width="34" height="34" />
+          <span class="stayodds-wordmark" style="font-size:18px;">StayOdds<span class="stayodds-dot">.</span></span>
+        </span>
         <span class="brand-text">
-          <span class="brand-name">StayOdds</span>
-          <span class="brand-sub">Critics vs Real Guest Reviews</span>
+          <span class="brand-sub" style="opacity:0.95;">Critics vs Real Guest Reviews</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
@@ -498,7 +500,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab" href="../../">Latest Videos</a>
         <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds</a>
+        <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
       </nav>
@@ -690,7 +692,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">StayOdds &bull; by The Uncharted Itinerary</div>
+          <div class="footer-brand"><span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span> &bull; by The Uncharted Itinerary</div>
           <p class="footer-muted">Critics vs Real Guest Reviews — personally curated luxury hotel comparisons with verified sources.</p>
         </div>
         <div class="footer-links">
