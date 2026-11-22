@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T23:28:10Z",
+  "updatedAt": "2026-11-22T00:33:05Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 864,
+      "views": 866,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -98,7 +98,106 @@
       },
       "affiliateLinks": [
         {
-          "title": "Insta 360 Luna Ultra Standard Kit",
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -125,7 +224,7 @@
           "url": "https://link.amazon/B09TARLyD"
         },
         {
-          "title": "Luna Ultra Wide Angle Lens",
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -134,7 +233,7 @@
           "url": "https://link.amazon/B00hjVInJ"
         },
         {
-          "title": "Luna Ultra Battery Handle",
+          "title": "Insta360 Luna Ultra Battery Handle",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -143,22 +242,49 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
-          "title": "American Express Preferred Rewards Gold (UK)",
-          "section": "Promotions & Codes",
-          "category": "Points & Cards",
-          "badge": "Bonus Points",
-          "buttonLabel": "Claim Referral Bonus",
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
           "promoCode": "",
-          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+          "url": "https://link.amazon/B0i23UUah"
         },
         {
-          "title": "Marriott Bonvoy Currensea Debit Card",
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
           "section": "Promotions & Codes",
-          "category": "Points & Cards",
-          "badge": "Up to 2,000 Bonus Pts",
-          "buttonLabel": "Get Card & Bonus",
-          "promoCode": "OKM2ZH",
-          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
         },
         {
           "title": "Freetrade Commission-Free Investing",
@@ -166,7 +292,7 @@
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
@@ -1830,7 +1956,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4633,
+      "views": 4635,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -4281,7 +4407,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 906,
+      "views": 951,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -4406,7 +4532,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/w4QIjpjataQ/hqdefault.jpg",
-      "views": 60,
+      "views": 61,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [],
@@ -4656,7 +4782,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/cRLxuHX5zec/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/cRLxuHX5zec/hqdefault.jpg",
-      "views": 1317,
+      "views": 1318,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -4906,7 +5032,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/xdbtDDBGDAI/hqdefault.jpg",
-      "views": 128,
+      "views": 129,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],

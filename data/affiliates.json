@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T23:28:10Z",
+  "updatedAt": "2026-11-22T00:33:05Z",
   "sheetConnected": true,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
@@ -19,6 +19,11 @@
       "sortOrder": 1,
       "mentionedIn": [
         {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
           "id": "Ipx5anqLbSc",
           "title": "W Maldives 2 bedroom beach villa. 🇲🇻❤️",
           "date": "2026-11-21"
@@ -37,11 +42,6 @@
           "id": "cRLxuHX5zec",
           "title": "The day we’ve all been dreaming of in the Maldives… ❤️❤️",
           "date": "2026-11-19"
-        },
-        {
-          "id": "f7l8i6x0lrI",
-          "title": "Morning from Park Hyatt Maldives 🇲🇻❤️",
-          "date": "2026-11-18"
         }
       ]
     },
@@ -180,7 +180,14 @@
       "promoCode": "OLIVER97690",
       "url": "https://www.fuseenergy.com/",
       "buttonLabel": "Join Fuse Energy",
-      "sortOrder": 4
+      "sortOrder": 4,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "sheet-5",
@@ -481,7 +488,14 @@
       "promoCode": "",
       "url": "https://link.amazon/B0i23UUah",
       "buttonLabel": "Shop on Amazon",
-      "sortOrder": 15
+      "sortOrder": 15,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "sheet-14",
@@ -495,7 +509,14 @@
       "promoCode": "",
       "url": "https://link.amazon/B0cFNVPHy",
       "buttonLabel": "Shop on Amazon",
-      "sortOrder": 16
+      "sortOrder": 16,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-1",
@@ -565,7 +586,14 @@
       "promoCode": "",
       "url": "https://airalo.tpx.lu/WSdkjcJz",
       "buttonLabel": "Explore Airalo",
-      "sortOrder": 35
+      "sortOrder": 35,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-7",
@@ -593,7 +621,14 @@
       "promoCode": "",
       "url": "https://klook.tpx.lu/TsCmTC1L",
       "buttonLabel": "Browse Klook",
-      "sortOrder": 38
+      "sortOrder": 38,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-9",
@@ -621,7 +656,14 @@
       "promoCode": "",
       "url": "https://wise.com/invite/dic/oliverarrashk",
       "buttonLabel": "Get Wise Card",
-      "sortOrder": 40
+      "sortOrder": 40,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-11",
@@ -635,7 +677,14 @@
       "promoCode": "",
       "url": "https://link.amazon/B09YrzbtD",
       "buttonLabel": "Shop on Amazon",
-      "sortOrder": 41
+      "sortOrder": 41,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-12",
@@ -761,7 +810,14 @@
       "promoCode": "",
       "url": "https://saily.tpx.lu/bIVFTBvq",
       "buttonLabel": "Get Saily eSIM",
-      "sortOrder": 52
+      "sortOrder": 52,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
     },
     {
       "id": "trending-24",
@@ -901,8 +957,128 @@
       "promoCode": "",
       "url": "https://link.amazon/B0fl4hwFa",
       "buttonLabel": "Shop on Amazon",
-      "sortOrder": 63
+      "sortOrder": 63,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "trending-34",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Hotels.com Hotels & Resorts",
+      "badge": "Hotel Partner",
+      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
+      "promoCode": "",
+      "url": "https://hotels.tpx.lu/2JsCNIZh",
+      "buttonLabel": "Check Live Rates",
+      "sortOrder": 64
+    },
+    {
+      "id": "trending-35",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "Kiwi.com Flights",
+      "badge": "Travel Pick",
+      "description": "Recommended hotels & booking partner we use on trips around the world.",
+      "promoCode": "",
+      "url": "https://kiwi.tpx.lu/fDgPG9Ew",
+      "buttonLabel": "Explore Offer",
+      "sortOrder": 65
     }
   ],
-  "fromVideos": []
+  "fromVideos": [
+    {
+      "id": "yt-4143815",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://stayodds.com",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "yt-2368450",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Hotels & Booking",
+      "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://live.uncharteditinerary.com/hotels/",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "yt-3933427",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://live.uncharteditinerary.com/links/",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "id": "yt-1486007",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "Full Pocket 4P vs Luna Ultra review",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://live.uncharteditinerary.com/cameras/",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        }
+      ]
+    }
+  ]
 }
