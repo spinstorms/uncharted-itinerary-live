@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T00:33:05Z",
+  "updatedAt": "2026-11-22T00:53:06Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -438,6 +438,69 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
           "section": "Promotions & Codes",
           "category": "Points & Cards",
@@ -456,12 +519,120 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Insta360 Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
+        },
+        {
           "title": "Freetrade Commission-Free Investing",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
@@ -954,6 +1125,69 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
           "section": "Promotions & Codes",
           "category": "Points & Cards",
@@ -972,12 +1206,120 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Insta360 Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
+        },
+        {
           "title": "Freetrade Commission-Free Investing",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
@@ -1277,7 +1619,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2837,
+      "views": 2838,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -1633,7 +1975,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4141,
+      "views": 4148,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -1747,6 +2089,69 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
           "section": "Promotions & Codes",
           "category": "Points & Cards",
@@ -1765,13 +2170,112 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Freetrade Commission-Free Investing",
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Insta360 Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
-          "badge": "Free Share £3–£200",
-          "buttonLabel": "Get Free Share",
-          "promoCode": "",
-          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
         },
         {
           "title": "Epidemic Sound — Royalty-Free Music",
@@ -1779,17 +2283,8 @@
           "category": "Creator Offers",
           "badge": "Free Trial Referral",
           "buttonLabel": "Try Epidemic Sound",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
-        },
-        {
-          "title": "TubeBuddy — YouTube Growth Tool",
-          "section": "Promotions & Codes",
-          "category": "Creator Offers",
-          "badge": "Creator Offer",
-          "buttonLabel": "Explore TubeBuddy",
-          "promoCode": "",
-          "url": "https://www.tubebuddy.com/Techinthecar"
         }
       ]
     },
@@ -1802,7 +2297,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6186,
+      "views": 6194,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -1901,6 +2396,69 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
           "section": "Promotions & Codes",
           "category": "Points & Cards",
@@ -1919,12 +2477,120 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Insta360 Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
+        },
+        {
           "title": "Freetrade Commission-Free Investing",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
@@ -1956,7 +2622,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4635,
+      "views": 4637,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -2075,6 +2741,69 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
+        },
+        {
           "title": "American Express Preferred Rewards Gold (UK)",
           "section": "Promotions & Codes",
           "category": "Points & Cards",
@@ -2093,12 +2822,120 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Insta360 Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
+        },
+        {
           "title": "Freetrade Commission-Free Investing",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
@@ -2109,15 +2946,6 @@
           "buttonLabel": "Try Epidemic Sound",
           "promoCode": "",
           "url": "https://www.epidemicsound.com/referral/vo2tr9/"
-        },
-        {
-          "title": "TubeBuddy — YouTube Growth Tool",
-          "section": "Promotions & Codes",
-          "category": "Creator Offers",
-          "badge": "Creator Offer",
-          "buttonLabel": "Explore TubeBuddy",
-          "promoCode": "",
-          "url": "https://www.tubebuddy.com/Techinthecar"
         }
       ]
     },
@@ -4407,7 +5235,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 951,
+      "views": 965,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -4423,6 +5251,33 @@
       },
       "affiliateLinks": [
         {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
           "title": "Holafly Unlimited Travel eSIM",
           "section": "Promotions & Codes",
           "category": "eSIM & Travel",
@@ -4430,6 +5285,33 @@
           "buttonLabel": "Get Holafly Discount",
           "promoCode": "TRIPREADY",
           "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "Saily eSIM (by Nord Security)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://saily.tpx.lu/bIVFTBvq"
+        },
+        {
+          "title": "Airalo Global & Regional eSIMs",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://airalo.tpx.lu/WSdkjcJz"
+        },
+        {
+          "title": "Klook Travel Activities & Airport Transfers",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://klook.tpx.lu/TsCmTC1L"
         },
         {
           "title": "American Express Preferred Rewards Gold (UK)",
@@ -4450,7 +5332,25 @@
           "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
         },
         {
-          "title": "Insta 360 Luna Ultra Standard Kit",
+          "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://wise.com/invite/dic/oliverarrashk"
+        },
+        {
+          "title": "Full Pocket 4P vs Luna Ultra review",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/cameras/"
+        },
+        {
+          "title": "Insta360 Luna Ultra Standard Kit",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -4477,7 +5377,7 @@
           "url": "https://link.amazon/B09TARLyD"
         },
         {
-          "title": "Luna Ultra Wide Angle Lens",
+          "title": "Insta360 Luna Ultra Wide Angle Lens",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -4486,7 +5386,7 @@
           "url": "https://link.amazon/B00hjVInJ"
         },
         {
-          "title": "Luna Ultra Battery Handle",
+          "title": "Insta360 Luna Ultra Battery Handle",
           "section": "Shopping & Gear",
           "category": "Camera & Travel Gear",
           "badge": "Filming Gear",
@@ -4495,12 +5395,57 @@
           "url": "https://link.amazon/B0cxr0rKz"
         },
         {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0i23UUah"
+        },
+        {
+          "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cFNVPHy"
+        },
+        {
+          "title": "DJI Osmo Pocket Creator Combo",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09YrzbtD"
+        },
+        {
+          "title": "DJI Mic Mini 2 Wireless Microphone",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fl4hwFa"
+        },
+        {
+          "title": "Fuse Energy UK",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "£100 Credit",
+          "buttonLabel": "Join Fuse Energy",
+          "promoCode": "OLIVER97690",
+          "url": "https://www.fuseenergy.com/"
+        },
+        {
           "title": "Freetrade Commission-Free Investing",
           "section": "Promotions & Codes",
           "category": "Everyday Perks",
           "badge": "Free Share £3–£200",
           "buttonLabel": "Get Free Share",
-          "promoCode": "",
+          "promoCode": "OLIVER97690",
           "url": "https://magic.freetrade.io/join/oliver/238af2d9"
         },
         {
