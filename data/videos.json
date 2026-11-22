@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T06:49:30Z",
+  "updatedAt": "2026-11-22T08:40:13Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -778,7 +778,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 455,
+      "views": 460,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -1619,7 +1619,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2840,
+      "views": 2844,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -2297,7 +2297,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6203,
+      "views": 6210,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -2622,7 +2622,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4642,
+      "views": 4651,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5235,7 +5235,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 1020,
+      "views": 1034,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
