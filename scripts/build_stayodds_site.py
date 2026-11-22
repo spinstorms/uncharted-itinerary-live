@@ -492,7 +492,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=24" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=26" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -522,10 +522,11 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
         <a href="https://www.uncharteditinerary.com/home">Home</a>
-        <a href="../../compare/">StayOdds Directory</a>
+        <a href="../../compare/">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../">Videos</a>
-        <a href="../../links/">Deals &amp; Gear</a>
+        <a href="../../faq/">FAQ</a>
+        <a href="../../contact/">Contact</a>
       </nav>
       <div class="header-actions">
         <a class="btn btn-primary" href="../../compare/?a={esc(slug)}">Compare VS</a>
@@ -544,6 +545,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
+        <a class="hub-tab" href="../../faq/">FAQ</a>
+        <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
       <a class="hub-back-link" href="../../compare/">&larr; All 300 StayOdds Hotels</a>
     </div>
@@ -759,6 +762,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <a href="../../hotels/">Hotel Map</a>
           <a href="../../">Videos</a>
           <a href="../../links/">Deals &amp; Gear</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../contact/">Contact</a>
           <button type="button" class="so-request-footer-link" data-open-resort-request>+ Request a Resort</button>
         </div>
       </div>
@@ -769,7 +774,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     </div>
   </footer>
 
-  <script src="../../assets/stayodds-feedback.js?v=1" defer></script>
+  <script src="../../assets/stayodds-feedback.js?v=2" defer></script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -1278,6 +1283,8 @@ def main() -> None:
         (f"{SITE_URL}/hotels/", "0.9", "weekly"),
         (f"{SITE_URL}/cameras/", "0.8", "weekly"),
         (f"{SITE_URL}/links/", "0.8", "daily"),
+        (f"{SITE_URL}/faq/", "0.85", "monthly"),
+        (f"{SITE_URL}/contact/", "0.80", "monthly"),
     ]
     for h in directory:
         prio = "0.9" if h["tier"] == "first_hand_verified" else "0.8"
