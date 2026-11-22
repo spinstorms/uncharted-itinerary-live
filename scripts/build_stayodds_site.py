@@ -137,15 +137,16 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
             status_tone = "slate"
             formula = "100% Published Critic Reviews — live Google reviews check on this page."
 
+    odds = overall_idx
     if src_cnt >= 2 and overall_idx is not None:
         is_consensus = True
         spread100 = max(active) - min(active)
         if spread100 <= 6:
-            status_badge, status_tone, odds = "Strong Agreement", "accent", min(98, overall_idx + 2)
+            status_badge, status_tone = "Strong Agreement", "accent"
         elif spread100 <= 12:
-            status_badge, status_tone, odds = "Mostly Aligned", "teal", overall_idx
+            status_badge, status_tone = "Mostly Aligned", "teal"
         else:
-            status_badge, status_tone, odds = "Opinions Differ", "amber", max(50, overall_idx - 4)
+            status_badge, status_tone = "Opinions Differ", "amber"
 
     left100 = ours100 if first_hand else critic100
     right100 = guest100
@@ -434,6 +435,38 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     ta_query = f"{h['name']} {h.get('location') or h.get('country') or ''}".strip()
     tripadvisor_url = f"https://www.tripadvisor.com/Search?q={urllib.parse.quote(ta_query)}&ssrc=h"
 
+    if o["critic100"] is not None:
+        critic_kpi_val = f'{o["critic100"]}<span>/100</span>'
+        critic_kpi_lbl = (
+            pc["sourceName"]
+            if (len(scored_ed) == 1 and pc)
+            else f"Published Critics ({len(scored_ed)})"
+        )
+    elif len(o["editorial"]) > 0:
+        cnt_ed = len(o["editorial"])
+        critic_kpi_val = f'{cnt_ed}<span> {"Review" if cnt_ed == 1 else "Reviews"}</span>'
+        critic_kpi_lbl = "Editorial (No Score)"
+    else:
+        critic_kpi_val = "—"
+        critic_kpi_lbl = "Published Critics"
+
+    eq_parts = []
+    if o["weights"]["firstHand"] > 0 and o["ours100"] is not None:
+        raw_fh = f"{o['personalScore25']}/25 → " if o.get("personalScore25") is not None else ""
+        eq_parts.append(f"{o['weights']['firstHand']}% My Stay ({raw_fh}{o['ours100']}%)")
+    if o["weights"]["critics"] > 0 and o["critic100"] is not None:
+        eq_parts.append(f"{o['weights']['critics']}% Published Critics ({o['critic100']}%)")
+    if o["weights"]["guests"] > 0 and o["guest100"] is not None:
+        g_raw = f"{vg['rating']}/{int(vg.get('scale', 10))} → " if vg and vg.get("rating") else ""
+        eq_parts.append(f"{o['weights']['guests']}% Verified Guests ({g_raw}{o['guest100']}%)")
+
+    if eq_parts and o["greatStayOdds"] is not None:
+        equation_text = " + ".join(eq_parts) + f" = {o['greatStayOdds']}% StayOdds"
+        if o["guest100"] is None and google_place_id:
+            equation_text += " (updating with live Google rating…)"
+    else:
+        equation_text = "Waiting for live Google guest rating — StayOdds blends whichever verified numeric scores exist."
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -459,7 +492,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=21" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=22" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {{
         var script = document.createElement("script");
@@ -538,23 +571,40 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Personally curated StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
 
           <div class="detail-kpi-row">
-            <div class="detail-kpi is-primary {'is-caution' if o['statusTone'] == 'amber' else ''}">
-              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else ("Award" if o['awards'] else "Open")}</strong>
-              <span>{'StayOdds' if o['greatStayOdds'] is not None else o['statusBadge']}</span>
+            <div class="detail-kpi is-primary {'is-caution' if o['statusTone'] == 'amber' else ''}" id="kpiOddsCard">
+              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else ("Award" if o['awards'] else "Live…")}</strong>
+              <span id="kpiOddsLbl">{'StayOdds' if o['greatStayOdds'] is not None else o['statusBadge']}</span>
             </div>
             <div class="detail-kpi">
-              <strong>{f"{o['overallIndex']}<span>/100</span>" if o['overallIndex'] is not None else "—"}</strong>
-              <span>StayOdds Index</span>
+              <strong>{f"{o['personalScore25']}<span>/25</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if o['visited'] else "Not Stayed")}</strong>
+              <span>{'My Stay Score' if o['firstHand'] else ('Short Tour' if o['visited'] else 'My Stay Score')}</span>
             </div>
             <div class="detail-kpi">
-              <strong>{f"{o['personalScore25']}<span>/25</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if o['visited'] else "Global")}</strong>
-              <span>{'My Stay Score' if o['firstHand'] else o['tierLabel']}</span>
+              <strong>{critic_kpi_val}</strong>
+              <span>{esc(critic_kpi_lbl)}</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
-              <span id="kpiGuestLbl">{f"Verified Guests ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Verified Guests"}</span>
+              <span id="kpiGuestLbl">{f"Verified Guests ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Google Guests"}</span>
             </div>
           </div>
+
+          <details class="stayodds-explainer">
+            <summary>
+              <span>How is this StayOdds % calculated?</span>
+              <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
+            </summary>
+            <div class="stayodds-explainer-body">
+              <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
+              <ul class="stayodds-explainer-list">
+                <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
+                <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
+                <li><strong>Published Critics (/100):</strong> Average of critics that publish an explicit numeric score (e.g. 9/10, 18/20). Comments-only reviews (like The Points Guy) and official awards (MICHELIN Keys, Forbes Five-Star) are linked separately and never turned into invented numbers.</li>
+                <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
+                <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
+              </ul>
+            </div>
+          </details>
 
           <div class="detail-actions">
             <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
@@ -630,11 +680,11 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <h3>StayOdds Weighting</h3>
               <span class="tag">{esc(o['tierLabel'])}</span>
             </div>
-            <p class="detail-panel-sub">{esc(o['formula'])}</p>
+            <p class="detail-panel-sub" id="weightFormulaSub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-              <div class="formula-step"><span class="formula-weight">{o['weights']['firstHand']}%</span><strong>{f"{o['ours100']}/100" if o['ours100'] is not None else "—"}</strong><small>My Stay</small></div>
-              <div class="formula-step"><span class="formula-weight">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}/100" if o['critic100'] is not None else "—"}</strong><small>Published Critics</small></div>
-              <div class="formula-step"><span class="formula-weight">{o['weights']['guests']}%</span><strong>{f"{o['guest100']}/100" if o['guest100'] is not None else "Live"}</strong><small>Verified Guests</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScore25']}/25 → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScore25') is not None) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else "—"}</strong><small>Published Critics</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Google Guests</small></div>
             </div>
           </div>
 
@@ -755,7 +805,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     }}
 
     const placeId = {json.dumps(google_place_id)};
+    const firstHand = {json.dumps(bool(o['firstHand']))};
+    const ours100 = {json.dumps(o['ours100'])};
+    const personal25 = {json.dumps(o.get('personalScore25'))};
+    const critic100 = {json.dumps(o['critic100'])};
+    const staticGuest100 = {json.dumps(o['guest100'])};
     const left100 = {json.dumps(o['left100'])};
+    const criticLabel = {json.dumps(pc["sourceName"] if (len(scored_ed) == 1 and pc) else f"{len(scored_ed)} published critics")};
     const mapsFallbackUrl = placeId
       ? "https://www.google.com/maps/place/?q=place_id:" + encodeURIComponent(placeId)
       : "";
@@ -764,6 +820,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       const strip = document.getElementById("liveGoogleStrip");
       const gDisp = document.getElementById("gapGuestDisplay");
       const kpiVal = document.getElementById("kpiGuestVal");
+      const kpiOdds = document.getElementById("kpiOdds");
+      const wGuestVal = document.getElementById("weightGuestVal");
       if (gDisp && gDisp.textContent.includes("Checking")) {{
         gDisp.textContent = "Google Maps ↗";
       }}
@@ -771,6 +829,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         kpiVal.innerHTML = mapsUrl
           ? `<a href="${{mapsUrl}}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Maps ↗</a>`
           : "—";
+      }}
+      if (kpiOdds && kpiOdds.textContent.includes("Live")) {{
+        kpiOdds.textContent = "—";
+      }}
+      if (wGuestVal && wGuestVal.textContent.includes("Live")) {{
+        wGuestVal.textContent = "—";
       }}
       if (strip && mapsUrl) {{
         strip.style.display = "flex";
@@ -786,6 +850,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
             return;
           }}
+          const g100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {{
@@ -795,22 +860,117 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             const notice = g.policyNotice || "Reviews are not verified by Google.";
             strip.innerHTML = `<span><strong>Live Google Rating:</strong> ${{g.rating.toFixed(1)}} ★${{revText}}${{link}}<br><small style="color:#64748b;font-weight:400;">${{notice}}</small></span><span class="powered-google">Powered by Google</span>`;
           }}
-          if (left100 != null && typeof g.normalized100 === "number") {{
-            const gBar = document.getElementById("gapGuestBar");
-            const gDisp = document.getElementById("gapGuestDisplay");
-            const pill = document.getElementById("gapDeltaPill");
-            const kpiVal = document.getElementById("kpiGuestVal");
-            const kpiLbl = document.getElementById("kpiGuestLbl");
-            if (gDisp && gDisp.textContent.includes("Checking")) {{
-              gDisp.textContent = `${{g.rating.toFixed(1)}} ★ (${{g.normalized100}}/100)`;
-              if (gBar) gBar.style.width = `${{g.normalized100}}%`;
-              const d = left100 - g.normalized100;
-              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>vs. Google Live</span>`;
+
+          const gBar = document.getElementById("gapGuestBar");
+          const gDisp = document.getElementById("gapGuestDisplay");
+          const pill = document.getElementById("gapDeltaPill");
+          const kpiVal = document.getElementById("kpiGuestVal");
+          const kpiLbl = document.getElementById("kpiGuestLbl");
+
+          if (kpiVal && kpiVal.textContent.includes("Live")) {{
+            kpiVal.innerHTML = `${{g.rating.toFixed(1)}}<span>/5★</span>`;
+            if (kpiLbl) kpiLbl.textContent = g.reviewCount ? `Google (${{g.reviewCount.toLocaleString("en-GB")}})` : "Google Guests";
+          }}
+          if (gDisp && gDisp.textContent.includes("Checking")) {{
+            gDisp.textContent = `${{g.rating.toFixed(1)}} ★ (${{g100}}/100)`;
+            if (gBar) gBar.style.width = `${{g100}}%`;
+          }}
+
+          // Recalculate StayOdds % live when no static licensed guest score was already baked in
+          if (staticGuest100 == null) {{
+            let wFH = 0, wCr = 0, wGu = 0, odds = null, formula = "";
+            if (firstHand && ours100 != null) {{
+              if (critic100 != null) {{
+                wFH = 40; wCr = 30; wGu = 30;
+                odds = Math.round(ours100 * 0.4 + critic100 * 0.3 + g100 * 0.3);
+                formula = "40% My Stay • 30% Published Critics • 30% Google Guests";
+              }} else {{
+                wFH = 55; wCr = 0; wGu = 45;
+                odds = Math.round(ours100 * 0.55 + g100 * 0.45);
+                formula = "55% My Stay • 45% Google Guests";
+              }}
+            }} else if (critic100 != null) {{
+              wFH = 0; wCr = 35; wGu = 65;
+              odds = Math.round(critic100 * 0.35 + g100 * 0.65);
+              formula = "35% Published Critics • 65% Google Guests";
+            }} else {{
+              wFH = 0; wCr = 0; wGu = 100;
+              odds = g100;
+              formula = "100% Google Guest Rating";
             }}
-            if (kpiVal && kpiVal.textContent.includes("Live")) {{
-              kpiVal.innerHTML = `${{g.rating.toFixed(1)}}<span>/5★</span>`;
-              if (kpiLbl) kpiLbl.textContent = g.reviewCount ? `Google (${{g.reviewCount.toLocaleString("en-GB")}})` : "Google Live";
+
+            const active = [firstHand ? ours100 : null, critic100, g100].filter((v) => v != null);
+            let badgeText = active.length === 1 ? "Google Guest Rating" : "Mostly Aligned";
+            let badgeClass = "tag-teal";
+            if (active.length >= 2) {{
+              const spread = Math.max(...active) - Math.min(...active);
+              if (spread <= 6) {{ badgeText = "Strong Agreement"; badgeClass = "tag-accent"; }}
+              else if (spread <= 12) {{ badgeText = "Mostly Aligned"; badgeClass = "tag-teal"; }}
+              else {{ badgeText = "Opinions Differ"; badgeClass = "tag-caution"; }}
             }}
+
+            const kpiOdds = document.getElementById("kpiOdds");
+            const kpiOddsLbl = document.getElementById("kpiOddsLbl");
+            const kpiOddsCard = document.getElementById("kpiOddsCard");
+            if (kpiOdds && odds != null) kpiOdds.textContent = `${{odds}}%`;
+            if (kpiOddsLbl) kpiOddsLbl.textContent = "StayOdds";
+            if (kpiOddsCard) kpiOddsCard.classList.toggle("is-caution", badgeClass === "tag-caution");
+
+            const heroBadge = document.getElementById("heroStatusBadge");
+            const gapBadge = document.getElementById("gapStatusBadge");
+            [heroBadge, gapBadge].forEach((el) => {{
+              if (!el) return;
+              el.textContent = badgeText;
+              el.className = `tag ${{badgeClass}}`;
+            }});
+
+            if (left100 != null) {{
+              const d = left100 - g100;
+              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>Opinion Gap</span>`;
+              const gapHead = document.getElementById("gapHeadline");
+              if (gapHead) {{
+                if (Math.abs(d) <= 5) {{
+                  gapHead.textContent = firstHand
+                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched real guest reviews.`
+                    : `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — ${{criticLabel}} and real guests agree.`;
+                }} else if (d > 5) {{
+                  gapHead.textContent = firstHand
+                    ? `I rated this +${{d}} pts higher than real guests — see what I loved below.`
+                    : `${{criticLabel}} rated this +${{d}} pts higher than real guests.`;
+                }} else {{
+                  gapHead.textContent = firstHand
+                    ? `I rated this ${{d}} pts stricter than real guests — see what stood out & what held it back.`
+                    : `Real guests rated this +${{Math.abs(d)}} pts higher than ${{criticLabel}}.`;
+                }}
+              }}
+            }}
+
+            const eqParts = [];
+            if (wFH > 0 && ours100 != null) {{
+              const rawFh = personal25 != null ? `${{personal25}}/25 → ` : "";
+              eqParts.push(`${{wFH}}% My Stay (${{rawFh}}${{ours100}}%)`);
+            }}
+            if (wCr > 0 && critic100 != null) {{
+              eqParts.push(`${{wCr}}% Published Critics (${{critic100}}%)`);
+            }}
+            if (wGu > 0) {{
+              eqParts.push(`${{wGu}}% Google Guests (${{g.rating.toFixed(1)}}★ → ${{g100}}%)`);
+            }}
+            const eqEl = document.getElementById("stayOddsEquation");
+            if (eqEl && eqParts.length && odds != null) {{
+              eqEl.textContent = `${{eqParts.join(" + ")}} = ${{odds}}% StayOdds`;
+            }}
+
+            const wSub = document.getElementById("weightFormulaSub");
+            const wFhEl = document.getElementById("weightFirstHandPct");
+            const wCrEl = document.getElementById("weightCriticsPct");
+            const wGuEl = document.getElementById("weightGuestsPct");
+            const wGuVal = document.getElementById("weightGuestVal");
+            if (wSub) wSub.textContent = formula;
+            if (wFhEl) wFhEl.textContent = `${{wFH}}%`;
+            if (wCrEl) wCrEl.textContent = `${{wCr}}%`;
+            if (wGuEl) wGuEl.textContent = `${{wGu}}%`;
+            if (wGuVal) wGuVal.textContent = `${{g.rating.toFixed(1)}}★ → ${{g100}}%`;
           }}
         }})
         .catch(() => showMapsFallback(mapsFallbackUrl));

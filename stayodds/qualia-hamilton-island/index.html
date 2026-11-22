@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=21" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=22" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
@@ -102,23 +102,40 @@
           <p class="detail-verdict">Professional handling of room issues • Great overall stay</p>
 
           <div class="detail-kpi-row">
-            <div class="detail-kpi is-primary ">
+            <div class="detail-kpi is-primary " id="kpiOddsCard">
               <strong id="kpiOdds">96%</strong>
-              <span>StayOdds</span>
+              <span id="kpiOddsLbl">StayOdds</span>
             </div>
             <div class="detail-kpi">
-              <strong>96<span>/100</span></strong>
-              <span>StayOdds Index</span>
+              <strong>Not Stayed</strong>
+              <span>My Stay Score</span>
             </div>
             <div class="detail-kpi">
-              <strong>Global</strong>
-              <span>Global Directory</span>
+              <strong>—</strong>
+              <span>Published Critics</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">9.6<span>/10</span></strong>
               <span id="kpiGuestLbl">Verified Guests (53)</span>
             </div>
           </div>
+
+          <details class="stayodds-explainer">
+            <summary>
+              <span>How is this StayOdds % calculated?</span>
+              <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
+            </summary>
+            <div class="stayodds-explainer-body">
+              <div class="stayodds-explainer-eq" id="stayOddsEquation">100% Verified Guests (9.6/10 → 96%) = 96% StayOdds</div>
+              <ul class="stayodds-explainer-list">
+                <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
+                <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
+                <li><strong>Published Critics (/100):</strong> Average of critics that publish an explicit numeric score (e.g. 9/10, 18/20). Comments-only reviews (like The Points Guy) and official awards (MICHELIN Keys, Forbes Five-Star) are linked separately and never turned into invented numbers.</li>
+                <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
+                <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
+              </ul>
+            </div>
+          </details>
 
           <div class="detail-actions">
             <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=qualia+Hamilton+Island" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
@@ -191,11 +208,11 @@
               <h3>StayOdds Weighting</h3>
               <span class="tag">Global Directory</span>
             </div>
-            <p class="detail-panel-sub">100% Verified Guest Ratings</p>
+            <p class="detail-panel-sub" id="weightFormulaSub">100% Verified Guest Ratings</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-              <div class="formula-step"><span class="formula-weight">0%</span><strong>—</strong><small>My Stay</small></div>
-              <div class="formula-step"><span class="formula-weight">0%</span><strong>—</strong><small>Published Critics</small></div>
-              <div class="formula-step"><span class="formula-weight">100%</span><strong>96/100</strong><small>Verified Guests</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">0%</span><strong>—</strong><small>My Stay</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">0%</span><strong>—</strong><small>Published Critics</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">100%</span><strong id="weightGuestVal">96%</strong><small>Google Guests</small></div>
             </div>
           </div>
 
@@ -361,7 +378,13 @@
     }
 
     const placeId = "ChIJ23C-qCSt2WsRf9pviLEBQOA";
+    const firstHand = false;
+    const ours100 = null;
+    const personal25 = null;
+    const critic100 = null;
+    const staticGuest100 = 96;
     const left100 = null;
+    const criticLabel = "0 published critics";
     const mapsFallbackUrl = placeId
       ? "https://www.google.com/maps/place/?q=place_id:" + encodeURIComponent(placeId)
       : "";
@@ -370,6 +393,8 @@
       const strip = document.getElementById("liveGoogleStrip");
       const gDisp = document.getElementById("gapGuestDisplay");
       const kpiVal = document.getElementById("kpiGuestVal");
+      const kpiOdds = document.getElementById("kpiOdds");
+      const wGuestVal = document.getElementById("weightGuestVal");
       if (gDisp && gDisp.textContent.includes("Checking")) {
         gDisp.textContent = "Google Maps ↗";
       }
@@ -377,6 +402,12 @@
         kpiVal.innerHTML = mapsUrl
           ? `<a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Maps ↗</a>`
           : "—";
+      }
+      if (kpiOdds && kpiOdds.textContent.includes("Live")) {
+        kpiOdds.textContent = "—";
+      }
+      if (wGuestVal && wGuestVal.textContent.includes("Live")) {
+        wGuestVal.textContent = "—";
       }
       if (strip && mapsUrl) {
         strip.style.display = "flex";
@@ -392,6 +423,7 @@
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
             return;
           }
+          const g100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {
@@ -401,22 +433,117 @@
             const notice = g.policyNotice || "Reviews are not verified by Google.";
             strip.innerHTML = `<span><strong>Live Google Rating:</strong> ${g.rating.toFixed(1)} ★${revText}${link}<br><small style="color:#64748b;font-weight:400;">${notice}</small></span><span class="powered-google">Powered by Google</span>`;
           }
-          if (left100 != null && typeof g.normalized100 === "number") {
-            const gBar = document.getElementById("gapGuestBar");
-            const gDisp = document.getElementById("gapGuestDisplay");
-            const pill = document.getElementById("gapDeltaPill");
-            const kpiVal = document.getElementById("kpiGuestVal");
-            const kpiLbl = document.getElementById("kpiGuestLbl");
-            if (gDisp && gDisp.textContent.includes("Checking")) {
-              gDisp.textContent = `${g.rating.toFixed(1)} ★ (${g.normalized100}/100)`;
-              if (gBar) gBar.style.width = `${g.normalized100}%`;
-              const d = left100 - g.normalized100;
-              if (pill) pill.innerHTML = `<strong>${d > 0 ? "+" + d : d} pts</strong><span>vs. Google Live</span>`;
+
+          const gBar = document.getElementById("gapGuestBar");
+          const gDisp = document.getElementById("gapGuestDisplay");
+          const pill = document.getElementById("gapDeltaPill");
+          const kpiVal = document.getElementById("kpiGuestVal");
+          const kpiLbl = document.getElementById("kpiGuestLbl");
+
+          if (kpiVal && kpiVal.textContent.includes("Live")) {
+            kpiVal.innerHTML = `${g.rating.toFixed(1)}<span>/5★</span>`;
+            if (kpiLbl) kpiLbl.textContent = g.reviewCount ? `Google (${g.reviewCount.toLocaleString("en-GB")})` : "Google Guests";
+          }
+          if (gDisp && gDisp.textContent.includes("Checking")) {
+            gDisp.textContent = `${g.rating.toFixed(1)} ★ (${g100}/100)`;
+            if (gBar) gBar.style.width = `${g100}%`;
+          }
+
+          // Recalculate StayOdds % live when no static licensed guest score was already baked in
+          if (staticGuest100 == null) {
+            let wFH = 0, wCr = 0, wGu = 0, odds = null, formula = "";
+            if (firstHand && ours100 != null) {
+              if (critic100 != null) {
+                wFH = 40; wCr = 30; wGu = 30;
+                odds = Math.round(ours100 * 0.4 + critic100 * 0.3 + g100 * 0.3);
+                formula = "40% My Stay • 30% Published Critics • 30% Google Guests";
+              } else {
+                wFH = 55; wCr = 0; wGu = 45;
+                odds = Math.round(ours100 * 0.55 + g100 * 0.45);
+                formula = "55% My Stay • 45% Google Guests";
+              }
+            } else if (critic100 != null) {
+              wFH = 0; wCr = 35; wGu = 65;
+              odds = Math.round(critic100 * 0.35 + g100 * 0.65);
+              formula = "35% Published Critics • 65% Google Guests";
+            } else {
+              wFH = 0; wCr = 0; wGu = 100;
+              odds = g100;
+              formula = "100% Google Guest Rating";
             }
-            if (kpiVal && kpiVal.textContent.includes("Live")) {
-              kpiVal.innerHTML = `${g.rating.toFixed(1)}<span>/5★</span>`;
-              if (kpiLbl) kpiLbl.textContent = g.reviewCount ? `Google (${g.reviewCount.toLocaleString("en-GB")})` : "Google Live";
+
+            const active = [firstHand ? ours100 : null, critic100, g100].filter((v) => v != null);
+            let badgeText = active.length === 1 ? "Google Guest Rating" : "Mostly Aligned";
+            let badgeClass = "tag-teal";
+            if (active.length >= 2) {
+              const spread = Math.max(...active) - Math.min(...active);
+              if (spread <= 6) { badgeText = "Strong Agreement"; badgeClass = "tag-accent"; }
+              else if (spread <= 12) { badgeText = "Mostly Aligned"; badgeClass = "tag-teal"; }
+              else { badgeText = "Opinions Differ"; badgeClass = "tag-caution"; }
             }
+
+            const kpiOdds = document.getElementById("kpiOdds");
+            const kpiOddsLbl = document.getElementById("kpiOddsLbl");
+            const kpiOddsCard = document.getElementById("kpiOddsCard");
+            if (kpiOdds && odds != null) kpiOdds.textContent = `${odds}%`;
+            if (kpiOddsLbl) kpiOddsLbl.textContent = "StayOdds";
+            if (kpiOddsCard) kpiOddsCard.classList.toggle("is-caution", badgeClass === "tag-caution");
+
+            const heroBadge = document.getElementById("heroStatusBadge");
+            const gapBadge = document.getElementById("gapStatusBadge");
+            [heroBadge, gapBadge].forEach((el) => {
+              if (!el) return;
+              el.textContent = badgeText;
+              el.className = `tag ${badgeClass}`;
+            });
+
+            if (left100 != null) {
+              const d = left100 - g100;
+              if (pill) pill.innerHTML = `<strong>${d > 0 ? "+" + d : d} pts</strong><span>Opinion Gap</span>`;
+              const gapHead = document.getElementById("gapHeadline");
+              if (gapHead) {
+                if (Math.abs(d) <= 5) {
+                  gapHead.textContent = firstHand
+                    ? `Tight agreement (${d >= 0 ? "+" + d : d} pts) — my stay matched real guest reviews.`
+                    : `Tight agreement (${d >= 0 ? "+" + d : d} pts) — ${criticLabel} and real guests agree.`;
+                } else if (d > 5) {
+                  gapHead.textContent = firstHand
+                    ? `I rated this +${d} pts higher than real guests — see what I loved below.`
+                    : `${criticLabel} rated this +${d} pts higher than real guests.`;
+                } else {
+                  gapHead.textContent = firstHand
+                    ? `I rated this ${d} pts stricter than real guests — see what stood out & what held it back.`
+                    : `Real guests rated this +${Math.abs(d)} pts higher than ${criticLabel}.`;
+                }
+              }
+            }
+
+            const eqParts = [];
+            if (wFH > 0 && ours100 != null) {
+              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
+            }
+            if (wCr > 0 && critic100 != null) {
+              eqParts.push(`${wCr}% Published Critics (${critic100}%)`);
+            }
+            if (wGu > 0) {
+              eqParts.push(`${wGu}% Google Guests (${g.rating.toFixed(1)}★ → ${g100}%)`);
+            }
+            const eqEl = document.getElementById("stayOddsEquation");
+            if (eqEl && eqParts.length && odds != null) {
+              eqEl.textContent = `${eqParts.join(" + ")} = ${odds}% StayOdds`;
+            }
+
+            const wSub = document.getElementById("weightFormulaSub");
+            const wFhEl = document.getElementById("weightFirstHandPct");
+            const wCrEl = document.getElementById("weightCriticsPct");
+            const wGuEl = document.getElementById("weightGuestsPct");
+            const wGuVal = document.getElementById("weightGuestVal");
+            if (wSub) wSub.textContent = formula;
+            if (wFhEl) wFhEl.textContent = `${wFH}%`;
+            if (wCrEl) wCrEl.textContent = `${wCr}%`;
+            if (wGuEl) wGuEl.textContent = `${wGu}%`;
+            if (wGuVal) wGuVal.textContent = `${g.rating.toFixed(1)}★ → ${g100}%`;
           }
         })
         .catch(() => showMapsFallback(mapsFallbackUrl));

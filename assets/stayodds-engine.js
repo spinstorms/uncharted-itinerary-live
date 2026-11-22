@@ -259,22 +259,21 @@ export function computeStayOdds(hotel) {
     }
   }
 
-  // Agreement / Difference badges ONLY unlock when >= 2 real numeric scores exist
+  // Agreement / Difference badges ONLY unlock when >= 2 real numeric scores exist.
+  // StayOdds % is ALWAYS the exact weighted average with zero hidden adjustments.
+  greatStayOdds = overallIndex;
   if (sourceCount >= 2 && overallIndex != null) {
     isConsensusBadge = true;
     spread100 = Math.max(...activeScores) - Math.min(...activeScores);
     if (spread100 <= 6) {
       statusBadge = "Strong Agreement";
       statusTone = "accent";
-      greatStayOdds = Math.min(98, overallIndex + 2);
     } else if (spread100 <= 12) {
       statusBadge = "Mostly Aligned";
       statusTone = "teal";
-      greatStayOdds = overallIndex;
     } else {
       statusBadge = "Opinions Differ";
       statusTone = "amber";
-      greatStayOdds = Math.max(50, overallIndex - 4);
     }
   }
 
