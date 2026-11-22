@@ -439,6 +439,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
   <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(title_text)}</title>
   <meta name="description" content="{esc(meta_desc)}" />
   <link rel="canonical" href="{esc(canonical)}" />
