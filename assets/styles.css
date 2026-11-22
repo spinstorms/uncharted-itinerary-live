@@ -3817,3 +3817,24 @@ body.embed-mode .affiliate-hero {
   border: 1px solid #fbd7c4;
   color: #4e5156;
 }
+.tripadvisor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-hairline);
+  background: #ffffff;
+  white-space: nowrap;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+.tripadvisor-link:hover {
+  color: #00aa6c;
+  border-color: rgba(0, 170, 108, 0.4);
+  background: rgba(0, 170, 108, 0.06);
+}
+

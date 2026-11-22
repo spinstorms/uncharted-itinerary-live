@@ -431,6 +431,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     google_place_id = h.get("googlePlaceId") or ""
     region_q = urllib.parse.quote(h["region"])
+    ta_query = f"{h['name']} {h.get('location') or h.get('country') or ''}".strip()
+    tripadvisor_url = f"https://www.tripadvisor.com/Search?q={urllib.parse.quote(ta_query)}&ssrc=h"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -457,7 +459,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#ff5d22!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=18" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=19" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {{
         var script = document.createElement("script");
@@ -556,6 +558,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
+            <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
           <div class="vip-perks-note">
             <strong>Luxury Advisor VIP Perks Slot:</strong> Coming soon — book eligible 5-star stays with complimentary breakfast, resort credit &amp; room upgrades.

@@ -51,6 +51,11 @@ function getSeoHref(h) {
   return `../stayodds/${encodeURIComponent(h.id)}/?${q.toString()}`;
 }
 
+function getTripAdvisorUrl(h) {
+  const q = `${h.name || ""} ${h.location || h.country || ""}`.trim();
+  return `https://www.tripadvisor.com/Search?q=${encodeURIComponent(q)}&ssrc=h`;
+}
+
 function matchRegionParam(rawRegion, hotels) {
   if (!rawRegion) return null;
   const target = rawRegion.trim().toLowerCase();
@@ -331,6 +336,9 @@ function buildPopupHtml(h) {
               : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
           }
         </div>
+        <div style="margin-top:8px;">
+          <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
+        </div>
       </div>
     </div>
   `;
@@ -449,6 +457,7 @@ function renderScorecards(hotels) {
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
+                    <a class="tripadvisor-link" style="margin-left:4px;" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor ↗</a>
                   </td>
                 </tr>
               `;
@@ -557,7 +566,10 @@ function renderScorecards(hotels) {
                 ${h.watchOut ? `<div><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>` : ""}
               </div>
 
-              ${linkedReviewsHtml ? `<div class="consensus-sources" style="margin:8px 0 12px;">${linkedReviewsHtml}</div>` : ""}
+              <div class="consensus-sources" style="margin:8px 0 12px;">
+                ${linkedReviewsHtml}
+                <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
+              </div>
 
               <div class="scorecard-actions">
                 <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Breakdown</a>

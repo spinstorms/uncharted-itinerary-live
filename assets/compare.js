@@ -51,6 +51,11 @@ function getSeoHref(h) {
     : `../stayodds/${encodeURIComponent(h.id)}/`;
 }
 
+function getTripAdvisorUrl(h) {
+  const q = `${h.name || ""} ${h.location || h.country || ""}`.trim();
+  return `https://www.tripadvisor.com/Search?q=${encodeURIComponent(q)}&ssrc=h`;
+}
+
 function matchRegionParam(rawRegion, hotels) {
   if (!rawRegion) return null;
   const target = rawRegion.trim().toLowerCase();
@@ -245,6 +250,9 @@ function renderH2HCard(h, opponent) {
             : ""
         }
         <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+      </div>
+      <div style="margin-top:8px;">
+        <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
       </div>
     </article>
   `;
@@ -524,6 +532,7 @@ function renderLeaderboard() {
 
             <div class="consensus-sources">
               ${sourceChips}
+              <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
               <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
             </div>
           </div>
