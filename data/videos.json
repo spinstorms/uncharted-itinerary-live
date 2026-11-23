@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T00:03:26Z",
+  "updatedAt": "2026-11-23T00:20:05Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -805,7 +805,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 461,
+      "views": 462,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -1754,7 +1754,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2853,
+      "views": 2854,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/9ZTs2dVW63M/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/9ZTs2dVW63M/hqdefault.jpg",
-      "views": 0,
+      "views": 12,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
