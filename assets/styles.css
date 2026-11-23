@@ -1763,10 +1763,20 @@ body.embed-mode .affiliate-hero {
   font-family: var(--font-sans);
 }
 
-.map-popup-img {
+.map-popup-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+.map-popup-img,
+.map-popup-media img {
   width: 100%;
-  height: 130px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
 }
 
 .map-popup-body {
@@ -1909,17 +1919,21 @@ body.embed-mode .affiliate-hero {
   border-color: rgba(255, 93, 34, 0.35);
 }
 
-.scorecard-top {
+.scorecard-top,
+.scorecard-media {
   position: relative;
   aspect-ratio: 16 / 9;
   background: var(--bg-dark);
   overflow: hidden;
 }
 
-.scorecard-thumb {
+.scorecard-thumb,
+.scorecard-media img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  display: block;
 }
 
 .scorecard-badge-overall {
@@ -2238,17 +2252,18 @@ body.embed-mode .affiliate-hero {
 
 .h2h-card-head {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: 128px 1fr;
   gap: 14px;
   align-items: center;
 }
 
 .h2h-card-head img {
-  width: 110px;
+  width: 128px;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-sm);
+  display: block;
 }
 
 .h2h-card-head h3 {
@@ -2716,9 +2731,10 @@ body.embed-mode .affiliate-hero {
 .detail-hero-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-md);
+  display: block;
 }
 
 .detail-hero-badges {
@@ -5231,7 +5247,7 @@ html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab.active {
 .dest-card-media {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #0f172a;
 }

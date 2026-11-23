@@ -257,13 +257,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     )
     raw_thumb = h.get("thumbnail") or ""
     if raw_thumb.startswith("assets/"):
-        img_src = f"../../{raw_thumb}"
+        img_src = f"../../{raw_thumb}?v=169"
         img_abs = f"{SITE_URL}/{raw_thumb}"
     elif raw_thumb.startswith("http"):
         img_src = raw_thumb
         img_abs = raw_thumb
     else:
-        img_src = "../../assets/placeholders/default-stayodds.webp"
+        img_src = "../../assets/placeholders/default-stayodds.webp?v=169"
         img_abs = f"{SITE_URL}/assets/placeholders/default-stayodds.webp"
 
     # Build JSON-LD structured data (Hotel + Review if First-Hand Verified)
@@ -446,7 +446,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         ro = compute_stayodds_py(r)
         r_odds = f"{ro['greatStayOdds']}% StayOdds" if ro["greatStayOdds"] is not None else ro["tierLabel"]
         r_thumb = r.get("thumbnail") or ""
-        r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/placeholders/default-stayodds.webp")
+        r_img = f"../../{r_thumb}?v=169" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/placeholders/default-stayodds.webp?v=169")
         related_html += f"""
           <article class="related-card">
             <img src="{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" decoding="async" />
@@ -614,7 +614,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=31" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1349,7 +1349,7 @@ def render_destination_page(
     for idx, h in enumerate(dest_hotels):
         o = compute_stayodds_py(h)
         raw_thumb = h.get("thumbnail") or "assets/placeholders/default-stayodds.webp"
-        thumb_src = raw_thumb if raw_thumb.startswith(("http://", "https://")) else f"../../{raw_thumb.lstrip('/')}"
+        thumb_src = raw_thumb if raw_thumb.startswith(("http://", "https://")) else f"../../{raw_thumb.lstrip('/')}?v=169"
         odds_val = f"{o['greatStayOdds']}%" if o["greatStayOdds"] is not None else ("Award" if o["awards"] else "Open")
         odds_lbl = "StayOdds" if o["greatStayOdds"] is not None else ("Official Award" if o["awards"] else "Breakdown")
 
@@ -1422,7 +1422,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=31" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{

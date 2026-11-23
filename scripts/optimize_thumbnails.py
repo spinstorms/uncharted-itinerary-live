@@ -78,7 +78,7 @@ def fetch_liteapi_photo(hotel_id: str, api_key: str) -> str | None:
     return None
 
 
-def save_webp(raw: bytes, out_path: Path, size: tuple[int, int] = (640, 400)) -> tuple[int, int]:
+def save_webp(raw: bytes, out_path: Path, size: tuple[int, int] = (800, 450)) -> tuple[int, int]:
     img = Image.open(io.BytesIO(raw))
     if img.mode in ("RGBA", "LA", "P"):
         bg = Image.new("RGB", img.size, (245, 245, 245))
@@ -89,11 +89,11 @@ def save_webp(raw: bytes, out_path: Path, size: tuple[int, int] = (640, 400)) ->
     elif img.mode != "RGB":
         img = img.convert("RGB")
 
-    # Auto-orient EXIF & cleanly crop/fit to 640x400
+    # Auto-orient EXIF & cleanly crop/fit to 800x450 (true 16:9 matching 1920x1080 YouTube exports)
     img = ImageOps.exif_transpose(img)
     fitted = ImageOps.fit(img, size, method=Image.Resampling.LANCZOS, centering=(0.5, 0.5))
     buf = io.BytesIO()
-    fitted.save(buf, format="WEBP", quality=76, method=5)
+    fitted.save(buf, format="WEBP", quality=78, method=6)
     out_bytes = buf.getvalue()
     out_path.write_bytes(out_bytes)
     return len(raw), len(out_bytes)

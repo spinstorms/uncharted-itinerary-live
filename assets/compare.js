@@ -187,9 +187,10 @@ function syncUrlParams(includeCompare = false) {
 }
 
 function resolveThumb(thumb) {
-  if (!thumb) return "../assets/placeholders/default-stayodds.webp";
-  if (/^https?:\/\//i.test(thumb) || thumb.startsWith("../") || thumb.startsWith("/")) return thumb;
-  return `../${thumb}`;
+  if (!thumb) return "../assets/placeholders/default-stayodds.webp?v=169";
+  if (/^https?:\/\//i.test(thumb)) return thumb;
+  const rel = thumb.startsWith("../") || thumb.startsWith("/") ? thumb : `../${thumb}`;
+  return rel.includes("?") ? rel : `${rel}?v=169`;
 }
 
 function getReviewHref(h) {
@@ -598,14 +599,33 @@ function renderLeaderboard() {
     return hay.includes(q);
   });
 
+  const getDisagreementPts = (o) => {
+    const absDelta = o.opinionGap && o.opinionGap.delta100 != null ? Math.abs(Number(o.opinionGap.delta100)) : -1;
+    const spread = o.spread100 != null ? Number(o.spread100) : -1;
+    return Math.max(absDelta, spread);
+  };
+
   list.sort((a, b) => {
     const oa = getOdds(a);
     const ob = getOdds(b);
+    const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
-    const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
+    if (state.sortBy === "gap") {
+      const ga = getDisagreementPts(oa);
+      const gb = getDisagreementPts(ob);
+      if (gb !== ga) return gb - ga;
+      if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+    if (state.sortBy === "reviews") {
+      const ra = oa.verifiedGuest && oa.verifiedGuest.reviewCount != null ? Number(oa.verifiedGuest.reviewCount) : -1;
+      const rb = ob.verifiedGuest && ob.verifiedGuest.reviewCount != null ? Number(ob.verifiedGuest.reviewCount) : -1;
+      if (rb !== ra) return rb - ra;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
     if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
     return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
   });
