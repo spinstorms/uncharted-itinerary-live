@@ -79,7 +79,7 @@ function syncUrlParams() {
 }
 
 function resolveThumb(thumb) {
-  if (!thumb) return "../assets/logo.jpg";
+  if (!thumb) return "../assets/placeholders/default-stayodds.webp";
   if (/^https?:\/\//i.test(thumb) || thumb.startsWith("../") || thumb.startsWith("/")) return thumb;
   return `../${thumb}`;
 }
@@ -732,7 +732,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261122c`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261122d`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];

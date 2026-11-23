@@ -256,8 +256,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         img_src = raw_thumb
         img_abs = raw_thumb
     else:
-        img_src = "../../assets/logo.jpg"
-        img_abs = f"{SITE_URL}/assets/logo.jpg"
+        img_src = "../../assets/placeholders/default-stayodds.webp"
+        img_abs = f"{SITE_URL}/assets/placeholders/default-stayodds.webp"
 
     # Build JSON-LD structured data (Hotel + Review if First-Hand Verified)
     ld: dict[str, Any] = {
@@ -439,7 +439,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         ro = compute_stayodds_py(r)
         r_odds = f"{ro['greatStayOdds']}% StayOdds" if ro["greatStayOdds"] is not None else ro["tierLabel"]
         r_thumb = r.get("thumbnail") or ""
-        r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/logo.jpg")
+        r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/placeholders/default-stayodds.webp")
         related_html += f"""
           <article class="related-card">
             <img src="{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" decoding="async" />
@@ -1209,7 +1209,7 @@ def render_destination_page(
     cards_parts: list[str] = []
     for idx, h in enumerate(dest_hotels):
         o = compute_stayodds_py(h)
-        raw_thumb = h.get("thumbnail") or "assets/logo.jpg"
+        raw_thumb = h.get("thumbnail") or "assets/placeholders/default-stayodds.webp"
         thumb_src = raw_thumb if raw_thumb.startswith(("http://", "https://")) else f"../../{raw_thumb.lstrip('/')}"
         odds_val = f"{o['greatStayOdds']}%" if o["greatStayOdds"] is not None else ("Award" if o["awards"] else "Open")
         odds_lbl = "StayOdds" if o["greatStayOdds"] is not None else ("Official Award" if o["awards"] else "Breakdown")
@@ -1525,13 +1525,18 @@ def main() -> None:
         )
 
         local_thumb = ROOT / "assets" / "thumbs" / f"{pid}.webp"
-        raw_hero = p.get("hero_image_url") or ""
+        local_ph = ROOT / "assets" / "placeholders" / f"{pid}.webp"
+        raw_hero = (p.get("hero_image_url") or "").strip()
+        is_blocked = any(bad in raw_hero for bad in ("www.fourseasons.com", "www.lungarnocollection.com"))
+        is_self_hosted_ph = f"/assets/placeholders/{pid}.webp" in raw_hero
         if local_thumb.exists() and local_thumb.stat().st_size > 1500:
             resolved_thumb = f"assets/thumbs/{pid}.webp"
-        elif any(bad in raw_hero for bad in ("www.fourseasons.com", "www.lungarnocollection.com")):
-            resolved_thumb = ""
-        else:
+        elif (not raw_hero or is_blocked or is_self_hosted_ph) and local_ph.exists() and local_ph.stat().st_size > 1500:
+            resolved_thumb = f"assets/placeholders/{pid}.webp"
+        elif raw_hero and not is_blocked:
             resolved_thumb = raw_hero
+        else:
+            resolved_thumb = "assets/placeholders/default-stayodds.webp"
 
         rec = {
             "id": pid,
