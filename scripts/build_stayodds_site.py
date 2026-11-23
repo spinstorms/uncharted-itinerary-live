@@ -449,7 +449,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/placeholders/default-stayodds.webp")
         related_html += f"""
           <article class="related-card">
-            <img src="{esc(r_img)}" alt="{esc(r['name'])}" width="800" height="500" loading="lazy" decoding="async" />
+            <img src="{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
                 <span class="tag {'tag-accent' if ro['firstHand'] else 'tag-slate'}">{esc(r_odds)}</span>
@@ -614,7 +614,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=30" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=31" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -689,7 +689,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="{esc(img_src)}" alt="{esc(h['name'])}" width="800" height="500" fetchpriority="high" decoding="async" />
+          <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
@@ -1369,7 +1369,7 @@ def render_destination_page(
             f"""
         <article class="dest-card" data-resort-name="{esc(h['name'])}">
           <a class="dest-card-media" href="../../stayodds/{esc(h['id'])}/">
-            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" width="800" height="500" loading="lazy" decoding="async" />
+            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" loading="lazy" decoding="async" />
             <span class="dest-card-rank">#{idx + 1}</span>
             <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
           </a>
@@ -1422,7 +1422,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=30" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=31" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{

@@ -387,7 +387,7 @@ function renderH2HCard(h, opponent) {
   return `
     <article class="h2h-card" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
-        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" width="800" height="500" loading="lazy" decoding="async" />
+        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />
         <div>
           <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
           <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
@@ -797,7 +797,7 @@ function renderLeaderboard() {
 
           <div class="consensus-cta-col">
             <a href="${getSeoHref(h)}">
-              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" width="800" height="500" loading="lazy" decoding="async" />
+              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
             </a>
             <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
             ${

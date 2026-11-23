@@ -2245,6 +2245,7 @@ body.embed-mode .affiliate-hero {
 
 .h2h-card-head img {
   width: 110px;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: var(--radius-sm);
@@ -2614,6 +2615,7 @@ body.embed-mode .affiliate-hero {
 
 .consensus-thumb {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-sm);
@@ -2713,6 +2715,7 @@ body.embed-mode .affiliate-hero {
 
 .detail-hero-media img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: var(--radius-md);
@@ -3026,6 +3029,7 @@ body.embed-mode .affiliate-hero {
 
 .related-card img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
