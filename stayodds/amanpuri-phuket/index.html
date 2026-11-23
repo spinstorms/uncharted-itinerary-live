@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "amanpuri-phuket", "name": "Amanpuri", "location": "Pansea Beach, Phuket", "country": "Thailand", "brand": "Aman", "priceRange": "", "standout": "Private coconut-palm peninsula, iconic black-tiled infinity pool, and one of Phuket's most secluded white-sand coves", "watchOut": "Classic 1988 pavilion architecture commands ultra-premium Aman pricing", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 92, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 92, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

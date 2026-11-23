@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "grand-hotel-a-villa-feltrinelli", "name": "Grand Hotel a Villa Feltrinelli", "location": "Gargnano, Lake Garda", "country": "Italy", "brand": "Independent", "priceRange": "£1,800+/night", "standout": "Ultra-intimate 20-room neo-Gothic lakeside villa on Lake Garda — repeatedly cited on r/FATTravel as Italy's pinnacle of personalized old-world hospitality with 2-Michelin-star dining by Stefano Baiocco and private Riva boat excursions", "watchOut": "Seasonal operation (typically April–October) and only 20 rooms mean availability is scarce; quiet refined atmosphere with formal dining standards", "keyFacts": {"poolHeating": "", "beachOrReef": "Direct private Lake Garda shoreline & boat jetty", "renovationYear": null, "transferLogistics": "Approx. 65 minutes from Verona (VRN) or 95 minutes from Milan Linate (LIN)"}, "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Global Directory", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

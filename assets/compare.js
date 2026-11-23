@@ -945,7 +945,7 @@ async function boot() {
     const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
     const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
     if (!ha || !hb) return;
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=1");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=2");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);

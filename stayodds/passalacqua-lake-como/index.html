@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "passalacqua-lake-como", "name": "Passalacqua", "location": "Moltrasio, Lake Como", "country": "Italy", "brand": "Preferred Hotels", "priceRange": "", "standout": "18th-century terraced hillside villa with just 24 suites, vintage Riva boat rides, and the most enchanting Italian gardens on Lake Como", "watchOut": "Tiny 24-suite inventory books out 6–12 months ahead and seasonal closure runs Nov–Mar", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 95, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "verifiedGuest": {"rating": 9.7, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "No. 5 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +7 pts higher than Fat Voyage.", "deltaLabel": "-7 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

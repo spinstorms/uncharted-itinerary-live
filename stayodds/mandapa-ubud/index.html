@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "mandapa-ubud", "name": "Mandapa, a Ritz-Carlton Reserve", "location": "Ayung River Valley, Ubud", "country": "Indonesia", "brand": "Marriott Bonvoy", "priceRange": "£850+/night", "standout": "3 MICHELIN Keys river-valley sanctuary with working rice terraces and unforgettable Patih butler care", "watchOut": "One of Bali's priciest stays (and Marriott points rarely dip low); bring repellent for jungle evenings", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: DPS)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 95, "statusBadge": "Strong Agreement", "tierLabel": "Short Tour Preview", "firstHand": false, "visited": true, "personalScoreLabel": null, "critic100": 92, "verifiedGuest": {"rating": 9.7, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "No. 61 in the World (2026)"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (-5 pts) — The Luxury Travel Expert and real guests agree.", "deltaLabel": "-5 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

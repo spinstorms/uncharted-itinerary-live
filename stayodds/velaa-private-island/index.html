@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "velaa-private-island", "name": "Velaa Private Island", "location": "Noonu Atoll", "country": "Maldives", "brand": "Boutique Ultra-Luxury", "priceRange": "", "standout": "Private golf academy, snow room spa, extensive wine cellar, and ultra-private island footprint", "watchOut": "Ultra-luxury nightly rates and seaplane transfer requirements", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "verifiedGuest": null, "officialAwards": [{"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

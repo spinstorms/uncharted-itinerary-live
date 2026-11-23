@@ -1137,7 +1137,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

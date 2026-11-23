@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "rayavadee-krabi", "name": "Rayavadee Resort", "location": "Railay / Krabi", "country": "Thailand", "brand": "Leading Hotels", "priceRange": "£550+/night", "standout": "Boat-only arrival, two-story jungle pavilions & The Grotto beachfront cave dining", "watchOut": "Main pool can get busy and parts of the lush grounds could use light freshening up", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 76, "statusBadge": "First-Hand Verified", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "19 / 25", "critic100": null, "verifiedGuest": null, "officialAwards": [{"label": "1 MICHELIN Key"}], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "My first-hand stay notes below — compare directly with real guest reviews.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

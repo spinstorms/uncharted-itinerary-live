@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "rosewood-mayakoba", "name": "Rosewood Mayakoba", "location": "Riviera Maya", "country": "Mexico", "brand": "Rosewood Hotels", "priceRange": "", "standout": "Customer service • Beautiful property", "watchOut": "Increasing prices • Bug bites noted", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: CUN"}, "propertyStatus": null}, "odds": {"greatStayOdds": 93, "statusBadge": "Opinions Differ", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 85, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +13 pts higher than The Luxury Travel Expert.", "deltaLabel": "-13 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

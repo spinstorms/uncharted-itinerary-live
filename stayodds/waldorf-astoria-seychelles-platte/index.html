@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "waldorf-astoria-seychelles-platte", "name": "Waldorf Astoria Seychelles Platte Island", "location": "Platte Island", "country": "Seychelles", "brand": "Waldorf Astoria", "priceRange": "", "standout": "Stunning natural setting / Nature • Excellent, attentive service and concierge", "watchOut": "Limited access: only one flight per day from international airport • Higher prices / Seychelles generally expensive", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach area", "renovationYear": null, "transferLogistics": "Nearest airport code: SEZ"}, "propertyStatus": null}, "odds": {"greatStayOdds": 96, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 88, "verifiedGuest": {"rating": 10.0, "scale": 10}, "officialAwards": [{"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +12 pts higher than 2 published critics.", "deltaLabel": "-12 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

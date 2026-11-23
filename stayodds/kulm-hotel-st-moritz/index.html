@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "kulm-hotel-st-moritz", "name": "Kulm Hotel St. Moritz", "location": "St. Moritz", "country": "Switzerland", "brand": "Leading Hotels", "priceRange": "", "standout": "Excellent location • Superb amenities", "watchOut": "Restaurant booking issues • Initial reservation confusion", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: ZRH)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 95, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": {"rating": 9.5, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "raffles-the-palm-dubai", "name": "Raffles The Palm Dubai", "location": "Dubai", "country": "United Arab Emirates", "brand": "Accor / Raffles", "priceRange": "", "standout": "Palatial European-baroque beachfront resort on Palm Jumeirah's West Crescent with gold-leaf interiors, 500m private white-sand beach, vast Cinq Mondes Spa, and butler service", "watchOut": "Ornate classical palace decor is unabashedly opulent rather than minimalist modern; outer Palm crescent adds drive time to Downtown Dubai", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 85, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 85, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

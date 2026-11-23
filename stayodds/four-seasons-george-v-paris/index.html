@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "four-seasons-george-v-paris", "name": "Four Seasons Hotel George V, Paris", "location": "Paris", "country": "France", "brand": "Four Seasons", "priceRange": "", "standout": "Excellent location with Eiffel Tower views • Outstanding, attentive service from staff (named staff praised)", "watchOut": "High price / expensive • Reported condescending treatment of non-guests / service inconsistency for non-staying visitors", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: CDG)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 91, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 85, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +9 pts higher than Fat Voyage.", "deltaLabel": "-9 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

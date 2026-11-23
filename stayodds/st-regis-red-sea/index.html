@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "st-regis-red-sea", "name": "The St. Regis Red Sea Resort", "location": "Ummahat Island", "country": "Saudi Arabia", "brand": "Marriott / St. Regis", "priceRange": "", "standout": "Kengo Kuma-designed private-island Red Sea resort on Ummahat Island featuring dune and coral-shaped overwater pool villas, pristine reefs, and signature St. Regis butler service", "watchOut": "Requires flying into Red Sea International Airport plus boat/seaplane transfer; emerging ultra-luxury destination with high resort pricing", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Award-Winning", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": null, "officialAwards": [{"label": "1 MICHELIN Key"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 1 MICHELIN Key — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

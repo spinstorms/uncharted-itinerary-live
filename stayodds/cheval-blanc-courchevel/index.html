@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "cheval-blanc-courchevel", "name": "Cheval Blanc Courchevel", "location": "Courchevel", "country": "France", "brand": "LVMH / Cheval Blanc", "priceRange": "", "standout": "LVMH's ultra-exclusive ski-in/ski-out Le Jardin Alpin maison in Courchevel 1850, featuring contemporary alpine suites, bespoke ski service, Guerlain Spa, and three-Michelin-star Le 1947", "watchOut": "Open winter ski season only; tiny room count and ultra-luxury pricing require booking well ahead for peak weeks", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

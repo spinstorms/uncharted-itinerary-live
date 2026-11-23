@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "grand-hotel-tremezzo-como", "name": "Grand Hotel Tremezzo", "location": "Lake Como", "country": "Italy", "brand": "Preferred", "priceRange": "", "standout": "Stunning views • Excellent service", "watchOut": "", "keyFacts": {"poolHeating": "Indoor & outdoor pools", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: MXP)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 94, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [{"label": "2 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +6 pts higher than The Luxury Travel Expert.", "deltaLabel": "-6 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

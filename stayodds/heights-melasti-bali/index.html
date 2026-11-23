@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "heights-melasti-bali", "name": "The Heights Melasti & Sundays Beach Club", "location": "Ungasan / Uluwatu, Bali", "country": "Indonesia", "brand": "Boutique", "priceRange": "£200–£300/night", "standout": "Modern private pool villa value + effortless food delivery and beach club access", "watchOut": "Open-air bathrooms mean you definitely want tropical mosquito repellent packed", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 87, "statusBadge": "First-Hand Verified", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "13 / 15", "critic100": null, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "My first-hand stay notes below — compare directly with real guest reviews.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

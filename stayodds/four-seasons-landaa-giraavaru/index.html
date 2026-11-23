@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "four-seasons-landaa-giraavaru", "name": "Four Seasons Resort Maldives at Landaa Giraavaru", "location": "Baa Atoll", "country": "Maldives", "brand": "Four Seasons", "priceRange": "", "standout": "Baa Atoll UNESCO Biosphere flagship known for its Marine Discovery Centre, seasonal Hanifaru Bay manta ray excursions (June–Nov), Ayurvedic spa, and expansive overwater/beach villas", "watchOut": "35-minute seaplane transfer from Malé (daylight hours only) and premium resort dining/excursion costs", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 89, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 89, "verifiedGuest": null, "officialAwards": [{"label": "1 MICHELIN Key"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 1 MICHELIN Key — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

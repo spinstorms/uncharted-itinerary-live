@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "mandarin-oriental-canouan", "name": "Mandarin Oriental, Canouan", "location": "Canouan", "country": "Saint Vincent and the Grenadines", "brand": "Mandarin Oriental", "priceRange": "", "standout": "Clean rooms • Friendly staff", "watchOut": "Limited parking • Expensive breakfast", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: CIW)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 96, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [{"label": "1 MICHELIN Key"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 1 MICHELIN Key • Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

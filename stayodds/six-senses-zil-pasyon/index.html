@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "six-senses-zil-pasyon", "name": "Six Senses Zil Pasyon", "location": "Félicité Island", "country": "Seychelles", "brand": "IHG / Six Senses", "priceRange": "", "standout": "Beautiful location • Outstanding staff", "watchOut": "Travel complications • High additional charges", "keyFacts": {"poolHeating": "Infinity pool on property", "beachOrReef": "Beachfront with snorkeling/diving", "renovationYear": null, "transferLogistics": "Airport shuttle / transfer service listed"}, "propertyStatus": null}, "odds": {"greatStayOdds": 93, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 94, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [{"label": "2 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (+2 pts) — The Luxury Travel Expert and real guests agree.", "deltaLabel": "+2 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

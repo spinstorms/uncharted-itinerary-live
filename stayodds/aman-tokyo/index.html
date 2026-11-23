@@ -595,7 +595,7 @@
 
     const shareCardState = {"hotel": {"id": "aman-tokyo", "name": "Aman Tokyo", "location": "Otemachi, Tokyo", "country": "Japan", "brand": "Aman", "priceRange": "", "standout": "Soaring 30m washi-paper shoji lobby 33 floors above Tokyo, granite deep-soaking furo tubs, and a 30m skyline indoor pool", "watchOut": "Nightly rates have surged above £1,400+; lobby lounge can get lively with afternoon tea visitors", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: HND"}, "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "verifiedGuest": null, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "No. 11 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • No. 11 in the World (2026) — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      const mod = await import("../../assets/stayodds-share-card.js?v=2");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
