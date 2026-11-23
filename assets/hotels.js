@@ -732,7 +732,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123c`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123d`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];
@@ -748,7 +748,7 @@ async function boot() {
     renderAll(true);
   } catch (err) {
     const grid = qs("#scorecardGrid");
-    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the 300-hotel world map right now.</div>`;
+    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the 500-hotel world map right now.</div>`;
     console.error("Failed to load stayodds-index.json:", err);
   }
 }

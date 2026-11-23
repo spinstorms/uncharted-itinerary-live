@@ -449,7 +449,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         r_img = f"../../{r_thumb}" if r_thumb.startswith("assets/") else (r_thumb if r_thumb.startswith("http") else "../../assets/placeholders/default-stayodds.webp")
         related_html += f"""
           <article class="related-card">
-            <img src="{esc(r_img)}" alt="{esc(r['name'])}" loading="lazy" decoding="async" />
+            <img src="{esc(r_img)}" alt="{esc(r['name'])}" width="800" height="500" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
                 <span class="tag {'tag-accent' if ro['firstHand'] else 'tag-slate'}">{esc(r_odds)}</span>
@@ -614,7 +614,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=30" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -672,7 +672,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 500 StayOdds Hotels</a>
     </div>
   </div>
 
@@ -689,7 +689,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
+          <img src="{esc(img_src)}" alt="{esc(h['name'])}" width="800" height="500" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
@@ -1369,7 +1369,7 @@ def render_destination_page(
             f"""
         <article class="dest-card" data-resort-name="{esc(h['name'])}">
           <a class="dest-card-media" href="../../stayodds/{esc(h['id'])}/">
-            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" loading="lazy" decoding="async" />
+            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" width="800" height="500" loading="lazy" decoding="async" />
             <span class="dest-card-rank">#{idx + 1}</span>
             <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
           </a>
@@ -1422,7 +1422,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=30" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1930,10 +1930,24 @@ def main() -> None:
     sm_lines.append("</urlset>\n")
     (ROOT / "sitemap.xml").write_text("\n".join(sm_lines), encoding="utf-8")
 
+    # Build minified assets/styles.min.css from assets/styles.css (safe comment & whitespace stripping)
+    import re
+    css_src = ROOT / "assets" / "styles.css"
+    css_min = ROOT / "assets" / "styles.min.css"
+    if css_src.exists():
+        raw_css = css_src.read_text(encoding="utf-8")
+        min_css = re.sub(r"/\*[\s\S]*?\*/", "", raw_css)
+        min_css = re.sub(r"\s+", " ", min_css)
+        min_css = re.sub(r"\s*([{};,>~])\s*", r"\1", min_css)
+        min_css = re.sub(r":\s+", ":", min_css)
+        min_css = min_css.replace(";}", "}").strip()
+        css_min.write_text(min_css + "\n", encoding="utf-8")
+
     print(
         f"BUILT STAYODDS SITE!\n"
         f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json ({out_json.stat().st_size/1024:.1f} KB)\n"
         f"  Lean Index JSON: {len(lean_hotels)} verified properties -> data/stayodds-index.json ({lean_json.stat().st_size/1024:.1f} KB)\n"
+        f"  Minified CSS: assets/styles.css ({css_src.stat().st_size/1024:.1f} KB) -> assets/styles.min.css ({css_min.stat().st_size/1024:.1f} KB)\n"
         f"  Static SEO Pages: {len(directory)} pages -> stayodds/<slug>/index.html\n"
         f"  Destination Guides: {len(generated_dests)} pages -> destinations/<slug>/index.html\n"
         f"  Sitemap URLs: {len(urls)} URLs -> sitemap.xml"

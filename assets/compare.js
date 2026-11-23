@@ -5,10 +5,57 @@ import {
   isFirstHandVerified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=7";
-import {
-  getPropertyStatusMeta,
-  openVsShareModal,
-} from "./stayodds-share-card.js?v=1";
+
+function getPropertyStatusMeta(hotel) {
+  const st = (hotel && hotel.propertyStatus) || {};
+  const op = (st.operatingStatus || "").trim();
+  const reno = (st.renovationsExtensions || "").trim();
+  const nearby = (st.nearbyConstruction || "").trim();
+  const srcUrl = (st.sourceUrl || "").trim();
+  const srcNote = (st.sourceNote || "").trim();
+  const verifiedAt = (st.verifiedAt || "").trim();
+  const hasDetails = Boolean(op || reno || nearby);
+  const lower = op.toLowerCase();
+
+  let badge = op || "No Works Listed";
+  let tone = "neutral";
+  if (lower.includes("closed")) {
+    tone = "danger";
+  } else if (lower.includes("rebrand") || lower.includes("transition") || nearby) {
+    tone = "warn";
+  } else if (op === "Open" && reno) {
+    tone = "open";
+    badge = "Open · Recent Works";
+  } else if (op === "Open") {
+    tone = "open";
+  }
+
+  let shortSummary = "No confirmed renovations, closures, or nearby works listed";
+  if (lower.includes("closed")) {
+    shortSummary = reno || `${op} — check reopening status before booking.`;
+  } else if (lower.includes("rebrand") || lower.includes("transition")) {
+    shortSummary = reno || `${op} — verify current brand & operator.`;
+  } else if (reno && nearby) {
+    shortSummary = `${reno} Nearby: ${nearby}`;
+  } else if (reno) {
+    shortSummary = reno;
+  } else if (nearby) {
+    shortSummary = `Nearby works: ${nearby}`;
+  }
+
+  return {
+    hasDetails,
+    operatingStatus: op || "No confirmed works listed",
+    badge,
+    tone,
+    renovationsExtensions: reno,
+    nearbyConstruction: nearby,
+    sourceUrl: srcUrl,
+    sourceNote: srcNote,
+    verifiedAt,
+    shortSummary,
+  };
+}
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -340,7 +387,7 @@ function renderH2HCard(h, opponent) {
   return `
     <article class="h2h-card" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
-        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />
+        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" width="800" height="500" loading="lazy" decoding="async" />
         <div>
           <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
           <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
@@ -750,7 +797,7 @@ function renderLeaderboard() {
 
           <div class="consensus-cta-col">
             <a href="${getSeoHref(h)}">
-              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" width="800" height="500" loading="lazy" decoding="async" />
             </a>
             <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
             ${
@@ -874,10 +921,11 @@ async function boot() {
     }
   }
 
-  qs("#shareVsCardBtn")?.addEventListener("click", () => {
+  qs("#shareVsCardBtn")?.addEventListener("click", async () => {
     const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
     const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
     if (!ha || !hb) return;
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=1");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1010,7 +1058,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123c`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123d`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
