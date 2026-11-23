@@ -38,13 +38,20 @@ def load_env_local() -> None:
 
 
 def sb_get_all(sb_url: str, key: str, table: str, select: str = "*") -> list[dict[str, Any]]:
-    url = f"{sb_url}/rest/v1/{table}?select={urllib.parse.quote(select)}&limit=1000"
-    req = urllib.request.Request(
-        url,
-        headers={"apikey": key, "Authorization": f"Bearer {key}", "Accept": "application/json"},
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    page_size = 1000
+    all_rows: list[dict[str, Any]] = []
+    for offset in range(0, 10000, page_size):
+        url = f"{sb_url}/rest/v1/{table}?select={urllib.parse.quote(select)}&limit={page_size}&offset={offset}"
+        req = urllib.request.Request(
+            url,
+            headers={"apikey": key, "Authorization": f"Bearer {key}", "Accept": "application/json"},
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            page = json.loads(resp.read().decode("utf-8"))
+        all_rows.extend(page)
+        if len(page) < page_size:
+            break
+    return all_rows
 
 
 def esc(val: Any) -> str:
@@ -577,7 +584,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 300 StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -1062,10 +1069,30 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "compareRegion": "Europe",
     },
     {
+        "slug": "mexico",
+        "title": "Mexico",
+        "headline": "Best Luxury Resorts in Mexico — StayOdds Guide",
+        "lead": "Compare Riviera Maya, Los Cabos, Punta Mita, Costalegre, San Miguel de Allende, and Mexico City luxury resorts side-by-side — including swimmable beaches, sargassum notes, all-inclusive vs. à la carte differences, and verified editorial links.",
+        "filterType": "region",
+        "filterValue": "Mexico",
+        "banner": "bora-bora.jpg",
+        "compareRegion": "Mexico",
+    },
+    {
+        "slug": "caribbean",
+        "title": "Caribbean",
+        "headline": "Best Luxury Resorts in the Caribbean — StayOdds Guide",
+        "lead": "Compare flagship luxury resorts across every Caribbean island & territory — from Anguilla, St. Barths, Turks & Caicos, and St. Lucia to Barbados, Jamaica, Cayman Islands, Aruba, Curaçao, Dominica, Grenada, and private BVI cays.",
+        "filterType": "region",
+        "filterValue": "Caribbean",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Caribbean",
+    },
+    {
         "slug": "americas",
-        "title": "Americas & Caribbean",
-        "headline": "Best Luxury Hotels in the Americas & Caribbean — StayOdds Guide",
-        "lead": "From California and New York icons to St. Lucia, Cabo, and private Caribbean sanctuaries — every StayOdds profile links directly to verified editorial reviews and official awards.",
+        "title": "Americas",
+        "headline": "Best Luxury Hotels in the Americas — StayOdds Guide",
+        "lead": "From California, Hawaii, and New York icons to Costa Rica, Belize, Panama, Canada, and South American sanctuaries — every StayOdds profile links directly to verified editorial reviews and official awards.",
         "filterType": "region",
         "filterValue": "Los Angeles & Americas",
         "banner": "bora-bora.jpg",

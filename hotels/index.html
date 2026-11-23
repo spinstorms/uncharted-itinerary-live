@@ -7,12 +7,12 @@
   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
-  <title>World Luxury Hotel Map (All 300 Hotels) &amp; Scorecards | StayOdds</title>
-  <meta name="description" content="Explore all 300 verified luxury hotels on an interactive world map — toggle between all 300 StayOdds icons, our 36 First-Hand stays, 2026 MICHELIN Key winners, and The World's 50 Best Hotels." />
+  <title>World Luxury Hotel Map (All 408 Hotels) &amp; Scorecards | StayOdds</title>
+  <meta name="description" content="Explore all 408 verified luxury hotels on an interactive world map — toggle between Mexico, every Caribbean island, Maldives, Bali, Europe, Asia, our 36 First-Hand stays, and 2026 MICHELIN Keys." />
   <link rel="canonical" href="https://live.uncharteditinerary.com/hotels/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="World Luxury Hotel Map (All 300 Hotels) &amp; Scorecards | StayOdds" />
-  <meta property="og:description" content="Interactive world map of all 300 StayOdds luxury hotels — color-coded for First-Hand stays, 2026 MICHELIN Key winners, and Global Directory icons." />
+  <meta property="og:title" content="World Luxury Hotel Map (All 408 Hotels) &amp; Scorecards | StayOdds" />
+  <meta property="og:description" content="Interactive world map of all 408 StayOdds luxury hotels — color-coded for First-Hand stays, 2026 MICHELIN Key winners, and Global Directory icons." />
   <meta property="og:image" content="https://live.uncharteditinerary.com/assets/banners/bora-bora.jpg" />
   <meta property="og:url" content="https://live.uncharteditinerary.com/hotels/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -20,7 +20,7 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "StayOdds World Luxury Hotel Map (All 300 Hotels)",
+    "name": "StayOdds World Luxury Hotel Map (All 408 Hotels)",
     "url": "https://live.uncharteditinerary.com/hotels/",
     "publisher": {
       "@type": "Organization",
@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261123a" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261123b" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
@@ -150,14 +150,14 @@
             <div class="hero-title-group">
               <img class="hero-emblem" src="../assets/stayodds-logo.png" alt="StayOdds. by The Uncharted Itinerary" width="64" height="64" style="border-radius:14px;" />
               <div>
-                <h1 class="page-title">World Luxury Hotel Map — All 300 Hotels</h1>
+                <h1 class="page-title">World Luxury Hotel Map — All 408 Hotels</h1>
                 <p class="page-lead">
-                  Explore every hotel in our personally curated StayOdds collection on one interactive map — switch between <strong>All 300 Luxury Hotels</strong>, our <strong>36 First-Hand Stays</strong>, <strong>2026 MICHELIN Key</strong> winners, and <strong>The World’s 50 Best Hotels</strong>.
+                  Explore every hotel in our personally curated StayOdds collection on one interactive map — switch between <strong>All 408 Luxury Hotels</strong> (including Mexico &amp; every Caribbean island), our <strong>36 First-Hand Stays</strong>, <strong>2026 MICHELIN Key</strong> winners, and <strong>The World’s 50 Best Hotels</strong>.
                 </p>
               </div>
             </div>
             <div class="sync-meta">
-              <span id="hotelCountBadge">300 Mapped Hotels</span>
+              <span id="hotelCountBadge">408 Mapped Hotels</span>
               <strong>Personally Curated Collection</strong>
             </div>
           </div>
@@ -165,7 +165,7 @@
       </div>
     </section>
 
-    <!-- Interactive World / Region Map (All 300 Hotels) -->
+    <!-- Interactive World / Region Map (All 408 Hotels) -->
     <section class="map-section">
       <div class="container">
         <div class="scope-tabs-row" id="mapScopeTabs" style="margin-bottom:12px;"></div>
@@ -173,12 +173,12 @@
           <div class="filter-pills" id="regionPills" role="tablist" aria-label="Jump to region"></div>
           <div class="map-legend">
             <span><i class="map-legend-dot" style="background:#ff5d22;"></i>First-Hand Stays (36)</span>
-            <span><i class="map-legend-dot" style="background:#0f766e;"></i>Global Directory (264)</span>
+            <span><i class="map-legend-dot" style="background:#0f766e;"></i>Global Directory (372)</span>
             <span><i class="map-legend-dot" style="background:#0f766e;border:2px solid #fbbf24;"></i>2026 MICHELIN Key</span>
           </div>
         </div>
         <div class="map-shell">
-          <div id="hotelMap" aria-label="Interactive world map of all 300 StayOdds luxury hotels"></div>
+          <div id="hotelMap" aria-label="Interactive world map of all 408 StayOdds luxury hotels"></div>
         </div>
       </div>
     </section>
@@ -199,10 +199,10 @@
               <option value="name">Sort: A &ndash; Z</option>
             </select>
             <select id="coverageFilter" class="select-control" aria-label="Filter by award or coverage">
-              <option value="All">All 300 Properties</option>
+              <option value="All">All 408 Properties</option>
               <option value="Full Review">First-Hand Full Reviews (27)</option>
               <option value="Short Tour">First-Hand Short Tours (9)</option>
-              <option value="Global Directory">Global Directory (264)</option>
+              <option value="Global Directory">Global Directory (372)</option>
             </select>
             <div class="view-toggle" role="group" aria-label="Switch scorecard layout">
               <button class="view-toggle-btn active" id="viewCardsBtn" type="button">Scorecards</button>
@@ -282,6 +282,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/hotels.js?v=15"></script>
+  <script type="module" src="../assets/hotels.js?v=16"></script>
 </body>
 </html>
