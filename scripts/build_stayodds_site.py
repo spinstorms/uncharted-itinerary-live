@@ -15,6 +15,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -67,6 +68,15 @@ def fmt_score_num(v: float | int | None) -> str:
     return f"{f:.2f}".rstrip("0").rstrip(".")
 
 
+def is_score_unverified(e: dict[str, Any]) -> bool:
+    if not isinstance(e, dict):
+        return False
+    if e.get("scoreUnverified") is True:
+        return True
+    txt = f"{e.get('rawScore') or ''} {e.get('takeaway') or ''}".lower()
+    return "unable to verify" in txt or "unverified" in txt
+
+
 def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     first_hand = bool(h.get("visitedByUs") and h.get("overall") is not None and h.get("scores"))
     visited = bool(h.get("visitedByUs"))
@@ -90,12 +100,16 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     awards = [a for a in (h.get("officialAwards") or []) if str(a.get("sourceUrl", "")).startswith("http")]
     yt_reviews = [y for y in (h.get("youtubeReviews") or []) if str(y.get("sourceUrl", "")).startswith("http")]
 
-    # STRICT RULE: Numeric critic score ONLY comes from published numeric critic reviews (e.g. 9/10, 18/20).
-    # Official awards (MICHELIN Keys, Forbes Five-Star, World's 50 Best) are NEVER turned into fake /100 numbers —
-    # they are displayed by exact award name with a direct official link.
-    critic_scores = [int(e["normalized100"]) for e in editorial if e.get("normalized100") is not None]
+    # STRICT RULE: Numeric critic score ONLY comes from published, verified numeric critic reviews (e.g. 9/10, 18/20, 88/100).
+    # Any score_unverified entry ("Score/points awarded — unable to verify exact figure"), non-scored editorial article,
+    # or official award is strictly excluded from numeric math and displayed transparently with its direct source link.
+    scored_editorial = [
+        e for e in editorial if e.get("normalized100") is not None and not is_score_unverified(e)
+    ]
+    unverified_editorial = [e for e in editorial if is_score_unverified(e)]
+    critic_scores = [int(e["normalized100"]) for e in scored_editorial]
     critic100 = int(round(sum(critic_scores) / len(critic_scores))) if critic_scores else None
-    primary_critic = editorial[0] if editorial else None
+    primary_critic = scored_editorial[0] if scored_editorial else None
 
     vg = (h.get("verifiedGuest") or {}).get("licensed")
     guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
@@ -174,8 +188,8 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     if delta100 is not None:
         critic_name = (
             primary_critic["sourceName"]
-            if len(editorial) == 1 and primary_critic
-            else f"{len(editorial)} published critics"
+            if len(scored_editorial) == 1 and primary_critic
+            else f"{len(scored_editorial)} published critics"
         )
         if abs(delta100) <= 5:
             gap_head = (
@@ -198,6 +212,9 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     else:
         if first_hand:
             gap_head = "My first-hand stay notes below — compare directly with real guest reviews."
+        elif unverified_editorial and not scored_editorial:
+            names = ", ".join(u["sourceName"] for u in unverified_editorial)
+            gap_head = f"{names} awards a score/points total (unable to verify exact figure — excluded from numeric math)."
         elif awards:
             gap_head = f"Recognised with {' • '.join(a['label'] for a in awards)} — compare with real guest reviews below."
         else:
@@ -218,6 +235,8 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         "ours100": ours100,
         "critic100": critic100,
         "primaryCritic": primary_critic,
+        "scoredEditorial": scored_editorial,
+        "unverifiedEditorial": unverified_editorial,
         "guest100": guest100,
         "overallIndex": overall_idx,
         "greatStayOdds": odds,
@@ -355,12 +374,21 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         else:
             review_href = f"https://www.youtube.com/watch?v={urllib.parse.quote(h['videoId'])}"
 
-    scored_ed = [e for e in o["editorial"] if e.get("normalized100") is not None]
+    scored_ed = o.get("scoredEditorial") or [e for e in o["editorial"] if e.get("normalized100") is not None and not is_score_unverified(e)]
+    unverified_ed = o.get("unverifiedEditorial") or [e for e in o["editorial"] if is_score_unverified(e)]
     pc = scored_ed[0] if scored_ed else None
     left_label = (
         "My First-Hand Stay"
         if o["firstHand"]
-        else (pc["sourceName"] if (len(scored_ed) == 1 and pc) else "Published Critics")
+        else (
+            pc["sourceName"]
+            if (len(scored_ed) == 1 and pc)
+            else (
+                unverified_ed[0]["sourceName"]
+                if (not scored_ed and len(unverified_ed) == 1)
+                else "Published Critics"
+            )
+        )
     )
     if o["firstHand"] and o.get("personalScoreLabel"):
         left_display = f"{o['personalScoreLabel']} ({o['ours100']}/100)"
@@ -371,6 +399,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         left_display = f"{raw_sc} ({o['critic100']}/100)"
     elif o["critic100"] is not None:
         left_display = f"{o['critic100']} / 100 ({len(scored_ed)} critics)"
+    elif unverified_ed:
+        left_display = "Score/points awarded — unable to verify exact figure"
     else:
         left_display = "No numeric critic review yet"
 
@@ -406,13 +436,21 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     editorial_parts = []
     for e in o["editorial"]:
         tk = f'<p class="channel-takeaway">{esc(e.get("takeaway"))}</p>' if e.get("takeaway") else ""
-        if e.get("normalized100") is not None:
+        if is_score_unverified(e):
+            tag_html = '<span class="tag tag-caution">Score Awarded — Unverified</span>'
+            sc_html = (
+                '<strong style="font-size:12px;color:#b45309;">Score/points awarded — unable to verify exact figure</strong>'
+                '<span>Excluded from numeric math</span>'
+            )
+        elif e.get("normalized100") is not None:
+            tag_html = '<span class="tag tag-teal">Verified Score</span>'
             sc_html = f'<strong>{esc(e.get("rawScore") or "")}</strong><span>{esc(e["normalized100"])}/100</span>'
         else:
+            tag_html = '<span class="tag">Editorial</span>'
             sc_html = '<strong>Review</strong><span>Read Article ↗</span>'
         editorial_parts.append(
             f'<article class="channel-row"><div class="channel-row-head"><div>'
-            f'<span class="tag">Editorial</span>'
+            f'{tag_html}'
             f'<h4><a href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(e["sourceName"])} ↗</a></h4>'
             f'</div><div class="channel-row-score">{sc_html}</div></div>{tk}</article>'
         )
@@ -433,12 +471,28 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             f'<p class="channel-takeaway">{esc(h.get("verdict") or "")}</p></article>'
         )
     for y in o["ytReviews"]:
-        tk = f'<p class="channel-takeaway">{esc(y.get("takeaway"))}</p>' if y.get("takeaway") else ""
+        raw_tk = y.get("takeaway") or ""
+        tk = f'<p class="channel-takeaway">{esc(raw_tk)}</p>' if raw_tk else ""
+        if "unable to verify" in raw_tk.lower():
+            yt_tag = '<span class="tag tag-caution">Score Awarded — Unverified</span>'
+            yt_score_box = (
+                '<div class="channel-row-score">'
+                '<strong style="font-size:12px;color:#b45309;">Score/points awarded — unable to verify exact figure</strong>'
+                '<span>Excluded from numeric math</span></div>'
+            )
+        elif "/100" in raw_tk and "verified" in raw_tk.lower():
+            m_sc = re.search(r"(\d{1,3}/100)", raw_tk)
+            sc_str = m_sc.group(1) if m_sc else "Verified"
+            yt_tag = '<span class="tag tag-teal">Verified Video Score</span>'
+            yt_score_box = f'<div class="channel-row-score"><strong>{esc(sc_str)}</strong><span>Included in Critic Math</span></div>'
+        else:
+            yt_tag = f'<span class="tag">{esc(y.get("sentiment") or "Review")}</span>'
+            yt_score_box = ""
         yt_html += (
             f'<article class="channel-row"><div class="channel-row-head"><div>'
-            f'<span class="tag">{esc(y.get("sentiment") or "Review")}</span>'
+            f'{yt_tag}'
             f'<h4><a href="{esc(y["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{esc(y["creatorName"])} ↗</a></h4>'
-            f'</div></div>{tk}</article>'
+            f'</div>{yt_score_box}</div>{tk}</article>'
         )
 
     related_html = ""
@@ -476,6 +530,9 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             if (len(scored_ed) == 1 and pc)
             else f"Published Critics ({len(scored_ed)})"
         )
+    elif unverified_ed:
+        critic_kpi_val = '<span style="font-size:15px;">Unverified</span>'
+        critic_kpi_lbl = f"{unverified_ed[0]['sourceName']} (Score Awarded)"
     elif len(o["editorial"]) > 0:
         cnt_ed = len(o["editorial"])
         critic_kpi_val = f'{cnt_ed}<span> {"Review" if cnt_ed == 1 else "Reviews"}</span>'
@@ -483,6 +540,17 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     else:
         critic_kpi_val = "—"
         critic_kpi_lbl = "Published Critics"
+
+    unverified_transparency_html = ""
+    if unverified_ed:
+        uv_names = ", ".join(u["sourceName"] for u in unverified_ed)
+        unverified_transparency_html = (
+            f'<div style="margin-top:12px;padding:10px 12px;border-radius:10px;background:#fffbeb;border:1px solid #fde68a;font-size:12.5px;color:#92400e;">'
+            f'<strong>Score Verification Transparency:</strong> {esc(uv_names)} awards a points/rating score in their linked review, '
+            f'but the exact figure could not be verified from published text or captions — marked '
+            f'<strong>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</strong> and excluded from numeric StayOdds calculations.'
+            f'</div>'
+        )
 
     eq_parts = []
     if o["weights"]["firstHand"] > 0 and o["ours100"] is not None:
@@ -735,7 +803,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <ul class="stayodds-explainer-list">
                 <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
                 <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
-                <li><strong>Published Critics (/100):</strong> Average of critics that publish an explicit numeric score (e.g. 9/10, 18/20). Comments-only reviews (like The Points Guy) and official awards (MICHELIN Keys, Forbes Five-Star) are linked separately and never turned into invented numbers.</li>
+                <li><strong>Published Critics &amp; Video Reviewers (/100):</strong> Average of reviewers (including Nonstop Dan, The Flip-Flop Traveller, The Luxury Travel Expert, and Fat Voyage) only where an explicit numeric score is verified from a real source. When a reviewer is known to award a score/points total that cannot be verified from text or captions, it is marked <em>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</em> and excluded from numeric math.</li>
                 <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
                 <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
               </ul>
@@ -822,9 +890,10 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             <p class="detail-panel-sub" id="weightFormulaSub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
               <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
-              <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else "—"}</strong><small>Published Critics</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else ("Unverified" if unverified_ed else "—")}</strong><small>Published Critics</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Google Guests</small></div>
             </div>
+            {unverified_transparency_html}
           </div>
 
           <div class="detail-panel">
@@ -1866,6 +1935,22 @@ def main() -> None:
                 "brand": "StayOdds",
                 "totalProperties": len(lean_hotels),
                 "hotels": lean_hotels,
+            },
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    visited_hotels = [h for h in lean_hotels if h.get("videoId")]
+    visited_json = ROOT / "data" / "stayodds-visited.json"
+    visited_json.write_text(
+        json.dumps(
+            {
+                "updatedAt": now_iso,
+                "brand": "StayOdds",
+                "totalProperties": len(visited_hotels),
+                "hotels": visited_hotels,
             },
             separators=(",", ":"),
             ensure_ascii=False,

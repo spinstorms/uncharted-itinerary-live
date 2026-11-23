@@ -2,8 +2,9 @@ import {
   computeStayOdds,
   formatPersonalScore,
   isFirstHandVerified,
+  isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=7";
+} from "./stayodds-engine.js?v=8";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -528,15 +529,23 @@ function renderScorecards(hotels) {
           )
           .join("");
 
+        const editorialUrlSet = new Set((o.editorialRatings || []).map((e) => e.sourceUrl));
         const linkedReviewsHtml = [
-          ...(o.editorialRatings || []).map(
-            (e) =>
-              `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(e.sourceName)}${e.rawScore ? ` (${escapeHtml(e.rawScore)})` : ""} ↗</a>`
-          ),
-          ...(o.youtubeReviews || []).slice(0, 2).map(
-            (y) =>
-              `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(y.creatorName)} ↗</a>`
-          ),
+          ...(o.editorialRatings || []).map((e) => {
+            const suffix = isScoreUnverified(e)
+              ? " (Score/points awarded — unable to verify exact figure)"
+              : e.rawScore
+              ? ` (${escapeHtml(e.rawScore)})`
+              : "";
+            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(e.sourceName)}${suffix} ↗</a>`;
+          }),
+          ...(o.youtubeReviews || [])
+            .filter((y) => !editorialUrlSet.has(y.sourceUrl))
+            .slice(0, 2)
+            .map(
+              (y) =>
+                `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(y.creatorName)} ↗</a>`
+            ),
         ].join("");
 
         return `
@@ -746,7 +755,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123d`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123e`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];

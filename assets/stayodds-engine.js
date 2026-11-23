@@ -178,6 +178,13 @@ export async function fetchLiveGoogleRating(googlePlaceId) {
   return req;
 }
 
+export function isScoreUnverified(entry) {
+  if (!entry || typeof entry !== "object") return false;
+  if (entry.scoreUnverified === true) return true;
+  const text = `${entry.rawScore || ""} ${entry.takeaway || ""} ${entry.quote || ""}`;
+  return /unable to verify|unverified/i.test(text);
+}
+
 export function getPersonalScoreStats(hotel) {
   if (!isFirstHandVerified(hotel) || !hotel?.scores) return null;
   const s = hotel.scores;
@@ -216,12 +223,13 @@ export function computeStayOdds(hotel) {
       ? Math.round(Number(hotel.overall) * 20)
       : null;
 
-  // STRICT RULE: Numeric critic score ONLY comes from published numeric critic reviews (e.g. 9/10, 18/20).
-  // Non-scored editorial articles (e.g. The Points Guy) and official awards (MICHELIN Keys, Forbes Five-Star,
-  // World's 50 Best) are ALWAYS displayed with direct clickable links, never turned into invented /100 scores.
+  // STRICT RULE: Numeric critic score ONLY comes from published, verified numeric critic reviews (e.g. 9/10, 18/20, 88/100).
+  // Any score_unverified entry ("Score/points awarded — unable to verify exact figure"), non-scored editorial article,
+  // or official award is strictly excluded from numeric math and displayed transparently with its direct source link.
   const scoredEditorial = editorialRatings.filter(
-    (r) => r.normalized100 != null && !Number.isNaN(Number(r.normalized100))
+    (r) => r.normalized100 != null && !Number.isNaN(Number(r.normalized100)) && !isScoreUnverified(r)
   );
+  const unverifiedEditorial = editorialRatings.filter((r) => isScoreUnverified(r));
   const scoredCriticInputs = scoredEditorial.map((r) => Number(r.normalized100));
   const critic100 =
     scoredCriticInputs.length > 0
@@ -314,6 +322,8 @@ export function computeStayOdds(hotel) {
 
   let gapHeadline = firstHand
     ? "My first-hand stay notes below — open breakdown to compare with live Google guest reviews."
+    : unverifiedEditorial.length > 0 && scoredEditorial.length === 0
+    ? `${unverifiedEditorial.map((u) => u.sourceName).join(", ")} awards a score/points total (unable to verify exact figure — excluded from numeric math).`
     : officialAwards.length > 0
     ? `Recognised with ${officialAwards.map((a) => a.label).join(" • ")} — compare with real guest reviews below.`
     : "Compare verified guest reviews and linked video tours below.";
@@ -342,6 +352,8 @@ export function computeStayOdds(hotel) {
     ? primaryCritic.rawScore || `${critic100} / 100`
     : scoredEditorial.length > 1
     ? `${critic100} / 100 (${scoredEditorial.length} critics)`
+    : unverifiedEditorial.length > 0
+    ? "Score awarded — unverified"
     : "No critic score";
 
   const opinionGap = {
@@ -351,6 +363,8 @@ export function computeStayOdds(hotel) {
       ? "My First-Hand Stay"
       : scoredEditorial.length === 1
       ? primaryCritic.sourceName
+      : scoredEditorial.length === 0 && unverifiedEditorial.length === 1
+      ? unverifiedEditorial[0].sourceName
       : "Published Critics",
     left100,
     leftDisplay,
@@ -386,6 +400,7 @@ export function computeStayOdds(hotel) {
     critic100,
     primaryCritic,
     scoredEditorial,
+    unverifiedEditorial,
     guest100,
     overallIndex,
     greatStayOdds,

@@ -3,8 +3,9 @@ import {
   computeStayOdds,
   formatPersonalScore,
   isFirstHandVerified,
+  isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=7";
+} from "./stayodds-engine.js?v=8";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -341,6 +342,8 @@ function renderH2HCard(h, opponent) {
       ? `${o.primaryCritic.rawScore || `${o.critic100}/100`} (${o.primaryCritic.sourceName})`
       : o.scoredEditorial.length > 1
       ? `${o.critic100}/100 (${o.scoredEditorial.length} critics)`
+      : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
+      ? `Score awarded — unverified (${o.unverifiedEditorial[0].sourceName})`
       : null;
 
   const awardsHtml =
@@ -681,6 +684,9 @@ function renderLeaderboard() {
           : o.scoredEditorial.length > 1
           ? `<small>${o.scoredEditorial.length} Published Critics (${o.weights.critics}%)</small>
              <strong>${o.critic100} / 100</strong>`
+          : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
+          ? `<small>${escapeHtml(o.unverifiedEditorial[0].sourceName)}</small>
+             <strong style="font-size:12px;"><a href="${escapeHtml(o.unverifiedEditorial[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Score awarded — unverified ↗</a></strong>`
           : o.editorialRatings.length > 0
           ? `<small>Website Review</small>
              <strong style="font-size:13px;"><a href="${escapeHtml(o.editorialRatings[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
@@ -704,6 +710,7 @@ function renderLeaderboard() {
           : `<small>Official Awards</small>
              <strong>None listed</strong>`;
 
+      const editorialUrlSet = new Set(o.editorialRatings.map((e) => e.sourceUrl));
       const sourceChips = [
         ...o.officialAwards.map(
           (a) =>
@@ -711,18 +718,25 @@ function renderLeaderboard() {
               a.label
             )} ↗</a>`
         ),
-        ...o.editorialRatings.map(
-          (e) =>
-            `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
-              e.sourceName
-            )}${e.rawScore ? ` (${escapeHtml(e.rawScore)})` : ""} ↗</a>`
-        ),
-        ...o.youtubeReviews.slice(0, 3).map(
-          (y) =>
-            `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(
-              y.creatorName
-            )} ↗</a>`
-        ),
+        ...o.editorialRatings.map((e) => {
+          const suffix = isScoreUnverified(e)
+            ? " (Score/points awarded — unable to verify exact figure)"
+            : e.rawScore
+            ? ` (${escapeHtml(e.rawScore)})`
+            : "";
+          return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
+            e.sourceName
+          )}${suffix} ↗</a>`;
+        }),
+        ...o.youtubeReviews
+          .filter((y) => !editorialUrlSet.has(y.sourceUrl))
+          .slice(0, 3)
+          .map(
+            (y) =>
+              `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(
+                y.creatorName
+              )} ↗</a>`
+          ),
       ].join("");
 
       const propStatus = getPropertyStatusMeta(h);
@@ -1078,7 +1092,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123d`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123e`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
