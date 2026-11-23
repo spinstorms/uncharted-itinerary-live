@@ -169,6 +169,12 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/st-regis-bora-bora/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://live.uncharteditinerary.com/stayodds/w-maldives/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,12 +296,6 @@
   </url>
   <url>
     <loc>https://live.uncharteditinerary.com/stayodds/the-edge-bali/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/st-regis-bora-bora/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
