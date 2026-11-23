@@ -501,6 +501,94 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     else:
         equation_text = "Waiting for live Google guest rating — StayOdds blends whichever verified numeric scores exist."
 
+    ps = h.get("propertyStatus") or {}
+    ps_op = (ps.get("operatingStatus") or "").strip()
+    ps_reno = (ps.get("renovationsExtensions") or "").strip()
+    ps_nearby = (ps.get("nearbyConstruction") or "").strip()
+    ps_src_url = (ps.get("sourceUrl") or "").strip()
+    ps_src_note = (ps.get("sourceNote") or "").strip()
+    ps_verified = (ps.get("verifiedAt") or "").strip()[:10]
+    ps_has = bool(ps_op or ps_reno or ps_nearby)
+    ps_lower = ps_op.lower()
+    if "closed" in ps_lower:
+        ps_box_cls, ps_tag_cls, ps_badge_lbl = "is-danger", "tag-danger", ps_op
+    elif "rebrand" in ps_lower or "transition" in ps_lower or ps_nearby:
+        ps_box_cls, ps_tag_cls, ps_badge_lbl = "is-warn", "tag-caution", ps_op or "Status Notice"
+    elif ps_op == "Open":
+        ps_box_cls, ps_tag_cls, ps_badge_lbl = "is-open", "tag-teal", "Open · Confirmed Works" if ps_reno else "Open"
+    else:
+        ps_box_cls, ps_tag_cls, ps_badge_lbl = "", "tag-slate", "No Confirmed Works Listed"
+
+    if ps_has:
+        ps_items = []
+        if ps_op:
+            ps_items.append(
+                f'<div class="property-status-item"><small>Operating / Closure Status</small><p><strong>{esc(ps_op)}</strong></p></div>'
+            )
+        if ps_reno:
+            ps_items.append(
+                f'<div class="property-status-item"><small>Renovations &amp; Extensions</small><p>{esc(ps_reno)}</p></div>'
+            )
+        if ps_nearby:
+            ps_items.append(
+                f'<div class="property-status-item"><small>Nearby / Neighboring Construction</small><p>{esc(ps_nearby)}</p></div>'
+            )
+        else:
+            ps_items.append(
+                '<div class="property-status-item"><small>Nearby / Neighboring Construction</small><p>No confirmed nearby construction listed.</p></div>'
+            )
+        ps_src_parts = []
+        if ps_src_note:
+            ps_src_parts.append(f"<span><strong>Source:</strong> {esc(ps_src_note)}</span>")
+        if ps_src_url:
+            ps_src_parts.append(f'<a href="{esc(ps_src_url)}" target="_blank" rel="noopener noreferrer">View verified report &nearr;</a>')
+        if ps_verified:
+            ps_src_parts.append(f"<span>Checked: {esc(ps_verified)}</span>")
+        ps_source_html = f'<div class="property-status-source">{" &bull; ".join(ps_src_parts)}</div>' if ps_src_parts else ""
+        ps_body_html = f'<div class="property-status-grid">{"".join(ps_items)}</div>{ps_source_html}'
+    else:
+        ps_body_html = '<p class="property-status-neutral">No confirmed renovations, closures, or nearby works listed. StayOdds never guesses or invents renovation dates or construction notices.</p>'
+
+    property_status_html = f"""
+          <div class="property-status-box {ps_box_cls}" id="propertyStatusBlock">
+            <div class="property-status-head">
+              <span class="property-status-title">Property Status &amp; Works</span>
+              <span class="tag {ps_tag_cls}">{esc(ps_badge_lbl)}</span>
+            </div>
+            {ps_body_html}
+          </div>"""
+
+    share_card_payload = {
+        "hotel": {
+            "id": h["id"],
+            "name": h["name"],
+            "location": h["location"],
+            "country": h["country"],
+            "brand": h.get("brand", ""),
+            "priceRange": h.get("priceRange", ""),
+            "standout": h.get("standout", ""),
+            "watchOut": h.get("watchOut", ""),
+            "keyFacts": h.get("keyFacts") or {},
+            "propertyStatus": h.get("propertyStatus") or None,
+        },
+        "odds": {
+            "greatStayOdds": o["greatStayOdds"],
+            "statusBadge": o["statusBadge"],
+            "tierLabel": o["tierLabel"],
+            "firstHand": o["firstHand"],
+            "visited": o["visited"],
+            "personalScoreLabel": o.get("personalScoreLabel"),
+            "critic100": o["critic100"],
+            "verifiedGuest": {"rating": vg["rating"], "scale": int(vg.get("scale", 10))} if (vg and vg.get("rating")) else None,
+            "officialAwards": [{"label": a["label"]} for a in o["awards"]],
+            "opinionGap": {
+                "title": "My Score vs. Real Guest Score" if o["firstHand"] else "Critics & Awards vs. Real Guest Score",
+                "headline": o["gapHeadline"],
+                "deltaLabel": delta_badge,
+            },
+        },
+    }
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -526,7 +614,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -584,7 +672,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -605,6 +693,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
+            {f'<span class="tag {ps_tag_cls}">{esc(ps_badge_lbl)}</span>' if ps_box_cls in ('is-danger', 'is-warn') else ''}
           </div>
         </div>
         <div class="detail-hero-body">
@@ -657,6 +746,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
@@ -672,7 +762,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="opinion-gap-head">
             <div>
               <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Published Critics vs. Real Guest Score'}</h2>
+              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Critics &amp; Official Awards vs. Real Guest Score'}</h2>
               <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -708,11 +798,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           {f'<div class="key-facts-grid">{facts_html}</div>' if facts_html else ''}
           {f'<div class="key-facts-flags">{red_flags_html}</div>' if red_flags_html else ''}
+          {property_status_html}
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
             {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
@@ -1025,12 +1116,33 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             if (wCrEl) wCrEl.textContent = `${{wCr}}%`;
             if (wGuEl) wGuEl.textContent = `${{wGu}}%`;
             if (wGuVal) wGuVal.textContent = `${{g.rating.toFixed(1)}}★ → ${{g100}}%`;
+
+            if (shareCardState && shareCardState.odds) {{
+              shareCardState.odds.greatStayOdds = odds;
+              shareCardState.odds.statusBadge = badgeText;
+              shareCardState.odds.verifiedGuest = {{ rating: g.rating, scale: 5 }};
+              if (left100 != null) {{
+                const d = left100 - g100;
+                shareCardState.odds.opinionGap.deltaLabel = `${{d > 0 ? "+" + d : d}} pts`;
+                const ghEl = document.getElementById("gapHeadline");
+                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
+              }}
+            }}
           }}
         }})
         .catch(() => showMapsFallback(mapsFallbackUrl));
     }} else {{
       showMapsFallback("");
     }}
+
+    const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
+    document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
+      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
+      if (typeof window.trackEvent === "function") {{
+        window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
+      }}
+    }});
   </script>
 </body>
 </html>
@@ -1597,6 +1709,22 @@ def main() -> None:
                 "renovationYear": f.get("renovation_year"),
                 "transferLogistics": f.get("transfer_logistics", ""),
             },
+            "propertyStatus": (
+                {
+                    "operatingStatus": f.get("operating_status") or "",
+                    "renovationsExtensions": f.get("renovations_extensions") or "",
+                    "nearbyConstruction": f.get("nearby_construction") or "",
+                    "sourceUrl": f.get("status_source_url") or "",
+                    "sourceNote": f.get("status_source_note") or "",
+                    "verifiedAt": f.get("status_verified_at") or "",
+                }
+                if (
+                    f.get("operating_status")
+                    or f.get("renovations_extensions")
+                    or f.get("nearby_construction")
+                )
+                else None
+            ),
             "redFlags": f.get("red_flag_tags") or [],
             "bookingUrl": web_booking,
             "bookingLinks": bks,
@@ -1686,6 +1814,8 @@ def main() -> None:
             item["watchOut"] = r["watchOut"]
         if lean_kf:
             item["keyFacts"] = lean_kf
+        if r.get("propertyStatus"):
+            item["propertyStatus"] = {k: v for k, v in r["propertyStatus"].items() if v}
         if r["redFlags"]:
             item["redFlags"] = r["redFlags"]
         if r["shorts"]:

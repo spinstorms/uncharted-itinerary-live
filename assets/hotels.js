@@ -732,7 +732,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123b`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123c`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];

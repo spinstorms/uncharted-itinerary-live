@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -81,7 +81,7 @@
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -102,6 +102,7 @@
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-teal" id="heroStatusBadge">Verified Guest Score</span>
+            
           </div>
         </div>
         <div class="detail-hero-body">
@@ -154,6 +155,7 @@
             <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=Cape+Weligama+Sri+Lanka" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             
             <a class="btn btn-outline" href="../../compare/?a=cape-weligama-sri-lanka">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="cape-weligama-sri-lanka" data-resort-name="Cape Weligama" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="https://www.tripadvisor.com/Search?q=Cape%20Weligama%20Weligama%2C%20Southern%20Province&amp;ssrc=h" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
@@ -169,7 +171,7 @@
           <div class="opinion-gap-head">
             <div>
               <span class="tag tag-teal" id="gapStatusBadge">Verified Guest Score</span>
-              <h2>Published Critics vs. Real Guest Score</h2>
+              <h2>Critics &amp; Official Awards vs. Real Guest Score</h2>
               <p class="opinion-gap-headline" id="gapHeadline">Real guest ratings, official awards, and linked reviews compared side-by-side.</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -202,11 +204,19 @@
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           <div class="key-facts-grid"><div class="key-fact-tile"><small>Pool &amp; Heating</small><strong>Infinity pool on property</strong></div><div class="key-fact-tile"><small>Beach &amp; Reef</small><strong>Clifftop headland above two small coves (cove swimming seasonal Nov–Apr; iconic 60m Moon Pool)</strong></div><div class="key-fact-tile"><small>Opened / Renovated</small><strong>2024</strong></div><div class="key-fact-tile"><small>Transfer Logistics</small><strong>Approx. 2.5 hours via expressway from Colombo (CMB) or 35-min seaplane to Koggala</strong></div><div class="key-fact-tile"><small>Price Tier</small><strong>£600+/night</strong></div><div class="key-fact-tile"><small>Brand / Collection</small><strong>Resplendent Ceylon / Relais &amp; Châteaux</strong></div></div>
           <div class="key-facts-flags"><span class="tag tag-caution">⚠ High On-Property Pricing</span></div>
+          
+          <div class="property-status-box " id="propertyStatusBlock">
+            <div class="property-status-head">
+              <span class="property-status-title">Property Status &amp; Works</span>
+              <span class="tag tag-slate">No Confirmed Works Listed</span>
+            </div>
+            <p class="property-status-neutral">No confirmed renovations, closures, or nearby works listed. StayOdds never guesses or invents renovation dates or construction notices.</p>
+          </div>
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Refreshed 39-suite clifftop Relais &amp; Châteaux village perched 40 meters above the Indian Ocean — famous for its 60-meter crescent Moon Pool, sweeping sunset views, whale-watching excursions, and surf/Galle Fort proximity</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Clifftop position means steep walks down to two small sandy coves below (surf can be strong outside Nov–Apr); best paired with a Tea Trails or Wild Coast circuit</p></div>
@@ -564,12 +574,33 @@
             if (wCrEl) wCrEl.textContent = `${wCr}%`;
             if (wGuEl) wGuEl.textContent = `${wGu}%`;
             if (wGuVal) wGuVal.textContent = `${g.rating.toFixed(1)}★ → ${g100}%`;
+
+            if (shareCardState && shareCardState.odds) {
+              shareCardState.odds.greatStayOdds = odds;
+              shareCardState.odds.statusBadge = badgeText;
+              shareCardState.odds.verifiedGuest = { rating: g.rating, scale: 5 };
+              if (left100 != null) {
+                const d = left100 - g100;
+                shareCardState.odds.opinionGap.deltaLabel = `${d > 0 ? "+" + d : d} pts`;
+                const ghEl = document.getElementById("gapHeadline");
+                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
+              }
+            }
           }
         })
         .catch(() => showMapsFallback(mapsFallbackUrl));
     } else {
       showMapsFallback("");
     }
+
+    const shareCardState = {"hotel": {"id": "cape-weligama-sri-lanka", "name": "Cape Weligama", "location": "Weligama, Southern Province", "country": "Sri Lanka", "brand": "Resplendent Ceylon / Relais & Châteaux", "priceRange": "£600+/night", "standout": "Refreshed 39-suite clifftop Relais & Châteaux village perched 40 meters above the Indian Ocean — famous for its 60-meter crescent Moon Pool, sweeping sunset views, whale-watching excursions, and surf/Galle Fort proximity", "watchOut": "Clifftop position means steep walks down to two small sandy coves below (surf can be strong outside Nov–Apr); best paired with a Tea Trails or Wild Coast circuit", "keyFacts": {"poolHeating": "Infinity pool on property", "beachOrReef": "Clifftop headland above two small coves (cove swimming seasonal Nov–Apr; iconic 60m Moon Pool)", "renovationYear": 2024, "transferLogistics": "Approx. 2.5 hours via expressway from Colombo (CMB) or 35-min seaplane to Koggala"}, "propertyStatus": null}, "odds": {"greatStayOdds": 96, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
+    document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
+      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
+      }
+    });
   </script>
 </body>
 </html>

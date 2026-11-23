@@ -5,6 +5,10 @@ import {
   isFirstHandVerified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=7";
+import {
+  getPropertyStatusMeta,
+  openVsShareModal,
+} from "./stayodds-share-card.js?v=1";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -78,6 +82,8 @@ const state = {
   verdict: "All",
   sortBy: "visited",
   search: "",
+  searchA: "",
+  searchB: "",
   visibleLimit: PAGE_SIZE,
   idA: "taaktana-labuan-bajo",
   idB: "st-regis-bali",
@@ -118,13 +124,17 @@ function matchRegionParam(rawRegion, hotels) {
   return partial || null;
 }
 
-function syncUrlParams() {
+function syncUrlParams(includeCompare = false) {
   try {
     const url = new URL(window.location.href);
     if (state.region && state.region !== "All") url.searchParams.set("region", state.region);
     else url.searchParams.delete("region");
     if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
     else url.searchParams.delete("scope");
+    if (includeCompare && state.idA && state.idB) {
+      url.searchParams.set("a", state.idA);
+      url.searchParams.set("b", state.idB);
+    }
     window.history.replaceState({}, "", url.toString());
   } catch (_) {}
 }
@@ -166,38 +176,85 @@ function initCommonUi() {
   }
 }
 
-function populateH2HSelectors() {
-  const selA = qs("#compareSelectA");
-  const selB = qs("#compareSelectB");
-  if (!selA || !selB) return;
+function matchesSelectorQuery(h, query) {
+  const q = (query || "").trim().toLowerCase();
+  if (!q) return true;
+  const hay = `${h.name || ""} ${h.location || ""} ${h.country || ""} ${h.brand || ""} ${h.region || ""}`.toLowerCase();
+  return q.split(/\s+/).every((tok) => hay.includes(tok));
+}
 
-  const visited = state.hotels.filter(isVisitedProperty);
-  const globalOnly = state.hotels.filter((h) => !isVisitedProperty(h));
+function populateSingleSelector(side) {
+  const isA = side === "A";
+  const sel = qs(isA ? "#compareSelectA" : "#compareSelectB");
+  const clearBtn = qs(isA ? "#compareClearA" : "#compareClearB");
+  const metaEl = qs(isA ? "#compareMetaA" : "#compareMetaB");
+  const emptyEl = qs(isA ? "#compareEmptyA" : "#compareEmptyB");
+  if (!sel) return;
+
+  const query = isA ? state.searchA : state.searchB;
+  const trimmed = query.trim();
+  if (clearBtn) clearBtn.classList.toggle("is-visible", trimmed.length > 0);
+
+  const filtered = state.hotels.filter((h) => matchesSelectorQuery(h, trimmed));
+  const visited = filtered.filter(isVisitedProperty);
+  const globalOnly = filtered.filter((h) => !isVisitedProperty(h));
 
   const renderOpt = (h) =>
     `<option value="${escapeHtml(h.id)}">${escapeHtml(h.name)} (${escapeHtml(h.location)}, ${escapeHtml(h.country)})</option>`;
 
-  const opts = `
-    <optgroup label="★ First-Hand Stays &amp; Shorts (${visited.length})">
-      ${visited.map(renderOpt).join("")}
-    </optgroup>
-    <optgroup label="🌍 Global Luxury Directory (${globalOnly.length})">
-      ${globalOnly.map(renderOpt).join("")}
-    </optgroup>
-  `;
-  selA.innerHTML = opts;
-  selB.innerHTML = opts;
+  if (!filtered.length) {
+    sel.innerHTML = `<option value="" disabled selected>No matching hotels found</option>`;
+    sel.disabled = true;
+    if (metaEl) metaEl.textContent = `0 of ${state.hotels.length} hotels matched`;
+    if (emptyEl) {
+      emptyEl.textContent = `No hotels matched "${trimmed}". Try a different hotel name, city, country, or brand — or click × to clear.`;
+      emptyEl.classList.add("is-visible");
+    }
+    return;
+  }
 
-  if (state.hotels.some((h) => h.id === state.idA)) selA.value = state.idA;
-  else if (visited.length) {
-    state.idA = visited[0].id;
-    selA.value = state.idA;
+  sel.disabled = false;
+  if (emptyEl) {
+    emptyEl.textContent = "";
+    emptyEl.classList.remove("is-visible");
   }
-  if (state.hotels.some((h) => h.id === state.idB)) selB.value = state.idB;
-  else if (state.hotels.length > 1) {
-    state.idB = state.hotels[1].id;
-    selB.value = state.idB;
+  if (metaEl) {
+    metaEl.textContent = trimmed
+      ? `Showing ${filtered.length} of ${state.hotels.length} matching hotels`
+      : `${state.hotels.length} verified hotels available`;
   }
+
+  let html = "";
+  if (visited.length) {
+    html += `<optgroup label="★ First-Hand Stays &amp; Shorts (${visited.length})">${visited.map(renderOpt).join("")}</optgroup>`;
+  }
+  if (globalOnly.length) {
+    html += `<optgroup label="🌍 Global Luxury Directory (${globalOnly.length})">${globalOnly.map(renderOpt).join("")}</optgroup>`;
+  }
+  sel.innerHTML = html;
+
+  const currentId = isA ? state.idA : state.idB;
+  if (filtered.some((h) => h.id === currentId)) {
+    sel.value = currentId;
+  } else {
+    const nextId = filtered[0].id;
+    sel.value = nextId;
+    if (isA) state.idA = nextId;
+    else state.idB = nextId;
+  }
+}
+
+function populateH2HSelectors() {
+  if (!state.hotels.some((h) => h.id === state.idA)) {
+    const visited = state.hotels.filter(isVisitedProperty);
+    if (visited.length) state.idA = visited[0].id;
+    else if (state.hotels.length) state.idA = state.hotels[0].id;
+  }
+  if (!state.hotels.some((h) => h.id === state.idB)) {
+    if (state.hotels.length > 1) state.idB = state.hotels[1].id;
+  }
+  populateSingleSelector("A");
+  populateSingleSelector("B");
 }
 
 function renderH2HCard(h, opponent) {
@@ -207,6 +264,7 @@ function renderH2HCard(h, opponent) {
   const os = opponent.scores || {};
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+  const st = getPropertyStatusMeta(h);
 
   const metricRow = (label, a, b, suffix = "", missingText = "—") => {
     const aMissing = a == null;
@@ -223,9 +281,6 @@ function renderH2HCard(h, opponent) {
 
   const guestDisplay = o.verifiedGuest
     ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}`
-    : null;
-  const oppGuestDisplay = oo.verifiedGuest
-    ? `${oo.verifiedGuest.rating.toFixed(1)} / ${oo.verifiedGuest.scale}`
     : null;
   const unratedLabel = o.visited
     ? h.coverageType === "Short Tour"
@@ -250,6 +305,38 @@ function renderH2HCard(h, opponent) {
           .join(" • ")
       : "None listed";
 
+  const statusToneClass =
+    st.tone === "danger"
+      ? "is-danger"
+      : st.tone === "warn"
+      ? "is-warn"
+      : st.tone === "open"
+      ? "is-open"
+      : "";
+  const statusTagClass =
+    st.tone === "danger"
+      ? "tag-danger"
+      : st.tone === "warn"
+      ? "tag-caution"
+      : st.tone === "open"
+      ? "tag-teal"
+      : "tag-slate";
+
+  const statusHtml = `
+    <div class="h2h-status-strip ${statusToneClass}">
+      <div class="h2h-status-strip-head">
+        <span>Property Status &amp; Works</span>
+        <span class="tag ${statusTagClass}" style="font-size:10.5px;padding:2px 7px;">${escapeHtml(st.badge)}</span>
+      </div>
+      <div>${escapeHtml(st.shortSummary)}</div>
+      ${
+        st.sourceUrl
+          ? `<div style="margin-top:4px;font-size:11.5px;"><a href="${escapeHtml(st.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">Verified source &nearr;</a></div>`
+          : ""
+      }
+    </div>
+  `;
+
   return `
     <article class="h2h-card" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
@@ -271,6 +358,8 @@ function renderH2HCard(h, opponent) {
           <span>Opinion Gap</span>
         </div>
       </div>
+
+      ${statusHtml}
 
       <div class="h2h-metrics-list">
         ${metricRow("My First-Hand Stay", o.ours100, oo.ours100, "", unratedLabel).replace(
@@ -569,6 +658,14 @@ function renderLeaderboard() {
         ),
       ].join("");
 
+      const propStatus = getPropertyStatusMeta(h);
+      const propStatusPill =
+        propStatus.tone === "danger"
+          ? `<span class="tag tag-danger">⚠ ${escapeHtml(propStatus.badge)}</span>`
+          : propStatus.tone === "warn"
+          ? `<span class="tag tag-caution">ⓘ ${escapeHtml(propStatus.badge)}</span>`
+          : "";
+
       return `
         <article class="consensus-row-card ${toneClass}" data-resort-name="${escapeHtml(h.name)}">
           <div class="consensus-rank-col">
@@ -592,6 +689,7 @@ function renderLeaderboard() {
             <div class="meta-line">
               <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
               <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
+              ${propStatusPill}
               ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
               ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
               <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
@@ -741,11 +839,15 @@ function renderLeaderboard() {
       if (!id) return;
       state.idB = state.idA;
       state.idA = id;
-      const selA = qs("#compareSelectA");
-      const selB = qs("#compareSelectB");
-      if (selA) selA.value = state.idA;
-      if (selB) selB.value = state.idB;
+      state.searchA = "";
+      state.searchB = "";
+      const inpA = qs("#compareSearchA");
+      const inpB = qs("#compareSearchB");
+      if (inpA) inpA.value = "";
+      if (inpB) inpB.value = "";
+      populateH2HSelectors();
       renderH2H();
+      syncUrlParams(true);
       trackCompareSelection();
       qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -756,6 +858,7 @@ async function boot() {
   initCommonUi();
 
   const params = new URLSearchParams(window.location.search);
+  const hadCompareParams = Boolean(params.get("a") || params.get("b"));
   if (params.get("a")) state.idA = params.get("a");
   if (params.get("b")) state.idB = params.get("b");
   if (["all", "visited", "world", "saved"].includes(params.get("scope"))) {
@@ -770,6 +873,62 @@ async function boot() {
       window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
     }
   }
+
+  qs("#shareVsCardBtn")?.addEventListener("click", () => {
+    const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
+    const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
+    if (!ha || !hb) return;
+    openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
+    }
+  });
+
+  qs("#swapVsBtn")?.addEventListener("click", () => {
+    const prevA = state.idA;
+    state.idA = state.idB;
+    state.idB = prevA;
+    const prevSearchA = state.searchA;
+    state.searchA = state.searchB;
+    state.searchB = prevSearchA;
+    const inpA = qs("#compareSearchA");
+    const inpB = qs("#compareSearchB");
+    if (inpA) inpA.value = state.searchA;
+    if (inpB) inpB.value = state.searchB;
+    populateH2HSelectors();
+    renderH2H();
+    syncUrlParams(true);
+    trackH2HDropdown();
+  });
+
+  const wireSelectorSearch = (side) => {
+    const isA = side === "A";
+    const inp = qs(isA ? "#compareSearchA" : "#compareSearchB");
+    const clearBtn = qs(isA ? "#compareClearA" : "#compareClearB");
+    inp?.addEventListener("input", (e) => {
+      const val = e.target.value || "";
+      if (isA) state.searchA = val;
+      else state.searchB = val;
+      const prevId = isA ? state.idA : state.idB;
+      populateSingleSelector(side);
+      const nextId = isA ? state.idA : state.idB;
+      if (nextId !== prevId) {
+        renderH2H();
+        syncUrlParams(true);
+      }
+    });
+    clearBtn?.addEventListener("click", () => {
+      if (isA) state.searchA = "";
+      else state.searchB = "";
+      if (inp) {
+        inp.value = "";
+        inp.focus();
+      }
+      populateSingleSelector(side);
+    });
+  };
+  wireSelectorSearch("A");
+  wireSelectorSearch("B");
 
   qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
     const btn = qs("#copyVsLinkBtn");
@@ -817,11 +976,13 @@ async function boot() {
   qs("#compareSelectA")?.addEventListener("change", (e) => {
     state.idA = e.target.value;
     renderH2H();
+    syncUrlParams(true);
     trackH2HDropdown();
   });
   qs("#compareSelectB")?.addEventListener("change", (e) => {
     state.idB = e.target.value;
     renderH2H();
+    syncUrlParams(true);
     trackH2HDropdown();
   });
   qs("#verdictFilter")?.addEventListener("change", (e) => {
@@ -849,7 +1010,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123b`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123c`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
@@ -876,7 +1037,11 @@ async function boot() {
     renderFeaturePills();
     renderLeaderboard();
 
-    if (matchedRegion && matchedRegion !== "All" && !params.get("a") && !params.get("b")) {
+    if (hadCompareParams) {
+      requestAnimationFrame(() => {
+        qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    } else if (matchedRegion && matchedRegion !== "All") {
       requestAnimationFrame(() => {
         qs(".leaderboard-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
       });

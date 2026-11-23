@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -81,7 +81,7 @@
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -102,6 +102,7 @@
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-teal" id="heroStatusBadge">Mostly Aligned</span>
+            <span class="tag tag-danger">Temporarily Closed</span>
           </div>
         </div>
         <div class="detail-hero-body">
@@ -154,6 +155,7 @@
             <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=Soneva+Kiri+Thailand" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             
             <a class="btn btn-outline" href="../../compare/?a=soneva-kiri">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="soneva-kiri" data-resort-name="Soneva Kiri" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="https://www.tripadvisor.com/Search?q=Soneva%20Kiri%20Koh%20Kood&amp;ssrc=h" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
@@ -169,7 +171,7 @@
           <div class="opinion-gap-head">
             <div>
               <span class="tag tag-teal" id="gapStatusBadge">Mostly Aligned</span>
-              <h2>Published Critics vs. Real Guest Score</h2>
+              <h2>Critics &amp; Official Awards vs. Real Guest Score</h2>
               <p class="opinion-gap-headline" id="gapHeadline">The Luxury Travel Expert rated this +7 pts higher than real guests.</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -202,14 +204,22 @@
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           <div class="key-facts-grid"><div class="key-fact-tile"><small>Pool &amp; Heating</small><strong>Outdoor pool (heating not listed)</strong></div><div class="key-fact-tile"><small>Beach &amp; Reef</small><strong>Private beach with snorkeling/diving access</strong></div><div class="key-fact-tile"><small>Transfer Logistics</small><strong>Nearest airport code: TDX</strong></div><div class="key-fact-tile"><small>Brand / Collection</small><strong>Soneva</strong></div></div>
           
+          
+          <div class="property-status-box is-danger" id="propertyStatusBlock">
+            <div class="property-status-head">
+              <span class="property-status-title">Property Status &amp; Works</span>
+              <span class="tag tag-danger">Temporarily Closed</span>
+            </div>
+            <div class="property-status-grid"><div class="property-status-item"><small>Operating / Closure Status</small><p><strong>Temporarily Closed</strong></p></div><div class="property-status-item"><small>Renovations &amp; Extensions</small><p>Exited the Soneva brand under new ownership and rebranded to Kiri Private Reserve in June 2025; closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027.</p></div><div class="property-status-item"><small>Nearby / Neighboring Construction</small><p>No confirmed nearby construction listed.</p></div></div><div class="property-status-source"><span><strong>Source:</strong> Koh Kood 2026/27 resort status report &amp; public rebrand coverage (listed temporarily closed as Kiri Private Reserve)</span> &bull; <a href="https://explorekohchang.com/koh-kood/resorts-hotels-bungalows/klong-yai-kee-klong-rahan/" target="_blank" rel="noopener noreferrer">View verified report &nearr;</a> &bull; <span>Checked: 2026-11-23</span></div>
+          </div>
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Private Soneva plane from Bangkok, iconic suspended Treepod dining in the rainforest canopy, and colossal pool villas</p></div>
-            <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Private plane schedule adds ~£400/person and limits spontaneous transfers</p></div>
+            <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>IMPORTANT STATUS UPDATE: No longer operated by Soneva — transitioned to Kiri Private Reserve in June 2025 under new ownership and closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027. Verify reopening status before planning travel.</p></div>
           </div>
         </div>
       </section>
@@ -564,12 +574,33 @@
             if (wCrEl) wCrEl.textContent = `${wCr}%`;
             if (wGuEl) wGuEl.textContent = `${wGu}%`;
             if (wGuVal) wGuVal.textContent = `${g.rating.toFixed(1)}★ → ${g100}%`;
+
+            if (shareCardState && shareCardState.odds) {
+              shareCardState.odds.greatStayOdds = odds;
+              shareCardState.odds.statusBadge = badgeText;
+              shareCardState.odds.verifiedGuest = { rating: g.rating, scale: 5 };
+              if (left100 != null) {
+                const d = left100 - g100;
+                shareCardState.odds.opinionGap.deltaLabel = `${d > 0 ? "+" + d : d} pts`;
+                const ghEl = document.getElementById("gapHeadline");
+                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
+              }
+            }
           }
         })
         .catch(() => showMapsFallback(mapsFallbackUrl));
     } else {
       showMapsFallback("");
     }
+
+    const shareCardState = {"hotel": {"id": "soneva-kiri", "name": "Soneva Kiri", "location": "Koh Kood", "country": "Thailand", "brand": "Soneva", "priceRange": "", "standout": "Private Soneva plane from Bangkok, iconic suspended Treepod dining in the rainforest canopy, and colossal pool villas", "watchOut": "IMPORTANT STATUS UPDATE: No longer operated by Soneva — transitioned to Kiri Private Reserve in June 2025 under new ownership and closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027. Verify reopening status before planning travel.", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Nearest airport code: TDX"}, "propertyStatus": {"operatingStatus": "Temporarily Closed", "renovationsExtensions": "Exited the Soneva brand under new ownership and rebranded to Kiri Private Reserve in June 2025; closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027.", "nearbyConstruction": "", "sourceUrl": "https://explorekohchang.com/koh-kood/resorts-hotels-bungalows/klong-yai-kee-klong-rahan/", "sourceNote": "Koh Kood 2026/27 resort status report & public rebrand coverage (listed temporarily closed as Kiri Private Reserve)", "verifiedAt": "2026-11-23T18:25:20.98712+00:00"}}, "odds": {"greatStayOdds": 95, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 100, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "The Luxury Travel Expert rated this +7 pts higher than real guests.", "deltaLabel": "+7 pts"}}};
+    document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
+      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
+      }
+    });
   </script>
 </body>
 </html>

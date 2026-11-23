@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -81,7 +81,7 @@
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -102,6 +102,7 @@
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-teal" id="heroStatusBadge">Verified Guest Score</span>
+            
           </div>
         </div>
         <div class="detail-hero-body">
@@ -154,6 +155,7 @@
             <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=Borgo+Egnazia+Puglia" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             
             <a class="btn btn-outline" href="../../compare/?a=borgo-egnazia-puglia">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="borgo-egnazia-puglia" data-resort-name="Borgo Egnazia" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="https://www.tripadvisor.com/Search?q=Borgo%20Egnazia%20Puglia&amp;ssrc=h" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
@@ -169,7 +171,7 @@
           <div class="opinion-gap-head">
             <div>
               <span class="tag tag-teal" id="gapStatusBadge">Verified Guest Score</span>
-              <h2>Published Critics vs. Real Guest Score</h2>
+              <h2>Critics &amp; Official Awards vs. Real Guest Score</h2>
               <p class="opinion-gap-headline" id="gapHeadline">Recognised with 2 MICHELIN Keys • No. 88 in the World (2026) — compare with real guest reviews below.</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -202,11 +204,19 @@
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           <div class="key-facts-grid"><div class="key-fact-tile"><small>Brand / Collection</small><strong>Leading Hotels</strong></div></div>
           
+          
+          <div class="property-status-box " id="propertyStatusBlock">
+            <div class="property-status-head">
+              <span class="property-status-title">Property Status &amp; Works</span>
+              <span class="tag tag-slate">No Confirmed Works Listed</span>
+            </div>
+            <p class="property-status-neutral">No confirmed renovations, closures, or nearby works listed. StayOdds never guesses or invents renovation dates or construction notices.</p>
+          </div>
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Warm Puglian limestone village resort celebrated for authentic local architecture, proud local hospitality, Vair Spa rituals, golf, and curated food-and-wine retreats</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Sprawling village layout means a short buggy or shuttle ride to the beach clubs; peak summer family rates rise sharply</p></div>
@@ -564,12 +574,33 @@
             if (wCrEl) wCrEl.textContent = `${wCr}%`;
             if (wGuEl) wGuEl.textContent = `${wGu}%`;
             if (wGuVal) wGuVal.textContent = `${g.rating.toFixed(1)}★ → ${g100}%`;
+
+            if (shareCardState && shareCardState.odds) {
+              shareCardState.odds.greatStayOdds = odds;
+              shareCardState.odds.statusBadge = badgeText;
+              shareCardState.odds.verifiedGuest = { rating: g.rating, scale: 5 };
+              if (left100 != null) {
+                const d = left100 - g100;
+                shareCardState.odds.opinionGap.deltaLabel = `${d > 0 ? "+" + d : d} pts`;
+                const ghEl = document.getElementById("gapHeadline");
+                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
+              }
+            }
           }
         })
         .catch(() => showMapsFallback(mapsFallbackUrl));
     } else {
       showMapsFallback("");
     }
+
+    const shareCardState = {"hotel": {"id": "borgo-egnazia-puglia", "name": "Borgo Egnazia", "location": "Puglia", "country": "Italy", "brand": "Leading Hotels", "priceRange": "", "standout": "Warm Puglian limestone village resort celebrated for authentic local architecture, proud local hospitality, Vair Spa rituals, golf, and curated food-and-wine retreats", "watchOut": "Sprawling village layout means a short buggy or shuttle ride to the beach clubs; peak summer family rates rise sharply", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 96, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "No. 88 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • No. 88 in the World (2026) — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
+      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
+      }
+    });
   </script>
 </body>
 </html>

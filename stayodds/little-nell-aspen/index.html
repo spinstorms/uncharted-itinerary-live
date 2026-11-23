@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -81,7 +81,7 @@
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 400+ StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All 430+ StayOdds Hotels</a>
     </div>
   </div>
 
@@ -102,6 +102,7 @@
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-teal" id="heroStatusBadge">Verified Guest Score</span>
+            
           </div>
         </div>
         <div class="detail-hero-body">
@@ -154,6 +155,7 @@
             <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=The+Little+Nell+Aspen" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             
             <a class="btn btn-outline" href="../../compare/?a=little-nell-aspen">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="little-nell-aspen" data-resort-name="The Little Nell" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="https://www.tripadvisor.com/Search?q=The%20Little%20Nell%20Aspen&amp;ssrc=h" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
@@ -169,7 +171,7 @@
           <div class="opinion-gap-head">
             <div>
               <span class="tag tag-teal" id="gapStatusBadge">Verified Guest Score</span>
-              <h2>Published Critics vs. Real Guest Score</h2>
+              <h2>Critics &amp; Official Awards vs. Real Guest Score</h2>
               <p class="opinion-gap-headline" id="gapHeadline">Recognised with 1 MICHELIN Key • Forbes Five-Star — compare with real guest reviews below.</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -202,11 +204,19 @@
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           <div class="key-facts-grid"><div class="key-fact-tile"><small>Pool &amp; Heating</small><strong>Outdoor pool (heating not listed)</strong></div><div class="key-fact-tile"><small>Transfer Logistics</small><strong>Airport transfers available (nearest code: ASE)</strong></div><div class="key-fact-tile"><small>Brand / Collection</small><strong>Relais &amp; Châteaux</strong></div></div>
           <div class="key-facts-flags"><span class="tag tag-caution">⚠ High On-Property Pricing</span><span class="tag tag-caution">⚠ Noise / Crowds Noted</span></div>
+          
+          <div class="property-status-box " id="propertyStatusBlock">
+            <div class="property-status-head">
+              <span class="property-status-title">Property Status &amp; Works</span>
+              <span class="tag tag-slate">No Confirmed Works Listed</span>
+            </div>
+            <p class="property-status-neutral">No confirmed renovations, closures, or nearby works listed. StayOdds never guesses or invents renovation dates or construction notices.</p>
+          </div>
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Exceptional service and friendly staff • Beautiful, well-appointed rooms</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Intermittent hallway odor reported • Restaurant slow service and occasional poor food quality</p></div>
@@ -564,12 +574,33 @@
             if (wCrEl) wCrEl.textContent = `${wCr}%`;
             if (wGuEl) wGuEl.textContent = `${wGu}%`;
             if (wGuVal) wGuVal.textContent = `${g.rating.toFixed(1)}★ → ${g100}%`;
+
+            if (shareCardState && shareCardState.odds) {
+              shareCardState.odds.greatStayOdds = odds;
+              shareCardState.odds.statusBadge = badgeText;
+              shareCardState.odds.verifiedGuest = { rating: g.rating, scale: 5 };
+              if (left100 != null) {
+                const d = left100 - g100;
+                shareCardState.odds.opinionGap.deltaLabel = `${d > 0 ? "+" + d : d} pts`;
+                const ghEl = document.getElementById("gapHeadline");
+                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
+              }
+            }
           }
         })
         .catch(() => showMapsFallback(mapsFallbackUrl));
     } else {
       showMapsFallback("");
     }
+
+    const shareCardState = {"hotel": {"id": "little-nell-aspen", "name": "The Little Nell", "location": "Aspen", "country": "United States", "brand": "Relais & Châteaux", "priceRange": "", "standout": "Exceptional service and friendly staff • Beautiful, well-appointed rooms", "watchOut": "Intermittent hallway odor reported • Restaurant slow service and occasional poor food quality", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: ASE)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 91, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "verifiedGuest": {"rating": 9.1, "scale": 10}, "officialAwards": [{"label": "1 MICHELIN Key"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 1 MICHELIN Key • Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
+      const mod = await import("../../assets/stayodds-share-card.js?v=1");
+      mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
+      }
+    });
   </script>
 </body>
 </html>

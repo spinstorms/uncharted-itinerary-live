@@ -34,12 +34,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261123b" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261123c" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <link rel="stylesheet" href="../assets/styles.css?v=29" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -157,9 +157,9 @@
               </div>
             </div>
             <div class="sync-meta">
-              <span id="consensusSummaryStat">408 Luxury Properties</span>
+              <span id="consensusSummaryStat">434 Luxury Properties</span>
               <strong>Personally Curated &amp; Verified</strong>
-              <a class="btn btn-outline" href="../hotels/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Explore All 408 on World Map &rarr;</a>
+              <a class="btn btn-outline" href="../hotels/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Explore All 434 on World Map &rarr;</a>
             </div>
           </div>
         </div>
@@ -209,15 +209,43 @@
           <div class="section-header" style="margin-bottom:16px;flex-wrap:wrap;gap:12px;">
             <div>
               <h2 class="section-title">Compare Any Two Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Pick any two luxury stays below to compare verified first-hand scores, official awards, standout features, honest caveats, and live rate links side-by-side.</p>
+              <p class="section-subtitle">Search or pick any two luxury stays below to compare verified first-hand scores, official awards, property status &amp; works, standout features, honest caveats, and live rate links side-by-side.</p>
             </div>
-            <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
+            <div class="h2h-header-actions">
+              <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">&#x1F4F8; Share VS Card</button>
+              <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
+            </div>
           </div>
 
-          <div class="h2h-selectors">
-            <select id="compareSelectA" class="select-control" aria-label="Select first hotel"></select>
-            <span class="h2h-vs">VS</span>
-            <select id="compareSelectB" class="select-control" aria-label="Select second hotel"></select>
+          <div class="h2h-selectors-enhanced">
+            <div class="h2h-selector-col">
+              <label class="h2h-selector-label" for="compareSearchA">Hotel A</label>
+              <div class="h2h-search-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="compareSearchA" class="h2h-search-input" placeholder="Search hotel, city, country, or brand…" aria-label="Filter Hotel A options" autocomplete="off" />
+                <button type="button" id="compareClearA" class="h2h-search-clear" aria-label="Clear Hotel A search">&times;</button>
+              </div>
+              <select id="compareSelectA" class="select-control" aria-label="Select first hotel"></select>
+              <div class="h2h-search-meta" id="compareMetaA"></div>
+              <div class="h2h-search-empty" id="compareEmptyA" role="status"></div>
+            </div>
+
+            <div class="h2h-vs-col">
+              <span class="h2h-vs">VS</span>
+              <button type="button" class="h2h-swap-btn" id="swapVsBtn" aria-label="Swap Hotel A and Hotel B">&#8644; Swap</button>
+            </div>
+
+            <div class="h2h-selector-col">
+              <label class="h2h-selector-label is-b" for="compareSearchB">Hotel B</label>
+              <div class="h2h-search-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="compareSearchB" class="h2h-search-input" placeholder="Search hotel, city, country, or brand…" aria-label="Filter Hotel B options" autocomplete="off" />
+                <button type="button" id="compareClearB" class="h2h-search-clear" aria-label="Clear Hotel B search">&times;</button>
+              </div>
+              <select id="compareSelectB" class="select-control" aria-label="Select second hotel"></select>
+              <div class="h2h-search-meta" id="compareMetaB"></div>
+              <div class="h2h-search-empty" id="compareEmptyB" role="status"></div>
+            </div>
           </div>
 
           <div class="h2h-cards" id="h2hOutput"></div>
@@ -346,6 +374,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=20"></script>
+  <script type="module" src="../assets/compare.js?v=21"></script>
 </body>
 </html>
