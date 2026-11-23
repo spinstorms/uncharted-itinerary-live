@@ -232,10 +232,10 @@
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
+              <h3>My Uncharted Scorecard</h3>
               <span class="tag tag-slate">Global Directory</span>
             </div>
-            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>
+            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
         </div>
       </section>
@@ -400,7 +400,7 @@
     const placeId = "ChIJSYtZeakFLxgRGp1hfnrKae8";
     const firstHand = false;
     const ours100 = null;
-    const personal25 = null;
+    const personalLabel = null;
     const critic100 = null;
     const staticGuest100 = null;
     const left100 = null;
@@ -540,7 +540,7 @@
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {
-              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              const rawFh = personalLabel ? `${personalLabel} → ` : "";
               eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
             }
             if (wCr > 0 && critic100 != null) {

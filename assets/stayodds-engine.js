@@ -46,7 +46,8 @@ export function isVisitedProperty(hotel) {
 export function formatPersonalScore(val) {
   if (val == null || Number.isNaN(Number(val))) return null;
   const num = Number(val);
-  return Number.isInteger(num) ? String(num) : num.toFixed(1);
+  if (Number.isInteger(num)) return String(num);
+  return String(Number(num.toFixed(2)));
 }
 
 /**
@@ -160,12 +161,21 @@ export async function fetchLiveGoogleRating(googlePlaceId) {
   }
 }
 
-export function getPersonalScore25(hotel) {
+export function getPersonalScoreStats(hotel) {
   if (!isFirstHandVerified(hotel) || !hotel?.scores) return null;
   const s = hotel.scores;
-  const vals = [s.value, s.rooms, s.grounds, s.food, s.service].map(Number);
-  if (vals.some((v) => Number.isNaN(v))) return null;
-  return vals.reduce((a, b) => a + b, 0);
+  const vals = [s.value, s.rooms, s.grounds, s.food, s.service]
+    .filter((v) => v != null && v !== "" && !Number.isNaN(Number(v)))
+    .map(Number);
+  if (!vals.length) return null;
+  const sum = Number(vals.reduce((a, b) => a + b, 0).toFixed(2));
+  const max = vals.length * 5;
+  return { sum, max, label: `${formatPersonalScore(sum)} / ${max}` };
+}
+
+export function getPersonalScore25(hotel) {
+  const st = getPersonalScoreStats(hotel);
+  return st ? st.sum : null;
 }
 
 export function computeStayOdds(hotel) {
@@ -178,10 +188,13 @@ export function computeStayOdds(hotel) {
   const keyFacts = getKeyFactsList(hotel);
   const redFlags = Array.isArray(hotel?.redFlags) ? hotel.redFlags.filter(Boolean) : [];
 
-  const personalScore25 = getPersonalScore25(hotel);
+  const personalStats = getPersonalScoreStats(hotel);
+  const personalScore25 = personalStats ? personalStats.sum : null;
+  const personalScoreMax = personalStats ? personalStats.max : 25;
+  const personalScoreLabel = personalStats ? personalStats.label : null;
   const ours100 =
-    personalScore25 != null
-      ? Math.round(personalScore25 * 4)
+    personalStats != null
+      ? Math.round((personalStats.sum / personalStats.max) * 100)
       : firstHand
       ? Math.round(Number(hotel.overall) * 20)
       : null;
@@ -307,9 +320,7 @@ export function computeStayOdds(hotel) {
   }
 
   const leftDisplay = firstHand
-    ? personalScore25 != null
-      ? `${personalScore25} / 25`
-      : `${formatPersonalScore(hotel.overall)} / 5`
+    ? personalScoreLabel || `${formatPersonalScore(hotel.overall)} / 5`
     : scoredEditorial.length === 1
     ? primaryCritic.rawScore || `${critic100} / 100`
     : scoredEditorial.length > 1
@@ -339,16 +350,21 @@ export function computeStayOdds(hotel) {
       : hotel.standout || hotel.verdict || "",
   };
 
+  const isFullUnscored = visited && !firstHand && hotel.coverageType !== "Short Tour";
   return {
     tier: firstHand ? "first_hand_verified" : visited ? "short_preview" : "global_directory",
     tierLabel: firstHand
-      ? "First-Hand Verified"
+      ? "First-Hand Scored"
+      : isFullUnscored
+      ? "Filmed Stay"
       : visited
       ? "Short Tour Preview"
       : "Global Directory",
     firstHand,
     visited,
     personalScore25,
+    personalScoreMax,
+    personalScoreLabel,
     ours100,
     critic100,
     primaryCritic,

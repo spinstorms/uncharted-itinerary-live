@@ -51,18 +51,30 @@ def esc(val: Any) -> str:
     return html.escape(str(val or ""), quote=True)
 
 
+def fmt_score_num(v: float | int | None) -> str:
+    if v is None:
+        return ""
+    f = float(v)
+    if f.is_integer():
+        return str(int(f))
+    return f"{f:.2f}".rstrip("0").rstrip(".")
+
+
 def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     first_hand = bool(h.get("visitedByUs") and h.get("overall") is not None and h.get("scores"))
     visited = bool(h.get("visitedByUs"))
     personal_score_25 = None
+    personal_score_max = 25
+    personal_score_label = None
     if first_hand and h.get("scores"):
         s = h["scores"]
-        try:
-            personal_score_25 = sum(int(s[k]) for k in ("value", "rooms", "grounds", "food", "service"))
-        except Exception:
-            personal_score_25 = None
+        vals = [float(s[k]) for k in ("value", "rooms", "grounds", "food", "service") if s.get(k) is not None]
+        if vals:
+            personal_score_25 = round(sum(vals), 2)
+            personal_score_max = len(vals) * 5
+            personal_score_label = f"{fmt_score_num(personal_score_25)} / {personal_score_max}"
     ours100 = (
-        int(round(personal_score_25 * 4))
+        int(round((personal_score_25 / personal_score_max) * 100))
         if personal_score_25 is not None
         else (int(round(float(h["overall"]) * 20)) if first_hand else None)
     )
@@ -184,11 +196,18 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         else:
             gap_head = "Real guest ratings, official awards, and linked reviews compared side-by-side."
 
+    is_full_unscored = visited and not first_hand and h.get("coverageType") != "Short Tour"
     return {
         "firstHand": first_hand,
         "visited": visited,
-        "tierLabel": "First-Hand Verified" if first_hand else ("Short Tour Preview" if visited else "Global Directory"),
+        "tierLabel": (
+            "First-Hand Scored"
+            if first_hand
+            else ("Filmed Stay" if is_full_unscored else ("Short Tour Preview" if visited else "Global Directory"))
+        ),
         "personalScore25": personal_score_25,
+        "personalScoreMax": personal_score_max,
+        "personalScoreLabel": personal_score_label,
         "ours100": ours100,
         "critic100": critic100,
         "primaryCritic": primary_critic,
@@ -306,15 +325,18 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         for lbl, key in [
             ("Value", "value"),
             ("Room Quality", "rooms"),
-            ("Vibe", "grounds"),
+            ("Vibe / Layout", "grounds"),
             ("Food", "food"),
             ("Service", "service"),
         ]:
-            val = int(s.get(key, 4))
-            pct = int(round((val / 5) * 100))
+            raw = s.get(key)
+            if raw is None:
+                continue
+            val = float(raw)
+            pct = int(round((val / 5.0) * 100))
             scores_html += (
                 f'<div class="detail-bar-row"><div class="detail-bar-top"><span>{lbl}</span>'
-                f'<strong>{val} / 5</strong></div><div class="detail-bar-track">'
+                f'<strong>{fmt_score_num(val)} / 5</strong></div><div class="detail-bar-track">'
                 f'<div class="detail-bar-fill" style="width:{pct}%"></div></div></div>'
             )
 
@@ -332,10 +354,10 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         if o["firstHand"]
         else (pc["sourceName"] if (len(scored_ed) == 1 and pc) else "Published Critics")
     )
-    if o["firstHand"] and o.get("personalScore25") is not None:
-        left_display = f"{o['personalScore25']} / 25 ({o['ours100']}/100)"
+    if o["firstHand"] and o.get("personalScoreLabel"):
+        left_display = f"{o['personalScoreLabel']} ({o['ours100']}/100)"
     elif o["firstHand"]:
-        left_display = f"{h['overall']} / 5 ({o['ours100']}/100)"
+        left_display = f"{fmt_score_num(h['overall'])} / 5 ({o['ours100']}/100)"
     elif len(scored_ed) == 1 and pc:
         raw_sc = pc.get("rawScore") or f"{o['critic100']}/100"
         left_display = f"{raw_sc} ({o['critic100']}/100)"
@@ -390,7 +412,11 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     yt_html = ""
     if review_href:
-        fh_score_lbl = f"{o['personalScore25']} / 25" if (o["firstHand"] and o.get("personalScore25") is not None) else "Short"
+        fh_score_lbl = (
+            o["personalScoreLabel"]
+            if (o["firstHand"] and o.get("personalScoreLabel"))
+            else ("Short" if h.get("coverageType") == "Short Tour" else "Filmed Review")
+        )
         yt_html += (
             f'<article class="channel-row"><div class="channel-row-head"><div>'
             f'<span class="tag tag-accent">Founding Contributor</span>'
@@ -452,7 +478,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     eq_parts = []
     if o["weights"]["firstHand"] > 0 and o["ours100"] is not None:
-        raw_fh = f"{o['personalScore25']}/25 → " if o.get("personalScore25") is not None else ""
+        raw_fh = f"{o['personalScoreLabel'].replace(' ', '')} → " if o.get("personalScoreLabel") else ""
         eq_parts.append(f"{o['weights']['firstHand']}% My Stay ({raw_fh}{o['ours100']}%)")
     if o["weights"]["critics"] > 0 and o["critic100"] is not None:
         eq_parts.append(f"{o['weights']['critics']}% Published Critics ({o['critic100']}%)")
@@ -589,8 +615,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <span id="kpiOddsLbl">{'StayOdds' if o['greatStayOdds'] is not None else o['statusBadge']}</span>
             </div>
             <div class="detail-kpi">
-              <strong>{f"{o['personalScore25']}<span>/25</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if o['visited'] else "Not Stayed")}</strong>
-              <span>{'My Stay Score' if o['firstHand'] else ('Short Tour' if o['visited'] else 'My Stay Score')}</span>
+              <strong>{f"{fmt_score_num(o['personalScore25'])}<span>/{o['personalScoreMax']}</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if (o['visited'] and h.get("coverageType") == "Short Tour") else ("Filmed" if o['visited'] else "Not Stayed"))}</strong>
+              <span>{'My Stay Score' if o['firstHand'] else ('Short Tour' if (o['visited'] and h.get("coverageType") == "Short Tour") else ('Full Video Review' if o['visited'] else 'My Stay Score'))}</span>
             </div>
             <div class="detail-kpi">
               <strong>{critic_kpi_val}</strong>
@@ -696,7 +722,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             </div>
             <p class="detail-panel-sub" id="weightFormulaSub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScore25']}/25 → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScore25') is not None) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else "—"}</strong><small>Published Critics</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Google Guests</small></div>
             </div>
@@ -704,10 +730,10 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
-              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{o['personalScore25']} / 25 Total" if (o['firstHand'] and o.get('personalScore25') is not None) else o['tierLabel']}</span>
+              <h3>My Uncharted Scorecard</h3>
+              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{f"{o['personalScoreLabel']} Total" if (o['firstHand'] and o.get('personalScoreLabel')) else o['tierLabel']}</span>
             </div>
-            {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else '<p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>'}
+            {f'<div class="detail-bars" style="margin-top:12px;">{scores_html}</div>' if scores_html else ('<p class="detail-panel-sub" style="margin-top:12px;">We filmed and reviewed this stay qualitatively in our video without assigning a numeric scorecard — we never invent numbers after the fact. Watch our full video review above for our honest take.</p>' if o['visited'] else '<p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>')}
           </div>
         </div>
       </section>
@@ -827,7 +853,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     const placeId = {json.dumps(google_place_id)};
     const firstHand = {json.dumps(bool(o['firstHand']))};
     const ours100 = {json.dumps(o['ours100'])};
-    const personal25 = {json.dumps(o.get('personalScore25'))};
+    const personalLabel = {json.dumps(o['personalScoreLabel'].replace(' ', '') if o.get('personalScoreLabel') else None)};
     const critic100 = {json.dumps(o['critic100'])};
     const staticGuest100 = {json.dumps(o['guest100'])};
     const left100 = {json.dumps(o['left100'])};
@@ -967,7 +993,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {{
-              const rawFh = personal25 != null ? `${{personal25}}/25 → ` : "";
+              const rawFh = personalLabel ? `${{personalLabel}} → ` : "";
               eqParts.push(`${{wFH}}% My Stay (${{rawFh}}${{ours100}}%)`);
             }}
             if (wCr > 0 && critic100 != null) {{
@@ -1560,9 +1586,16 @@ def main() -> None:
         }
         directory.append(rec)
 
-    # Sort: First-Hand Verified first, then Short Tours, then Global Directory by licensed score desc
+    # Sort: First-Hand Scored first, then Filmed Full Reviews, then Short Tours, then Global Directory by score desc
     def sort_key(r: dict[str, Any]) -> tuple[int, int, str]:
-        tier_rank = 0 if r["tier"] == "first_hand_verified" else (1 if r["tier"] == "short_preview" else 2)
+        if r.get("scores") and r.get("overall") is not None:
+            tier_rank = 0
+        elif r.get("visitedByUs") and r.get("coverageType") != "Short Tour":
+            tier_rank = 1
+        elif r.get("visitedByUs"):
+            tier_rank = 2
+        else:
+            tier_rank = 3
         g_score = -int(((r.get("verifiedGuest") or {}).get("licensed") or {}).get("normalized100") or 0)
         return (tier_rank, g_score, r["name"])
 

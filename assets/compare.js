@@ -4,7 +4,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=6";
+} from "./stayodds-engine.js?v=7";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -80,7 +80,7 @@ const state = {
   search: "",
   visibleLimit: PAGE_SIZE,
   idA: "taaktana-labuan-bajo",
-  idB: "ritz-carlton-bali",
+  idB: "st-regis-bali",
 };
 
 const qs = (sel) => document.querySelector(sel);
@@ -227,7 +227,11 @@ function renderH2HCard(h, opponent) {
   const oppGuestDisplay = oo.verifiedGuest
     ? `${oo.verifiedGuest.rating.toFixed(1)} / ${oo.verifiedGuest.scale}`
     : null;
-  const unratedLabel = o.visited ? "Short Tour" : "Not Visited";
+  const unratedLabel = o.visited
+    ? h.coverageType === "Short Tour"
+      ? "Short Tour"
+      : "Filmed (Unscored)"
+    : "Not Visited";
 
   const criticDisplay =
     o.scoredEditorial.length === 1
@@ -269,7 +273,10 @@ function renderH2HCard(h, opponent) {
       </div>
 
       <div class="h2h-metrics-list">
-        ${metricRow("My First-Hand Stay", o.personalScore25, oo.personalScore25, " / 25", unratedLabel)}
+        ${metricRow("My First-Hand Stay", o.ours100, oo.ours100, "", unratedLabel).replace(
+          `${o.ours100}`,
+          o.personalScoreLabel || unratedLabel
+        )}
         ${metricRow("Verified Guest Score", o.guest100, oo.guest100, "", "Open Breakdown").replace(
           `${o.guest100}`,
           guestDisplay || "Open Breakdown"
@@ -597,7 +604,15 @@ function renderLeaderboard() {
             <div class="three-pillar-strip">
               <div class="pillar-box is-ours">
                 <small>My Stay${o.weights.firstHand ? ` (${o.weights.firstHand}%)` : ""}</small>
-                <strong>${o.personalScore25 != null ? `${o.personalScore25} / 25` : o.visited ? "Short Preview" : "Not Visited"}</strong>
+                <strong>${
+                  o.personalScoreLabel
+                    ? escapeHtml(o.personalScoreLabel)
+                    : o.visited
+                    ? h.coverageType === "Short Tour"
+                      ? "Short Tour"
+                      : "Filmed Stay"
+                    : "Not Visited"
+                }</strong>
               </div>
               <div class="pillar-box is-critics">
                 ${criticBoxHtml}
@@ -834,7 +849,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261122a`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261122b`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 

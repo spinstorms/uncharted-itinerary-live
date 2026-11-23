@@ -232,10 +232,10 @@
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
+              <h3>My Uncharted Scorecard</h3>
               <span class="tag tag-slate">Global Directory</span>
             </div>
-            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>
+            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
         </div>
       </section>
@@ -281,8 +281,8 @@
             <img src="../../assets/thumbs/le-meridien-maldives.webp" alt="Le Méridien Maldives Resort &amp; Spa" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">94% StayOdds</span>
-                <span>Strong Agreement</span>
+                <span class="tag tag-slate">97% StayOdds</span>
+                <span>Verified Guest Score</span>
               </div>
               <h4>Le Méridien Maldives Resort &amp; Spa</h4>
               <p>Thilamaafushi, Lhaviyani Atoll, Maldives</p>
@@ -296,8 +296,8 @@
             <img src="../../assets/thumbs/w-maldives.webp" alt="W Maldives" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">96% StayOdds</span>
-                <span>Strong Agreement</span>
+                <span class="tag tag-slate">96% StayOdds</span>
+                <span>Verified Guest Score</span>
               </div>
               <h4>W Maldives</h4>
               <p>Fesdu Island, North Ari Atoll, Maldives</p>
@@ -311,8 +311,8 @@
             <img src="../../assets/thumbs/radisson-blu-maldives.webp" alt="Radisson Blu Resort Maldives" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">93% StayOdds</span>
-                <span>Strong Agreement</span>
+                <span class="tag tag-slate">90% StayOdds</span>
+                <span>Verified Guest Score</span>
               </div>
               <h4>Radisson Blu Resort Maldives</h4>
               <p>Huruelhi Island, Alifu Dhaalu Atoll, Maldives</p>
@@ -400,7 +400,7 @@
     const placeId = "ChIJC1-JR6cxazsRwm44jC2ri_k";
     const firstHand = false;
     const ours100 = null;
-    const personal25 = null;
+    const personalLabel = null;
     const critic100 = 92;
     const staticGuest100 = null;
     const left100 = 92;
@@ -540,7 +540,7 @@
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {
-              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              const rawFh = personalLabel ? `${personalLabel} → ` : "";
               eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
             }
             if (wCr > 0 && critic100 != null) {

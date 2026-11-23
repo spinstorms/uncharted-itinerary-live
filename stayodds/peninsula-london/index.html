@@ -232,10 +232,10 @@
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
+              <h3>My Uncharted Scorecard</h3>
               <span class="tag tag-slate">Global Directory</span>
             </div>
-            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>
+            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
         </div>
       </section>
@@ -281,7 +281,7 @@
             <img src="../../assets/thumbs/w-sardinia.webp" alt="W Sardinia — Poltu Quatu" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">82% StayOdds</span>
+                <span class="tag tag-accent">86% StayOdds</span>
                 <span>Strong Agreement</span>
               </div>
               <h4>W Sardinia — Poltu Quatu</h4>
@@ -293,25 +293,10 @@
             </div>
           </article>
           <article class="related-card">
-            <img src="../../assets/thumbs/manor-house-castle-combe.webp" alt="The Manor House, Castle Combe" loading="lazy" decoding="async" />
-            <div class="related-card-body">
-              <div class="meta-line">
-                <span class="tag tag-accent">84% StayOdds</span>
-                <span>Opinions Differ</span>
-              </div>
-              <h4>The Manor House, Castle Combe</h4>
-              <p>Castle Combe, Cotswolds, United Kingdom</p>
-              <div class="related-card-actions">
-                <a class="btn btn-primary" href="../manor-house-castle-combe/">Full Breakdown</a>
-                <a class="btn btn-outline" href="../../compare/?a=peninsula-london&amp;b=manor-house-castle-combe">Compare VS</a>
-              </div>
-            </div>
-          </article>
-          <article class="related-card">
             <img src="../../assets/thumbs/w-algarve.webp" alt="W Algarve" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">88% StayOdds</span>
+                <span class="tag tag-accent">75% StayOdds</span>
                 <span>First-Hand Verified</span>
               </div>
               <h4>W Algarve</h4>
@@ -319,6 +304,21 @@
               <div class="related-card-actions">
                 <a class="btn btn-primary" href="../w-algarve/">Full Breakdown</a>
                 <a class="btn btn-outline" href="../../compare/?a=peninsula-london&amp;b=w-algarve">Compare VS</a>
+              </div>
+            </div>
+          </article>
+          <article class="related-card">
+            <img src="../../assets/thumbs/manor-house-castle-combe.webp" alt="The Manor House, Castle Combe" loading="lazy" decoding="async" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag tag-slate">75% StayOdds</span>
+                <span>Verified Guest Score</span>
+              </div>
+              <h4>The Manor House, Castle Combe</h4>
+              <p>Castle Combe, Cotswolds, United Kingdom</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../manor-house-castle-combe/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a=peninsula-london&amp;b=manor-house-castle-combe">Compare VS</a>
               </div>
             </div>
           </article></div>
@@ -400,7 +400,7 @@
     const placeId = "ChIJWYHD7s4FdkgRUFT2qTJ19-w";
     const firstHand = false;
     const ours100 = null;
-    const personal25 = null;
+    const personalLabel = null;
     const critic100 = 88;
     const staticGuest100 = 95;
     const left100 = 88;
@@ -540,7 +540,7 @@
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {
-              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              const rawFh = personalLabel ? `${personalLabel} → ` : "";
               eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
             }
             if (wCr > 0 && critic100 != null) {

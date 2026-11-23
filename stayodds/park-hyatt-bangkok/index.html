@@ -232,10 +232,10 @@
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
+              <h3>My Uncharted Scorecard</h3>
               <span class="tag tag-slate">Global Directory</span>
             </div>
-            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>
+            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
         </div>
       </section>
@@ -281,8 +281,8 @@
             <img src="../../assets/thumbs/phulay-bay-krabi.webp" alt="Phulay Bay, a Ritz-Carlton Reserve" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">97% StayOdds</span>
-                <span>Strong Agreement</span>
+                <span class="tag tag-slate">99% StayOdds</span>
+                <span>Verified Guest Score</span>
               </div>
               <h4>Phulay Bay, a Ritz-Carlton Reserve</h4>
               <p>Tubkaak / Krabi, Thailand</p>
@@ -296,7 +296,7 @@
             <img src="../../assets/thumbs/four-seasons-koh-samui.webp" alt="Four Seasons Resort Koh Samui" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">91% StayOdds</span>
+                <span class="tag tag-slate">95% StayOdds</span>
                 <span>Mostly Aligned</span>
               </div>
               <h4>Four Seasons Resort Koh Samui</h4>
@@ -311,7 +311,7 @@
             <img src="../../assets/thumbs/four-seasons-bangkok.webp" alt="Four Seasons Hotel Bangkok at Chao Phraya River" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">94% StayOdds</span>
+                <span class="tag tag-slate">93% StayOdds</span>
                 <span>Strong Agreement</span>
               </div>
               <h4>Four Seasons Hotel Bangkok at Chao Phraya River</h4>
@@ -400,7 +400,7 @@
     const placeId = "ChIJA-PGodye4jAR9QFikyxQo0s";
     const firstHand = false;
     const ours100 = null;
-    const personal25 = null;
+    const personalLabel = null;
     const critic100 = 88;
     const staticGuest100 = 92;
     const left100 = 88;
@@ -540,7 +540,7 @@
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {
-              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              const rawFh = personalLabel ? `${personalLabel} → ` : "";
               eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
             }
             if (wCr > 0 && critic100 != null) {

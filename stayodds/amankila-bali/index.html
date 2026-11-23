@@ -232,10 +232,10 @@
 
           <div class="detail-panel">
             <div class="detail-panel-head">
-              <h3>My 5-Category Scorecard (/25)</h3>
+              <h3>My Uncharted Scorecard</h3>
               <span class="tag tag-slate">Global Directory</span>
             </div>
-            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a full personal stay here yet. Once we stay and film a review, our 5-axis scorecard will be added to our First-Hand Verified tier.</p>
+            <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
         </div>
       </section>
@@ -278,47 +278,47 @@
         </div>
         <div class="related-grid">
           <article class="related-card">
-            <img src="../../assets/thumbs/bask-gili-meno.webp" alt="BASK Gili Meno" loading="lazy" decoding="async" />
-            <div class="related-card-body">
-              <div class="meta-line">
-                <span class="tag tag-accent">98% StayOdds</span>
-                <span>Strong Agreement</span>
-              </div>
-              <h4>BASK Gili Meno</h4>
-              <p>Gili Meno, Lombok, Indonesia</p>
-              <div class="related-card-actions">
-                <a class="btn btn-primary" href="../bask-gili-meno/">Full Breakdown</a>
-                <a class="btn btn-outline" href="../../compare/?a=amankila-bali&amp;b=bask-gili-meno">Compare VS</a>
-              </div>
-            </div>
-          </article>
-          <article class="related-card">
-            <img src="../../assets/thumbs/the-sira-lombok.webp" alt="The Sira, a Luxury Collection Resort &amp; Spa" loading="lazy" decoding="async" />
-            <div class="related-card-body">
-              <div class="meta-line">
-                <span class="tag tag-accent">100% StayOdds</span>
-                <span>Strong Agreement</span>
-              </div>
-              <h4>The Sira, a Luxury Collection Resort &amp; Spa</h4>
-              <p>Sire Beach, Lombok, Indonesia</p>
-              <div class="related-card-actions">
-                <a class="btn btn-primary" href="../the-sira-lombok/">Full Breakdown</a>
-                <a class="btn btn-outline" href="../../compare/?a=amankila-bali&amp;b=the-sira-lombok">Compare VS</a>
-              </div>
-            </div>
-          </article>
-          <article class="related-card">
             <img src="../../assets/thumbs/st-regis-bali.webp" alt="The St. Regis Bali Resort" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">92% StayOdds</span>
-                <span>Mostly Aligned</span>
+                <span class="tag tag-accent">94% StayOdds</span>
+                <span>Strong Agreement</span>
               </div>
               <h4>The St. Regis Bali Resort</h4>
               <p>Nusa Dua, Bali, Indonesia</p>
               <div class="related-card-actions">
                 <a class="btn btn-primary" href="../st-regis-bali/">Full Breakdown</a>
                 <a class="btn btn-outline" href="../../compare/?a=amankila-bali&amp;b=st-regis-bali">Compare VS</a>
+              </div>
+            </div>
+          </article>
+          <article class="related-card">
+            <img src="../../assets/thumbs/four-seasons-jimbaran.webp" alt="Four Seasons Resort Bali at Jimbaran Bay" loading="lazy" decoding="async" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag tag-accent">86% StayOdds</span>
+                <span>Opinions Differ</span>
+              </div>
+              <h4>Four Seasons Resort Bali at Jimbaran Bay</h4>
+              <p>Jimbaran, Bali, Indonesia</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../four-seasons-jimbaran/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a=amankila-bali&amp;b=four-seasons-jimbaran">Compare VS</a>
+              </div>
+            </div>
+          </article>
+          <article class="related-card">
+            <img src="../../assets/thumbs/cocana-gili-t.webp" alt="Cocana Resort &amp; Beach Club" loading="lazy" decoding="async" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag tag-accent">94% StayOdds</span>
+                <span>First-Hand Verified</span>
+              </div>
+              <h4>Cocana Resort &amp; Beach Club</h4>
+              <p>Gili Trawangan, Indonesia</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../cocana-gili-t/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a=amankila-bali&amp;b=cocana-gili-t">Compare VS</a>
               </div>
             </div>
           </article></div>
@@ -400,7 +400,7 @@
     const placeId = "ChIJxSy9OTsS0i0RXYga34sFAxs";
     const firstHand = false;
     const ours100 = null;
-    const personal25 = null;
+    const personalLabel = null;
     const critic100 = null;
     const staticGuest100 = null;
     const left100 = null;
@@ -540,7 +540,7 @@
 
             const eqParts = [];
             if (wFH > 0 && ours100 != null) {
-              const rawFh = personal25 != null ? `${personal25}/25 → ` : "";
+              const rawFh = personalLabel ? `${personalLabel} → ` : "";
               eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
             }
             if (wCr > 0 && critic100 != null) {

@@ -639,7 +639,7 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         "(warm, honest, conversational luxury travel reviewers — using 'we' and 'our stay').\n"
         "Never mention AI, 'this video', or 'in this review' — write it so it reads naturally like we typed our own stay notes.\n"
         "Use strictly the provided title, description, and chapters without inventing facts or prices.\n"
-        "If this is a full hotel or resort review, also include a 'hotel' object with GPS coordinates and WHOLE-NUMBER integer scores from 1 to 5 (NEVER decimals like 4.7 — round up or down to 1, 2, 3, 4, or 5 based ONLY on our review); otherwise set 'hotel' to null.\n"
+        "If this is a full hotel or resort review, also include a 'hotel' object with GPS coordinates and qualitative verdict/standout/watchOut notes ONLY — NEVER invent, guess, or estimate numeric personal scores (rooms/grounds/food/service/value/overall); leave numeric scores out completely.\n"
         "NEVER guess, invent, or estimate external Google, Booking.com, TripAdvisor, or third-party YouTuber/critic ratings or review counts.\n"
         "Return ONLY valid JSON with keys:\n"
         '{"tldr": "2-3 natural first-person sentences sharing our honest take", "highlights": ["3 to 4 crisp bullet notes"], '
@@ -648,8 +648,6 @@ def call_gemini_summary(title: str, description: str, chapters: list[dict[str, A
         '"hotel": null OR {"name": "Hotel Name", "location": "Area/Island", "country": "Country", '
         '"region": "Bali & Indonesia|Maldives|Thailand|Europe|Bora Bora|Asia|Global", "lat": 0.0, "lng": 0.0, '
         '"brand": "Marriott Bonvoy|Four Seasons|IHG / Regent|Hilton|Boutique", "priceRange": "e.g. £400/night", '
-        '"scores": {"rooms": 5, "grounds": 5, "food": 4, "service": 5, "value": 4}, '
-        '"overall": 5, '
         '"verdict": "1-2 sentence verdict", "standout": "top highlight", "watchOut": "honest caveat"}}\n\n'
         f"TITLE: {title}\n"
         f"DESCRIPTION:\n{intro}\n"
@@ -944,21 +942,6 @@ def main() -> None:
                     category = ai_res["category"]
                 if isinstance(ai_res.get("hotel"), dict) and ai_res["hotel"].get("name"):
                     h = ai_res["hotel"]
-                    scores = h.get("scores") or {}
-                    def _clamp_int(val: Any, default: int = 4) -> int:
-                        try:
-                            return max(1, min(5, int(float(val) + 0.5)))
-                        except (TypeError, ValueError):
-                            return default
-
-                    int_scores = {
-                        "rooms": _clamp_int(scores.get("rooms"), 4),
-                        "grounds": _clamp_int(scores.get("grounds"), 4),
-                        "food": _clamp_int(scores.get("food"), 4),
-                        "service": _clamp_int(scores.get("service"), 4),
-                        "value": _clamp_int(scores.get("value"), 4),
-                    }
-                    overall = _clamp_int(h.get("overall"), int(sum(int_scores.values()) / 5.0 + 0.5))
                     slug = re.sub(r"[^a-z0-9]+", "-", str(h["name"]).lower()).strip("-")
                     booking_url = f"https://www.booking.com/searchresults.html?ss={urllib.parse.quote_plus(str(h['name']))}"
 
@@ -980,8 +963,8 @@ def main() -> None:
                             "coverageType": "Full Review",
                             "tier": "first_hand_verified",
                             "thumbnail": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
-                            "scores": int_scores,
-                            "overall": overall,
+                            "scores": None,
+                            "overall": None,
                             "verdict": str(h.get("verdict") or summary["tldr"]).strip(),
                             "standout": str(h.get("standout") or "").strip(),
                             "watchOut": str(h.get("watchOut") or "").strip(),
