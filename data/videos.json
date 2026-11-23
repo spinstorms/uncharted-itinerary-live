@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T13:39:55Z",
+  "updatedAt": "2026-11-23T14:51:18Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -324,7 +324,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/pyfGUOlFr3A/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/pyfGUOlFr3A/hqdefault.jpg",
-      "views": 529,
+      "views": 530,
       "category": "Hotel Reviews",
       "location": "Gili Trawangan, Indonesia",
       "chapters": [
@@ -1598,7 +1598,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
-      "views": 1907,
+      "views": 1909,
       "category": "Hotel Reviews",
       "location": "Labuan Bajo, Indonesia",
       "chapters": [
@@ -1754,7 +1754,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2866,
+      "views": 2868,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6259,
+      "views": 6273,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -5549,7 +5549,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
-      "views": 1520,
+      "views": 1531,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -5791,7 +5791,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 1234,
+      "views": 1251,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
@@ -7276,7 +7276,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/8t4BFSC2cas/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/8t4BFSC2cas/hqdefault.jpg",
-      "views": 231,
+      "views": 232,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
