@@ -6,6 +6,7 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=1";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -127,6 +128,7 @@ const state = {
   scope: "all", // "all" | "visited" | "world" | "saved"
   region: "All",
   feature: "all",
+  style: "all",
   verdict: "All",
   sortBy: "visited",
   search: "",
@@ -179,6 +181,8 @@ function syncUrlParams(includeCompare = false) {
     else url.searchParams.delete("region");
     if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
     else url.searchParams.delete("scope");
+    if (state.style && state.style !== "all") url.searchParams.set("style", state.style);
+    else url.searchParams.delete("style");
     if (includeCompare && state.idA && state.idB) {
       url.searchParams.set("a", state.idA);
       url.searchParams.set("b", state.idB);
@@ -512,6 +516,7 @@ function renderScopeTabs() {
       renderScopeTabs();
       renderRegionPills();
       renderFeaturePills();
+      renderStylePills();
       renderLeaderboard();
     });
   });
@@ -541,6 +546,7 @@ function renderRegionPills() {
       syncUrlParams();
       renderRegionPills();
       renderFeaturePills();
+      renderStylePills();
       renderLeaderboard();
     });
   });
@@ -565,6 +571,33 @@ function renderFeaturePills() {
       }
       state.visibleLimit = PAGE_SIZE;
       renderFeaturePills();
+      renderStylePills();
+      renderLeaderboard();
+    });
+  });
+}
+
+function renderStylePills() {
+  const container = qs("#travelStylePills");
+  if (!container) return;
+  const baseList = getScopedHotels().filter((h) => state.region === "All" || h.region === state.region);
+  container.innerHTML = TRAVEL_STYLES.map((s) => {
+    const cnt = s.id === "all" ? baseList.length : baseList.filter(s.match).length;
+    if (s.id !== "all" && cnt === 0 && state.style !== s.id) return "";
+    return `<button class="feature-pill style-pill ${state.style === s.id ? "active" : ""}" data-style="${escapeHtml(
+      s.id
+    )}" type="button">${s.icon ? `${s.icon} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
+  }).join("");
+
+  container.querySelectorAll("[data-style]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.style = btn.dataset.style || "all";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `style:${state.style}`);
+      }
+      state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
+      renderStylePills();
       renderLeaderboard();
     });
   });
@@ -581,6 +614,7 @@ function renderLeaderboard() {
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
     if (activeFeature.id !== "all" && !activeFeature.match(h)) return false;
+    if (!matchesTravelStyle(h, state.style)) return false;
     if (!q) return true;
     const hay = [
       h.name,
@@ -1051,6 +1085,7 @@ async function boot() {
     if (state.scope === "saved") {
       renderRegionPills();
       renderFeaturePills();
+      renderStylePills();
       renderLeaderboard();
     }
   });
@@ -1111,12 +1146,15 @@ async function boot() {
     if (matchedRegion) {
       state.region = matchedRegion;
     }
+    const styleParam = params.get("style");
+    if (styleParam && TRAVEL_STYLES.some((s) => s.id === styleParam)) state.style = styleParam;
 
     populateH2HSelectors();
     renderH2H();
     renderScopeTabs();
     renderRegionPills();
     renderFeaturePills();
+      renderStylePills();
     renderLeaderboard();
 
     if (hadCompareParams) {

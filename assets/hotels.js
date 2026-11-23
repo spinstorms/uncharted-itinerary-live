@@ -5,6 +5,7 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=1";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -23,6 +24,7 @@ const state = {
   scope: "all", // "all" | "visited" | "global" | "michelin" | "w50"
   region: "All",
   brand: "All",
+  style: "all",
   coverage: "All",
   sortBy: "stayodds",
   search: "",
@@ -75,6 +77,8 @@ function syncUrlParams() {
     else url.searchParams.delete("region");
     if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
     else url.searchParams.delete("scope");
+    if (state.style && state.style !== "all") url.searchParams.set("style", state.style);
+    else url.searchParams.delete("style");
     window.history.replaceState({}, "", url.toString());
   } catch (_) {}
 }
@@ -174,6 +178,7 @@ function getFilteredHotels() {
   const list = getScopedHotels().filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.brand !== "All" && h.brand !== state.brand) return false;
+    if (!matchesTravelStyle(h, state.style)) return false;
     if (state.coverage !== "All" && (h.coverageType || "Global Directory") !== state.coverage) {
       return false;
     }
@@ -274,6 +279,7 @@ function renderScopeTabs() {
       syncUrlParams();
       renderScopeTabs();
       renderRegionPills();
+      renderStylePills();
       renderAll(true);
     });
   });
@@ -302,6 +308,32 @@ function renderRegionPills() {
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderRegionPills();
+      renderStylePills();
+      renderAll(true);
+    });
+  });
+}
+
+function renderStylePills() {
+  const container = qs("#mapStylePills");
+  if (!container) return;
+  const base = getScopedHotels().filter((h) => state.region === "All" || h.region === state.region);
+  container.innerHTML = TRAVEL_STYLES.map((s) => {
+    const cnt = s.id === "all" ? base.length : base.filter(s.match).length;
+    if (s.id !== "all" && cnt === 0 && state.style !== s.id) return "";
+    return `<button class="feature-pill style-pill ${state.style === s.id ? "active" : ""}" data-style="${escapeHtml(
+      s.id
+    )}" type="button">${s.icon ? `${s.icon} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
+  }).join("");
+  container.querySelectorAll("[data-style]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.style = btn.dataset.style || "all";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `style:${state.style}`);
+      }
+      state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
+      renderStylePills();
       renderAll(true);
     });
   });
@@ -765,13 +797,16 @@ async function boot() {
       state.region = matchedRegion;
     }
 
+    const styleParam = params.get("style");
+    if (styleParam && TRAVEL_STYLES.some((s) => s.id === styleParam)) state.style = styleParam;
     renderScopeTabs();
     renderRegionPills();
+    renderStylePills();
     populateBrands();
     renderAll(true);
   } catch (err) {
     const grid = qs("#scorecardGrid");
-    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the 500-hotel world map right now.</div>`;
+    if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the hotel world map right now.</div>`;
     console.error("Failed to load stayodds-index.json:", err);
   }
 }
