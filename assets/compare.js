@@ -18,12 +18,63 @@ function getOdds(h) {
   return cached;
 }
 
+const SHORTLIST_KEY = "stayodds_shortlist_v1";
+const POINTS_BRAND_RE = /\b(marriott|st\.?\s*regis|ritz-carlton|luxury collection|w hotels|edition|jw marriott|hyatt|park hyatt|alila|andaz|hilton|waldorf|conrad|lxr|ihg|six senses|regent|intercontinental|kimpton)\b/i;
+
+function getShortlistIds() {
+  if (window.stayOddsShortlist && typeof window.stayOddsShortlist.get === "function") {
+    return window.stayOddsShortlist.get();
+  }
+  try {
+    const raw = localStorage.getItem(SHORTLIST_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+const VERIFIED_FEATURES = [
+  { id: "all", label: "All", match: () => true },
+  {
+    id: "michelin",
+    label: "MICHELIN Key",
+    match: (h) => (h.officialAwards || []).some((a) => /michelin/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
+  },
+  {
+    id: "forbes",
+    label: "Forbes Five-Star",
+    match: (h) => (h.officialAwards || []).some((a) => /forbes/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
+  },
+  {
+    id: "50best",
+    label: "World's 50 Best",
+    match: (h) => (h.officialAwards || []).some((a) => /50\s*best/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
+  },
+  {
+    id: "video",
+    label: "Video Reviews",
+    match: (h) => Boolean(h.videoId || (h.youtubeReviews && h.youtubeReviews.length > 0)),
+  },
+  {
+    id: "points",
+    label: "Points Brands",
+    match: (h) => POINTS_BRAND_RE.test(`${h.brand || ""} ${h.name || ""}`),
+  },
+  {
+    id: "beach",
+    label: "House Reef / Beach",
+    match: (h) => Boolean((h.keyFacts && h.keyFacts.beachOrReef) || h.region === "Maldives"),
+  },
+];
+
 const state = {
   hotels: [],
   visitedCount: 0,
   worldCount: 0,
-  scope: "all", // "all" | "visited" | "world"
+  scope: "all", // "all" | "visited" | "world" | "saved"
   region: "All",
+  feature: "all",
   verdict: "All",
   sortBy: "visited",
   search: "",
@@ -249,6 +300,7 @@ function renderH2HCard(h, opponent) {
             ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>`
             : ""
         }
+        <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
         <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
       </div>
       <div style="margin-top:8px;">
@@ -265,21 +317,29 @@ function renderH2H() {
   const b = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
   if (!a || !b) return;
   out.innerHTML = renderH2HCard(a, b) + renderH2HCard(b, a);
+  window.stayOddsShortlist?.syncButtons?.();
 }
 
 function getScopedHotels() {
   if (state.scope === "visited") return state.hotels.filter(isVisitedProperty);
   if (state.scope === "world") return state.hotels.filter((h) => !isVisitedProperty(h));
+  if (state.scope === "saved") {
+    const savedSet = new Set(getShortlistIds());
+    return state.hotels.filter((h) => savedSet.has(h.id));
+  }
   return state.hotels;
 }
 
 function renderScopeTabs() {
   const container = qs("#stayOddsScopeTabs");
   if (!container) return;
+  const savedIds = getShortlistIds();
+  const savedCount = state.hotels.filter((h) => savedIds.includes(h.id)).length;
   const tabs = [
     { id: "all", label: `All Luxury Properties (${state.hotels.length})` },
     { id: "visited", label: `First-Hand Verified & Shorts (${state.visitedCount})` },
     { id: "world", label: `Global Directory (${state.worldCount})` },
+    { id: "saved", label: `♥ Saved (${savedCount})` },
   ];
   container.innerHTML = tabs
     .map(
@@ -304,6 +364,7 @@ function renderScopeTabs() {
       syncUrlParams();
       renderScopeTabs();
       renderRegionPills();
+      renderFeaturePills();
       renderLeaderboard();
     });
   });
@@ -332,6 +393,31 @@ function renderRegionPills() {
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderRegionPills();
+      renderFeaturePills();
+      renderLeaderboard();
+    });
+  });
+}
+
+function renderFeaturePills() {
+  const container = qs("#featureFilterPills");
+  if (!container) return;
+  const baseList = getScopedHotels().filter((h) => state.region === "All" || h.region === state.region);
+  container.innerHTML = VERIFIED_FEATURES.map((f) => {
+    const cnt = f.id === "all" ? baseList.length : baseList.filter(f.match).length;
+    return `<button class="feature-pill ${state.feature === f.id ? "active" : ""}" data-feature="${escapeHtml(
+      f.id
+    )}" type="button">${escapeHtml(f.label)} (${cnt})</button>`;
+  }).join("");
+
+  container.querySelectorAll("[data-feature]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.feature = btn.dataset.feature || "all";
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `feature:${state.feature}`);
+      }
+      state.visibleLimit = PAGE_SIZE;
+      renderFeaturePills();
       renderLeaderboard();
     });
   });
@@ -342,10 +428,12 @@ function renderLeaderboard() {
   if (!container) return;
 
   const q = state.search.trim().toLowerCase();
+  const activeFeature = VERIFIED_FEATURES.find((f) => f.id === state.feature) || VERIFIED_FEATURES[0];
   const list = getScopedHotels().filter((h) => {
     const o = getOdds(h);
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
+    if (activeFeature.id !== "all" && !activeFeature.match(h)) return false;
     if (!q) return true;
     const hay = [
       h.name,
@@ -380,7 +468,11 @@ function renderLeaderboard() {
   });
 
   if (!list.length) {
-    container.innerHTML = `<div class="empty-state">No resorts matched your filters. Try switching to "All Luxury Properties" or clearing your search.</div>`;
+    const emptyMsg =
+      state.scope === "saved" && getShortlistIds().length === 0
+        ? `Your Shortlist is empty — tap "♡ Save" on any hotel card or breakdown page to build your personal comparison list (saved right in your browser, no login needed).`
+        : `No resorts matched your filters. Try switching to "All Luxury Properties" or clearing your search.`;
+    container.innerHTML = `<div class="empty-state">${escapeHtml(emptyMsg)}</div>`;
     return;
   }
 
@@ -554,6 +646,7 @@ function renderLeaderboard() {
                 : ""
             }
             <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
+            <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
             <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
           </div>
         </article>
@@ -570,6 +663,7 @@ function renderLeaderboard() {
       : "";
 
   container.innerHTML = cardsHtml + pagerHtml;
+  window.stayOddsShortlist?.syncButtons?.();
 
   qs("#loadMoreHotelsBtn")?.addEventListener("click", () => {
     state.visibleLimit += PAGE_SIZE;
@@ -649,7 +743,7 @@ async function boot() {
   const params = new URLSearchParams(window.location.search);
   if (params.get("a")) state.idA = params.get("a");
   if (params.get("b")) state.idB = params.get("b");
-  if (["all", "visited", "world"].includes(params.get("scope"))) {
+  if (["all", "visited", "world", "saved"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
 
@@ -661,6 +755,49 @@ async function boot() {
       window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
     }
   }
+
+  qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
+    const btn = qs("#copyVsLinkBtn");
+    const shareUrl = `https://live.uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
+    const ha = state.hotels.find((h) => h.id === state.idA);
+    const hb = state.hotels.find((h) => h.id === state.idB);
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(shareUrl);
+      } else {
+        const tmp = document.createElement("textarea");
+        tmp.value = shareUrl;
+        tmp.style.position = "fixed";
+        tmp.style.opacity = "0";
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand("copy");
+        tmp.remove();
+      }
+      if (typeof window.trackEvent === "function" && ha && hb) {
+        window.trackEvent("share_comparison", "vs_pair", `${ha.name} vs ${hb.name}`);
+      }
+      if (btn) {
+        btn.classList.add("is-copied");
+        btn.textContent = "✓ Copied VS Link!";
+        setTimeout(() => {
+          btn.classList.remove("is-copied");
+          btn.innerHTML = "&#128279; Copy VS Link";
+        }, 2200);
+      }
+    } catch (_) {
+      window.prompt("Copy this Head-to-Head comparison link:", shareUrl);
+    }
+  });
+
+  window.addEventListener("stayodds:shortlist-changed", () => {
+    renderScopeTabs();
+    if (state.scope === "saved") {
+      renderRegionPills();
+      renderFeaturePills();
+      renderLeaderboard();
+    }
+  });
 
   qs("#compareSelectA")?.addEventListener("change", (e) => {
     state.idA = e.target.value;
@@ -697,7 +834,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261121d`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261122a`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
@@ -721,6 +858,7 @@ async function boot() {
     renderH2H();
     renderScopeTabs();
     renderRegionPills();
+    renderFeaturePills();
     renderLeaderboard();
 
     if (matchedRegion && matchedRegion !== "All" && !params.get("a") && !params.get("b")) {

@@ -1235,6 +1235,11 @@ def main() -> None:
         (f"{base_url}/faq/", "monthly", "0.85"),
         (f"{base_url}/contact/", "monthly", "0.80"),
     ]
+    dest_dir = ROOT / "destinations"
+    if dest_dir.exists():
+        for d in sorted(dest_dir.iterdir()):
+            if d.is_dir() and (d / "index.html").exists():
+                sitemap_entries.append((f"{base_url}/destinations/{urllib.parse.quote(d.name)}/", "weekly", "0.90"))
     seen_hotel_ids: set[str] = set()
     stayodds_dir_path = DATA_DIR / "stayodds-directory.json"
     if stayodds_dir_path.exists():

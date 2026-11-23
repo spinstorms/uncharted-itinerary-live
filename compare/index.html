@@ -34,12 +34,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261121d" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261122a" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.css?v=27" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -206,11 +206,12 @@
     <section class="h2h-section">
       <div class="container">
         <div class="h2h-box">
-          <div class="section-header" style="margin-bottom:16px;">
+          <div class="section-header" style="margin-bottom:16px;flex-wrap:wrap;gap:12px;">
             <div>
               <h2 class="section-title">Compare Any Two Resorts Head-to-Head</h2>
               <p class="section-subtitle">Pick any two luxury stays below to compare verified first-hand scores, official awards, standout features, honest caveats, and live rate links side-by-side.</p>
             </div>
+            <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
           </div>
 
           <div class="h2h-selectors">
@@ -230,11 +231,11 @@
         <div class="section-header">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary and our Global Luxury Directory — every award, critic score, and YouTube review links directly to its source.</p>
+            <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary, our Global Luxury Directory, or your saved Shortlist — every award, critic score, and YouTube review links directly to its source.</p>
           </div>
         </div>
 
-        <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels and first-hand verified stays"></div>
+        <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels, first-hand verified stays, and saved shortlist"></div>
 
         <div class="controls-bar">
           <div class="scorecard-filters">
@@ -264,7 +265,39 @@
           </div>
         </div>
 
+        <div class="feature-filter-bar">
+          <span class="feature-filter-label">Verified Filters:</span>
+          <div class="feature-filter-pills" id="featureFilterPills" role="group" aria-label="Filter by verified hotel awards, video reviews, loyalty brands, or beach access"></div>
+        </div>
+
         <div class="consensus-list" id="consensusList"></div>
+      </div>
+    </section>
+
+    <!-- Static SEO Destination Guides Strip -->
+    <section class="dest-guides-section" id="destinationGuidesStrip">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:14px;">
+          <div>
+            <h2 class="section-title">Browse by Destination Guide</h2>
+            <p class="section-subtitle">Dedicated regional &amp; country guides built directly from verified StayOdds properties, awards, and linked press reviews.</p>
+          </div>
+        </div>
+        <div class="dest-guides-grid">
+          <a class="dest-guide-chip" href="../destinations/maldives/">Maldives &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/bali-indonesia/">Bali &amp; Indonesia &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/europe/">Europe &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/americas/">Americas &amp; Caribbean &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/asia/">Asia &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/middle-east/">Middle East &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/thailand/">Thailand &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/indian-ocean-africa/">Indian Ocean &amp; Africa &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/bora-bora/">Bora Bora &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/italy/">Italy &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/japan/">Japan &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/united-kingdom/">United Kingdom &rarr;</a>
+          <a class="dest-guide-chip" href="../destinations/france/">France &rarr;</a>
+        </div>
       </div>
     </section>
 
@@ -311,6 +344,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=15"></script>
+  <script type="module" src="../assets/compare.js?v=16"></script>
 </body>
 </html>

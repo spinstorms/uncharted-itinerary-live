@@ -533,10 +533,83 @@
     });
   }
 
+  // ---------- Zero-Login Hotel Shortlist (localStorage) ----------
+  const LS_SHORTLIST_KEY = "stayodds_shortlist_v1";
+
+  function readShortlist() {
+    try {
+      const raw = localStorage.getItem(LS_SHORTLIST_KEY);
+      if (!raw) return [];
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr.filter((x) => typeof x === "string" && x.trim()) : [];
+    } catch (_) {
+      return [];
+    }
+  }
+
+  function writeShortlist(ids) {
+    const unique = Array.from(new Set(ids));
+    try {
+      localStorage.setItem(LS_SHORTLIST_KEY, JSON.stringify(unique));
+    } catch (_) {}
+    return unique;
+  }
+
+  function syncShortlistButtons() {
+    const saved = new Set(readShortlist());
+    document.querySelectorAll("[data-shortlist-id]").forEach((btn) => {
+      const id = btn.getAttribute("data-shortlist-id");
+      if (!id) return;
+      const isSaved = saved.has(id);
+      btn.classList.toggle("is-saved", isSaved);
+      btn.setAttribute("aria-pressed", String(isSaved));
+      const compact = btn.getAttribute("data-shortlist-compact") === "1";
+      btn.innerHTML = isSaved
+        ? (compact ? "&#9829; Saved" : "&#9829; Saved to Shortlist")
+        : (compact ? "&#9825; Save" : "&#9825; Save to Shortlist");
+    });
+  }
+
+  function toggleShortlistId(id, resortName) {
+    if (!id) return false;
+    const current = readShortlist();
+    const exists = current.includes(id);
+    const next = exists ? current.filter((x) => x !== id) : [id, ...current];
+    writeShortlist(next);
+    syncShortlistButtons();
+    trackEvent(exists ? "remove_shortlist" : "add_shortlist", "resort", resortName || id);
+    window.dispatchEvent(new CustomEvent("stayodds:shortlist-changed", { detail: { ids: next, id, saved: !exists } }));
+    return !exists;
+  }
+
+  window.stayOddsShortlist = {
+    get: readShortlist,
+    has: (id) => readShortlist().includes(id),
+    toggle: toggleShortlistId,
+    syncButtons: syncShortlistButtons,
+  };
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-shortlist-id]");
+    if (!btn) return;
+    e.preventDefault();
+    const id = btn.getAttribute("data-shortlist-id");
+    const name = btn.getAttribute("data-resort-name") || resolveResortName(btn);
+    toggleShortlistId(id, name);
+  });
+
+  window.addEventListener("storage", (e) => {
+    if (e.key === LS_SHORTLIST_KEY) {
+      syncShortlistButtons();
+      window.dispatchEvent(new CustomEvent("stayodds:shortlist-changed", { detail: { ids: readShortlist() } }));
+    }
+  });
+
   function boot() {
     initHeroBannerRotator();
     mountFeedbackWidget();
     trackBreakdownLanding();
+    syncShortlistButtons();
   }
 
   if (document.readyState === "loading") {

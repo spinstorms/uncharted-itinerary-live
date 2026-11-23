@@ -492,7 +492,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.css?v=27" />
+  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -623,6 +623,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
+            <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
           <div class="vip-perks-note">
@@ -1002,6 +1003,416 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 """
 
 
+DESTINATION_GUIDES: list[dict[str, str]] = [
+    {
+        "slug": "maldives",
+        "title": "Maldives",
+        "headline": "Best Luxury Resorts in the Maldives — StayOdds Guide",
+        "lead": "Compare Maldives overwater & beachfront luxury resorts side-by-side with our first-hand stays, sourced editorial critics, official MICHELIN Key & Forbes Five-Star awards, and verified guest scores.",
+        "filterType": "region",
+        "filterValue": "Maldives",
+        "banner": "maldives.jpg",
+        "compareRegion": "Maldives",
+    },
+    {
+        "slug": "bali-indonesia",
+        "title": "Bali & Indonesia",
+        "headline": "Best Luxury Resorts in Bali & Indonesia — StayOdds Guide",
+        "lead": "Explore personally curated luxury resorts across Uluwatu, Nusa Dua, Canggu, Ubud, Sumba, and Labuan Bajo — combining first-hand stays, sourced press reviews, and official awards.",
+        "filterType": "region",
+        "filterValue": "Bali & Indonesia",
+        "banner": "bali.jpg",
+        "compareRegion": "Bali & Indonesia",
+    },
+    {
+        "slug": "europe",
+        "title": "Europe",
+        "headline": "Best Luxury Hotels in Europe — StayOdds Guide",
+        "lead": "Compare Europe's most acclaimed grand dames, coastal resorts, and countryside estates — with transparent first-hand stays, linked newspaper & magazine reviews, and official awards.",
+        "filterType": "region",
+        "filterValue": "Europe",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Europe",
+    },
+    {
+        "slug": "americas",
+        "title": "Americas & Caribbean",
+        "headline": "Best Luxury Hotels in the Americas & Caribbean — StayOdds Guide",
+        "lead": "From California and New York icons to St. Lucia, Cabo, and private Caribbean sanctuaries — every StayOdds profile links directly to verified editorial reviews and official awards.",
+        "filterType": "region",
+        "filterValue": "Los Angeles & Americas",
+        "banner": "bora-bora.jpg",
+        "compareRegion": "Los Angeles & Americas",
+    },
+    {
+        "slug": "asia",
+        "title": "Asia",
+        "headline": "Best Luxury Hotels in Asia — StayOdds Guide",
+        "lead": "Compare flagship urban sanctuaries and island escapes across Japan, Singapore, Hong Kong, Vietnam, and beyond with verified StayOdds data.",
+        "filterType": "region",
+        "filterValue": "Asia",
+        "banner": "bali.jpg",
+        "compareRegion": "Asia",
+    },
+    {
+        "slug": "middle-east",
+        "title": "Middle East",
+        "headline": "Best Luxury Hotels in the Middle East — StayOdds Guide",
+        "lead": "Compare Dubai, Abu Dhabi, Doha, Oman, and Red Sea luxury resorts with verified awards, linked press reviews, and transparent StayOdds ratings.",
+        "filterType": "region",
+        "filterValue": "Middle East",
+        "banner": "maldives.jpg",
+        "compareRegion": "Middle East",
+    },
+    {
+        "slug": "thailand",
+        "title": "Thailand",
+        "headline": "Best Luxury Resorts in Thailand — StayOdds Guide",
+        "lead": "Explore curated luxury resorts across Krabi, Phuket, Koh Samui, Bangkok, and Chiang Mai — including first-hand filmed reviews and verified critic links.",
+        "filterType": "region",
+        "filterValue": "Thailand",
+        "banner": "bali.jpg",
+        "compareRegion": "Thailand",
+    },
+    {
+        "slug": "indian-ocean-africa",
+        "title": "Indian Ocean & Africa",
+        "headline": "Best Luxury Resorts in the Indian Ocean & Africa — StayOdds Guide",
+        "lead": "Compare luxury island sanctuaries in Seychelles and Mauritius alongside iconic African safari lodges and city hotels — every source linked and verified.",
+        "filterType": "region",
+        "filterValue": "Indian Ocean & Africa",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Indian Ocean & Africa",
+    },
+    {
+        "slug": "bora-bora",
+        "title": "Bora Bora",
+        "headline": "Best Luxury Resorts in Bora Bora — StayOdds Guide",
+        "lead": "Compare Bora Bora's iconic overwater lagoon resorts side-by-side with sourced press reviews, official awards, and direct rate links.",
+        "filterType": "region",
+        "filterValue": "Bora Bora",
+        "banner": "bora-bora.jpg",
+        "compareRegion": "Bora Bora",
+    },
+    {
+        "slug": "italy",
+        "title": "Italy",
+        "headline": "Best Luxury Hotels in Italy — StayOdds Guide",
+        "lead": "Compare Italy's celebrated luxury stays across Rome, Sardinia, Lake Como, Amalfi, Florence, Puglia, and Venice — combining first-hand stays, linked press reviews, and official awards.",
+        "filterType": "country",
+        "filterValue": "Italy",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Europe",
+    },
+    {
+        "slug": "japan",
+        "title": "Japan",
+        "headline": "Best Luxury Hotels in Japan — StayOdds Guide",
+        "lead": "Compare Japan's finest luxury hotels in Tokyo, Kyoto, and Amanemu with verified MICHELIN Keys, Forbes Five-Star awards, and linked editorial reviews.",
+        "filterType": "country",
+        "filterValue": "Japan",
+        "banner": "bali.jpg",
+        "compareRegion": "Asia",
+    },
+    {
+        "slug": "united-kingdom",
+        "title": "United Kingdom",
+        "headline": "Best Luxury Hotels in the United Kingdom — StayOdds Guide",
+        "lead": "Compare London grand dames and British countryside retreats — including first-hand reviews, verified newspaper critiques, and MICHELIN Key honorees.",
+        "filterType": "country",
+        "filterValue": "United Kingdom",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Europe",
+    },
+    {
+        "slug": "france",
+        "title": "France",
+        "headline": "Best Luxury Hotels in France — StayOdds Guide",
+        "lead": "Compare Palace-distinction Parisian icons and Riviera retreats with verified official awards and linked editorial critiques.",
+        "filterType": "country",
+        "filterValue": "France",
+        "banner": "bora-bora.jpg",
+        "compareRegion": "Europe",
+    },
+]
+
+
+def render_destination_page(
+    guide: dict[str, str],
+    dest_hotels: list[dict[str, Any]],
+    all_guides: list[dict[str, str]],
+) -> str:
+    slug = guide["slug"]
+    title = guide["title"]
+    canonical = f"{SITE_URL}/destinations/{slug}/"
+    page_title = f"{guide['headline']} | StayOdds by The Uncharted Itinerary"
+    meta_desc = f"Compare {len(dest_hotels)} curated luxury hotels in {title} on StayOdds — first-hand verified stays, official awards, linked newspaper & magazine reviews, and transparent ratings."
+    banner_file = guide["banner"]
+    banner_abs = f"{SITE_URL}/assets/banners/{banner_file}"
+    compare_q = urllib.parse.quote(guide["compareRegion"])
+
+    fh_count = sum(1 for h in dest_hotels if h.get("tier") == "first_hand_verified")
+    award_count = sum(1 for h in dest_hotels if h.get("officialAwards"))
+    press_count = sum(len(h.get("editorialRatings") or []) for h in dest_hotels)
+
+    # ItemList structured data strictly using real curated properties
+    item_list_ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": guide["headline"],
+        "description": meta_desc,
+        "url": canonical,
+        "numberOfItems": len(dest_hotels),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": idx + 1,
+                "name": h["name"],
+                "url": f"{SITE_URL}/stayodds/{h['id']}/",
+            }
+            for idx, h in enumerate(dest_hotels)
+        ],
+    }
+
+    dest_nav_pills = "".join(
+        f'<a class="dest-nav-pill {"is-active" if g["slug"] == slug else ""}" href="../{esc(g["slug"])}/">{esc(g["title"])}</a>'
+        for g in all_guides
+    )
+
+    cards_parts: list[str] = []
+    for idx, h in enumerate(dest_hotels):
+        o = compute_stayodds_py(h)
+        raw_thumb = h.get("thumbnail") or "assets/logo.jpg"
+        thumb_src = raw_thumb if raw_thumb.startswith(("http://", "https://")) else f"../../{raw_thumb.lstrip('/')}"
+        odds_val = f"{o['greatStayOdds']}%" if o["greatStayOdds"] is not None else ("Award" if o["awards"] else "Open")
+        odds_lbl = "StayOdds" if o["greatStayOdds"] is not None else ("Official Award" if o["awards"] else "Breakdown")
+
+        award_badges = "".join(
+            f'<a class="source-chip" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">&#127942; {esc(a["label"])} &nearr;</a>'
+            for a in o["awards"][:2]
+        )
+        press_badges = "".join(
+            f'<a class="source-chip" href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">&#128240; {esc(e["sourceName"])} &nearr;</a>'
+            for e in o["editorial"][:2]
+        )
+        blurb = h.get("standout") or h.get("verdict") or ""
+        if len(blurb) > 190:
+            blurb = blurb[:187].rsplit(" ", 1)[0] + "…"
+
+        cards_parts.append(
+            f"""
+        <article class="dest-card" data-resort-name="{esc(h['name'])}">
+          <a class="dest-card-media" href="../../stayodds/{esc(h['id'])}/">
+            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" loading="lazy" decoding="async" />
+            <span class="dest-card-rank">#{idx + 1}</span>
+            <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
+          </a>
+          <div class="dest-card-body">
+            <div class="meta-line">
+              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
+              {f'<span class="tag">{esc(h["brand"])}</span>' if h.get("brand") else ""}
+            </div>
+            <h3><a href="../../stayodds/{esc(h['id'])}/">{esc(h['name'])}</a></h3>
+            <div class="dest-card-loc">{esc(h['location'])}, {esc(h['country'])}{f" &bull; {esc(h['priceRange'])}" if h.get("priceRange") else ""}</div>
+            {f'<p class="dest-card-blurb">{esc(blurb)}</p>' if blurb else ""}
+            {f'<div class="dest-card-sources">{award_badges}{press_badges}</div>' if (award_badges or press_badges) else ""}
+            <div class="dest-card-actions">
+              <a class="btn btn-primary" href="../../stayodds/{esc(h['id'])}/">Full Breakdown &rarr;</a>
+              <a class="btn btn-outline" href="../../compare/?a={esc(h['id'])}">Compare VS</a>
+              <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(h['id'])}" data-shortlist-compact="1" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save</button>
+              <a class="btn btn-outline" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+            </div>
+          </div>
+        </article>"""
+        )
+
+    cards_html = "\n".join(cards_parts)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
+  <title>{esc(page_title)}</title>
+  <meta name="description" content="{esc(meta_desc)}" />
+  <link rel="canonical" href="{esc(canonical)}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{esc(page_title)}" />
+  <meta property="og:description" content="{esc(meta_desc)}" />
+  <meta property="og:image" content="{esc(banner_abs)}" />
+  <meta property="og:url" content="{esc(canonical)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{esc(page_title)}" />
+  <meta name="twitter:description" content="{esc(meta_desc)}" />
+  <meta name="twitter:image" content="{esc(banner_abs)}" />
+  <script type="application/ld+json">{json.dumps(item_list_ld, ensure_ascii=False)}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
+  <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
+  <link rel="stylesheet" href="../../assets/styles.css?v=28" />
+  <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){{
+          c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      }})(window, document, "clarity", "script", "zhmuw1amoy");
+  </script>
+  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+    (function () {{
+        var script = document.createElement("script");
+        script.async = 1;
+        script.setAttribute("data-cmp-ab","2");
+        script.src = 'https://emrld.ltd/NjA0NzQ3.js?t=604747';
+        document.head.appendChild(script);
+    }})();
+  </script>
+</head>
+<body>
+  <header class="site-header stayodds-site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../compare/" rel="noopener">
+        <span class="stayodds-brand-stack">
+          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
+          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main site navigation">
+        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="../../compare/">StayOdds</a>
+        <a href="../../hotels/">Hotel Map</a>
+        <a href="../../">Videos</a>
+        <a href="../../about/">About</a>
+        <a href="../../faq/">FAQ</a>
+        <a href="../../contact/">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary" href="../../compare/?region={compare_q}">Compare Interactive</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="hub-tabs-bar">
+    <div class="container hub-tabs-inner">
+      <a class="hub-embed-brand" href="../../compare/" aria-label="StayOdds Home">
+        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
+      </a>
+      <nav class="hub-tabs" aria-label="Switch hub sections">
+        <a class="hub-tab" href="../../">Latest Videos</a>
+        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
+        <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
+        <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
+        <a class="hub-tab" href="../../about/">About</a>
+        <a class="hub-tab" href="../../faq/">FAQ</a>
+        <a class="hub-tab" href="../../contact/">Contact</a>
+      </nav>
+      <a class="hub-back-link" href="../../compare/">&larr; All StayOdds Hotels</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <div class="detail-breadcrumb" style="margin-bottom:14px;">
+          <a href="../../compare/">&larr; All StayOdds Hotels</a>
+          <span>/</span>
+          <span>Destinations</span>
+          <span>/</span>
+          <strong>{esc(title)}</strong>
+        </div>
+
+        <div class="hero-banner-card" style="--hero-bg: url('../../assets/banners/{esc(banner_file)}');">
+          <div class="intro-row">
+            <div class="hero-title-group">
+              <img class="hero-emblem" src="../../assets/stayodds-logo.png" alt="StayOdds." width="60" height="60" style="border-radius:14px;" />
+              <div>
+                <h1 class="page-title">{esc(guide['headline'])}</h1>
+                <p class="page-lead">{esc(guide['lead'])}</p>
+              </div>
+            </div>
+            <div class="sync-meta">
+              <span>{len(dest_hotels)} Curated Properties</span>
+              <strong>{fh_count} First-Hand Verified &bull; {award_count} Awarded</strong>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+                <a class="btn btn-outline" href="../../compare/?region={compare_q}" style="background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Interactive Compare &rarr;</a>
+                <a class="btn btn-outline" href="../../hotels/?region={compare_q}" style="background:rgba(255,255,255,0.14);color:#fff;border-color:rgba(255,255,255,0.35);font-size:12.5px;padding:6px 12px;">View on Map &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-stats-row">
+          <div class="dest-stat-pill"><strong>{len(dest_hotels)}</strong><span>Curated Luxury Stays</span></div>
+          <div class="dest-stat-pill"><strong>{fh_count}</strong><span>First-Hand Verified</span></div>
+          <div class="dest-stat-pill"><strong>{award_count}</strong><span>Official Award Honorees</span></div>
+          <div class="dest-stat-pill"><strong>{press_count}</strong><span>Linked Press &amp; Critic Reviews</span></div>
+        </div>
+
+        <nav class="dest-pills-bar" aria-label="Browse StayOdds Destination Guides">
+          {dest_nav_pills}
+        </nav>
+      </div>
+    </section>
+
+    <section class="dest-list-section">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:18px;flex-wrap:wrap;gap:12px;">
+          <div>
+            <h2 class="section-title">{esc(title)} Luxury Hotel Directory ({len(dest_hotels)})</h2>
+            <p class="section-subtitle">Ordered with First-Hand Verified stays first, followed by highest verified guest scores. Save favourites to your zero-login Shortlist or jump into Head-to-Head Compare.</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <a class="btn btn-outline" href="../../compare/?scope=saved">&#9829; Open My Shortlist</a>
+            <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
+          </div>
+        </div>
+
+        <div class="dest-grid">
+          {cards_html}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span> &bull; by The Uncharted Itinerary</div>
+          <p class="footer-muted">Critics vs Real Guest Reviews — personally curated luxury hotel comparisons with verified sources.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../../compare/">StayOdds Directory</a>
+          <a href="../../hotels/">Hotel Map</a>
+          <a href="../../">Videos</a>
+          <a href="../../links/">Deals &amp; Gear</a>
+          <a href="../../about/">About</a>
+          <a href="../../faq/">FAQ</a>
+          <a href="../../contact/">Contact</a>
+          <button type="button" class="so-request-footer-link" data-open-resort-request>+ Request a Resort</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {datetime.now().year} StayOdds &amp; The Uncharted Itinerary</span>
+        <span>Disclosure: Booking links may earn an affiliate commission at no extra cost to you.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/stayodds-feedback.js?v=2" defer></script>
+</body>
+</html>
+"""
+
+
 def main() -> None:
     load_env_local()
     sb_url = os.environ["SUPABASE_URL"].rstrip("/")
@@ -1278,7 +1689,26 @@ def main() -> None:
         pdir.mkdir(parents=True, exist_ok=True)
         (pdir / "index.html").write_text(render_seo_page(h, o, same_reg), encoding="utf-8")
 
-    # Build sitemap.xml covering all hub pages + all 300 /stayodds/<slug>/ pages
+    # Generate static SEO destination landing pages at /destinations/<slug>/index.html
+    dest_root = ROOT / "destinations"
+    dest_root.mkdir(exist_ok=True)
+    generated_dests: list[str] = []
+    for guide in DESTINATION_GUIDES:
+        if guide["filterType"] == "region":
+            matched = [r for r in directory if r["region"] == guide["filterValue"]]
+        else:
+            matched = [r for r in directory if r["country"] == guide["filterValue"]]
+        if not matched:
+            continue
+        ddir = dest_root / guide["slug"]
+        ddir.mkdir(parents=True, exist_ok=True)
+        (ddir / "index.html").write_text(
+            render_destination_page(guide, matched, DESTINATION_GUIDES),
+            encoding="utf-8",
+        )
+        generated_dests.append(guide["slug"])
+
+    # Build sitemap.xml covering all hub pages + destination guides + all 300 /stayodds/<slug>/ pages
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     urls = [
         (f"{SITE_URL}/", "1.0", "daily"),
@@ -1290,6 +1720,8 @@ def main() -> None:
         (f"{SITE_URL}/faq/", "0.85", "monthly"),
         (f"{SITE_URL}/contact/", "0.80", "monthly"),
     ]
+    for dslug in generated_dests:
+        urls.append((f"{SITE_URL}/destinations/{dslug}/", "0.9", "weekly"))
     for h in directory:
         prio = "0.9" if h["tier"] == "first_hand_verified" else "0.8"
         urls.append((f"{SITE_URL}/stayodds/{h['id']}/", prio, "weekly"))
@@ -1307,6 +1739,7 @@ def main() -> None:
         f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json ({out_json.stat().st_size/1024:.1f} KB)\n"
         f"  Lean Index JSON: {len(lean_hotels)} verified properties -> data/stayodds-index.json ({lean_json.stat().st_size/1024:.1f} KB)\n"
         f"  Static SEO Pages: {len(directory)} pages -> stayodds/<slug>/index.html\n"
+        f"  Destination Guides: {len(generated_dests)} pages -> destinations/<slug>/index.html\n"
         f"  Sitemap URLs: {len(urls)} URLs -> sitemap.xml"
     )
 
