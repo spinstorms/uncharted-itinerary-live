@@ -127,48 +127,6 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/st-regis-bali/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/four-seasons-jimbaran/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/w-sardinia/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/cocana-gili-t/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/regent-bali-canggu/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/taaktana-labuan-bajo/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://live.uncharteditinerary.com/stayodds/w-algarve/</loc>
-    <lastmod>2026-11-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
     <loc>https://live.uncharteditinerary.com/stayodds/bask-gili-meno/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -194,6 +152,18 @@
   </url>
   <url>
     <loc>https://live.uncharteditinerary.com/stayodds/le-meridien-maldives/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/st-regis-bali/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/four-seasons-jimbaran/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -235,7 +205,19 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/w-sardinia/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://live.uncharteditinerary.com/stayodds/manor-house-castle-combe/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/cocana-gili-t/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -247,7 +229,19 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/regent-bali-canggu/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://live.uncharteditinerary.com/stayodds/finolhu-baa-atoll/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/taaktana-labuan-bajo/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -266,6 +260,12 @@
   </url>
   <url>
     <loc>https://live.uncharteditinerary.com/stayodds/westin-bora-bora/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://live.uncharteditinerary.com/stayodds/w-algarve/</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
