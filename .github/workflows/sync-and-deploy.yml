@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -45,7 +47,8 @@ jobs:
           if ! git diff --quiet data/ sitemap.xml; then
             git add data/videos.json data/affiliates.json data/hotels.json sitemap.xml
             git commit -m "chore: auto-sync YouTube videos, hotel map & affiliates"
-            git push
+            git pull --rebase -X ours origin main
+            git push origin main
           else
             echo "No data changes to commit."
           fi
