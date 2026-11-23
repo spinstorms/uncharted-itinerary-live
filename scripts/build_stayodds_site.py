@@ -258,7 +258,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str, Any]]) -> str:
+def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str, Any]], total_props: int = 500) -> str:
     slug = h["id"]
     canonical = f"{SITE_URL}/stayodds/{slug}/"
     vg = o["vg"]
@@ -740,7 +740,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         <a class="hub-tab" href="../../faq/">FAQ</a>
         <a class="hub-tab" href="../../contact/">Contact</a>
       </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All 500 StayOdds Hotels</a>
+      <a class="hub-back-link" href="../../compare/">&larr; All {total_props} StayOdds Hotels</a>
     </div>
   </div>
 
@@ -803,7 +803,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <ul class="stayodds-explainer-list">
                 <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
                 <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
-                <li><strong>Published Critics &amp; Video Reviewers (/100):</strong> Average of reviewers (including Nonstop Dan, The Flip-Flop Traveller, The Luxury Travel Expert, and Fat Voyage) only where an explicit numeric score is verified from a real source. When a reviewer is known to award a score/points total that cannot be verified from text or captions, it is marked <em>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</em> and excluded from numeric math.</li>
+                <li><strong>Published Critics &amp; Video Reviewers (/100):</strong> Average of reviewers (including Walker Hotel Index by Ryan Walker on a 50-point scale normalized &times; 2, Nonstop Dan &amp; Nonstop Dan Vlogs on a 100-point scale, The Flip-Flop Traveller on a 100-point scale, The Luxury Travel Expert on a 10-point scale, and Fat Voyage on a 20-point scale) only where an explicit numeric score is verified from a real source. When a reviewer is known to award a score/points total that cannot be verified from text or captions, it is marked <em>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</em> and excluded from numeric math.</li>
                 <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
                 <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
               </ul>
@@ -1959,6 +1959,8 @@ def main() -> None:
     )
 
     # Generate static SEO HTML pages at /stayodds/<slug>/index.html
+    total_props = len(directory)
+    world_props = total_props - len(visited_hotels)
     stayodds_dir = ROOT / "stayodds"
     stayodds_dir.mkdir(exist_ok=True)
     for h in directory:
@@ -1968,7 +1970,17 @@ def main() -> None:
             same_reg += [r for r in directory if r["id"] != h["id"] and r not in same_reg][: 3 - len(same_reg)]
         pdir = stayodds_dir / h["id"]
         pdir.mkdir(parents=True, exist_ok=True)
-        (pdir / "index.html").write_text(render_seo_page(h, o, same_reg), encoding="utf-8")
+        (pdir / "index.html").write_text(render_seo_page(h, o, same_reg, total_props), encoding="utf-8")
+
+    # Sync recalculated total_props and world_props counts in compare/index.html, hotels/index.html, about/index.html, faq/index.html
+    for rel_html in ["compare/index.html", "hotels/index.html", "about/index.html", "faq/index.html"]:
+        hp = ROOT / rel_html
+        if hp.exists():
+            txt = hp.read_text(encoding="utf-8")
+            txt = re.sub(r"\b500(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
+            txt = re.sub(r"(All\s+)500(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
+            txt = re.sub(r"(Global\s+Directory\s*\()464(\))", f"\\g<1>{world_props}\\2", txt)
+            hp.write_text(txt, encoding="utf-8")
 
     # Generate static SEO destination landing pages at /destinations/<slug>/index.html
     dest_root = ROOT / "destinations"
@@ -2016,7 +2028,6 @@ def main() -> None:
     (ROOT / "sitemap.xml").write_text("\n".join(sm_lines), encoding="utf-8")
 
     # Build minified assets/styles.min.css from assets/styles.css (safe comment & whitespace stripping)
-    import re
     css_src = ROOT / "assets" / "styles.css"
     css_min = ROOT / "assets" / "styles.min.css"
     if css_src.exists():

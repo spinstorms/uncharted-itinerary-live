@@ -1092,7 +1092,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123e`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261123f`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
 
