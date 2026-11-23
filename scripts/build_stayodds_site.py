@@ -962,12 +962,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <a href="../../about/">About</a>
           <a href="../../faq/">FAQ</a>
           <a href="../../contact/">Contact</a>
+          <a href="../../privacy/">Privacy Policy</a>
           <button type="button" class="so-request-footer-link" data-open-resort-request>+ Request a Resort</button>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; {datetime.now().year} StayOdds &amp; The Uncharted Itinerary</span>
-        <span>Disclosure: Booking links may earn an affiliate commission at no extra cost to you.</span>
+        <span>Disclosure: Booking &amp; gear links may earn an affiliate commission at no extra cost to you (<a href="../../privacy/" style="color:inherit;text-decoration:underline;">Privacy &amp; Ad Disclosure</a>).</span>
       </div>
     </div>
   </footer>
@@ -1632,12 +1633,13 @@ def render_destination_page(
           <a href="../../about/">About</a>
           <a href="../../faq/">FAQ</a>
           <a href="../../contact/">Contact</a>
+          <a href="../../privacy/">Privacy Policy</a>
           <button type="button" class="so-request-footer-link" data-open-resort-request>+ Request a Resort</button>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; {datetime.now().year} StayOdds &amp; The Uncharted Itinerary</span>
-        <span>Disclosure: Booking links may earn an affiliate commission at no extra cost to you.</span>
+        <span>Disclosure: Booking &amp; gear links may earn an affiliate commission at no extra cost to you (<a href="../../privacy/" style="color:inherit;text-decoration:underline;">Privacy &amp; Ad Disclosure</a>).</span>
       </div>
     </div>
   </footer>
@@ -2012,6 +2014,7 @@ def main() -> None:
         (f"{SITE_URL}/about/", "0.85", "monthly"),
         (f"{SITE_URL}/faq/", "0.85", "monthly"),
         (f"{SITE_URL}/contact/", "0.80", "monthly"),
+        (f"{SITE_URL}/privacy/", "0.60", "monthly"),
     ]
     for dslug in generated_dests:
         urls.append((f"{SITE_URL}/destinations/{dslug}/", "0.9", "weekly"))
