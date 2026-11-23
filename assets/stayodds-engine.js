@@ -142,23 +142,40 @@ export function getKeyFactsList(hotel) {
   return items;
 }
 
+const liveGoogleMemoryCache = new Map();
+const liveGoogleInFlight = new Map();
+
 /**
  * Fetch live Google Places rating on-demand for Detail & Compare views ONLY via Supabase Edge Function.
+ * Deduplicated in memory during the current page session (never persisted to localStorage per Google ToS).
  */
 export async function fetchLiveGoogleRating(googlePlaceId) {
   if (!googlePlaceId) return null;
-  try {
-    const res = await fetch(
-      `${BRAND.liveGoogleEdgeUrl}?place_id=${encodeURIComponent(googlePlaceId)}`,
-      { headers: { Accept: "application/json" } }
-    );
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data.status !== "ok" || typeof data.rating !== "number") return null;
-    return data;
-  } catch {
-    return null;
+  if (liveGoogleMemoryCache.has(googlePlaceId)) {
+    return liveGoogleMemoryCache.get(googlePlaceId);
   }
+  if (liveGoogleInFlight.has(googlePlaceId)) {
+    return liveGoogleInFlight.get(googlePlaceId);
+  }
+  const req = (async () => {
+    try {
+      const res = await fetch(
+        `${BRAND.liveGoogleEdgeUrl}?place_id=${encodeURIComponent(googlePlaceId)}`,
+        { headers: { Accept: "application/json" } }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (data.status !== "ok" || typeof data.rating !== "number") return null;
+      liveGoogleMemoryCache.set(googlePlaceId, data);
+      return data;
+    } catch {
+      return null;
+    } finally {
+      liveGoogleInFlight.delete(googlePlaceId);
+    }
+  })();
+  liveGoogleInFlight.set(googlePlaceId, req);
+  return req;
 }
 
 export function getPersonalScoreStats(hotel) {

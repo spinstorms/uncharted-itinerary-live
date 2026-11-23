@@ -1,0 +1,38 @@
+name: Supabase Keep-Alive Ping
+
+on:
+  schedule:
+    # Runs twice a week (Monday and Thursday at 09:00 UTC) to prevent Free Tier pause
+    - cron: "0 9 * * 1,4"
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API (read-only properties table)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "ERROR: Missing SUPABASE_URL or SUPABASE_ANON_KEY GitHub Actions secret."
+            exit 1
+          fi
+
+          ENDPOINT="${SUPABASE_URL%/}/rest/v1/properties?select=id&limit=1"
+          HTTP_STATUS=$(curl -sS -o /tmp/supabase_keepalive.json -w "%{http_code}" \
+            -H "apikey: ${SUPABASE_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_KEY}" \
+            -H "Accept: application/json" \
+            "$ENDPOINT")
+
+          echo "Supabase keep-alive HTTP status: ${HTTP_STATUS}"
+          if [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "ERROR: Keep-alive check failed (expected HTTP 200, got ${HTTP_STATUS})."
+            cat /tmp/supabase_keepalive.json
+            echo ""
+            exit 1
+          fi
+
+          echo "Keep-alive succeeded. Sample row received cleanly."
