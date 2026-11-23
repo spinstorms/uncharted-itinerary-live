@@ -3,7 +3,7 @@ import {
   formatPersonalScore,
   isFirstHandVerified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=6";
+} from "./stayodds-engine.js?v=7";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -316,8 +316,8 @@ function buildPopupHtml(h) {
       <div class="map-popup-media">
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
         <span class="map-popup-score">${
-          o.personalScore25 != null
-            ? `${o.personalScore25}/25 My Stay`
+          o.personalScoreLabel
+            ? `${escapeHtml(o.personalScoreLabel.replace(/ /g, ""))} My Stay`
             : o.greatStayOdds != null
             ? `${o.greatStayOdds}% StayOdds`
             : escapeHtml(o.tierLabel)
@@ -369,7 +369,11 @@ function renderMapMarkers(hotels, fitBounds = true) {
     let marker;
     if (isVisited) {
       const pinClass = o.firstHand ? "" : "is-short";
-      const pinText = o.personalScore25 != null ? `${o.personalScore25}/25` : "Short";
+      const pinText = o.personalScoreLabel
+        ? o.personalScoreLabel.replace(/ /g, "")
+        : h.coverageType === "Short Tour"
+        ? "Short"
+        : "Filmed";
       const zOffset = o.firstHand ? 600 : 500;
 
       const icon = L.divIcon({
@@ -457,7 +461,7 @@ function renderScorecards(hotels) {
                   <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
                   <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
                   <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
-                  <td>${o.personalScore25 != null ? `<strong>${o.personalScore25} / 25</strong>` : escapeHtml(o.tierLabel)}</td>
+                  <td>${o.personalScoreLabel ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong>` : escapeHtml(o.tierLabel)}</td>
                   <td>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "Live"}</td>
                   <td><small>${escapeHtml(aw)}</small></td>
                   <td style="white-space:nowrap;">
@@ -492,7 +496,8 @@ function renderScorecards(hotels) {
         const s = h.scores;
 
         const bar = (lbl, val) => {
-          const pct = Math.round((Number(val || 0) / 5) * 100);
+          if (val == null || Number.isNaN(Number(val))) return "";
+          const pct = Math.round((Number(val) / 5) * 100);
           return `
             <div class="score-bar-row">
               <div class="score-bar-top"><span>${lbl}</span><strong>${formatPersonalScore(val)}/5</strong></div>
@@ -529,14 +534,14 @@ function renderScorecards(hotels) {
               <div class="scorecard-badge-overall ${o.firstHand ? "" : "is-short"}">
                 <strong>${
                   o.personalScore25 != null
-                    ? o.personalScore25
+                    ? formatPersonalScore(o.personalScore25)
                     : o.greatStayOdds != null
                     ? `${o.greatStayOdds}%`
                     : o.officialAwards.length
                     ? "Award"
                     : "Open"
                 }</strong>
-                <span>${o.personalScore25 != null ? "/ 25 Stay" : o.greatStayOdds != null ? "StayOdds" : "Details"}</span>
+                <span>${o.personalScore25 != null ? `/ ${o.personalScoreMax} Stay` : o.greatStayOdds != null ? "StayOdds" : "Details"}</span>
               </div>
               <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
                 📍 Map
@@ -557,7 +562,7 @@ function renderScorecards(hotels) {
                   ? `<div class="score-bars-list">
                       ${bar("Value", s.value)}
                       ${bar("Room Quality", s.rooms)}
-                      ${bar("Vibe", s.grounds)}
+                      ${bar("Vibe / Layout", s.grounds)}
                       ${bar("Food", s.food)}
                       ${bar("Service", s.service)}
                     </div>`
@@ -727,7 +732,7 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261121d`);
+    const res = await fetch(`../data/stayodds-index.json?v=20261122c`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     state.hotels = payload.hotels || [];

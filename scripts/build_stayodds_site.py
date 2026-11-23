@@ -282,14 +282,15 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             "reviewCount": vg.get("reviewCount") or 1,
         }
     if o["firstHand"] and o.get("personalScore25") is not None:
+        max_pts = o.get("personalScoreMax") or 25
         ld["review"] = {
             "@type": "Review",
             "author": {"@type": "Organization", "name": "The Uncharted Itinerary"},
             "reviewRating": {
                 "@type": "Rating",
                 "ratingValue": o["personalScore25"],
-                "bestRating": 25,
-                "worstRating": 5,
+                "bestRating": max_pts,
+                "worstRating": max(1, max_pts // 5),
             },
             "reviewBody": h.get("whereWeDiffer") or h.get("verdict") or "",
         }
