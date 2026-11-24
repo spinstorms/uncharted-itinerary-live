@@ -569,31 +569,194 @@ export function getGuestProfile(hotel) {
   };
 }
 
-/* ==================== 5. Verified First-Hand Room / Villa Booking Tip ==================== */
+/* ==================== 5. Strictly Separated "Rooms to Book" Advice ==================== */
 
-const ROOM_TIP_KEYWORDS_RE = /\b(villa|suite|main\s+building|overwater|beach\s+villa|pool\s+villa|pavilion|cottage|room|book\s+direct|upgrade|lagoon|sunset|sunrise|cliff|2-bedroom|bunk|pod|bungalow|ground[- ]floor)\b/i;
+// Verified first-hand room-booking guidance strictly derived from The Uncharted Itinerary's real filmed stays.
+// Zero conflation with general property facts (dining, transfers, beach) and zero invented room names.
+const VERIFIED_FIRST_HAND_ROOM_TIPS = {
+  "st-regis-bali": "Skip the older 2008 main-building suites — book a private villa instead for fresher finishes and more space.",
+  "ritz-carlton-bali": "Book a Pavilion Pool Villa for newer interiors, direct lagoon-style privacy, and strong value vs. nearby Nusa Dua rivals.",
+  "the-sira-lombok": "Book a Beachfront Pool Villa for a brand-new layout, private pool, butler care, and direct sand access.",
+  "w-bali-seminyak": "Book a One-Bedroom Oasis Pool Villa (~£400/night) — one of the best-value private-pool villa categories in Seminyak.",
+  "radisson-blu-maldives": "Every villa category includes a private infinity pool and overwater hammock — even entry villas deliver the full Maldives setup.",
+  "four-seasons-jimbaran": "Ask for a renovated villa — older 30-year-old villa interiors felt noticeably bare on our stay (3/5 Rooms score).",
+  "w-maldives": "Book a refurbished overwater villa with direct reef access so you can snorkel straight off your deck.",
+  "bask-gili-meno": "Book a Beachfront Pool Villa for large private pools with turtle snorkeling steps from your sun lounger.",
+  "phulay-bay-krabi": "Book a Pool Villa — the cavernous 20ft-ceiling layouts are the centerpiece (and a standout 80k Bonvoy points sweet spot).",
+  "w-koh-samui": "All 75 villas come with a private pool — just note 2010 villa finishes feel slightly older than newer Samui rivals.",
+  "como-uma-canggu": "Modern rooms feature outdoor showers and real soundproofing from busy Canggu — a sharp ~£200/night luxury base.",
+  "regent-bali-canggu": "Book a 1-Bedroom Suite — flawlessly designed, spacious room hardware is a standout highlight right on Canggu beach.",
+  "taaktana-labuan-bajo": "Pick between the brand-new Private Pool Villas or Overwater Villas — both include dedicated 24/7 butler service.",
+  "finolhu-baa-atoll": "Book an Ocean Water Villa for spacious overwater living with easy access to the 1.8km sandbank.",
+  "st-regis-bora-bora": "Overwater Villas start at a massive 1,550+ sq ft — classic styling with one of Bora Bora's largest room footprints.",
+  "westin-bora-bora": "Fresh modern Polynesian bungalows & villas — newer and more comfortable inside than St. Regis next door.",
+  "four-seasons-koh-samui": "Hillside Pool Villas deliver iconic palm-framed ocean views, though classic interiors feel slightly dated for the price.",
+  "le-meridien-maldives": "Stylish modern beach and overwater villas — one of the smartest Marriott Bonvoy points redemptions in the Maldives.",
+  "w-algarve": "Watch for elite suite upgrades (the Supreme Two-Bedroom Suite is standout) — note a few suite layouts have quirky details.",
+  "rayavadee-krabi": "Two-story jungle Pavilions tucked beneath limestone cliffs offer real privacy across the boat-only peninsula.",
+  "cocana-gili-t": "Book a Private Pool Villa for true modern 5-star resort comfort on Gili Trawangan.",
+  "manor-house-castle-combe": "Choose between historic 14th-century manor rooms or picturesque garden cottages beside Castle Combe village.",
+  "heights-melasti-bali": "The modern 2-Bedroom Private Pool Villa is strong Uluwatu value (pack mosquito repellent for open-air bathrooms).",
+  "the-pod-singapore": "Book a single 'bookshelf' capsule with privacy blind for 1–2 night solo stopovers (expect shared-room noise).",
+  "the-edge-bali": "Book an ultra-private Cliffside Villa — includes privileged quiet access outside busy dayclub hours.",
+  "sebali-nusa-penida": "Book a Pool-Access Room for rare beachfront resort polish on Nusa Penida.",
+  "hiliwatu-ubud": "Modern rainforest-valley balcony suites deliver dramatic jungle views at a fraction of Mandapa's nightly rate.",
+  "four-seasons-bangkok": "Standard riverside rooms already outclass many resort suites — spacious Jean-Michel Gathy design throughout.",
+  "the-ungasan-bali": "Private multi-bedroom clifftop villas are grouped into intimate neighborhoods sharing huge infinity pools.",
+  "kin-house-wiltshire": "Primarily booked as an exclusive-use Georgian house for private groups and weddings rather than individual rooms.",
+};
 
-export function getVerifiedRoomTip(hotel) {
-  if (!hotel) return null;
-  // Strictly first-hand visited/scored stays only — zero fabricated tips!
-  const isFirstHand = Boolean(
-    hotel.videoId ||
-      (hotel.scores && hotel.overall != null) ||
-      hotel.coverageType === "Full Review" ||
-      hotel.coverageType === "Short Tour"
-  );
-  if (!isFirstHand) return null;
+// Strict concrete room-category regex for global hotels (matches explicit room/villa/suite types only — never general beach/pool facts)
+const SPECIFIC_ROOM_CATEGORY_RE = /\b(\d+[- ]?(?:bedroom|room|suite|villa|casita|bungalow|pavilion|tented\s+(?:suite|villa))s?|all[- ](?:suite|villa|casita|pool[- ]villa)|overwater\s+(?:pool\s+)?villas?|beachfront\s+(?:pool\s+)?villas?|beach\s+(?:pool\s+)?villas?|private[- ]pool\s+(?:villas?|suites?)|swim[- ]up\s+(?:rooms?|suites?)|ocean[- ]view\s+(?:rooms?|suites?|villas?)|cliffside\s+(?:pool\s+)?villas?|hillside\s+(?:pool\s+)?(?:villas?|casitas?)|lagoon\s+(?:pool\s+)?villas?|tented\s+(?:suites?|villas?|camps?)|treehouses?|penthouse\s+suites?|junior\s+suites?|garden\s+(?:pool\s+)?villas?|bungalows?|casitas?)\b/i;
 
-  const candidates = [hotel.whereWeDiffer, hotel.watchOut, hotel.standout]
-    .map((s) => String(s || "").trim())
+function extractStrictRoomClause(rawText) {
+  const txt = String(rawText || "").trim();
+  if (!txt) return null;
+  // Split into clauses by sentence, semicolon, em-dash, or comma-with-feature lists and keep ONLY the concrete room-type clause
+  const parts = txt
+    .split(/(?:(?<=[.!?])\s+|\s+[—–]\s+|;\s+)/)
+    .map((s) => s.trim())
     .filter(Boolean);
-
-  for (const txt of candidates) {
-    if (ROOM_TIP_KEYWORDS_RE.test(txt)) {
-      return txt;
+  for (const part of parts) {
+    if (!SPECIFIC_ROOM_CATEGORY_RE.test(part)) continue;
+    // Narrow comma-separated feature runs so dining/spa/transfer facts don't leak into Rooms to Book
+    const subParts = part.split(/,\s+(?=(?:and\s+|plus\s+|with\s+|featuring\s+)?)/i);
+    const roomSegments = subParts.filter((seg) => SPECIFIC_ROOM_CATEGORY_RE.test(seg));
+    if (roomSegments.length) {
+      let clean = roomSegments.slice(0, 2).join(", ").replace(/^(?:featuring|with|and|plus)\s+/i, "").trim();
+      clean = clean.replace(/[.;,\s]+$/, "");
+      if (clean.length >= 16 && clean.length <= 180) {
+        return clean.charAt(0).toUpperCase() + clean.slice(1) + ".";
+      }
     }
   }
   return null;
+}
+
+export function getVerifiedRoomTip(hotel) {
+  if (!hotel) return null;
+  const id = String(hotel.id || "").trim();
+  if (VERIFIED_FIRST_HAND_ROOM_TIPS[id]) {
+    return {
+      text: VERIFIED_FIRST_HAND_ROOM_TIPS[id],
+      isUnchartedTip: true,
+      label: "Rooms to Book (Uncharted Note)",
+    };
+  }
+  // For global (unfilmed) hotels, only surface concrete room-category details if explicitly present in verified notes
+  const candidates = [hotel.standout, hotel.verdict].filter(Boolean);
+  for (const cand of candidates) {
+    const clause = extractStrictRoomClause(cand);
+    if (clause) {
+      return {
+        text: clause,
+        isUnchartedTip: false,
+        label: "Room & Villa Setup",
+      };
+    }
+  }
+  return null;
+}
+
+/**
+ * Convenience string wrapper for legacy callers expecting plain text or null.
+ */
+export function getVerifiedRoomTipText(hotel) {
+  const tip = getVerifiedRoomTip(hotel);
+  return tip ? tip.text : null;
+}
+
+/* ==================== 5b. Plain-English Quick Summary Builder ==================== */
+
+function trimSentence(str, maxLen = 145) {
+  const s = String(str || "").trim().replace(/\s+/g, " ");
+  if (!s) return "";
+  if (s.length <= maxLen) return s.replace(/[.!?]+$/, "");
+  const cut = s.slice(0, maxLen - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > 40 ? cut.slice(0, lastSpace) : cut).replace(/[,;:\s]+$/, "") + "…";
+}
+
+/**
+ * Synthesizes an instant, plain-English Quick Summary strictly from verified hotel data
+ * (StayOdds score, Uncharted video status, best weather months, standout benefits, watch-outs, and room guidance).
+ * Zero fabricated claims.
+ */
+export function buildHotelQuickSummary(hotel, odds) {
+  if (!hotel || !odds) {
+    return { headline: "", bullets: [], paragraph: "", roomTip: null, bestMonths: null };
+  }
+  const climate = getBestMonthsMeta(hotel);
+  const roomTip = getVerifiedRoomTip(hotel);
+  const profile = getGuestProfile(hotel);
+
+  // 1. Score & review consensus sentence
+  let scoreLead = "";
+  const pct = odds.greatStayOdds != null ? `${odds.greatStayOdds}% StayOdds` : "Live Google check";
+  if (odds.scoreTrack === "verified") {
+    const myBit = odds.personalScoreLabel ? ` (${odds.personalScoreLabel} from our filmed stay)` : " (filmed on The Uncharted Itinerary)";
+    const backup = [];
+    if (odds.critic100 != null) backup.push(`${odds.critic100}/100 critics`);
+    if (odds.verifiedGuest) {
+      const gStr = odds.verifiedGuest.scale === 5 ? `${odds.verifiedGuest.rating.toFixed(1)}★` : `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}`;
+      backup.push(`${gStr} ${odds.verifiedGuest.sourceName}`);
+    }
+    scoreLead = `${pct} — Uncharted Verified${myBit}${backup.length ? `, backed by ${backup.join(" and ")}` : ""}.`;
+  } else if (odds.greatStayOdds != null) {
+    const toneWord =
+      odds.greatStayOdds >= 92
+        ? "Standout"
+        : odds.greatStayOdds >= 86
+        ? "Strong"
+        : odds.greatStayOdds >= 78
+        ? "Solid"
+        : "Mixed";
+    const basis = [];
+    if (odds.critic100 != null) basis.push(`${odds.critic100}/100 published critics`);
+    if (odds.verifiedGuest) {
+      const gStr = odds.verifiedGuest.scale === 5 ? `${odds.verifiedGuest.rating.toFixed(1)}★` : `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}`;
+      const revStr = odds.verifiedGuest.reviewCount ? ` across ${odds.verifiedGuest.reviewCount.toLocaleString()} reviews` : "";
+      basis.push(`${gStr} ${odds.verifiedGuest.sourceName}${revStr}`);
+    }
+    scoreLead = `${toneWord} ${pct}${basis.length ? ` based on ${basis.join(" & ")}` : ""}.`;
+  } else {
+    scoreLead = "Live Google guest consensus available on demand.";
+  }
+
+  // 2. Key benefits + weather sentence
+  const benefitParts = [];
+  if (hotel.standout) {
+    benefitParts.push(`Known for: ${trimSentence(hotel.standout, 130)}.`);
+  } else if (hotel.verdict) {
+    benefitParts.push(`${trimSentence(hotel.verdict, 130)}.`);
+  }
+  const weatherPart = `Best weather: ${climate.label} (${climate.reason.charAt(0).toLowerCase() + climate.reason.slice(1)}).`;
+
+  // 3. Watch-out & price/profile context
+  const watchOutClean = hotel.watchOut ? trimSentence(hotel.watchOut, 130) + "." : null;
+  const priceTag = hotel.priceRange ? `${hotel.priceRange} indicative` : null;
+
+  // Compact 1-2 sentence paragraph for cards & quick browse
+  const shortParts = [];
+  if (hotel.standout) {
+    shortParts.push(trimSentence(hotel.standout, 115) + ".");
+  } else if (hotel.verdict) {
+    shortParts.push(trimSentence(hotel.verdict, 115) + ".");
+  }
+  shortParts.push(`Best weather: ${climate.label}.`);
+  if (profile.badge) shortParts.push(`${profile.badge}.`);
+
+  return {
+    headline: scoreLead,
+    benefit: benefitParts[0] || "",
+    weather: weatherPart,
+    watchOut: watchOutClean,
+    priceTag,
+    profileBadge: profile.badge || null,
+    bestMonths: climate,
+    roomTip,
+    paragraph: shortParts.join(" "),
+  };
 }
 
 /* ==================== 6. Clean RFC-4180 CSV Exporter ==================== */
@@ -613,7 +776,7 @@ export function exportHotelsToCsv(hotels, getOddsFn, awardHelpers, filename = "s
     "Brand",
     "StayOdds %",
     "Status Badge",
-    "My Stay (/25)",
+    "Uncharted Stay (/25)",
     "Critics (/100)",
     "Verified Guests",
     "Opinion Gap",
@@ -657,7 +820,7 @@ export function exportHotelsToCsv(hotels, getOddsFn, awardHelpers, filename = "s
       profile.badge || "",
       climate.label || "",
       st,
-      `https://uncharteditinerary.com/stayodds/${encodeURIComponent(h.id)}/`,
+      `https://stayodds.com/stayodds/${encodeURIComponent(h.id)}/`,
     ];
   });
 

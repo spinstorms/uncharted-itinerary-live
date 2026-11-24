@@ -139,10 +139,10 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         market_src_cnt = 1
         source_basis_short = "1 source • Critics"
 
-    # LAYER 2: Two-Track Score ("Founder Verified" vs "StayOdds")
+    # LAYER 2: Two-Track Score ("Uncharted Verified" vs "StayOdds")
     score_track = "verified" if (first_hand and ours100 is not None) else "market"
     if score_track == "verified":
-        score_track_label = "Founder Verified"
+        score_track_label = "Uncharted Verified"
     elif market_src_cnt >= 2:
         score_track_label = f"StayOdds • {market_src_cnt} Sources"
     elif market_src_cnt == 1:
@@ -176,15 +176,15 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
                 "critics": 11 if (critic100 is not None and guest100 is not None) else (30 if critic100 is not None else 0),
                 "guests": 19 if (critic100 is not None and guest100 is not None) else (30 if guest100 is not None else 0),
             }
-            formula = f"70% My Stay ({personal_score_label or f'{ours100}%'}) • 30% Consensus ({market_odds}%)"
-            source_basis_short = f"My Stay + {market_src_cnt} source{'s' if market_src_cnt != 1 else ''}"
+            formula = f"70% Uncharted Stay ({personal_score_label or f'{ours100}%'}) • 30% Consensus ({market_odds}%)"
+            source_basis_short = f"Uncharted Stay + {market_src_cnt} source{'s' if market_src_cnt != 1 else ''}"
         else:
             overall_idx = ours100
             weights = {"firstHand": 100, "market": 0, "critics": 0, "guests": 0}
-            status_badge = "First-Hand Verified"
+            status_badge = "Uncharted Verified"
             status_tone = "accent"
-            formula = f"100% My First-Hand Stay ({personal_score_label or f'{ours100}%'})"
-            source_basis_short = "1 source • My Stay"
+            formula = f"100% Uncharted Video Stay ({personal_score_label or f'{ours100}%'})"
+            source_basis_short = "1 source • Uncharted Stay"
     else:
         overall_idx = market_odds
         if critic100 is not None and guest100 is not None:
@@ -224,25 +224,25 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         )
         if abs(delta100) <= 5:
             gap_head = (
-                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched the wider consensus."
+                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — The Uncharted Itinerary stay matched the wider consensus."
                 if first_hand
                 else f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — {critic_name} and real guests agree."
             )
         elif delta100 > 5:
             gap_head = (
-                f"I rated this +{delta100} pts higher than the wider consensus — see what stood out below."
+                f"The Uncharted Itinerary rated this +{delta100} pts higher than the wider consensus — see what stood out below."
                 if first_hand
                 else f"{critic_name} rated this +{delta100} pts higher than real guests."
             )
         else:
             gap_head = (
-                f"I rated this {delta100} pts stricter than the wider consensus — see what held it back below."
+                f"The Uncharted Itinerary rated this {delta100} pts stricter than the wider consensus — see what held it back below."
                 if first_hand
                 else f"Real guests rated this +{abs(delta100)} pts higher than {critic_name}."
             )
     else:
         if first_hand:
-            gap_head = "My first-hand stay score leads here — live Google reviews check on this page."
+            gap_head = "The Uncharted Itinerary's filmed stay leads here — live Google reviews check on this page."
         elif unverified_editorial and not scored_editorial:
             names = ", ".join(u["sourceName"] for u in unverified_editorial)
             gap_head = f"{names} awards a score (unverified figure — excluded from numeric math)."
@@ -259,9 +259,9 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         "scoreTrackLabel": score_track_label,
         "sourceBasisShort": source_basis_short,
         "tierLabel": (
-            "Founder Verified"
+            "Uncharted Verified"
             if first_hand
-            else ("Filmed Stay" if is_full_unscored else ("Short Tour" if visited else "Global Directory"))
+            else ("Uncharted Video" if is_full_unscored else ("Uncharted Short" if visited else "Global Directory"))
         ),
         "personalScore25": personal_score_25,
         "personalScoreMax": personal_score_max,
@@ -339,18 +339,86 @@ def get_best_months_py(h: dict[str, Any]) -> tuple[str, str]:
     return "Spring & Autumn", "Mild shoulder-season conditions"
 
 
-def get_verified_room_tip_py(h: dict[str, Any]) -> str | None:
-    is_fh = bool(
-        h.get("videoId")
-        or (h.get("scores") and h.get("overall") is not None)
-        or h.get("coverageType") in ("Full Review", "Short Tour")
-    )
-    if not is_fh:
+VERIFIED_FIRST_HAND_ROOM_TIPS_PY: dict[str, str] = {
+    "st-regis-bali": "Skip the older 2008 main-building suites — book a private villa instead for fresher finishes and more space.",
+    "ritz-carlton-bali": "Book a Pavilion Pool Villa for newer interiors, direct lagoon-style privacy, and strong value vs. nearby Nusa Dua rivals.",
+    "the-sira-lombok": "Book a Beachfront Pool Villa for a brand-new layout, private pool, butler care, and direct sand access.",
+    "w-bali-seminyak": "Book a One-Bedroom Oasis Pool Villa (~£400/night) — one of the best-value private-pool villa categories in Seminyak.",
+    "radisson-blu-maldives": "Every villa category includes a private infinity pool and overwater hammock — even entry villas deliver the full Maldives setup.",
+    "four-seasons-jimbaran": "Ask for a renovated villa — older 30-year-old villa interiors felt noticeably bare on our stay (3/5 Rooms score).",
+    "w-maldives": "Book a refurbished overwater villa with direct reef access so you can snorkel straight off your deck.",
+    "bask-gili-meno": "Book a Beachfront Pool Villa for large private pools with turtle snorkeling steps from your sun lounger.",
+    "phulay-bay-krabi": "Book a Pool Villa — the cavernous 20ft-ceiling layouts are the centerpiece (and a standout 80k Bonvoy points sweet spot).",
+    "w-koh-samui": "All 75 villas come with a private pool — just note 2010 villa finishes feel slightly older than newer Samui rivals.",
+    "como-uma-canggu": "Modern rooms feature outdoor showers and real soundproofing from busy Canggu — a sharp ~£200/night luxury base.",
+    "regent-bali-canggu": "Book a 1-Bedroom Suite — flawlessly designed, spacious room hardware is a standout highlight right on Canggu beach.",
+    "taaktana-labuan-bajo": "Pick between the brand-new Private Pool Villas or Overwater Villas — both include dedicated 24/7 butler service.",
+    "finolhu-baa-atoll": "Book an Ocean Water Villa for spacious overwater living with easy access to the 1.8km sandbank.",
+    "st-regis-bora-bora": "Overwater Villas start at a massive 1,550+ sq ft — classic styling with one of Bora Bora's largest room footprints.",
+    "westin-bora-bora": "Fresh modern Polynesian bungalows & villas — newer and more comfortable inside than St. Regis next door.",
+    "four-seasons-koh-samui": "Hillside Pool Villas deliver iconic palm-framed ocean views, though classic interiors feel slightly dated for the price.",
+    "le-meridien-maldives": "Stylish modern beach and overwater villas — one of the smartest Marriott Bonvoy points redemptions in the Maldives.",
+    "w-algarve": "Watch for elite suite upgrades (the Supreme Two-Bedroom Suite is standout) — note a few suite layouts have quirky details.",
+    "rayavadee-krabi": "Two-story jungle Pavilions tucked beneath limestone cliffs offer real privacy across the boat-only peninsula.",
+    "cocana-gili-t": "Book a Private Pool Villa for true modern 5-star resort comfort on Gili Trawangan.",
+    "manor-house-castle-combe": "Choose between historic 14th-century manor rooms or picturesque garden cottages beside Castle Combe village.",
+    "heights-melasti-bali": "The modern 2-Bedroom Private Pool Villa is strong Uluwatu value (pack mosquito repellent for open-air bathrooms).",
+    "the-pod-singapore": "Book a single 'bookshelf' capsule with privacy blind for 1–2 night solo stopovers (expect shared-room noise).",
+    "the-edge-bali": "Book an ultra-private Cliffside Villa — includes privileged quiet access outside busy dayclub hours.",
+    "sebali-nusa-penida": "Book a Pool-Access Room for rare beachfront resort polish on Nusa Penida.",
+    "hiliwatu-ubud": "Modern rainforest-valley balcony suites deliver dramatic jungle views at a fraction of Mandapa's nightly rate.",
+    "four-seasons-bangkok": "Standard riverside rooms already outclass many resort suites — spacious Jean-Michel Gathy design throughout.",
+    "the-ungasan-bali": "Private multi-bedroom clifftop villas are grouped into intimate neighborhoods sharing huge infinity pools.",
+    "kin-house-wiltshire": "Primarily booked as an exclusive-use Georgian house for private groups and weddings rather than individual rooms.",
+}
+
+SPECIFIC_ROOM_CATEGORY_PY = re.compile(
+    r"\b(\d+[- ]?(?:bedroom|room|suite|villa|casita|bungalow|pavilion|tented\s+(?:suite|villa))s?|"
+    r"all[- ](?:suite|villa|casita|pool[- ]villa)|"
+    r"overwater\s+(?:pool\s+)?villas?|beachfront\s+(?:pool\s+)?villas?|beach\s+(?:pool\s+)?villas?|"
+    r"private[- ]pool\s+(?:villas?|suites?)|swim[- ]up\s+(?:rooms?|suites?)|"
+    r"ocean[- ]view\s+(?:rooms?|suites?|villas?)|cliffside\s+(?:pool\s+)?villas?|"
+    r"hillside\s+(?:pool\s+)?(?:villas?|casitas?)|lagoon\s+(?:pool\s+)?villas?|"
+    r"tented\s+(?:suites?|villas?|camps?)|treehouses?|penthouse\s+suites?|"
+    r"junior\s+suites?|garden\s+(?:pool\s+)?villas?|bungalows?|casitas?)\b",
+    re.I,
+)
+
+
+def _extract_strict_room_clause_py(raw_text: str | None) -> str | None:
+    txt = str(raw_text or "").strip()
+    if not txt:
         return None
-    for txt in (h.get("whereWeDiffer"), h.get("watchOut"), h.get("standout")):
-        s = (txt or "").strip()
-        if s and ROOM_TIP_KEYWORDS_PY.search(s):
-            return s
+    parts = [s.strip() for s in re.split(r"(?:(?<=[.!?])\s+|\s+[—–]\s+|;\s+)", txt) if s.strip()]
+    for part in parts:
+        if not SPECIFIC_ROOM_CATEGORY_PY.search(part):
+            continue
+        sub_parts = re.split(r",\s+", part)
+        room_segs = [seg for seg in sub_parts if SPECIFIC_ROOM_CATEGORY_PY.search(seg)]
+        if room_segs:
+            clean = ", ".join(room_segs[:2])
+            clean = re.sub(r"^(?:featuring|with|and|plus)\s+", "", clean, flags=re.I).strip().rstrip(".;, ")
+            if 16 <= len(clean) <= 180:
+                return clean[0].upper() + clean[1:] + "."
+    return None
+
+
+def get_verified_room_tip_py(h: dict[str, Any]) -> dict[str, Any] | None:
+    hid = str(h.get("id") or "").strip()
+    if hid in VERIFIED_FIRST_HAND_ROOM_TIPS_PY:
+        return {
+            "text": VERIFIED_FIRST_HAND_ROOM_TIPS_PY[hid],
+            "is_uncharted": True,
+            "label": "Rooms to Book (Uncharted Note)",
+        }
+    for cand in (h.get("standout"), h.get("verdict")):
+        clause = _extract_strict_room_clause_py(cand)
+        if clause:
+            return {
+                "text": clause,
+                "is_uncharted": False,
+                "label": "Room & Villa Setup",
+            }
     return None
 
 
@@ -1051,71 +1119,76 @@ def render_seo_page(
     if verified_room_tip:
         trip_tiles.append(
             f'<div class="detail-trip-tile is-tip">'
-            f'<span class="detail-trip-kicker">🛏️ First-Hand Room / Booking Tip</span>'
-            f'<strong class="detail-trip-val">{esc(verified_room_tip)}</strong>'
+            f'<span class="detail-trip-kicker">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span>'
+            f'<strong class="detail-trip-val">{esc(verified_room_tip["text"])}</strong>'
             f'</div>'
         )
 
     trip_context_html = f'<div class="detail-trip-context-strip">{"".join(trip_tiles)}</div>'
 
-    # Calm At-a-Glance Executive Summary Card (scannable top overview above full data breakdown)
+    # Plain-English Quick Summary placed RIGHT AT THE TOP (before KPIs & detailed boxes)
     price_summary_str = (snap.get("label") if isinstance(snap, dict) else "") or h.get("priceRange") or ""
     awards_summary_str = " • ".join(a["label"] for a in o["awards"][:2]) if o["awards"] else ""
-    score_summary_line = (
-        f"<strong>{o['greatStayOdds']}% StayOdds</strong> — {esc(o['formula'])}"
-        if o["greatStayOdds"] is not None
-        else f"<strong>Live Google Check</strong> — {esc(o['formula'])}"
-    )
-    if o["firstHand"] and o.get("founderVsMarketDelta") is not None:
-        fd = o["founderVsMarketDelta"]
-        score_summary_line += f" (My Stay is {'+' if fd > 0 else ''}{fd} pts vs Consensus)"
-
-    fit_bits = [f"Best Dry Months: <strong>{esc(best_months_lbl)}</strong>"]
-    if price_summary_str:
-        fit_bits.append(f"Indicative: <strong>{esc(price_summary_str)}</strong>")
+    if o["scoreTrack"] == "verified" and o["greatStayOdds"] is not None:
+        my_bit = f" ({o['personalScoreLabel']} from our filmed stay)" if o.get("personalScoreLabel") else " (filmed on The Uncharted Itinerary)"
+        score_summary_line = f"<strong>{o['greatStayOdds']}% StayOdds</strong> — Uncharted Verified{esc(my_bit)}"
+        if o.get("founderVsMarketDelta") is not None:
+            fd = o["founderVsMarketDelta"]
+            score_summary_line += f" • The Uncharted Itinerary is {'+' if fd > 0 else ''}{fd} pts vs. wider consensus"
+    elif o["greatStayOdds"] is not None:
+        tone_word = "Standout" if o["greatStayOdds"] >= 92 else ("Strong" if o["greatStayOdds"] >= 86 else ("Solid" if o["greatStayOdds"] >= 78 else "Mixed"))
+        score_summary_line = f"<strong>{tone_word} {o['greatStayOdds']}% StayOdds</strong> — {esc(o['formula'])}"
+    else:
+        score_summary_line = f"<strong>Live Google Check</strong> — {esc(o['formula'])}"
     if awards_summary_str:
-        fit_bits.append(f"Awards: <strong>{esc(awards_summary_str)}</strong>")
-    if ps_has:
-        fit_bits.append(f"Status: <strong>{esc(ps_badge_lbl)}</strong>")
+        score_summary_line += f" • <strong>{esc(awards_summary_str)}</strong>"
 
     standout_summary = (h.get("standout") or h.get("verdict") or "").strip()
-    if len(standout_summary) > 190:
-        standout_summary = standout_summary[:187].rsplit(" ", 1)[0] + "…"
+    if len(standout_summary) > 195:
+        standout_summary = standout_summary[:192].rsplit(" ", 1)[0] + "…"
     watchout_summary = (h.get("watchOut") or "").strip()
-    if len(watchout_summary) > 190:
-        watchout_summary = watchout_summary[:187].rsplit(" ", 1)[0] + "…"
+    if len(watchout_summary) > 185:
+        watchout_summary = watchout_summary[:182].rsplit(" ", 1)[0] + "…"
 
-    glance_rows = [
-        f'<div class="glance-item"><span class="glance-kicker">Score &amp; Basis</span><p id="glanceScoreBasis">{score_summary_line}</p></div>',
-        f'<div class="glance-item"><span class="glance-kicker">Trip Fit</span><p>{" &bull; ".join(fit_bits)}</p></div>',
+    weather_reason_lc = best_months_reason[:1].lower() + best_months_reason[1:] if best_months_reason else ""
+    quick_bullets: list[str] = [
+        f'<li class="qs-row"><span class="qs-label">Consensus:</span> <span id="glanceScoreBasis">{score_summary_line}</span></li>',
     ]
     if standout_summary:
-        glance_rows.append(
-            f'<div class="glance-item is-pro"><span class="glance-kicker">&#10003; Top Highlight</span><p>{esc(standout_summary)}</p></div>'
+        quick_bullets.append(
+            f'<li class="qs-row is-pro"><span class="qs-label">Why Guests Love It:</span> {esc(standout_summary)}</li>'
         )
+    quick_bullets.append(
+        f'<li class="qs-row"><span class="qs-label">Best Weather:</span> <strong>{esc(best_months_lbl)}</strong> — {esc(weather_reason_lc)}{f" • Indicative rate: <strong>{esc(price_summary_str)}</strong>" if price_summary_str else ""}.</li>'
+    )
     if watchout_summary:
-        glance_rows.append(
-            f'<div class="glance-item is-con"><span class="glance-kicker">&#9888; Key Watch-Out</span><p>{esc(watchout_summary)}</p></div>'
+        quick_bullets.append(
+            f'<li class="qs-row is-con"><span class="qs-label">Heads-Up:</span> {esc(watchout_summary)}</li>'
         )
-    at_a_glance_html = f"""
-      <section class="detail-section" aria-label="At a glance summary">
-        <div class="at-a-glance-card">
-          <div class="at-a-glance-head">
-            <div>
-              <span class="at-a-glance-eyebrow">At a Glance &bull; 10-Second Summary</span>
-              <h2>Key Takeaways for {esc(h['name'])}</h2>
+    room_summary_html = (
+        f'<div class="qs-room-callout">'
+        f'<span class="qs-room-kicker">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span>'
+        f'<p>{esc(verified_room_tip["text"])}</p>'
+        f'</div>'
+        if verified_room_tip
+        else ""
+    )
+
+    top_quick_summary_html = f"""
+          <div class="top-quick-summary {'is-uncharted' if o['scoreTrack'] == 'verified' else ''}" aria-label="Quick hotel summary">
+            <div class="top-quick-summary-head">
+              <span class="top-quick-summary-eyebrow">&#10024; Quick Summary &bull; The Bottom Line</span>
+              <span class="top-quick-summary-jumps">
+                <a href="#opinion-gap">Score Gap &darr;</a>
+                <a href="#key-facts">Specs &amp; Facts &darr;</a>
+                <a href="#score-sources">Sources &darr;</a>
+              </span>
             </div>
-            <div class="at-a-glance-jumps">
-              <a href="#opinion-gap">Score Gap &darr;</a>
-              <a href="#key-facts">Specs &amp; Facts &darr;</a>
-              <a href="#score-sources">All Sources &darr;</a>
-            </div>
-          </div>
-          <div class="at-a-glance-grid">
-            {''.join(glance_rows)}
-          </div>
-        </div>
-      </section>"""
+            <ul class="top-quick-summary-list">
+              {''.join(quick_bullets)}
+            </ul>
+            {room_summary_html}
+          </div>"""
 
     # Pre-loaded Head-to-Head Rival Matchups (same country / region peers)
     rival_list = rivals if rivals is not None else related
@@ -1185,7 +1258,7 @@ def render_seo_page(
             "verifiedGuest": {"rating": vg["rating"], "scale": int(vg.get("scale", 10))} if (vg and vg.get("rating")) else None,
             "officialAwards": [{"label": a["label"]} for a in o["awards"]],
             "opinionGap": {
-                "title": "My Score vs. Real Guest Score" if o["firstHand"] else "Critics & Awards vs. Real Guest Score",
+                "title": "Uncharted Stay vs. Consensus" if o["firstHand"] else "Critics & Awards vs. Real Guest Score",
                 "headline": o["gapHeadline"],
                 "deltaLabel": delta_badge,
             },
@@ -1220,7 +1293,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=42" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=43" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1250,6 +1323,7 @@ def render_seo_page(
       </div>
       <nav class="nav-links" aria-label="Main site navigation">
         <a href="../../compare/" class="active">StayOdds</a>
+        <a href="../../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../brands/">Brands</a>
         <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
@@ -1270,6 +1344,7 @@ def render_seo_page(
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
+        <a class="hub-tab" href="../../compare/?mode=finder">&#10024; Trip Finder</a>
         <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
         <a class="hub-tab" href="../../brands/">Brands</a>
         <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>
@@ -1311,7 +1386,8 @@ def render_seo_page(
           </div>
           {f'<div class="meta-line" style="margin-top:8px;gap:6px;">{hero_awards_html}</div>' if hero_awards_html else ''}
           <h1 class="detail-title">{esc(h['name'])}</h1>
-          <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Personally curated StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
+
+          {top_quick_summary_html}
 
           <div class="detail-kpi-row">
             <div class="detail-kpi is-primary {'is-verified-track' if o['scoreTrack'] == 'verified' else 'is-market-track'} {'is-caution' if o['statusTone'] == 'amber' else ''}" id="kpiOddsCard">
@@ -1320,7 +1396,7 @@ def render_seo_page(
             </div>
             <div class="detail-kpi">
               <strong>{f"{fmt_score_num(o['personalScore25'])}<span>/{o['personalScoreMax']}</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if (o['visited'] and h.get("coverageType") == "Short Tour") else ("Filmed" if o['visited'] else "Not Stayed"))}</strong>
-              <span>{'My Stay Score' if o['firstHand'] else ('Short Tour' if (o['visited'] and h.get("coverageType") == "Short Tour") else ('Full Video Review' if o['visited'] else 'My Stay Score'))}</span>
+              <span>{'Uncharted Stay' if o['firstHand'] else ('Short Tour' if (o['visited'] and h.get("coverageType") == "Short Tour") else ('Full Video Review' if o['visited'] else 'Uncharted Stay'))}</span>
             </div>
             <div class="detail-kpi">
               <strong>{f"{o['marketOdds']}%" if o.get('marketOdds') is not None else critic_kpi_val}</strong>
@@ -1340,7 +1416,7 @@ def render_seo_page(
             <div class="stayodds-explainer-body">
               <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
               <ul class="stayodds-explainer-list">
-                <li><strong>Founder Verified (Audited Stays):</strong> When I have personally stayed and scored a hotel (/25), <strong>StayOdds</strong> weights <strong>70% My Stay + 30% Guest &amp; Critic Consensus</strong> (or 100% My Stay if no external score exists), with a transparent <strong>Founder vs. Consensus</strong> delta.</li>
+                <li><strong>Uncharted Verified (Filmed Stays):</strong> When <strong>The Uncharted Itinerary</strong> has stayed and scored a hotel (/25), <strong>StayOdds</strong> weights <strong>70% Uncharted Stay + 30% Guest &amp; Critic Consensus</strong> (or 100% Uncharted Stay if no external score exists), with a transparent <strong>Uncharted vs. Consensus</strong> delta.</li>
                 <li><strong>Global Directory (Unvisited Hotels):</strong> Unvisited properties display a unified <strong>StayOdds %</strong> alongside the exact data-source count (35% Published Critics + 65% Verified Guests when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed), with gentle Bayesian dampening on tiny (&lt;40 review) samples.</li>
                 <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
               </ul>
@@ -1377,8 +1453,6 @@ def render_seo_page(
         </div>
       </section>
 
-      {at_a_glance_html}
-
       {trip_context_html}
 
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
@@ -1387,12 +1461,12 @@ def render_seo_page(
           <div class="opinion-gap-head">
             <div>
               <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'Founder vs. Consensus' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
+              <h2>{'The Uncharted Itinerary vs. Consensus' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
               <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
               <strong>{esc(delta_badge)}</strong>
-              <span>{'Founder vs Consensus' if o['firstHand'] else 'Opinion Gap'}</span>
+              <span>{'Uncharted vs Consensus' if o['firstHand'] else 'Opinion Gap'}</span>
             </div>
           </div>
 
@@ -1413,7 +1487,7 @@ def render_seo_page(
 
           {f'<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;"><strong style="font-size:13px;color:#334155;">Official Awards (Listed by Name, Never Scored):</strong> {hero_awards_html}</div>' if hero_awards_html else ''}
           <div class="live-google-bar" id="liveGoogleStrip" style="display:none;"></div>
-          {f'<p class="opinion-gap-narrative"><strong>What I Liked &amp; Where My Take Differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
+          {f'<p class="opinion-gap-narrative"><strong>What We Liked &amp; Where Our Take Differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
         </div>
       </section>
 
@@ -1423,7 +1497,7 @@ def render_seo_page(
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
               <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, and honest watch-outs — blank fields are omitted rather than guessed.</p>
+              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, honest watch-outs, and specific room guidance — blank fields are omitted rather than guessed.</p>
             </div>
           </div>
           {f'<div class="key-facts-grid">{facts_html}</div>' if facts_html else ''}
@@ -1432,7 +1506,7 @@ def render_seo_page(
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
             {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
-            {f'<div class="verdict-card" style="border-color:#c7d2fe;background:#f8faff;"><span class="tag" style="background:#eef2ff;color:#3730a3;">🛏️ First-Hand Room / Booking Tip</span><h3>Which Room / Villa to Book</h3><p>{esc(h.get("whereWeDiffer"))}</p></div>' if (o['firstHand'] and h.get("whereWeDiffer") and re.search(r"villa|suite|main building|overwater|room|pavilion|cottage|bungalow|book|pool|lagoon", h.get("whereWeDiffer",""), re.I)) else ''}
+            {f'<div class="verdict-card" style="border-color:#fed7aa;background:#fff7ed;"><span class="tag" style="background:#ffedd5;color:#9a3412;">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span><h3>Rooms to Book</h3><p>{esc(verified_room_tip["text"])}</p></div>' if verified_room_tip else ''}
           </div>
         </div>
       </section>
@@ -1447,7 +1521,7 @@ def render_seo_page(
             </div>
             <p class="detail-panel-sub" id="weightFormulaSub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>Uncharted Stay</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else ("Unverified" if unverified_ed else "—")}</strong><small>Published Critics</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Verified Guests</small></div>
             </div>
@@ -1753,7 +1827,7 @@ def render_seo_page(
               wCr = critic100 != null ? 11 : 0;
               wGu = critic100 != null ? 19 : 30;
               odds = Math.round(ours100 * 0.70 + mkt * 0.30);
-              formula = `70% My Stay • 30% Consensus (${{mkt}}%)`;
+              formula = `70% Uncharted Stay • 30% Consensus (${{mkt}}%)`;
             }} else if (critic100 != null) {{
               wFH = 0; wCr = 35; wGu = 65;
               odds = mkt;
@@ -1780,7 +1854,7 @@ def render_seo_page(
             if (kpiOdds && odds != null) kpiOdds.textContent = `${{odds}}%`;
             if (kpiOddsLbl) {{
               kpiOddsLbl.textContent = firstHand
-                ? "Founder Verified"
+                ? "Uncharted Verified"
                 : active.length >= 2
                 ? `StayOdds • ${{active.length}} Sources`
                 : "StayOdds • 1 Source (Google)";
@@ -1803,20 +1877,20 @@ def render_seo_page(
             const rhs = firstHand ? mkt : g100;
             if (left100 != null && rhs != null) {{
               const d = left100 - rhs;
-              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>${{firstHand ? "Founder vs Consensus" : "Opinion Gap"}}</span>`;
+              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>${{firstHand ? "Uncharted vs Consensus" : "Opinion Gap"}}</span>`;
               const gapHead = document.getElementById("gapHeadline");
               if (gapHead) {{
                 if (Math.abs(d) <= 5) {{
                   gapHead.textContent = firstHand
-                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched the wider consensus.`
+                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — The Uncharted Itinerary stay matched the wider consensus.`
                     : `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — ${{criticLabel}} and real guests agree.`;
                 }} else if (d > 5) {{
                   gapHead.textContent = firstHand
-                    ? `I rated this +${{d}} pts higher than the wider consensus — see what stood out.`
+                    ? `The Uncharted Itinerary rated this +${{d}} pts higher than the wider consensus — see what stood out.`
                     : `${{criticLabel}} rated this +${{d}} pts higher than real guests.`;
                 }} else {{
                   gapHead.textContent = firstHand
-                    ? `I rated this ${{d}} pts stricter than the wider consensus — see what held it back.`
+                    ? `The Uncharted Itinerary rated this ${{d}} pts stricter than the wider consensus — see what held it back.`
                     : `Real guests rated this +${{Math.abs(d)}} pts higher than ${{criticLabel}}.`;
                 }}
               }}
@@ -1825,7 +1899,7 @@ def render_seo_page(
             const eqEl = document.getElementById("stayOddsEquation");
             if (eqEl && odds != null) {{
               eqEl.textContent = firstHand && ours100 != null
-                ? `70% My Stay (${{personalLabel ? personalLabel + " → " : ""}}${{ours100}}%) + 30% Consensus (${{mkt}}%) = ${{odds}}% StayOdds`
+                ? `70% Uncharted Stay (${{personalLabel ? personalLabel + " → " : ""}}${{ours100}}%) + 30% Consensus (${{mkt}}%) = ${{odds}}% StayOdds`
                 : `${{formula}} = ${{odds}}% StayOdds`;
             }}
 
@@ -1854,7 +1928,7 @@ def render_seo_page(
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=9");
+      const mod = await import("../../assets/stayodds-share-card.js?v=10");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -2225,7 +2299,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=42" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=43" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2255,6 +2329,7 @@ def render_destination_page(
       </div>
       <nav class="nav-links" aria-label="Main site navigation">
         <a href="../../compare/" class="active">StayOdds</a>
+        <a href="../../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../brands/">Brands</a>
         <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
@@ -2275,6 +2350,7 @@ def render_destination_page(
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
         <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
+        <a class="hub-tab" href="../../compare/?mode=finder">&#10024; Trip Finder</a>
         <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
         <a class="hub-tab" href="../../brands/">Brands</a>
         <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>

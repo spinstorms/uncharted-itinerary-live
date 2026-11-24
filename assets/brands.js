@@ -1,5 +1,5 @@
-import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=11";
-import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=4";
+import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=12";
+import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTipText } from "./stayodds-insights.js?v=5";
 
 const qs = (s) => document.querySelector(s);
 const oddsCache = new WeakMap();
@@ -330,7 +330,7 @@ function renderPillarLeaderboard() {
         ${scored
           .map((h, i) => {
             const o = getOdds(h);
-            const tip = getVerifiedRoomTip(h) || h.whereWeDiffer || h.standout || "";
+            const tip = getVerifiedRoomTipText(h) || h.whereWeDiffer || h.standout || "";
             return `
               <tr>
                 <td><strong>#${i + 1}</strong></td>

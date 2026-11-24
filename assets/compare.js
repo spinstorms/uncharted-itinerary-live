@@ -9,7 +9,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=11";
+} from "./stayodds-engine.js?v=12";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
@@ -21,8 +21,9 @@ import {
   matchesBestMonth,
   getGuestProfile,
   getVerifiedRoomTip,
+  buildHotelQuickSummary,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=4";
+} from "./stayodds-insights.js?v=5";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -281,6 +282,11 @@ const state = {
   adults: 2,
   liveRates: {},
   visibleLimit: PAGE_SIZE,
+  workspaceMode: "directory",
+  smartPrompt: "",
+  smartExcludeCountries: [],
+  smartIncludeLocations: [],
+  smartMaxGbp: null,
   idA: "taaktana-labuan-bajo",
   idB: "st-regis-bali",
   idC: "w-maldives",
@@ -702,7 +708,7 @@ function renderH2HCard(h, allCompared) {
   ].filter(Boolean).join("");
 
   const roomTipHtml = roomTip
-    ? `<div class="h2h-room-tip-box"><strong>🛏️ First-Hand Room / Booking Tip:</strong> ${escapeHtml(roomTip)}</div>`
+    ? `<div class="h2h-room-tip-box"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(roomTip.label)}:</strong> ${escapeHtml(roomTip.text)}</div>`
     : "";
 
   return `
@@ -719,11 +725,11 @@ function renderH2HCard(h, allCompared) {
       <div class="h2h-odds-strip">
         <div class="odds-big">
           <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Awarded" : "Open"}</strong>
-          <span>${escapeHtml(o.scoreTrack === "verified" ? "★ Founder Verified" : o.marketSourceCount === 1 ? "StayOdds • 1 Source" : o.marketSourceCount >= 2 ? `StayOdds • ${o.marketSourceCount} Sources` : "StayOdds")}</span>
+          <span>${escapeHtml(o.scoreTrack === "verified" ? "★ Uncharted Verified" : o.marketSourceCount === 1 ? "StayOdds • 1 Source" : o.marketSourceCount >= 2 ? `StayOdds • ${o.marketSourceCount} Sources` : "StayOdds")}</span>
         </div>
         <div class="index-big">
           <strong>${escapeHtml(o.founderVsMarketDelta != null ? `${o.founderVsMarketDelta > 0 ? "+" : ""}${o.founderVsMarketDelta} pts` : o.opinionGap.deltaLabel)}</strong>
-          <span>${o.firstHand ? "Founder vs Consensus" : "Opinion Gap"}</span>
+          <span>${o.firstHand ? "Uncharted vs Consensus" : "Opinion Gap"}</span>
         </div>
       </div>
 
@@ -747,7 +753,7 @@ function renderH2HCard(h, allCompared) {
 
       <div class="h2h-metrics-list">
         ${metricRow(
-          "My First-Hand Stay",
+          "Uncharted Video Stay",
           o.ours100,
           otherOdds.map((x) => x.o.ours100),
           "",
@@ -1686,6 +1692,7 @@ function renderLeaderboard() {
           topAwardChip ||
           (h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : "");
 
+        const summary = buildHotelQuickSummary(h, o);
         const takeawayLine = h.whereWeDiffer || h.standout || o.opinionGap.headline || "";
 
         const secondaryMetaPills = [
@@ -1709,7 +1716,7 @@ function renderLeaderboard() {
               <div class="consensus-index-chip">
                 ${
                   o.personalScoreLabel
-                    ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong> My Stay`
+                    ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong> Uncharted`
                     : o.marketSourceCount > 0
                     ? `<strong>${o.marketSourceCount}</strong> source${o.marketSourceCount === 1 ? "" : "s"}`
                     : o.officialAwards.length
@@ -1736,17 +1743,26 @@ function renderLeaderboard() {
                 <a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a>
               </h3>
 
+              <div class="card-quick-summary">
+                <p class="card-qs-text"><strong>&#10024; Summary:</strong> ${escapeHtml(summary.paragraph)}</p>
+                ${
+                  summary.roomTip
+                    ? `<p class="card-qs-room"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</p>`
+                    : ""
+                }
+              </div>
+
               <div class="three-pillar-strip is-three-col">
                 <div class="pillar-box is-ours">
-                  <small>${o.firstHand ? "My Stay (70%)" : "First-Hand Stay"}</small>
+                  <small>${o.firstHand ? "Uncharted Stay (70%)" : "Uncharted Channel"}</small>
                   <strong>${
                     o.personalScoreLabel
                       ? escapeHtml(o.personalScoreLabel)
                       : o.visited
                       ? h.coverageType === "Short Tour"
                         ? "Short Tour"
-                        : "Filmed Stay"
-                      : "Not Visited"
+                        : "Filmed Video"
+                      : "Not Filmed"
                   }</strong>
                 </div>
                 <div class="pillar-box is-critics">
@@ -1758,18 +1774,12 @@ function renderLeaderboard() {
                 </div>
               </div>
 
-              ${
-                takeawayLine
-                  ? `<p class="card-takeaway-line"><strong>${o.firstHand ? "My Take:" : `${escapeHtml(o.opinionGap.title)}:`}</strong> ${escapeHtml(takeawayLine)}</p>`
-                  : ""
-              }
-
               <details class="card-details-expander">
                 <summary>Details, Perks &amp; Sources &#9662;</summary>
                 <div class="card-details-body">
                   <div class="meta-line" style="margin-bottom:8px;">${secondaryMetaPills}</div>
                   ${keyFactChips ? `<div class="card-key-facts-strip" style="margin-bottom:8px;">${keyFactChips}</div>` : ""}
-                  ${h.standout && h.standout !== takeawayLine ? `<p style="margin:0 0 6px;font-size:13px;"><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
+                  ${h.standout ? `<p style="margin:0 0 6px;font-size:13px;"><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
                   ${h.watchOut ? `<p style="margin:0 0 8px;font-size:13px;"><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
                   <div class="consensus-sources">
                     ${sourceChips}
@@ -1992,7 +2002,7 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=9");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=10");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
           window.trackEvent("open_share_card", "vs_three_hotel", `${ha.name} vs ${hb.name} vs ${hc.name}`);
@@ -2000,7 +2010,7 @@ async function boot() {
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=9");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=10");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -2502,10 +2512,239 @@ async function boot() {
       out.innerHTML = "";
     }
     if (clr) clr.hidden = true;
+    state.smartPrompt = "";
     state.smartExcludeCountries = [];
     state.smartIncludeLocations = [];
     state.smartMaxGbp = null;
   }
+
+  function renderTripFinderResults() {
+    const headEl = qs("#tripFinderResultsHead");
+    const gridEl = qs("#tripFinderResults");
+    if (!gridEl) return;
+
+    const hasPrompt = Boolean(state.smartPrompt && state.smartPrompt.trim());
+    let list = hasPrompt ? (state.lastFilteredList || []) : [];
+
+    if (!hasPrompt) {
+      // Curated starter showcase: blend of Uncharted Verified icons + top global stays so tab feels alive immediately
+      const verified = state.hotels
+        .filter((h) => isFirstHandVerified(h))
+        .sort((a, b) => (getOdds(b).greatStayOdds || 0) - (getOdds(a).greatStayOdds || 0))
+        .slice(0, 4);
+      const globalTop = state.hotels
+        .filter((h) => !isVisitedProperty(h) && (getOdds(h).greatStayOdds || 0) >= 92 && h.standout)
+        .sort((a, b) => (getOdds(b).greatStayOdds || 0) - (getOdds(a).greatStayOdds || 0))
+        .slice(0, 5);
+      list = [...verified, ...globalTop];
+    }
+
+    if (headEl) {
+      if (!hasPrompt) {
+        headEl.innerHTML = `
+          <div>
+            <h3>Featured Picks to Spark Ideas</h3>
+            <p>Type any destination, month, budget, or vibe above — or explore these standout properties with plain-English summaries.</p>
+          </div>
+          <button type="button" class="btn btn-outline" id="tfSwitchToAllBtn" style="font-size:13px;padding:7px 13px;">Browse All ${state.hotels.length} Hotels &rarr;</button>
+        `;
+      } else if (!list.length) {
+        headEl.innerHTML = `
+          <div>
+            <h3>No exact matches for &ldquo;${escapeHtml(state.smartPrompt)}&rdquo;</h3>
+            <p>Try broadening your budget, month, or destination — or switch to Full Filters to fine-tune manually.</p>
+          </div>
+          <button type="button" class="btn btn-outline" id="tfSwitchToAllBtn" style="font-size:13px;padding:7px 13px;">Open Full Directory &rarr;</button>
+        `;
+      } else {
+        const top2Ready = list.length >= 2;
+        headEl.innerHTML = `
+          <div>
+            <h3>${list.length} Tailored Match${list.length === 1 ? "" : "es"} Found</h3>
+            <p>Ranked by verified StayOdds % — every card summarizes review consensus, best weather, and specific rooms to book.</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            ${
+              top2Ready
+                ? `<button type="button" class="btn btn-primary" id="tfCompareTop2Btn" style="font-size:13px;padding:7px 14px;">&#9876;&#65039; Compare Top 2 VS &rarr;</button>`
+                : ""
+            }
+            <button type="button" class="btn btn-outline" id="tfSwitchToAllBtn" style="font-size:13px;padding:7px 13px;">Refine All ${list.length} in Full Filters &rarr;</button>
+          </div>
+        `;
+      }
+
+      headEl.querySelector("#tfSwitchToAllBtn")?.addEventListener("click", () => {
+        setWorkspaceMode("directory", true);
+        requestAnimationFrame(() => {
+          qs("#directorySection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      headEl.querySelector("#tfCompareTop2Btn")?.addEventListener("click", () => {
+        if (list.length >= 2) {
+          state.idA = list[0].id;
+          state.idB = list[1].id;
+          state.threeWay = false;
+          populateH2HSelectors();
+          renderH2H();
+          setWorkspaceMode("directory", true);
+          requestAnimationFrame(() => {
+            qs("#h2hSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+      });
+    }
+
+    if (!list.length) {
+      gridEl.innerHTML = "";
+      return;
+    }
+
+    const slice = list.slice(0, 18);
+    const savedSet = new Set(getActiveShortlistIds());
+
+    gridEl.innerHTML = slice
+      .map((h) => {
+        const o = getOdds(h);
+        const summary = buildHotelQuickSummary(h, o);
+        const priceInfo = getPriceDisplay(h);
+        const isSaved = savedSet.has(h.id);
+        const trackCls = o.scoreTrack === "verified" ? "is-verified-track" : "is-market-track";
+        const thumbUrl = resolveThumb(h.thumbnail);
+        const datedBookingUrl = buildDatedBookingUrl(h.bookingUrl, state.checkin, state.checkout, state.adults);
+        return `
+          <article class="tf-card ${trackCls}">
+            <div class="tf-card-media">
+              <a href="${getSeoHref(h)}">
+                <img src="${escapeHtml(thumbUrl)}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+              </a>
+              <span class="tf-score-badge ${trackCls}">
+                <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong>
+                <small>${o.scoreTrack === "verified" ? "&#9733; Uncharted Verified" : "StayOdds"}</small>
+              </span>
+              <button type="button" class="card-heart-fab shortlist-btn ${isSaved ? "is-saved" : ""}" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="${isSaved ? "true" : "false"}" aria-label="${isSaved ? "Remove from shortlist" : "Save to shortlist"}" title="${isSaved ? "Saved in Shortlist" : "Save to Shortlist"}">${isSaved ? "&#9829;" : "&#9825;"}</button>
+            </div>
+            <div class="tf-card-body">
+              <div class="tf-card-meta">
+                <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
+                ${priceInfo.label ? `<span class="price-chip-indicative">${escapeHtml(priceInfo.label)}</span>` : ""}
+              </div>
+              <h4 class="tf-card-title"><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h4>
+
+              <div class="tf-summary-box">
+                <p class="tf-summary-lead">${escapeHtml(summary.headline)}</p>
+                ${summary.benefit ? `<p class="tf-summary-line is-pro"><strong>&#10003; Why Guests Love It:</strong> ${escapeHtml(summary.benefit.replace(/^Known for:\s*/i, ""))}</p>` : ""}
+                <p class="tf-summary-line"><strong>&#9728;&#65039; Best Weather:</strong> ${escapeHtml(summary.bestMonths.label)} — ${escapeHtml(summary.bestMonths.reason)}</p>
+                ${summary.watchOut ? `<p class="tf-summary-line is-con"><strong>&#9888;&#65039; Heads-Up:</strong> ${escapeHtml(summary.watchOut)}</p>` : ""}
+              </div>
+
+              ${
+                summary.roomTip
+                  ? `<div class="tf-room-box"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</div>`
+                  : ""
+              }
+
+              <div class="tf-card-actions">
+                <a class="btn btn-primary" href="${getSeoHref(h)}" style="font-size:12.5px;padding:7px 12px;">Full Breakdown &rarr;</a>
+                <button type="button" class="btn btn-outline tf-compare-btn" data-tf-compare-id="${escapeHtml(h.id)}" style="font-size:12.5px;padding:7px 11px;">Compare VS</button>
+                <a class="btn btn-outline" href="${escapeHtml(datedBookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" style="font-size:12.5px;padding:7px 11px;">Rates &nearr;</a>
+              </div>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+
+    window.stayOddsShortlist?.syncButtons?.();
+
+    gridEl.querySelectorAll("[data-tf-compare-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const hid = btn.dataset.tfCompareId;
+        if (!hid) return;
+        if (state.idA !== hid) {
+          state.idB = state.idA;
+          state.idA = hid;
+        }
+        populateH2HSelectors();
+        renderH2H();
+        setWorkspaceMode("directory", true);
+        requestAnimationFrame(() => {
+          qs("#h2hSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    });
+  }
+
+  function setWorkspaceMode(mode, updateUrl = false) {
+    const isFinder = mode === "finder";
+    state.workspaceMode = isFinder ? "finder" : "directory";
+
+    const finderSec = qs("#tripFinderSection");
+    const methSec = qs("#methodologySection");
+    const h2hSec = qs("#h2hSection");
+    const dirSec = qs("#directorySection");
+    if (finderSec) finderSec.hidden = !isFinder;
+    if (methSec) methSec.hidden = isFinder;
+    if (h2hSec) h2hSec.hidden = isFinder;
+    if (dirSec) dirSec.hidden = isFinder;
+
+    const tabDir = qs("#modeTabDirectory");
+    const tabFind = qs("#modeTabFinder");
+    if (tabDir) {
+      tabDir.classList.toggle("active", !isFinder);
+      tabDir.setAttribute("aria-selected", !isFinder ? "true" : "false");
+    }
+    if (tabFind) {
+      tabFind.classList.toggle("active", isFinder);
+      tabFind.setAttribute("aria-selected", isFinder ? "true" : "false");
+    }
+
+    qs("#navStayOddsLink")?.classList.toggle("active", !isFinder);
+    qs("#navTripFinderLink")?.classList.toggle("active", isFinder);
+    qs("#hubTabStayOdds")?.classList.toggle("active", !isFinder);
+    qs("#hubTabTripFinder")?.classList.toggle("active", isFinder);
+
+    if (isFinder) {
+      renderTripFinderResults();
+    }
+
+    if (updateUrl) {
+      try {
+        const url = new URL(window.location.href);
+        if (isFinder) url.searchParams.set("mode", "finder");
+        else url.searchParams.delete("mode");
+        window.history.replaceState({}, "", url.toString());
+      } catch (_) {}
+    }
+  }
+
+  document.querySelectorAll("[data-workspace-mode]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setWorkspaceMode(btn.dataset.workspaceMode || "directory", true);
+    });
+  });
+
+  ["#navTripFinderLink", "#mobileTripFinderLink", "#hubTabTripFinder", "#openTripFinderInlineBtn"].forEach((sel) => {
+    qs(sel)?.addEventListener("click", (e) => {
+      e.preventDefault();
+      setWorkspaceMode("finder", true);
+      qs("#mobileNav")?.classList.remove("open");
+      requestAnimationFrame(() => {
+        qs("#workspaceModeBar")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        qs("#smartTripInput")?.focus();
+      });
+    });
+  });
+
+  ["#navStayOddsLink", "#hubTabStayOdds"].forEach((sel) => {
+    qs(sel)?.addEventListener("click", (e) => {
+      if (state.workspaceMode === "finder") {
+        e.preventDefault();
+        setWorkspaceMode("directory", true);
+      }
+    });
+  });
 
   function applySmartTripPrompt(rawText) {
     const inp = qs("#smartTripInput");
@@ -2515,9 +2754,11 @@ async function boot() {
     if (inp && inp.value !== text) inp.value = text;
     if (!text) {
       clearSmartTripBanner();
+      renderTripFinderResults();
       return;
     }
 
+    state.smartPrompt = text;
     const p = parseNaturalTripQuery(text);
     state.scope = "all";
     state.brandFilter = p.brand || null;
@@ -2555,6 +2796,7 @@ async function boot() {
     renderStylePills();
     renderMonthPills();
     renderLeaderboard();
+    renderTripFinderResults();
 
     const matchedCount = state.lastFilteredList ? state.lastFilteredList.length : 0;
     if (clr) clr.hidden = false;
@@ -2607,6 +2849,7 @@ async function boot() {
     renderStylePills();
     renderMonthPills();
     renderLeaderboard();
+    renderTripFinderResults();
   });
   document.querySelectorAll("[data-trip-prompt]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -2770,7 +3013,7 @@ async function boot() {
     const ratedCount = hotels.filter(isFirstHandVerified).length;
     const statEl = qs("#consensusSummaryStat");
     if (statEl) {
-      statEl.textContent = `${hotels.length} Luxury Properties • ${ratedCount} First-Hand Verified`;
+      statEl.textContent = `${hotels.length} Luxury Properties • ${ratedCount} Uncharted Verified`;
     }
 
     const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());
@@ -2789,14 +3032,24 @@ async function boot() {
     renderMonthPills();
     renderLeaderboard();
 
-    if (hadCompareParams) {
-      requestAnimationFrame(() => {
-        qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    } else if (state.brandFilter || state.sharedSavedIds || (matchedRegion && matchedRegion !== "All")) {
-      requestAnimationFrame(() => {
-        qs(".leaderboard-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+    const modeParam = (params.get("mode") || "").toLowerCase();
+    const promptParam = (params.get("prompt") || "").trim();
+    if (modeParam === "finder" || promptParam) {
+      setWorkspaceMode("finder", false);
+      if (promptParam) {
+        applySmartTripPrompt(promptParam);
+      }
+    } else {
+      setWorkspaceMode("directory", false);
+      if (hadCompareParams) {
+        requestAnimationFrame(() => {
+          qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      } else if (state.brandFilter || state.sharedSavedIds || (matchedRegion && matchedRegion !== "All")) {
+        requestAnimationFrame(() => {
+          qs(".leaderboard-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
     }
   } catch (err) {
     const el = qs("#consensusList");

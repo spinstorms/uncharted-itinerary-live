@@ -16,18 +16,18 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
   <meta property="og:description" content="Personally curated luxury hotel comparisons separating First-Hand Verified stays from our Global Directory." />
-  <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v4_bright_og_hero_1200x630.png" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v5_og_hero_1200x630.png" />
   <meta property="og:url" content="https://uncharteditinerary.com/compare/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
-  <meta name="twitter:description" content="Transparent luxury hotel score comparison: First-Hand Verified stays, sourced critics, and live verified guest ratings." />
-  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v4_bright_og_hero_1200x630.png" />
+  <meta name="twitter:description" content="Transparent luxury hotel score comparison: Uncharted Verified stays, sourced critics, and live verified guest ratings." />
+  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v5_og_hero_1200x630.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "StayOdds: Hotel Score Compare",
-    "description": "Transparent confidence-weighted luxury hotel comparison separating First-Hand Verified reviews from the Global Directory.",
+    "description": "Transparent confidence-weighted luxury hotel comparison separating Uncharted Verified reviews from the Global Directory.",
     "publisher": {
       "@type": "Organization",
       "name": "The Uncharted Itinerary",
@@ -42,7 +42,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=42" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=43" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -72,7 +72,8 @@
       </div>
 
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="./" class="active">StayOdds</a>
+        <a href="./" class="active" id="navStayOddsLink">StayOdds</a>
+        <a href="./?mode=finder" class="nav-finder-link" id="navTripFinderLink">&#10024; Trip Finder</a>
         <a href="../hotels/">Hotel Map</a>
         <a href="../brands/">Brands</a>
         <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
@@ -91,6 +92,7 @@
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="./" class="active">StayOdds.</a>
+      <a href="./?mode=finder" id="mobileTripFinderLink">&#10024; Trip Finder</a>
       <a href="../hotels/">Hotel Map &amp; Scores</a>
       <a href="../brands/">Brand Leaderboard</a>
       <a href="../">Uncharted Videos &nearr;</a>
@@ -108,10 +110,11 @@
         <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab active" href="./" aria-current="page">
+        <a class="hub-tab active" href="./" id="hubTabStayOdds" aria-current="page">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           StayOdds<span class="stayodds-dot">.</span>
         </a>
+        <a class="hub-tab" href="./?mode=finder" id="hubTabTripFinder">&#10024; Trip Finder</a>
         <a class="hub-tab" href="../hotels/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Hotel Map &amp; Scores
@@ -158,13 +161,13 @@
               <div>
                 <h1 class="page-title"><span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span> — Critics vs Real Guest Reviews</h1>
                 <p class="page-lead">
-                  Personally curated luxury hotel comparisons by <strong>The Uncharted Itinerary</strong>. Every score shows its exact verified sources and transparent weighting — no guessed numbers, and every award, critic, or video review links straight to its source.
+                  The hotel intelligence companion to <strong>The Uncharted Itinerary</strong> YouTube channel. Every score combines verified sources with plain-English summaries, weather windows, and specific rooms to book — zero guessed numbers.
                 </p>
               </div>
             </div>
             <div class="sync-meta">
               <span id="consensusSummaryStat">832 Luxury Properties</span>
-              <strong>36 First-Hand Videos + 796 Global Hotels</strong>
+              <strong>36 Uncharted Videos + 796 Global Hotels</strong>
               <a class="btn btn-outline" href="../hotels/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Explore All 832 on World Map &rarr;</a>
             </div>
           </div>
@@ -172,14 +175,67 @@
       </div>
     </section>
 
+    <!-- Top-Level 2-Mode Workspace Switcher: Compare & Directory vs Dedicated Trip Finder -->
+    <section class="workspace-mode-section" id="workspaceModeBar">
+      <div class="container">
+        <div class="workspace-mode-tabs" role="tablist" aria-label="Choose how you want to explore StayOdds">
+          <button type="button" class="workspace-mode-tab active" id="modeTabDirectory" role="tab" aria-selected="true" data-workspace-mode="directory">
+            <span class="wmt-title">&#128202; Compare &amp; Full Directory (832)</span>
+            <span class="wmt-sub">Side-by-side VS, awards, filters &amp; full data</span>
+          </button>
+          <button type="button" class="workspace-mode-tab is-finder" id="modeTabFinder" role="tab" aria-selected="false" data-workspace-mode="finder">
+            <span class="wmt-title">&#10024; Trip Finder — Describe Your Ideal Stay</span>
+            <span class="wmt-sub">Type your dream trip in plain English &amp; get instant summaries</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated, Clutter-Free Natural-Language Trip Finder Panel -->
+    <section class="trip-finder-section" id="tripFinderSection" hidden>
+      <div class="container">
+        <div class="trip-finder-hero-card">
+          <div class="trip-finder-head">
+            <span class="trip-finder-eyebrow">&#10024; StayOdds Trip Finder</span>
+            <h2>Describe Your Perfect Hotel or Trip</h2>
+            <p>No complicated filters needed — tell us where you want to go, when you&rsquo;re travelling, your budget, or the vibe you want. We&rsquo;ll match real verified hotels with plain-English summaries, best weather months, and rooms to book.</p>
+          </div>
+
+          <div class="smart-trip-box is-dedicated" id="smartTripFinderBar">
+            <form class="smart-trip-form" id="smartTripForm" autocomplete="off">
+              <div class="smart-trip-input-wrap">
+                <span class="smart-trip-spark" aria-hidden="true">&#10024;</span>
+                <input type="text" id="smartTripInput" class="smart-trip-input" placeholder="e.g. &ldquo;I want to stay in the Caribbean in sunny weather in January&rdquo; or &ldquo;Canary Islands family resort under £500&rdquo;" aria-label="Describe your ideal hotel trip in plain English" />
+                <button type="button" id="smartTripClearBtn" class="smart-trip-clear" aria-label="Clear smart trip search" hidden>&times;</button>
+              </div>
+              <button type="submit" class="btn btn-primary smart-trip-submit">Find My Hotels</button>
+            </form>
+            <div class="smart-trip-examples" aria-label="Try example trip searches">
+              <span class="smart-trip-ex-label">Popular ideas:</span>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="I want to stay in the Caribbean in sunny weather in January">Sunny Caribbean in January</button>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="Canary Islands winter sun under £500">Canary Islands under &pound;500</button>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="Adults-only island resort in Maldives in February">Adults-only Maldives in Feb</button>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="Top 50 luxury hotels in Japan">Top 50 hotels in Japan</button>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="Family beach resort in Bali in July">Family Bali beach in July</button>
+              <button type="button" class="smart-trip-chip" data-trip-prompt="MICHELIN Key hotels in Italy in May">MICHELIN Keys in Italy (May)</button>
+            </div>
+            <div class="smart-trip-understood" id="smartTripUnderstood" hidden></div>
+          </div>
+
+          <div class="trip-finder-results-head" id="tripFinderResultsHead"></div>
+          <div class="trip-finder-results-grid" id="tripFinderResults"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Compact Expandable Scoring Methodology Bar -->
-    <section class="methodology-section" style="padding:10px 0 6px;">
+    <section class="methodology-section" id="methodologySection" style="padding:10px 0 6px;">
       <div class="container">
         <details class="methodology-compact-bar">
           <summary>
             <span class="meth-summary-left">
-              <span class="meth-badge-verified">&#9733; Founder Verified</span>
-              <strong>70% My Stay + 30% Consensus</strong>
+              <span class="meth-badge-verified">&#9733; Uncharted Verified</span>
+              <strong>70% Uncharted Stay + 30% Consensus</strong>
               <span class="meth-sep">&bull;</span>
               <span class="meth-badge-market">StayOdds</span>
               <span>Global hotels show exact source count (Critics &amp; Guests) &bull; Zero fabricated scores</span>
@@ -190,8 +246,8 @@
             <div class="method-pill is-highlight">
               <strong>70/30</strong>
               <div>
-                <span>&#9733; Founder Verified (Audited Stays)</span>
-                <small>When I personally stay and score a hotel (/25 &times; 4), my verdict drives 70% of StayOdds alongside 30% Guest &amp; Critic Consensus — with an explicit Founder vs. Consensus delta (&#177; pts).</small>
+                <span>&#9733; Uncharted Verified (Filmed Stays)</span>
+                <small>When <strong>The Uncharted Itinerary</strong> personally stays and scores a hotel (/25 &times; 4), our verdict drives 70% of StayOdds alongside 30% Guest &amp; Critic Consensus — with an explicit Uncharted vs. Consensus delta (&#177; pts).</small>
               </div>
             </div>
             <div class="method-pill">
@@ -214,7 +270,7 @@
     </section>
 
     <!-- Interactive Head-to-Head Resort Comparator -->
-    <section class="h2h-section">
+    <section class="h2h-section" id="h2hSection">
       <div class="container">
         <div class="h2h-box">
           <div class="section-header" style="margin-bottom:14px;flex-wrap:wrap;gap:12px;">
@@ -311,40 +367,21 @@
     </section>
 
     <!-- Full StayOdds Global Directory -->
-    <section class="leaderboard-section">
+    <section class="leaderboard-section" id="directorySection">
       <div class="container">
         <div class="section-header" style="flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Solid badges are <strong>&#9733; Founder Verified</strong> (70% My Stay + 30% Consensus); outlined badges show unified <strong>StayOdds %</strong> with exact source counts across 796 global hotels.</p>
+            <p class="section-subtitle">Solid badges are <strong>&#9733; Uncharted Verified</strong> (70% Uncharted Stay + 30% Consensus); outlined badges show unified <strong>StayOdds %</strong> with exact source counts across 796 global hotels.</p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <button type="button" class="btn btn-outline" id="openTripFinderInlineBtn" style="font-size:13px;padding:8px 14px;">&#10024; Open Trip Finder</button>
             <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Leaderboard &rarr;</a>
             <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">&#x2B07; Export CSV</button>
           </div>
         </div>
 
-        <!-- Natural-Language "Describe Your Trip" Smart Finder -->
-        <div class="smart-trip-box" id="smartTripFinderBar">
-          <form class="smart-trip-form" id="smartTripForm" autocomplete="off">
-            <div class="smart-trip-input-wrap">
-              <span class="smart-trip-spark" aria-hidden="true">&#10024;</span>
-              <input type="text" id="smartTripInput" class="smart-trip-input" placeholder="Describe your ideal trip — e.g. &ldquo;I want to stay in the Caribbean in sunny weather in January&rdquo;" aria-label="Describe your ideal hotel trip in plain English" />
-              <button type="button" id="smartTripClearBtn" class="smart-trip-clear" aria-label="Clear smart trip search" hidden>&times;</button>
-            </div>
-            <button type="submit" class="btn btn-primary smart-trip-submit">Find Hotels</button>
-          </form>
-          <div class="smart-trip-examples" aria-label="Try example trip searches">
-            <span class="smart-trip-ex-label">Try asking:</span>
-            <button type="button" class="smart-trip-chip" data-trip-prompt="I want to stay in the Caribbean in sunny weather in January">Sunny Caribbean in January</button>
-            <button type="button" class="smart-trip-chip" data-trip-prompt="Canary Islands winter sun under £500">Canary Islands under &pound;500</button>
-            <button type="button" class="smart-trip-chip" data-trip-prompt="Adults-only island resort in Maldives in February">Adults-only Maldives in Feb</button>
-            <button type="button" class="smart-trip-chip" data-trip-prompt="Top 50 luxury hotels in Japan">Top 50 hotels in Japan</button>
-          </div>
-          <div class="smart-trip-understood" id="smartTripUnderstood" hidden></div>
-        </div>
-
-        <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels, first-hand verified stays, and saved shortlist"></div>
+        <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels, Uncharted Verified stays, and saved shortlist"></div>
 
         <div id="activeBrandBanner" style="display:none;margin-bottom:12px;padding:10px 14px;border-radius:12px;background:#eef2ff;border:1px solid #c7d2fe;color:#312e81;font-size:13.5px;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;"></div>
 
@@ -372,7 +409,7 @@
               <option value="Strong Agreement">Strong Agreement (2+ Sources)</option>
               <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
               <option value="Opinions Differ">Opinions Differ (See Why)</option>
-              <option value="First-Hand Verified">First-Hand Verified</option>
+              <option value="First-Hand Verified">Uncharted Verified</option>
               <option value="1 Data Source">1 Data Source (Single Feed)</option>
               <option value="Award-Winning">Award-Winning</option>
             </select>
@@ -384,19 +421,19 @@
               <option value="1800plus">&pound;1,800+ / night</option>
             </select>
             <select id="consensusSort" class="select-control" aria-label="Sort StayOdds directory">
-              <option value="visited">Sort: Verified Stays First</option>
+              <option value="visited">Sort: Uncharted Videos First</option>
               <option value="odds">Sort: Highest StayOdds %</option>
               <option value="award_50best">Awards: World&rsquo;s 50 Best (#1 &rarr; #100)</option>
               <option value="award_michelin">Awards: MICHELIN Keys (3 &rarr; 1 Key)</option>
               <option value="award_forbes">Awards: Forbes Star Tier (5&#9733; &rarr; Rec.)</option>
-              <option value="gap">Sort: Biggest Founder vs. Consensus Gap</option>
+              <option value="gap">Sort: Biggest Uncharted vs. Consensus Gap</option>
               <option value="price_asc">Sort: Indicative Price (Low &rarr; High)</option>
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
-              <option value="pillar_rooms">Pillar: Best Rooms (My Stay)</option>
-              <option value="pillar_service">Pillar: Best Service (My Stay)</option>
-              <option value="pillar_food">Pillar: Best Food (My Stay)</option>
-              <option value="pillar_grounds">Pillar: Best Vibe (My Stay)</option>
-              <option value="pillar_value">Pillar: Best Value (My Stay)</option>
+              <option value="pillar_rooms">Pillar: Best Rooms (Uncharted Stay)</option>
+              <option value="pillar_service">Pillar: Best Service (Uncharted Stay)</option>
+              <option value="pillar_food">Pillar: Best Food (Uncharted Stay)</option>
+              <option value="pillar_grounds">Pillar: Best Vibe (Uncharted Stay)</option>
+              <option value="pillar_value">Pillar: Best Value (Uncharted Stay)</option>
               <option value="name">Sort: A–Z Name</option>
             </select>
             <div class="more-filters-wrap">
@@ -555,6 +592,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=3" defer></script>
-  <script type="module" src="../assets/compare.js?v=18"></script>
+  <script type="module" src="../assets/compare.js?v=19"></script>
 </body>
 </html>

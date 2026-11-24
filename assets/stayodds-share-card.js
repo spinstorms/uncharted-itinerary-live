@@ -680,7 +680,7 @@ export function buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB) {
     headline = `${winH.name} leads by +${margin}% (${winO.greatStayOdds}% vs ${loseO.greatStayOdds}%)`;
     const reasons = [];
     if (winO.firstHand && winO.personalScoreLabel) {
-      reasons.push(`My Stay ${winO.personalScoreLabel}`);
+      reasons.push(`Uncharted Stay ${winO.personalScoreLabel}`);
     }
     if (winO.critic100 != null) {
       const cSlot = formatCriticSlot(winO);
@@ -749,13 +749,13 @@ export function buildFactualThreeWayVerdict(hotelA, hotelB, hotelC, oddsA, oddsB
         .join(" & ");
       return {
         headline: `Tied at Top: ${tiedNames} (${top.odds.greatStayOdds}% StayOdds)`,
-        detail: `3-Hotel StayOdds split: ${scoreLine}. Compare verified My Stay, Critics/Other, Guests, and Key Facts below.`,
+        detail: `3-Hotel StayOdds split: ${scoreLine}. Compare verified Uncharted Stay, Critics/Other, Guests, and Key Facts below.`,
         winnerSide: "TIE",
       };
     }
     const margin = top.odds.greatStayOdds - second.odds.greatStayOdds;
     const reasons = [];
-    if (top.odds.firstHand && top.odds.personalScoreLabel) reasons.push(`My Stay ${top.odds.personalScoreLabel}`);
+    if (top.odds.firstHand && top.odds.personalScoreLabel) reasons.push(`Uncharted Stay ${top.odds.personalScoreLabel}`);
     if (top.odds.critic100 != null) {
       const cSlot = formatCriticSlot(top.odds);
       reasons.push(`Critics ${cSlot.compact}`);
@@ -819,7 +819,7 @@ export function buildRedditMarkdownThreeWay(hotelA, hotelB, hotelC, oddsA, oddsB
     `| **Location** | ${hotelA.location}, ${hotelA.country} | ${hotelB.location}, ${hotelB.country} | ${hotelC.location}, ${hotelC.country} |`,
     `| **StayOdds %** | ${oddsStr(oddsA)} | ${oddsStr(oddsB)} | ${oddsStr(oddsC)} |`,
     `| **Consensus Badge** | ${oddsA.statusBadge} | ${oddsB.statusBadge} | ${oddsC.statusBadge} |`,
-    `| **My Stay** | ${myStr(oddsA)} | ${myStr(oddsB)} | ${myStr(oddsC)} |`,
+    `| **Uncharted Stay** | ${myStr(oddsA)} | ${myStr(oddsB)} | ${myStr(oddsC)} |`,
     `| **Critics / Other Reviews** | ${criticStr(oddsA)} | ${criticStr(oddsB)} | ${criticStr(oddsC)} |`,
     `| **Verified Guests** | ${guestStr(oddsA)} | ${guestStr(oddsB)} | ${guestStr(oddsC)} |`,
     `| **Opinion Gap** | ${oddsA.opinionGap.deltaLabel} | ${oddsB.opinionGap.deltaLabel} | ${oddsC.opinionGap.deltaLabel} |`,
@@ -860,7 +860,7 @@ export function buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB) {
     `| **Location** | ${hotelA.location}, ${hotelA.country} | ${hotelB.location}, ${hotelB.country} |`,
     `| **StayOdds %** | ${oddsStr(oddsA)} | ${oddsStr(oddsB)} |`,
     `| **Consensus Badge** | ${oddsA.statusBadge} | ${oddsB.statusBadge} |`,
-    `| **My Stay** | ${myStr(hotelA, oddsA)} | ${myStr(hotelB, oddsB)} |`,
+    `| **Uncharted Stay** | ${myStr(hotelA, oddsA)} | ${myStr(hotelB, oddsB)} |`,
     `| **Critics / Other Reviews** | ${criticStr(oddsA)} | ${criticStr(oddsB)} |`,
     `| **Verified Guests** | ${guestStr(oddsA)} | ${guestStr(oddsB)} |`,
     `| **Opinion Gap** | ${oddsA.opinionGap.deltaLabel} | ${oddsB.opinionGap.deltaLabel} |`,
@@ -883,7 +883,7 @@ export function buildRedditMarkdownSingle(hotel, odds) {
     `| :--- | :--- |`,
     `| **StayOdds %** | ${odds.greatStayOdds != null ? `**${odds.greatStayOdds}%**` : "Open Breakdown"} |`,
     `| **Status Badge** | ${odds.statusBadge} (${odds.tierLabel}) |`,
-    `| **My Stay** | ${odds.personalScoreLabel || (odds.visited ? "Filmed (Unscored)" : "Not Visited")} |`,
+    `| **Uncharted Stay** | ${odds.personalScoreLabel || (odds.visited ? "Filmed (Unscored)" : "Not Visited")} |`,
     `| **Critics / Other Reviews** | ${formatCriticSlot(odds).full} |`,
     `| **Verified Guests** | ${odds.verifiedGuest ? `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}` : "Live Google on page"} |`,
     `| **Opinion Gap** | ${odds.opinionGap.deltaLabel} — ${odds.opinionGap.headline} |`,
@@ -1076,36 +1076,48 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
     const borderCol = isWin ? accent : "rgba(255,255,255,0.12)";
     fillRoundRect(ctx, x, y, w, h, 26, "rgba(15, 29, 50, 0.88)", borderCol, isWin ? 2.5 : 1.5);
 
-    // Side & Tier badges
-    const p = 24;
-    fillRoundRect(ctx, x + p, y + p, 108, 30, 15, side === "A" ? "rgba(255,93,34,0.22)" : "rgba(20,184,166,0.22)");
-    ctx.font = `800 14px ${FONT_STACK}`;
-    ctx.fillStyle = side === "A" ? "#FF8B5E" : "#5EEAD4";
-    ctx.fillText(`HOTEL ${side}${isWin ? " ★" : ""}`, x + p + 14, y + p + 20);
+    // Side & Tier badges + Top-Right Score Box (zero collision layout)
+    const p = 22;
+    const scoreW = isStory ? 124 : 112;
+    const scoreH = isStory ? 64 : 58;
+    const scoreX = x + w - p - scoreW;
+    const scoreY = y + p - 2;
 
-    ctx.font = `700 13px ${FONT_STACK}`;
+    fillRoundRect(ctx, x + p, y + p, 108, 28, 14, side === "A" ? "rgba(255,93,34,0.22)" : "rgba(20,184,166,0.22)");
+    ctx.font = `800 13.5px ${FONT_STACK}`;
+    ctx.fillStyle = side === "A" ? "#FF8B5E" : "#5EEAD4";
+    ctx.fillText(`HOTEL ${side}${isWin ? " ★" : ""}`, x + p + 14, y + p + 19);
+
+    ctx.font = `700 12px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
-    ctx.fillText(odds.statusBadge.toUpperCase(), x + p + 122, y + p + 20);
+    if (isStory) {
+      drawWrappedText(ctx, odds.statusBadge.toUpperCase(), x + p + 120, y + p + 19, Math.max(120, scoreX - (x + p + 132)), 16, 1);
+    } else {
+      // On 1:1 columns, stack status cleanly BELOW HOTEL A/B pill so it NEVER touches the score % box
+      drawWrappedText(ctx, odds.statusBadge.toUpperCase(), x + p + 2, y + p + 47, Math.max(120, scoreX - (x + p + 14)), 15, 1);
+    }
 
     // Score pill top-right
     const scoreText = odds.greatStayOdds != null ? `${odds.greatStayOdds}%` : "OPEN";
-    fillRoundRect(ctx, x + w - p - 122, y + p - 4, 122, 66, 18, "rgba(7,19,35,0.92)", accent, 2);
-    ctx.font = `800 32px ${FONT_STACK}`;
+    fillRoundRect(ctx, scoreX, scoreY, scoreW, scoreH, 16, "rgba(7,19,35,0.92)", accent, 2);
+    ctx.font = `800 ${isStory ? 31 : 28}px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
     const sw = ctx.measureText(scoreText).width;
-    ctx.fillText(scoreText, x + w - p - 61 - sw / 2, y + p + 34);
-    ctx.font = `700 11px ${FONT_STACK}`;
+    ctx.fillText(scoreText, scoreX + scoreW / 2 - sw / 2, scoreY + (isStory ? 36 : 33));
+    ctx.font = `700 10.5px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     const lbl = "STAYODDS";
-    ctx.fillText(lbl, x + w - p - 61 - ctx.measureText(lbl).width / 2, y + p + 52);
+    ctx.fillText(lbl, scoreX + scoreW / 2 - ctx.measureText(lbl).width / 2, scoreY + (isStory ? 54 : 50));
 
-    // Hotel Name & Location
-    ctx.font = `800 ${isStory ? 31 : 25}px ${FONT_STACK}`;
+    // Hotel Name & Location (always below the score box on 1:1 so long titles never collide)
+    const nameY = isStory ? y + p + 68 : y + p + 84;
+    const nameMaxW = isStory ? w - p * 2 - scoreW - 18 : w - p * 2;
+    ctx.font = `800 ${isStory ? 30 : 23}px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    const nameLines = drawWrappedText(ctx, hotel.name, x + p, y + p + 68, w - p * 2 - 134, isStory ? 36 : 30, 2);
+    const nameLines = drawWrappedText(ctx, hotel.name, x + p, nameY, nameMaxW, isStory ? 35 : 27, 2);
 
-    const locY = y + p + 68 + nameLines * (isStory ? 34 : 28) + 2;
-    ctx.font = `500 ${isStory ? 19 : 16}px ${FONT_STACK}`;
+    const locY = nameY + nameLines * (isStory ? 34 : 26) + 2;
+    ctx.font = `500 ${isStory ? 18.5 : 15}px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     drawWrappedText(
       ctx,
@@ -1113,25 +1125,25 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
       x + p,
       locY,
       w - p * 2,
-      22,
+      20,
       1
     );
 
     // Score Progress Bar
-    const barY = locY + (isStory ? 26 : 20);
+    const barY = locY + (isStory ? 24 : 16);
     const barW = w - p * 2;
-    fillRoundRect(ctx, x + p, barY, barW, 12, 6, "rgba(255,255,255,0.09)");
+    fillRoundRect(ctx, x + p, barY, barW, 11, 5.5, "rgba(255,255,255,0.09)");
     if (odds.greatStayOdds != null) {
-      fillRoundRect(ctx, x + p, barY, Math.max(24, (barW * odds.greatStayOdds) / 100), 12, 6, accent);
+      fillRoundRect(ctx, x + p, barY, Math.max(24, (barW * odds.greatStayOdds) / 100), 11, 5.5, accent);
     }
 
-    // Verified 4-Slot Pillars (My Stay | Critics / Other | Guests | Opinion Gap)
+    // Verified 4-Slot Pillars (Uncharted Stay | Critics / Other | Guests | Opinion Gap)
     const criticInfo = formatCriticSlot(odds);
     const pillars = [
       {
-        label: "MY STAY",
+        label: "UNCHARTED STAY",
         val: odds.personalScoreLabel ? odds.personalScoreLabel.replace(/ /g, "") : odds.visited ? "Filmed" : "—",
-        sub: odds.personalScoreLabel ? "First-hand" : odds.visited ? "Unscored" : "Not stayed",
+        sub: odds.personalScoreLabel ? "YouTube Review" : odds.visited ? "Unscored" : "Not stayed",
       },
       {
         label: "CRITICS / OTHER",
@@ -1150,48 +1162,48 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
       },
     ];
 
-    const boxY = barY + (isStory ? 24 : 18);
+    const boxY = barY + (isStory ? 22 : 16);
     let afterBoxesY;
     if (isStory) {
       // Wide 9:16 Story panel -> crisp 4-column horizontal row
-      const boxH = 92;
+      const boxH = 90;
       const gap = 10;
       const boxW = (barW - gap * 3) / 4;
       pillars.forEach((pl, idx) => {
         const bx = x + p + idx * (boxW + gap);
         fillRoundRect(ctx, bx, boxY, boxW, boxH, 14, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.09)", 1);
-        ctx.font = `700 11.5px ${FONT_STACK}`;
+        ctx.font = `700 11px ${FONT_STACK}`;
         ctx.fillStyle = "#94A3B8";
-        ctx.fillText(pl.label, bx + 12, boxY + 23);
+        ctx.fillText(pl.label, bx + 12, boxY + 22);
         ctx.font = `800 22px ${FONT_STACK}`;
         ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
-        drawWrappedText(ctx, pl.val, bx + 12, boxY + 55, boxW - 22, 24, 1);
+        drawWrappedText(ctx, pl.val, bx + 12, boxY + 54, boxW - 22, 24, 1);
         ctx.font = `600 12px ${FONT_STACK}`;
         ctx.fillStyle = "#94A3B8";
-        drawWrappedText(ctx, pl.sub, bx + 12, boxY + 78, boxW - 22, 16, 1);
+        drawWrappedText(ctx, pl.sub, bx + 12, boxY + 76, boxW - 22, 16, 1);
       });
       afterBoxesY = boxY + boxH;
     } else {
       // 1:1 side-by-side column -> generous 2x2 grid so all 4 labels & scores never clip
       const gapX = 10;
-      const gapY = 10;
+      const gapY = 9;
       const boxW = (barW - gapX) / 2;
-      const boxH = 66;
+      const boxH = 62;
       pillars.forEach((pl, idx) => {
         const col = idx % 2;
         const row = Math.floor(idx / 2);
         const bx = x + p + col * (boxW + gapX);
         const by = boxY + row * (boxH + gapY);
         fillRoundRect(ctx, bx, by, boxW, boxH, 12, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.09)", 1);
-        ctx.font = `700 11px ${FONT_STACK}`;
+        ctx.font = `700 10.5px ${FONT_STACK}`;
         ctx.fillStyle = "#94A3B8";
-        ctx.fillText(pl.label, bx + 11, by + 20);
-        ctx.font = `800 18px ${FONT_STACK}`;
+        ctx.fillText(pl.label, bx + 10, by + 18);
+        ctx.font = `800 17.5px ${FONT_STACK}`;
         ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
-        drawWrappedText(ctx, pl.val, bx + 11, by + 44, boxW - 20, 20, 1);
-        ctx.font = `600 11px ${FONT_STACK}`;
+        drawWrappedText(ctx, pl.val, bx + 10, by + 41, boxW - 18, 20, 1);
+        ctx.font = `600 10.5px ${FONT_STACK}`;
         ctx.fillStyle = "#94A3B8";
-        drawWrappedText(ctx, pl.sub, bx + 11, by + 59, boxW - 20, 14, 1);
+        drawWrappedText(ctx, pl.sub, bx + 10, by + 56, boxW - 18, 13, 1);
       });
       afterBoxesY = boxY + boxH * 2 + gapY;
     }
@@ -1199,15 +1211,15 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
     // Property Status & Works Strip
     const st = getPropertyStatusMeta(hotel);
     const stCol = statusPillColors(st.tone);
-    const stY = afterBoxesY + (isStory ? 20 : 14);
-    const stH = isStory ? 84 : 68;
+    const stY = afterBoxesY + (isStory ? 18 : 12);
+    const stH = isStory ? 84 : 64;
     fillRoundRect(ctx, x + p, stY, barW, stH, 14, stCol.bg, stCol.border, 1.2);
-    ctx.font = `800 12px ${FONT_STACK}`;
+    ctx.font = `800 11.5px ${FONT_STACK}`;
     ctx.fillStyle = stCol.fg;
-    ctx.fillText(`STATUS & WORKS • ${st.badge.toUpperCase()}`, x + p + 14, stY + 22);
-    ctx.font = `500 ${isStory ? 17 : 13.5}px ${FONT_STACK}`;
+    ctx.fillText(`STATUS & WORKS • ${st.badge.toUpperCase()}`, x + p + 12, stY + 20);
+    ctx.font = `500 ${isStory ? 17 : 13}px ${FONT_STACK}`;
     ctx.fillStyle = "#F1F5F9";
-    drawWrappedText(ctx, st.shortSummary, x + p + 14, stY + 44, barW - 28, isStory ? 22 : 17, 2);
+    drawWrappedText(ctx, st.shortSummary, x + p + 12, stY + 41, barW - 24, isStory ? 22 : 16, 2);
 
     // Bottom Section: Verified Key Facts + Real Local Hotel Photo (fills card cleanly with zero dead space)
     const facts = extractTopKeyFacts(hotel, odds, isStory ? 3 : 2);
@@ -1259,29 +1271,30 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
         drawWrappedText(ctx, hotel.watchOut, textX + wlw, fy + 4, Math.max(120, textW - wlw), 20, 2);
       }
     } else {
-      // 1:1 Feed bottom: Compact Key Facts + Exact 16:9 Rounded Hotel Photo (zero YouTube thumbnail cropping!)
-      const photoW = imgObj ? 336 : 0;
-      const photoH = imgObj ? 189 : 0; // exact 16:9 matching 800x450 WebP & 1920x1080 YouTube thumbnails
+      // 1:1 Feed bottom: Compact Key Facts + Exact 16:9 Rounded Hotel Photo (zero overlap!)
+      const photoW = imgObj ? 320 : 0;
+      const photoH = imgObj ? 180 : 0; // exact 16:9
       const photoX = x + p + Math.round((barW - photoW) / 2);
       const photoY = y + h - 16 - photoH;
-      let fy = stY + stH + 16;
-      ctx.font = `800 11.5px ${FONT_STACK}`;
-      ctx.fillStyle = "#94A3B8";
-      ctx.fillText("VERIFIED KEY FACTS", x + p, fy);
-      fy += 18;
-
+      let fy = stY + stH + 15;
       const maxFactY = imgObj ? photoY - 10 : y + h - 24;
-      facts.forEach((f) => {
-        if (fy > maxFactY - 12) return;
-        ctx.font = `700 13px ${FONT_STACK}`;
-        ctx.fillStyle = accent;
-        ctx.fillText(`• ${f.label}:`, x + p, fy);
-        const lw = ctx.measureText(`• ${f.label}: `).width;
-        ctx.font = `500 13px ${FONT_STACK}`;
-        ctx.fillStyle = "#E2E8F0";
-        const used = drawWrappedText(ctx, f.value, x + p + lw, fy, Math.max(100, barW - lw), 16, 1);
-        fy += used * 16 + 5;
-      });
+      if (fy < maxFactY - 12) {
+        ctx.font = `800 11px ${FONT_STACK}`;
+        ctx.fillStyle = "#94A3B8";
+        ctx.fillText("VERIFIED KEY FACTS", x + p, fy);
+        fy += 17;
+        facts.forEach((f) => {
+          if (fy > maxFactY - 6) return;
+          ctx.font = `700 12.5px ${FONT_STACK}`;
+          ctx.fillStyle = accent;
+          ctx.fillText(`• ${f.label}:`, x + p, fy);
+          const lw = ctx.measureText(`• ${f.label}: `).width;
+          ctx.font = `500 12.5px ${FONT_STACK}`;
+          ctx.fillStyle = "#E2E8F0";
+          const used = drawWrappedText(ctx, f.value, x + p + lw, fy, Math.max(100, barW - lw), 15, 1);
+          fy += used * 15 + 5;
+        });
+      }
 
       if (imgObj) {
         drawRoundedImageCover(ctx, imgObj, photoX, photoY, photoW, photoH, 14, "rgba(255,255,255,0.18)", awardLine, getYouTubeVideoBadge(hotel));
@@ -1341,11 +1354,11 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
     drawHotelPanel(hotelA, oddsA, "A", padX, cardY, colW, cardH);
     drawHotelPanel(hotelB, oddsB, "B", padX + colW + colGap, cardY, colW, cardH);
 
-    // Center VS badge overlapping columns
-    fillRoundRect(ctx, W / 2 - 34, cardY + 22, 68, 40, 20, "#FF5D22", "#071323", 4);
-    ctx.font = `800 19px ${FONT_STACK}`;
+    // Center VS badge placed cleanly on the top seam between cards (never overlaps score % or HOTEL B pill!)
+    fillRoundRect(ctx, W / 2 - 30, cardY - 20, 60, 36, 18, "#FF5D22", "#071323", 4);
+    ctx.font = `800 17px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("VS", W / 2 - ctx.measureText("VS").width / 2, cardY + 49);
+    ctx.fillText("VS", W / 2 - ctx.measureText("VS").width / 2, cardY + 4);
 
     // Compact 1:1 Footer
     const footY = 974;
@@ -1370,62 +1383,70 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
 
   drawCardBackground(ctx, W, H);
   const padX = 60;
-  drawHeaderBrand(ctx, W, padX, isStory ? 104 : 88, odds.tierLabel.toUpperCase());
+  drawHeaderBrand(ctx, W, padX, isStory ? 104 : 84, odds.tierLabel.toUpperCase());
 
   const deepLink = buildSingleDeepLink(hotel);
   const st = getPropertyStatusMeta(hotel);
   const stCol = statusPillColors(st.tone);
 
-  // Main Hero Panel
-  const heroY = isStory ? 156 : 136;
-  const heroH = isStory ? 356 : 268;
+  // Main Hero Panel (generous height on 1:1 so 2-line titles + location NEVER collide with pillar boxes)
+  const heroY = isStory ? 156 : 132;
+  const heroH = isStory ? 364 : 302;
   fillRoundRect(ctx, padX, heroY, W - padX * 2, heroH, 28, "rgba(15, 29, 50, 0.9)", "rgba(255,93,34,0.4)", 2);
 
-  // Status badge pill
-  fillRoundRect(ctx, padX + 30, heroY + 28, 240, 34, 17, "rgba(255,93,34,0.18)");
-  ctx.font = `800 14px ${FONT_STACK}`;
-  ctx.fillStyle = "#FF8B5E";
-  ctx.fillText(odds.statusBadge.toUpperCase(), padX + 46, heroY + 50);
-
   // Big StayOdds score box top-right
+  const scoreBoxW = 176;
+  const scoreBoxH = isStory ? 124 : 112;
+  const scoreBoxX = W - padX - 28 - scoreBoxW;
+  const scoreBoxY = heroY + 24;
   const scoreTxt = odds.greatStayOdds != null ? `${odds.greatStayOdds}%` : "OPEN";
-  fillRoundRect(ctx, W - padX - 210, heroY + 28, 180, 126, 24, "#071323", "#FF5D22", 2.5);
-  ctx.font = `800 54px ${FONT_STACK}`;
+  fillRoundRect(ctx, scoreBoxX, scoreBoxY, scoreBoxW, scoreBoxH, 22, "#071323", "#FF5D22", 2.5);
+  ctx.font = `800 ${isStory ? 52 : 48}px ${FONT_STACK}`;
   ctx.fillStyle = "#FFFFFF";
-  ctx.fillText(scoreTxt, W - padX - 120 - ctx.measureText(scoreTxt).width / 2, heroY + 96);
-  ctx.font = `800 14px ${FONT_STACK}`;
+  ctx.fillText(scoreTxt, scoreBoxX + scoreBoxW / 2 - ctx.measureText(scoreTxt).width / 2, scoreBoxY + (isStory ? 68 : 62));
+  ctx.font = `800 13.5px ${FONT_STACK}`;
   ctx.fillStyle = "#FF8B5E";
   const subLbl = "STAYODDS";
-  ctx.fillText(subLbl, W - padX - 120 - ctx.measureText(subLbl).width / 2, heroY + 128);
+  ctx.fillText(subLbl, scoreBoxX + scoreBoxW / 2 - ctx.measureText(subLbl).width / 2, scoreBoxY + (isStory ? 98 : 92));
 
-  // Title & Location
-  ctx.font = `800 ${isStory ? 46 : 38}px ${FONT_STACK}`;
+  // Status badge pill (sized dynamically, capped safely left of score box)
+  const badgeUpper = odds.statusBadge.toUpperCase();
+  ctx.font = `800 13.5px ${FONT_STACK}`;
+  const badgeMaxW = scoreBoxX - (padX + 46);
+  const badgeW = Math.min(badgeMaxW, Math.max(160, ctx.measureText(badgeUpper).width + 34));
+  fillRoundRect(ctx, padX + 28, heroY + 24, badgeW, 32, 16, "rgba(255,93,34,0.18)");
+  ctx.fillStyle = "#FF8B5E";
+  drawWrappedText(ctx, badgeUpper, padX + 44, heroY + 45, badgeW - 30, 18, 1);
+
+  // Title & Location (kept strictly left of scoreBoxX and well above pillar boxes)
+  const leftMaxW = scoreBoxX - (padX + 28) - 22;
+  ctx.font = `800 ${isStory ? 44 : 34}px ${FONT_STACK}`;
   ctx.fillStyle = "#FFFFFF";
-  const nLines = drawWrappedText(ctx, hotel.name, padX + 30, heroY + 112, W - padX * 2 - 240, isStory ? 54 : 44, 2);
+  const nLines = drawWrappedText(ctx, hotel.name, padX + 28, heroY + (isStory ? 104 : 94), leftMaxW, isStory ? 50 : 40, 2);
 
-  ctx.font = `600 ${isStory ? 23 : 20}px ${FONT_STACK}`;
+  ctx.font = `600 ${isStory ? 22 : 18.5}px ${FONT_STACK}`;
   ctx.fillStyle = "#94A3B8";
   drawWrappedText(
     ctx,
     `${hotel.location}, ${hotel.country}${hotel.brand ? ` • ${hotel.brand}` : ""}${hotel.priceRange ? ` • ${hotel.priceRange}` : ""}`,
-    padX + 30,
-    heroY + 118 + nLines * (isStory ? 50 : 42),
-    W - padX * 2 - 240,
-    28,
-    2
+    padX + 28,
+    heroY + (isStory ? 110 : 98) + nLines * (isStory ? 48 : 38),
+    leftMaxW,
+    24,
+    1
   );
 
-  // 4 Pillars inside hero bottom (My Stay | Critics / Other | Guests | Opinion Gap)
+  // 4 Pillars inside hero bottom (Uncharted Stay | Critics / Other | Guests | Opinion Gap)
   const criticInfo = formatCriticSlot(odds);
-  const pH = isStory ? 96 : 80;
-  const pY = heroY + heroH - pH - 22;
+  const pH = isStory ? 94 : 78;
+  const pY = heroY + heroH - pH - 20;
   const pGap = 12;
-  const pW = (W - padX * 2 - 60 - pGap * 3) / 4;
+  const pW = (W - padX * 2 - 56 - pGap * 3) / 4;
   const pillars = [
     {
-      label: "MY STAY",
+      label: "UNCHARTED STAY",
       val: odds.personalScoreLabel ? odds.personalScoreLabel.replace(/ /g, "") : odds.visited ? "Filmed" : "—",
-      sub: odds.personalScoreLabel ? "First-hand" : odds.visited ? "Unscored" : "Not stayed",
+      sub: odds.personalScoreLabel ? "YouTube Review" : odds.visited ? "Unscored" : "Not stayed",
     },
     {
       label: "CRITICS / OTHER",
@@ -1444,55 +1465,55 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     },
   ];
   pillars.forEach((pl, idx) => {
-    const bx = padX + 30 + idx * (pW + pGap);
+    const bx = padX + 28 + idx * (pW + pGap);
     fillRoundRect(ctx, bx, pY, pW, pH, 16, "rgba(255,255,255,0.05)", "rgba(255,255,255,0.1)", 1);
-    ctx.font = `700 11.5px ${FONT_STACK}`;
+    ctx.font = `700 11px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
-    ctx.fillText(pl.label, bx + 14, pY + 23);
-    ctx.font = `800 ${isStory ? 23 : 20}px ${FONT_STACK}`;
+    ctx.fillText(pl.label, bx + 13, pY + 22);
+    ctx.font = `800 ${isStory ? 23 : 19.5}px ${FONT_STACK}`;
     ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
-    drawWrappedText(ctx, pl.val, bx + 14, pY + (isStory ? 57 : 50), pW - 24, 24, 1);
-    ctx.font = `600 12px ${FONT_STACK}`;
+    drawWrappedText(ctx, pl.val, bx + 13, pY + (isStory ? 55 : 49), pW - 22, 24, 1);
+    ctx.font = `600 11.5px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
-    drawWrappedText(ctx, pl.sub, bx + 14, pY + (isStory ? 80 : 70), pW - 24, 16, 1);
+    drawWrappedText(ctx, pl.sub, bx + 13, pY + (isStory ? 78 : 68), pW - 22, 15, 1);
   });
 
   // Opinion Gap Box
-  const ogY = heroY + heroH + (isStory ? 28 : 20);
-  const ogH = isStory ? 176 : 128;
+  const ogY = heroY + heroH + (isStory ? 26 : 16);
+  const ogH = isStory ? 172 : 114;
   fillRoundRect(ctx, padX, ogY, W - padX * 2, ogH, 24, "rgba(20, 184, 166, 0.1)", "rgba(45, 212, 191, 0.35)", 1.5);
-  ctx.font = `800 14px ${FONT_STACK}`;
+  ctx.font = `800 13.5px ${FONT_STACK}`;
   ctx.fillStyle = "#5EEAD4";
-  ctx.fillText(`OPINION GAP • ${odds.opinionGap.title.toUpperCase()}`, padX + 28, ogY + 34);
+  drawWrappedText(ctx, `OPINION GAP • ${odds.opinionGap.title.toUpperCase()}`, padX + 28, ogY + 32, W - padX * 2 - 220, 18, 1);
 
-  fillRoundRect(ctx, W - padX - 178, ogY + 20, 150, 44, 14, "#071323", "#14B8A6", 1.5);
-  ctx.font = `800 22px ${FONT_STACK}`;
+  fillRoundRect(ctx, W - padX - 178, ogY + 18, 150, 42, 14, "#071323", "#14B8A6", 1.5);
+  ctx.font = `800 21px ${FONT_STACK}`;
   ctx.fillStyle = "#5EEAD4";
   const dTxt = odds.opinionGap.deltaLabel || "—";
-  ctx.fillText(dTxt, W - padX - 103 - ctx.measureText(dTxt).width / 2, ogY + 50);
+  ctx.fillText(dTxt, W - padX - 103 - ctx.measureText(dTxt).width / 2, ogY + 46);
 
-  ctx.font = `600 ${isStory ? 23 : 19}px ${FONT_STACK}`;
+  ctx.font = `600 ${isStory ? 22 : 18}px ${FONT_STACK}`;
   ctx.fillStyle = "#FFFFFF";
-  drawWrappedText(ctx, odds.opinionGap.headline, padX + 28, ogY + 76, W - padX * 2 - 216, isStory ? 31 : 25, 2);
+  drawWrappedText(ctx, odds.opinionGap.headline, padX + 28, ogY + (isStory ? 74 : 68), W - padX * 2 - 216, isStory ? 30 : 23, 2);
 
   // Property Status & Works Box
-  const stY = ogY + ogH + (isStory ? 28 : 20);
-  const stH = isStory ? 196 : 124;
+  const stY = ogY + ogH + (isStory ? 26 : 16);
+  const stH = isStory ? 192 : 108;
   fillRoundRect(ctx, padX, stY, W - padX * 2, stH, 24, stCol.bg, stCol.border, 1.5);
-  ctx.font = `800 14px ${FONT_STACK}`;
+  ctx.font = `800 13.5px ${FONT_STACK}`;
   ctx.fillStyle = stCol.fg;
-  ctx.fillText(`PROPERTY STATUS & WORKS • ${st.badge.toUpperCase()}`, padX + 28, stY + 34);
-  ctx.font = `600 ${isStory ? 22 : 18}px ${FONT_STACK}`;
+  ctx.fillText(`PROPERTY STATUS & WORKS • ${st.badge.toUpperCase()}`, padX + 28, stY + 31);
+  ctx.font = `600 ${isStory ? 21 : 17}px ${FONT_STACK}`;
   ctx.fillStyle = "#F8FAFC";
-  drawWrappedText(ctx, st.shortSummary, padX + 28, stY + 72, W - padX * 2 - 56, isStory ? 30 : 24, isStory ? 3 : 2);
+  drawWrappedText(ctx, st.shortSummary, padX + 28, stY + 64, W - padX * 2 - 56, isStory ? 29 : 22, isStory ? 3 : 2);
 
   // Key Facts & Highlights Panel (+ Real Local Hotel Photo)
-  const kfY = stY + stH + (isStory ? 24 : 18);
-  const kfH = isStory ? 616 : 254;
+  const kfY = stY + stH + (isStory ? 24 : 16);
+  const kfH = isStory ? 616 : 264;
   fillRoundRect(ctx, padX, kfY, W - padX * 2, kfH, 24, "rgba(15, 29, 50, 0.85)", "rgba(255,255,255,0.1)", 1.5);
-  ctx.font = `800 15px ${FONT_STACK}`;
+  ctx.font = `800 14.5px ${FONT_STACK}`;
   ctx.fillStyle = "#FF8B5E";
-  ctx.fillText("VERIFIED KEY FACTS & PROPERTY SNAPSHOT", padX + 28, kfY + 36);
+  ctx.fillText("VERIFIED KEY FACTS & PROPERTY SNAPSHOT", padX + 28, kfY + 34);
 
   const imgObj = getCachedHotelImg(hotel);
   const awardOverlay =
@@ -1540,7 +1561,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
         ctx,
         imgObj,
         W - padX - 28 - photoW,
-        kfY + 52,
+        kfY + 56,
         photoW,
         photoH,
         16,
@@ -1549,25 +1570,25 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
         getYouTubeVideoBadge(hotel)
       );
     }
-    let fy = kfY + 72;
+    let fy = kfY + 70;
     facts.forEach((f) => {
-      if (fy > kfY + kfH - 40) return;
-      ctx.font = `800 16px ${FONT_STACK}`;
+      if (fy > kfY + kfH - 36) return;
+      ctx.font = `800 15.5px ${FONT_STACK}`;
       ctx.fillStyle = "#5EEAD4";
       ctx.fillText(`${f.label}:`, padX + 28, fy);
       const lw = ctx.measureText(`${f.label}: `).width;
-      ctx.font = `500 16px ${FONT_STACK}`;
+      ctx.font = `500 15.5px ${FONT_STACK}`;
       ctx.fillStyle = "#E2E8F0";
-      const linesUsed = drawWrappedText(ctx, f.value, padX + 28 + lw, fy, Math.max(160, textMaxW - lw), 21, 2);
-      fy += linesUsed * 21 + 10;
+      const linesUsed = drawWrappedText(ctx, f.value, padX + 28 + lw, fy, Math.max(160, textMaxW - lw), 20, 2);
+      fy += linesUsed * 20 + 9;
     });
-    if (hotel.watchOut && fy < kfY + kfH - 42) {
-      ctx.font = `800 15px ${FONT_STACK}`;
+    if (hotel.watchOut && fy < kfY + kfH - 36) {
+      ctx.font = `800 14.5px ${FONT_STACK}`;
       ctx.fillStyle = "#FBBF24";
       ctx.fillText("Watch-Out:", padX + 28, fy + 4);
-      ctx.font = `500 15px ${FONT_STACK}`;
+      ctx.font = `500 14.5px ${FONT_STACK}`;
       ctx.fillStyle = "#E2E8F0";
-      drawWrappedText(ctx, hotel.watchOut, padX + 28, fy + 26, textMaxW, 20, 2);
+      drawWrappedText(ctx, hotel.watchOut, padX + 28, fy + 24, textMaxW, 19, 2);
     }
   }
 
@@ -1586,7 +1607,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     ctx.fillStyle = "#CBD5E1";
     drawWrappedText(
       ctx,
-      "Compare 500+ luxury hotels • Zero fabricated scores • Real verified data only",
+      "Compare 832+ luxury hotels • Zero fabricated scores • Real verified data only",
       padX + 28,
       footY + 134,
       W - padX * 2 - 260,
@@ -1838,9 +1859,9 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
     const criticInfo = formatCriticSlot(odds);
     return [
       {
-        label: "MY STAY",
+        label: "UNCHARTED",
         val: odds.personalScoreLabel ? odds.personalScoreLabel.replace(/ /g, "") : odds.visited ? "Filmed" : "—",
-        sub: odds.personalScoreLabel ? "First-hand" : odds.visited ? "Unscored" : "Not stayed",
+        sub: odds.personalScoreLabel ? "YouTube Review" : odds.visited ? "Unscored" : "Not stayed",
       },
       {
         label: "CRITICS",

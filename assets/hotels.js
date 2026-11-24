@@ -6,7 +6,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=11";
+} from "./stayodds-engine.js?v=12";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
@@ -16,7 +16,7 @@ import {
   matchesBestMonth,
   getGuestProfile,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=4";
+} from "./stayodds-insights.js?v=5";
 
 const PAGE_SIZE = 24;
 const MAP_STATE_KEY = "stayodds_map_state_v1";

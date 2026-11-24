@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=42" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=43" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -73,6 +73,7 @@
 
       <nav class="nav-links" aria-label="Main site navigation">
         <a href="../compare/">StayOdds</a>
+        <a href="../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
         <a href="./" class="active">Hotel Map</a>
         <a href="../brands/">Brands</a>
         <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
@@ -91,6 +92,7 @@
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="../compare/">StayOdds.</a>
+      <a href="../compare/?mode=finder">&#10024; Trip Finder</a>
       <a href="./" class="active">Hotel Map &amp; Scores</a>
       <a href="../brands/">Brand Leaderboard</a>
       <a href="../">Uncharted Videos &nearr;</a>
@@ -112,6 +114,7 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           StayOdds<span class="stayodds-dot">.</span>
         </a>
+        <a class="hub-tab" href="../compare/?mode=finder">&#10024; Trip Finder</a>
         <a class="hub-tab active" href="./" aria-current="page">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Hotel Map (832)
@@ -158,7 +161,7 @@
               <div>
                 <h1 class="page-title">World Luxury Hotel Map — All 832 Hotels</h1>
                 <p class="page-lead">
-                  Explore every hotel in our personally curated StayOdds collection on one interactive map — switch between <strong>All 832 Luxury Hotels</strong> (including Mexico &amp; every Caribbean island), our <strong>36 First-Hand Stays</strong>, <strong>2026 MICHELIN Key</strong> winners, and <strong>The World’s 50 Best Hotels</strong>.
+                  Explore every hotel in our personally curated StayOdds collection on one interactive map — switch between <strong>All 832 Luxury Hotels</strong> (including Canary Islands, Mexico &amp; the Caribbean), our <strong>36 Uncharted Video Stays</strong>, <strong>2026 MICHELIN Key</strong> winners, and <strong>The World’s 50 Best Hotels</strong>.
                 </p>
               </div>
             </div>
@@ -178,7 +181,7 @@
         <div class="map-toolbar">
           <div class="filter-pills" id="regionPills" role="tablist" aria-label="Jump to macro region"></div>
           <div class="map-legend">
-            <span><i class="map-legend-dot" style="background:#ff5d22;"></i>Founder Stays (36)</span>
+            <span><i class="map-legend-dot" style="background:#ff5d22;"></i>Uncharted Videos (36)</span>
             <span><i class="map-legend-dot" style="background:#0f766e;"></i>Global Hotels (796)</span>
             <span><i class="map-legend-dot" style="background:#0f766e;border:2px solid #fbbf24;"></i>2026 MICHELIN Key</span>
             <button type="button" class="map-reset-btn" id="resetMapViewBtn" title="Reset map zoom, position, and filters">&#8634; Reset View</button>
@@ -203,10 +206,10 @@
 
           <div class="scorecard-filters" style="gap:8px;">
             <select id="sortControl" class="select-control" aria-label="Sort hotels">
-              <option value="stayodds">Sort: Verified Stays First</option>
+              <option value="stayodds">Sort: Uncharted Verified First</option>
               <option value="odds">Sort: Highest StayOdds %</option>
-              <option value="gap">Sort: Biggest Founder vs. Consensus Gap</option>
-              <option value="overall">Sort: Highest My Stay (/25)</option>
+              <option value="gap">Sort: Biggest Uncharted vs. Consensus Gap</option>
+              <option value="overall">Sort: Highest Uncharted Stay (/25)</option>
               <option value="awards">Sort: Most Official Awards</option>
               <option value="name">Sort: A &ndash; Z</option>
             </select>
@@ -331,6 +334,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="../assets/stayodds-feedback.js?v=3" defer></script>
-  <script type="module" src="../assets/hotels.js?v=32"></script>
+  <script type="module" src="../assets/hotels.js?v=33"></script>
 </body>
 </html>

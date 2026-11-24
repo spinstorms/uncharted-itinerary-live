@@ -383,11 +383,11 @@ export function computeStayOdds(hotel) {
     sourceBasisShort = "1 source • Critics";
   }
 
-  // LAYER 2: Two-Track Headline Score ("Founder Verified" vs "StayOdds")
+  // LAYER 2: Two-Track Headline Score ("Uncharted Verified" vs "StayOdds")
   const scoreTrack = firstHand && ours100 != null ? "verified" : "market";
   const scoreTrackLabel =
     scoreTrack === "verified"
-      ? "Founder Verified"
+      ? "Uncharted Verified"
       : marketSourceCount >= 2
       ? `StayOdds • ${marketSourceCount} Sources`
       : marketSourceCount === 1
@@ -413,7 +413,7 @@ export function computeStayOdds(hotel) {
     firstHand && ours100 != null && marketOdds != null ? ours100 - marketOdds : null;
   const founderVsMarketLabel =
     founderVsMarketDelta != null
-      ? `${founderVsMarketDelta > 0 ? "+" : ""}${founderVsMarketDelta} pts vs Consensus`
+      ? `Uncharted ${founderVsMarketDelta > 0 ? "+" : ""}${founderVsMarketDelta} pts vs Consensus`
       : null;
 
   if (scoreTrack === "verified") {
@@ -425,15 +425,15 @@ export function computeStayOdds(hotel) {
         critics: critic100 != null && guest100 != null ? 11 : critic100 != null ? 30 : 0,
         guests: critic100 != null && guest100 != null ? 19 : guest100 != null ? 30 : 0,
       };
-      formulaSummary = `70% My Stay (${personalScoreLabel || `${ours100}%`}) • 30% Consensus (${marketOdds}%)`;
-      sourceBasisShort = `My Stay + ${marketSourceCount} source${marketSourceCount === 1 ? "" : "s"}`;
+      formulaSummary = `70% Uncharted Video Stay (${personalScoreLabel || `${ours100}%`}) • 30% Consensus (${marketOdds}%)`;
+      sourceBasisShort = `Uncharted Stay + ${marketSourceCount} source${marketSourceCount === 1 ? "" : "s"}`;
     } else {
       overallIndex = ours100;
       weights = { firstHand: 100, market: 0, critics: 0, guests: 0 };
-      statusBadge = "First-Hand Verified";
+      statusBadge = "Uncharted Video Stay";
       statusTone = "accent";
-      formulaSummary = `100% My First-Hand Stay (${personalScoreLabel || `${ours100}%`})`;
-      sourceBasisShort = "1 source • My Stay";
+      formulaSummary = `100% Uncharted Itinerary Stay (${personalScoreLabel || `${ours100}%`})`;
+      sourceBasisShort = "1 source • Uncharted Video Stay";
     }
   } else {
     overallIndex = marketOdds;
@@ -472,13 +472,13 @@ export function computeStayOdds(hotel) {
     }
   }
 
-  // Dual-Mode Opinion Gap Module ("Founder vs. Consensus" OR "Published Critics vs. Real Guests")
+  // Dual-Mode Opinion Gap Module ("The Uncharted Itinerary vs. Consensus" OR "Published Critics vs. Real Guests")
   const left100 = firstHand ? ours100 : critic100;
   const right100 = firstHand ? marketOdds : guest100;
   const delta100 = left100 != null && right100 != null ? left100 - right100 : null;
 
   let gapHeadline = firstHand
-    ? "My first-hand stay score leads here — open breakdown to compare with live Google reviews."
+    ? "The Uncharted Itinerary's filmed stay score leads here — open breakdown to compare with live Google reviews."
     : unverifiedEditorial.length > 0 && scoredEditorial.length === 0
     ? `${unverifiedEditorial.map((u) => u.sourceName).join(", ")} awards a score (unverified figure — excluded from numeric math).`
     : officialAwards.length > 0
@@ -492,15 +492,15 @@ export function computeStayOdds(hotel) {
       scoredEditorial.length === 1 ? primaryCritic.sourceName : `${scoredEditorial.length} published critics`;
     if (Math.abs(delta100) <= 5) {
       gapHeadline = firstHand
-        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched the wider consensus.`
+        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — The Uncharted Itinerary matched the wider consensus.`
         : `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — ${criticName} and real guests agree.`;
     } else if (delta100 > 5) {
       gapHeadline = firstHand
-        ? `I rated this +${delta100} pts higher than the wider consensus — see what stood out.`
+        ? `The Uncharted Itinerary rated this +${delta100} pts higher than consensus — see what stood out.`
         : `${criticName} rated this +${delta100} pts higher than real guests.`;
     } else {
       gapHeadline = firstHand
-        ? `I rated this ${delta100} pts stricter than the wider consensus — see what held it back.`
+        ? `The Uncharted Itinerary rated this ${delta100} pts stricter than consensus — see what held it back.`
         : `Real guests rated this +${Math.abs(delta100)} pts higher than ${criticName}.`;
     }
   }
@@ -517,9 +517,9 @@ export function computeStayOdds(hotel) {
 
   const opinionGap = {
     mode: firstHand ? "my_vs_market" : "critics_vs_guests",
-    title: firstHand ? "Founder vs. Consensus" : "Published Critics vs. Real Guests",
+    title: firstHand ? "The Uncharted Itinerary vs. Consensus" : "Published Critics vs. Real Guests",
     leftLabel: firstHand
-      ? "My First-Hand Stay"
+      ? "The Uncharted Itinerary (Video Stay)"
       : scoredEditorial.length === 1
       ? primaryCritic.sourceName
       : scoredEditorial.length === 0 && unverifiedEditorial.length === 1
@@ -548,11 +548,11 @@ export function computeStayOdds(hotel) {
   return {
     tier: firstHand ? "first_hand_verified" : visited ? "short_preview" : "global_directory",
     tierLabel: firstHand
-      ? "Founder Verified"
+      ? "Uncharted Verified"
       : isFullUnscored
-      ? "Filmed Stay"
+      ? "Uncharted Video Stay"
       : visited
-      ? "Short Tour"
+      ? "Uncharted Short"
       : "Global Directory",
     scoreTrack,
     scoreTrackLabel,
