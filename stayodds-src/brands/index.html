@@ -24,12 +24,12 @@
   <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v5_og_hero_1200x630.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124e" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124f" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=43" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=44" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -48,29 +48,41 @@
     })();
   </script>
 </head>
-<body>
+<body class="stayodds-warm-canvas">
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
       <div class="brand stayodds-brand-group">
+        <a href="../compare/" class="stayodds-brand-emblem-link" aria-label="StayOdds Home">
+          <img src="../assets/stayodds-logo.png?v=2" alt="SO." width="36" height="36" class="stayodds-header-emblem" />
+        </a>
         <span class="stayodds-brand-stack">
           <a class="stayodds-wordmark-lg" href="../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
           <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
       </div>
 
-      <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../compare/">StayOdds</a>
-        <a href="../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
-        <a href="../hotels/">Hotel Map</a>
-        <a href="./" class="active">Brands</a>
+      <nav class="nav-links stayodds-clean-nav" aria-label="Main site navigation">
+        <a href="../compare/">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><line x1="20.5" y1="20.5" x2="16.35" y2="16.35"/></svg>
+          Discover
+        </a>
+        <a href="../compare/?mode=compare">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.8"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.8"/></svg>
+          Compare
+        </a>
+        <a href="../hotels/">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.75"/></svg>
+          World Map
+        </a>
+        <a href="../brands/" class="active">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg>
+          Brands
+        </a>
         <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
-        <a href="../about/">About</a>
-        <a href="../faq/">FAQ</a>
-        <a href="../contact/">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary" href="../compare/">Compare Hotels</a>
+        <a class="btn btn-outline nav-deals-btn" href="../links/">Deals &amp; Codes</a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -78,58 +90,29 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="../compare/">StayOdds.</a>
-      <a href="../compare/?mode=finder">&#10024; Trip Finder</a>
-      <a href="../hotels/">Hotel Map &amp; Scores</a>
-      <a href="./" class="active">Brand Leaderboard</a>
+      <a href="../compare/">Discover Hotels</a>
+      <a href="../compare/?mode=compare">Compare VS &amp; Directory</a>
+      <a href="../hotels/">Interactive World Map</a>
+      <a href="../brands/" class="active">Brand Leaderboard</a>
+      <a href="../links/">Travel Deals &amp; Codes</a>
       <a href="../">Uncharted Videos &nearr;</a>
-      <a href="../cameras/">Camera Reviews</a>
-      <a href="../links/">Deals &amp; Gear</a>
+      <a href="../about/">About</a>
       <a href="../faq/">FAQ</a>
       <a href="../contact/">Contact</a>
-      <a href="../about/">About</a>
     </nav>
   </header>
 
-  <div class="hub-tabs-bar">
-    <div class="container hub-tabs-inner">
-      <a class="hub-embed-brand" href="../compare/" aria-label="StayOdds Home">
-        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
-      </a>
-      <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab" href="../compare/">StayOdds<span class="stayodds-dot">.</span></a>
-        <a class="hub-tab" href="../compare/?mode=finder">&#10024; Trip Finder</a>
-        <a class="hub-tab" href="../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab active" href="./" aria-current="page">Brand Leaderboard</a>
-        <a class="hub-tab" href="../">Uncharted Videos &nearr;</a>
-        <a class="hub-tab" href="../cameras/">Camera Reviews</a>
-        <a class="hub-tab" href="../links/">Deals &amp; Gear</a>
-        <a class="hub-tab" href="../about/">About</a>
-        <a class="hub-tab" href="../faq/">FAQ</a>
-        <a class="hub-tab" href="../contact/">Contact</a>
-      </nav>
-    </div>
-  </div>
-
   <main>
-    <section class="page-intro">
+    <section class="compare-mode-banner brands-banner">
       <div class="container">
-        <div class="hero-banner-card" style="--hero-bg: url('/assets/banners/seychelles.jpg');" data-hero-rotate="1" data-hero-base="/assets/banners/" data-hero-start="3">
-          <div class="intro-row">
-            <div class="hero-title-group">
-              <img class="hero-emblem" src="../assets/stayodds-logo.png?v=2" alt="StayOdds. Brand Consistency Leaderboard" width="64" height="64" style="border-radius:14px;" />
-              <div>
-                <h1 class="page-title">Luxury Brand Consistency Leaderboard</h1>
-                <p class="page-lead">
-                  Which luxury hotel brands actually deliver every time — and which ones are hit-or-miss? Aggregated strictly from verified StayOdds %, Uncharted Stay scorecards, official MICHELIN Keys, World's 50 Best, Forbes Five-Star awards, and brand preferred-partner programs.
-                </p>
-              </div>
-            </div>
-            <div class="sync-meta">
-              <span id="brandsSummaryStat">Loading Verified Brands…</span>
-              <strong>Zero Fabricated Numbers</strong>
-              <a class="btn btn-outline" href="../compare/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Compare up to 3 Hotels &rarr;</a>
-            </div>
+        <div class="compare-mode-banner-inner">
+          <div>
+            <span class="compare-mode-eyebrow">Brand Consistency Leaderboard</span>
+            <h1 class="compare-mode-title">Which luxury brands deliver every time?</h1>
+            <p class="compare-mode-sub">Aggregated strictly from verified StayOdds %, Uncharted Stay scorecards, official MICHELIN Keys, World&rsquo;s 50 Best and Forbes awards. <span id="brandsSummaryStat">Loading Verified Brands&hellip;</span></p>
+          </div>
+          <div class="compare-mode-actions">
+            <a class="btn btn-primary" href="../compare/?mode=compare">Compare up to 3 Hotels &rarr;</a>
           </div>
         </div>
       </div>
@@ -169,14 +152,75 @@
         </div>
 
         <div class="scope-tabs-bar" id="pillarTabsBar" role="tablist" aria-label="Rank first-hand stays by category pillar">
-          <button type="button" class="scope-pill active" data-pillar="rooms">🛏️ Hard Product (Rooms)</button>
-          <button type="button" class="scope-pill" data-pillar="service">🛎️ Best Service</button>
-          <button type="button" class="scope-pill" data-pillar="food">🍽️ Best Food &amp; Breakfast</button>
-          <button type="button" class="scope-pill" data-pillar="grounds">🌴 Best Vibe &amp; Layout</button>
-          <button type="button" class="scope-pill" data-pillar="value">💎 Best Value</button>
+          <button type="button" class="scope-pill active" data-pillar="rooms">Hard Product (Rooms)</button>
+          <button type="button" class="scope-pill" data-pillar="service">Best Service</button>
+          <button type="button" class="scope-pill" data-pillar="food">Best Food &amp; Breakfast</button>
+          <button type="button" class="scope-pill" data-pillar="grounds">Best Vibe &amp; Layout</button>
+          <button type="button" class="scope-pill" data-pillar="value">Best Value</button>
         </div>
 
         <div class="comparison-table-wrap" id="pillarLeaderboardWrap" style="margin-bottom:44px;"></div>
+      </div>
+    </section>
+    <section class="partner-deals-section" id="partnerDealsStrip" aria-label="Travel perks and booking partners">
+      <div class="container">
+        <div class="partner-deals-card">
+          <div class="partner-deals-head">
+            <div>
+              <span class="partner-deals-eyebrow">Trip Essentials &amp; Verified Booking Partners</span>
+              <h2>Compare Rates, Flights, Tours &amp; Travel Perks</h2>
+              <p>Trusted booking platforms, eSIM discount codes, and hotel points cards we use on trips filmed for The Uncharted Itinerary.</p>
+            </div>
+            <a class="btn btn-outline" href="../links/" style="font-size:13px;padding:8px 14px;">All Deals &amp; Gear &nearr;</a>
+          </div>
+
+          <div class="partner-deals-grid">
+            <a class="partner-deal-tile" href="https://holafly.sjv.io/Tripready" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Unlimited Travel eSIM</span><span class="partner-deal-code">Code: TRIPREADY</span></div>
+              <h3>Holafly Unlimited Data eSIM</h3>
+              <p>Instant data on arrival across 200+ destinations &mdash; 5% off with code <strong>TRIPREADY</strong>.</p>
+              <span class="partner-deal-cta">Claim 5% Discount &nearr;</span>
+            </a>
+            <a class="partner-deal-tile" href="https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&amp;friend-referral-code=OKM2ZH" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Hotel Points Card</span><span class="partner-deal-code">Code: OKM2ZH</span></div>
+              <h3>Marriott Bonvoy Currensea Card</h3>
+              <p>Earn Marriott Bonvoy points on everyday &amp; overseas spending (up to 2,000 bonus pts via referral).</p>
+              <span class="partner-deal-cta">See Referral Offer &nearr;</span>
+            </a>
+            <a class="partner-deal-tile" href="https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Rewards Card (UK)</span><span class="partner-deal-code">Bonus Offer</span></div>
+              <h3>Amex Preferred Rewards Gold</h3>
+              <p>Convert Membership Rewards into airline Avios or hotel points with our UK referral bonus.</p>
+              <span class="partner-deal-cta">View UK Referral &nearr;</span>
+            </a>
+          </div>
+
+          <div class="partner-platforms-bar">
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">Hotel Rates:</span>
+              <a class="partner-platform-pill" href="https://booking.tpx.lu/dddKFSMf" target="_blank" rel="sponsored noopener noreferrer">Booking.com &nearr;</a>
+              <a class="partner-platform-pill" href="https://expedia.tpx.lu/9LHschol" target="_blank" rel="sponsored noopener noreferrer">Expedia &nearr;</a>
+              <a class="partner-platform-pill" href="https://hotels.tpx.lu/2JsCNIZh" target="_blank" rel="sponsored noopener noreferrer">Hotels.com &nearr;</a>
+              <a class="partner-platform-pill" href="https://agoda.tpx.lu/p5JSiiU0" target="_blank" rel="sponsored noopener noreferrer">Agoda &nearr;</a>
+              <a class="partner-platform-pill" href="https://trip.tpx.lu/BbtDtE5w" target="_blank" rel="sponsored noopener noreferrer">Trip.com &nearr;</a>
+            </div>
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">Flights &amp; Tours:</span>
+              <a class="partner-platform-pill" href="https://kiwi.tpx.lu/fDgPG9Ew" target="_blank" rel="sponsored noopener noreferrer">Kiwi.com Flights &nearr;</a>
+              <a class="partner-platform-pill" href="https://getyourguide.tpx.lu/q0UlPSkz" target="_blank" rel="sponsored noopener noreferrer">GetYourGuide &nearr;</a>
+              <a class="partner-platform-pill" href="https://viator.tpx.lu/ByHwSqC5" target="_blank" rel="sponsored noopener noreferrer">Viator &nearr;</a>
+              <a class="partner-platform-pill" href="https://klook.tpx.lu/TsCmTC1L" target="_blank" rel="sponsored noopener noreferrer">Klook Transfers &nearr;</a>
+            </div>
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">eSIMs &amp; FX:</span>
+              <a class="partner-platform-pill" href="https://airalo.tpx.lu/WSdkjcJz" target="_blank" rel="sponsored noopener noreferrer">Airalo eSIM &nearr;</a>
+              <a class="partner-platform-pill" href="https://saily.tpx.lu/bIVFTBvq" target="_blank" rel="sponsored noopener noreferrer">Saily eSIM &nearr;</a>
+              <a class="partner-platform-pill" href="https://wise.com/invite/dic/oliverarrashk" target="_blank" rel="sponsored noopener noreferrer">Wise Travel Card &nearr;</a>
+            </div>
+          </div>
+
+          <p class="partner-deals-disclosure">Affiliate disclosure: Partner links may earn a small commission at zero extra cost to you and never influence StayOdds scores or rankings.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -209,7 +253,7 @@
     </div>
   </footer>
 
-  <script src="../assets/stayodds-feedback.js?v=3" defer></script>
-  <script type="module" src="../assets/brands.js?v=8"></script>
+  <script src="../assets/stayodds-feedback.js?v=4" defer></script>
+  <script type="module" src="../assets/brands.js?v=9"></script>
 </body>
 </html>

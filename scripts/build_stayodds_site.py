@@ -23,6 +23,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from stayodds_chrome import (  # noqa: E402
+    ICO_ALERT,
+    ICO_BED,
+    ICO_CAM,
+    ICO_LINK,
+    ICO_PIN,
+    ICO_SPARK,
+    ICO_TROPHY,
+    header as chrome_header,
+    DETAIL_OTA_STRIP,
+    partner_strip as chrome_partner_strip,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = "https://uncharteditinerary.com"
 
@@ -760,7 +774,7 @@ def render_seo_page(
         for lbl, val in fact_tiles
     )
     red_flags_html = "".join(
-        f'<span class="tag tag-caution">⚠ {esc(rf)}</span>' for rf in (h.get("redFlags") or [])
+        f'<span class="tag tag-caution">{ICO_ALERT} {esc(rf)}</span>' for rf in (h.get("redFlags") or [])
     )
 
     # First-hand 5-axis bars matching exact YouTube video categories (/25 total)
@@ -839,14 +853,14 @@ def render_seo_page(
     )
 
     hero_awards_html = "".join(
-        f'<a class="tag tag-accent" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 {esc(a["label"])} ↗</a>'
+        f'<a class="tag tag-accent" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">{ICO_TROPHY} {esc(a["label"])} ↗</a>'
         for a in o["awards"]
     )
 
     awards_html = "".join(
         f'<article class="channel-row"><div class="channel-row-head"><div>'
         f'<span class="tag tag-accent">{esc(a.get("awardBody") or "Official Award")}</span>'
-        f'<h4><a href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">🏆 {esc(a["label"])} ↗</a></h4>'
+        f'<h4><a href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(a["label"])} ↗</a></h4>'
         f'</div><div class="channel-row-score"><strong>{esc(a.get("year") or "Official")}</strong>'
         f'<span>Official Honour</span></div></div></article>'
         for a in o["awards"]
@@ -1119,7 +1133,7 @@ def render_seo_page(
     if verified_room_tip:
         trip_tiles.append(
             f'<div class="detail-trip-tile is-tip">'
-            f'<span class="detail-trip-kicker">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span>'
+            f'<span class="detail-trip-kicker">{ICO_BED} {esc(verified_room_tip["label"])}</span>'
             f'<strong class="detail-trip-val">{esc(verified_room_tip["text"])}</strong>'
             f'</div>'
         )
@@ -1167,7 +1181,7 @@ def render_seo_page(
         )
     room_summary_html = (
         f'<div class="qs-room-callout">'
-        f'<span class="qs-room-kicker">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span>'
+        f'<span class="qs-room-kicker">{ICO_BED} {esc(verified_room_tip["label"])}</span>'
         f'<p>{esc(verified_room_tip["text"])}</p>'
         f'</div>'
         if verified_room_tip
@@ -1177,7 +1191,7 @@ def render_seo_page(
     top_quick_summary_html = f"""
           <div class="top-quick-summary {'is-uncharted' if o['scoreTrack'] == 'verified' else ''}" aria-label="Quick hotel summary">
             <div class="top-quick-summary-head">
-              <span class="top-quick-summary-eyebrow">&#10024; Quick Summary &bull; The Bottom Line</span>
+              <span class="top-quick-summary-eyebrow">{ICO_SPARK} Quick Summary &bull; The Bottom Line</span>
               <span class="top-quick-summary-jumps">
                 <a href="#opinion-gap">Score Gap &darr;</a>
                 <a href="#key-facts">Specs &amp; Facts &darr;</a>
@@ -1293,7 +1307,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=43" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=44" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1312,53 +1326,11 @@ def render_seo_page(
     }})();
   </script>
 </head>
-<body>
-  <header class="site-header stayodds-site-header">
-    <div class="container header-inner">
-      <div class="brand stayodds-brand-group">
-        <span class="stayodds-brand-stack">
-          <a class="stayodds-wordmark-lg" href="../../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
-          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
-        </span>
-      </div>
-      <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../../compare/" class="active">StayOdds</a>
-        <a href="../../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
-        <a href="../../hotels/">Hotel Map</a>
-        <a href="../../brands/">Brands</a>
-        <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
-        <a href="../../about/">About</a>
-        <a href="../../faq/">FAQ</a>
-        <a href="../../contact/">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <a class="btn btn-primary" href="../../compare/?a={esc(slug)}">Compare VS</a>
-      </div>
-    </div>
-  </header>
+<body class="stayodds-warm-canvas">
+{chrome_header("../../")}
 
-  <div class="hub-tabs-bar">
-    <div class="container hub-tabs-inner">
-      <a class="hub-embed-brand" href="../../compare/" aria-label="StayOdds Home">
-        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
-      </a>
-      <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
-        <a class="hub-tab" href="../../compare/?mode=finder">&#10024; Trip Finder</a>
-        <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab" href="../../brands/">Brands</a>
-        <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>
-        <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
-        <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
-        <a class="hub-tab" href="../../about/">About</a>
-        <a class="hub-tab" href="../../faq/">FAQ</a>
-        <a class="hub-tab" href="../../contact/">Contact</a>
-      </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All {total_props} StayOdds Hotels</a>
-    </div>
-  </div>
-
-  <main>
+  <main class="has-top-band">
+    <div class="detail-top-band" aria-hidden="true"></div>
     <div class="container">
       <div class="detail-breadcrumb">
         <a id="crumbAllLink" href="../../compare/">&larr; All StayOdds Hotels</a>
@@ -1366,7 +1338,7 @@ def render_seo_page(
         <a id="crumbRegionLink" href="../../compare/?region={region_q}">{esc(h['region'])}</a>
         <span>/</span>
         <strong>{esc(h['name'])}</strong>
-        <a id="crumbAltViewLink" href="../../hotels/?region={region_q}" style="margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap;">&#x1F4CD; {esc(h['region'])} Map &rarr;</a>
+        <a id="crumbAltViewLink" href="../../hotels/?region={region_q}" style="margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap;">{ICO_PIN} {esc(h['region'])} Map &rarr;</a>
       </div>
 
       <section class="detail-hero">
@@ -1446,10 +1418,11 @@ def render_seo_page(
             <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
-            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
           </div>
+{DETAIL_OTA_STRIP}
         </div>
       </section>
 
@@ -1506,7 +1479,7 @@ def render_seo_page(
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
             {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
-            {f'<div class="verdict-card" style="border-color:#fed7aa;background:#fff7ed;"><span class="tag" style="background:#ffedd5;color:#9a3412;">&#x1F6CF;&#xFE0F; {esc(verified_room_tip["label"])}</span><h3>Rooms to Book</h3><p>{esc(verified_room_tip["text"])}</p></div>' if verified_room_tip else ''}
+            {f'<div class="verdict-card" style="border-color:#fed7aa;background:#fff7ed;"><span class="tag" style="background:#ffedd5;color:#9a3412;">{ICO_BED} {esc(verified_room_tip["label"])}</span><h3>Rooms to Book</h3><p>{esc(verified_room_tip["text"])}</p></div>' if verified_room_tip else ''}
           </div>
         </div>
       </section>
@@ -1569,7 +1542,7 @@ def render_seo_page(
             <p class="section-subtitle">Explore other personally curated properties in {esc(h['region'])}.</p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-            <a class="btn btn-outline" id="nearbyMapLink" href="../../hotels/?region={region_q}">&#x1F4CD; All {esc(h['region'])} on Map &rarr;</a>
+            <a class="btn btn-outline" id="nearbyMapLink" href="../../hotels/?region={region_q}">{ICO_PIN} All {esc(h['region'])} on Map &rarr;</a>
             <a class="btn btn-outline" id="nearbyListLink" href="../../compare/?region={region_q}">All {esc(h['region'])} in StayOdds &rarr;</a>
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
@@ -1578,7 +1551,7 @@ def render_seo_page(
         <div class="related-grid">{related_html}</div>
       </section>
     </div>
-  </main>
+{chrome_partner_strip("../../")}  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -1606,7 +1579,7 @@ def render_seo_page(
     </div>
   </footer>
 
-  <script src="../../assets/stayodds-feedback.js?v=3" defer></script>
+  <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -2195,11 +2168,11 @@ def render_destination_page(
         odds_lbl = "StayOdds" if o["greatStayOdds"] is not None else ("Official Award" if o["awards"] else "Breakdown")
 
         award_badges = "".join(
-            f'<a class="source-chip" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">&#127942; {esc(a["label"])} &nearr;</a>'
+            f'<a class="source-chip" href="{esc(a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(a["label"])} &nearr;</a>'
             for a in o["awards"][:2]
         )
         press_badges = "".join(
-            f'<a class="source-chip" href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">&#128240; {esc(e["sourceName"])} &nearr;</a>'
+            f'<a class="source-chip" href="{esc(e["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_LINK} {esc(e["sourceName"])} &nearr;</a>'
             for e in o["editorial"][:2]
         )
         blurb = h.get("standout") or h.get("verdict") or ""
@@ -2299,7 +2272,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=43" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=44" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2318,53 +2291,11 @@ def render_destination_page(
     }})();
   </script>
 </head>
-<body>
-  <header class="site-header stayodds-site-header">
-    <div class="container header-inner">
-      <div class="brand stayodds-brand-group">
-        <span class="stayodds-brand-stack">
-          <a class="stayodds-wordmark-lg" href="../../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
-          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
-        </span>
-      </div>
-      <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../../compare/" class="active">StayOdds</a>
-        <a href="../../compare/?mode=finder" class="nav-finder-link">&#10024; Trip Finder</a>
-        <a href="../../hotels/">Hotel Map</a>
-        <a href="../../brands/">Brands</a>
-        <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
-        <a href="../../about/">About</a>
-        <a href="../../faq/">FAQ</a>
-        <a href="../../contact/">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <a class="btn btn-primary" href="../../compare/?region={compare_q}">Compare Interactive</a>
-      </div>
-    </div>
-  </header>
+<body class="stayodds-warm-canvas">
+{chrome_header("../../")}
 
-  <div class="hub-tabs-bar">
-    <div class="container hub-tabs-inner">
-      <a class="hub-embed-brand" href="../../compare/" aria-label="StayOdds Home">
-        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
-      </a>
-      <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
-        <a class="hub-tab" href="../../compare/?mode=finder">&#10024; Trip Finder</a>
-        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
-        <a class="hub-tab" href="../../brands/">Brands</a>
-        <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>
-        <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
-        <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
-        <a class="hub-tab" href="../../about/">About</a>
-        <a class="hub-tab" href="../../faq/">FAQ</a>
-        <a class="hub-tab" href="../../contact/">Contact</a>
-      </nav>
-      <a class="hub-back-link" href="../../compare/">&larr; All StayOdds Hotels</a>
-    </div>
-  </div>
-
-  <main>
+  <main class="has-top-band">
+    <div class="detail-top-band" aria-hidden="true"></div>
     <section class="page-intro">
       <div class="container">
         <div class="detail-breadcrumb" style="margin-bottom:14px;">
@@ -2428,7 +2359,7 @@ def render_destination_page(
         </div>
       </div>
     </section>
-  </main>
+{chrome_partner_strip("../../")}  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -2456,7 +2387,7 @@ def render_destination_page(
     </div>
   </footer>
 
-  <script src="../../assets/stayodds-feedback.js?v=3" defer></script>
+  <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
 </body>
 </html>
 """

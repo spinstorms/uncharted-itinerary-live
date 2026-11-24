@@ -486,7 +486,7 @@
   const HERO_BANNER_FILES = ["maldives.jpg", "bali.jpg", "bora-bora.jpg", "seychelles.jpg"];
 
   function initHeroBannerRotator() {
-    const cards = document.querySelectorAll(".hero-banner-card[data-hero-rotate]");
+    const cards = document.querySelectorAll(".hero-banner-card[data-hero-rotate], .discover-hero-canvas[data-hero-rotate]");
     if (!cards.length) return;
     const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

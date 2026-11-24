@@ -10,24 +10,24 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png?v=2" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
-  <title>StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews</title>
-  <meta name="description" content="Personally curated luxury hotel comparisons — compare our first-hand stays, sourced editorial critics, and verified guest ratings side-by-side on StayOdds." />
+  <title>StayOdds. — Find &amp; Compare 832 Verified Luxury Hotels</title>
+  <meta name="description" content="Describe your ideal trip in plain English or compare 832 verified luxury hotels side-by-side — combining The Uncharted Itinerary stays, published critics, and real guest consensus." />
   <link rel="canonical" href="https://uncharteditinerary.com/compare/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
-  <meta property="og:description" content="Personally curated luxury hotel comparisons separating First-Hand Verified stays from our Global Directory." />
+  <meta property="og:title" content="StayOdds. — Find &amp; Compare 832 Verified Luxury Hotels" />
+  <meta property="og:description" content="Simple plain-English trip search and hotel summaries up front, deep verified hotel data underneath — by The Uncharted Itinerary." />
   <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v5_og_hero_1200x630.png" />
   <meta property="og:url" content="https://uncharteditinerary.com/compare/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
-  <meta name="twitter:description" content="Transparent luxury hotel score comparison: Uncharted Verified stays, sourced critics, and live verified guest ratings." />
+  <meta name="twitter:title" content="StayOdds. — Find &amp; Compare 832 Verified Luxury Hotels" />
+  <meta name="twitter:description" content="Simple plain-English trip search, instant hotel summaries, rooms to book, and deep side-by-side comparison across 832 luxury hotels." />
   <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v5_og_hero_1200x630.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "StayOdds: Hotel Score Compare",
-    "description": "Transparent confidence-weighted luxury hotel comparison separating Uncharted Verified reviews from the Global Directory.",
+    "name": "StayOdds: Verified Luxury Hotel Finder & Comparison",
+    "description": "Transparent confidence-weighted luxury hotel discovery and comparison separating Uncharted Verified reviews from the Global Directory.",
     "publisher": {
       "@type": "Organization",
       "name": "The Uncharted Itinerary",
@@ -37,12 +37,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124e" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124f" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=43" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=44" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -61,29 +61,41 @@
     })();
   </script>
 </head>
-<body>
+<body class="stayodds-warm-canvas">
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
       <div class="brand stayodds-brand-group">
+        <a href="./" class="stayodds-brand-emblem-link" aria-label="StayOdds Home">
+          <img src="../assets/stayodds-logo.png?v=2" alt="SO." width="36" height="36" class="stayodds-header-emblem" />
+        </a>
         <span class="stayodds-brand-stack">
           <a class="stayodds-wordmark-lg" href="./" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
           <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
       </div>
 
-      <nav class="nav-links" aria-label="Main site navigation">
-        <a href="./" class="active" id="navStayOddsLink">StayOdds</a>
-        <a href="./?mode=finder" class="nav-finder-link" id="navTripFinderLink">&#10024; Trip Finder</a>
-        <a href="../hotels/">Hotel Map</a>
-        <a href="../brands/">Brands</a>
+      <nav class="nav-links stayodds-clean-nav" aria-label="Main site navigation">
+        <a href="./" class="active" id="navTripFinderLink" data-workspace-mode="finder">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><line x1="20.5" y1="20.5" x2="16.35" y2="16.35"/></svg>
+          Discover
+        </a>
+        <a href="./?mode=compare" id="navStayOddsLink" data-workspace-mode="directory">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.8"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.8"/></svg>
+          Compare
+        </a>
+        <a href="../hotels/">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.75"/></svg>
+          World Map
+        </a>
+        <a href="../brands/">
+          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/></svg>
+          Brands
+        </a>
         <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
-        <a href="../about/">About</a>
-        <a href="../faq/">FAQ</a>
-        <a href="../contact/">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary" href="../hotels/">World Map</a>
+        <a class="btn btn-outline nav-deals-btn" href="../links/">Deals &amp; Codes</a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -91,150 +103,99 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="./" class="active">StayOdds.</a>
-      <a href="./?mode=finder" id="mobileTripFinderLink">&#10024; Trip Finder</a>
-      <a href="../hotels/">Hotel Map &amp; Scores</a>
+      <a href="./" class="active" id="mobileTripFinderLink">Discover Hotels</a>
+      <a href="./?mode=compare" id="mobileCompareLink">Compare VS &amp; Directory</a>
+      <a href="../hotels/">Interactive World Map</a>
       <a href="../brands/">Brand Leaderboard</a>
+      <a href="../links/">Travel Deals &amp; Codes</a>
       <a href="../">Uncharted Videos &nearr;</a>
-      <a href="../cameras/">Camera Reviews</a>
-      <a href="../links/">Deals &amp; Gear</a>
+      <a href="../about/">About</a>
       <a href="../faq/">FAQ</a>
       <a href="../contact/">Contact</a>
-      <a href="../about/">About</a>
     </nav>
   </header>
 
-  <div class="hub-tabs-bar">
-    <div class="container hub-tabs-inner">
-      <a class="hub-embed-brand" href="./" aria-label="StayOdds Home">
-        <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
-      </a>
-      <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab active" href="./" id="hubTabStayOdds" aria-current="page">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          StayOdds<span class="stayodds-dot">.</span>
-        </a>
-        <a class="hub-tab" href="./?mode=finder" id="hubTabTripFinder">&#10024; Trip Finder</a>
-        <a class="hub-tab" href="../hotels/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Hotel Map &amp; Scores
-        </a>
-        <a class="hub-tab" href="../brands/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-          Brands
-        </a>
-        <a class="hub-tab" href="../">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Uncharted Videos &nearr;
-        </a>
-        <a class="hub-tab" href="../cameras/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          Camera Reviews
-        </a>
-        <a class="hub-tab" href="../links/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          Deals &amp; Gear
-        </a>
-        <a class="hub-tab" href="../about/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          About
-        </a>
-        <a class="hub-tab" href="../faq/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          FAQ
-        </a>
-        <a class="hub-tab" href="../contact/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Contact
-        </a>
-      </nav>
-    </div>
-  </div>
-
   <main>
-    <section class="page-intro">
-      <div class="container">
-        <div class="hero-banner-card" style="--hero-bg: url('../assets/banners/maldives.jpg');" data-hero-rotate="1" data-hero-base="../assets/banners/" data-hero-start="0">
-          <div class="intro-row">
-            <div class="hero-title-group">
-              <img class="hero-emblem" src="../assets/stayodds-logo.png?v=2" alt="StayOdds. by The Uncharted Itinerary" width="64" height="64" style="border-radius:14px;" />
-              <div>
-                <h1 class="page-title"><span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span> — Critics vs Real Guest Reviews</h1>
-                <p class="page-lead">
-                  The hotel intelligence companion to <strong>The Uncharted Itinerary</strong> YouTube channel. Every score combines verified sources with plain-English summaries, weather windows, and specific rooms to book — zero guessed numbers.
-                </p>
+    <!-- ==================== DEFAULT MODE: SERENE EDITORIAL DISCOVER HERO ==================== -->
+    <section class="discover-hero-section" id="discoverHeroSection">
+      <div class="discover-hero-canvas" style="--hero-bg: url('../assets/banners/maldives.jpg');" data-hero-rotate="1" data-hero-base="../assets/banners/" data-hero-start="0">
+        <div class="container discover-hero-inner">
+          <div class="discover-hero-eyebrow" id="consensusSummaryStat">832 Verified Luxury Hotels &bull; 36 Uncharted YouTube Stays</div>
+          <h1 class="discover-hero-title">Where should you stay next?</h1>
+          <p class="discover-hero-sub">
+            Describe your ideal trip in plain English &mdash; get instant summaries, best weather months, and specific rooms to book.
+          </p>
+
+          <div class="discover-search-shell" id="smartTripFinderBar">
+            <form class="discover-search-form" id="smartTripForm" autocomplete="off">
+              <div class="discover-search-input-wrap">
+                <svg class="discover-search-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><line x1="20.5" y1="20.5" x2="16.35" y2="16.35"/></svg>
+                <input type="text" id="smartTripInput" class="discover-search-input" placeholder="Try &ldquo;Sunny Caribbean in January&rdquo;, &ldquo;Canary Islands under £500&rdquo;, or any hotel name&hellip;" aria-label="Describe your ideal hotel or trip in plain English" />
+                <button type="button" id="smartTripClearBtn" class="discover-search-clear" aria-label="Clear search" hidden>&times;</button>
               </div>
-            </div>
-            <div class="sync-meta">
-              <span id="consensusSummaryStat">832 Luxury Properties</span>
-              <strong>36 Uncharted Videos + 796 Global Hotels</strong>
-              <a class="btn btn-outline" href="../hotels/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Explore All 832 on World Map &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Top-Level 2-Mode Workspace Switcher: Compare & Directory vs Dedicated Trip Finder -->
-    <section class="workspace-mode-section" id="workspaceModeBar">
-      <div class="container">
-        <div class="workspace-mode-tabs" role="tablist" aria-label="Choose how you want to explore StayOdds">
-          <button type="button" class="workspace-mode-tab active" id="modeTabDirectory" role="tab" aria-selected="true" data-workspace-mode="directory">
-            <span class="wmt-title">&#128202; Compare &amp; Full Directory (832)</span>
-            <span class="wmt-sub">Side-by-side VS, awards, filters &amp; full data</span>
-          </button>
-          <button type="button" class="workspace-mode-tab is-finder" id="modeTabFinder" role="tab" aria-selected="false" data-workspace-mode="finder">
-            <span class="wmt-title">&#10024; Trip Finder — Describe Your Ideal Stay</span>
-            <span class="wmt-sub">Type your dream trip in plain English &amp; get instant summaries</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dedicated, Clutter-Free Natural-Language Trip Finder Panel -->
-    <section class="trip-finder-section" id="tripFinderSection" hidden>
-      <div class="container">
-        <div class="trip-finder-hero-card">
-          <div class="trip-finder-head">
-            <span class="trip-finder-eyebrow">&#10024; StayOdds Trip Finder</span>
-            <h2>Describe Your Perfect Hotel or Trip</h2>
-            <p>No complicated filters needed — tell us where you want to go, when you&rsquo;re travelling, your budget, or the vibe you want. We&rsquo;ll match real verified hotels with plain-English summaries, best weather months, and rooms to book.</p>
-          </div>
-
-          <div class="smart-trip-box is-dedicated" id="smartTripFinderBar">
-            <form class="smart-trip-form" id="smartTripForm" autocomplete="off">
-              <div class="smart-trip-input-wrap">
-                <span class="smart-trip-spark" aria-hidden="true">&#10024;</span>
-                <input type="text" id="smartTripInput" class="smart-trip-input" placeholder="e.g. &ldquo;I want to stay in the Caribbean in sunny weather in January&rdquo; or &ldquo;Canary Islands family resort under £500&rdquo;" aria-label="Describe your ideal hotel trip in plain English" />
-                <button type="button" id="smartTripClearBtn" class="smart-trip-clear" aria-label="Clear smart trip search" hidden>&times;</button>
-              </div>
-              <button type="submit" class="btn btn-primary smart-trip-submit">Find My Hotels</button>
+              <button type="submit" class="btn btn-primary discover-search-submit">Find Hotels</button>
             </form>
-            <div class="smart-trip-examples" aria-label="Try example trip searches">
-              <span class="smart-trip-ex-label">Popular ideas:</span>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="I want to stay in the Caribbean in sunny weather in January">Sunny Caribbean in January</button>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="Canary Islands winter sun under £500">Canary Islands under &pound;500</button>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="Adults-only island resort in Maldives in February">Adults-only Maldives in Feb</button>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="Top 50 luxury hotels in Japan">Top 50 hotels in Japan</button>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="Family beach resort in Bali in July">Family Bali beach in July</button>
-              <button type="button" class="smart-trip-chip" data-trip-prompt="MICHELIN Key hotels in Italy in May">MICHELIN Keys in Italy (May)</button>
+
+            <div class="discover-prompts-row" aria-label="Popular trip ideas">
+              <button type="button" class="discover-prompt-pill" data-trip-prompt="I want to stay in the Caribbean in sunny weather in January">Caribbean in January</button>
+              <button type="button" class="discover-prompt-pill" data-trip-prompt="Canary Islands winter sun under £500">Canary Islands under &pound;500</button>
+              <button type="button" class="discover-prompt-pill" data-trip-prompt="Adults-only island resort in Maldives in February">Adults-only Maldives</button>
+              <button type="button" class="discover-prompt-pill" data-trip-prompt="Top 50 luxury hotels in Japan">Top 50 in Japan</button>
+              <button type="button" class="discover-prompt-pill" data-trip-prompt="Family beach resort in Bali in July">Bali in July</button>
             </div>
-            <div class="smart-trip-understood" id="smartTripUnderstood" hidden></div>
+
+            <div class="smart-trip-understood discover-understood" id="smartTripUnderstood" hidden></div>
           </div>
 
-          <div class="trip-finder-results-head" id="tripFinderResultsHead"></div>
-          <div class="trip-finder-results-grid" id="tripFinderResults"></div>
+          <div class="discover-quick-nav">
+            <button type="button" class="discover-mode-link" id="heroSwitchToCompareBtn">
+              <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.8"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.8"/></svg>
+              Compare Hotels Head-to-Head &rarr;
+            </button>
+            <a class="discover-mode-link" href="../hotels/" id="heroOpenMapLink">
+              <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.75"/></svg>
+              Explore All 832 on World Map &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calm Results Grid for Discover Mode -->
+    <section class="trip-finder-section" id="tripFinderSection">
+      <div class="container">
+        <div class="trip-finder-results-head" id="tripFinderResultsHead"></div>
+        <div class="trip-finder-results-grid" id="tripFinderResults"></div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPARE & FULL DIRECTORY MODE (Deep Power View) ==================== -->
+    <section class="compare-mode-banner" id="compareModeBanner" hidden>
+      <div class="container">
+        <div class="compare-mode-banner-inner">
+          <div>
+            <span class="compare-mode-eyebrow">Full Data &amp; Side-by-Side Workspace</span>
+            <h1 class="compare-mode-title">Compare Hotels &amp; Full 832-Property Directory</h1>
+            <p class="compare-mode-sub">Side-by-side 2- or 3-hotel comparison, Uncharted Verified stays vs. consensus, official awards, weather windows, and full filters.</p>
+          </div>
+          <div class="compare-mode-actions">
+            <button type="button" class="btn btn-outline compare-back-discover-btn" id="openTripFinderInlineBtn">
+              <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><line x1="20.5" y1="20.5" x2="16.35" y2="16.35"/></svg>
+              Simple Search Mode
+            </button>
+            <a class="btn btn-primary" href="../hotels/">World Map &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Compact Expandable Scoring Methodology Bar -->
-    <section class="methodology-section" id="methodologySection" style="padding:10px 0 6px;">
+    <section class="methodology-section" id="methodologySection" hidden style="padding:14px 0 6px;">
       <div class="container">
         <details class="methodology-compact-bar">
           <summary>
             <span class="meth-summary-left">
-              <span class="meth-badge-verified">&#9733; Uncharted Verified</span>
+              <span class="meth-badge-verified">Uncharted Verified</span>
               <strong>70% Uncharted Stay + 30% Consensus</strong>
               <span class="meth-sep">&bull;</span>
               <span class="meth-badge-market">StayOdds</span>
@@ -246,8 +207,8 @@
             <div class="method-pill is-highlight">
               <strong>70/30</strong>
               <div>
-                <span>&#9733; Uncharted Verified (Filmed Stays)</span>
-                <small>When <strong>The Uncharted Itinerary</strong> personally stays and scores a hotel (/25 &times; 4), our verdict drives 70% of StayOdds alongside 30% Guest &amp; Critic Consensus — with an explicit Uncharted vs. Consensus delta (&#177; pts).</small>
+                <span>Uncharted Verified (Filmed Stays)</span>
+                <small>When <strong>The Uncharted Itinerary</strong> personally stays and scores a hotel (/25 &times; 4), our verdict drives 70% of StayOdds alongside 30% Guest &amp; Critic Consensus &mdash; with an explicit Uncharted vs. Consensus delta (&#177; pts).</small>
               </div>
             </div>
             <div class="method-pill">
@@ -260,7 +221,7 @@
             <div class="method-pill">
               <strong>Awards</strong>
               <div>
-                <span>Named &amp; Linked — Never Scored</span>
+                <span>Named &amp; Linked &mdash; Never Scored</span>
                 <small>MICHELIN Keys, Forbes Five-Star, World&rsquo;s 50 Best, and comments-only reviews link straight to their source without invented numbers.</small>
               </div>
             </div>
@@ -270,18 +231,24 @@
     </section>
 
     <!-- Interactive Head-to-Head Resort Comparator -->
-    <section class="h2h-section" id="h2hSection">
+    <section class="h2h-section" id="h2hSection" hidden>
       <div class="container">
         <div class="h2h-box">
           <div class="section-header" style="margin-bottom:14px;flex-wrap:wrap;gap:12px;">
             <div>
               <h2 class="section-title">Compare Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side — StayOdds %, source count, awards, property status, and live dates.</p>
+              <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side &mdash; StayOdds %, source count, awards, property status, and live dates.</p>
             </div>
             <div class="h2h-header-actions">
               <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Compare up to 3 hotels side-by-side">+ Add 3rd Hotel</button>
-              <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">&#x1F4F8; Share VS Card</button>
-              <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
+              <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">
+                <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3.5l2-3h5l2 3H20a2 2 0 0 1 2 2z"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+                Share VS Card
+              </button>
+              <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">
+                <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2.8-2.8a5 5 0 0 0-7.1-7.1L11.2 4.7"/><path d="M14 11a5 5 0 0 0-7.1 0L4.1 13.8a5 5 0 0 0 7.1 7.1l1.6-1.6"/></svg>
+                Copy VS Link
+              </button>
             </div>
           </div>
 
@@ -306,7 +273,7 @@
                   <option value="4">4 Adults</option>
                 </select>
               </label>
-              <button type="button" class="btn btn-outline date-rate-check-btn" id="h2hCheckLiveRatesBtn">&#128176; Check Live Rates</button>
+              <button type="button" class="btn btn-outline date-rate-check-btn" id="h2hCheckLiveRatesBtn">Check Live Rates</button>
             </div>
             <div class="date-rate-status" id="h2hLiveRatesStatus">Dates auto-apply to Booking.com links &bull; Click <strong>Check Live Rates</strong> to fetch real-time prices for these exact hotels.</div>
           </div>
@@ -367,17 +334,19 @@
     </section>
 
     <!-- Full StayOdds Global Directory -->
-    <section class="leaderboard-section" id="directorySection">
+    <section class="leaderboard-section" id="directorySection" hidden>
       <div class="container">
         <div class="section-header" style="flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Solid badges are <strong>&#9733; Uncharted Verified</strong> (70% Uncharted Stay + 30% Consensus); outlined badges show unified <strong>StayOdds %</strong> with exact source counts across 796 global hotels.</p>
+            <p class="section-subtitle">Solid badges are <strong>Uncharted Verified</strong> (70% Uncharted Stay + 30% Consensus); outlined badges show unified <strong>StayOdds %</strong> with exact source counts across 796 global hotels.</p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-            <button type="button" class="btn btn-outline" id="openTripFinderInlineBtn" style="font-size:13px;padding:8px 14px;">&#10024; Open Trip Finder</button>
-            <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Leaderboard &rarr;</a>
-            <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">&#x2B07; Export CSV</button>
+            <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">Brand Leaderboard &rarr;</a>
+            <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">
+              <svg class="so-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export CSV
+            </button>
           </div>
         </div>
 
@@ -388,13 +357,13 @@
         <div id="shortlistUtilityBar" style="display:none;margin-bottom:14px;padding:12px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;font-size:13.5px;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
           <span id="shortlistUtilityText"><strong>Your Saved Shortlist:</strong> Share this list with a partner or travel advisor, or export to a spreadsheet.</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button type="button" class="btn btn-primary" id="shareShortlistBtn" style="font-size:12.5px;padding:7px 13px;">&#128279; Share Shortlist Link</button>
-            <button type="button" class="btn btn-outline" id="importSharedShortlistBtn" style="display:none;font-size:12.5px;padding:7px 13px;">&#9829; Save All to My Shortlist</button>
-            <button type="button" class="btn btn-outline" id="exportShortlistCsvBtn" style="font-size:12.5px;padding:7px 13px;">&#x2B07; Export Shortlist CSV</button>
+            <button type="button" class="btn btn-primary" id="shareShortlistBtn" style="font-size:12.5px;padding:7px 13px;">Share Shortlist Link</button>
+            <button type="button" class="btn btn-outline" id="importSharedShortlistBtn" style="display:none;font-size:12.5px;padding:7px 13px;">Save All to Shortlist</button>
+            <button type="button" class="btn btn-outline" id="exportShortlistCsvBtn" style="font-size:12.5px;padding:7px 13px;">Export Shortlist CSV</button>
           </div>
         </div>
 
-        <!-- Compact Primary Toolbar (Search + Macro Regions + Sort + More Filters Drawer Toggle) -->
+        <!-- Compact Primary Toolbar (Search + Status + Indicative Price + Sort + More Filters Drawer Toggle) -->
         <div class="controls-bar controls-bar-compact">
           <div class="controls-search-group" style="flex:1;min-width:240px;">
             <div class="search-wrap" style="flex:1;">
@@ -425,7 +394,7 @@
               <option value="odds">Sort: Highest StayOdds %</option>
               <option value="award_50best">Awards: World&rsquo;s 50 Best (#1 &rarr; #100)</option>
               <option value="award_michelin">Awards: MICHELIN Keys (3 &rarr; 1 Key)</option>
-              <option value="award_forbes">Awards: Forbes Star Tier (5&#9733; &rarr; Rec.)</option>
+              <option value="award_forbes">Awards: Forbes Star Tier (5-Star &rarr; Rec.)</option>
               <option value="gap">Sort: Biggest Uncharted vs. Consensus Gap</option>
               <option value="price_asc">Sort: Indicative Price (Low &rarr; High)</option>
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
@@ -438,8 +407,8 @@
             </select>
             <div class="more-filters-wrap">
               <button type="button" class="btn btn-outline more-filters-toggle-btn" id="compareMoreFiltersBtn" aria-expanded="false" aria-controls="compareMoreFiltersDrawer">
-                <span class="more-filters-hint-dot" aria-hidden="true"></span>
-                &#9881; More Filters <span class="filter-count-badge" id="compareFilterCountBadge" hidden>0</span>
+                <svg class="so-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2" fill="currentColor"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2" fill="currentColor"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="11" cy="18" r="2" fill="currentColor"/></svg>
+                More Filters <span class="filter-count-badge" id="compareFilterCountBadge" hidden>0</span>
               </button>
               <div class="more-filters-preview-popover" id="compareFiltersPreviewPopover" role="region" aria-label="Quick preview of hidden filters">
                 <div class="mfp-head">
@@ -448,12 +417,12 @@
                 </div>
                 <p class="mfp-sub">Filter by exact World&rsquo;s 50 Best (#1–50 / #1–100), MICHELIN Keys (3&rarr;1), Travel Style, Best Dry Month &amp; Loyalty Perks.</p>
                 <div class="mfp-chips">
-                  <button type="button" class="mfp-chip" data-quick-preset="50best_50">&#127942; Top 50 (#1–50)</button>
-                  <button type="button" class="mfp-chip" data-quick-preset="50best_100">&#128175; Top 100 (#1–100)</button>
-                  <button type="button" class="mfp-chip" data-quick-preset="michelin">&#128477;&#65039; MICHELIN (3&rarr;1)</button>
-                  <button type="button" class="mfp-chip" data-quick-preset="michelin_3">&#128477;&#65039; 3 Keys Only</button>
-                  <button type="button" class="mfp-chip" data-quick-preset="style_island">&#127965;&#65039; Private Islands</button>
-                  <button type="button" class="mfp-chip" data-quick-preset="budget_under500">&#128142; Under &pound;500/nt</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="50best_50">Top 50 (#1–50)</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="50best_100">Top 100 (#1–100)</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="michelin">MICHELIN Keys (3&rarr;1)</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="michelin_3">3 Keys Only</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="style_island">Beach Resorts</button>
+                  <button type="button" class="mfp-chip" data-quick-preset="budget_under500">Under &pound;500/nt</button>
                   <button type="button" class="mfp-chip" data-open-more-drawer="1">Open All Filters &darr;</button>
                 </div>
               </div>
@@ -469,20 +438,20 @@
         <!-- Clean 8 Macro Regions Strip -->
         <div class="filter-pills macro-region-pills" id="consensusRegionPills" role="tablist" aria-label="Filter by macro region" style="margin-bottom:10px;"></div>
 
-        <!-- 1-Click Quick Filter Presets Strip (Discoverability for Awards, Style, Budget & More Filters) -->
+        <!-- 1-Click Quick Filter Presets Strip -->
         <div class="quick-presets-bar" id="compareQuickPresets" role="group" aria-label="Quick filter presets">
           <span class="quick-presets-label">Quick Filters:</span>
-          <button type="button" class="quick-preset-pill" data-quick-preset="50best_50">&#127942; Top 50 (#1&rarr;50)</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="50best_100">&#128175; Top 100 (#1&rarr;100)</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="michelin">&#128477;&#65039; MICHELIN Keys (3&rarr;1)</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="michelin_3">&#128477;&#65039; 3 Keys</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="style_island">&#127965;&#65039; Islands</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="adults">&#129346; Adults-Only</button>
-          <button type="button" class="quick-preset-pill" data-quick-preset="budget_under500">&#128142; Under &pound;500/nt</button>
-          <button type="button" class="quick-preset-pill preset-more-cta" data-open-more-drawer="1">&#9881; Travel Style, Months &amp; Perks&hellip;</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="50best_50">Top 50 (#1&rarr;50)</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="50best_100">Top 100 (#1&rarr;100)</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="michelin">MICHELIN Keys</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="michelin_3">3 Keys</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="style_island">Beach Resorts</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="adults">Adults-Only</button>
+          <button type="button" class="quick-preset-pill" data-quick-preset="budget_under500">Under &pound;500/nt</button>
+          <button type="button" class="quick-preset-pill preset-more-cta" data-open-more-drawer="1">Travel Style, Months &amp; Perks&hellip;</button>
         </div>
 
-        <!-- Active Secondary Filter Chips Bar (only visible when secondary filters are active) -->
+        <!-- Active Secondary Filter Chips Bar -->
         <div class="active-filters-strip" id="compareActiveFiltersStrip" hidden></div>
 
         <!-- Collapsible More Filters Drawer -->
@@ -505,7 +474,7 @@
           </div>
         </div>
 
-        <!-- Clear Signpost Banner so visitors know 796+ Global Hotels sit below the 36 First-Hand Videos -->
+        <!-- Clear Signpost Banner -->
         <div class="directory-signpost-bar" id="directorySignpostBar" hidden></div>
 
         <div class="consensus-list" id="consensusList"></div>
@@ -547,6 +516,68 @@
       </div>
     </section>
 
+    <section class="partner-deals-section" id="partnerDealsStrip" aria-label="Travel perks and booking partners">
+      <div class="container">
+        <div class="partner-deals-card">
+          <div class="partner-deals-head">
+            <div>
+              <span class="partner-deals-eyebrow">Trip Essentials &amp; Verified Booking Partners</span>
+              <h2>Compare Rates, Flights, Tours &amp; Travel Perks</h2>
+              <p>Trusted booking platforms, eSIM discount codes, and hotel points cards we use on trips filmed for The Uncharted Itinerary.</p>
+            </div>
+            <a class="btn btn-outline" href="../links/" style="font-size:13px;padding:8px 14px;">All Deals &amp; Gear &nearr;</a>
+          </div>
+
+          <div class="partner-deals-grid">
+            <a class="partner-deal-tile" href="https://holafly.sjv.io/Tripready" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Unlimited Travel eSIM</span><span class="partner-deal-code">Code: TRIPREADY</span></div>
+              <h3>Holafly Unlimited Data eSIM</h3>
+              <p>Instant data on arrival across 200+ destinations &mdash; 5% off with code <strong>TRIPREADY</strong>.</p>
+              <span class="partner-deal-cta">Claim 5% Discount &nearr;</span>
+            </a>
+            <a class="partner-deal-tile" href="https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&amp;friend-referral-code=OKM2ZH" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Hotel Points Card</span><span class="partner-deal-code">Code: OKM2ZH</span></div>
+              <h3>Marriott Bonvoy Currensea Card</h3>
+              <p>Earn Marriott Bonvoy points on everyday &amp; overseas spending (up to 2,000 bonus pts via referral).</p>
+              <span class="partner-deal-cta">See Referral Offer &nearr;</span>
+            </a>
+            <a class="partner-deal-tile" href="https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w" target="_blank" rel="sponsored noopener noreferrer">
+              <div class="partner-deal-top"><span class="partner-deal-kicker">Rewards Card (UK)</span><span class="partner-deal-code">Bonus Offer</span></div>
+              <h3>Amex Preferred Rewards Gold</h3>
+              <p>Convert Membership Rewards into airline Avios or hotel points with our UK referral bonus.</p>
+              <span class="partner-deal-cta">View UK Referral &nearr;</span>
+            </a>
+          </div>
+
+          <div class="partner-platforms-bar">
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">Hotel Rates:</span>
+              <a class="partner-platform-pill" href="https://booking.tpx.lu/dddKFSMf" target="_blank" rel="sponsored noopener noreferrer">Booking.com &nearr;</a>
+              <a class="partner-platform-pill" href="https://expedia.tpx.lu/9LHschol" target="_blank" rel="sponsored noopener noreferrer">Expedia &nearr;</a>
+              <a class="partner-platform-pill" href="https://hotels.tpx.lu/2JsCNIZh" target="_blank" rel="sponsored noopener noreferrer">Hotels.com &nearr;</a>
+              <a class="partner-platform-pill" href="https://agoda.tpx.lu/p5JSiiU0" target="_blank" rel="sponsored noopener noreferrer">Agoda &nearr;</a>
+              <a class="partner-platform-pill" href="https://trip.tpx.lu/BbtDtE5w" target="_blank" rel="sponsored noopener noreferrer">Trip.com &nearr;</a>
+            </div>
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">Flights &amp; Tours:</span>
+              <a class="partner-platform-pill" href="https://kiwi.tpx.lu/fDgPG9Ew" target="_blank" rel="sponsored noopener noreferrer">Kiwi.com Flights &nearr;</a>
+              <a class="partner-platform-pill" href="https://getyourguide.tpx.lu/q0UlPSkz" target="_blank" rel="sponsored noopener noreferrer">GetYourGuide &nearr;</a>
+              <a class="partner-platform-pill" href="https://viator.tpx.lu/ByHwSqC5" target="_blank" rel="sponsored noopener noreferrer">Viator &nearr;</a>
+              <a class="partner-platform-pill" href="https://klook.tpx.lu/TsCmTC1L" target="_blank" rel="sponsored noopener noreferrer">Klook Transfers &nearr;</a>
+            </div>
+            <div class="partner-platform-group">
+              <span class="partner-platform-label">eSIMs &amp; FX:</span>
+              <a class="partner-platform-pill" href="https://airalo.tpx.lu/WSdkjcJz" target="_blank" rel="sponsored noopener noreferrer">Airalo eSIM &nearr;</a>
+              <a class="partner-platform-pill" href="https://saily.tpx.lu/bIVFTBvq" target="_blank" rel="sponsored noopener noreferrer">Saily eSIM &nearr;</a>
+              <a class="partner-platform-pill" href="https://wise.com/invite/dic/oliverarrashk" target="_blank" rel="sponsored noopener noreferrer">Wise Travel Card &nearr;</a>
+            </div>
+          </div>
+
+          <p class="partner-deals-disclosure">Affiliate disclosure: Partner links may earn a small commission at zero extra cost to you and never influence StayOdds scores or rankings.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Quick Hotel Shorts Showcase -->
     <section class="shorts-section" id="compareShortsSection">
       <div class="container">
@@ -567,15 +598,15 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">StayOdds &bull; by The Uncharted Itinerary</div>
-          <p class="footer-muted">Critics vs Real Guest Reviews — personally curated luxury hotel comparisons with verified sources.</p>
+          <p class="footer-muted">Critics vs Real Guest Reviews &mdash; personally curated luxury hotel comparisons with verified sources.</p>
         </div>
         <div class="footer-links">
           <a href="https://uncharteditinerary.com/">uncharteditinerary.com</a>
           <a href="../">Latest Videos</a>
-          <a href="../hotels/">Hotel Map &amp; Scores</a>
-          <a href="./">StayOdds</a>
+          <a href="./">Discover Hotels</a>
+          <a href="./?mode=compare">Compare VS</a>
+          <a href="../hotels/">World Map</a>
           <a href="../brands/">Brand Leaderboard</a>
-          <a href="../cameras/">Camera Reviews</a>
           <a href="../links/">Deals &amp; Gear</a>
           <a href="../about/">About</a>
           <a href="../faq/">FAQ</a>
@@ -586,12 +617,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="yearNow"></span> StayOdds &amp; The Uncharted Itinerary</span>
-        <span>Disclosure: Booking &amp; gear links may earn an affiliate commission at no extra cost to you (<a href="../privacy/" style="color:inherit;text-decoration:underline;">Privacy &amp; Ad Disclosure</a>).</span>
+        <span>Disclosure: Booking &amp; partner links may earn an affiliate commission at no extra cost to you (<a href="../privacy/" style="color:inherit;text-decoration:underline;">Privacy &amp; Ad Disclosure</a>).</span>
       </div>
     </div>
   </footer>
 
-  <script src="../assets/stayodds-feedback.js?v=3" defer></script>
-  <script type="module" src="../assets/compare.js?v=19"></script>
+  <script src="../assets/stayodds-feedback.js?v=4" defer></script>
+  <script type="module" src="../assets/compare.js?v=20"></script>
 </body>
 </html>

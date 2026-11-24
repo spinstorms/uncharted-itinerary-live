@@ -10,7 +10,8 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=12";
-import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
+import { svgIcon } from "./stayodds-icons.js?v=1";
 import {
   MONTH_LABELS,
   normalizeBrandName,
@@ -23,7 +24,10 @@ import {
   getVerifiedRoomTip,
   buildHotelQuickSummary,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=5";
+  parseNaturalTripQuery,
+} from "./stayodds-insights.js?v=6";
+
+const I = (name, size = 13) => svgIcon(name, size);
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -108,7 +112,7 @@ const VERIFIED_FEATURES = [
   { id: "all", label: "All", match: () => true },
   {
     id: "50best_50",
-    label: "🏆 Top 50 (#1–50)",
+    label: "Top 50 (#1–50)",
     autoSort: "award_50best",
     match: (h) => {
       const r = getW50BestRank(h);
@@ -117,7 +121,7 @@ const VERIFIED_FEATURES = [
   },
   {
     id: "50best_100",
-    label: "💯 Top 100 (#1–100)",
+    label: "Top 100 (#1–100)",
     autoSort: "award_50best",
     match: (h) => {
       const r = getW50BestRank(h);
@@ -135,47 +139,47 @@ const VERIFIED_FEATURES = [
   },
   {
     id: "michelin",
-    label: "🗝️ MICHELIN Keys (3→1)",
+    label: "MICHELIN Keys (3→1)",
     autoSort: "award_michelin",
     match: (h) => getMichelinKeyCount(h) != null,
   },
   {
     id: "michelin_3",
-    label: "🗝️ 3 MICHELIN Keys",
+    label: "3 MICHELIN Keys",
     autoSort: "award_michelin",
     match: (h) => getMichelinKeyCount(h) === 3,
   },
   {
     id: "michelin_2",
-    label: "🗝️ 2 MICHELIN Keys",
+    label: "2 MICHELIN Keys",
     autoSort: "award_michelin",
     match: (h) => getMichelinKeyCount(h) === 2,
   },
   {
     id: "michelin_1",
-    label: "🗝️ 1 MICHELIN Key",
+    label: "1 MICHELIN Key",
     autoSort: "award_michelin",
     match: (h) => getMichelinKeyCount(h) === 1,
   },
   {
     id: "forbes",
-    label: "⭐ Forbes Star-Rated",
+    label: "Forbes Star-Rated",
     autoSort: "award_forbes",
     match: (h) => getForbesRank(h) != null,
   },
   {
     id: "adults",
-    label: "🥂 Adults-Only",
+    label: "Adults-Only",
     match: (h) => getGuestProfile(h).isAdultsOnly,
   },
   {
     id: "family",
-    label: "👨‍👩‍👧 Family & Kids",
+    label: "Family & Kids",
     match: (h) => getGuestProfile(h).isFamilyFriendly,
   },
   {
     id: "preferred",
-    label: "✨ Preferred Partner",
+    label: "Preferred Partner",
     match: (h) => getPartnerPrograms(h).hasPreferredPerks,
   },
   {
@@ -282,7 +286,7 @@ const state = {
   adults: 2,
   liveRates: {},
   visibleLimit: PAGE_SIZE,
-  workspaceMode: "directory",
+  workspaceMode: "finder",
   smartPrompt: "",
   smartExcludeCountries: [],
   smartIncludeLocations: [],
@@ -469,7 +473,7 @@ function populateSingleSelector(side) {
     html += `<optgroup label="★ First-Hand Stays &amp; Shorts (${visited.length})">${visited.map(renderOpt).join("")}</optgroup>`;
   }
   if (globalOnly.length) {
-    html += `<optgroup label="🌍 Global Luxury Directory (${globalOnly.length})">${globalOnly.map(renderOpt).join("")}</optgroup>`;
+    html += `<optgroup label="Global Luxury Directory (${globalOnly.length})">${globalOnly.map(renderOpt).join("")}</optgroup>`;
   }
   sel.innerHTML = html;
 
@@ -524,10 +528,10 @@ function syncThreeWayUi() {
     toggleBtn.textContent = state.threeWay ? "− Back to 2 Hotels" : "+ Add 3rd Hotel";
   }
   if (shareBtn) {
-    shareBtn.innerHTML = state.threeWay ? "&#x1F4F8; Share 3-Hotel Card" : "&#x1F4F8; Share VS Card";
+    shareBtn.innerHTML = state.threeWay ? `${I("camera")} Share 3-Hotel Card` : `${I("camera")} Share VS Card`;
   }
   if (copyBtn && !copyBtn.classList.contains("is-copied")) {
-    copyBtn.innerHTML = state.threeWay ? "&#128279; Copy 3-Hotel Link" : "&#128279; Copy VS Link";
+    copyBtn.innerHTML = state.threeWay ? `${I("link")} Copy 3-Hotel Link` : `${I("link")} Copy VS Link`;
   }
 }
 
@@ -702,13 +706,13 @@ function renderH2HCard(h, allCompared) {
     : "";
 
   const tagsHtml = [
-    partner.preferredProgram ? `<span class="tag tag-accent" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : "",
+    partner.preferredProgram ? `<span class="tag tag-accent" title="${escapeHtml(partner.perksNote)}">${I("sparkles",12)} ${escapeHtml(partner.preferredProgram)}</span>` : "",
     partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : "",
-    profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag tag-slate">👨‍👩‍👧 Family / Kids</span>` : "",
+    profile.isAdultsOnly ? `<span class="tag tag-slate">Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag tag-slate">Family / Kids</span>` : "",
   ].filter(Boolean).join("");
 
   const roomTipHtml = roomTip
-    ? `<div class="h2h-room-tip-box"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(roomTip.label)}:</strong> ${escapeHtml(roomTip.text)}</div>`
+    ? `<div class="h2h-room-tip-box"><strong>${I("bed")} ${escapeHtml(roomTip.label)}:</strong> ${escapeHtml(roomTip.text)}</div>`
     : "";
 
   return `
@@ -735,7 +739,7 @@ function renderH2HCard(h, allCompared) {
 
       ${
         liveRate
-          ? `<div class="h2h-live-rate-pill">&#128176; Live: £${Number(liveRate.perNight).toLocaleString("en-GB")}/nt (£${Number(liveRate.total).toLocaleString("en-GB")} for ${liveRate.nights}nt${liveRate.refundable ? " · Refundable" : ""})</div>`
+          ? `<div class="h2h-live-rate-pill">${I("tag")} Live: £${Number(liveRate.perNight).toLocaleString("en-GB")}/nt (£${Number(liveRate.total).toLocaleString("en-GB")} for ${liveRate.nights}nt${liveRate.refundable ? " · Refundable" : ""})</div>`
           : priceInfo.label
           ? `<div style="margin-bottom:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;"><span class="price-chip-indicative">${escapeHtml(priceInfo.label)}${priceInfo.isIndicative ? " (indicative)" : ""}</span>${
               priceDeltaNote ? `<span class="tag ${isLowestPrice ? "tag-teal" : "tag-slate"}" style="font-size:11px;">${escapeHtml(priceDeltaNote)}</span>` : ""
@@ -790,7 +794,7 @@ function renderH2HCard(h, allCompared) {
         </div>
         <div class="h2h-metric" title="${escapeHtml(climate.reason)}">
           <span>Best Dry Months</span>
-          <strong>&#9728; ${escapeHtml(climate.label)}</strong>
+          <strong>${I("sun")} ${escapeHtml(climate.label)}</strong>
         </div>
         <div class="h2h-metric">
           <span>Official Awards</span>
@@ -997,7 +1001,7 @@ function renderActiveFiltersAndDrawerBadge() {
   }
   if (state.style !== "all") {
     const sObj = TRAVEL_STYLES.find((s) => s.id === state.style);
-    chips.push({ key: "style", label: sObj ? `${sObj.icon ? sObj.icon + " " : ""}${sObj.label}` : state.style });
+    chips.push({ key: "style", label: sObj ? `${sObj.label}` : state.style });
   }
   if (state.month >= 1 && state.month <= 12) {
     chips.push({ key: "month", label: `Best in ${MONTH_LABELS[state.month - 1]}` });
@@ -1152,7 +1156,7 @@ function renderStylePills() {
     if (s.id !== "all" && cnt === 0 && state.style !== s.id) return "";
     return `<button class="feature-pill style-pill ${state.style === s.id ? "active" : ""}" data-style="${escapeHtml(
       s.id
-    )}" type="button">${s.icon ? `${s.icon} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
+    )}" type="button">${s.iconKey ? `${svgIcon(s.iconKey, 14)} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
   }).join("");
 
   container.querySelectorAll("[data-style]").forEach((btn) => {
@@ -1597,7 +1601,7 @@ function renderLeaderboard() {
 
         const keyFactChips = [
           ...o.keyFacts.slice(0, 3).map((kf) => `<span class="card-key-fact-chip"><strong>${escapeHtml(kf.label)}:</strong> ${escapeHtml(kf.value)}</span>`),
-          ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">⚠ ${escapeHtml(rf)}</span>`),
+          ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">${I("alert",12)} ${escapeHtml(rf)}</span>`),
         ].join("");
 
         const criticBoxHtml =
@@ -1624,7 +1628,7 @@ function renderLeaderboard() {
         const sourceChips = [
           ...o.officialAwards.map(
             (a) =>
-              `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(
+              `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${I("trophy",12)} ${escapeHtml(
                 a.label
               )} ↗</a>`
           ),
@@ -1634,7 +1638,7 @@ function renderLeaderboard() {
               : e.rawScore
               ? ` (${escapeHtml(e.rawScore)})`
               : "";
-            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
+            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">${I("link",12)} ${escapeHtml(
               e.sourceName
             )}${suffix} ↗</a>`;
           }),
@@ -1652,7 +1656,7 @@ function renderLeaderboard() {
         const propStatus = getPropertyStatusMeta(h);
         const propStatusPill =
           propStatus.tone === "danger"
-            ? `<span class="tag tag-danger">⚠ ${escapeHtml(propStatus.badge)}</span>`
+            ? `<span class="tag tag-danger">${I("alert",12)} ${escapeHtml(propStatus.badge)}</span>`
             : propStatus.tone === "warn"
             ? `<span class="tag tag-caution">ⓘ ${escapeHtml(propStatus.badge)}</span>`
             : "";
@@ -1673,17 +1677,17 @@ function renderLeaderboard() {
         const fRankCard = getForbesRank(h);
         let activeAwardRankPill = "";
         if ((state.sortBy === "award_50best" || state.feature.startsWith("50best")) && w50Rank != null) {
-          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#127942; World&rsquo;s 50 Best #${w50Rank}</span>`;
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">${I("trophy")} World&rsquo;s 50 Best #${w50Rank}</span>`;
         } else if ((state.sortBy === "award_michelin" || state.feature.startsWith("michelin")) && mKeysCard != null) {
-          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#128477;&#65039; ${mKeysCard} MICHELIN Key${mKeysCard > 1 ? "s" : ""}</span>`;
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">${I("key")} ${mKeysCard} MICHELIN Key${mKeysCard > 1 ? "s" : ""}</span>`;
         } else if ((state.sortBy === "award_forbes" || state.feature === "forbes") && fRankCard != null) {
           const fLbl = fRankCard === 5 ? "Forbes Five-Star" : fRankCard === 4 ? "Forbes Four-Star" : "Forbes Recommended";
-          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#11088; ${fLbl}</span>`;
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">${I("star")} ${fLbl}</span>`;
         }
 
         // Max 3 high-signal top badges (+ indicative price chip)
         const topAwardChip = o.officialAwards.length
-          ? `<span class="tag tag-teal">🏆 ${escapeHtml(o.officialAwards[0].label)}</span>`
+          ? `<span class="tag tag-teal">${I("trophy",12)} ${escapeHtml(o.officialAwards[0].label)}</span>`
           : "";
         const secondaryTopBadge =
           activeAwardRankPill ||
@@ -1697,10 +1701,10 @@ function renderLeaderboard() {
 
         const secondaryMetaPills = [
           h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : "",
-          partner.preferredProgram ? `<span class="tag" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : "",
+          partner.preferredProgram ? `<span class="tag" title="${escapeHtml(partner.perksNote)}">${I("sparkles",12)} ${escapeHtml(partner.preferredProgram)}</span>` : "",
           partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : "",
-          profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag">👨‍👩‍👧 Family</span>` : "",
-          `<span class="tag" title="${escapeHtml(climate.reason)}">📅 Best: ${escapeHtml(climate.label)}</span>`,
+          profile.isAdultsOnly ? `<span class="tag tag-slate">Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag">Family</span>` : "",
+          `<span class="tag" title="${escapeHtml(climate.reason)}">${I("calendar",12)} Best: ${escapeHtml(climate.label)}</span>`,
         ]
           .filter(Boolean)
           .join("");
@@ -1744,10 +1748,10 @@ function renderLeaderboard() {
               </h3>
 
               <div class="card-quick-summary">
-                <p class="card-qs-text"><strong>&#10024; Summary:</strong> ${escapeHtml(summary.paragraph)}</p>
+                <p class="card-qs-text"><strong>${I("sparkles")} Summary:</strong> ${escapeHtml(summary.paragraph)}</p>
                 ${
                   summary.roomTip
-                    ? `<p class="card-qs-room"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</p>`
+                    ? `<p class="card-qs-room"><strong>${I("bed")} ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</p>`
                     : ""
                 }
               </div>
@@ -2098,7 +2102,7 @@ async function boot() {
         btn.textContent = state.threeWay ? "✓ Copied 3-Hotel Link!" : "✓ Copied VS Link!";
         setTimeout(() => {
           btn.classList.remove("is-copied");
-          btn.innerHTML = state.threeWay ? "&#128279; Copy 3-Hotel Link" : "&#128279; Copy VS Link";
+          btn.innerHTML = state.threeWay ? `${I("link")} Copy 3-Hotel Link` : `${I("link")} Copy VS Link`;
         }, 2200);
       }
     } catch (_) {
@@ -2275,235 +2279,6 @@ async function boot() {
     });
   });
 
-  // Natural-Language "Describe Your Ideal Trip" Smart Finder (instant client-side parser, zero API cost)
-  const MONTH_REGEXES = [
-    { m: 1, label: "Jan", re: /\b(january|jan)\b/i },
-    { m: 2, label: "Feb", re: /\b(february|feb)\b/i },
-    { m: 3, label: "Mar", re: /\b(march|mar)\b/i },
-    { m: 4, label: "Apr", re: /\b(april|apr)\b/i },
-    { m: 5, label: "May", re: /\b(may)\b/i },
-    { m: 6, label: "Jun", re: /\b(june|jun)\b/i },
-    { m: 7, label: "Jul", re: /\b(july|jul)\b/i },
-    { m: 8, label: "Aug", re: /\b(august|aug)\b/i },
-    { m: 9, label: "Sep", re: /\b(september|sept|sep)\b/i },
-    { m: 10, label: "Oct", re: /\b(october|oct)\b/i },
-    { m: 11, label: "Nov", re: /\b(november|nov)\b/i },
-    { m: 12, label: "Dec", re: /\b(december|dec)\b/i },
-  ];
-
-  const PLACE_RULES = [
-    { re: /\bcaribbean\b/i, region: "Caribbean & Mexico", excludeCountries: ["mexico"], label: "Caribbean Islands" },
-    { re: /\bmexico|riviera maya|cancun|cancún|los cabos|cabo|tulum|punta mita\b/i, region: "Caribbean & Mexico", search: "Mexico", label: "Mexico" },
-    {
-      re: /\bcanary islands|canaries\b/i,
-      region: "Europe",
-      includeLocations: ["tenerife", "gran canaria", "lanzarote", "fuerteventura", "la palma", "la gomera"],
-      label: "Canary Islands",
-    },
-    { re: /\btenerife\b/i, region: "Europe", search: "Tenerife", label: "Tenerife" },
-    { re: /\bgran canaria\b/i, region: "Europe", search: "Gran Canaria", label: "Gran Canaria" },
-    { re: /\blanzarote\b/i, region: "Europe", search: "Lanzarote", label: "Lanzarote" },
-    { re: /\bfuerteventura\b/i, region: "Europe", search: "Fuerteventura", label: "Fuerteventura" },
-    { re: /\bmaldives\b/i, region: "Maldives & Indian Ocean", search: "Maldives", label: "Maldives" },
-    { re: /\bseychelles\b/i, region: "Maldives & Indian Ocean", search: "Seychelles", label: "Seychelles" },
-    { re: /\bmauritius\b/i, region: "Maldives & Indian Ocean", search: "Mauritius", label: "Mauritius" },
-    { re: /\bbora bora|french polynesia|tahiti\b/i, region: "Australia & Pacific", search: "French Polynesia", label: "Bora Bora & French Polynesia" },
-    { re: /\bbali\b/i, region: "Asia", search: "Bali", label: "Bali" },
-    { re: /\bindonesia|lombok\b/i, region: "Asia", search: "Indonesia", label: "Indonesia" },
-    { re: /\bjapan|tokyo|kyoto|niseko\b/i, region: "Asia", search: "Japan", label: "Japan" },
-    { re: /\bthailand|phuket|bangkok|koh samui\b/i, region: "Asia", search: "Thailand", label: "Thailand" },
-    { re: /\bdubai|abu dhabi|uae|oman|qatar|doha|middle east\b/i, region: "Middle East", label: "Middle East" },
-    { re: /\bgreece|santorini|mykonos|athens|crete\b/i, region: "Europe", search: "Greece", label: "Greece" },
-    { re: /\bitaly|amalfi|como|tuscany|rome|milan|venice|florence|sicily\b/i, region: "Europe", search: "Italy", label: "Italy" },
-    { re: /\bfrance|paris|riviera|provence|courchevel\b/i, region: "Europe", search: "France", label: "France" },
-    { re: /\bspain|mallorca|ibiza|marbella|madrid|barcelona\b/i, region: "Europe", search: "Spain", label: "Spain" },
-    { re: /\bunited kingdom|\buk\b|london|scotland|cotswolds\b/i, region: "Europe", search: "United Kingdom", label: "United Kingdom" },
-    { re: /\bturkey|bodrum|istanbul\b/i, region: "Europe", search: "Turkey", label: "Turkey" },
-    { re: /\begypt|red sea|cairo\b/i, region: "Middle East", search: "Egypt", label: "Egypt" },
-    { re: /\bafrica|south africa|kenya|tanzania|botswana|morocco|marrakech\b/i, region: "Africa", label: "Africa" },
-    { re: /\baustralia|new zealand|fiji|pacific\b/i, region: "Australia & Pacific", label: "Australia & Pacific" },
-    { re: /\beurope\b/i, region: "Europe", label: "Europe" },
-    { re: /\basia\b/i, region: "Asia", label: "Asia" },
-    { re: /\bamericas|usa|united states|california|new york|hawaii|costa rica\b/i, region: "Americas", label: "Americas" },
-    { re: /\bindian ocean\b/i, region: "Maldives & Indian Ocean", label: "Maldives & Indian Ocean" },
-  ];
-
-  const BRAND_RULES = [
-    { re: /\bfour seasons\b/i, brand: "Four Seasons" },
-    { re: /\baman\b/i, brand: "Aman" },
-    { re: /\brosewood\b/i, brand: "Rosewood" },
-    { re: /\bmandarin oriental\b/i, brand: "Mandarin Oriental" },
-    { re: /\bsix senses\b/i, brand: "Six Senses" },
-    { re: /\bbelmond\b/i, brand: "Belmond" },
-    { re: /\bone\s*&\s*only\b/i, brand: "One&Only" },
-    { re: /\bst\.?\s*regis\b/i, brand: "St. Regis" },
-    { re: /\britz[- ]?carlton\b/i, brand: "The Ritz-Carlton" },
-    { re: /\bmarriott|bonvoy\b/i, brand: "Marriott Bonvoy" },
-    { re: /\bhyatt\b/i, brand: "World of Hyatt" },
-    { re: /\bhilton|waldorf|conrad\b/i, brand: "Hilton Honors" },
-    { re: /\bsoneva\b/i, brand: "Soneva" },
-    { re: /\bcapella\b/i, brand: "Capella" },
-  ];
-
-  function parseNaturalTripQuery(raw) {
-    const text = String(raw || "").trim();
-    const parsed = {
-      region: "All",
-      excludeCountries: [],
-      includeLocations: [],
-      search: "",
-      brand: null,
-      month: 0,
-      feature: "all",
-      style: "all",
-      priceTier: "all",
-      maxGbp: null,
-      sortBy: null,
-      chips: [],
-    };
-    if (!text) return parsed;
-
-    // 1. Place / Region
-    for (const rule of PLACE_RULES) {
-      if (rule.re.test(text)) {
-        if (rule.region) parsed.region = rule.region;
-        if (rule.excludeCountries) parsed.excludeCountries = rule.excludeCountries;
-        if (rule.includeLocations) parsed.includeLocations = rule.includeLocations;
-        if (rule.search) parsed.search = rule.search;
-        parsed.chips.push(`📍 ${rule.label}`);
-        break;
-      }
-    }
-
-    // 2. Month / Sunny Season
-    let matchedMonth = null;
-    for (const mr of MONTH_REGEXES) {
-      if (mr.re.test(text)) {
-        matchedMonth = mr;
-        break;
-      }
-    }
-    if (matchedMonth) {
-      parsed.month = matchedMonth.m;
-      parsed.chips.push(`☀ Best Dry Weather in ${matchedMonth.label}`);
-    } else if (/\bwinter sun\b/i.test(text)) {
-      parsed.month = 1;
-      parsed.chips.push("☀ Winter Sun (Jan Dry Weather)");
-    } else if (/\bsummer\b/i.test(text)) {
-      parsed.month = 7;
-      parsed.chips.push("☀ Summer (Jul Dry Weather)");
-    } else if (/\bspring|easter\b/i.test(text)) {
-      parsed.month = 4;
-      parsed.chips.push("☀ Spring (Apr Dry Weather)");
-    } else if (/\bautumn|fall\b/i.test(text)) {
-      parsed.month = 10;
-      parsed.chips.push("☀ Autumn (Oct Dry Weather)");
-    }
-
-    // 3. Budget / Price ceiling
-    const priceMatch = text.match(/(?:under|below|max|less than|up to|<)\s*[£$€]?\s*(\d{3,4})/i);
-    if (priceMatch) {
-      const cap = Number(priceMatch[1]);
-      if (cap <= 500) {
-        parsed.priceTier = "under500";
-        if (cap < 500) parsed.maxGbp = cap;
-        parsed.chips.push(`💎 Under £${cap}/nt`);
-      } else if (cap <= 1000) {
-        parsed.maxGbp = cap;
-        parsed.chips.push(`💎 Under £${cap}/nt`);
-      } else {
-        parsed.maxGbp = cap;
-        parsed.chips.push(`💎 Under £${cap}/nt`);
-      }
-    } else if (/\b(cheap|budget|affordable|great value|good value|value)\b/i.test(text)) {
-      parsed.priceTier = "under500";
-      parsed.sortBy = "price_asc";
-      parsed.chips.push("💎 Great Value (Under £500/nt)");
-    }
-
-    // 4. Awards & Profile Features
-    if (/\btop\s*50|50\s*best\b/i.test(text)) {
-      parsed.feature = "50best_50";
-      parsed.sortBy = "award_50best";
-      parsed.chips.push("🏆 World's 50 Best (#1–50)");
-    } else if (/\btop\s*100\b/i.test(text)) {
-      parsed.feature = "50best_100";
-      parsed.sortBy = "award_50best";
-      parsed.chips.push("💯 Top 100 (#1–100)");
-    } else if (/\b3\s*(?:michelin\s*)?keys?\b/i.test(text)) {
-      parsed.feature = "michelin_3";
-      parsed.sortBy = "award_michelin";
-      parsed.chips.push("🗝️ 3 MICHELIN Keys");
-    } else if (/\bmichelin\b/i.test(text)) {
-      parsed.feature = "michelin";
-      parsed.sortBy = "award_michelin";
-      parsed.chips.push("🗝️ MICHELIN Keys (3→1)");
-    } else if (/\bforbes\b/i.test(text)) {
-      parsed.feature = "forbes";
-      parsed.sortBy = "award_forbes";
-      parsed.chips.push("⭐ Forbes Star-Rated");
-    } else if (/\badults[- ]?only|honeymoon|romantic|couples\b/i.test(text)) {
-      parsed.feature = "adults";
-      parsed.chips.push("🥂 Adults-Only");
-    } else if (/\bfamily|families|kids|children\b/i.test(text)) {
-      parsed.feature = "family";
-      parsed.chips.push("👨‍👩‍👧 Family & Kids");
-    } else if (/\bpoints|bonvoy|hyatt points|hilton points\b/i.test(text)) {
-      parsed.feature = "points";
-      parsed.chips.push("★ Points Brands");
-    }
-
-    // 5. Travel Style
-    if (/\ball[- ]?inclusive\b/i.test(text)) {
-      parsed.style = "allinclusive";
-      parsed.chips.push("🍹 All-Inclusive");
-    } else if (/\boverwater|water villa\b/i.test(text)) {
-      parsed.style = "overwater";
-      parsed.chips.push("🛖 Overwater Villas");
-    } else if (/\bsnorkel|house reef|diving|reef\b/i.test(text)) {
-      parsed.style = "snorkel";
-      parsed.chips.push("🤿 Snorkelling & Reef");
-    } else if (/\bsafari|wildlife|jungle|nature\b/i.test(text)) {
-      parsed.style = "safari";
-      parsed.chips.push("🦁 Safari & Nature");
-    } else if (/\bski|mountain|alps|alpine|snow\b/i.test(text)) {
-      parsed.style = "mountain";
-      parsed.chips.push("🏔️ Mountain & Ski");
-    } else if (/\bspa|wellness|onsen|retreat\b/i.test(text)) {
-      parsed.style = "wellness";
-      parsed.chips.push("🧖 Spa & Wellness");
-    } else if (/\bcity|urban|shopping\b/i.test(text)) {
-      parsed.style = "city";
-      parsed.chips.push("🏙️ City Breaks");
-    } else if (/\bculture|heritage|palace|historic\b/i.test(text)) {
-      parsed.style = "culture";
-      parsed.chips.push("🏛️ Culture & Heritage");
-    } else if (/\bbeach|island|sunny|sunshine|tropical\b/i.test(text) && !parsed.month && parsed.region === "All") {
-      parsed.style = "beach";
-      parsed.chips.push("🏖️ Beach & Island Resorts");
-    } else if (/\bbeach|island\b/i.test(text) && parsed.region !== "All") {
-      parsed.style = "beach";
-      parsed.chips.push("🏖️ Beach & Island");
-    }
-
-    // 6. Brand
-    for (const br of BRAND_RULES) {
-      if (br.re.test(text)) {
-        parsed.brand = br.brand;
-        parsed.chips.push(`🏨 ${br.brand}`);
-        break;
-      }
-    }
-
-    // Fallback: if nothing structured matched, treat cleaned text as keyword search
-    if (!parsed.chips.length) {
-      const cleaned = text.replace(/\b(i want to|i would like to|stay in|looking for|find me|show me|hotels?|resorts?|in|the|a|an|with|for)\b/gi, " ").replace(/\s+/g, " ").trim();
-      parsed.search = cleaned || text;
-      parsed.chips.push(`🔎 "${parsed.search}"`);
-    }
-    return parsed;
-  }
-
   function clearSmartTripBanner() {
     const out = qs("#smartTripUnderstood");
     const clr = qs("#smartTripClearBtn");
@@ -2566,7 +2341,7 @@ async function boot() {
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             ${
               top2Ready
-                ? `<button type="button" class="btn btn-primary" id="tfCompareTop2Btn" style="font-size:13px;padding:7px 14px;">&#9876;&#65039; Compare Top 2 VS &rarr;</button>`
+                ? `<button type="button" class="btn btn-primary" id="tfCompareTop2Btn" style="font-size:13px;padding:7px 14px;">Compare Top 2 VS &rarr;</button>`
                 : ""
             }
             <button type="button" class="btn btn-outline" id="tfSwitchToAllBtn" style="font-size:13px;padding:7px 13px;">Refine All ${list.length} in Full Filters &rarr;</button>
@@ -2634,14 +2409,14 @@ async function boot() {
 
               <div class="tf-summary-box">
                 <p class="tf-summary-lead">${escapeHtml(summary.headline)}</p>
-                ${summary.benefit ? `<p class="tf-summary-line is-pro"><strong>&#10003; Why Guests Love It:</strong> ${escapeHtml(summary.benefit.replace(/^Known for:\s*/i, ""))}</p>` : ""}
-                <p class="tf-summary-line"><strong>&#9728;&#65039; Best Weather:</strong> ${escapeHtml(summary.bestMonths.label)} — ${escapeHtml(summary.bestMonths.reason)}</p>
-                ${summary.watchOut ? `<p class="tf-summary-line is-con"><strong>&#9888;&#65039; Heads-Up:</strong> ${escapeHtml(summary.watchOut)}</p>` : ""}
+                ${summary.benefit ? `<p class="tf-summary-line is-pro"><strong>${I("check")} Why Guests Love It:</strong> ${escapeHtml(summary.benefit.replace(/^Known for:\s*/i, ""))}</p>` : ""}
+                <p class="tf-summary-line"><strong>${I("sun")} Best Weather:</strong> ${escapeHtml(summary.bestMonths.label)} — ${escapeHtml(summary.bestMonths.reason)}</p>
+                ${summary.watchOut ? `<p class="tf-summary-line is-con"><strong>${I("alert")} Heads-Up:</strong> ${escapeHtml(summary.watchOut)}</p>` : ""}
               </div>
 
               ${
                 summary.roomTip
-                  ? `<div class="tf-room-box"><strong>&#x1F6CF;&#xFE0F; ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</div>`
+                  ? `<div class="tf-room-box"><strong>${I("bed")} ${escapeHtml(summary.roomTip.label)}:</strong> ${escapeHtml(summary.roomTip.text)}</div>`
                   : ""
               }
 
@@ -2676,75 +2451,68 @@ async function boot() {
     });
   }
 
+  function setPromptUrlParam(text) {
+    try {
+      const url = new URL(window.location.href);
+      if (text) url.searchParams.set("prompt", text.slice(0, 160));
+      else url.searchParams.delete("prompt");
+      window.history.replaceState({}, "", url.toString());
+    } catch (_) {}
+  }
+
   function setWorkspaceMode(mode, updateUrl = false) {
     const isFinder = mode === "finder";
     state.workspaceMode = isFinder ? "finder" : "directory";
 
-    const finderSec = qs("#tripFinderSection");
-    const methSec = qs("#methodologySection");
-    const h2hSec = qs("#h2hSection");
-    const dirSec = qs("#directorySection");
-    if (finderSec) finderSec.hidden = !isFinder;
-    if (methSec) methSec.hidden = isFinder;
-    if (h2hSec) h2hSec.hidden = isFinder;
-    if (dirSec) dirSec.hidden = isFinder;
+    // Discover (calm default) vs Compare & Directory (full-detail power view)
+    const toggle = (sel, show) => {
+      const el = qs(sel);
+      if (el) el.hidden = !show;
+    };
+    toggle("#discoverHeroSection", isFinder);
+    toggle("#tripFinderSection", isFinder);
+    toggle("#compareModeBanner", !isFinder);
+    toggle("#methodologySection", !isFinder);
+    toggle("#h2hSection", !isFinder);
+    toggle("#directorySection", !isFinder);
 
-    const tabDir = qs("#modeTabDirectory");
-    const tabFind = qs("#modeTabFinder");
-    if (tabDir) {
-      tabDir.classList.toggle("active", !isFinder);
-      tabDir.setAttribute("aria-selected", !isFinder ? "true" : "false");
-    }
-    if (tabFind) {
-      tabFind.classList.toggle("active", isFinder);
-      tabFind.setAttribute("aria-selected", isFinder ? "true" : "false");
-    }
+    ["#navTripFinderLink", "#mobileTripFinderLink"].forEach((sel) => qs(sel)?.classList.toggle("active", isFinder));
+    ["#navStayOddsLink", "#mobileCompareLink"].forEach((sel) => qs(sel)?.classList.toggle("active", !isFinder));
 
-    qs("#navStayOddsLink")?.classList.toggle("active", !isFinder);
-    qs("#navTripFinderLink")?.classList.toggle("active", isFinder);
-    qs("#hubTabStayOdds")?.classList.toggle("active", !isFinder);
-    qs("#hubTabTripFinder")?.classList.toggle("active", isFinder);
-
-    if (isFinder) {
-      renderTripFinderResults();
-    }
+    if (isFinder) renderTripFinderResults();
 
     if (updateUrl) {
       try {
         const url = new URL(window.location.href);
-        if (isFinder) url.searchParams.set("mode", "finder");
-        else url.searchParams.delete("mode");
+        if (isFinder) {
+          url.searchParams.delete("mode");
+        } else {
+          url.searchParams.set("mode", "compare");
+          url.searchParams.delete("prompt");
+        }
         window.history.replaceState({}, "", url.toString());
       } catch (_) {}
     }
+    if (updateUrl) window.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  document.querySelectorAll("[data-workspace-mode]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      setWorkspaceMode(btn.dataset.workspaceMode || "directory", true);
-    });
-  });
-
-  ["#navTripFinderLink", "#mobileTripFinderLink", "#hubTabTripFinder", "#openTripFinderInlineBtn"].forEach((sel) => {
-    qs(sel)?.addEventListener("click", (e) => {
-      e.preventDefault();
-      setWorkspaceMode("finder", true);
-      qs("#mobileNav")?.classList.remove("open");
-      requestAnimationFrame(() => {
-        qs("#workspaceModeBar")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        qs("#smartTripInput")?.focus();
-      });
-    });
-  });
-
-  ["#navStayOddsLink", "#hubTabStayOdds"].forEach((sel) => {
-    qs(sel)?.addEventListener("click", (e) => {
-      if (state.workspaceMode === "finder") {
-        e.preventDefault();
-        setWorkspaceMode("directory", true);
-      }
-    });
-  });
+  const goDirectory = (e) => {
+    e?.preventDefault?.();
+    qs("#mobileNav")?.classList.remove("open");
+    setWorkspaceMode("directory", true);
+  };
+  const goFinder = (e) => {
+    e?.preventDefault?.();
+    qs("#mobileNav")?.classList.remove("open");
+    setWorkspaceMode("finder", true);
+    requestAnimationFrame(() => qs("#smartTripInput")?.focus({ preventScroll: true }));
+  };
+  ["#navStayOddsLink", "#mobileCompareLink", "#heroSwitchToCompareBtn"].forEach((sel) =>
+    qs(sel)?.addEventListener("click", goDirectory)
+  );
+  ["#navTripFinderLink", "#mobileTripFinderLink", "#openTripFinderInlineBtn"].forEach((sel) =>
+    qs(sel)?.addEventListener("click", goFinder)
+  );
 
   function applySmartTripPrompt(rawText) {
     const inp = qs("#smartTripInput");
@@ -2754,6 +2522,7 @@ async function boot() {
     if (inp && inp.value !== text) inp.value = text;
     if (!text) {
       clearSmartTripBanner();
+      setPromptUrlParam("");
       renderTripFinderResults();
       return;
     }
@@ -2789,7 +2558,7 @@ async function boot() {
     const sortEl = qs("#consensusSort");
     if (sortEl) sortEl.value = state.sortBy;
 
-    syncUrlParams();
+    setPromptUrlParam(text);
     renderScopeTabs();
     renderRegionPills();
     renderFeaturePills();
@@ -2804,7 +2573,7 @@ async function boot() {
       out.hidden = false;
       out.innerHTML = `
         <span class="smart-understood-label">Understood (${matchedCount} match${matchedCount === 1 ? "" : "es"}):</span>
-        ${p.chips.map((c) => `<span class="smart-understood-pill">${escapeHtml(c)}</span>`).join("")}
+        ${p.chips.map((c) => `<span class="smart-understood-pill">${c.iconKey ? svgIcon(c.iconKey, 13) : ""}${escapeHtml(c.label)}</span>`).join("")}
         <button type="button" class="btn-link-clear" id="smartTripResetInline">Reset</button>
       `;
       out.querySelector("#smartTripResetInline")?.addEventListener("click", () => {
@@ -2819,6 +2588,7 @@ async function boot() {
   qs("#smartTripForm")?.addEventListener("submit", (e) => {
     e.preventDefault();
     applySmartTripPrompt(qs("#smartTripInput")?.value || "");
+    requestAnimationFrame(() => qs("#tripFinderSection")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   });
   qs("#smartTripClearBtn")?.addEventListener("click", () => {
     const inp = qs("#smartTripInput");
@@ -2843,6 +2613,7 @@ async function boot() {
     if (sortEl) sortEl.value = "visited";
     state.visibleLimit = PAGE_SIZE;
     syncUrlParams();
+    setPromptUrlParam("");
     renderScopeTabs();
     renderRegionPills();
     renderFeaturePills();
@@ -2854,6 +2625,7 @@ async function boot() {
   document.querySelectorAll("[data-trip-prompt]").forEach((btn) => {
     btn.addEventListener("click", () => {
       applySmartTripPrompt(btn.dataset.tripPrompt || "");
+      requestAnimationFrame(() => qs("#tripFinderSection")?.scrollIntoView({ behavior: "smooth", block: "start" }));
     });
   });
 
@@ -2946,7 +2718,7 @@ async function boot() {
     const res = await fetchLiveHotelRates(nuiteeIds, ci, co, state.adults, "GBP");
     if (btn) {
       btn.disabled = false;
-      btn.innerHTML = "&#128176; Check Live Rates";
+      btn.innerHTML = `${I("tag")} Check Live Rates`;
     }
     if (res && res.status === "ok" && res.rates && Object.keys(res.rates).length > 0) {
       state.liveRates = { ...state.liveRates, ...res.rates };
@@ -2984,7 +2756,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124e";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124f";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -2997,7 +2769,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124e`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124f`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {
@@ -3034,7 +2806,12 @@ async function boot() {
 
     const modeParam = (params.get("mode") || "").toLowerCase();
     const promptParam = (params.get("prompt") || "").trim();
-    if (modeParam === "finder" || promptParam) {
+    const wantsDirectory =
+      modeParam === "compare" ||
+      modeParam === "directory" ||
+      hadCompareParams ||
+      Boolean(params.get("region") || params.get("brand") || params.get("saved") || params.get("style") || params.get("month") || params.get("scope"));
+    if (promptParam || (!wantsDirectory && modeParam !== "compare")) {
       setWorkspaceMode("finder", false);
       if (promptParam) {
         applySmartTripPrompt(promptParam);

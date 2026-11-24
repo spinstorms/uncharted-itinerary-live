@@ -5,12 +5,11 @@
  * - Categories are derived ONLY from verified text already stored on each property
  *   (name, location, country, region, priceRange, standout, verdict, watchOut, keyFacts).
  * - Negative/contradictory statements (e.g. "no beach", "no house reef", "Optional All-Inclusive")
- *   and false-positive wording (e.g. "overwater cabanas/decks/restaurant/spa", "Beach Road",
- *   "Table Mountain views", "UNESCO Biosphere") are explicitly excluded.
+ *   and mountain/alpine/inland-city properties are strictly excluded from Beach Resorts.
  */
 
 const NO_BEACH_RE =
-  /\b(no\s+(?:swimmable\s+)?(?:resort\s+)?beach|not\s+on\s+the\s+beach|not\s+(?:a\s+)?beachfront|inland\s+mountain|inland\s+unesco|beach\s+road)\b/i;
+  /\b(no\s+(?:swimmable\s+)?(?:resort\s+)?beach|not\s+on\s+the\s+beach|not\s+(?:a\s+)?beachfront|inland\s+mountain|inland\s+unesco|beach\s+road|alpine\s*\/\s*ski)\b/i;
 const BEACH_RE =
   /\b(beachfront|white-sand|sandy\s+bay|private\s+island|atoll|oceanfront|seafront|coastal\s+resort|private\s+cove|private\s+peninsula|swimmable\s+beach|beach\s+club|beach\s+villas?|beach\s+resort)\b/i;
 
@@ -29,6 +28,10 @@ const CITY_RE =
 const NON_CITY_LOCATION_RE =
   /\b(desert\s+conservation|vancouver\s+island|private\s+island|nurai\s+island|wilderness\s+lodge|athens\s+riviera)\b/i;
 
+// Inland cities, lakes, mountains, valleys & deserts that must NEVER match Beach Resorts
+const STRICT_NON_BEACH_LOC_RE =
+  /\b(courchevel|st\.?\s*moritz|zermatt|gstaad|andermatt|aspen|vail|deer\s+valley|jackson\s+hole|whistler|banff|niseko|dolomites|meg[eè]ve|chamonix|verbier|lech|kitzb|big\s+sky|moonlight\s+basin|hakone|kyoto|tokyo|osaka|seoul|taipei|bangkok|kuala\s+lumpur|singapore|hong\s+kong|shanghai|beijing|paris|london|madrid|milan|florence|rome|vienna|zurich|geneva|munich|berlin|amsterdam|new\s+york|manhattan|chicago|las\s+vegas|beverly\s+hills|west\s+hollywood|mexico\s+city|mendoza|cusco|san\s+miguel\s+de\s+allende|marrakec?h|jaipur|udaipur|jodhpur|new\s+delhi|hyderabad|bengaluru|luxor|cairo|giza|alula|chiang\s+mai|chiang\s+rai|ubud|cotswolds|wiltshire|gleneagles|serengeti|masai\s+mara|kruger|okavango|botswana|rwanda|namibia|atacama|patagonia|douro\s+valley|montalcino|lake\s+como|moltrasio|cernobbio|tremezzo|lago\s+di\s+como|chochol[aá])\b/i;
+
 const CULTURE_RE =
   /\b(heritage|historic|palace|castle|ch[aâ]teau|monastery|convents?|temple|shrine|museum|renaissance|belle\s+[eé]poque|riad|medina|grand\s+dame|1[6-9]th-century|kyoto|rome|florence|venice|paris|vienna|istanbul|athens|marrakec?h|marrakesh|udaipur|jaipur|jodhpur|cusco|machu\s+picchu|san\s+miguel\s+de\s+allende|ubud|luang\s+prabang|angkor|siem\s+reap)\b/i;
 const CULTURE_FALSE_POS_RE =
@@ -38,7 +41,7 @@ const SAFARI_NATURE_RE =
   /\b(safari\s+(?:lodge|camp|tents?)|big\s+five|big-game|game\s+reserve|masai\s+mara|serengeti|kruger|sabi\s+sand|okavango|shamwari|singita|tented\s+camp|tented\s+lodge|tented\s+sanctuary|cloud\s+forest|conservancy|sandstone\s+mesa|desert\s+dunes|red\s+dunes|empty\s+quarter|desert\s+resort|arenal|patagonia|atacama|gal[aá]pagos|nyungwe|yala\s+national\s+park|banff\s+national\s+park|ise-shima\s+national\s+park|n[uú]i\s+ch[uú]a\s+national\s+park|wilderness\s+lodge|rainforest\s+(?:valley|clifftop|canopy|treehouse|meets-beach)|bamboo-jungle|jungle\s+(?:hideaway|pavilions?|pool\s+villas?|riverside))\b/i;
 
 const MOUNTAIN_SKI_RE =
-  /\b(ski-in|ski\s+valet|ski\s+lodge|alpine|alps|dolomites|chalet|glacier|himalaya[sn]?|andes|rockies|aspen|courchevel|st\.?\s*moritz|zermatt|gstaad|andermatt|whistler|banff|jackson\s+hole|big\s+sky|moonlight\s+basin|park\s+city|deer\s+valley|telluride|vail|blackberry\s+mountain|highland\s+rainforest\s+mountain|inland\s+mountain\s+pine)\b/i;
+  /\b(ski-in|ski\s+valet|ski\s+lodge|ski\s+resort|alpine|alps|dolomites|chalet|glacier|himalaya[sn]?|andes|rockies|aspen|courchevel|st\.?\s*moritz|zermatt|gstaad|andermatt|whistler|banff|jackson\s+hole|big\s+sky|moonlight\s+basin|park\s+city|deer\s+valley|telluride|vail|niseko|meg[eè]ve|chamonix|verbier|blackberry\s+mountain|highland\s+rainforest\s+mountain|inland\s+mountain\s+pine)\b/i;
 
 const WELLNESS_BODY_RE =
   /\b(spa|wellness|wellbeing|onsen|hot\s+springs?|thermal|hammam|ayurveda|hydrotherapy|longevity|meditation|holistic)\b/i;
@@ -62,25 +65,32 @@ function placeText(h) {
 }
 
 export const TRAVEL_STYLES = [
-  { id: "all", label: "All Styles", icon: "", match: () => true },
+  { id: "all", label: "All Styles", iconKey: "", match: () => true },
   {
     id: "beach",
     label: "Beach Resorts",
-    icon: "🏖️",
+    iconKey: "waves",
     match: (h) => {
       const kfReef = (h.keyFacts && h.keyFacts.beachOrReef) || "";
+      const locName = [h.name, h.location, h.country].filter(Boolean).join(" ");
+      // Hard guard: never classify snowy/mountain/ski or strictly inland urban/lake/safari hotels as Beach Resorts
+      if (MOUNTAIN_SKI_RE.test(`${locName} ${kfReef}`)) return false;
+      if (STRICT_NON_BEACH_LOC_RE.test(locName)) return false;
       const checkNeg = [h.name, kfReef, h.watchOut].filter(Boolean).join(" ");
       if (NO_BEACH_RE.test(checkNeg)) return false;
-      if (h.region === "Maldives" || h.region === "Bora Bora") return true;
+      if (h.country === "Maldives" || h.region === "Maldives" || h.region === "Bora Bora") return true;
       return BEACH_RE.test(posText(h));
     },
   },
   {
     id: "snorkel",
     label: "Snorkelling & Reef",
-    icon: "🤿",
+    iconKey: "compass",
     match: (h) => {
       const kfReef = (h.keyFacts && h.keyFacts.beachOrReef) || "";
+      const locName = [h.name, h.location, h.country].filter(Boolean).join(" ");
+      if (MOUNTAIN_SKI_RE.test(`${locName} ${kfReef}`)) return false;
+      if (STRICT_NON_BEACH_LOC_RE.test(locName)) return false;
       const p = [h.name, h.standout, h.verdict, kfReef].filter(Boolean).join(" ");
       if (NO_REEF_RE.test(p) || NO_REEF_RE.test(h.watchOut || "")) {
         if (!REEF_RE.test(kfReef) || NO_REEF_RE.test(kfReef)) return false;
@@ -91,11 +101,11 @@ export const TRAVEL_STYLES = [
   {
     id: "overwater",
     label: "Overwater Villas",
-    icon: "🛖",
+    iconKey: "home",
     match: (h) => {
       const full = `${posText(h)} ${h.watchOut || ""}`;
       if (NO_OVERWATER_RE.test(full)) return false;
-      if (h.region === "Maldives") return true;
+      if (h.country === "Maldives" || h.region === "Maldives") return true;
       if (/bora\s+bora/i.test(`${h.location || ""} ${h.name || ""}`)) return true;
       return OVERWATER_VILLA_RE.test(posText(h));
     },
@@ -103,7 +113,7 @@ export const TRAVEL_STYLES = [
   {
     id: "city",
     label: "City Breaks",
-    icon: "🏙️",
+    iconKey: "building",
     match: (h) => {
       if (["Maldives", "Bora Bora", "Caribbean"].includes(h.region)) return false;
       const locName = [h.location, h.name].filter(Boolean).join(" ");
@@ -114,7 +124,7 @@ export const TRAVEL_STYLES = [
   {
     id: "culture",
     label: "Culture & Heritage",
-    icon: "🏛️",
+    iconKey: "landmark",
     match: (h) => {
       const cleaned = posText(h).replace(CULTURE_FALSE_POS_RE, "");
       return CULTURE_RE.test(cleaned);
@@ -123,19 +133,19 @@ export const TRAVEL_STYLES = [
   {
     id: "safari",
     label: "Safari & Nature",
-    icon: "🦁",
+    iconKey: "trees",
     match: (h) => SAFARI_NATURE_RE.test(placeText(h)),
   },
   {
     id: "mountain",
     label: "Mountain & Ski",
-    icon: "🏔️",
+    iconKey: "mountain",
     match: (h) => MOUNTAIN_SKI_RE.test(placeText(h)),
   },
   {
     id: "wellness",
     label: "Spa & Wellness",
-    icon: "🧖",
+    iconKey: "droplets",
     match: (h) => {
       const kf = h.keyFacts || {};
       const body = [h.standout, h.verdict, kf.poolHeating].filter(Boolean).join(" ");
@@ -145,7 +155,7 @@ export const TRAVEL_STYLES = [
   {
     id: "allinclusive",
     label: "All-Inclusive",
-    icon: "🍹",
+    iconKey: "utensils",
     match: (h) => {
       const full = `${posText(h)} ${h.watchOut || ""}`;
       if (NOT_AI_RE.test(full)) return false;

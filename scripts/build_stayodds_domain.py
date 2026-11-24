@@ -78,7 +78,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = re.sub(r"url\(['\"]?(?:\.\./)+assets/", "url('/assets/", html)
     html = re.sub(r'data-hero-base=["\'](?:\.\./)+assets/', 'data-hero-base="/assets/', html)
     html = html.replace('import("../../assets/stayodds-share-card.js', 'import("/assets/stayodds-share-card.js')
-    html = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=43', html)
+    html = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=44', html)
 
     # 3. Cross-domain navigation links to The Uncharted Itinerary Hub
     for hub_section in ("cameras", "links", "about", "faq", "contact", "privacy"):
@@ -244,7 +244,7 @@ def write_404_page(out_dir: Path) -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — StayOdds.</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2" />
-  <link rel="stylesheet" href="/assets/styles.min.css?v=43" />
+  <link rel="stylesheet" href="/assets/styles.min.css?v=44" />
 {STAYODDS_GA4_SNIPPET}
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">

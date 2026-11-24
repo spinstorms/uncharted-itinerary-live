@@ -7,7 +7,8 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=12";
-import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
+import { svgIcon } from "./stayodds-icons.js?v=1";
 import {
   MONTH_LABELS,
   getBrandCategories,
@@ -16,7 +17,8 @@ import {
   matchesBestMonth,
   getGuestProfile,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=5";
+  parseNaturalTripQuery,
+} from "./stayodds-insights.js?v=6";
 
 const PAGE_SIZE = 24;
 const MAP_STATE_KEY = "stayodds_map_state_v1";
@@ -45,6 +47,10 @@ const state = {
   tableSortKey: null, // null | "name" | "location" | "odds" | "overall" | "critic" | "guest" | "gap" | "michelin" | "w50" | "forbes"
   tableSortDir: "desc",
   search: "",
+  smartPrompt: "",
+  smartExcludeCountries: [],
+  smartIncludeLocations: [],
+  smartMaxGbp: null,
   viewMode: "cards",
   visibleLimit: PAGE_SIZE,
   map: null,
@@ -69,6 +75,7 @@ function saveMapState() {
       coverage: state.coverage,
       sortBy: state.sortBy,
       search: state.search,
+      smartPrompt: state.smartPrompt,
       viewMode: state.viewMode,
       lat: center ? Number(center.lat.toFixed(4)) : null,
       lng: center ? Number(center.lng.toFixed(4)) : null,
@@ -292,6 +299,15 @@ function getFilteredHotels() {
   const q = state.search.trim().toLowerCase();
   const list = getScopedHotels().filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
+    if (state.smartExcludeCountries.length && state.smartExcludeCountries.includes(String(h.country || "").toLowerCase())) return false;
+    if (state.smartIncludeLocations.length) {
+      const locBlob = `${h.name || ""} ${h.location || ""} ${h.country || ""}`.toLowerCase();
+      if (!state.smartIncludeLocations.some((term) => locBlob.includes(term))) return false;
+    }
+    if (typeof state.smartMaxGbp === "number" && state.smartMaxGbp > 0) {
+      const pd = getPriceDisplay(h);
+      if (pd.numericGbp == null || pd.numericGbp > state.smartMaxGbp) return false;
+    }
     if (state.brand !== "All" && !matchesBrandCategory(h, state.brand)) return false;
     if (!matchesTravelStyle(h, state.style)) return false;
     if (state.month && !matchesBestMonth(h, state.month)) return false;
@@ -494,7 +510,7 @@ function renderStylePills() {
     if (s.id !== "all" && cnt === 0 && state.style !== s.id) return "";
     return `<button class="feature-pill style-pill ${state.style === s.id ? "active" : ""}" data-style="${escapeHtml(
       s.id
-    )}" type="button">${s.icon ? `${s.icon} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
+    )}" type="button">${s.iconKey ? `${svgIcon(s.iconKey, 14)} ` : ""}${escapeHtml(s.label)} (${cnt})</button>`;
   }).join("");
   container.querySelectorAll("[data-style]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -535,7 +551,7 @@ function populateBrands() {
     `<optgroup label="★ Parent Hotel &amp; Loyalty Groups">` +
     parents.map(([b, c]) => `<option value="${escapeHtml(b)}">${escapeHtml(b)} (${c})</option>`).join("") +
     `</optgroup>` +
-    `<optgroup label="🏨 Luxury Hotel Brands">` +
+    `<optgroup label="Luxury Hotel Brands">` +
     brands.map(([b, c]) => `<option value="${escapeHtml(b)}">${escapeHtml(b)} (${c})</option>`).join("") +
     `</optgroup>`;
 }
@@ -545,7 +561,7 @@ function buildPopupHtml(h) {
   const priceInfo = getPriceDisplay(h);
   const awardsBadges = (h.officialAwards || [])
     .slice(0, 1)
-    .map((a) => `<span class="tag tag-teal" style="font-size:10.5px;">🏆 ${escapeHtml(a.label)}</span>`)
+    .map((a) => `<span class="tag tag-teal" style="font-size:10.5px;">${svgIcon("trophy", 12)} ${escapeHtml(a.label)}</span>`)
     .join(" ");
 
   const reviewHref = getReviewHref(h);
@@ -832,13 +848,13 @@ function renderScorecards(hotels) {
         };
 
         const topAwardChip = (h.officialAwards || []).length
-          ? `<a class="tag tag-teal" href="${escapeHtml(h.officialAwards[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 ${escapeHtml(h.officialAwards[0].label)} ↗</a>`
+          ? `<a class="tag tag-teal" href="${escapeHtml(h.officialAwards[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">${svgIcon("trophy", 12)} ${escapeHtml(h.officialAwards[0].label)} ↗</a>`
           : "";
 
         const editorialUrlSet = new Set((o.editorialRatings || []).map((e) => e.sourceUrl));
         const linkedReviewsHtml = [
           ...(h.officialAwards || []).map(
-            (a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(a.label)} ↗</a>`
+            (a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">${svgIcon("trophy", 12)} ${escapeHtml(a.label)} ↗</a>`
           ),
           ...(o.editorialRatings || []).map((e) => {
             const suffix = isScoreUnverified(e)
@@ -846,7 +862,7 @@ function renderScorecards(hotels) {
               : e.rawScore
               ? ` (${escapeHtml(e.rawScore)})`
               : "";
-            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(e.sourceName)}${suffix} ↗</a>`;
+            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">${svgIcon("link", 12)} ${escapeHtml(e.sourceName)}${suffix} ↗</a>`;
           }),
           ...(o.youtubeReviews || [])
             .filter((y) => !editorialUrlSet.has(y.sourceUrl))
@@ -877,7 +893,7 @@ function renderScorecards(hotels) {
               </div>
               <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
               <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
-                📍 Map
+                ${svgIcon("mapPin", 13)} Map
               </button>
             </div>
 
@@ -1027,7 +1043,7 @@ function renderMapActiveFiltersAndBadge() {
   }
   if (state.style !== "all") {
     const sObj = TRAVEL_STYLES.find((s) => s.id === state.style);
-    chips.push({ key: "style", label: sObj ? `${sObj.icon ? sObj.icon + " " : ""}${sObj.label}` : state.style });
+    chips.push({ key: "style", label: sObj ? `${sObj.label}` : state.style });
   }
   if (state.month >= 1 && state.month <= 12) {
     chips.push({ key: "month", label: `Best in ${MONTH_LABELS[state.month - 1]}` });
@@ -1098,6 +1114,84 @@ function renderAll(fitBounds = false) {
   saveMapState();
 }
 
+function renderMapUnderstood(p, matchCount) {
+  const out = qs("#mapSmartTripUnderstood");
+  const clr = qs("#mapSmartTripClearBtn");
+  if (clr) clr.hidden = !state.smartPrompt;
+  if (!out) return;
+  if (!state.smartPrompt) {
+    out.hidden = true;
+    out.innerHTML = "";
+    return;
+  }
+  out.hidden = false;
+  out.innerHTML =
+    `<span class="smart-understood-label">Understood (${matchCount} on map):</span>` +
+    p.chips.map((c) => `<span class="smart-understood-pill">${c.iconKey ? svgIcon(c.iconKey, 13) : ""}${escapeHtml(c.label)}</span>`).join("") +
+    `<button type="button" class="btn-link-clear" id="mapSmartResetInline">Reset</button>`;
+  out.querySelector("#mapSmartResetInline")?.addEventListener("click", clearMapPrompt);
+}
+
+function syncMapControlsFromState() {
+  const sf = qs("#hotelSearch");
+  if (sf) sf.value = state.search;
+  const bf = qs("#brandFilter");
+  if (bf) bf.value = [...bf.options].some((o) => o.value === state.brand) ? state.brand : "All";
+  const cf = qs("#coverageFilter");
+  if (cf) cf.value = state.coverage;
+  const pf = qs("#mapProfileFilter");
+  if (pf) pf.value = state.profileFilter;
+}
+
+function applyMapPrompt(raw) {
+  const text = String(raw || "").trim();
+  if (!text) {
+    clearMapPrompt();
+    return;
+  }
+  const p = parseNaturalTripQuery(text);
+  state.smartPrompt = text;
+  state.region = p.region || "All";
+  state.smartExcludeCountries = p.excludeCountries || [];
+  state.smartIncludeLocations = p.includeLocations || [];
+  state.smartMaxGbp = p.maxGbp;
+  state.search = p.search || "";
+  state.brand = p.brand || "All";
+  state.style = p.style || "all";
+  state.month = p.month || 0;
+  state.coverage = "All";
+  state.scope = "all";
+  state.profileFilter = "all";
+  const f = p.feature || "all";
+  if (f.startsWith("michelin")) state.scope = "michelin";
+  else if (f.startsWith("50best")) state.scope = "w50";
+  else if (f === "video") state.scope = "visited";
+  else if (["adults", "family", "preferred", "points"].includes(f)) state.profileFilter = f;
+  state.visibleLimit = PAGE_SIZE;
+  state.tableSortKey = null;
+  const inp = qs("#mapSmartTripInput");
+  if (inp && inp.value !== text) inp.value = text;
+  syncMapControlsFromState();
+  renderScopeTabs();
+  renderRegionPills();
+  renderStylePills();
+  window._renderMapMonthPills?.();
+  renderAll(true);
+  renderMapUnderstood(p, getFilteredHotels().length);
+  if (typeof window.trackEvent === "function") window.trackEvent("use_filter", "map_smart_trip", text.slice(0, 80));
+}
+
+function clearMapPrompt() {
+  const inp = qs("#mapSmartTripInput");
+  if (inp) inp.value = "";
+  state.smartPrompt = "";
+  state.smartExcludeCountries = [];
+  state.smartIncludeLocations = [];
+  state.smartMaxGbp = null;
+  renderMapUnderstood({ chips: [] }, 0);
+  qs("#resetMapViewBtn")?.click();
+}
+
 async function boot() {
   initCommonUi();
   initMap();
@@ -1121,6 +1215,13 @@ async function boot() {
     state.style = "all";
     state.month = 0;
     state.search = "";
+    state.smartPrompt = "";
+    state.smartExcludeCountries = [];
+    state.smartIncludeLocations = [];
+    state.smartMaxGbp = null;
+    const smartInp = qs("#mapSmartTripInput");
+    if (smartInp) smartInp.value = "";
+    renderMapUnderstood({ chips: [] }, 0);
     state.sortBy = "stayodds";
     state.tableSortKey = null;
     state.visibleLimit = PAGE_SIZE;
@@ -1142,6 +1243,15 @@ async function boot() {
     if (state.map) state.map.setView([20.0, 20.0], 2, { animate: true });
     suppressMapSave = false;
     syncUrlParams();
+  });
+
+  qs("#mapSmartTripForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    applyMapPrompt(qs("#mapSmartTripInput")?.value || "");
+  });
+  qs("#mapSmartTripClearBtn")?.addEventListener("click", clearMapPrompt);
+  document.querySelectorAll("[data-map-prompt]").forEach((btn) => {
+    btn.addEventListener("click", () => applyMapPrompt(btn.dataset.mapPrompt || ""));
   });
 
   const mapDrawerBtn = qs("#mapMoreFiltersBtn");
@@ -1259,7 +1369,7 @@ async function boot() {
   window._renderMapMonthPills = renderMapMonthPills;
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124e";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124f";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -1272,7 +1382,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124e`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124f`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {
@@ -1309,6 +1419,15 @@ async function boot() {
         }
         if (saved.style && TRAVEL_STYLES.some((s) => s.id === saved.style)) state.style = saved.style;
         if (typeof saved.month === "number" && saved.month >= 0 && saved.month <= 12) state.month = saved.month;
+        if (typeof saved.smartPrompt === "string" && saved.smartPrompt) {
+          const sp = parseNaturalTripQuery(saved.smartPrompt);
+          state.smartPrompt = saved.smartPrompt;
+          state.smartExcludeCountries = sp.excludeCountries || [];
+          state.smartIncludeLocations = sp.includeLocations || [];
+          state.smartMaxGbp = sp.maxGbp;
+          const si = qs("#mapSmartTripInput");
+          if (si) si.value = saved.smartPrompt;
+        }
         if (typeof saved.search === "string") {
           state.search = saved.search;
           const sf = qs("#hotelSearch");
@@ -1342,6 +1461,9 @@ async function boot() {
     renderRegionPills();
     renderStylePills();
     renderMapMonthPills();
+    if (state.smartPrompt) {
+      renderMapUnderstood(parseNaturalTripQuery(state.smartPrompt), getFilteredHotels().length);
+    }
     if (restoredViewport && state.map) {
       renderAll(false);
       state.map.setView([restoredViewport.lat, restoredViewport.lng], restoredViewport.zoom, { animate: false });

@@ -131,9 +131,14 @@ def extract_rich_verified_facts(detail: dict[str, Any]) -> dict[str, str]:
     # 2. Beach / Setting fact (strictly from verified facilities/description)
     beach_or_reef = ""
     has_private_beach = any("private beach" in f for f in fac_low) or "private beach" in desc_low
-    has_beachfront = any(k in f for f in fac_low for k in ("beachfront", "on the beach", "beach access", "beach")) or "beachfront" in desc_low
+    # Strict keywords only: a bare "beach" substring also matches "beach towels", "beach shuttle", city-hotel
+    # "beach umbrellas" etc. and previously mislabelled alpine/city/lake hotels as beachfront.
+    has_beachfront = any(k in f for f in fac_low for k in ("beachfront", "on the beach", "beach access")) or "beachfront" in desc_low
+    mountain_ctx = bool(re.search(r"\b(ski[- ]in|ski[- ]out|ski resort|skiing|alps|alpine|chairlift|ski slopes?|mountain resort|courchevel|st\.? moritz|zermatt|verbier|aspen|gstaad)\b", blob))
+    if mountain_ctx and not any("private beach" in f for f in fac_low):
+        has_beachfront = False
     has_snorkel = any("snorkeling" in f or "diving" in f for f in fac_low)
-    has_ski = any("ski" in f for f in fac_low)
+    has_ski = any("ski" in f for f in fac_low) and bool(re.search(r"\b(ski[- ]in|ski[- ]out|ski lift|ski slopes?|ski resort|piste|skiing)\b", blob))
     has_golf = any("golf" in f for f in fac_low)
     if has_private_beach and has_snorkel:
         beach_or_reef = "Private beach with snorkeling/diving access"
