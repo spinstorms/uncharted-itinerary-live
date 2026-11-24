@@ -1,0 +1,73 @@
+name: Publish StayOdds Bundle to stayodds.com (spinstorms/stayodds-live)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "compare/**"
+      - "hotels/**"
+      - "brands/**"
+      - "stayodds/**"
+      - "destinations/**"
+      - "assets/**"
+      - "data/stayodds-*.json"
+      - "data/price-snapshots.json"
+      - "scripts/build_stayodds_domain.py"
+      - "scripts/audit_brands_and_loyalty.py"
+      - "ads.txt"
+  workflow_dispatch:
+
+concurrency:
+  group: "publish-stayodds-domain"
+  cancel-in-progress: false
+
+jobs:
+  publish-stayodds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check STAYODDS_DEPLOY_TOKEN availability
+        id: check_token
+        env:
+          DEPLOY_TOKEN: ${{ secrets.STAYODDS_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::STAYODDS_DEPLOY_TOKEN secret is not configured yet — skipping auto-publish to spinstorms/stayodds-live."
+          else
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout uncharted-itinerary-live
+        if: steps.check_token.outputs.has_token == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        if: steps.check_token.outputs.has_token == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build stayodds.com standalone bundle
+        if: steps.check_token.outputs.has_token == 'true'
+        run: python3 scripts/build_stayodds_domain.py
+
+      - name: Sync bundle to spinstorms/stayodds-live
+        if: steps.check_token.outputs.has_token == 'true'
+        env:
+          DEPLOY_TOKEN: ${{ secrets.STAYODDS_DEPLOY_TOKEN }}
+        run: |
+          git clone --depth 1 "https://x-access-token:${DEPLOY_TOKEN}@github.com/spinstorms/stayodds-live.git" /tmp/stayodds-live
+          rsync -a --delete --exclude='.git' .stayodds-dist/ /tmp/stayodds-live/
+          cd /tmp/stayodds-live
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync stayodds.com bundle from uncharted-itinerary-live@${GITHUB_SHA::8}"
+            git push origin main
+          else
+            echo "No changes to publish to spinstorms/stayodds-live."
+          fi
