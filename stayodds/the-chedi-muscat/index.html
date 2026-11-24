@@ -307,23 +307,8 @@
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
-        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=the-chedi-muscat&amp;b=six-senses-zighy-bay&amp;c=al-bustan-palace-a-ritz-carlton">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=six-senses-zighy-bay"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Six Senses Zighy Bay</div><div class="rival-matchup-meta"><span>Six Senses Zighy Bay: 94% · From £2,000/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=al-bustan-palace-a-ritz-carlton"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Al Bustan Palace, a Ritz-Carlton Hotel</div><div class="rival-matchup-meta"><span>Al Bustan Palace, a Ritz-Carlton Hotel: 93%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=alila-hinu-bay"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Alila Hinu Bay</div><div class="rival-matchup-meta"><span>Alila Hinu Bay: 92%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
+        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=the-chedi-muscat&amp;b=al-bustan-palace-a-ritz-carlton&amp;c=jumeirah-muscat-bay">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=al-bustan-palace-a-ritz-carlton"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Al Bustan Palace, a Ritz-Carlton Hotel</div><div class="rival-matchup-meta"><span>Al Bustan Palace, a Ritz-Carlton Hotel: 93%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=jumeirah-muscat-bay"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Jumeirah Muscat Bay</div><div class="rival-matchup-meta"><span>Jumeirah Muscat Bay: 91%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=the-chedi-muscat&amp;b=alila-hinu-bay"><div class="rival-matchup-vs">The Chedi Muscat <span style="color:var(--accent);">vs</span> Alila Hinu Bay</div><div class="rival-matchup-meta"><span>Alila Hinu Bay: 92%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
         <div class="related-grid">
-          <article class="related-card">
-            <img src="../../assets/thumbs/six-senses-zighy-bay.webp?v=169" alt="Six Senses Zighy Bay" loading="lazy" decoding="async" />
-            <div class="related-card-body">
-              <div class="meta-line">
-                <span class="tag tag-slate">94% StayOdds</span>
-                <span>Strong Agreement</span>
-              </div>
-              <h4>Six Senses Zighy Bay</h4>
-              <p>Musandam Peninsula, Oman</p>
-              <div class="related-card-actions">
-                <a class="btn btn-primary" href="../six-senses-zighy-bay/">Full Breakdown</a>
-                <a class="btn btn-outline" href="../../compare/?a=the-chedi-muscat&amp;b=six-senses-zighy-bay">Compare VS</a>
-              </div>
-            </div>
-          </article>
           <article class="related-card">
             <img src="../../assets/thumbs/al-bustan-palace-a-ritz-carlton.webp?v=169" alt="Al Bustan Palace, a Ritz-Carlton Hotel" loading="lazy" decoding="async" />
             <div class="related-card-body">
@@ -336,6 +321,21 @@
               <div class="related-card-actions">
                 <a class="btn btn-primary" href="../al-bustan-palace-a-ritz-carlton/">Full Breakdown</a>
                 <a class="btn btn-outline" href="../../compare/?a=the-chedi-muscat&amp;b=al-bustan-palace-a-ritz-carlton">Compare VS</a>
+              </div>
+            </div>
+          </article>
+          <article class="related-card">
+            <img src="../../assets/thumbs/jumeirah-muscat-bay.webp?v=169" alt="Jumeirah Muscat Bay" loading="lazy" decoding="async" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag tag-slate">91% StayOdds</span>
+                <span>Critic Reviewed</span>
+              </div>
+              <h4>Jumeirah Muscat Bay</h4>
+              <p>Muscat, Oman</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../jumeirah-muscat-bay/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a=the-chedi-muscat&amp;b=jumeirah-muscat-bay">Compare VS</a>
               </div>
             </div>
           </article>
@@ -570,7 +570,7 @@
           }
           const rawG100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
           const rc = typeof g.reviewCount === "number" ? g.reviewCount : null;
-          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 15) / (rc + 15)) : rawG100;
+          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 8) / (rc + 8)) : rawG100;
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {

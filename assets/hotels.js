@@ -6,7 +6,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=9";
+} from "./stayodds-engine.js?v=10";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,

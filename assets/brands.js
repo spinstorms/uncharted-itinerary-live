@@ -1,4 +1,4 @@
-import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=9";
+import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=10";
 import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=4";
 
 const qs = (s) => document.querySelector(s);

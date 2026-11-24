@@ -307,8 +307,23 @@
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
-        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=angama-mara-kenya&amp;c=giraffe-manor-kenya">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=angama-mara-kenya"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Angama Mara</div><div class="rival-matchup-meta"><span>Angama Mara: Market Odds · £1,600+/night</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=giraffe-manor-kenya"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Giraffe Manor</div><div class="rival-matchup-meta"><span>Giraffe Manor: 75%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=ishara-masai-mara"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Ishara Masai Mara</div><div class="rival-matchup-meta"><span>Ishara Masai Mara: 84%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
+        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=ishara-masai-mara&amp;c=angama-mara-kenya">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=ishara-masai-mara"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Ishara Masai Mara</div><div class="rival-matchup-meta"><span>Ishara Masai Mara: 84%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=angama-mara-kenya"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Angama Mara</div><div class="rival-matchup-meta"><span>Angama Mara: Market Odds · £1,600+/night</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=giraffe-manor-kenya"><div class="rival-matchup-vs">The Ritz-Carlton, Masai Mara Safari Camp <span style="color:var(--accent);">vs</span> Giraffe Manor</div><div class="rival-matchup-meta"><span>Giraffe Manor: 75%</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
         <div class="related-grid">
+          <article class="related-card">
+            <img src="../../assets/thumbs/ishara-masai-mara.webp?v=169" alt="Ishara Masai Mara" loading="lazy" decoding="async" />
+            <div class="related-card-body">
+              <div class="meta-line">
+                <span class="tag tag-slate">84% StayOdds</span>
+                <span>Critic Reviewed</span>
+              </div>
+              <h4>Ishara Masai Mara</h4>
+              <p>Masai Mara, Kenya</p>
+              <div class="related-card-actions">
+                <a class="btn btn-primary" href="../ishara-masai-mara/">Full Breakdown</a>
+                <a class="btn btn-outline" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=ishara-masai-mara">Compare VS</a>
+              </div>
+            </div>
+          </article>
           <article class="related-card">
             <img src="../../assets/thumbs/angama-mara-kenya.webp?v=169" alt="Angama Mara" loading="lazy" decoding="async" />
             <div class="related-card-body">
@@ -336,21 +351,6 @@
               <div class="related-card-actions">
                 <a class="btn btn-primary" href="../giraffe-manor-kenya/">Full Breakdown</a>
                 <a class="btn btn-outline" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=giraffe-manor-kenya">Compare VS</a>
-              </div>
-            </div>
-          </article>
-          <article class="related-card">
-            <img src="../../assets/thumbs/ishara-masai-mara.webp?v=169" alt="Ishara Masai Mara" loading="lazy" decoding="async" />
-            <div class="related-card-body">
-              <div class="meta-line">
-                <span class="tag tag-slate">84% StayOdds</span>
-                <span>Critic Reviewed</span>
-              </div>
-              <h4>Ishara Masai Mara</h4>
-              <p>Masai Mara, Kenya</p>
-              <div class="related-card-actions">
-                <a class="btn btn-primary" href="../ishara-masai-mara/">Full Breakdown</a>
-                <a class="btn btn-outline" href="../../compare/?a=ritz-carlton-masai-mara&amp;b=ishara-masai-mara">Compare VS</a>
               </div>
             </div>
           </article></div>
@@ -570,7 +570,7 @@
           }
           const rawG100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
           const rc = typeof g.reviewCount === "number" ? g.reviewCount : null;
-          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 15) / (rc + 15)) : rawG100;
+          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 8) / (rc + 8)) : rawG100;
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {

@@ -115,7 +115,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     raw_guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
     guest_rc = vg.get("reviewCount") if vg else None
     if raw_guest100 is not None and guest_rc is not None and 0 < int(guest_rc) < 40:
-        guest100 = int(round((raw_guest100 * int(guest_rc) + 90 * 15) / (int(guest_rc) + 15)))
+        guest100 = int(round((raw_guest100 * int(guest_rc) + 90 * 8) / (int(guest_rc) + 8)))
         guest_dampened = True
     else:
         guest100 = raw_guest100
@@ -356,6 +356,233 @@ def compute_price_medians(directory: list[dict[str, Any]]) -> dict[str, dict[str
         "country": {k: (int(round(statistics.median(v))), len(v)) for k, v in by_country.items() if len(v) >= 3},
         "region": {k: (int(round(statistics.median(v))), len(v)) for k, v in by_region.items() if len(v) >= 3},
     }
+
+
+_CITY_TOKENS_RE = re.compile(
+    r"\b(tokyo|kyoto|osaka|london|paris|rome|milan|venice|florence|new york|manhattan|miami|beverly hills|los angeles|san francisco|chicago|boston|bangkok|singapore|hong kong|seoul|sydney|melbourne|dubai|abu dhabi|doha|cairo|istanbul|barcelona|madrid|lisbon|zurich|geneva|vienna|amsterdam|munich|berlin|stockholm|copenhagen|mumbai|new delhi|delhi|kuala lumpur|taipei|shanghai|beijing|mexico city|buenos aires|s[aã]o paulo|rio de janeiro|cape town|auckland)\b",
+    re.I,
+)
+_SAFARI_LODGE_RE = re.compile(
+    r"\b(safari|serengeti|masai mara|okavango|kruger|sabi|singita|tented camp|game reserve|bush|wilderness|gorilla|nyungwe|jawai|ranthambore|uluru|outback|kangaroo island|fiordland)\b",
+    re.I,
+)
+_SKI_ALPINE_RE = re.compile(
+    r"\b(ski|courchevel|st\.?\s*moritz|gstaad|zermatt|verbier|meg[eè]ve|andermatt|alps|dolomites|aspen|vail|jackson hole|deer valley|park city|whistler|niseko|chamonix|lech|kitzb|mountain lodge)\b",
+    re.I,
+)
+_BEACH_ISLAND_RE = re.compile(
+    r"\b(maldives|atoll|island|beach|overwater|lagoon|reef|bali|lombok|gili|samui|phuket|krabi|bora bora|tahiti|fiji|seychelles|mauritius|santorini|mykonos|paros|crete|amalfi|capri|sardinia|mallorca|ibiza|bodrum|riviera maya|canc[uú]n|tulum|cabo|punta mita|anguilla|st\.?\s*barth|turks|caicos|antigua|barbados|jamaica|bahamas|st\.?\s*lucia|hawaii|maui|lanai|kauai|okinawa|zanzibar|red sea|alula)\b",
+    re.I,
+)
+_COUNTRYSIDE_RE = re.compile(
+    r"\b(cotswolds|somerset|wiltshire|countryside|estate|manor|ch[aâ]teau|tuscany|umbria|provence|winelands|franschhoek|napa|sonoma|hudson valley|vermont|farm|ryokan|hakone|karuizawa|yakushima|naoshima|kyushu|highlands|scotland|ireland)\b",
+    re.I,
+)
+_ALL_INCLUSIVE_RE = re.compile(r"\ball[- ]inclusive\b", re.I)
+
+
+def _extract_nightly_gbp(h: dict[str, Any]) -> float | None:
+    snap = h.get("priceSnapshot") or {}
+    gbp = snap.get("nightlyGbp")
+    if isinstance(gbp, (int, float)) and gbp > 0:
+        return float(gbp)
+    pr = str(h.get("priceRange") or "")
+    m = re.search(r"([\d,]{3,6})", pr)
+    if m:
+        try:
+            v = float(m.group(1).replace(",", ""))
+            if v > 0:
+                return v
+        except ValueError:
+            pass
+    return None
+
+
+def _classify_setting(h: dict[str, Any]) -> str:
+    hay = f"{h.get('name', '')} {h.get('location', '')} {h.get('standout', '')} {(h.get('keyFacts') or {}).get('beachOrReef', '')}"
+    if _SAFARI_LODGE_RE.search(hay):
+        return "safari"
+    if _SKI_ALPINE_RE.search(hay):
+        return "alpine"
+    # Urban city check before beach so "Four Seasons Bangkok" or "Claridge's Mayfair, London" stays city
+    loc_name = f"{h.get('name', '')} {h.get('location', '')}"
+    if _CITY_TOKENS_RE.search(loc_name) and not re.search(r"\b(beach resort|overwater|island resort|atoll)\b", loc_name, re.I):
+        return "city"
+    if _BEACH_ISLAND_RE.search(hay):
+        return "beach"
+    if _COUNTRYSIDE_RE.search(hay):
+        return "countryside"
+    return "resort"
+
+
+def _locality_tokens(h: dict[str, Any]) -> set[str]:
+    raw = f"{h.get('location', '')}"
+    stop = {"the", "of", "and", "at", "in", "by", "bay", "beach", "island", "resort", "city", "north", "south", "east", "west", "new"}
+    parts = [p.strip().lower() for p in re.split(r"[,/&–—\-]+", raw) if p.strip()]
+    tokens: set[str] = set()
+    for p in parts:
+        if len(p) >= 3 and p not in stop:
+            tokens.add(p)
+        for w in p.split():
+            if len(w) >= 4 and w not in stop:
+                tokens.add(w)
+    return tokens
+
+
+def _rival_similarity_score(
+    base: dict[str, Any],
+    cand: dict[str, Any],
+    odds_map: dict[str, dict[str, Any]],
+) -> float:
+    score = 0.0
+    base_loc = _locality_tokens(base)
+    cand_loc = _locality_tokens(cand)
+    same_country = base.get("country") == cand.get("country")
+    same_region = base.get("region") == cand.get("region")
+
+    if same_country and base_loc and cand_loc and (base_loc & cand_loc):
+        score += 48.0
+    elif same_country:
+        score += 18.0
+    elif same_region:
+        score += 5.0
+    else:
+        return -999.0
+
+    set_a = _classify_setting(base)
+    set_b = _classify_setting(cand)
+    if set_a == set_b:
+        score += 24.0
+    elif (set_a == "city" and set_b in ("beach", "safari", "countryside", "alpine")) or (
+        set_b == "city" and set_a in ("beach", "safari", "countryside", "alpine")
+    ):
+        score -= 22.0
+    elif (set_a == "safari" and set_b == "beach") or (set_b == "safari" and set_a == "beach"):
+        score -= 16.0
+
+    ai_a = bool(_ALL_INCLUSIVE_RE.search(f"{base.get('priceRange', '')} {base.get('name', '')}"))
+    ai_b = bool(_ALL_INCLUSIVE_RE.search(f"{cand.get('priceRange', '')} {cand.get('name', '')}"))
+    if ai_a != ai_b:
+        score -= 12.0
+
+    p_a = _extract_nightly_gbp(base)
+    p_b = _extract_nightly_gbp(cand)
+    if p_a and p_b:
+        ratio = max(p_a, p_b) / min(p_a, p_b)
+        if ratio <= 1.45:
+            score += 22.0
+        elif ratio <= 1.95:
+            score += 12.0
+        elif ratio <= 2.6:
+            score += 2.0
+        else:
+            score -= 20.0
+
+    oa = odds_map[base["id"]]
+    ob = odds_map[cand["id"]]
+    sa, sb = oa.get("greatStayOdds"), ob.get("greatStayOdds")
+    if sa is not None and sb is not None:
+        diff = abs(sa - sb)
+        if diff <= 6:
+            score += 8.0
+        elif diff <= 12:
+            score += 4.0
+        score += 4.0
+    elif sb is not None or ob.get("awards"):
+        score += 3.0
+
+    # Gentle preference for first-hand verified stays ONLY as a relevance boost, never overriding locality/price fit
+    if ob.get("firstHand"):
+        score += 7.0
+    elif ob.get("visited"):
+        score += 3.0
+
+    # Tie-breaker toward stronger peer StayOdds %
+    score += ((sb or 80) / 1000.0)
+    return score
+
+
+def pick_comparable_rivals(
+    hotel: dict[str, Any],
+    directory: list[dict[str, Any]],
+    odds_map: dict[str, dict[str, Any]],
+    limit: int = 3,
+) -> list[dict[str, Any]]:
+    pool = [r for r in directory if r["id"] != hotel["id"] and r["country"] == hotel["country"]]
+    if len(pool) < limit:
+        seen = {r["id"] for r in pool}
+        pool += [r for r in directory if r["id"] != hotel["id"] and r["id"] not in seen and r["region"] == hotel["region"]]
+    if len(pool) < limit:
+        seen = {r["id"] for r in pool}
+        pool += [r for r in directory if r["id"] != hotel["id"] and r["id"] not in seen]
+
+    scored = sorted(
+        pool,
+        key=lambda r: (-_rival_similarity_score(hotel, r, odds_map), r["name"]),
+    )
+    return scored[:limit]
+
+
+def pick_destination_matchups(
+    dest_hotels: list[dict[str, Any]],
+    odds_map: dict[str, dict[str, Any]],
+    limit: int = 3,
+) -> tuple[list[tuple[dict[str, Any], dict[str, Any]]], list[dict[str, Any]]]:
+    """Pick up to 3 diverse, genuinely comparable local matchups + a cohesive 3-hotel trio for a destination guide."""
+    if len(dest_hotels) < 2:
+        return [], dest_hotels[:3]
+
+    # Rank anchor candidates: iconic / first-hand / high-StayOdds + priced/awarded stays first
+    def anchor_rank(h: dict[str, Any]) -> tuple[int, int, int, str]:
+        o = odds_map[h["id"]]
+        fh = 1 if o.get("firstHand") else 0
+        has_awards = 1 if o.get("awards") else 0
+        sc = o.get("greatStayOdds") or 0
+        return (-fh, -has_awards, -sc, h["name"])
+
+    anchors = sorted(dest_hotels, key=anchor_rank)
+    pairs: list[tuple[dict[str, Any], dict[str, Any]]] = []
+    seen_pairs: set[tuple[str, str]] = set()
+    used_anchors: set[str] = set()
+
+    for a in anchors:
+        if len(pairs) >= limit:
+            break
+        if a["id"] in used_anchors and len(anchors) >= 6:
+            continue
+        best_b = None
+        best_sim = -999.0
+        for b in dest_hotels:
+            if b["id"] == a["id"]:
+                continue
+            key = tuple(sorted((a["id"], b["id"])))
+            if key in seen_pairs:
+                continue
+            sim = _rival_similarity_score(a, b, odds_map)
+            # Small bonus for unused B so the 3 matchups showcase varied local rivalries
+            if b["id"] not in used_anchors:
+                sim += 4.0
+            if sim > best_sim:
+                best_sim = sim
+                best_b = b
+        if best_b is not None:
+            pairs.append((a, best_b))
+            seen_pairs.add(tuple(sorted((a["id"], best_b["id"]))))
+            used_anchors.add(a["id"])
+            used_anchors.add(best_b["id"])
+
+    # Cohesive 3-hotel trio anchored on the top matchup's hotel A + its top 2 comparable rivals in dest_hotels
+    trio: list[dict[str, Any]] = []
+    if len(dest_hotels) >= 3 and pairs:
+        lead = pairs[0][0]
+        rivals = sorted(
+            [h for h in dest_hotels if h["id"] != lead["id"]],
+            key=lambda r: (-_rival_similarity_score(lead, r, odds_map), r["name"]),
+        )
+        trio = [lead, rivals[0], rivals[1]]
+    else:
+        trio = dest_hotels[:3]
+    return pairs, trio
 
 
 def render_seo_page(
@@ -1413,7 +1640,7 @@ def render_seo_page(
           }}
           const rawG100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
           const rc = typeof g.reviewCount === "number" ? g.reviewCount : null;
-          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 15) / (rc + 15)) : rawG100;
+          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 8) / (rc + 8)) : rawG100;
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {{
@@ -1835,32 +2062,25 @@ def render_destination_page(
 
     cards_html = "\n".join(cards_parts)
 
-    # Build up to 3 Pre-Loaded Head-to-Head Rival Matchups from this destination's top real properties
+    # Build up to 3 genuinely comparable Head-to-Head Rival Matchups + cohesive 3-hotel trio
+    dest_odds_map = {h["id"]: compute_stayodds_py(h) for h in dest_hotels}
+    matched_pairs, trio = pick_destination_matchups(dest_hotels, dest_odds_map, limit=3)
     dest_matchup_cards: list[str] = []
-    if len(dest_hotels) >= 2:
-        pair_indices: list[tuple[int, int]] = [(0, 1)]
-        if len(dest_hotels) >= 3:
-            pair_indices.append((0, 2))
-        if len(dest_hotels) >= 4:
-            pair_indices.append((1, 3))
-        elif len(dest_hotels) >= 3:
-            pair_indices.append((1, 2))
-        for ia, ib in pair_indices:
-            ha, hb = dest_hotels[ia], dest_hotels[ib]
-            oa, ob = compute_stayodds_py(ha), compute_stayodds_py(hb)
-            sa = f"{oa['greatStayOdds']}%" if oa["greatStayOdds"] is not None else oa["tierLabel"]
-            sb = f"{ob['greatStayOdds']}%" if ob["greatStayOdds"] is not None else ob["tierLabel"]
-            dest_matchup_cards.append(
-                f'<a class="rival-matchup-card" href="../../compare/?a={esc(ha["id"])}&amp;b={esc(hb["id"])}">'
-                f'<div class="rival-matchup-vs">{esc(ha["name"])} <span style="color:var(--accent);">vs</span> {esc(hb["name"])}</div>'
-                f'<div class="rival-matchup-meta"><span>{esc(sa)} vs {esc(sb)}</span><span class="rival-matchup-cta">Compare &rarr;</span></div>'
-                f'</a>'
-            )
+    for ha, hb in matched_pairs:
+        oa, ob = dest_odds_map[ha["id"]], dest_odds_map[hb["id"]]
+        sa = f"{oa['greatStayOdds']}%" if oa["greatStayOdds"] is not None else oa["tierLabel"]
+        sb = f"{ob['greatStayOdds']}%" if ob["greatStayOdds"] is not None else ob["tierLabel"]
+        dest_matchup_cards.append(
+            f'<a class="rival-matchup-card" href="../../compare/?a={esc(ha["id"])}&amp;b={esc(hb["id"])}">'
+            f'<div class="rival-matchup-vs">{esc(ha["name"])} <span style="color:var(--accent);">vs</span> {esc(hb["name"])}</div>'
+            f'<div class="rival-matchup-meta"><span>{esc(sa)} vs {esc(sb)}</span><span class="rival-matchup-cta">Compare &rarr;</span></div>'
+            f'</a>'
+        )
     dest_three_link = ""
-    if len(dest_hotels) >= 3:
+    if len(trio) >= 3:
         dest_three_link = (
             f'<a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" '
-            f'href="../../compare/?a={esc(dest_hotels[0]["id"])}&amp;b={esc(dest_hotels[1]["id"])}&amp;c={esc(dest_hotels[2]["id"])}">'
+            f'href="../../compare/?a={esc(trio[0]["id"])}&amp;b={esc(trio[1]["id"])}&amp;c={esc(trio[2]["id"])}">'
             f'Compare Top 3 Side-by-Side &rarr;</a>'
         )
     dest_matchups_html = (
@@ -2262,15 +2482,11 @@ def main() -> None:
     scripts_dir = str(Path(__file__).resolve().parent)
     if scripts_dir not in _sys.path:
         _sys.path.insert(0, scripts_dir)
-    from audit_brands_and_loyalty import audit_hotels
+    from audit_brands_and_loyalty import audit_hotels, format_audit_summary
 
     brand_errors, brand_warnings = audit_hotels(directory)
-    print(f"Pre-build Brand & Loyalty Audit ({len(directory)} properties): {len(brand_errors)} errors, {len(brand_warnings)} warnings")
-    for w in brand_warnings:
-        print(f"  [WARN] {w}")
+    print(format_audit_summary(directory, brand_errors, brand_warnings))
     if brand_errors:
-        for e in brand_errors:
-            print(f"  [ERROR] {e}", file=_sys.stderr)
         raise RuntimeError(f"Brand & Loyalty Audit failed with {len(brand_errors)} error(s). Fix Supabase before building.")
 
     now_iso = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -2415,15 +2631,12 @@ def main() -> None:
     total_props = len(directory)
     world_props = total_props - len(visited_hotels)
     price_medians = compute_price_medians(directory)
+    odds_map = {h["id"]: compute_stayodds_py(h) for h in directory}
     stayodds_dir = ROOT / "stayodds"
     stayodds_dir.mkdir(exist_ok=True)
     for h in directory:
-        o = compute_stayodds_py(h)
-        same_country = [r for r in directory if r["id"] != h["id"] and r["country"] == h["country"]]
-        same_reg = [r for r in directory if r["id"] != h["id"] and r["region"] == h["region"] and r not in same_country]
-        rivals = (same_country + same_reg)[:3]
-        if len(rivals) < 3:
-            rivals += [r for r in directory if r["id"] != h["id"] and r not in rivals][: 3 - len(rivals)]
+        o = odds_map[h["id"]]
+        rivals = pick_comparable_rivals(h, directory, odds_map, limit=3)
         pdir = stayodds_dir / h["id"]
         pdir.mkdir(parents=True, exist_ok=True)
         (pdir / "index.html").write_text(

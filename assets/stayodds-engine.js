@@ -63,15 +63,16 @@ export function formatPersonalScore(val) {
 }
 
 /**
- * Gentle Bayesian dampening ONLY for tiny review samples (<40 reviews)
- * so a 3-review 10.0/10 hotel does not distort global rankings at 100%.
+ * Calibrated Bayesian dampening ONLY for small review samples (<40 reviews)
+ * using prior weight m=8 toward 90: keeps 1–3 review 100% outliers moderated (91–93%)
+ * while preserving genuine 8–35 review ultra-luxury boutique & island icons.
  */
 export function dampenThinGuestScore(raw100, reviewCount) {
   if (raw100 == null || Number.isNaN(Number(raw100))) return null;
   const r = Number(raw100);
   const n = Number(reviewCount);
   if (!Number.isFinite(n) || n <= 0 || n >= 40) return Math.round(r);
-  return Math.round((r * n + 90 * 15) / (n + 15));
+  return Math.round((r * n + 90 * 8) / (n + 8));
 }
 
 /**

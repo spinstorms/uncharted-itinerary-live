@@ -137,7 +137,86 @@ def audit_hotels(hotels):
         if "design hotels" in bl and hid != "cap-karoso-sumba":
             warnings.append(f"{hid}: Design Hotels member ({brand!r}) — manually verify Marriott Bonvoy participation")
 
+        # 8. Catch accidental Peninsula Papagayo -> The Peninsula or Capella Lodge -> Capella Hotels in raw brand
+        if "papagayo" in nl and bl == "the peninsula":
+            errors.append(f"{hid}: Andaz Peninsula Papagayo misclassified as 'The Peninsula'")
+        if "capella lodge" in nl and bl in ("capella", "capella hotels"):
+            errors.append(f"{hid}: Capella Lodge (Lord Howe Island) misclassified as Capella Hotels")
+
     return errors, warnings
+
+
+def summarize_brand_hygiene(hotels):
+    """Build a transparent, read-only hygiene report without stripping any legitimate properties."""
+    indep_all = []
+    indep_with_facts = []
+    slh_ids = []
+    bulgari_ids = []
+    design_bonvoy_ids = []
+    banyan_ids = []
+    regional_brands = {}
+
+    REGIONAL_OR_BOUTIQUE = {
+        "Aman", "Soneva", "Singita", "Hoshinoya", "Capella", "Capella Hotels",
+        "Taj Hotels", "Oberoi", "COMO Hotels", "Virgin Limited Edition",
+        "Auberge Resorts", "One&Only", "Six Senses", "Belmond", "Rosewood",
+    }
+
+    for h in hotels:
+        hid = h.get("id", "")
+        brand = (h.get("brand") or "").strip()
+        bl = brand.lower()
+        has_verified_facts = bool(
+            (h.get("verifiedGuest") or {}).get("licensed")
+            or h.get("officialAwards")
+            or h.get("editorialRatings")
+            or h.get("visitedByUs")
+            or h.get("standout")
+            or any((h.get("keyFacts") or {}).values())
+        )
+        if not brand or bl in ("independent", "independent & boutique"):
+            indep_all.append(hid)
+            if has_verified_facts:
+                indep_with_facts.append(hid)
+        if "small luxury" in bl or bl == "slh":
+            slh_ids.append(hid)
+        if "bulgari" in bl or "bvlgari" in bl:
+            bulgari_ids.append(hid)
+        if "design hotels" in bl:
+            design_bonvoy_ids.append(hid)
+        if "banyan tree" in bl:
+            banyan_ids.append(hid)
+        if brand in REGIONAL_OR_BOUTIQUE:
+            regional_brands[brand] = regional_brands.get(brand, 0) + 1
+
+    return {
+        "totalProperties": len(hotels),
+        "independentCount": len(indep_all),
+        "independentWithVerifiedFacts": len(indep_with_facts),
+        "regionalBoutiqueLuxuryCount": sum(regional_brands.values()),
+        "slhNoBlanketHilton": sorted(slh_ids),
+        "bulgariNoBonvoyPoints": sorted(bulgari_ids),
+        "designHotelsVerifiedBonvoy": sorted(design_bonvoy_ids),
+        "banyanTreeAccorReview": sorted(banyan_ids),
+    }
+
+
+def format_audit_summary(hotels, errors, warnings, verbose=False):
+    rep = summarize_brand_hygiene(hotels)
+    lines = [
+        f"Brand & Loyalty Audit ({rep['totalProperties']} properties): {len(errors)} errors, {len(warnings)} warnings",
+        f"  Preserved: {rep['independentCount']} Independent ({rep['independentWithVerifiedFacts']} with verified facts/scores) • {rep['regionalBoutiqueLuxuryCount']} boutique/regional luxury properties",
+        f"  Loyalty Hygiene: {len(rep['slhNoBlanketHilton'])} SLH (SLH Invited only, no blanket Hilton) • {len(rep['bulgariNoBonvoyPoints'])} Bulgari (STARS only, no Bonvoy pts) • {len(rep['designHotelsVerifiedBonvoy'])} verified Bonvoy Design Hotel • {len(rep['banyanTreeAccorReview'])} Banyan Tree (Accor ALL/STEP)",
+    ]
+    if verbose:
+        lines.append(f"  [INFO] SLH properties (verify Hilton per property): {', '.join(rep['slhNoBlanketHilton'])}")
+        lines.append(f"  [INFO] Bulgari (non-Bonvoy points): {', '.join(rep['bulgariNoBonvoyPoints'])}")
+        lines.append(f"  [INFO] Banyan Tree (Accor partnership): {', '.join(rep['banyanTreeAccorReview'])}")
+    for w in warnings:
+        lines.append(f"  [WARN] {w}")
+    for e in errors:
+        lines.append(f"  [ERROR] {e}")
+    return "\n".join(lines)
 
 
 def apply_supabase_fixes():
@@ -181,6 +260,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fix-supabase", action="store_true", help="Apply verified brand corrections to Supabase")
     ap.add_argument("--check", action="store_true", help="Audit data/stayodds-directory.json and fail on errors")
+    ap.add_argument("--report", action="store_true", help="Print verbose brand & loyalty hygiene report")
     args = ap.parse_args()
 
     if args.fix_supabase:
@@ -193,14 +273,11 @@ def main():
         sys.exit(1)
     hotels = json.loads(dir_path.read_text(encoding="utf-8")).get("hotels", [])
     errors, warnings = audit_hotels(hotels)
-    print(f"Brand & Loyalty Audit ({len(hotels)} properties): {len(errors)} errors, {len(warnings)} warnings")
-    for w in warnings:
-        print("  [WARN]", w)
-    for e in errors:
-        print("  [ERROR]", e)
+    print(format_audit_summary(hotels, errors, warnings, verbose=args.report))
     if args.check and errors:
         sys.exit(1)
 
 
 if __name__ == "__main__":
     main()
+
