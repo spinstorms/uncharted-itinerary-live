@@ -7725,3 +7725,430 @@ html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab.active {
     padding: 13px;
   }
 }
+
+/* =====================================================================
+   StayOdds v44 — Calm editorial refresh
+   Warm sand canvas, single clean header, serene Discover hero,
+   Compare banner, map search band, partner perks, bespoke SVG icons.
+   ===================================================================== */
+[hidden] { display: none !important; }
+
+.so-ico {
+  display: inline-block;
+  flex: none;
+  vertical-align: -0.2em;
+}
+.tag .so-ico,
+.source-chip .so-ico,
+.smart-understood-pill .so-ico,
+.scope-pill .so-ico,
+.feature-pill .so-ico,
+.style-pill .so-ico { margin-right: 5px; vertical-align: -0.17em; }
+
+body.stayodds-warm-canvas {
+  background: #f6f4ef;
+  --border-hairline: rgba(96, 82, 50, 0.16);
+  --border-strong: rgba(96, 82, 50, 0.28);
+  --shadow-sm: 0 2px 14px rgba(60, 48, 24, 0.06);
+  --shadow-md: 0 14px 34px rgba(60, 48, 24, 0.1);
+}
+body.stayodds-warm-canvas .scorecards-band,
+body.stayodds-warm-canvas .leaderboard-section,
+body.stayodds-warm-canvas .map-section,
+body.stayodds-warm-canvas .shorts-section,
+body.stayodds-warm-canvas .methodology-section { background: transparent; }
+
+/* ---- Single clean header ---- */
+.stayodds-brand-group { display: flex; align-items: center; gap: 11px; }
+.stayodds-brand-emblem-link { display: inline-flex; line-height: 0; }
+.stayodds-header-emblem { width: 36px; height: 36px; border-radius: 9px; display: block; }
+.stayodds-clean-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 999px;
+  padding: 7px 13px;
+}
+.site-header.stayodds-site-header .stayodds-clean-nav a.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+.site-header.stayodds-site-header .nav-deals-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  padding: 8px 15px;
+}
+.site-header.stayodds-site-header .nav-deals-btn:hover { background: rgba(255, 255, 255, 0.1); }
+.site-header.stayodds-site-header .mobile-nav a.active { color: #ff8a5c; }
+
+/* ---- Discover hero (default landing view) ---- */
+.discover-hero-canvas {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: min(620px, calc(100vh - 70px));
+  padding: 72px 0 64px;
+  overflow: hidden;
+  background-color: #071323;
+  background-image:
+    linear-gradient(180deg, rgba(7, 19, 35, 0.5) 0%, rgba(7, 19, 35, 0.34) 45%, rgba(7, 19, 35, 0.7) 100%),
+    var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+}
+.discover-hero-canvas .hero-bg-scrim {
+  background: linear-gradient(180deg, rgba(7, 19, 35, 0.52) 0%, rgba(7, 19, 35, 0.32) 45%, rgba(7, 19, 35, 0.72) 100%);
+}
+.discover-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.discover-hero-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.84);
+  margin-bottom: 14px;
+}
+.discover-hero-title {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 62px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
+}
+.discover-hero-sub {
+  margin: 16px auto 0;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+.discover-search-shell { margin-top: 28px; text-align: left; }
+.discover-search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 7px 7px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.34);
+}
+.discover-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 10px;
+}
+.discover-search-ico { color: #76736c; flex: none; }
+.discover-search-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0d0d0d;
+  font: inherit;
+  font-size: 16px;
+  padding: 13px 28px 13px 0;
+  text-overflow: ellipsis;
+}
+.discover-search-input::placeholder { color: #8a867c; }
+.discover-search-clear {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #76736c;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.discover-search-submit {
+  border-radius: 999px;
+  padding: 13px 26px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.discover-prompts-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.discover-prompt-pill {
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background var(--transition), border-color var(--transition);
+}
+.discover-prompt-pill:hover { background: rgba(255, 255, 255, 0.28); border-color: rgba(255, 255, 255, 0.6); }
+.discover-understood {
+  justify-content: center;
+  border-top: 0;
+  margin-top: 14px;
+  padding-top: 0;
+}
+.discover-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+  margin-top: 28px;
+}
+.discover-mode-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 3px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+.discover-mode-link:hover { border-bottom-color: #ffffff; }
+
+/* ---- Compare mode banner + Brands banner + Map search band ---- */
+.compare-mode-banner,
+.map-search-hero {
+  background: linear-gradient(135deg, #0b192c 0%, #14355a 100%);
+  color: #ffffff;
+  padding: 34px 0 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.compare-mode-banner-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.compare-mode-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ff8a5c;
+}
+.compare-mode-title {
+  margin: 6px 0 8px;
+  font-size: clamp(24px, 3.4vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: #ffffff;
+}
+.compare-mode-sub { margin: 0; max-width: 680px; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.78); }
+.compare-mode-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.compare-mode-banner .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+.compare-mode-banner .btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
+
+.map-search-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: center;
+}
+.map-search-title {
+  margin: 6px 0 8px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: #ffffff;
+}
+.map-search-sub { margin: 0; font-size: 14.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.78); }
+.map-search-sub #hotelCountBadge { color: #ffffff; font-weight: 600; }
+.map-search-shell { margin-top: 0; }
+.map-search-shell .discover-prompts-row { justify-content: flex-start; margin-top: 12px; }
+.map-search-shell .discover-understood { justify-content: flex-start; }
+.map-search-shell .discover-search-input { padding: 11px 28px 11px 0; }
+.map-search-shell .discover-search-submit { padding: 11px 22px; }
+
+/* ---- Hotel detail / guide top band (no more white-on-white) ---- */
+main.has-top-band { position: relative; }
+.detail-top-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 240px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #0b192c 0%, #14355a 100%);
+}
+main.has-top-band > .container { position: relative; z-index: 1; }
+main.has-top-band .detail-breadcrumb,
+main.has-top-band .detail-breadcrumb span { color: rgba(255, 255, 255, 0.66); }
+main.has-top-band .detail-breadcrumb a { color: #ffffff; }
+main.has-top-band .detail-breadcrumb a:hover { color: #ffd6c4; }
+main.has-top-band .detail-breadcrumb strong { color: #ffffff; }
+main.has-top-band .detail-breadcrumb #crumbAltViewLink { color: #ff8a5c; }
+main.has-top-band .detail-hero { box-shadow: 0 18px 44px rgba(11, 25, 44, 0.22); }
+
+/* ---- Partner perks ---- */
+.partner-deals-section { padding: 36px 0 52px; }
+.partner-deals-card {
+  background: #ffffff;
+  border: 1px solid #e6e1d6;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.partner-deals-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.partner-deals-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.partner-deals-head h2 { margin: 6px 0 6px; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.partner-deals-head p { margin: 0; max-width: 620px; font-size: 14px; color: var(--ink-secondary); line-height: 1.5; }
+.partner-deals-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.partner-deal-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #e6e1d6;
+  border-radius: 16px;
+  background: #fbfaf7;
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.partner-deal-tile:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow-md); }
+.partner-deal-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.partner-deal-kicker { font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+.partner-deal-code {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fff1ea;
+  color: #c2410c;
+}
+.partner-deal-tile h3 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+.partner-deal-tile p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-secondary); }
+.partner-deal-cta { margin-top: auto; font-size: 13.5px; font-weight: 700; color: var(--accent); }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .map-search-hero-inner { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .partner-deals-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .discover-hero-canvas { padding: 52px 0 48px; min-height: 0; }
+  .discover-hero-sub { font-size: 15.5px; }
+  .discover-search-form { flex-direction: column; align-items: stretch; border-radius: 22px; padding: 8px 8px 8px 16px; gap: 6px; }
+  .discover-search-submit { width: 100%; }
+  .discover-prompts-row { gap: 7px; }
+  .discover-prompt-pill { font-size: 12.5px; padding: 6px 12px; }
+  .compare-mode-banner, .map-search-hero { padding: 26px 0 24px; }
+  .partner-deals-card { padding: 20px 16px; border-radius: 18px; }
+  .detail-top-band { height: 200px; }
+}
+
+/* ---------- Partner Platforms Bar ---------- */
+.partner-platforms-bar {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #ebe6dc; /* warm top border */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.partner-platform-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+.partner-platform-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  min-width: 105px;
+}
+.partner-platform-pill {
+  background: #f6f4ef;
+  border: 1px solid #e2dccf;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  text-decoration: none;
+}
+.partner-platform-pill:hover {
+  border-color: var(--accent);
+}
+.partner-deals-disclosure {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+/* ---------- Detail OTA Strip ---------- */
+.detail-ota-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-hairline);
+  font-size: 12.5px;
+}
+.detail-ota-strip a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.detail-ota-strip a:hover {
+  text-decoration: underline;
+}
