@@ -771,8 +771,9 @@ function renderScorecards(hotels) {
           const pct = Math.round((Number(val) / 5) * 100);
           return `
             <div class="score-bar-row">
-              <div class="score-bar-top"><span>${lbl}</span><strong>${formatPersonalScore(val)}/5</strong></div>
+              <span class="score-bar-label">${lbl}</span>
               <div class="score-bar-track"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+              <strong class="score-bar-val">${formatPersonalScore(val)}/5</strong>
             </div>
           `;
         };
