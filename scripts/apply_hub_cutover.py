@@ -111,7 +111,7 @@ def update_hub_page(path: Path) -> None:
     txt = re.sub(r'href="(?:\.\./)?compare/\?', f'href="{STAYODDS_URL}/?', txt)
     txt = re.sub(r'href="(?:\.\./)?stayodds/', f'href="{STAYODDS_URL}/stayodds/', txt)
     txt = re.sub(r'href="(?:\.\./)?destinations/', f'href="{STAYODDS_URL}/destinations/', txt)
-    txt = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=39', txt)
+    txt = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=40', txt)
 
     # 2. Swap Travelpayouts Drive/Emerald script to Uncharted Itinerary project (NjA0NzQ2.js?t=604746)
     if EMRLD_SCRIPT_RE.search(txt):

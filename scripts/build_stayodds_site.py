@@ -1124,10 +1124,10 @@ def render_seo_page(
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
-  <link rel="shortcut icon" href="../../favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png?v=2" />
+  <link rel="shortcut icon" href="../../favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png?v=2" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(title_text)}</title>
@@ -1146,7 +1146,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=39" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=40" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1766,7 +1766,7 @@ def render_seo_page(
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=8");
+      const mod = await import("../../assets/stayodds-share-card.js?v=9");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -2099,10 +2099,10 @@ def render_destination_page(
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
-  <link rel="shortcut icon" href="../../favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png?v=2" />
+  <link rel="shortcut icon" href="../../favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png?v=2" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(page_title)}</title>
@@ -2124,7 +2124,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=39" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=40" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2200,7 +2200,7 @@ def render_destination_page(
         <div class="hero-banner-card" style="--hero-bg: url('../../assets/banners/{esc(banner_file)}');">
           <div class="intro-row">
             <div class="hero-title-group">
-              <img class="hero-emblem" src="../../assets/stayodds-logo.png" alt="StayOdds." width="60" height="60" style="border-radius:14px;" />
+              <img class="hero-emblem" src="../../assets/stayodds-logo.png?v=2" alt="StayOdds." width="60" height="60" style="border-radius:14px;" />
               <div>
                 <h1 class="page-title">{esc(guide['headline'])}</h1>
                 <p class="page-lead">{esc(guide['lead'])}</p>

@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
-  <link rel="shortcut icon" href="../favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=2" />
+  <link rel="shortcut icon" href="../favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png?v=2" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews</title>
@@ -42,7 +42,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=39" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=40" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -154,7 +154,7 @@
         <div class="hero-banner-card" style="--hero-bg: url('../assets/banners/maldives.jpg');" data-hero-rotate="1" data-hero-base="../assets/banners/" data-hero-start="0">
           <div class="intro-row">
             <div class="hero-title-group">
-              <img class="hero-emblem" src="../assets/stayodds-logo.png" alt="StayOdds. by The Uncharted Itinerary" width="64" height="64" style="border-radius:14px;" />
+              <img class="hero-emblem" src="../assets/stayodds-logo.png?v=2" alt="StayOdds. by The Uncharted Itinerary" width="64" height="64" style="border-radius:14px;" />
               <div>
                 <h1 class="page-title"><span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span> — Critics vs Real Guest Reviews</h1>
                 <p class="page-lead">
@@ -346,7 +346,23 @@
             </div>
           </div>
 
-          <div class="scorecard-filters" style="gap:8px;">
+          <div class="scorecard-filters" style="gap:8px;flex-wrap:wrap;">
+            <select id="verdictFilter" class="select-control" aria-label="Filter by StayOdds status">
+              <option value="All">Status: All</option>
+              <option value="Strong Agreement">Strong Agreement (2+ Sources)</option>
+              <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
+              <option value="Opinions Differ">Opinions Differ (See Why)</option>
+              <option value="First-Hand Verified">First-Hand Verified</option>
+              <option value="Market Odds (1 Source)">Market Odds (1 Source)</option>
+              <option value="Award-Winning">Award-Winning</option>
+            </select>
+            <select id="priceTierFilter" class="select-control" aria-label="Filter by indicative nightly budget">
+              <option value="all">Indicative Price: Any</option>
+              <option value="under500">Under &pound;500 / night</option>
+              <option value="500to1000">&pound;500 – &pound;1,000 / night</option>
+              <option value="1000to1800">&pound;1,000 – &pound;1,800 / night</option>
+              <option value="1800plus">&pound;1,800+ / night</option>
+            </select>
             <select id="consensusSort" class="select-control" aria-label="Sort StayOdds directory">
               <option value="visited">Sort: Verified Stays First</option>
               <option value="odds">Sort: Highest StayOdds / Market %</option>
@@ -373,7 +389,7 @@
                   <span>Power Filters Inside</span>
                   <span>Click any to apply</span>
                 </div>
-                <p class="mfp-sub">Filter by exact World&rsquo;s 50 Best (#1–50 / #1–100), MICHELIN Keys (3&rarr;1), Travel Style, Best Dry Month, Nightly Budget &amp; Loyalty Perks.</p>
+                <p class="mfp-sub">Filter by exact World&rsquo;s 50 Best (#1–50 / #1–100), MICHELIN Keys (3&rarr;1), Travel Style, Best Dry Month &amp; Loyalty Perks.</p>
                 <div class="mfp-chips">
                   <button type="button" class="mfp-chip" data-quick-preset="50best_50">&#127942; Top 50 (#1–50)</button>
                   <button type="button" class="mfp-chip" data-quick-preset="50best_100">&#128175; Top 100 (#1–100)</button>
@@ -409,38 +425,14 @@
           <button type="button" class="quick-preset-pill preset-more-cta" data-open-more-drawer="1">&#9881; Travel Style, Months &amp; Perks&hellip;</button>
         </div>
 
-        <!-- Active Secondary Filter Chips Bar (only visible when drawer filters are active) -->
+        <!-- Active Secondary Filter Chips Bar (only visible when secondary filters are active) -->
         <div class="active-filters-strip" id="compareActiveFiltersStrip" hidden></div>
 
         <!-- Collapsible More Filters Drawer -->
         <div class="more-filters-drawer" id="compareMoreFiltersDrawer" hidden>
           <div class="more-filters-drawer-head">
-            <strong>Refine Luxury Hotels</strong>
+            <strong>Refine Luxury Hotels (Awards, Style, Dry Months &amp; Perks)</strong>
             <button type="button" class="btn-link-clear" id="compareClearDrawerFiltersBtn">Clear all filters</button>
-          </div>
-          <div class="drawer-select-row">
-            <label class="drawer-field">
-              <span>Status / Agreement</span>
-              <select id="verdictFilter" class="select-control" aria-label="Filter by StayOdds status">
-                <option value="All">All Statuses</option>
-                <option value="Strong Agreement">Strong Agreement (2+ Sources)</option>
-                <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
-                <option value="Opinions Differ">Opinions Differ (See Why)</option>
-                <option value="First-Hand Verified">First-Hand Verified</option>
-                <option value="Market Odds (1 Source)">Market Odds (1 Source)</option>
-                <option value="Award-Winning">Award-Winning</option>
-              </select>
-            </label>
-            <label class="drawer-field">
-              <span>Indicative Nightly Budget</span>
-              <select id="priceTierFilter" class="select-control" aria-label="Filter by indicative nightly budget">
-                <option value="all">Any Budget</option>
-                <option value="under500">Under £500 / night</option>
-                <option value="500to1000">£500 – £1,000 / night</option>
-                <option value="1000to1800">£1,000 – £1,800 / night</option>
-                <option value="1800plus">£1,800+ / night</option>
-              </select>
-            </label>
           </div>
           <div class="feature-filter-bar">
             <span class="feature-filter-label">Verified Awards, Perks &amp; Profile:</span>
@@ -539,6 +531,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=16"></script>
+  <script type="module" src="../assets/compare.js?v=17"></script>
 </body>
 </html>

@@ -73,11 +73,11 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+assets/', r'\1/assets/', html)
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+data/', r'\1/data/', html)
-    html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+favicon\.ico', r'\1/favicon.ico', html)
+    html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+favicon\.ico', r'\1/favicon.ico?v=2', html)
     html = re.sub(r"url\(['\"]?(?:\.\./)+assets/", "url('/assets/", html)
     html = re.sub(r'data-hero-base=["\'](?:\.\./)+assets/', 'data-hero-base="/assets/', html)
     html = html.replace('import("../../assets/stayodds-share-card.js', 'import("/assets/stayodds-share-card.js')
-    html = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=39', html)
+    html = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=40', html)
 
     # 3. Cross-domain navigation links to The Uncharted Itinerary Hub
     for hub_section in ("cameras", "links", "about", "faq", "contact", "privacy"):
@@ -241,8 +241,8 @@ def write_404_page(out_dir: Path) -> None:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — StayOdds.</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="stylesheet" href="/assets/styles.min.css?v=39" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2" />
+  <link rel="stylesheet" href="/assets/styles.min.css?v=40" />
 {STAYODDS_GA4_SNIPPET}
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
@@ -340,8 +340,8 @@ def main() -> None:
     )
     if (ROOT / "ads.txt").exists():
         shutil.copy2(ROOT / "ads.txt", DIST / "ads.txt")
-    if (ROOT / "favicon.ico").exists():
-        shutil.copy2(ROOT / "favicon.ico", DIST / "favicon.ico")
+    if (ROOT / "favicon.ico?v=2").exists():
+        shutil.copy2(ROOT / "favicon.ico?v=2", DIST / "favicon.ico?v=2")
 
     # 2. Copy assets/ and required data/ JSONs
     shutil.copytree(ROOT / "assets", DIST / "assets")

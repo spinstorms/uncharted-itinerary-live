@@ -997,9 +997,17 @@ function renderActiveFiltersAndDrawerBadge() {
     chips.push({ key: "month", label: `Best in ${MONTH_LABELS[state.month - 1]}` });
   }
 
+  const drawerCount =
+    (state.feature !== "all" ? 1 : 0) +
+    (state.style !== "all" ? 1 : 0) +
+    (state.month >= 1 && state.month <= 12 ? 1 : 0);
+  const moreBtn = qs("#compareMoreFiltersBtn");
+  if (moreBtn) {
+    moreBtn.classList.toggle("has-active", drawerCount > 0);
+  }
   if (badge) {
-    badge.textContent = String(chips.length);
-    badge.hidden = chips.length === 0;
+    badge.textContent = String(drawerCount);
+    badge.hidden = drawerCount === 0;
   }
   if (strip) {
     if (!chips.length) {
@@ -1896,7 +1904,7 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=8");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=9");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
           window.trackEvent("open_share_card", "vs_three_hotel", `${ha.name} vs ${hb.name} vs ${hc.name}`);
@@ -1904,7 +1912,7 @@ async function boot() {
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=8");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=9");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
