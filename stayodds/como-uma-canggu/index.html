@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "como-uma-canggu", "name": "COMO Uma Canggu", "location": "Echo Beach, Canggu", "country": "Indonesia", "brand": "COMO Hotels", "priceRange": "£180–£320/night", "standout": "Modern Echo Beach luxury with outdoor showers, great Pilates/gym & unbeatable Canggu price-to-quality ratio", "watchOut": "Echo Beach is a surf break rather than a calm swimming beach, and Canggu traffic outside is heavy", "keyFacts": {"poolHeating": "Infinity pool on property", "beachOrReef": "Direct beachfront access", "renovationYear": null, "transferLogistics": "Nearest airport code: DPS"}, "thumbnail": "assets/thumbs/como-uma-canggu.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 82, "statusBadge": "Opinions Differ", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "18.5 / 25", "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 1, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "I rated this -18 pts stricter than real guests — see what stood out & what held it back.", "deltaLabel": "-18 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "baoase-luxury-resort-curacao", "name": "Baoase Luxury Resort", "location": "Willemstad, Curaçao", "country": "Curaçao", "brand": "Independent", "priceRange": "£950+/night", "standout": "23-room Balinese-inspired private-lagoon sanctuary just 10 minutes from Willemstad — widely regarded as Curaçao's undisputed top luxury stay with private-pool villas, acclaimed Culinary Beach Restaurant, and year-round weather outside the hurricane belt", "watchOut": "Intimate man-made protected lagoon beach rather than a miles-long natural beach; ultra-high nightly rates relative to the rest of Curaçao", "keyFacts": {"poolHeating": "", "beachOrReef": "Private sheltered white-sand lagoon beach with calm swimming & reef snorkeling", "renovationYear": null, "transferLogistics": "Approx. 25 minutes from Curaçao International Airport (CUR)"}, "thumbnail": "assets/thumbs/baoase-luxury-resort-curacao.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 96, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

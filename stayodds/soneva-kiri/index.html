@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "soneva-kiri", "name": "Soneva Kiri", "location": "Koh Kood", "country": "Thailand", "brand": "Soneva", "priceRange": "", "standout": "Private Soneva plane from Bangkok, iconic suspended Treepod dining in the rainforest canopy, and colossal pool villas", "watchOut": "IMPORTANT STATUS UPDATE: No longer operated by Soneva — transitioned to Kiri Private Reserve in June 2025 under new ownership and closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027. Verify reopening status before planning travel.", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Nearest airport code: TDX"}, "thumbnail": "assets/thumbs/soneva-kiri.webp", "propertyStatus": {"operatingStatus": "Temporarily Closed", "renovationsExtensions": "Exited the Soneva brand under new ownership and rebranded to Kiri Private Reserve in June 2025; closed from July 2025 for extensive renovations slated to reopen in Q4 2026 / early 2027.", "nearbyConstruction": "", "sourceUrl": "https://explorekohchang.com/koh-kood/resorts-hotels-bungalows/klong-yai-kee-klong-rahan/", "sourceNote": "Koh Kood 2026/27 resort status report & public rebrand coverage (listed temporarily closed as Kiri Private Reserve)", "verifiedAt": "2026-11-23T18:25:20.98712+00:00"}}, "odds": {"greatStayOdds": 95, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 100, "scoredEditorial": [{"sourceName": "The Luxury Travel Expert", "rawScore": "10/10", "normalized100": 100}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "The Luxury Travel Expert rated this +7 pts higher than real guests.", "deltaLabel": "+7 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

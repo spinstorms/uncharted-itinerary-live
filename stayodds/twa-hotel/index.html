@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "twa-hotel", "name": "TWA Hotel", "location": "Midtown Manhattan, New York", "country": "United States", "brand": "Luxury Collection & Boutique", "priceRange": "", "standout": "Room and rooftop-pool views plus the history of the Flight Center.", "watchOut": "Crazy prices.", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: JFK"}, "thumbnail": "assets/thumbs/twa-hotel.webp", "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "", "nearbyConstruction": "", "sourceUrl": "", "sourceNote": "", "verifiedAt": ""}}, "odds": {"greatStayOdds": 85, "statusBadge": "Opinions Differ", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 99, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "99/100", "normalized100": 99}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 7.8, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "The Flip-Flop Traveller rated this +21 pts higher than real guests.", "deltaLabel": "+21 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

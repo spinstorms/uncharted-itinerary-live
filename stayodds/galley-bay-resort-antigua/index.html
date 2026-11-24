@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "galley-bay-resort-antigua", "name": "Galley Bay Resort & Spa", "location": "Five Islands", "country": "Antigua and Barbuda", "brand": "Elite Island Resorts", "priceRange": "£700+/night (All-Inclusive)", "standout": "Intimate 98-room adults-only all-inclusive spread along a gorgeous 3/4-mile stretch of quiet west-coast beach backed by a bird-sanctuary lagoon, famous for Tahitian-style Gauguin private plunge-pool cottages and relaxed barefoot atmosphere", "watchOut": "Gauguin cottages sit on the lagoon side rather than directly on the sand; the ocean can occasionally have swell/undertow compared to sheltered bays, and nightlife is minimal", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "3/4-mile natural west-coast white-sand beach with sunset views", "renovationYear": null, "transferLogistics": "Approx. 25 minutes from V.C. Bird International Airport (ANU)"}, "thumbnail": "assets/thumbs/galley-bay-resort-antigua.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 94, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "secrets-cap-cana", "name": "Secrets Cap Cana Resort & Spa", "location": "Juanillo Beach, Cap Cana", "country": "Dominican Republic", "brand": "Secrets Resorts", "priceRange": "£500+/night (All-Inclusive)", "standout": "Consistently top-rated adults-only all-inclusive inside gated Cap Cana with direct access to calm, powdery Juanillo Beach, Preferred Club private pool/beach section, and World of Hyatt loyalty earning", "watchOut": "Non-Preferred Club guests have fewer prime loungers and narrower liquor selections; quieter nightlife than Bávaro mega-resorts, and summer sargassum can affect water clarity", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Direct Juanillo Beach frontage with calm shallow swimming water", "renovationYear": null, "transferLogistics": "Approx. 20 minutes from Punta Cana International Airport (PUJ)"}, "thumbnail": "assets/thumbs/secrets-cap-cana.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 86, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "86/100 (Breakfast 6/10)", "normalized100": 86}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 0, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +6 pts higher than The Flip-Flop Traveller.", "deltaLabel": "-6 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

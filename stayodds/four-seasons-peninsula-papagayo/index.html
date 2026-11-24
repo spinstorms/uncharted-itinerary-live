@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "four-seasons-peninsula-papagayo", "name": "Four Seasons Resort Peninsula Papagayo", "location": "Peninsula Papagayo, Guanacaste", "country": "Costa Rica", "brand": "Four Seasons", "priceRange": "£1,200+/night", "standout": "Costa Rica's flagship luxury beach resort straddling a narrow isthmus with two distinct beaches (calm bay + surf side), Virador Beach Club, howler monkeys in the trees, Arnold Palmer golf, and top-rated Kids For All Seasons club", "watchOut": "Dry-tropical Pacific beaches have golden-tan volcanic sand rather than white Caribbean sand; steep rates and high on-property dining bills with limited off-peninsula options nearby", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Two distinct beaches on opposite sides of the peninsula (calm Playa Blanca + Playa Virador)", "renovationYear": 2023, "transferLogistics": "Approx. 40 minutes from Liberia Guanacaste International Airport (LIR)"}, "thumbnail": "assets/thumbs/four-seasons-peninsula-papagayo.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 73, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 73, "scoredEditorial": [{"sourceName": "Walker Hotel Index (Ryan Walker)", "rawScore": "36.5/50", "normalized100": 73}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 1, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

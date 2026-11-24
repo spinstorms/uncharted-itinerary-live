@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "naviva-four-seasons-punta-mita", "name": "Naviva, A Four Seasons Resort, Punta Mita", "location": "Punta Mita, Riviera Nayarit", "country": "Mexico", "brand": "Four Seasons", "priceRange": "£2,800+/night (All-Inclusive)", "standout": "Adults-only all-inclusive luxury tented sanctuary (just 15 canvas-canopy bungalows across 48 acres of Pacific coastal jungle) — unscripted Four Seasons hospitality, private plunge pools, included temazcal/spa rituals, and bespoke Copal Cocina dining", "watchOut": "Ultra-premium pricing (frequently £2,800–£4,000+/night) and strictly adults-only with no formal lobby or multiple restaurants (though guests have full access to neighboring Four Seasons Punta Mita)", "keyFacts": {"poolHeating": "", "beachOrReef": "Secluded white-sand Pacific cove shared by a maximum of 30 guests", "renovationYear": 2022, "transferLogistics": "Approx. 55 minutes north of Puerto Vallarta International Airport (PVR)"}, "thumbnail": "assets/thumbs/naviva-four-seasons-punta-mita.webp", "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Global Directory", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -34,12 +34,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261123d" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124a" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -206,16 +206,17 @@
         <div class="h2h-box">
           <div class="section-header" style="margin-bottom:16px;flex-wrap:wrap;gap:12px;">
             <div>
-              <h2 class="section-title">Compare Any Two Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Search or pick any two luxury stays below to compare verified first-hand scores, official awards, property status &amp; works, standout features, honest caveats, and live rate links side-by-side.</p>
+              <h2 class="section-title">Compare Resorts Head-to-Head</h2>
+              <p class="section-subtitle">Search or pick two luxury stays side-by-side (or add a 3rd hotel for a 3-way comparison) — verified first-hand scores, critics, official awards, property status, and live rate links.</p>
             </div>
             <div class="h2h-header-actions">
+              <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Toggle 3-way hotel comparison">+ Add 3rd Hotel</button>
               <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">&#x1F4F8; Share VS Card</button>
               <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
             </div>
           </div>
 
-          <div class="h2h-selectors-enhanced">
+          <div class="h2h-selectors-enhanced" id="h2hSelectorsWrap">
             <div class="h2h-selector-col">
               <label class="h2h-selector-label" for="compareSearchA">Hotel A</label>
               <div class="h2h-search-box">
@@ -243,6 +244,25 @@
               <select id="compareSelectB" class="select-control" aria-label="Select second hotel"></select>
               <div class="h2h-search-meta" id="compareMetaB"></div>
               <div class="h2h-search-empty" id="compareEmptyB" role="status"></div>
+            </div>
+
+            <div class="h2h-vs-col" id="compareVs2" hidden>
+              <span class="h2h-vs is-c">VS</span>
+            </div>
+
+            <div class="h2h-selector-col" id="compareColC" hidden>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                <label class="h2h-selector-label is-c" for="compareSearchC">Hotel C</label>
+                <button type="button" id="removeHotelCBtn" class="h2h-remove-c-btn" aria-label="Remove 3rd hotel">&times; Remove</button>
+              </div>
+              <div class="h2h-search-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="compareSearchC" class="h2h-search-input" placeholder="Search 3rd hotel, city, country, or brand…" aria-label="Filter Hotel C options" autocomplete="off" />
+                <button type="button" id="compareClearC" class="h2h-search-clear" aria-label="Clear Hotel C search">&times;</button>
+              </div>
+              <select id="compareSelectC" class="select-control" aria-label="Select third hotel"></select>
+              <div class="h2h-search-meta" id="compareMetaC"></div>
+              <div class="h2h-search-empty" id="compareEmptyC" role="status"></div>
             </div>
           </div>
 
@@ -282,6 +302,10 @@
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
               <option value="name">Sort: A–Z Name</option>
             </select>
+            <div class="view-toggle" role="group" aria-label="Switch StayOdds layout">
+              <button class="view-toggle-btn active" id="consensusViewCardsBtn" type="button">Cards</button>
+              <button class="view-toggle-btn" id="consensusViewTableBtn" type="button">Comparison Table</button>
+            </div>
           </div>
 
           <div class="controls-search-group">
@@ -304,6 +328,7 @@
         </div>
 
         <div class="consensus-list" id="consensusList"></div>
+        <div class="comparison-table-wrap" id="consensusTableWrap" style="display:none; margin-bottom: 36px;"></div>
       </div>
     </section>
 

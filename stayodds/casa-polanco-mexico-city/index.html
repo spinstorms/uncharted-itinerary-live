@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "casa-polanco-mexico-city", "name": "Casa Polanco", "location": "Polanco, Mexico City", "country": "Mexico", "brand": "Independent", "priceRange": "£550+/night", "standout": "Intimate 19-suite 1940s neoclassical mansion overlooking Parque Lincoln in Polanco — widely praised on r/FATTravel and r/chubbytravel as Mexico City's quietest residential-feeling luxury alternative to larger chain hotels", "watchOut": "Boutique residential scale means no swimming pool and dining is centered on breakfast, afternoon tea, and light bites rather than a destination dinner restaurant (though Pujol & Quintonil are minutes away)", "keyFacts": {"poolHeating": "", "beachOrReef": "Urban luxury mansion facing Parque Lincoln in Polanco (no pool or beach)", "renovationYear": 2022, "transferLogistics": "Approx. 35–60 minutes from Mexico City International Airport (MEX) depending on traffic"}, "thumbnail": "assets/thumbs/casa-polanco-mexico-city.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 95, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.5, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

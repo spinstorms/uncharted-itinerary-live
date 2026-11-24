@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "jw-marriott-hotel-and-suites-saigon", "name": "JW Marriott Hotel & Suites Saigon, The Apartments", "location": "Ho Chi Minh City", "country": "Vietnam", "brand": "JW Marriott", "priceRange": "", "standout": "Huge apartment layouts and excellent value.", "watchOut": "Very generic design.", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/jw-marriott-hotel-and-suites-saigon.webp", "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "This rating applies to the former InterContinental Residences Saigon, now JW Marriott Hotel & Suites Saigon, The Apartments. It does not apply to the separate hotel tower.", "nearbyConstruction": "", "sourceUrl": "https://www.google.com/maps?cid=13590497214600422352", "sourceNote": "The Flip-Flop Traveller Master Hotel Map", "verifiedAt": "2026-11-23T21:11:01.939972+00:00"}}, "odds": {"greatStayOdds": 80, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 80, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "80/100 (Breakfast 8/10)", "normalized100": 80}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "rosewood-london", "name": "Rosewood London", "location": "London", "country": "United Kingdom", "brand": "Rosewood", "priceRange": "", "standout": "Excellent central location • Very helpful and friendly staff", "watchOut": "Cleanliness issues in some rooms (hair, food left) • Bathroom plumbing issues and noisy/older bathrooms", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: LHR)"}, "thumbnail": "assets/thumbs/rosewood-london.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 91, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "17/20", "normalized100": 85}, {"sourceName": "The Luxury Travel Expert", "rawScore": "9.6/10", "normalized100": 96}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 0, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "No. 56 in the World (2026)"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (-2 pts) — 2 published critics and real guests agree.", "deltaLabel": "-2 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

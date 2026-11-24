@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "the-datai-langkawi", "name": "The Datai Langkawi", "location": "Datai Bay, Langkawi", "country": "Malaysia", "brand": "Leading Hotels of the World", "priceRange": "£700+/night", "standout": "Architectural rainforest-meets-beach icon nestled in a 10-million-year-old Malaysian jungle overlooking Datai Bay — famed on r/FATTravel for dusky leaf monkeys, Kerry Hill design, The Nature Centre, The Gulai House Malay dining, and tranquil beach villas", "watchOut": "Humid rainforest setting means frequent wildlife (monkeys on balconies if doors are left open) and seasonal jellyfish/monsoon weather swings; ~40 min from Langkawi town", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private crescent white-sand Datai Bay framed by ancient rainforest", "renovationYear": 2018, "transferLogistics": "Approx. 40 minutes from Langkawi International Airport (LGK)"}, "thumbnail": "assets/thumbs/the-datai-langkawi.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 99, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 100, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "100/100 (Breakfast 8/10)", "normalized100": 100}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 1, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [{"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (+2 pts) — The Flip-Flop Traveller and real guests agree.", "deltaLabel": "+2 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

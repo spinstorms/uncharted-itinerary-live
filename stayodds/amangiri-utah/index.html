@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "amangiri-utah", "name": "Amangiri", "location": "Canyon Point, Utah", "country": "USA", "brand": "Aman", "priceRange": "", "standout": "Monolithic concrete pool wrapped around a 165-million-year-old sandstone mesa, private via ferrata climbs, and Camp Sarika glamping", "watchOut": "Starting rates above £2,600/night (all-inclusive meals) make it one of North America's priciest stays", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/amangiri-utah.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 82, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 82, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "16.5/20", "normalized100": 82}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 1, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "No. 45 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys • No. 45 in the World (2026) — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "waldorf-astoria-new-york", "name": "Waldorf Astoria New York", "location": "Midtown Manhattan, New York", "country": "United States", "brand": "Waldorf Astoria", "priceRange": "£1,200+/night", "standout": "Reopened in 2025 after a landmark multi-billion-dollar restoration by Pierre-Yves Rochon, bringing back Art Deco Park Avenue grandeur with spacious new 375-key rooms, Peacock Alley, Guerlain Wellness Spa, and Hilton Honors points eligibility", "watchOut": "Midtown Park Avenue location is business-centric rather than residential Upper East Side or Tribeca; prime rates sit alongside Aman New York and The Carlyle", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": 2025, "transferLogistics": "Approx. 35–55 minutes from JFK, LGA, or EWR"}, "thumbnail": "assets/thumbs/waldorf-astoria-new-york.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 88, "statusBadge": "Opinions Differ", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 79, "scoredEditorial": [{"sourceName": "Walker Hotel Index (Ryan Walker)", "rawScore": "39.5/50", "normalized100": 79}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 1, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +14 pts higher than Walker Hotel Index (Ryan Walker).", "deltaLabel": "-14 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -121,6 +121,47 @@ const VERIFIED_FEATURES = [
   },
 ];
 
+function getMichelinKeyCount(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/michelin/i.test(txt)) {
+      const m = String(a.label || "").match(/([123])\s*michelin\s*key/i);
+      const val = m ? Number(m[1]) : 1;
+      if (best == null || val > best) best = val;
+    }
+  }
+  return best;
+}
+
+function getW50BestRank(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/50\s*best/i.test(txt)) {
+      const m = String(a.label || "").match(/(?:No\.?|#)\s*(\d{1,3})/i);
+      const val = m ? Number(m[1]) : 999;
+      if (best == null || val < best) best = val;
+    }
+  }
+  return best;
+}
+
+function getForbesRank(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/forbes/i.test(txt)) {
+      let val = 1;
+      if (/five[- ]star/i.test(txt)) val = 5;
+      else if (/four[- ]star/i.test(txt)) val = 4;
+      else if (/recommended/i.test(txt)) val = 3;
+      if (best == null || val > best) best = val;
+    }
+  }
+  return best;
+}
+
 const state = {
   hotels: [],
   visitedCount: 0,
@@ -131,12 +172,18 @@ const state = {
   style: "all",
   verdict: "All",
   sortBy: "visited",
+  viewMode: "cards", // "cards" | "table"
+  tableSortKey: null, // clickable column header sort
+  tableSortDir: "desc",
   search: "",
   searchA: "",
   searchB: "",
+  searchC: "",
+  threeWay: false,
   visibleLimit: PAGE_SIZE,
   idA: "taaktana-labuan-bajo",
   idB: "st-regis-bali",
+  idC: "w-maldives",
 };
 
 const qs = (sel) => document.querySelector(sel);
@@ -186,6 +233,8 @@ function syncUrlParams(includeCompare = false) {
     if (includeCompare && state.idA && state.idB) {
       url.searchParams.set("a", state.idA);
       url.searchParams.set("b", state.idB);
+      if (state.threeWay && state.idC) url.searchParams.set("c", state.idC);
+      else url.searchParams.delete("c");
     }
     window.history.replaceState({}, "", url.toString());
   } catch (_) {}
@@ -236,15 +285,43 @@ function matchesSelectorQuery(h, query) {
   return q.split(/\s+/).every((tok) => hay.includes(tok));
 }
 
+const SELECTOR_SIDES = {
+  A: {
+    sel: "#compareSelectA",
+    clear: "#compareClearA",
+    meta: "#compareMetaA",
+    empty: "#compareEmptyA",
+    searchKey: "searchA",
+    idKey: "idA",
+  },
+  B: {
+    sel: "#compareSelectB",
+    clear: "#compareClearB",
+    meta: "#compareMetaB",
+    empty: "#compareEmptyB",
+    searchKey: "searchB",
+    idKey: "idB",
+  },
+  C: {
+    sel: "#compareSelectC",
+    clear: "#compareClearC",
+    meta: "#compareMetaC",
+    empty: "#compareEmptyC",
+    searchKey: "searchC",
+    idKey: "idC",
+  },
+};
+
 function populateSingleSelector(side) {
-  const isA = side === "A";
-  const sel = qs(isA ? "#compareSelectA" : "#compareSelectB");
-  const clearBtn = qs(isA ? "#compareClearA" : "#compareClearB");
-  const metaEl = qs(isA ? "#compareMetaA" : "#compareMetaB");
-  const emptyEl = qs(isA ? "#compareEmptyA" : "#compareEmptyB");
+  const cfg = SELECTOR_SIDES[side];
+  if (!cfg) return;
+  const sel = qs(cfg.sel);
+  const clearBtn = qs(cfg.clear);
+  const metaEl = qs(cfg.meta);
+  const emptyEl = qs(cfg.empty);
   if (!sel) return;
 
-  const query = isA ? state.searchA : state.searchB;
+  const query = state[cfg.searchKey] || "";
   const trimmed = query.trim();
   if (clearBtn) clearBtn.classList.toggle("is-visible", trimmed.length > 0);
 
@@ -286,14 +363,13 @@ function populateSingleSelector(side) {
   }
   sel.innerHTML = html;
 
-  const currentId = isA ? state.idA : state.idB;
+  const currentId = state[cfg.idKey];
   if (filtered.some((h) => h.id === currentId)) {
     sel.value = currentId;
   } else {
     const nextId = filtered[0].id;
     sel.value = nextId;
-    if (isA) state.idA = nextId;
-    else state.idB = nextId;
+    state[cfg.idKey] = nextId;
   }
 }
 
@@ -304,26 +380,60 @@ function populateH2HSelectors() {
     else if (state.hotels.length) state.idA = state.hotels[0].id;
   }
   if (!state.hotels.some((h) => h.id === state.idB)) {
-    if (state.hotels.length > 1) state.idB = state.hotels[1].id;
+    const fallbackB = state.hotels.find((h) => h.id !== state.idA);
+    if (fallbackB) state.idB = fallbackB.id;
+  }
+  if (!state.hotels.some((h) => h.id === state.idC) || state.idC === state.idA || state.idC === state.idB) {
+    const visitedC = state.hotels.find((h) => isVisitedProperty(h) && h.id !== state.idA && h.id !== state.idB);
+    const anyC = state.hotels.find((h) => h.id !== state.idA && h.id !== state.idB);
+    if (visitedC) state.idC = visitedC.id;
+    else if (anyC) state.idC = anyC.id;
   }
   populateSingleSelector("A");
   populateSingleSelector("B");
+  populateSingleSelector("C");
 }
 
-function renderH2HCard(h, opponent) {
+function syncThreeWayUi() {
+  const wrap = qs("#h2hSelectorsWrap");
+  const out = qs("#h2hOutput");
+  const vs2 = qs("#compareVs2");
+  const colC = qs("#compareColC");
+  const toggleBtn = qs("#toggleThreeWayBtn");
+  const shareBtn = qs("#shareVsCardBtn");
+  const copyBtn = qs("#copyVsLinkBtn");
+
+  if (wrap) wrap.classList.toggle("is-three-way", state.threeWay);
+  if (out) out.classList.toggle("is-three-way", state.threeWay);
+  if (vs2) vs2.hidden = !state.threeWay;
+  if (colC) colC.hidden = !state.threeWay;
+
+  if (toggleBtn) {
+    toggleBtn.setAttribute("aria-pressed", String(state.threeWay));
+    toggleBtn.classList.toggle("is-active", state.threeWay);
+    toggleBtn.textContent = state.threeWay ? "− Back to 2-Way" : "+ Add 3rd Hotel";
+  }
+  if (shareBtn) {
+    shareBtn.innerHTML = state.threeWay ? "&#x1F4F8; Share 3-Way Card" : "&#x1F4F8; Share VS Card";
+  }
+  if (copyBtn && !copyBtn.classList.contains("is-copied")) {
+    copyBtn.innerHTML = state.threeWay ? "&#128279; Copy 3-Way Link" : "&#128279; Copy VS Link";
+  }
+}
+
+function renderH2HCard(h, allCompared) {
   const o = getOdds(h);
-  const oo = getOdds(opponent);
+  const otherOdds = allCompared.filter((x) => x !== h).map((x) => ({ h: x, o: getOdds(x), s: x.scores || {} }));
   const s = h.scores || {};
-  const os = opponent.scores || {};
   const reviewHref = getReviewHref(h);
   const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
   const st = getPropertyStatusMeta(h);
 
-  const metricRow = (label, a, b, suffix = "", missingText = "—") => {
-    const aMissing = a == null;
-    const bMissing = b == null;
-    const wins = !aMissing && !bMissing && Number(a) > Number(b);
-    const display = aMissing ? missingText : `${a}${suffix}`;
+  const metricRow = (label, a, otherVals, suffix = "", missingText = "—", customDisplay = null) => {
+    const aMissing = a == null || Number.isNaN(Number(a));
+    const validOthers = (otherVals || []).filter((v) => v != null && !Number.isNaN(Number(v))).map(Number);
+    const wins = !aMissing && validOthers.length > 0 && Number(a) > Math.max(...validOthers);
+    const display = aMissing ? missingText : customDisplay != null ? customDisplay : `${a}${suffix}`;
     return `
       <div class="h2h-metric ${wins ? "is-best" : ""}">
         <span>${escapeHtml(label)}</span>
@@ -419,27 +529,69 @@ function renderH2HCard(h, opponent) {
       ${statusHtml}
 
       <div class="h2h-metrics-list">
-        ${metricRow("My Stay", o.ours100, oo.ours100, "", unratedLabel).replace(
-          `${o.ours100}`,
+        ${metricRow(
+          "My Stay",
+          o.ours100,
+          otherOdds.map((x) => x.o.ours100),
+          "",
+          unratedLabel,
           o.personalScoreLabel || unratedLabel
         )}
-        ${metricRow("Critics / Other Reviews", o.critic100, oo.critic100, "", criticDisplay || "— (None listed)").replace(
-          `${o.critic100}`,
+        ${metricRow(
+          "Critics / Other Reviews",
+          o.critic100,
+          otherOdds.map((x) => x.o.critic100),
+          "",
+          criticDisplay || "— (None listed)",
           criticDisplay || "— (None listed)"
         )}
-        ${metricRow("Verified Guests", o.guest100, oo.guest100, "", "Open Breakdown").replace(
-          `${o.guest100}`,
+        ${metricRow(
+          "Verified Guests",
+          o.guest100,
+          otherOdds.map((x) => x.o.guest100),
+          "",
+          "Open Breakdown",
           guestDisplay || "Open Breakdown"
         )}
         <div class="h2h-metric">
           <span>Official Awards</span>
           <strong style="text-align:right;font-size:12.5px;">${awardsHtml}</strong>
         </div>
-        ${metricRow("Value", o.firstHand ? formatPersonalScore(s.value) : null, oo.firstHand ? formatPersonalScore(os.value) : null, " / 5", unratedLabel)}
-        ${metricRow("Room Quality", o.firstHand ? formatPersonalScore(s.rooms) : null, oo.firstHand ? formatPersonalScore(os.rooms) : null, " / 5", unratedLabel)}
-        ${metricRow("Vibe", o.firstHand ? formatPersonalScore(s.grounds) : null, oo.firstHand ? formatPersonalScore(os.grounds) : null, " / 5", unratedLabel)}
-        ${metricRow("Food", o.firstHand ? formatPersonalScore(s.food) : null, oo.firstHand ? formatPersonalScore(os.food) : null, " / 5", unratedLabel)}
-        ${metricRow("Service", o.firstHand ? formatPersonalScore(s.service) : null, oo.firstHand ? formatPersonalScore(os.service) : null, " / 5", unratedLabel)}
+        ${metricRow(
+          "Value",
+          o.firstHand ? formatPersonalScore(s.value) : null,
+          otherOdds.map((x) => (x.o.firstHand ? formatPersonalScore(x.s.value) : null)),
+          " / 5",
+          unratedLabel
+        )}
+        ${metricRow(
+          "Room Quality",
+          o.firstHand ? formatPersonalScore(s.rooms) : null,
+          otherOdds.map((x) => (x.o.firstHand ? formatPersonalScore(x.s.rooms) : null)),
+          " / 5",
+          unratedLabel
+        )}
+        ${metricRow(
+          "Vibe",
+          o.firstHand ? formatPersonalScore(s.grounds) : null,
+          otherOdds.map((x) => (x.o.firstHand ? formatPersonalScore(x.s.grounds) : null)),
+          " / 5",
+          unratedLabel
+        )}
+        ${metricRow(
+          "Food",
+          o.firstHand ? formatPersonalScore(s.food) : null,
+          otherOdds.map((x) => (x.o.firstHand ? formatPersonalScore(x.s.food) : null)),
+          " / 5",
+          unratedLabel
+        )}
+        ${metricRow(
+          "Service",
+          o.firstHand ? formatPersonalScore(s.service) : null,
+          otherOdds.map((x) => (x.o.firstHand ? formatPersonalScore(x.s.service) : null)),
+          " / 5",
+          unratedLabel
+        )}
       </div>
 
       <p class="h2h-diff"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}${
@@ -464,12 +616,20 @@ function renderH2HCard(h, opponent) {
 }
 
 function renderH2H() {
+  syncThreeWayUi();
   const out = qs("#h2hOutput");
   if (!out) return;
   const a = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
   const b = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
   if (!a || !b) return;
-  out.innerHTML = renderH2HCard(a, b) + renderH2HCard(b, a);
+  const compared = [a, b];
+  if (state.threeWay) {
+    const c =
+      state.hotels.find((h) => h.id === state.idC) ||
+      state.hotels.find((h) => h.id !== a.id && h.id !== b.id);
+    if (c) compared.push(c);
+  }
+  out.innerHTML = compared.map((h) => renderH2HCard(h, compared)).join("");
   window.stayOddsShortlist?.syncButtons?.();
 }
 
@@ -607,6 +767,7 @@ function renderStylePills() {
 
 function renderLeaderboard() {
   const container = qs("#consensusList");
+  const tableWrap = qs("#consensusTableWrap");
   if (!container) return;
 
   const q = state.search.trim().toLowerCase();
@@ -638,23 +799,69 @@ function renderLeaderboard() {
     return hay.includes(q);
   });
 
-  const getDisagreementPts = (o) => {
-    const absDelta = o.opinionGap && o.opinionGap.delta100 != null ? Math.abs(Number(o.opinionGap.delta100)) : -1;
-    const spread = o.spread100 != null ? Number(o.spread100) : -1;
-    return Math.max(absDelta, spread);
+  const getDisagreementPtsNullable = (o) => {
+    const absDelta = o.opinionGap && o.opinionGap.delta100 != null ? Math.abs(Number(o.opinionGap.delta100)) : null;
+    const spread = o.spread100 != null ? Number(o.spread100) : null;
+    if (absDelta == null && spread == null) return null;
+    return Math.max(absDelta ?? -1, spread ?? -1);
+  };
+
+  const cmpNullableNum = (va, vb, dir) => {
+    const aNull = va == null || Number.isNaN(va);
+    const bNull = vb == null || Number.isNaN(vb);
+    if (aNull && bNull) return 0;
+    if (aNull) return 1; // Always keep missing/unscored rows at the bottom
+    if (bNull) return -1;
+    return dir === "asc" ? va - vb : vb - va;
   };
 
   list.sort((a, b) => {
     const oa = getOdds(a);
     const ob = getOdds(b);
     const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
+
+    if (state.tableSortKey) {
+      const k = state.tableSortKey;
+      const d = state.tableSortDir;
+      let diff = 0;
+      if (k === "name") {
+        diff = d === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+      } else if (k === "location") {
+        const la = `${a.location || ""}, ${a.country || ""}`;
+        const lb = `${b.location || ""}, ${b.country || ""}`;
+        diff = d === "asc" ? la.localeCompare(lb) : lb.localeCompare(la);
+      } else if (k === "odds") {
+        diff = cmpNullableNum(oa.greatStayOdds, ob.greatStayOdds, d);
+      } else if (k === "overall") {
+        diff = cmpNullableNum(
+          oa.firstHand && a.overall != null ? Number(a.overall) : null,
+          ob.firstHand && b.overall != null ? Number(b.overall) : null,
+          d
+        );
+      } else if (k === "critic") {
+        diff = cmpNullableNum(oa.critic100, ob.critic100, d);
+      } else if (k === "guest") {
+        diff = cmpNullableNum(oa.guest100, ob.guest100, d);
+      } else if (k === "gap") {
+        diff = cmpNullableNum(getDisagreementPtsNullable(oa), getDisagreementPtsNullable(ob), d);
+      } else if (k === "michelin") {
+        diff = cmpNullableNum(getMichelinKeyCount(a), getMichelinKeyCount(b), d);
+      } else if (k === "w50") {
+        diff = cmpNullableNum(getW50BestRank(a), getW50BestRank(b), d);
+      } else if (k === "forbes") {
+        diff = cmpNullableNum(getForbesRank(a), getForbesRank(b), d);
+      }
+      if (diff !== 0) return diff;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
     if (state.sortBy === "gap") {
-      const ga = getDisagreementPts(oa);
-      const gb = getDisagreementPts(ob);
+      const ga = getDisagreementPtsNullable(oa) ?? -1;
+      const gb = getDisagreementPtsNullable(ob) ?? -1;
       if (gb !== ga) return gb - ga;
       if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -670,6 +877,8 @@ function renderLeaderboard() {
   });
 
   if (!list.length) {
+    container.style.display = "";
+    if (tableWrap) tableWrap.style.display = "none";
     const emptyMsg =
       state.scope === "saved" && getShortlistIds().length === 0
         ? `Your Shortlist is empty — tap "♡ Save" on any hotel card or breakdown page to build your personal comparison list (saved right in your browser, no login needed).`
@@ -681,209 +890,6 @@ function renderLeaderboard() {
   const visibleList = list.slice(0, state.visibleLimit);
   const remaining = list.length - visibleList.length;
 
-  const cardsHtml = visibleList
-    .map((h, i) => {
-      const o = getOdds(h);
-      const reviewHref = getReviewHref(h);
-      const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
-      const isShortOnly = h.coverageType === "Short Tour";
-      const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
-
-      const toneClass =
-        o.statusTone === "amber"
-          ? "is-contrarian"
-          : o.statusTone === "accent"
-          ? "is-strong"
-          : o.statusTone === "teal"
-          ? "is-aligned"
-          : "is-external";
-      const tagClass =
-        o.statusTone === "amber"
-          ? "tag-caution"
-          : o.statusTone === "accent"
-          ? "tag-accent"
-          : o.statusTone === "teal"
-          ? "tag-teal"
-          : "tag-slate";
-
-      const keyFactChips = [
-        ...o.keyFacts.slice(0, 3).map((kf) => `<span class="card-key-fact-chip"><strong>${escapeHtml(kf.label)}:</strong> ${escapeHtml(kf.value)}</span>`),
-        ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">⚠ ${escapeHtml(rf)}</span>`),
-      ].join("");
-
-      const criticBoxHtml =
-        o.scoredEditorial.length === 1
-          ? `<small>Published Critic (${o.weights.critics}%)</small>
-             <strong><a href="${escapeHtml(o.primaryCritic.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
-               o.primaryCritic.rawScore || `${o.critic100}/100`
-             )} ↗</a></strong>`
-          : o.scoredEditorial.length > 1
-          ? `<small>${o.scoredEditorial.length} Published Critics (${o.weights.critics}%)</small>
-             <strong>${o.critic100} / 100</strong>`
-          : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
-          ? `<small>${escapeHtml(o.unverifiedEditorial[0].sourceName)}</small>
-             <strong style="font-size:12px;"><a href="${escapeHtml(o.unverifiedEditorial[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Score awarded — unverified ↗</a></strong>`
-          : o.editorialRatings.length > 0
-          ? `<small>Website Review</small>
-             <strong style="font-size:13px;"><a href="${escapeHtml(o.editorialRatings[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
-               o.editorialRatings[0].sourceName
-             )} ↗</a></strong>`
-          : `<small>Published Critics</small>
-             <strong>No critic score</strong>`;
-
-      const awardsBoxHtml =
-        o.officialAwards.length > 0
-          ? `<small>Official Awards</small>
-             <strong style="font-size:13px;line-height:1.25;">${o.officialAwards
-               .slice(0, 2)
-               .map(
-                 (a) =>
-                   `<a href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
-                     a.label
-                   )} ↗</a>`
-               )
-               .join("<br>")}</strong>`
-          : `<small>Official Awards</small>
-             <strong>None listed</strong>`;
-
-      const editorialUrlSet = new Set(o.editorialRatings.map((e) => e.sourceUrl));
-      const sourceChips = [
-        ...o.officialAwards.map(
-          (a) =>
-            `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(
-              a.label
-            )} ↗</a>`
-        ),
-        ...o.editorialRatings.map((e) => {
-          const suffix = isScoreUnverified(e)
-            ? " (Score/points awarded — unable to verify exact figure)"
-            : e.rawScore
-            ? ` (${escapeHtml(e.rawScore)})`
-            : "";
-          return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
-            e.sourceName
-          )}${suffix} ↗</a>`;
-        }),
-        ...o.youtubeReviews
-          .filter((y) => !editorialUrlSet.has(y.sourceUrl))
-          .slice(0, 3)
-          .map(
-            (y) =>
-              `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(
-                y.creatorName
-              )} ↗</a>`
-          ),
-      ].join("");
-
-      const propStatus = getPropertyStatusMeta(h);
-      const propStatusPill =
-        propStatus.tone === "danger"
-          ? `<span class="tag tag-danger">⚠ ${escapeHtml(propStatus.badge)}</span>`
-          : propStatus.tone === "warn"
-          ? `<span class="tag tag-caution">ⓘ ${escapeHtml(propStatus.badge)}</span>`
-          : "";
-
-      return `
-        <article class="consensus-row-card ${toneClass}" data-resort-name="${escapeHtml(h.name)}">
-          <div class="consensus-rank-col">
-            <span class="consensus-rank-num">#${i + 1}</span>
-            <div class="consensus-chance-ring ${toneClass}">
-              <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Award" : "Open"}</strong>
-              <span>${o.greatStayOdds != null ? "StayOdds" : "See Details"}</span>
-            </div>
-            <div class="consensus-index-chip">
-              ${
-                o.sourceCount > 0
-                  ? `<strong>${o.sourceCount}</strong> scored source${o.sourceCount === 1 ? "" : "s"}`
-                  : o.officialAwards.length
-                  ? `<strong>${o.officialAwards.length}</strong> official award${o.officialAwards.length === 1 ? "" : "s"}`
-                  : "Open for Google"
-              }
-            </div>
-          </div>
-
-          <div class="consensus-main-col">
-            <div class="meta-line">
-              <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
-              <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
-              ${propStatusPill}
-              ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
-              ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
-              <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
-            </div>
-
-            <h3 class="consensus-title">
-              <a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a>
-            </h3>
-
-            <div class="three-pillar-strip">
-              <div class="pillar-box is-ours">
-                <small>My Stay${o.weights.firstHand ? ` (${o.weights.firstHand}%)` : ""}</small>
-                <strong>${
-                  o.personalScoreLabel
-                    ? escapeHtml(o.personalScoreLabel)
-                    : o.visited
-                    ? h.coverageType === "Short Tour"
-                      ? "Short Tour"
-                      : "Filmed Stay"
-                    : "Not Visited"
-                }</strong>
-              </div>
-              <div class="pillar-box is-critics">
-                ${criticBoxHtml}
-              </div>
-              <div class="pillar-box is-google">
-                <small>Verified Guests${o.weights.guests ? ` (${o.weights.guests}%)` : ""}</small>
-                <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Open Breakdown"}</strong>
-              </div>
-              <div class="pillar-box is-booking">
-                ${awardsBoxHtml}
-              </div>
-            </div>
-
-            <div class="card-opinion-strip">
-              <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
-              ${o.opinionGap.delta100 != null ? `<span class="card-opinion-delta">${escapeHtml(o.opinionGap.deltaLabel)}</span>` : ""}
-            </div>
-
-            ${keyFactChips ? `<div class="card-key-facts-strip">${keyFactChips}</div>` : ""}
-
-            <div class="consensus-compare-notes">
-              ${
-                h.whereWeDiffer
-                  ? `<p><strong>What I Liked &amp; Where I Differ:</strong> ${escapeHtml(h.whereWeDiffer)}</p>`
-                  : ""
-              }
-              ${h.standout && h.standout !== h.whereWeDiffer ? `<p><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
-              ${h.watchOut ? `<p><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
-            </div>
-
-            <div class="consensus-sources">
-              ${sourceChips}
-              <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
-              <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
-            </div>
-          </div>
-
-          <div class="consensus-cta-col">
-            <a href="${getSeoHref(h)}">
-              <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
-            </a>
-            <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
-            ${
-              reviewHref
-                ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Our Review"}</a>`
-                : ""
-            }
-            <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
-            <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
-            <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-
   const pagerHtml =
     remaining > 0
       ? `<div class="load-more-bar" style="display:flex;gap:12px;justify-content:center;align-items:center;padding:20px 0 8px;flex-wrap:wrap;">
@@ -892,14 +898,340 @@ function renderLeaderboard() {
         </div>`
       : "";
 
-  container.innerHTML = cardsHtml + pagerHtml;
+  const activeRoot = state.viewMode === "table" && tableWrap ? tableWrap : container;
+
+  if (state.viewMode === "table" && tableWrap) {
+    container.style.display = "none";
+    tableWrap.style.display = "";
+
+    const cols = [
+      { key: "name", label: "Hotel", defaultDir: "asc" },
+      { key: "location", label: "Destination", defaultDir: "asc" },
+      { key: "odds", label: "StayOdds", defaultDir: "desc" },
+      { key: "overall", label: "My Stay", defaultDir: "desc" },
+      { key: "critic", label: "Critics / Other", defaultDir: "desc" },
+      { key: "guest", label: "Guests", defaultDir: "desc" },
+      { key: "gap", label: "Disagreement", defaultDir: "desc" },
+      { key: "michelin", label: "MICHELIN Keys", defaultDir: "desc" },
+      { key: "w50", label: "World's 50 Best", defaultDir: "asc" },
+      { key: "forbes", label: "Forbes", defaultDir: "desc" },
+    ];
+
+    const thHtml = cols
+      .map((c) => {
+        const isActive = state.tableSortKey === c.key;
+        const arrow = isActive ? (state.tableSortDir === "asc" ? "▲" : "▼") : "⇅";
+        const ariaSort = isActive ? (state.tableSortDir === "asc" ? "ascending" : "descending") : "none";
+        return `<th class="is-sortable ${isActive ? "is-sorted" : ""}" data-sort-col="${c.key}" data-default-dir="${c.defaultDir}" aria-sort="${ariaSort}"><button type="button" class="sort-th-btn">${escapeHtml(c.label)} <span class="sort-arrow">${arrow}</span></button></th>`;
+      })
+      .join("");
+
+    tableWrap.innerHTML = `
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            ${thHtml}
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${visibleList
+            .map((h) => {
+              const o = getOdds(h);
+              const mKeys = getMichelinKeyCount(h);
+              const w50Rank = getW50BestRank(h);
+              const forbesRank = getForbesRank(h);
+              const criticCell =
+                o.critic100 != null
+                  ? `<strong>${o.critic100}/100</strong><div class="table-sub">${escapeHtml(
+                      o.scoredEditorial && o.scoredEditorial.length === 1
+                        ? o.scoredEditorial[0].sourceName
+                        : o.scoredEditorial && o.scoredEditorial.length > 1
+                        ? `${o.scoredEditorial.length} critics`
+                        : "Verified"
+                    )}</div>`
+                  : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
+                  ? `<span class="table-sub">Unverified</span>`
+                  : "—";
+              const mCell =
+                mKeys != null
+                  ? `<span class="table-rank-pill is-key">${mKeys} ${mKeys === 1 ? "Key" : "Keys"}</span>`
+                  : "—";
+              const w50Cell =
+                w50Rank != null
+                  ? `<span class="table-rank-pill is-50">${w50Rank < 999 ? `#${w50Rank}` : "50 Best"}</span>`
+                  : "—";
+              const forbesCell =
+                forbesRank === 5
+                  ? `<span class="table-rank-pill is-forbes">5-Star</span>`
+                  : forbesRank === 4
+                  ? `<span class="table-rank-pill is-forbes">4-Star</span>`
+                  : forbesRank === 3
+                  ? `<span class="table-rank-pill is-forbes">Rec.</span>`
+                  : "—";
+              const gapLabel = o.opinionGap && o.opinionGap.deltaLabel ? o.opinionGap.deltaLabel : "—";
+
+              return `
+                <tr data-resort-name="${escapeHtml(h.name)}">
+                  <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
+                  <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
+                  <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
+                  <td>${o.personalScoreLabel ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong>` : `<span class="table-sub">${escapeHtml(o.visited ? o.tierLabel : "—")}</span>`}</td>
+                  <td>${criticCell}</td>
+                  <td>${o.verifiedGuest ? `<strong>${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}</strong>` : `<span class="table-sub">Live</span>`}</td>
+                  <td><strong>${escapeHtml(gapLabel)}</strong></td>
+                  <td>${mCell}</td>
+                  <td>${w50Cell}</td>
+                  <td>${forbesCell}</td>
+                  <td style="white-space:nowrap;">
+                    <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
+                    <button type="button" class="btn btn-outline" style="padding:6px 10px;font-size:12px;" data-compare-id="${escapeHtml(h.id)}">VS &uarr;</button>
+                    <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
+                    <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+                  </td>
+                </tr>
+              `;
+            })
+            .join("")}
+        </tbody>
+      </table>
+      ${pagerHtml}
+    `;
+
+    tableWrap.querySelectorAll("th[data-sort-col]").forEach((th) => {
+      th.addEventListener("click", () => {
+        const col = th.dataset.sortCol;
+        const defDir = th.dataset.defaultDir || "desc";
+        if (state.tableSortKey === col) {
+          state.tableSortDir = state.tableSortDir === "asc" ? "desc" : "asc";
+        } else {
+          state.tableSortKey = col;
+          state.tableSortDir = defDir;
+        }
+        state.visibleLimit = Math.max(state.visibleLimit, 50);
+        if (typeof window.trackEvent === "function") {
+          window.trackEvent("use_filter", "table_sort", `${col}:${state.tableSortDir}`);
+        }
+        renderLeaderboard();
+      });
+    });
+  } else {
+    container.style.display = "";
+    if (tableWrap) tableWrap.style.display = "none";
+
+    const cardsHtml = visibleList
+      .map((h, i) => {
+        const o = getOdds(h);
+        const reviewHref = getReviewHref(h);
+        const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
+        const isShortOnly = h.coverageType === "Short Tour";
+        const shortCount = Array.isArray(h.shorts) ? h.shorts.length : 0;
+
+        const toneClass =
+          o.statusTone === "amber"
+            ? "is-contrarian"
+            : o.statusTone === "accent"
+            ? "is-strong"
+            : o.statusTone === "teal"
+            ? "is-aligned"
+            : "is-external";
+        const tagClass =
+          o.statusTone === "amber"
+            ? "tag-caution"
+            : o.statusTone === "accent"
+            ? "tag-accent"
+            : o.statusTone === "teal"
+            ? "tag-teal"
+            : "tag-slate";
+
+        const keyFactChips = [
+          ...o.keyFacts.slice(0, 3).map((kf) => `<span class="card-key-fact-chip"><strong>${escapeHtml(kf.label)}:</strong> ${escapeHtml(kf.value)}</span>`),
+          ...o.redFlags.slice(0, 2).map((rf) => `<span class="tag tag-caution">⚠ ${escapeHtml(rf)}</span>`),
+        ].join("");
+
+        const criticBoxHtml =
+          o.scoredEditorial.length === 1
+            ? `<small>Published Critic (${o.weights.critics}%)</small>
+               <strong><a href="${escapeHtml(o.primaryCritic.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+                 o.primaryCritic.rawScore || `${o.critic100}/100`
+               )} ↗</a></strong>`
+            : o.scoredEditorial.length > 1
+            ? `<small>${o.scoredEditorial.length} Published Critics (${o.weights.critics}%)</small>
+               <strong>${o.critic100} / 100</strong>`
+            : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
+            ? `<small>${escapeHtml(o.unverifiedEditorial[0].sourceName)}</small>
+               <strong style="font-size:12px;"><a href="${escapeHtml(o.unverifiedEditorial[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Score awarded — unverified ↗</a></strong>`
+            : o.editorialRatings.length > 0
+            ? `<small>Website Review</small>
+               <strong style="font-size:13px;"><a href="${escapeHtml(o.editorialRatings[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+                 o.editorialRatings[0].sourceName
+               )} ↗</a></strong>`
+            : `<small>Published Critics</small>
+               <strong>No critic score</strong>`;
+
+        const awardsBoxHtml =
+          o.officialAwards.length > 0
+            ? `<small>Official Awards</small>
+               <strong style="font-size:13px;line-height:1.25;">${o.officialAwards
+                 .slice(0, 2)
+                 .map(
+                   (a) =>
+                     `<a href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(
+                       a.label
+                     )} ↗</a>`
+                 )
+                 .join("<br>")}</strong>`
+            : `<small>Official Awards</small>
+               <strong>None listed</strong>`;
+
+        const editorialUrlSet = new Set(o.editorialRatings.map((e) => e.sourceUrl));
+        const sourceChips = [
+          ...o.officialAwards.map(
+            (a) =>
+              `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(
+                a.label
+              )} ↗</a>`
+          ),
+          ...o.editorialRatings.map((e) => {
+            const suffix = isScoreUnverified(e)
+              ? " (Score/points awarded — unable to verify exact figure)"
+              : e.rawScore
+              ? ` (${escapeHtml(e.rawScore)})`
+              : "";
+            return `<a class="source-chip" href="${escapeHtml(e.sourceUrl)}" target="_blank" rel="noopener noreferrer">📰 ${escapeHtml(
+              e.sourceName
+            )}${suffix} ↗</a>`;
+          }),
+          ...o.youtubeReviews
+            .filter((y) => !editorialUrlSet.has(y.sourceUrl))
+            .slice(0, 3)
+            .map(
+              (y) =>
+                `<a class="source-chip" href="${escapeHtml(y.sourceUrl)}" target="_blank" rel="noopener noreferrer">▶ ${escapeHtml(
+                  y.creatorName
+                )} ↗</a>`
+            ),
+        ].join("");
+
+        const propStatus = getPropertyStatusMeta(h);
+        const propStatusPill =
+          propStatus.tone === "danger"
+            ? `<span class="tag tag-danger">⚠ ${escapeHtml(propStatus.badge)}</span>`
+            : propStatus.tone === "warn"
+            ? `<span class="tag tag-caution">ⓘ ${escapeHtml(propStatus.badge)}</span>`
+            : "";
+
+        return `
+          <article class="consensus-row-card ${toneClass}" data-resort-name="${escapeHtml(h.name)}">
+            <div class="consensus-rank-col">
+              <span class="consensus-rank-num">#${i + 1}</span>
+              <div class="consensus-chance-ring ${toneClass}">
+                <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Award" : "Open"}</strong>
+                <span>${o.greatStayOdds != null ? "StayOdds" : "See Details"}</span>
+              </div>
+              <div class="consensus-index-chip">
+                ${
+                  o.sourceCount > 0
+                    ? `<strong>${o.sourceCount}</strong> scored source${o.sourceCount === 1 ? "" : "s"}`
+                    : o.officialAwards.length
+                    ? `<strong>${o.officialAwards.length}</strong> official award${o.officialAwards.length === 1 ? "" : "s"}`
+                    : "Open for Google"
+                }
+              </div>
+            </div>
+
+            <div class="consensus-main-col">
+              <div class="meta-line">
+                <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
+                <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
+                ${propStatusPill}
+                ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
+                ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
+                <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
+              </div>
+
+              <h3 class="consensus-title">
+                <a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a>
+              </h3>
+
+              <div class="three-pillar-strip">
+                <div class="pillar-box is-ours">
+                  <small>My Stay${o.weights.firstHand ? ` (${o.weights.firstHand}%)` : ""}</small>
+                  <strong>${
+                    o.personalScoreLabel
+                      ? escapeHtml(o.personalScoreLabel)
+                      : o.visited
+                      ? h.coverageType === "Short Tour"
+                        ? "Short Tour"
+                        : "Filmed Stay"
+                      : "Not Visited"
+                  }</strong>
+                </div>
+                <div class="pillar-box is-critics">
+                  ${criticBoxHtml}
+                </div>
+                <div class="pillar-box is-google">
+                  <small>Verified Guests${o.weights.guests ? ` (${o.weights.guests}%)` : ""}</small>
+                  <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Open Breakdown"}</strong>
+                </div>
+                <div class="pillar-box is-booking">
+                  ${awardsBoxHtml}
+                </div>
+              </div>
+
+              <div class="card-opinion-strip">
+                <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
+                ${o.opinionGap.delta100 != null ? `<span class="card-opinion-delta">${escapeHtml(o.opinionGap.deltaLabel)}</span>` : ""}
+              </div>
+
+              ${keyFactChips ? `<div class="card-key-facts-strip">${keyFactChips}</div>` : ""}
+
+              <div class="consensus-compare-notes">
+                ${
+                  h.whereWeDiffer
+                    ? `<p><strong>What I Liked &amp; Where I Differ:</strong> ${escapeHtml(h.whereWeDiffer)}</p>`
+                    : ""
+                }
+                ${h.standout && h.standout !== h.whereWeDiffer ? `<p><strong>Standout:</strong> ${escapeHtml(h.standout)}</p>` : ""}
+                ${h.watchOut ? `<p><strong>Watch-Out:</strong> ${escapeHtml(h.watchOut)}</p>` : ""}
+              </div>
+
+              <div class="consensus-sources">
+                ${sourceChips}
+                <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
+                <span class="source-chip">${escapeHtml(o.formulaSummary)}</span>
+              </div>
+            </div>
+
+            <div class="consensus-cta-col">
+              <a href="${getSeoHref(h)}">
+                <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+              </a>
+              <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
+              ${
+                reviewHref
+                  ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Our Review"}</a>`
+                  : ""
+              }
+              <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates &nearr;</a>
+              <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
+              <button class="copy-link-btn" data-compare-id="${escapeHtml(h.id)}" type="button">Compare Above &uarr;</button>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+
+    container.innerHTML = cardsHtml + pagerHtml;
+  }
+
   window.stayOddsShortlist?.syncButtons?.();
 
-  qs("#loadMoreHotelsBtn")?.addEventListener("click", () => {
+  activeRoot.querySelector("#loadMoreHotelsBtn")?.addEventListener("click", () => {
     state.visibleLimit += PAGE_SIZE;
     renderLeaderboard();
   });
-  qs("#showAllHotelsBtn")?.addEventListener("click", () => {
+  activeRoot.querySelector("#showAllHotelsBtn")?.addEventListener("click", () => {
     state.visibleLimit = list.length;
     renderLeaderboard();
   });
@@ -945,23 +1277,35 @@ function renderLeaderboard() {
     if (typeof window.trackEvent !== "function") return;
     const ha = state.hotels.find((h) => h.id === state.idA);
     const hb = state.hotels.find((h) => h.id === state.idB);
+    const hc = state.threeWay ? state.hotels.find((h) => h.id === state.idC) : null;
     if (ha && hb) {
-      window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
+      window.trackEvent("compare_resorts", "resorts", hc ? `${ha.name} vs ${hb.name} vs ${hc.name}` : `${ha.name} vs ${hb.name}`);
     }
   }
 
-  container.querySelectorAll("[data-compare-id]").forEach((btn) => {
+  activeRoot.querySelectorAll("[data-compare-id]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.compareId;
       if (!id) return;
-      state.idB = state.idA;
-      state.idA = id;
+      if (state.threeWay) {
+        if (id !== state.idA && id !== state.idB && id !== state.idC) {
+          state.idC = state.idB;
+          state.idB = state.idA;
+          state.idA = id;
+        }
+      } else {
+        if (id !== state.idA) {
+          state.idB = state.idA;
+          state.idA = id;
+        }
+      }
       state.searchA = "";
       state.searchB = "";
-      const inpA = qs("#compareSearchA");
-      const inpB = qs("#compareSearchB");
-      if (inpA) inpA.value = "";
-      if (inpB) inpB.value = "";
+      state.searchC = "";
+      ["#compareSearchA", "#compareSearchB", "#compareSearchC"].forEach((sel) => {
+        const inp = qs(sel);
+        if (inp) inp.value = "";
+      });
       populateH2HSelectors();
       renderH2H();
       syncUrlParams(true);
@@ -975,9 +1319,13 @@ async function boot() {
   initCommonUi();
 
   const params = new URLSearchParams(window.location.search);
-  const hadCompareParams = Boolean(params.get("a") || params.get("b"));
+  const hadCompareParams = Boolean(params.get("a") || params.get("b") || params.get("c"));
   if (params.get("a")) state.idA = params.get("a");
   if (params.get("b")) state.idB = params.get("b");
+  if (params.get("c")) {
+    state.idC = params.get("c");
+    state.threeWay = true;
+  }
   if (["all", "visited", "world", "saved"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
@@ -986,16 +1334,51 @@ async function boot() {
     if (typeof window.trackEvent !== "function") return;
     const ha = state.hotels.find((h) => h.id === state.idA);
     const hb = state.hotels.find((h) => h.id === state.idB);
+    const hc = state.threeWay ? state.hotels.find((h) => h.id === state.idC) : null;
     if (ha && hb) {
-      window.trackEvent("compare_resorts", "resorts", `${ha.name} vs ${hb.name}`);
+      window.trackEvent("compare_resorts", "resorts", hc ? `${ha.name} vs ${hb.name} vs ${hc.name}` : `${ha.name} vs ${hb.name}`);
     }
   }
+
+  const setThreeWayMode = (enabled) => {
+    state.threeWay = Boolean(enabled);
+    if (state.threeWay) {
+      if (!state.hotels.some((h) => h.id === state.idC) || state.idC === state.idA || state.idC === state.idB) {
+        const nextC =
+          state.hotels.find((h) => isVisitedProperty(h) && h.id !== state.idA && h.id !== state.idB) ||
+          state.hotels.find((h) => h.id !== state.idA && h.id !== state.idB);
+        if (nextC) state.idC = nextC.id;
+      }
+      populateSingleSelector("C");
+    }
+    renderH2H();
+    syncUrlParams(true);
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("toggle_three_way", "resorts", state.threeWay ? "on" : "off");
+    }
+  };
+
+  qs("#toggleThreeWayBtn")?.addEventListener("click", () => setThreeWayMode(!state.threeWay));
+  qs("#removeHotelCBtn")?.addEventListener("click", () => setThreeWayMode(false));
 
   qs("#shareVsCardBtn")?.addEventListener("click", async () => {
     const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
     const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
     if (!ha || !hb) return;
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=4");
+    if (state.threeWay) {
+      const hc =
+        state.hotels.find((h) => h.id === state.idC) ||
+        state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
+      if (hc) {
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=5");
+        openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
+        if (typeof window.trackEvent === "function") {
+          window.trackEvent("open_share_card", "vs_three_way", `${ha.name} vs ${hb.name} vs ${hc.name}`);
+        }
+        return;
+      }
+    }
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=5");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1020,24 +1403,22 @@ async function boot() {
   });
 
   const wireSelectorSearch = (side) => {
-    const isA = side === "A";
-    const inp = qs(isA ? "#compareSearchA" : "#compareSearchB");
-    const clearBtn = qs(isA ? "#compareClearA" : "#compareClearB");
+    const cfg = SELECTOR_SIDES[side];
+    if (!cfg) return;
+    const inp = qs(`#compareSearch${side}`);
+    const clearBtn = qs(cfg.clear);
     inp?.addEventListener("input", (e) => {
-      const val = e.target.value || "";
-      if (isA) state.searchA = val;
-      else state.searchB = val;
-      const prevId = isA ? state.idA : state.idB;
+      state[cfg.searchKey] = e.target.value || "";
+      const prevId = state[cfg.idKey];
       populateSingleSelector(side);
-      const nextId = isA ? state.idA : state.idB;
+      const nextId = state[cfg.idKey];
       if (nextId !== prevId) {
         renderH2H();
         syncUrlParams(true);
       }
     });
     clearBtn?.addEventListener("click", () => {
-      if (isA) state.searchA = "";
-      else state.searchB = "";
+      state[cfg.searchKey] = "";
       if (inp) {
         inp.value = "";
         inp.focus();
@@ -1047,12 +1428,15 @@ async function boot() {
   };
   wireSelectorSearch("A");
   wireSelectorSearch("B");
+  wireSelectorSearch("C");
 
   qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
     const btn = qs("#copyVsLinkBtn");
-    const shareUrl = `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
+    const baseShare = `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
+    const shareUrl = state.threeWay && state.idC ? `${baseShare}&c=${encodeURIComponent(state.idC)}` : baseShare;
     const ha = state.hotels.find((h) => h.id === state.idA);
     const hb = state.hotels.find((h) => h.id === state.idB);
+    const hc = state.threeWay ? state.hotels.find((h) => h.id === state.idC) : null;
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(shareUrl);
@@ -1067,18 +1451,22 @@ async function boot() {
         tmp.remove();
       }
       if (typeof window.trackEvent === "function" && ha && hb) {
-        window.trackEvent("share_comparison", "vs_pair", `${ha.name} vs ${hb.name}`);
+        window.trackEvent(
+          "share_comparison",
+          hc ? "vs_three_way" : "vs_pair",
+          hc ? `${ha.name} vs ${hb.name} vs ${hc.name}` : `${ha.name} vs ${hb.name}`
+        );
       }
       if (btn) {
         btn.classList.add("is-copied");
-        btn.textContent = "✓ Copied VS Link!";
+        btn.textContent = state.threeWay ? "✓ Copied 3-Way Link!" : "✓ Copied VS Link!";
         setTimeout(() => {
           btn.classList.remove("is-copied");
-          btn.innerHTML = "&#128279; Copy VS Link";
+          btn.innerHTML = state.threeWay ? "&#128279; Copy 3-Way Link" : "&#128279; Copy VS Link";
         }, 2200);
       }
     } catch (_) {
-      window.prompt("Copy this Head-to-Head comparison link:", shareUrl);
+      window.prompt("Copy this comparison link:", shareUrl);
     }
   });
 
@@ -1104,6 +1492,28 @@ async function boot() {
     syncUrlParams(true);
     trackH2HDropdown();
   });
+  qs("#compareSelectC")?.addEventListener("change", (e) => {
+    state.idC = e.target.value;
+    renderH2H();
+    syncUrlParams(true);
+    trackH2HDropdown();
+  });
+
+  const setViewMode = (mode) => {
+    state.viewMode = mode === "table" ? "table" : "cards";
+    qs("#consensusViewCardsBtn")?.classList.toggle("active", state.viewMode === "cards");
+    qs("#consensusViewTableBtn")?.classList.toggle("active", state.viewMode === "table");
+    if (state.viewMode === "table" && state.visibleLimit < 50) {
+      state.visibleLimit = 50;
+    }
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "view_mode", `compare:${state.viewMode}`);
+    }
+    renderLeaderboard();
+  };
+  qs("#consensusViewCardsBtn")?.addEventListener("click", () => setViewMode("cards"));
+  qs("#consensusViewTableBtn")?.addEventListener("click", () => setViewMode("table"));
+
   qs("#verdictFilter")?.addEventListener("change", (e) => {
     state.verdict = e.target.value || "All";
     if (typeof window.trackEvent === "function") {
@@ -1114,6 +1524,7 @@ async function boot() {
   });
   qs("#consensusSort")?.addEventListener("change", (e) => {
     state.sortBy = e.target.value || "visited";
+    state.tableSortKey = null;
     if (typeof window.trackEvent === "function") {
       window.trackEvent("use_filter", "filter", `sort:${state.sortBy}`);
     }

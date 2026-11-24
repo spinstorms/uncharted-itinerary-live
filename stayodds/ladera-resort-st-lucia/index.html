@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "ladera-resort-st-lucia", "name": "Ladera Resort", "location": "Soufrière", "country": "Saint Lucia", "brand": "Independent", "priceRange": "£850+/night", "standout": "Adults-only UNESCO World Heritage ridge resort perched 1,000 feet directly between the Pitons — all 37 open-air three-walled suites feature private heated plunge pools with jaw-dropping views and acclaimed farm-to-table Dasheene dining", "watchOut": "NOT on the beach (15-min shuttle down to Sugar Beach); completely open fourth wall (like Jade Mountain) means zero bedroom AC and occasional tropical birds/insects", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "Mountain ridge 1,000 ft above the sea (no beach on site; complimentary shuttle to Sugar Beach)", "renovationYear": null, "transferLogistics": "Approx. 45 minutes from Hewanorra International Airport (UVF)"}, "thumbnail": "assets/thumbs/ladera-resort-st-lucia.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 97, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.7, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

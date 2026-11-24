@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "st-regis-kanai-riviera-maya", "name": "The St. Regis Kanai Resort, Riviera Maya", "location": "Kanai, Riviera Maya", "country": "Mexico", "brand": "Marriott Bonvoy", "priceRange": "£850+/night", "standout": "Architectural elevated circular buildings hovering over a 620-acre protected mangrove reserve with ocean views from virtually every room, signature St. Regis butler service, adults & family pools, and dining reciprocity across neighboring Kanai resorts", "watchOut": "Exposed modern concrete walkways feel less lush/jungle-cocooned than Rosewood Mayakoba; beach water can be shallow/seagrassy compared to Punta Maroma or Isla Mujeres", "keyFacts": {"poolHeating": "", "beachOrReef": "Private Kanai beachfront dock & calm shallow Caribbean water; mangrove-backed shoreline", "renovationYear": 2023, "transferLogistics": "Approx. 40 minutes south of Cancún International Airport (CUN)"}, "thumbnail": "assets/thumbs/st-regis-kanai-riviera-maya.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 88, "statusBadge": "Opinions Differ", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 78, "scoredEditorial": [{"sourceName": "Walker Hotel Index (Ryan Walker)", "rawScore": "39/50", "normalized100": 78}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 1, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +16 pts higher than Walker Hotel Index (Ryan Walker).", "deltaLabel": "-16 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -620,7 +620,7 @@
 
     const shareCardState = {"hotel": {"id": "hotel-xcaret-arte", "name": "Hotel Xcaret Arte", "location": "Playa del Carmen, Riviera Maya", "country": "Mexico", "brand": "Hoteles Xcaret", "priceRange": "£750+/night (All-Fun Inclusive)", "standout": "Forbes Four-Star adults-only (16+) 'All-Fun Inclusive' masterpiece featuring turquoise river inlets, dramatic rooftop pools, authentic regional Mexican dining by celebrity chefs, artisan workshops, and unlimited included access to all Xcaret eco-parks and airport shuttles", "watchOut": "Natural ocean beach is small and rocky (swimming focuses on the calm turquoise coves and pools); high nightly rates make the most sense if you plan to enjoy Xcaret parks and top-tier Mexican dining", "keyFacts": {"poolHeating": "Private / plunge pools listed", "beachOrReef": "Turquoise saltwater lagoons, coves, and a compact sandy beach inlet (limited open-ocean surf swimming)", "renovationYear": null, "transferLogistics": "Complimentary Xcaret shuttle (~50–60 minutes south of Cancún International Airport CUN)"}, "thumbnail": "assets/thumbs/hotel-xcaret-arte.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 93, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [{"label": "Forbes Four-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Four-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=4");
+      const mod = await import("../../assets/stayodds-share-card.js?v=5");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
