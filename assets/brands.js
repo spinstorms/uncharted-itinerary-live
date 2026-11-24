@@ -1,5 +1,5 @@
 import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=8";
-import { normalizeBrandName, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=2";
+import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=3";
 
 const qs = (s) => document.querySelector(s);
 const oddsCache = new WeakMap();
@@ -62,10 +62,19 @@ function getForbesRank(h) {
   return best;
 }
 
+const PARENT_GROUP_NAMES = new Set([
+  "Marriott Bonvoy",
+  "World of Hyatt",
+  "Hilton Honors",
+  "IHG One Rewards",
+  "Accor",
+  "LVMH Hospitality",
+]);
+
 const state = {
   hotels: [],
   brands: [],
-  filterMode: "default", // "default" (3+) | "points" | "preferred" | "all2"
+  filterMode: "default", // "default" (3+ individual brands) | "groups" (Parent Groups) | "points" | "preferred" | "all2"
   search: "",
   sortKey: "avgOdds",
   sortDir: "desc",
@@ -75,14 +84,20 @@ const state = {
 function computeBrandStats(hotels) {
   const byBrand = new Map();
   for (const h of hotels) {
-    const brand = normalizeBrandName(h);
-    if (!brand || brand === "Independent & Boutique") continue;
-    if (!byBrand.has(brand)) byBrand.set(brand, []);
-    byBrand.get(brand).push(h);
+    const { primaryBrand, parentGroup } = getBrandCategories(h);
+    if (primaryBrand && primaryBrand !== "Independent & Boutique") {
+      if (!byBrand.has(primaryBrand)) byBrand.set(primaryBrand, { list: [], isGroup: PARENT_GROUP_NAMES.has(primaryBrand), parentGroup });
+      byBrand.get(primaryBrand).list.push(h);
+    }
+    if (parentGroup && parentGroup !== primaryBrand) {
+      if (!byBrand.has(parentGroup)) byBrand.set(parentGroup, { list: [], isGroup: true, parentGroup: null });
+      byBrand.get(parentGroup).list.push(h);
+    }
   }
 
   const rows = [];
-  for (const [brand, list] of byBrand.entries()) {
+  for (const [brand, entry] of byBrand.entries()) {
+    const list = entry.list;
     const samplePartner = getPartnerPrograms(list[0]);
     const oddsVals = [];
     const guestVals = [];
@@ -116,6 +131,8 @@ function computeBrandStats(hotels) {
 
     rows.push({
       brand,
+      isGroup: entry.isGroup,
+      parentGroup: entry.parentGroup,
       count: list.length,
       scoredCount: oddsVals.length,
       avgOdds: avgOdds != null ? Number(avgOdds.toFixed(1)) : null,
@@ -128,10 +145,10 @@ function computeBrandStats(hotels) {
       michelinHotels,
       w50Count,
       forbes5Count,
-      preferredProgram: samplePartner.preferredProgram,
-      pointsProgram: samplePartner.pointsProgram,
-      hasPreferredPerks: samplePartner.hasPreferredPerks,
-      isPointsEligible: samplePartner.isPointsEligible,
+      preferredProgram: entry.isGroup ? null : samplePartner.preferredProgram,
+      pointsProgram: entry.isGroup ? (brand === "LVMH Hospitality" ? null : brand) : samplePartner.pointsProgram,
+      hasPreferredPerks: entry.isGroup ? brand !== "LVMH Hospitality" : samplePartner.hasPreferredPerks,
+      isPointsEligible: entry.isGroup ? brand !== "LVMH Hospitality" : samplePartner.isPointsEligible,
     });
   }
   return rows;
@@ -141,11 +158,16 @@ function getFilteredBrands() {
   const q = state.search.trim().toLowerCase();
   const minCount = state.filterMode === "all2" ? 2 : 3;
   let rows = state.brands.filter((b) => {
+    if (state.filterMode === "groups") {
+      if (!b.isGroup) return false;
+    } else if (state.filterMode !== "all2") {
+      if (b.isGroup) return false;
+    }
     if (b.count < minCount) return false;
     if (state.filterMode === "points" && !b.isPointsEligible) return false;
     if (state.filterMode === "preferred" && !b.hasPreferredPerks) return false;
     if (q) {
-      const hay = `${b.brand} ${b.preferredProgram || ""} ${b.pointsProgram || ""}`.toLowerCase();
+      const hay = `${b.brand} ${b.parentGroup || ""} ${b.preferredProgram || ""} ${b.pointsProgram || ""}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -232,7 +254,7 @@ function renderBrandsTable() {
               <tr>
                 <td>
                   <strong>#${idx + 1} ${escapeHtml(b.brand)}</strong>
-                  <div class="table-sub">${b.scoredCount} scored of ${b.count} tracked</div>
+                  <div class="table-sub">${b.parentGroup ? `Part of ${escapeHtml(b.parentGroup)} &bull; ` : b.isGroup ? `Parent Group &bull; ` : ""}${b.scoredCount} scored of ${b.count} tracked</div>
                 </td>
                 <td><strong>${b.count}</strong></td>
                 <td><strong>${b.avgOdds != null ? `${b.avgOdds}%` : "—"}</strong></td>
@@ -397,6 +419,7 @@ async function boot() {
 
   const filterButtons = [
     ["#brandFilterAllBtn", "default"],
+    ["#brandFilterGroupsBtn", "groups"],
     ["#brandFilterPointsBtn", "points"],
     ["#brandFilterPreferredBtn", "preferred"],
     ["#brandFilterEveryBtn", "all2"],
@@ -425,7 +448,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124b";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -438,7 +461,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124a`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124b`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {
@@ -450,8 +473,9 @@ async function boot() {
     state.brands = computeBrandStats(state.hotels);
     const statEl = qs("#brandsSummaryStat");
     if (statEl) {
-      const majorCount = state.brands.filter((b) => b.count >= 3).length;
-      statEl.textContent = `${majorCount} Major Luxury Brands • ${state.hotels.length} Verified Hotels`;
+      const majorCount = state.brands.filter((b) => !b.isGroup && b.count >= 3).length;
+      const groupCount = state.brands.filter((b) => b.isGroup && b.count >= 3).length;
+      statEl.textContent = `${majorCount} Luxury Brands • ${groupCount} Parent Groups • ${state.hotels.length} Hotels`;
     }
     renderBrandsTable();
     renderPillarLeaderboard();

@@ -59,7 +59,7 @@ export function normalizeBrandName(hotel) {
   if (/the\s+leela/i.test(combo)) return "The Leela";
   if (/fairmont/i.test(combo)) return "Fairmont";
   if (/\bedition\b/i.test(combo)) return "EDITION";
-  if (/\bw\s+(maldives|bali|koh\s+samui|sardinia|algarve|punta\s+cana|new\s+york|hotels)/i.test(combo)) return "W Hotels";
+  if (/^w\s+/i.test(name) || /\bw\s+hotels\b/i.test(combo)) return "W Hotels";
   if (/luxury\s+collection|ta'aktana|the\s+sira|vana\s+belle|naka\s+island|gritti\s+palace|hotel\s+imperial|sanctuary\s+cap\s+cana/i.test(combo)) return "The Luxury Collection";
   if (/conrad/i.test(combo)) return "Conrad";
   if (/andaz/i.test(combo)) return "Andaz";
@@ -84,6 +84,8 @@ export function normalizeBrandName(hotel) {
   if (/hyatt\s+zilara|hyatt\s+ziva/i.test(combo)) return "Hyatt All-Inclusive";
   if (/viceroy/i.test(combo)) return "Viceroy";
   if (/montage/i.test(combo)) return "Montage";
+  if (/hoshinoya/i.test(combo)) return "HOSHINOYA";
+  if (/baillie\s+lodges|longitude\s+131|silky\s+oaks|the\s+louise|huka\s+lodge|tierra\s+patagonia|southern\s+ocean\s+lodge/i.test(combo)) return "Baillie Lodges";
   if (/relais\s*&\s*ch[aâ]teaux/i.test(rawBrand)) return "Relais & Châteaux";
   if (/leading\s+hotels/i.test(rawBrand)) return "Leading Hotels of the World";
   if (/small\s+luxury\s+hotels|\bslh\b/i.test(rawBrand)) return "Small Luxury Hotels";
@@ -98,6 +100,73 @@ export function normalizeBrandName(hotel) {
     return "Independent & Boutique";
   }
   return rawBrand;
+}
+
+const BRAND_PARENT_GROUP = {
+  "St. Regis": "Marriott Bonvoy",
+  "The Ritz-Carlton": "Marriott Bonvoy",
+  "Ritz-Carlton Reserve": "Marriott Bonvoy",
+  "EDITION": "Marriott Bonvoy",
+  "The Luxury Collection": "Marriott Bonvoy",
+  "W Hotels": "Marriott Bonvoy",
+  "JW Marriott": "Marriott Bonvoy",
+  "Westin": "Marriott Bonvoy",
+  "Le Méridien": "Marriott Bonvoy",
+  "Courtyard by Marriott": "Marriott Bonvoy",
+  "Element by Westin": "Marriott Bonvoy",
+  "Tribute Portfolio": "Marriott Bonvoy",
+  "Bulgari Hotels": "Marriott Bonvoy",
+  "Park Hyatt": "World of Hyatt",
+  "Alila": "World of Hyatt",
+  "Andaz": "World of Hyatt",
+  "Secrets Resorts": "World of Hyatt",
+  "Zoëtry": "World of Hyatt",
+  "Hyatt All-Inclusive": "World of Hyatt",
+  "Waldorf Astoria": "Hilton Honors",
+  "Conrad": "Hilton Honors",
+  "Small Luxury Hotels": "Hilton Honors",
+  "Six Senses": "IHG One Rewards",
+  "Regent": "IHG One Rewards",
+  "InterContinental": "IHG One Rewards",
+  "Kimpton": "IHG One Rewards",
+  "IHG": "IHG One Rewards",
+  "Raffles": "Accor",
+  "Fairmont": "Accor",
+  "Sofitel": "Accor",
+  "Banyan Tree": "Accor",
+  "Belmond": "LVMH Hospitality",
+  "Cheval Blanc": "LVMH Hospitality",
+};
+
+/**
+ * Returns multi-category brand membership so a hotel like W Maldives belongs to BOTH
+ * "W Hotels" (primary sub-brand) AND "Marriott Bonvoy" (parent group).
+ */
+export function getBrandCategories(hotel) {
+  const primaryBrand = normalizeBrandName(hotel);
+  const parentGroup = BRAND_PARENT_GROUP[primaryBrand] || null;
+  const allBrands = [];
+  if (primaryBrand && primaryBrand !== "Independent & Boutique") allBrands.push(primaryBrand);
+  if (parentGroup && !allBrands.includes(parentGroup)) allBrands.push(parentGroup);
+  // Also preserve explicit secondary collection tags (e.g. Relais & Châteaux / LHW)
+  const raw = String((hotel && hotel.brand) || "").trim();
+  if (/relais\s*&\s*ch[aâ]teaux/i.test(raw) && !allBrands.includes("Relais & Châteaux")) {
+    allBrands.push("Relais & Châteaux");
+  }
+  if (/leading\s+hotels/i.test(raw) && !allBrands.includes("Leading Hotels of the World")) {
+    allBrands.push("Leading Hotels of the World");
+  }
+  if (!allBrands.length) allBrands.push("Independent & Boutique");
+  return { primaryBrand, parentGroup, allBrands };
+}
+
+export function matchesBrandCategory(hotel, targetBrand) {
+  if (!targetBrand || targetBrand === "All") return true;
+  const t = String(targetBrand).trim().toLowerCase();
+  const { allBrands } = getBrandCategories(hotel);
+  if (allBrands.some((b) => b.toLowerCase() === t)) return true;
+  const raw = String((hotel && hotel.brand) || "").trim().toLowerCase();
+  return raw === t;
 }
 
 /* ==================== 2. Deterministic Preferred Partner & Loyalty Perks ==================== */

@@ -1385,7 +1385,7 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "slug": "japan",
         "title": "Japan",
         "headline": "Best Luxury Hotels in Japan — StayOdds Guide",
-        "lead": "Compare Japan's finest luxury hotels in Tokyo, Kyoto, and Amanemu with verified MICHELIN Keys, Forbes Five-Star awards, and linked editorial reviews.",
+        "lead": "Compare Japan's finest luxury hotels and independent ryokans across Tokyo, Kyoto, Osaka, Hokkaido, Hakone, Mount Fuji, Karuizawa, Naoshima, Kyushu, and Okinawa with verified awards and guest scores.",
         "filterType": "country",
         "filterValue": "Japan",
         "banner": "bali.jpg",
@@ -1410,6 +1410,46 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "filterValue": "France",
         "banner": "bora-bora.jpg",
         "compareRegion": "Europe",
+    },
+    {
+        "slug": "australia-new-zealand",
+        "title": "Australia & New Zealand",
+        "headline": "Best Luxury Hotels & Lodges in Australia & New Zealand — StayOdds Guide",
+        "lead": "Compare flagship luxury lodges and city icons across Sydney, Melbourne, Tasmania, Uluru, Kangaroo Island, the Great Barrier Reef, Queenstown, Bay of Islands, and Fiordland.",
+        "filterType": "countries",
+        "filterValue": "Australia|New Zealand",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Australia & Pacific",
+    },
+    {
+        "slug": "greece",
+        "title": "Greece",
+        "headline": "Best Luxury Resorts in Greece — StayOdds Guide",
+        "lead": "Compare iconic Greek luxury resorts across Santorini, Mykonos, Athens Riviera, Peloponnese, Crete, Paros, and Milos with transparent StayOdds ratings and official awards.",
+        "filterType": "country",
+        "filterValue": "Greece",
+        "banner": "maldives.jpg",
+        "compareRegion": "Europe",
+    },
+    {
+        "slug": "turkey",
+        "title": "Turkey",
+        "headline": "Best Luxury Hotels in Turkey — StayOdds Guide",
+        "lead": "Compare Istanbul Bosphorus palaces, Bodrum peninsula resorts, and Cappadocia cave sanctuaries with verified StayOdds guest scores and awards.",
+        "filterType": "country",
+        "filterValue": "Turkey",
+        "banner": "bora-bora.jpg",
+        "compareRegion": "Europe",
+    },
+    {
+        "slug": "egypt",
+        "title": "Egypt",
+        "headline": "Best Luxury Hotels in Egypt — StayOdds Guide",
+        "lead": "Compare Cairo Nile icons, Giza pyramid-view landmarks, historic Luxor and Aswan grand hotels, and Red Sea luxury escapes with verified StayOdds data.",
+        "filterType": "country",
+        "filterValue": "Egypt",
+        "banner": "maldives.jpg",
+        "compareRegion": "Middle East & Africa",
     },
 ]
 
@@ -2024,9 +2064,9 @@ def main() -> None:
         hp = ROOT / rel_html
         if hp.exists():
             txt = hp.read_text(encoding="utf-8")
-            txt = re.sub(r"\b500(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
-            txt = re.sub(r"(All\s+)500(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
-            txt = re.sub(r"(Global\s+Directory\s*\()464(\))", f"\\g<1>{world_props}\\2", txt)
+            txt = re.sub(r"\b(?:500|678)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
+            txt = re.sub(r"(All\s+)(?:500|678)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
+            txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642)(\))", f"\\g<1>{world_props}\\2", txt)
             hp.write_text(txt, encoding="utf-8")
 
     # Generate static SEO destination landing pages at /destinations/<slug>/index.html
@@ -2036,6 +2076,9 @@ def main() -> None:
     for guide in DESTINATION_GUIDES:
         if guide["filterType"] == "region":
             matched = [r for r in directory if r["region"] == guide["filterValue"]]
+        elif guide["filterType"] == "countries":
+            allowed = {c.strip() for c in guide["filterValue"].split("|") if c.strip()}
+            matched = [r for r in directory if r["country"] in allowed]
         else:
             matched = [r for r in directory if r["country"] == guide["filterValue"]]
         if not matched:

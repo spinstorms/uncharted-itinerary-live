@@ -10,13 +10,15 @@ import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2"
 import {
   MONTH_LABELS,
   normalizeBrandName,
+  getBrandCategories,
+  matchesBrandCategory,
   getPartnerPrograms,
   getBestMonthsMeta,
   matchesBestMonth,
   getGuestProfile,
   getVerifiedRoomTip,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=1";
+} from "./stayodds-insights.js?v=3";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -699,8 +701,7 @@ function getScopedHotels() {
     base = base.filter((h) => savedSet.has(h.id));
   }
   if (state.brandFilter) {
-    const target = state.brandFilter.toLowerCase();
-    base = base.filter((h) => normalizeBrandName(h).toLowerCase() === target);
+    base = base.filter((h) => matchesBrandCategory(h, state.brandFilter));
   }
   return base;
 }
@@ -712,7 +713,7 @@ function renderActiveBrandBanner() {
     el.style.display = "none";
     return;
   }
-  const cnt = state.hotels.filter((h) => normalizeBrandName(h).toLowerCase() === state.brandFilter.toLowerCase()).length;
+  const cnt = state.hotels.filter((h) => matchesBrandCategory(h, state.brandFilter)).length;
   el.style.display = "flex";
   el.innerHTML = `
     <span><strong>Brand Filter Active:</strong> Showing all <strong>${cnt}</strong> verified <strong>${escapeHtml(state.brandFilter)}</strong> properties.</span>
@@ -1814,7 +1815,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124b";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -1827,7 +1828,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124a`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124b`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

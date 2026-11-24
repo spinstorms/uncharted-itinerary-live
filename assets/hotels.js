@@ -8,11 +8,13 @@ import {
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
+  getBrandCategories,
+  matchesBrandCategory,
   getPartnerPrograms,
   matchesBestMonth,
   getGuestProfile,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=1";
+} from "./stayodds-insights.js?v=3";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -229,7 +231,7 @@ function getFilteredHotels() {
   const q = state.search.trim().toLowerCase();
   const list = getScopedHotels().filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
-    if (state.brand !== "All" && h.brand !== state.brand) return false;
+    if (state.brand !== "All" && !matchesBrandCategory(h, state.brand)) return false;
     if (!matchesTravelStyle(h, state.style)) return false;
     if (state.coverage !== "All" && (h.coverageType || "Global Directory") !== state.coverage) {
       return false;
@@ -440,10 +442,31 @@ function renderStylePills() {
 function populateBrands() {
   const sel = qs("#brandFilter");
   if (!sel) return;
-  const brands = Array.from(new Set(state.hotels.map((h) => h.brand).filter(Boolean))).sort();
+  const parentSet = new Set(["Marriott Bonvoy", "World of Hyatt", "Hilton Honors", "IHG One Rewards", "Accor", "LVMH Hospitality"]);
+  const parentCounts = new Map();
+  const brandCounts = new Map();
+  for (const h of state.hotels) {
+    const { primaryBrand, allBrands } = getBrandCategories(h);
+    if (primaryBrand && !parentSet.has(primaryBrand)) {
+      brandCounts.set(primaryBrand, (brandCounts.get(primaryBrand) || 0) + 1);
+    }
+    for (const b of allBrands) {
+      if (parentSet.has(b)) {
+        parentCounts.set(b, (parentCounts.get(b) || 0) + 1);
+      }
+    }
+  }
+  const parents = Array.from(parentCounts.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const brands = Array.from(brandCounts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+
   sel.innerHTML =
-    `<option value="All">All Hotel Brands (${brands.length})</option>` +
-    brands.map((b) => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("");
+    `<option value="All">All Hotel Brands &amp; Groups (${brands.length + parents.length})</option>` +
+    `<optgroup label="★ Parent Hotel &amp; Loyalty Groups">` +
+    parents.map(([b, c]) => `<option value="${escapeHtml(b)}">${escapeHtml(b)} (${c})</option>`).join("") +
+    `</optgroup>` +
+    `<optgroup label="🏨 Luxury Hotel Brands">` +
+    brands.map(([b, c]) => `<option value="${escapeHtml(b)}">${escapeHtml(b)} (${c})</option>`).join("") +
+    `</optgroup>`;
 }
 
 function buildPopupHtml(h) {
@@ -995,7 +1018,7 @@ async function boot() {
   }
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124b";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -1008,7 +1031,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124a`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124b`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

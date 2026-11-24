@@ -11,7 +11,7 @@
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Luxury Hotel Brand Consistency Leaderboard — StayOdds.</title>
-  <meta name="description" content="Which luxury hotel brand is actually the most consistent? Compare Four Seasons, Aman, Rosewood, St. Regis, Ritz-Carlton, Six Senses, Belmond, One&amp;Only, and more across 678 verified properties on StayOdds." />
+  <meta name="description" content="Which luxury hotel brand is actually the most consistent? Compare Four Seasons, Aman, Rosewood, St. Regis, Ritz-Carlton, Six Senses, Belmond, One&amp;Only, and more across 758 verified properties on StayOdds." />
   <link rel="canonical" href="https://uncharteditinerary.com/brands/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Luxury Hotel Brand Consistency Leaderboard — StayOdds." />
@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_promo_og_facebook_1200x630.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124a" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124b" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
@@ -136,22 +136,23 @@
       <div class="container">
         <div class="controls-bar" style="margin-bottom:18px;">
           <div class="scorecard-filters" style="flex-wrap:wrap;gap:10px;">
-            <button type="button" class="scope-pill active" id="brandFilterAllBtn">All Brands (3+ Hotels)</button>
+            <button type="button" class="scope-pill active" id="brandFilterAllBtn">Luxury Brands (3+)</button>
+            <button type="button" class="scope-pill" id="brandFilterGroupsBtn">Parent Hotel Groups</button>
             <button type="button" class="scope-pill" id="brandFilterPointsBtn">Points Brands Only</button>
             <button type="button" class="scope-pill" id="brandFilterPreferredBtn">Preferred Partner Perks</button>
-            <button type="button" class="scope-pill" id="brandFilterEveryBtn">Include Smaller (2+ Hotels)</button>
+            <button type="button" class="scope-pill" id="brandFilterEveryBtn">All Brands (2+)</button>
           </div>
           <div class="controls-search-group">
             <div class="search-wrap">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="search" id="brandSearchInput" class="search-input" placeholder="Search Four Seasons, Aman, Rosewood…" aria-label="Search luxury hotel brands" />
+              <input type="search" id="brandSearchInput" class="search-input" placeholder="Search Four Seasons, Aman, W Hotels, Marriott…" aria-label="Search luxury hotel brands" />
             </div>
             <button type="button" class="btn btn-outline" id="exportBrandsCsvBtn">&#x2B07; Export CSV</button>
           </div>
         </div>
 
         <p style="font-size:13px;color:#475569;margin-bottom:14px;">
-          <strong>Tip:</strong> Click any column header below to rank brands by <strong>Avg StayOdds %</strong>, <strong>Consistency (% &ge; 85%)</strong>, <strong>MICHELIN Keys</strong>, <strong>World's 50 Best</strong>, <strong>Forbes 5-Star</strong>, or <strong>My Stay</strong>. Click any brand to inspect all of its hotels in StayOdds.
+          <strong>Tip:</strong> Click any column header below to rank brands by <strong>Avg StayOdds %</strong>, <strong>Consistency (% &ge; 85%)</strong>, <strong>MICHELIN Keys</strong>, <strong>World's 50 Best</strong>, <strong>Forbes 5-Star</strong>, or <strong>My Stay</strong>. Sub-brands (like <strong>W Hotels</strong> or <strong>St. Regis</strong>) appear individually <em>and</em> roll up under <strong>Parent Hotel Groups</strong> (like <strong>Marriott Bonvoy</strong>).
         </p>
 
         <div class="comparison-table-wrap" id="brandsTableWrap" style="margin-bottom:36px;"></div>
@@ -206,6 +207,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/brands.js?v=2"></script>
+  <script type="module" src="../assets/brands.js?v=3"></script>
 </body>
 </html>
