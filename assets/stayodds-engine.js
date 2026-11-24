@@ -22,7 +22,19 @@ export const BRAND = Object.freeze({
   supabaseUrl: "https://yfupehkygkkccybefuam.supabase.co",
   supabasePublishableKey: "sb_publishable_uOxstpHWaiYEhRUnmKY4hg_o_30iq0U",
   liveGoogleEdgeUrl: "https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating",
+  liveHotelRatesEdgeUrl: "https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-hotel-rates",
 });
+
+export const MACRO_REGIONS = Object.freeze([
+  "Europe",
+  "Asia",
+  "Maldives & Indian Ocean",
+  "Australia & Pacific",
+  "Americas",
+  "Caribbean & Mexico",
+  "Middle East",
+  "Africa",
+]);
 
 export function isValidHttpUrl(url) {
   return typeof url === "string" && /^https?:\/\/[^\s]+$/i.test(url.trim());
@@ -48,6 +60,106 @@ export function formatPersonalScore(val) {
   const num = Number(val);
   if (Number.isInteger(num)) return String(num);
   return String(Number(num.toFixed(2)));
+}
+
+/**
+ * Gentle Bayesian dampening ONLY for tiny review samples (<40 reviews)
+ * so a 3-review 10.0/10 hotel does not distort global rankings at 100%.
+ */
+export function dampenThinGuestScore(raw100, reviewCount) {
+  if (raw100 == null || Number.isNaN(Number(raw100))) return null;
+  const r = Number(raw100);
+  const n = Number(reviewCount);
+  if (!Number.isFinite(n) || n <= 0 || n >= 40) return Math.round(r);
+  return Math.round((r * n + 90 * 15) / (n + 15));
+}
+
+/**
+ * Returns indicative price display & numeric GBP nightly estimate from weekly
+ * cached LiteAPI snapshot or curated priceRange string.
+ */
+export function getPriceDisplay(hotel) {
+  const snap = hotel?.priceSnapshot;
+  if (snap && typeof snap.nightlyGbp === "number" && snap.nightlyGbp > 0) {
+    const gbp = Math.round(snap.nightlyGbp);
+    const bucket = gbp < 500 ? "under500" : gbp < 1000 ? "500to1000" : gbp < 1800 ? "1000to1800" : "1800plus";
+    return {
+      label: snap.label || `From £${gbp.toLocaleString("en-GB")}/nt`,
+      numericGbp: gbp,
+      isIndicative: true,
+      checkedAt: snap.checkedAt || null,
+      tierBucket: bucket,
+    };
+  }
+  const raw = String(hotel?.priceRange || "").trim();
+  if (raw) {
+    const m = raw.match(/([\d,]{3,6})/);
+    const num = m ? Number(m[1].replace(/,/g, "")) : null;
+    const bucket =
+      num == null ? null : num < 500 ? "under500" : num < 1000 ? "500to1000" : num < 1800 ? "1000to1800" : "1800plus";
+    return {
+      label: raw,
+      numericGbp: num,
+      isIndicative: false,
+      checkedAt: null,
+      tierBucket: bucket,
+    };
+  }
+  return { label: null, numericGbp: null, isIndicative: false, checkedAt: null, tierBucket: null };
+}
+
+/**
+ * Date-aware outbound booking URL builder (zero API calls).
+ * Appends checkin, checkout, and group_adults to Booking.com links cleanly.
+ */
+export function buildDatedBookingUrl(rawUrl, checkin, checkout, adults = 2) {
+  if (!rawUrl) return "";
+  if (!checkin || !checkout) return rawUrl;
+  try {
+    const u = new URL(rawUrl);
+    if (/booking\.com/i.test(u.hostname)) {
+      u.searchParams.set("checkin", checkin);
+      u.searchParams.set("checkout", checkout);
+      u.searchParams.set("group_adults", String(Math.max(1, Math.min(6, Number(adults) || 2))));
+      u.searchParams.set("no_rooms", "1");
+    }
+    return u.toString();
+  } catch {
+    return rawUrl;
+  }
+}
+
+const liveRatesMemoryCache = new Map();
+
+/**
+ * On-demand live rate lookup via cost-capped Supabase Edge Function (LiteAPI).
+ * ONLY invoked when a user explicitly clicks "Check Live Rates" for specific dates.
+ */
+export async function fetchLiveHotelRates(nuiteeHotelIds, checkin, checkout, adults = 2, currency = "GBP") {
+  const ids = Array.from(new Set((nuiteeHotelIds || []).map((x) => String(x || "").trim()).filter(Boolean)));
+  if (!ids.length || !checkin || !checkout) return { status: "no_mapped_ids", rates: {} };
+  const key = `${ids.slice().sort().join(",")}|${checkin}|${checkout}|${adults}|${currency}`;
+  if (liveRatesMemoryCache.has(key)) return liveRatesMemoryCache.get(key);
+  try {
+    const params = new URLSearchParams({
+      hotel_ids: ids.join(","),
+      checkin,
+      checkout,
+      adults: String(Math.max(1, Math.min(6, Number(adults) || 2))),
+      currency,
+    });
+    const res = await fetch(`${BRAND.liveHotelRatesEdgeUrl}?${params.toString()}`, {
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return { status: "unavailable", rates: {} };
+    const data = await res.json();
+    if (data && data.status === "ok") {
+      liveRatesMemoryCache.set(key, data);
+    }
+    return data || { status: "unavailable", rates: {} };
+  } catch {
+    return { status: "unavailable", rates: {} };
+  }
 }
 
 /**
@@ -100,12 +212,16 @@ export function getVerifiedGuestScore(hotel) {
   if (!vg || typeof vg !== "object") return null;
 
   if (vg.google && typeof vg.google.rating === "number" && vg.google.rating > 0) {
+    const raw100 = Math.round(vg.google.rating * 20);
+    const rc = typeof vg.google.reviewCount === "number" ? vg.google.reviewCount : null;
     return {
       sourceName: "Google Reviews",
       rating: vg.google.rating,
       scale: 5,
-      reviewCount: typeof vg.google.reviewCount === "number" ? vg.google.reviewCount : null,
-      normalized100: Math.round(vg.google.rating * 20),
+      reviewCount: rc,
+      rawNormalized100: raw100,
+      normalized100: dampenThinGuestScore(raw100, rc),
+      wasDampened: rc != null && rc > 0 && rc < 40,
       verifiedAt: vg.google.fetchedAt || vg.google.verifiedAt || null,
       attribution: "Powered by Google",
       googleMapsUri: vg.google.googleMapsUri || null,
@@ -113,12 +229,16 @@ export function getVerifiedGuestScore(hotel) {
   }
 
   if (vg.licensed && typeof vg.licensed.normalized100 === "number" && vg.licensed.normalized100 > 0) {
+    const raw100 = Math.round(vg.licensed.normalized100);
+    const rc = typeof vg.licensed.reviewCount === "number" ? vg.licensed.reviewCount : null;
     return {
       sourceName: vg.licensed.sourceName || "Verified Guest Feed",
-      rating: vg.licensed.rating ?? Number((vg.licensed.normalized100 / 10).toFixed(1)),
+      rating: vg.licensed.rating ?? Number((raw100 / 10).toFixed(1)),
       scale: vg.licensed.scale || 10,
-      reviewCount: typeof vg.licensed.reviewCount === "number" ? vg.licensed.reviewCount : null,
-      normalized100: Math.round(vg.licensed.normalized100),
+      reviewCount: rc,
+      rawNormalized100: raw100,
+      normalized100: dampenThinGuestScore(raw100, rc),
+      wasDampened: rc != null && rc > 0 && rc < 40,
       verifiedAt: vg.licensed.verifiedAt || null,
       attribution: vg.licensed.attribution || vg.licensed.sourceName || "Licensed Partner Feed",
       googleMapsUri: null,
@@ -138,7 +258,8 @@ export function getKeyFactsList(hotel) {
   if (f.beachOrReef) items.push({ label: "Beach & Reef", value: f.beachOrReef });
   if (f.renovationYear) items.push({ label: "Opened / Renovated", value: String(f.renovationYear) });
   if (f.transferLogistics) items.push({ label: "Transfer Logistics", value: f.transferLogistics });
-  if (hotel?.priceRange) items.push({ label: "Price Tier", value: hotel.priceRange });
+  const price = getPriceDisplay(hotel);
+  if (price.label) items.push({ label: price.isIndicative ? "Indicative Rate" : "Price Tier", value: price.label });
   return items;
 }
 
@@ -223,9 +344,6 @@ export function computeStayOdds(hotel) {
       ? Math.round(Number(hotel.overall) * 20)
       : null;
 
-  // STRICT RULE: Numeric critic score ONLY comes from published, verified numeric critic reviews (e.g. 9/10, 18/20, 88/100).
-  // Any score_unverified entry ("Score/points awarded — unable to verify exact figure"), non-scored editorial article,
-  // or official award is strictly excluded from numeric math and displayed transparently with its direct source link.
   const scoredEditorial = editorialRatings.filter(
     (r) => r.normalized100 != null && !Number.isNaN(Number(r.normalized100)) && !isScoreUnverified(r)
   );
@@ -239,7 +357,31 @@ export function computeStayOdds(hotel) {
   const primaryCritic = scoredEditorial.length > 0 ? scoredEditorial[0] : null;
   const guest100 = verifiedGuest ? verifiedGuest.normalized100 : null;
 
-  let weights = { firstHand: 0, critics: 0, guests: 0 };
+  // LAYER 1: Universal External Baseline ("Market Odds", 0-100%)
+  let marketOdds = null;
+  let marketSourceCount = 0;
+  let marketFormulaSummary = "No external numeric score yet";
+  if (critic100 != null && guest100 != null) {
+    marketOdds = Math.round(critic100 * 0.35 + guest100 * 0.65);
+    marketSourceCount = 2;
+    marketFormulaSummary = "35% Published Critics • 65% Verified Guests";
+  } else if (guest100 != null) {
+    marketOdds = guest100;
+    marketSourceCount = 1;
+    marketFormulaSummary = verifiedGuest?.wasDampened
+      ? "100% Verified Guests (thin-sample adjusted)"
+      : "100% Verified Guest Ratings";
+  } else if (critic100 != null) {
+    marketOdds = critic100;
+    marketSourceCount = 1;
+    marketFormulaSummary = "100% Published Critic Reviews";
+  }
+
+  // LAYER 2: Two-Track Headline Score ("Verified StayOdds" vs "Market Odds")
+  const scoreTrack = firstHand && ours100 != null ? "verified" : "market";
+  const scoreTrackLabel = scoreTrack === "verified" ? "Verified StayOdds" : "Market Odds";
+
+  let weights = { firstHand: 0, market: 0, critics: 0, guests: 0 };
   let overallIndex = null;
   let greatStayOdds = null;
   let spread100 = null;
@@ -254,55 +396,55 @@ export function computeStayOdds(hotel) {
   const activeScores = [ours100, critic100, guest100].filter((v) => v != null);
   const sourceCount = activeScores.length;
 
-  if (firstHand) {
-    if (critic100 != null && guest100 != null) {
-      weights = { firstHand: 40, critics: 30, guests: 30 };
-      overallIndex = Math.round(ours100 * 0.4 + critic100 * 0.3 + guest100 * 0.3);
-      formulaSummary = "40% My Stay • 30% Published Critics • 30% Verified Guests";
-    } else if (guest100 != null) {
-      weights = { firstHand: 55, critics: 0, guests: 45 };
-      overallIndex = Math.round(ours100 * 0.55 + guest100 * 0.45);
-      formulaSummary = "55% My Stay • 45% Verified Guests";
-    } else if (critic100 != null) {
-      weights = { firstHand: 55, critics: 45, guests: 0 };
-      overallIndex = Math.round(ours100 * 0.55 + critic100 * 0.45);
-      formulaSummary = "55% My Stay • 45% Published Critics";
+  const founderVsMarketDelta =
+    firstHand && ours100 != null && marketOdds != null ? ours100 - marketOdds : null;
+  const founderVsMarketLabel =
+    founderVsMarketDelta != null
+      ? `${founderVsMarketDelta > 0 ? "+" : ""}${founderVsMarketDelta} pts vs Market`
+      : null;
+
+  if (scoreTrack === "verified") {
+    if (marketOdds != null) {
+      overallIndex = Math.round(ours100 * 0.7 + marketOdds * 0.3);
+      weights = {
+        firstHand: 70,
+        market: 30,
+        critics: critic100 != null && guest100 != null ? 11 : critic100 != null ? 30 : 0,
+        guests: critic100 != null && guest100 != null ? 19 : guest100 != null ? 30 : 0,
+      };
+      formulaSummary = `70% My Stay (${personalScoreLabel || `${ours100}%`}) • 30% Market Odds (${marketOdds}%)`;
     } else {
-      weights = { firstHand: 100, critics: 0, guests: 0 };
       overallIndex = ours100;
-      greatStayOdds = ours100;
+      weights = { firstHand: 100, market: 0, critics: 0, guests: 0 };
       statusBadge = "First-Hand Verified";
       statusTone = "accent";
-      formulaSummary = "100% My First-Hand Stay — open breakdown for live Google reviews.";
+      formulaSummary = `100% My First-Hand Stay (${personalScoreLabel || `${ours100}%`})`;
     }
   } else {
+    overallIndex = marketOdds;
     if (critic100 != null && guest100 != null) {
-      weights = { firstHand: 0, critics: 35, guests: 65 };
-      overallIndex = Math.round(critic100 * 0.35 + guest100 * 0.65);
-      formulaSummary = "35% Published Critics • 65% Verified Guests";
+      weights = { firstHand: 0, market: 100, critics: 35, guests: 65 };
+      formulaSummary = "Market Odds: 35% Published Critics • 65% Verified Guests";
     } else if (guest100 != null) {
-      weights = { firstHand: 0, critics: 0, guests: 100 };
-      overallIndex = guest100;
-      greatStayOdds = guest100;
-      statusBadge = "Verified Guest Score";
+      weights = { firstHand: 0, market: 100, critics: 0, guests: 100 };
+      statusBadge = "Market Odds (1 Source)";
       statusTone = "teal";
-      formulaSummary = "100% Verified Guest Ratings";
+      formulaSummary = `Market Odds: ${marketFormulaSummary}`;
     } else if (critic100 != null) {
-      weights = { firstHand: 0, critics: 100, guests: 0 };
-      overallIndex = critic100;
-      greatStayOdds = critic100;
+      weights = { firstHand: 0, market: 100, critics: 100, guests: 0 };
       statusBadge = "Critic Reviewed";
       statusTone = "slate";
-      formulaSummary = "100% Published Critic Reviews — open breakdown for live Google reviews.";
+      formulaSummary = "Market Odds: 100% Published Critic Reviews";
     }
   }
 
-  // Agreement / Difference badges ONLY unlock when >= 2 real numeric scores exist.
-  // StayOdds % is ALWAYS the exact weighted average with zero hidden adjustments.
   greatStayOdds = overallIndex;
   if (sourceCount >= 2 && overallIndex != null) {
     isConsensusBadge = true;
-    spread100 = Math.max(...activeScores) - Math.min(...activeScores);
+    spread100 =
+      scoreTrack === "verified" && founderVsMarketDelta != null
+        ? Math.abs(founderVsMarketDelta)
+        : Math.max(...activeScores) - Math.min(...activeScores);
     if (spread100 <= 6) {
       statusBadge = "Strong Agreement";
       statusTone = "accent";
@@ -315,33 +457,33 @@ export function computeStayOdds(hotel) {
     }
   }
 
-  // Dual-Mode Opinion Gap Module ("My Score vs Real Guests" OR "Published Critics vs Real Guests")
+  // Dual-Mode Opinion Gap Module ("Founder vs. Market Odds" OR "Published Critics vs. Real Guests")
   const left100 = firstHand ? ours100 : critic100;
-  const right100 = guest100;
+  const right100 = firstHand ? marketOdds : guest100;
   const delta100 = left100 != null && right100 != null ? left100 - right100 : null;
 
   let gapHeadline = firstHand
-    ? "My first-hand stay notes below — open breakdown to compare with live Google guest reviews."
+    ? "My first-hand stay score leads here — open breakdown to compare with live Google reviews."
     : unverifiedEditorial.length > 0 && scoredEditorial.length === 0
-    ? `${unverifiedEditorial.map((u) => u.sourceName).join(", ")} awards a score/points total (unable to verify exact figure — excluded from numeric math).`
+    ? `${unverifiedEditorial.map((u) => u.sourceName).join(", ")} awards a score (unverified figure — excluded from numeric math).`
     : officialAwards.length > 0
     ? `Recognised with ${officialAwards.map((a) => a.label).join(" • ")} — compare with real guest reviews below.`
-    : "Compare verified guest reviews and linked video tours below.";
+    : "Market Odds baseline from verified external sources.";
 
   if (delta100 != null) {
     const criticName =
       scoredEditorial.length === 1 ? primaryCritic.sourceName : `${scoredEditorial.length} published critics`;
     if (Math.abs(delta100) <= 5) {
       gapHeadline = firstHand
-        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched real guest reviews.`
+        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched Market Odds.`
         : `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — ${criticName} and real guests agree.`;
     } else if (delta100 > 5) {
       gapHeadline = firstHand
-        ? `I rated this +${delta100} pts higher than real guests — see what I loved below.`
+        ? `I rated this +${delta100} pts higher than Market Odds — see what stood out.`
         : `${criticName} rated this +${delta100} pts higher than real guests.`;
     } else {
       gapHeadline = firstHand
-        ? `I rated this ${delta100} pts stricter than real guests — see what stood out & what held it back.`
+        ? `I rated this ${delta100} pts stricter than Market Odds — see what held it back.`
         : `Real guests rated this +${Math.abs(delta100)} pts higher than ${criticName}.`;
     }
   }
@@ -357,8 +499,8 @@ export function computeStayOdds(hotel) {
     : "No critic score";
 
   const opinionGap = {
-    mode: firstHand ? "my_vs_guests" : "critics_vs_guests",
-    title: firstHand ? "My Score vs. Real Guest Score" : "Published Critics vs. Real Guest Score",
+    mode: firstHand ? "my_vs_market" : "critics_vs_guests",
+    title: firstHand ? "Founder vs. Market Odds" : "Published Critics vs. Real Guests",
     leftLabel: firstHand
       ? "My First-Hand Stay"
       : scoredEditorial.length === 1
@@ -368,9 +510,13 @@ export function computeStayOdds(hotel) {
       : "Published Critics",
     left100,
     leftDisplay,
-    rightLabel: verifiedGuest ? `${verifiedGuest.sourceName}` : "Real Guest Score",
+    rightLabel: firstHand ? "Market Odds" : verifiedGuest ? `${verifiedGuest.sourceName}` : "Real Guest Score",
     right100,
-    rightDisplay: verifiedGuest
+    rightDisplay: firstHand
+      ? marketOdds != null
+        ? `${marketOdds}%`
+        : "Open Breakdown"
+      : verifiedGuest
       ? `${verifiedGuest.rating.toFixed(1)} / ${verifiedGuest.scale}`
       : "Open Breakdown",
     delta100,
@@ -385,12 +531,14 @@ export function computeStayOdds(hotel) {
   return {
     tier: firstHand ? "first_hand_verified" : visited ? "short_preview" : "global_directory",
     tierLabel: firstHand
-      ? "First-Hand Scored"
+      ? "Verified StayOdds"
       : isFullUnscored
       ? "Filmed Stay"
       : visited
-      ? "Short Tour Preview"
-      : "Global Directory",
+      ? "Short Tour"
+      : "Market Odds",
+    scoreTrack,
+    scoreTrackLabel,
     firstHand,
     visited,
     personalScore25,
@@ -402,6 +550,11 @@ export function computeStayOdds(hotel) {
     scoredEditorial,
     unverifiedEditorial,
     guest100,
+    marketOdds,
+    marketSourceCount,
+    marketFormulaSummary,
+    founderVsMarketDelta,
+    founderVsMarketLabel,
     overallIndex,
     greatStayOdds,
     spread100,

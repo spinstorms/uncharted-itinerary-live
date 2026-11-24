@@ -1,4 +1,4 @@
-import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=8";
+import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=9";
 import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=3";
 
 const qs = (s) => document.querySelector(s);
@@ -448,7 +448,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124b";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124c";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -461,7 +461,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124b`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124c`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

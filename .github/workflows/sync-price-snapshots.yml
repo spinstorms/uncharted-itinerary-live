@@ -1,0 +1,47 @@
+name: Weekly Indicative Hotel Price Snapshots
+
+on:
+  schedule:
+    # Runs once a week every Monday at 04:15 UTC (~20 batched LiteAPI calls/week, zero per-pageview cost)
+    - cron: "15 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch batched LiteAPI indicative nightly snapshots & rebuild directory
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+        run: |
+          python3 scripts/normalize_regions_and_prices.py --prices-only
+          python3 scripts/build_stayodds_site.py
+
+      - name: Commit refreshed snapshots if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet data/ stayodds/; then
+            git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json stayodds/
+            git commit -m "chore: refresh weekly indicative hotel price snapshots"
+            git pull --rebase -X ours origin main
+            git push origin main
+          else
+            echo "No price snapshot changes."
+          fi

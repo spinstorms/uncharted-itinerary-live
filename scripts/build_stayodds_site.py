@@ -112,9 +112,34 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     primary_critic = scored_editorial[0] if scored_editorial else None
 
     vg = (h.get("verifiedGuest") or {}).get("licensed")
-    guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
+    raw_guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
+    guest_rc = vg.get("reviewCount") if vg else None
+    if raw_guest100 is not None and guest_rc is not None and 0 < int(guest_rc) < 40:
+        guest100 = int(round((raw_guest100 * int(guest_rc) + 90 * 15) / (int(guest_rc) + 15)))
+        guest_dampened = True
+    else:
+        guest100 = raw_guest100
+        guest_dampened = False
 
-    weights = {"firstHand": 0, "critics": 0, "guests": 0}
+    # LAYER 1: Universal External Baseline ("Market Odds")
+    market_odds = None
+    market_src_cnt = 0
+    if critic100 is not None and guest100 is not None:
+        market_odds = int(round(critic100 * 0.35 + guest100 * 0.65))
+        market_src_cnt = 2
+    elif guest100 is not None:
+        market_odds = guest100
+        market_src_cnt = 1
+    elif critic100 is not None:
+        market_odds = critic100
+        market_src_cnt = 1
+
+    # LAYER 2: Two-Track Score ("Verified StayOdds" vs "Market Odds")
+    score_track = "verified" if (first_hand and ours100 is not None) else "market"
+    score_track_label = "Verified StayOdds" if score_track == "verified" else "Market Odds"
+    founder_vs_market_delta = (ours100 - market_odds) if (first_hand and ours100 is not None and market_odds is not None) else None
+
+    weights = {"firstHand": 0, "market": 0, "critics": 0, "guests": 0}
     overall_idx = None
     odds = None
     spread100 = None
@@ -130,50 +155,42 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     active = [v for v in [ours100, critic100, guest100] if v is not None]
     src_cnt = len(active)
 
-    if first_hand and ours100 is not None:
-        if critic100 is not None and guest100 is not None:
-            weights = {"firstHand": 40, "critics": 30, "guests": 30}
-            overall_idx = int(round(ours100 * 0.4 + critic100 * 0.3 + guest100 * 0.3))
-            formula = "40% My Stay • 30% Published Critics • 30% Verified Guests"
-        elif guest100 is not None:
-            weights = {"firstHand": 55, "critics": 0, "guests": 45}
-            overall_idx = int(round(ours100 * 0.55 + guest100 * 0.45))
-            formula = "55% My Stay • 45% Verified Guests"
-        elif critic100 is not None:
-            weights = {"firstHand": 55, "critics": 45, "guests": 0}
-            overall_idx = int(round(ours100 * 0.55 + critic100 * 0.45))
-            formula = "55% My Stay • 45% Published Critics"
+    if score_track == "verified" and ours100 is not None:
+        if market_odds is not None:
+            overall_idx = int(round(ours100 * 0.70 + market_odds * 0.30))
+            weights = {
+                "firstHand": 70,
+                "market": 30,
+                "critics": 11 if (critic100 is not None and guest100 is not None) else (30 if critic100 is not None else 0),
+                "guests": 19 if (critic100 is not None and guest100 is not None) else (30 if guest100 is not None else 0),
+            }
+            formula = f"70% My Stay ({personal_score_label or f'{ours100}%'}) • 30% Market Odds ({market_odds}%)"
         else:
-            weights = {"firstHand": 100, "critics": 0, "guests": 0}
             overall_idx = ours100
-            odds = ours100
+            weights = {"firstHand": 100, "market": 0, "critics": 0, "guests": 0}
             status_badge = "First-Hand Verified"
             status_tone = "accent"
-            formula = "100% My First-Hand Stay — live Google reviews check on this page."
+            formula = f"100% My First-Hand Stay ({personal_score_label or f'{ours100}%'})"
     else:
+        overall_idx = market_odds
         if critic100 is not None and guest100 is not None:
-            weights = {"firstHand": 0, "critics": 35, "guests": 65}
-            overall_idx = int(round(critic100 * 0.35 + guest100 * 0.65))
-            formula = "35% Published Critics • 65% Verified Guests"
+            weights = {"firstHand": 0, "market": 100, "critics": 35, "guests": 65}
+            formula = "Market Odds: 35% Published Critics • 65% Verified Guests"
         elif guest100 is not None:
-            weights = {"firstHand": 0, "critics": 0, "guests": 100}
-            overall_idx = guest100
-            odds = guest100
-            status_badge = "Verified Guest Score"
+            weights = {"firstHand": 0, "market": 100, "critics": 0, "guests": 100}
+            status_badge = "Market Odds (1 Source)"
             status_tone = "teal"
-            formula = "100% Verified Guest Ratings"
+            formula = "Market Odds: 100% Verified Guests" + (" (thin-sample adjusted)" if guest_dampened else "")
         elif critic100 is not None:
-            weights = {"firstHand": 0, "critics": 100, "guests": 0}
-            overall_idx = critic100
-            odds = critic100
+            weights = {"firstHand": 0, "market": 100, "critics": 100, "guests": 0}
             status_badge = "Critic Reviewed"
             status_tone = "slate"
-            formula = "100% Published Critic Reviews — live Google reviews check on this page."
+            formula = "Market Odds: 100% Published Critic Reviews"
 
     odds = overall_idx
     if src_cnt >= 2 and overall_idx is not None:
         is_consensus = True
-        spread100 = max(active) - min(active)
+        spread100 = abs(founder_vs_market_delta) if (score_track == "verified" and founder_vs_market_delta is not None) else (max(active) - min(active))
         if spread100 <= 6:
             status_badge, status_tone = "Strong Agreement", "accent"
         elif spread100 <= 12:
@@ -182,7 +199,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
             status_badge, status_tone = "Opinions Differ", "amber"
 
     left100 = ours100 if first_hand else critic100
-    right100 = guest100
+    right100 = market_odds if first_hand else guest100
     delta100 = (left100 - right100) if (left100 is not None and right100 is not None) else None
 
     if delta100 is not None:
@@ -193,41 +210,43 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         )
         if abs(delta100) <= 5:
             gap_head = (
-                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched real guest reviews."
+                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched Market Odds."
                 if first_hand
                 else f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — {critic_name} and real guests agree."
             )
         elif delta100 > 5:
             gap_head = (
-                f"I rated this +{delta100} pts higher than real guests — see what I loved below."
+                f"I rated this +{delta100} pts higher than Market Odds — see what stood out below."
                 if first_hand
                 else f"{critic_name} rated this +{delta100} pts higher than real guests."
             )
         else:
             gap_head = (
-                f"I rated this {delta100} pts stricter than real guests — see what stood out & what held it back."
+                f"I rated this {delta100} pts stricter than Market Odds — see what held it back below."
                 if first_hand
                 else f"Real guests rated this +{abs(delta100)} pts higher than {critic_name}."
             )
     else:
         if first_hand:
-            gap_head = "My first-hand stay notes below — compare directly with real guest reviews."
+            gap_head = "My first-hand stay score leads here — live Google reviews check on this page."
         elif unverified_editorial and not scored_editorial:
             names = ", ".join(u["sourceName"] for u in unverified_editorial)
-            gap_head = f"{names} awards a score/points total (unable to verify exact figure — excluded from numeric math)."
+            gap_head = f"{names} awards a score (unverified figure — excluded from numeric math)."
         elif awards:
             gap_head = f"Recognised with {' • '.join(a['label'] for a in awards)} — compare with real guest reviews below."
         else:
-            gap_head = "Real guest ratings, official awards, and linked reviews compared side-by-side."
+            gap_head = "Market Odds baseline from verified external reviews."
 
     is_full_unscored = visited and not first_hand and h.get("coverageType") != "Short Tour"
     return {
         "firstHand": first_hand,
         "visited": visited,
+        "scoreTrack": score_track,
+        "scoreTrackLabel": score_track_label,
         "tierLabel": (
-            "First-Hand Scored"
+            "Verified StayOdds"
             if first_hand
-            else ("Filmed Stay" if is_full_unscored else ("Short Tour Preview" if visited else "Global Directory"))
+            else ("Filmed Stay" if is_full_unscored else ("Short Tour" if visited else "Market Odds"))
         ),
         "personalScore25": personal_score_25,
         "personalScoreMax": personal_score_max,
@@ -238,6 +257,9 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         "scoredEditorial": scored_editorial,
         "unverifiedEditorial": unverified_editorial,
         "guest100": guest100,
+        "marketOdds": market_odds,
+        "marketSourceCount": market_src_cnt,
+        "founderVsMarketDelta": founder_vs_market_delta,
         "overallIndex": overall_idx,
         "greatStayOdds": odds,
         "spread100": spread100,
@@ -699,7 +721,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -785,24 +807,24 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="meta-line">
             <span>{esc(h['location'])}, {esc(h['country'])}</span>
             {f"<span>&bull;</span><span>{esc(h['brand'])}</span>" if h.get('brand') else ""}
-            {f"<span>&bull;</span><span>{esc(h['priceRange'])}</span>" if h.get('priceRange') else ""}
+            {f"<span>&bull;</span><span><strong>{esc((h.get('priceSnapshot') or {}).get('label') or h.get('priceRange'))}</strong></span>" if ((h.get('priceSnapshot') or {}).get('label') or h.get('priceRange')) else ""}
           </div>
           {f'<div class="meta-line" style="margin-top:8px;gap:6px;">{hero_awards_html}</div>' if hero_awards_html else ''}
           <h1 class="detail-title">{esc(h['name'])}</h1>
           <p class="detail-verdict">{esc(h.get('verdict') or h.get('standout') or f"Personally curated StayOdds luxury hotel profile for {h['name']} in {h['location']}, {h['country']}.")}</p>
 
           <div class="detail-kpi-row">
-            <div class="detail-kpi is-primary {'is-caution' if o['statusTone'] == 'amber' else ''}" id="kpiOddsCard">
+            <div class="detail-kpi is-primary {'is-verified-track' if o['scoreTrack'] == 'verified' else 'is-market-track'} {'is-caution' if o['statusTone'] == 'amber' else ''}" id="kpiOddsCard">
               <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else ("Award" if o['awards'] else "Live…")}</strong>
-              <span id="kpiOddsLbl">{'StayOdds' if o['greatStayOdds'] is not None else o['statusBadge']}</span>
+              <span id="kpiOddsLbl">{o['scoreTrackLabel'] if o['greatStayOdds'] is not None else o['statusBadge']}</span>
             </div>
             <div class="detail-kpi">
               <strong>{f"{fmt_score_num(o['personalScore25'])}<span>/{o['personalScoreMax']}</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if (o['visited'] and h.get("coverageType") == "Short Tour") else ("Filmed" if o['visited'] else "Not Stayed"))}</strong>
               <span>{'My Stay Score' if o['firstHand'] else ('Short Tour' if (o['visited'] and h.get("coverageType") == "Short Tour") else ('Full Video Review' if o['visited'] else 'My Stay Score'))}</span>
             </div>
             <div class="detail-kpi">
-              <strong>{critic_kpi_val}</strong>
-              <span>{esc(critic_kpi_lbl)}</span>
+              <strong>{f"{o['marketOdds']}%" if o.get('marketOdds') is not None else critic_kpi_val}</strong>
+              <span>{f"Market Odds ({o['marketSourceCount']} src)" if o.get('marketOdds') is not None else esc(critic_kpi_lbl)}</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
@@ -812,31 +834,45 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
           <details class="stayodds-explainer">
             <summary>
-              <span>How is this StayOdds % calculated?</span>
+              <span>How is this {esc(o['scoreTrackLabel'])} % calculated?</span>
               <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
             </summary>
             <div class="stayodds-explainer-body">
               <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
               <ul class="stayodds-explainer-list">
-                <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
-                <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
-                <li><strong>Published Critics &amp; Video Reviewers (/100):</strong> Average of reviewers (including Walker Hotel Index by Ryan Walker on a 50-point scale normalized &times; 2, Nonstop Dan &amp; Nonstop Dan Vlogs on a 100-point scale, The Flip-Flop Traveller on a 100-point scale, The Luxury Travel Expert on a 10-point scale, and Fat Voyage on a 20-point scale) only where an explicit numeric score is verified from a real source. When a reviewer is known to award a score/points total that cannot be verified from text or captions, it is marked <em>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</em> and excluded from numeric math.</li>
-                <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
-                <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
+                <li><strong>Two-Track Scoring (My Voice Leads):</strong> When I have personally stayed and scored a hotel (/25), <strong>Verified StayOdds</strong> weights <strong>70% My Stay + 30% Market Odds</strong> (or 100% My Stay if no external score exists), with a transparent <strong>Founder vs. Market</strong> delta.</li>
+                <li><strong>Market Odds Baseline (All Hotels):</strong> Unvisited properties display an outlined <strong>Market Odds</strong> baseline (35% Published Critics &bull; 65% Verified Guests when both exist, or 100% of whichever verified source exists), with gentle Bayesian dampening on tiny (&lt;40 review) guest samples so thin 100% outliers don&rsquo;t distort rankings.</li>
+                <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
               </ul>
             </div>
           </details>
 
+          <div class="date-rate-bar" id="detailDateRateBar">
+            <div class="date-rate-inputs">
+              <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>
+              <label><span>Check-out</span><input type="date" id="detailCheckout" /></label>
+              <label><span>Guests</span>
+                <select id="detailAdults">
+                  <option value="1">1 Adult</option>
+                  <option value="2" selected>2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </label>
+              {f'<button type="button" class="btn btn-outline date-rate-check-btn" id="detailLiveRateBtn" data-nuitee-id="{esc(h.get("nuiteeHotelId"))}">Check Live Rate</button>' if h.get("nuiteeHotelId") else ''}
+            </div>
+            <div class="date-rate-status" id="detailLiveRateStatus">
+              {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))}) &bull; Select dates to update Booking.com link" if h.get("priceSnapshot") else "Select trip dates to pass them straight into Booking.com."}
+            </div>
+          </div>
+
           <div class="detail-actions">
-            <a class="btn btn-primary" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
+            <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
-          </div>
-          <div class="vip-perks-note">
-            <strong>Luxury Advisor VIP Perks Slot:</strong> Coming soon — book eligible 5-star stays with complimentary breakfast, resort credit &amp; room upgrades.
           </div>
         </div>
       </section>
@@ -847,12 +883,12 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="opinion-gap-head">
             <div>
               <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'My Score vs. Real Guest Score' if o['firstHand'] else 'Critics &amp; Official Awards vs. Real Guest Score'}</h2>
+              <h2>{'Founder vs. Market Odds' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
               <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
               <strong>{esc(delta_badge)}</strong>
-              <span>Opinion Gap</span>
+              <span>{'Founder vs Market' if o['firstHand'] else 'Opinion Gap'}</span>
             </div>
           </div>
 
@@ -866,7 +902,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['critic100']}%;background:#d97706;"></div></div>
             </div>''' if (o['firstHand'] and o['critic100'] is not None) else ''}
             <div class="gap-side">
-              <div class="gap-side-top"><span>Real Guest Score</span><strong id="gapGuestDisplay">{esc(right_display)}</strong></div>
+              <div class="gap-side-top"><span>{'Market Odds Baseline' if o['firstHand'] else 'Real Guest Score'}</span><strong id="gapGuestDisplay">{f"{o['marketOdds']}%" if (o['firstHand'] and o.get('marketOdds') is not None) else esc(right_display)}</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>
             </div>
           </div>
@@ -903,13 +939,13 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="detail-panel">
             <div class="detail-panel-head">
               <h3>StayOdds Weighting</h3>
-              <span class="tag">{esc(o['tierLabel'])}</span>
+              <span class="tag">{esc(o['scoreTrackLabel'])}</span>
             </div>
             <p class="detail-panel-sub" id="weightFormulaSub">{esc(o['formula'])}</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
               <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>My Stay</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else ("Unverified" if unverified_ed else "—")}</strong><small>Published Critics</small></div>
-              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Google Guests</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Verified Guests</small></div>
             </div>
             {unverified_transparency_html}
           </div>
@@ -1037,6 +1073,75 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
       if (nearbyList) nearbyList.href = "../../compare/?region=" + regionQ + "&embed=1";
     }}
 
+    // Date-aware outbound booking links + explicit on-demand live rate check
+    const ciEl = document.getElementById("detailCheckin");
+    const coEl = document.getElementById("detailCheckout");
+    const adEl = document.getElementById("detailAdults");
+    const bookBtn = document.getElementById("detailPrimaryBookingBtn");
+    const rateBtn = document.getElementById("detailLiveRateBtn");
+    const rateStatus = document.getElementById("detailLiveRateStatus");
+
+    const fmtDate = (d) => d.toISOString().slice(0, 10);
+    const defCi = new Date(Date.now() + 45 * 86400000);
+    const defCo = new Date(Date.now() + 47 * 86400000);
+    if (ciEl && !ciEl.value) ciEl.value = qsParams.get("checkin") || fmtDate(defCi);
+    if (coEl && !coEl.value) coEl.value = qsParams.get("checkout") || fmtDate(defCo);
+    if (adEl && qsParams.get("adults")) adEl.value = qsParams.get("adults");
+
+    function updateDatedBookingLink() {{
+      if (!bookBtn) return;
+      const baseUrl = bookBtn.getAttribute("data-base-url") || bookBtn.href;
+      const ci = ciEl?.value || "";
+      const co = coEl?.value || "";
+      const ad = adEl?.value || "2";
+      try {{
+        const u = new URL(baseUrl);
+        if (/booking\\.com/i.test(u.hostname) && ci && co && co > ci) {{
+          u.searchParams.set("checkin", ci);
+          u.searchParams.set("checkout", co);
+          u.searchParams.set("group_adults", ad);
+          u.searchParams.set("no_rooms", "1");
+          bookBtn.href = u.toString();
+        }}
+      }} catch (_) {{}}
+    }}
+    [ciEl, coEl, adEl].forEach((el) => el?.addEventListener("change", updateDatedBookingLink));
+    updateDatedBookingLink();
+
+    rateBtn?.addEventListener("click", async () => {{
+      const nid = rateBtn.getAttribute("data-nuitee-id");
+      const ci = ciEl?.value || "";
+      const co = coEl?.value || "";
+      const ad = adEl?.value || "2";
+      if (!nid || !ci || !co || co <= ci) {{
+        if (rateStatus) rateStatus.textContent = "Please select a valid check-in and check-out date.";
+        return;
+      }}
+      rateBtn.disabled = true;
+      rateBtn.textContent = "Checking…";
+      if (rateStatus) rateStatus.textContent = "Checking live nightly rate for your selected dates…";
+      try {{
+        const url = `https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-hotel-rates?hotel_ids=${{encodeURIComponent(nid)}}&checkin=${{encodeURIComponent(ci)}}&checkout=${{encodeURIComponent(co)}}&adults=${{encodeURIComponent(ad)}}&currency=GBP`;
+        const res = await fetch(url, {{ headers: {{ Accept: "application/json" }} }});
+        const data = await res.json();
+        const r = data?.rates?.[nid];
+        if (r && r.perNight) {{
+          if (rateStatus) {{
+            rateStatus.innerHTML = `<strong style="color:#0f766e;">Live Rate (${{ci}} → ${{co}}): £${{Number(r.perNight).toLocaleString("en-GB")}}/nt</strong> (£${{Number(r.total).toLocaleString("en-GB")}} total for ${{r.nights}} nt${{r.refundable ? " • Refundable" : ""}})`;
+          }}
+        }} else if (data?.status === "cap_reached") {{
+          if (rateStatus) rateStatus.textContent = "Daily live-rate quota reached — click Check Live Rates on Booking.com above (your dates are already pre-filled).";
+        }} else {{
+          if (rateStatus) rateStatus.textContent = "No instant partner rooms returned for those exact dates — click Check Live Rates on Booking.com above (dates pre-filled).";
+        }}
+      }} catch (_) {{
+        if (rateStatus) rateStatus.textContent = "Unable to check live rate right now — click Booking.com above with your dates pre-filled.";
+      }} finally {{
+        rateBtn.disabled = false;
+        rateBtn.textContent = "Check Live Rate";
+      }}
+    }});
+
     const placeId = {json.dumps(google_place_id)};
     const firstHand = {json.dumps(bool(o['firstHand']))};
     const ours100 = {json.dumps(o['ours100'])};
@@ -1106,7 +1211,9 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
             return;
           }}
-          const g100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
+          const rawG100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
+          const rc = typeof g.reviewCount === "number" ? g.reviewCount : null;
+          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 15) / (rc + 15)) : rawG100;
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {{
@@ -1132,34 +1239,31 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             if (gBar) gBar.style.width = `${{g100}}%`;
           }}
 
-          // Recalculate StayOdds % live when no static licensed guest score was already baked in
+          // Recalculate Two-Track StayOdds % live when no static licensed guest score was already baked in
           if (staticGuest100 == null) {{
+            const mkt = critic100 != null ? Math.round(critic100 * 0.35 + g100 * 0.65) : g100;
             let wFH = 0, wCr = 0, wGu = 0, odds = null, formula = "";
             if (firstHand && ours100 != null) {{
-              if (critic100 != null) {{
-                wFH = 40; wCr = 30; wGu = 30;
-                odds = Math.round(ours100 * 0.4 + critic100 * 0.3 + g100 * 0.3);
-                formula = "40% My Stay • 30% Published Critics • 30% Google Guests";
-              }} else {{
-                wFH = 55; wCr = 0; wGu = 45;
-                odds = Math.round(ours100 * 0.55 + g100 * 0.45);
-                formula = "55% My Stay • 45% Google Guests";
-              }}
+              wFH = 70;
+              wCr = critic100 != null ? 11 : 0;
+              wGu = critic100 != null ? 19 : 30;
+              odds = Math.round(ours100 * 0.70 + mkt * 0.30);
+              formula = `70% My Stay • 30% Market Odds (${{mkt}}%)`;
             }} else if (critic100 != null) {{
               wFH = 0; wCr = 35; wGu = 65;
-              odds = Math.round(critic100 * 0.35 + g100 * 0.65);
-              formula = "35% Published Critics • 65% Google Guests";
+              odds = mkt;
+              formula = "Market Odds: 35% Published Critics • 65% Google Guests";
             }} else {{
               wFH = 0; wCr = 0; wGu = 100;
-              odds = g100;
-              formula = "100% Google Guest Rating";
+              odds = mkt;
+              formula = "Market Odds: 100% Google Guest Rating";
             }}
 
             const active = [firstHand ? ours100 : null, critic100, g100].filter((v) => v != null);
-            let badgeText = active.length === 1 ? "Google Guest Rating" : "Mostly Aligned";
+            let badgeText = active.length === 1 ? "Market Odds (1 Source)" : "Mostly Aligned";
             let badgeClass = "tag-teal";
             if (active.length >= 2) {{
-              const spread = Math.max(...active) - Math.min(...active);
+              const spread = firstHand && ours100 != null ? Math.abs(ours100 - mkt) : Math.max(...active) - Math.min(...active);
               if (spread <= 6) {{ badgeText = "Strong Agreement"; badgeClass = "tag-accent"; }}
               else if (spread <= 12) {{ badgeText = "Mostly Aligned"; badgeClass = "tag-teal"; }}
               else {{ badgeText = "Opinions Differ"; badgeClass = "tag-caution"; }}
@@ -1169,7 +1273,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             const kpiOddsLbl = document.getElementById("kpiOddsLbl");
             const kpiOddsCard = document.getElementById("kpiOddsCard");
             if (kpiOdds && odds != null) kpiOdds.textContent = `${{odds}}%`;
-            if (kpiOddsLbl) kpiOddsLbl.textContent = "StayOdds";
+            if (kpiOddsLbl) kpiOddsLbl.textContent = firstHand ? "Verified StayOdds" : "Market Odds";
             if (kpiOddsCard) kpiOddsCard.classList.toggle("is-caution", badgeClass === "tag-caution");
 
             const heroBadge = document.getElementById("heroStatusBadge");
@@ -1180,41 +1284,33 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               el.className = `tag ${{badgeClass}}`;
             }});
 
-            if (left100 != null) {{
-              const d = left100 - g100;
-              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>Opinion Gap</span>`;
+            const rhs = firstHand ? mkt : g100;
+            if (left100 != null && rhs != null) {{
+              const d = left100 - rhs;
+              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>${{firstHand ? "Founder vs Market" : "Opinion Gap"}}</span>`;
               const gapHead = document.getElementById("gapHeadline");
               if (gapHead) {{
                 if (Math.abs(d) <= 5) {{
                   gapHead.textContent = firstHand
-                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched real guest reviews.`
+                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched Market Odds.`
                     : `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — ${{criticLabel}} and real guests agree.`;
                 }} else if (d > 5) {{
                   gapHead.textContent = firstHand
-                    ? `I rated this +${{d}} pts higher than real guests — see what I loved below.`
+                    ? `I rated this +${{d}} pts higher than Market Odds — see what stood out.`
                     : `${{criticLabel}} rated this +${{d}} pts higher than real guests.`;
                 }} else {{
                   gapHead.textContent = firstHand
-                    ? `I rated this ${{d}} pts stricter than real guests — see what stood out & what held it back.`
+                    ? `I rated this ${{d}} pts stricter than Market Odds — see what held it back.`
                     : `Real guests rated this +${{Math.abs(d)}} pts higher than ${{criticLabel}}.`;
                 }}
               }}
             }}
 
-            const eqParts = [];
-            if (wFH > 0 && ours100 != null) {{
-              const rawFh = personalLabel ? `${{personalLabel}} → ` : "";
-              eqParts.push(`${{wFH}}% My Stay (${{rawFh}}${{ours100}}%)`);
-            }}
-            if (wCr > 0 && critic100 != null) {{
-              eqParts.push(`${{wCr}}% Published Critics (${{critic100}}%)`);
-            }}
-            if (wGu > 0) {{
-              eqParts.push(`${{wGu}}% Google Guests (${{g.rating.toFixed(1)}}★ → ${{g100}}%)`);
-            }}
             const eqEl = document.getElementById("stayOddsEquation");
-            if (eqEl && eqParts.length && odds != null) {{
-              eqEl.textContent = `${{eqParts.join(" + ")}} = ${{odds}}% StayOdds`;
+            if (eqEl && odds != null) {{
+              eqEl.textContent = firstHand && ours100 != null
+                ? `70% My Stay (${{personalLabel ? personalLabel + " → " : ""}}${{ours100}}%) + 30% Market Odds (${{mkt}}%) = ${{odds}}% Verified StayOdds`
+                : `${{formula}} = ${{odds}}% Market Odds`;
             }}
 
             const wSub = document.getElementById("weightFormulaSub");
@@ -1232,12 +1328,6 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
               shareCardState.odds.greatStayOdds = odds;
               shareCardState.odds.statusBadge = badgeText;
               shareCardState.odds.verifiedGuest = {{ rating: g.rating, scale: 5 }};
-              if (left100 != null) {{
-                const d = left100 - g100;
-                shareCardState.odds.opinionGap.deltaLabel = `${{d > 0 ? "+" + d : d}} pts`;
-                const ghEl = document.getElementById("gapHeadline");
-                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
-              }}
             }}
           }}
         }})
@@ -1266,20 +1356,20 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "title": "Maldives",
         "headline": "Best Luxury Resorts in the Maldives — StayOdds Guide",
         "lead": "Compare Maldives overwater & beachfront luxury resorts side-by-side with our first-hand stays, sourced editorial critics, official MICHELIN Key & Forbes Five-Star awards, and verified guest scores.",
-        "filterType": "region",
+        "filterType": "country",
         "filterValue": "Maldives",
         "banner": "maldives.jpg",
-        "compareRegion": "Maldives",
+        "compareRegion": "Maldives & Indian Ocean",
     },
     {
         "slug": "bali-indonesia",
         "title": "Bali & Indonesia",
         "headline": "Best Luxury Resorts in Bali & Indonesia — StayOdds Guide",
         "lead": "Explore personally curated luxury resorts across Uluwatu, Nusa Dua, Canggu, Ubud, Sumba, and Labuan Bajo — combining first-hand stays, sourced press reviews, and official awards.",
-        "filterType": "region",
-        "filterValue": "Bali & Indonesia",
+        "filterType": "country",
+        "filterValue": "Indonesia",
         "banner": "bali.jpg",
-        "compareRegion": "Bali & Indonesia",
+        "compareRegion": "Asia",
     },
     {
         "slug": "europe",
@@ -1296,20 +1386,20 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "title": "Mexico",
         "headline": "Best Luxury Resorts in Mexico — StayOdds Guide",
         "lead": "Compare Riviera Maya, Los Cabos, Punta Mita, Costalegre, San Miguel de Allende, and Mexico City luxury resorts side-by-side — including swimmable beaches, sargassum notes, all-inclusive vs. à la carte differences, and verified editorial links.",
-        "filterType": "region",
+        "filterType": "country",
         "filterValue": "Mexico",
         "banner": "bora-bora.jpg",
-        "compareRegion": "Mexico",
+        "compareRegion": "Caribbean & Mexico",
     },
     {
         "slug": "caribbean",
         "title": "Caribbean",
         "headline": "Best Luxury Resorts in the Caribbean — StayOdds Guide",
         "lead": "Compare flagship luxury resorts across every Caribbean island & territory — from Anguilla, St. Barths, Turks & Caicos, and St. Lucia to Barbados, Jamaica, Cayman Islands, Aruba, Curaçao, Dominica, Grenada, and private BVI cays.",
-        "filterType": "region",
-        "filterValue": "Caribbean",
+        "filterType": "region_except_country",
+        "filterValue": "Caribbean & Mexico|Mexico",
         "banner": "seychelles.jpg",
-        "compareRegion": "Caribbean",
+        "compareRegion": "Caribbean & Mexico",
     },
     {
         "slug": "americas",
@@ -1317,15 +1407,15 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "headline": "Best Luxury Hotels in the Americas — StayOdds Guide",
         "lead": "From California, Hawaii, and New York icons to Costa Rica, Belize, Panama, Canada, and South American sanctuaries — every StayOdds profile links directly to verified editorial reviews and official awards.",
         "filterType": "region",
-        "filterValue": "Los Angeles & Americas",
+        "filterValue": "Americas",
         "banner": "bora-bora.jpg",
-        "compareRegion": "Los Angeles & Americas",
+        "compareRegion": "Americas",
     },
     {
         "slug": "asia",
         "title": "Asia",
         "headline": "Best Luxury Hotels in Asia — StayOdds Guide",
-        "lead": "Compare flagship urban sanctuaries and island escapes across Japan, Singapore, Hong Kong, Vietnam, and beyond with verified StayOdds data.",
+        "lead": "Compare flagship urban sanctuaries and island escapes across Japan, Indonesia, Thailand, Singapore, Hong Kong, Vietnam, India, and beyond with verified StayOdds data.",
         "filterType": "region",
         "filterValue": "Asia",
         "banner": "bali.jpg",
@@ -1346,30 +1436,30 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "title": "Thailand",
         "headline": "Best Luxury Resorts in Thailand — StayOdds Guide",
         "lead": "Explore curated luxury resorts across Krabi, Phuket, Koh Samui, Bangkok, and Chiang Mai — including first-hand filmed reviews and verified critic links.",
-        "filterType": "region",
+        "filterType": "country",
         "filterValue": "Thailand",
         "banner": "bali.jpg",
-        "compareRegion": "Thailand",
+        "compareRegion": "Asia",
     },
     {
         "slug": "indian-ocean-africa",
         "title": "Indian Ocean & Africa",
         "headline": "Best Luxury Resorts in the Indian Ocean & Africa — StayOdds Guide",
-        "lead": "Compare luxury island sanctuaries in Seychelles and Mauritius alongside iconic African safari lodges and city hotels — every source linked and verified.",
-        "filterType": "region",
-        "filterValue": "Indian Ocean & Africa",
+        "lead": "Compare luxury island sanctuaries in Maldives, Seychelles, and Mauritius alongside iconic African safari lodges and city hotels — every source linked and verified.",
+        "filterType": "regions",
+        "filterValue": "Maldives & Indian Ocean|Africa",
         "banner": "seychelles.jpg",
-        "compareRegion": "Indian Ocean & Africa",
+        "compareRegion": "Africa",
     },
     {
         "slug": "bora-bora",
         "title": "Bora Bora",
         "headline": "Best Luxury Resorts in Bora Bora — StayOdds Guide",
         "lead": "Compare Bora Bora's iconic overwater lagoon resorts side-by-side with sourced press reviews, official awards, and direct rate links.",
-        "filterType": "region",
-        "filterValue": "Bora Bora",
+        "filterType": "country",
+        "filterValue": "French Polynesia",
         "banner": "bora-bora.jpg",
-        "compareRegion": "Bora Bora",
+        "compareRegion": "Australia & Pacific",
     },
     {
         "slug": "italy",
@@ -1449,7 +1539,7 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "filterType": "country",
         "filterValue": "Egypt",
         "banner": "maldives.jpg",
-        "compareRegion": "Middle East & Africa",
+        "compareRegion": "Africa",
     },
 ]
 
@@ -1576,7 +1666,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1832,6 +1922,15 @@ def main() -> None:
         else:
             resolved_thumb = "assets/placeholders/default-stayodds.webp"
 
+        price_snap_path = ROOT / "data" / "price-snapshots.json"
+        if "_price_snaps_loaded" not in globals():
+            globals()["_price_snaps_loaded"] = (
+                json.loads(price_snap_path.read_text(encoding="utf-8")).get("prices", {})
+                if price_snap_path.exists()
+                else {}
+            )
+        price_snap = globals()["_price_snaps_loaded"].get(pid)
+
         rec = {
             "id": pid,
             "name": p["name"],
@@ -1842,6 +1941,7 @@ def main() -> None:
             "lng": p.get("lng"),
             "brand": p.get("brand", ""),
             "priceRange": p.get("price_tier", ""),
+            "priceSnapshot": price_snap,
             "tier": p["tier"],
             "visitedByUs": bool(p.get("visited_by_founder")),
             "coverageType": fh["coverage_type"] if fh else "Global Directory",
@@ -1954,6 +2054,16 @@ def main() -> None:
             **({"cardPhoto": f"assets/card-photos/{r['id']}.webp"} if (ROOT / "assets" / "card-photos" / f"{r['id']}.webp").exists() else {}),
             "bookingUrl": r["bookingUrl"],
         }
+        if r.get("googlePlaceId"):
+            item["googlePlaceId"] = r["googlePlaceId"]
+        if r.get("nuiteeHotelId"):
+            item["nuiteeHotelId"] = r["nuiteeHotelId"]
+        if r.get("priceSnapshot"):
+            item["priceSnapshot"] = {
+                "nightlyGbp": r["priceSnapshot"]["nightlyGbp"],
+                "label": r["priceSnapshot"]["label"],
+                "checkedAt": r["priceSnapshot"].get("checkedAt", ""),
+            }
         if r["videoId"]:
             item["videoId"] = r["videoId"]
             item["inLiveFeed"] = r["inLiveFeed"]
@@ -2074,9 +2184,16 @@ def main() -> None:
     dest_root.mkdir(exist_ok=True)
     generated_dests: list[str] = []
     for guide in DESTINATION_GUIDES:
-        if guide["filterType"] == "region":
+        ft = guide["filterType"]
+        if ft == "region":
             matched = [r for r in directory if r["region"] == guide["filterValue"]]
-        elif guide["filterType"] == "countries":
+        elif ft == "regions":
+            allowed_r = {x.strip() for x in guide["filterValue"].split("|") if x.strip()}
+            matched = [r for r in directory if r["region"] in allowed_r]
+        elif ft == "region_except_country":
+            reg_val, excl_c = [x.strip() for x in guide["filterValue"].split("|", 1)]
+            matched = [r for r in directory if r["region"] == reg_val and r["country"] != excl_c]
+        elif ft == "countries":
             allowed = {c.strip() for c in guide["filterValue"].split("|") if c.strip()}
             matched = [r for r in directory if r["country"] in allowed]
         else:

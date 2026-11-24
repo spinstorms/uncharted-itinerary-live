@@ -37,12 +37,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124b" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124c" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=35" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=36" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -172,39 +172,44 @@
       </div>
     </section>
 
-    <!-- Transparent Methodology Strip -->
-    <section class="methodology-section">
+    <!-- Compact Expandable Two-Track Methodology Bar -->
+    <section class="methodology-section" style="padding:10px 0 6px;">
       <div class="container">
-        <div class="methodology-grid">
-          <div class="method-pill is-highlight">
-            <strong>%</strong>
-            <div>
-              <span>One Transparent StayOdds %</span>
-              <small>Pure weighted average of up to 3 independent numeric sources (My Stay /25 &times; 4, Published Critics /100, and live Google Guests /5★ &times; 20) — zero double-counting or hidden tweaks</small>
+        <details class="methodology-compact-bar">
+          <summary>
+            <span class="meth-summary-left">
+              <span class="meth-badge-verified">Verified StayOdds</span>
+              <strong>70% My First-Hand Stay + 30% Market Odds</strong>
+              <span class="meth-sep">&bull;</span>
+              <span class="meth-badge-market">Market Odds</span>
+              <span>Unvisited external baseline (Critics &amp; Guests) &bull; Zero fabricated scores</span>
+            </span>
+            <span class="meth-toggle-link">How scoring works &#9662;</span>
+          </summary>
+          <div class="methodology-grid" style="margin-top:12px;">
+            <div class="method-pill is-highlight">
+              <strong>70/30</strong>
+              <div>
+                <span>Verified StayOdds (Audited Stays)</span>
+                <small>When I personally stay and score a hotel (/25 &times; 4), my verdict drives 70% of the score alongside 30% Market Odds — with an explicit Founder vs. Market delta (&#177; pts).</small>
+              </div>
+            </div>
+            <div class="method-pill">
+              <strong>Market</strong>
+              <div>
+                <span>Market Odds Baseline (Unvisited)</span>
+                <small>Outlined slate/teal badge for unvisited hotels: 35% Published Critics + 65% Verified Guests (Licensed Guest Feed / Live Google), with gentle dampening on tiny (&lt;40) review samples.</small>
+              </div>
+            </div>
+            <div class="method-pill">
+              <strong>Awards</strong>
+              <div>
+                <span>Named &amp; Linked — Never Scored</span>
+                <small>MICHELIN Keys, Forbes Five-Star, World&rsquo;s 50 Best, and comments-only reviews link straight to their source without invented numbers.</small>
+              </div>
             </div>
           </div>
-          <div class="method-pill">
-            <strong>40/30/30</strong>
-            <div>
-              <span>Clear, Fixed Weighting</span>
-              <small>40% My Stay &bull; 30% Critics &bull; 30% Guests when all three exist (55/45 when two exist with our stay, 35/65 for Critics + Guests, or 100% if only one numeric source exists)</small>
-            </div>
-          </div>
-          <div class="method-pill">
-            <strong>Awards</strong>
-            <div>
-              <span>Named &amp; Linked — Never Scored</span>
-              <small>MICHELIN Keys, Forbes Five-Star, World’s 50 Best, and comments-only reviews (like The Points Guy &amp; YouTube tours) link straight to the source without invented numbers</small>
-            </div>
-          </div>
-          <div class="method-pill">
-            <strong>Compare</strong>
-            <div>
-              <span>Agreement vs. Opinions Differ</span>
-              <small>Strong Agreement (&le;6 pts), Mostly Aligned (&le;12 pts), and Opinions Differ (&gt;12 pts) are pure status badges comparing real scores — they never alter the StayOdds %</small>
-            </div>
-          </div>
-        </div>
+        </details>
       </div>
     </section>
 
@@ -212,16 +217,33 @@
     <section class="h2h-section">
       <div class="container">
         <div class="h2h-box">
-          <div class="section-header" style="margin-bottom:16px;flex-wrap:wrap;gap:12px;">
+          <div class="section-header" style="margin-bottom:14px;flex-wrap:wrap;gap:12px;">
             <div>
               <h2 class="section-title">Compare Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Search or pick two luxury stays side-by-side (or add a 3rd hotel for a 3-way comparison) — verified first-hand scores, critics, official awards, property status, and live rate links.</p>
+              <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side — Verified StayOdds vs. Market Odds, awards, property status, and live dates.</p>
             </div>
             <div class="h2h-header-actions">
               <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Toggle 3-way hotel comparison">+ Add 3rd Hotel</button>
               <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">&#x1F4F8; Share VS Card</button>
               <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
             </div>
+          </div>
+
+          <div class="date-rate-bar h2h-date-bar" id="h2hDateRateBar">
+            <div class="date-rate-inputs">
+              <label><span>Check-in</span><input type="date" id="h2hCheckin" /></label>
+              <label><span>Check-out</span><input type="date" id="h2hCheckout" /></label>
+              <label><span>Guests</span>
+                <select id="h2hAdults">
+                  <option value="1">1 Adult</option>
+                  <option value="2" selected>2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </label>
+              <button type="button" class="btn btn-outline date-rate-check-btn" id="h2hCheckLiveRatesBtn">&#128176; Check Live Rates</button>
+            </div>
+            <div class="date-rate-status" id="h2hLiveRatesStatus">Dates auto-apply to Booking.com links &bull; Click <strong>Check Live Rates</strong> to fetch real-time prices for these exact hotels.</div>
           </div>
 
           <div class="h2h-selectors-enhanced" id="h2hSelectorsWrap">
@@ -279,16 +301,16 @@
       </div>
     </section>
 
-    <!-- Full StayOdds Global Leaderboard -->
+    <!-- Full StayOdds Global Directory -->
     <section class="leaderboard-section">
       <div class="container">
         <div class="section-header" style="flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary, our Global Luxury Directory, or your saved Shortlist — every award, critic score, and YouTube review links directly to its source.</p>
+            <p class="section-subtitle">Solid badges are <strong>Verified StayOdds</strong> (70% My Stay + 30% Market); outlined badges are unvisited <strong>Market Odds</strong>.</p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-            <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Consistency Leaderboard &rarr;</a>
+            <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Leaderboard &rarr;</a>
             <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">&#x2B07; Export CSV</button>
           </div>
         </div>
@@ -306,58 +328,88 @@
           </div>
         </div>
 
-        <div class="controls-bar">
-          <div class="scorecard-filters">
-            <div class="filter-pills" id="consensusRegionPills" role="tablist" aria-label="Filter by region"></div>
-            <select id="verdictFilter" class="select-control" aria-label="Filter by StayOdds status">
-              <option value="All">All Statuses</option>
-              <option value="Strong Agreement">Strong Agreement (2+ Scores)</option>
-              <option value="Mostly Aligned">Mostly Aligned (2+ Scores)</option>
-              <option value="Opinions Differ">Opinions Differ (See Why)</option>
-              <option value="First-Hand Verified">First-Hand Verified</option>
-              <option value="Verified Guest Score">Verified Guest Score</option>
-              <option value="Award-Winning">Award-Winning</option>
-            </select>
+        <!-- Compact Primary Toolbar (Search + Macro Regions + Sort + More Filters Drawer Toggle) -->
+        <div class="controls-bar controls-bar-compact">
+          <div class="controls-search-group" style="flex:1;min-width:240px;">
+            <div class="search-wrap" style="flex:1;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="search" id="consensusSearch" class="search-input" placeholder="Search hotel, city, country, or brand…" aria-label="Search resorts" />
+            </div>
+          </div>
+
+          <div class="scorecard-filters" style="gap:8px;">
             <select id="consensusSort" class="select-control" aria-label="Sort StayOdds directory">
-              <option value="visited">Sort: First-Hand Verified First</option>
-              <option value="odds">Sort: Highest StayOdds %</option>
-              <option value="gap">Sort: Most Disagreement (Points Difference)</option>
+              <option value="visited">Sort: Verified Stays First</option>
+              <option value="odds">Sort: Highest StayOdds / Market %</option>
+              <option value="gap">Sort: Biggest Founder vs. Market Gap</option>
+              <option value="price_asc">Sort: Indicative Price (Low &rarr; High)</option>
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
-              <option value="pillar_rooms">Pillar: Best Hard Product / Rooms (My Stay)</option>
+              <option value="pillar_rooms">Pillar: Best Rooms (My Stay)</option>
               <option value="pillar_service">Pillar: Best Service (My Stay)</option>
-              <option value="pillar_food">Pillar: Best Food &amp; Breakfast (My Stay)</option>
-              <option value="pillar_grounds">Pillar: Best Vibe &amp; Layout (My Stay)</option>
+              <option value="pillar_food">Pillar: Best Food (My Stay)</option>
+              <option value="pillar_grounds">Pillar: Best Vibe (My Stay)</option>
               <option value="pillar_value">Pillar: Best Value (My Stay)</option>
               <option value="name">Sort: A–Z Name</option>
             </select>
+            <button type="button" class="btn btn-outline more-filters-toggle-btn" id="compareMoreFiltersBtn" aria-expanded="false" aria-controls="compareMoreFiltersDrawer">
+              &#9881; More Filters <span class="filter-count-badge" id="compareFilterCountBadge" hidden>0</span>
+            </button>
             <div class="view-toggle" role="group" aria-label="Switch StayOdds layout">
               <button class="view-toggle-btn active" id="consensusViewCardsBtn" type="button">Cards</button>
-              <button class="view-toggle-btn" id="consensusViewTableBtn" type="button">Comparison Table</button>
+              <button class="view-toggle-btn" id="consensusViewTableBtn" type="button">Table</button>
             </div>
-          </div>
-
-          <div class="controls-search-group">
-            <div class="search-wrap">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="search" id="consensusSearch" class="search-input" placeholder="Search St. Regis, W Maldives, Four Seasons…" aria-label="Search resorts" />
-            </div>
-            <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
+            <button type="button" class="so-request-btn" data-open-resort-request>+ Request</button>
           </div>
         </div>
 
-        <div class="feature-filter-bar">
-          <span class="feature-filter-label">Verified Filters:</span>
-          <div class="feature-filter-pills" id="featureFilterPills" role="group" aria-label="Filter by verified hotel awards, video reviews, loyalty perks, adults-only, family kids-club, or beach access"></div>
-        </div>
+        <!-- Clean 8 Macro Regions Strip -->
+        <div class="filter-pills macro-region-pills" id="consensusRegionPills" role="tablist" aria-label="Filter by macro region" style="margin-bottom:10px;"></div>
 
-        <div class="feature-filter-bar style-filter-bar">
-          <span class="feature-filter-label">Travel Style:</span>
-          <div class="feature-filter-pills" id="travelStylePills" role="group" aria-label="Filter by travel style: beach, snorkelling, overwater, city, culture, safari, mountain, spa, all-inclusive"></div>
-        </div>
+        <!-- Active Secondary Filter Chips Bar (only visible when drawer filters are active) -->
+        <div class="active-filters-strip" id="compareActiveFiltersStrip" hidden></div>
 
-        <div class="feature-filter-bar month-filter-bar">
-          <span class="feature-filter-label">Best Month to Go:</span>
-          <div class="feature-filter-pills" id="bestMonthPills" role="group" aria-label="Filter hotels by best dry and peak weather months"></div>
+        <!-- Collapsible More Filters Drawer -->
+        <div class="more-filters-drawer" id="compareMoreFiltersDrawer" hidden>
+          <div class="more-filters-drawer-head">
+            <strong>Refine Luxury Hotels</strong>
+            <button type="button" class="btn-link-clear" id="compareClearDrawerFiltersBtn">Clear all filters</button>
+          </div>
+          <div class="drawer-select-row">
+            <label class="drawer-field">
+              <span>Status / Agreement</span>
+              <select id="verdictFilter" class="select-control" aria-label="Filter by StayOdds status">
+                <option value="All">All Statuses</option>
+                <option value="Strong Agreement">Strong Agreement (2+ Sources)</option>
+                <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
+                <option value="Opinions Differ">Opinions Differ (See Why)</option>
+                <option value="First-Hand Verified">First-Hand Verified</option>
+                <option value="Market Odds (1 Source)">Market Odds (1 Source)</option>
+                <option value="Award-Winning">Award-Winning</option>
+              </select>
+            </label>
+            <label class="drawer-field">
+              <span>Indicative Nightly Budget</span>
+              <select id="priceTierFilter" class="select-control" aria-label="Filter by indicative nightly budget">
+                <option value="all">Any Budget</option>
+                <option value="under500">Under £500 / night</option>
+                <option value="500to1000">£500 – £1,000 / night</option>
+                <option value="1000to1800">£1,000 – £1,800 / night</option>
+                <option value="1800plus">£1,800+ / night</option>
+              </select>
+            </label>
+          </div>
+          <div class="feature-filter-bar">
+            <span class="feature-filter-label">Verified Awards, Perks &amp; Profile:</span>
+            <div class="feature-filter-pills" id="featureFilterPills" role="group" aria-label="Filter by verified hotel awards, video reviews, loyalty perks, adults-only, family kids-club, or beach access"></div>
+          </div>
+          <div class="feature-filter-bar style-filter-bar">
+            <span class="feature-filter-label">Travel Style:</span>
+            <div class="feature-filter-pills" id="travelStylePills" role="group" aria-label="Filter by travel style"></div>
+          </div>
+          <div class="feature-filter-bar month-filter-bar">
+            <span class="feature-filter-label">Best Month to Go:</span>
+            <div class="feature-filter-pills" id="bestMonthPills" role="group" aria-label="Filter hotels by best dry and peak weather months"></div>
+          </div>
         </div>
 
         <div class="consensus-list" id="consensusList"></div>
@@ -443,6 +495,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=35"></script>
+  <script type="module" src="../assets/compare.js?v=36"></script>
 </body>
 </html>

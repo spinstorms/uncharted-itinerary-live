@@ -26,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -103,7 +103,7 @@
         <div class="detail-hero-media">
           <img src="../../assets/thumbs/canopy-by-hilton-paris-eiffel-tower.webp?v=169" alt="Canopy by Hilton Paris Eiffel Tower" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
-            <span class="tag tag-slate">Global Directory</span>
+            <span class="tag tag-slate">Market Odds</span>
             <span class="tag tag-teal" id="heroStatusBadge">Mostly Aligned</span>
             
           </div>
@@ -119,17 +119,17 @@
           <p class="detail-verdict">Food, nice room finishes, and rooftop.</p>
 
           <div class="detail-kpi-row">
-            <div class="detail-kpi is-primary " id="kpiOddsCard">
+            <div class="detail-kpi is-primary is-market-track " id="kpiOddsCard">
               <strong id="kpiOdds">86%</strong>
-              <span id="kpiOddsLbl">StayOdds</span>
+              <span id="kpiOddsLbl">Market Odds</span>
             </div>
             <div class="detail-kpi">
               <strong>Not Stayed</strong>
               <span>My Stay Score</span>
             </div>
             <div class="detail-kpi">
-              <strong>92<span>/100</span></strong>
-              <span>The Flip-Flop Traveller</span>
+              <strong>86%</strong>
+              <span>Market Odds (2 src)</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">8.2<span>/10</span></strong>
@@ -139,31 +139,45 @@
 
           <details class="stayodds-explainer">
             <summary>
-              <span>How is this StayOdds % calculated?</span>
+              <span>How is this Market Odds % calculated?</span>
               <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
             </summary>
             <div class="stayodds-explainer-body">
               <div class="stayodds-explainer-eq" id="stayOddsEquation">35% Published Critics (92%) + 65% Verified Guests (8.2/10 → 82%) = 86% StayOdds</div>
               <ul class="stayodds-explainer-list">
-                <li><strong>One headline percentage, zero double-counting:</strong> StayOdds % is simply the weighted average of whichever independent numeric scores exist above — never inflated or tweaked by hidden bonuses.</li>
-                <li><strong>My Stay Score (/25):</strong> Our personal 5-category score (Value, Room Quality, Vibe, Food, Service — each out of 5, multiplied by 4 to convert to a 100% scale).</li>
-                <li><strong>Published Critics &amp; Video Reviewers (/100):</strong> Average of reviewers (including Walker Hotel Index by Ryan Walker on a 50-point scale normalized &times; 2, Nonstop Dan &amp; Nonstop Dan Vlogs on a 100-point scale, The Flip-Flop Traveller on a 100-point scale, The Luxury Travel Expert on a 10-point scale, and Fat Voyage on a 20-point scale) only where an explicit numeric score is verified from a real source. When a reviewer is known to award a score/points total that cannot be verified from text or captions, it is marked <em>&ldquo;Score/points awarded — unable to verify exact figure&rdquo;</em> and excluded from numeric math.</li>
-                <li><strong>Google Guests (/5★):</strong> Live guest rating from Google (stars &times; 20 = 100% scale).</li>
-                <li><strong>Weighting rules:</strong> 40% My Stay / 30% Critics / 30% Guests when all three exist &bull; 55% My Stay / 45% other source when two exist &bull; 35% Critics / 65% Guests when we haven&rsquo;t stayed yet &bull; 100% when only one numeric source exists.</li>
+                <li><strong>Two-Track Scoring (My Voice Leads):</strong> When I have personally stayed and scored a hotel (/25), <strong>Verified StayOdds</strong> weights <strong>70% My Stay + 30% Market Odds</strong> (or 100% My Stay if no external score exists), with a transparent <strong>Founder vs. Market</strong> delta.</li>
+                <li><strong>Market Odds Baseline (All Hotels):</strong> Unvisited properties display an outlined <strong>Market Odds</strong> baseline (35% Published Critics &bull; 65% Verified Guests when both exist, or 100% of whichever verified source exists), with gentle Bayesian dampening on tiny (&lt;40 review) guest samples so thin 100% outliers don&rsquo;t distort rankings.</li>
+                <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
               </ul>
             </div>
           </details>
 
+          <div class="date-rate-bar" id="detailDateRateBar">
+            <div class="date-rate-inputs">
+              <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>
+              <label><span>Check-out</span><input type="date" id="detailCheckout" /></label>
+              <label><span>Guests</span>
+                <select id="detailAdults">
+                  <option value="1">1 Adult</option>
+                  <option value="2" selected>2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </label>
+              
+            </div>
+            <div class="date-rate-status" id="detailLiveRateStatus">
+              Select trip dates to pass them straight into Booking.com.
+            </div>
+          </div>
+
           <div class="detail-actions">
-            <a class="btn btn-primary" href="https://www.booking.com/searchresults.html?ss=Canopy+by+Hilton+Paris+Eiffel+Tower+Paris+France" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
+            <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="https://www.booking.com/searchresults.html?ss=Canopy+by+Hilton+Paris+Eiffel+Tower+Paris+France" href="https://www.booking.com/searchresults.html?ss=Canopy+by+Hilton+Paris+Eiffel+Tower+Paris+France" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
             
             <a class="btn btn-outline" href="../../compare/?a=canopy-by-hilton-paris-eiffel-tower">Compare Head-to-Head</a>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">&#x1F4F8; Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="canopy-by-hilton-paris-eiffel-tower" data-resort-name="Canopy by Hilton Paris Eiffel Tower" aria-pressed="false">&#9825; Save to Shortlist</button>
             <a class="tripadvisor-link" href="https://www.tripadvisor.com/Search?q=Canopy%20by%20Hilton%20Paris%20Eiffel%20Tower%20Paris&amp;ssrc=h" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
-          </div>
-          <div class="vip-perks-note">
-            <strong>Luxury Advisor VIP Perks Slot:</strong> Coming soon — book eligible 5-star stays with complimentary breakfast, resort credit &amp; room upgrades.
           </div>
         </div>
       </section>
@@ -174,7 +188,7 @@
           <div class="opinion-gap-head">
             <div>
               <span class="tag tag-teal" id="gapStatusBadge">Mostly Aligned</span>
-              <h2>Critics &amp; Official Awards vs. Real Guest Score</h2>
+              <h2>Published Critics vs. Real Guests</h2>
               <p class="opinion-gap-headline" id="gapHeadline">The Flip-Flop Traveller rated this +10 pts higher than real guests.</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
@@ -234,13 +248,13 @@
           <div class="detail-panel">
             <div class="detail-panel-head">
               <h3>StayOdds Weighting</h3>
-              <span class="tag">Global Directory</span>
+              <span class="tag">Market Odds</span>
             </div>
-            <p class="detail-panel-sub" id="weightFormulaSub">35% Published Critics • 65% Verified Guests</p>
+            <p class="detail-panel-sub" id="weightFormulaSub">Market Odds: 35% Published Critics • 65% Verified Guests</p>
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
               <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">0%</span><strong>—</strong><small>My Stay</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">35%</span><strong>92%</strong><small>Published Critics</small></div>
-              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">65%</span><strong id="weightGuestVal">82%</strong><small>Google Guests</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">65%</span><strong id="weightGuestVal">82%</strong><small>Verified Guests</small></div>
             </div>
             
           </div>
@@ -248,7 +262,7 @@
           <div class="detail-panel">
             <div class="detail-panel-head">
               <h3>My Uncharted Scorecard</h3>
-              <span class="tag tag-slate">Global Directory</span>
+              <span class="tag tag-slate">Market Odds</span>
             </div>
             <p class="detail-panel-sub" style="margin-top:12px;">We have not scored a personal stay here yet. Once we stay and publish a scored review, our Uncharted Scorecard will appear here.</p>
           </div>
@@ -296,7 +310,7 @@
             <img src="../../assets/thumbs/w-sardinia.webp?v=169" alt="W Sardinia — Poltu Quatu" loading="lazy" decoding="async" />
             <div class="related-card-body">
               <div class="meta-line">
-                <span class="tag tag-accent">86% StayOdds</span>
+                <span class="tag tag-accent">88% StayOdds</span>
                 <span>Strong Agreement</span>
               </div>
               <h4>W Sardinia — Poltu Quatu</h4>
@@ -413,6 +427,75 @@
       if (nearbyList) nearbyList.href = "../../compare/?region=" + regionQ + "&embed=1";
     }
 
+    // Date-aware outbound booking links + explicit on-demand live rate check
+    const ciEl = document.getElementById("detailCheckin");
+    const coEl = document.getElementById("detailCheckout");
+    const adEl = document.getElementById("detailAdults");
+    const bookBtn = document.getElementById("detailPrimaryBookingBtn");
+    const rateBtn = document.getElementById("detailLiveRateBtn");
+    const rateStatus = document.getElementById("detailLiveRateStatus");
+
+    const fmtDate = (d) => d.toISOString().slice(0, 10);
+    const defCi = new Date(Date.now() + 45 * 86400000);
+    const defCo = new Date(Date.now() + 47 * 86400000);
+    if (ciEl && !ciEl.value) ciEl.value = qsParams.get("checkin") || fmtDate(defCi);
+    if (coEl && !coEl.value) coEl.value = qsParams.get("checkout") || fmtDate(defCo);
+    if (adEl && qsParams.get("adults")) adEl.value = qsParams.get("adults");
+
+    function updateDatedBookingLink() {
+      if (!bookBtn) return;
+      const baseUrl = bookBtn.getAttribute("data-base-url") || bookBtn.href;
+      const ci = ciEl?.value || "";
+      const co = coEl?.value || "";
+      const ad = adEl?.value || "2";
+      try {
+        const u = new URL(baseUrl);
+        if (/booking\.com/i.test(u.hostname) && ci && co && co > ci) {
+          u.searchParams.set("checkin", ci);
+          u.searchParams.set("checkout", co);
+          u.searchParams.set("group_adults", ad);
+          u.searchParams.set("no_rooms", "1");
+          bookBtn.href = u.toString();
+        }
+      } catch (_) {}
+    }
+    [ciEl, coEl, adEl].forEach((el) => el?.addEventListener("change", updateDatedBookingLink));
+    updateDatedBookingLink();
+
+    rateBtn?.addEventListener("click", async () => {
+      const nid = rateBtn.getAttribute("data-nuitee-id");
+      const ci = ciEl?.value || "";
+      const co = coEl?.value || "";
+      const ad = adEl?.value || "2";
+      if (!nid || !ci || !co || co <= ci) {
+        if (rateStatus) rateStatus.textContent = "Please select a valid check-in and check-out date.";
+        return;
+      }
+      rateBtn.disabled = true;
+      rateBtn.textContent = "Checking…";
+      if (rateStatus) rateStatus.textContent = "Checking live nightly rate for your selected dates…";
+      try {
+        const url = `https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-hotel-rates?hotel_ids=${encodeURIComponent(nid)}&checkin=${encodeURIComponent(ci)}&checkout=${encodeURIComponent(co)}&adults=${encodeURIComponent(ad)}&currency=GBP`;
+        const res = await fetch(url, { headers: { Accept: "application/json" } });
+        const data = await res.json();
+        const r = data?.rates?.[nid];
+        if (r && r.perNight) {
+          if (rateStatus) {
+            rateStatus.innerHTML = `<strong style="color:#0f766e;">Live Rate (${ci} → ${co}): £${Number(r.perNight).toLocaleString("en-GB")}/nt</strong> (£${Number(r.total).toLocaleString("en-GB")} total for ${r.nights} nt${r.refundable ? " • Refundable" : ""})`;
+          }
+        } else if (data?.status === "cap_reached") {
+          if (rateStatus) rateStatus.textContent = "Daily live-rate quota reached — click Check Live Rates on Booking.com above (your dates are already pre-filled).";
+        } else {
+          if (rateStatus) rateStatus.textContent = "No instant partner rooms returned for those exact dates — click Check Live Rates on Booking.com above (dates pre-filled).";
+        }
+      } catch (_) {
+        if (rateStatus) rateStatus.textContent = "Unable to check live rate right now — click Booking.com above with your dates pre-filled.";
+      } finally {
+        rateBtn.disabled = false;
+        rateBtn.textContent = "Check Live Rate";
+      }
+    });
+
     const placeId = "";
     const firstHand = false;
     const ours100 = null;
@@ -482,7 +565,9 @@
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
             return;
           }
-          const g100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
+          const rawG100 = typeof g.normalized100 === "number" ? g.normalized100 : Math.round(g.rating * 20);
+          const rc = typeof g.reviewCount === "number" ? g.reviewCount : null;
+          const g100 = rc && rc > 0 && rc < 40 ? Math.round((rawG100 * rc + 90 * 15) / (rc + 15)) : rawG100;
           const strip = document.getElementById("liveGoogleStrip");
           const mapsUrl = g.googleMapsUri || mapsFallbackUrl;
           if (strip) {
@@ -508,34 +593,31 @@
             if (gBar) gBar.style.width = `${g100}%`;
           }
 
-          // Recalculate StayOdds % live when no static licensed guest score was already baked in
+          // Recalculate Two-Track StayOdds % live when no static licensed guest score was already baked in
           if (staticGuest100 == null) {
+            const mkt = critic100 != null ? Math.round(critic100 * 0.35 + g100 * 0.65) : g100;
             let wFH = 0, wCr = 0, wGu = 0, odds = null, formula = "";
             if (firstHand && ours100 != null) {
-              if (critic100 != null) {
-                wFH = 40; wCr = 30; wGu = 30;
-                odds = Math.round(ours100 * 0.4 + critic100 * 0.3 + g100 * 0.3);
-                formula = "40% My Stay • 30% Published Critics • 30% Google Guests";
-              } else {
-                wFH = 55; wCr = 0; wGu = 45;
-                odds = Math.round(ours100 * 0.55 + g100 * 0.45);
-                formula = "55% My Stay • 45% Google Guests";
-              }
+              wFH = 70;
+              wCr = critic100 != null ? 11 : 0;
+              wGu = critic100 != null ? 19 : 30;
+              odds = Math.round(ours100 * 0.70 + mkt * 0.30);
+              formula = `70% My Stay • 30% Market Odds (${mkt}%)`;
             } else if (critic100 != null) {
               wFH = 0; wCr = 35; wGu = 65;
-              odds = Math.round(critic100 * 0.35 + g100 * 0.65);
-              formula = "35% Published Critics • 65% Google Guests";
+              odds = mkt;
+              formula = "Market Odds: 35% Published Critics • 65% Google Guests";
             } else {
               wFH = 0; wCr = 0; wGu = 100;
-              odds = g100;
-              formula = "100% Google Guest Rating";
+              odds = mkt;
+              formula = "Market Odds: 100% Google Guest Rating";
             }
 
             const active = [firstHand ? ours100 : null, critic100, g100].filter((v) => v != null);
-            let badgeText = active.length === 1 ? "Google Guest Rating" : "Mostly Aligned";
+            let badgeText = active.length === 1 ? "Market Odds (1 Source)" : "Mostly Aligned";
             let badgeClass = "tag-teal";
             if (active.length >= 2) {
-              const spread = Math.max(...active) - Math.min(...active);
+              const spread = firstHand && ours100 != null ? Math.abs(ours100 - mkt) : Math.max(...active) - Math.min(...active);
               if (spread <= 6) { badgeText = "Strong Agreement"; badgeClass = "tag-accent"; }
               else if (spread <= 12) { badgeText = "Mostly Aligned"; badgeClass = "tag-teal"; }
               else { badgeText = "Opinions Differ"; badgeClass = "tag-caution"; }
@@ -545,7 +627,7 @@
             const kpiOddsLbl = document.getElementById("kpiOddsLbl");
             const kpiOddsCard = document.getElementById("kpiOddsCard");
             if (kpiOdds && odds != null) kpiOdds.textContent = `${odds}%`;
-            if (kpiOddsLbl) kpiOddsLbl.textContent = "StayOdds";
+            if (kpiOddsLbl) kpiOddsLbl.textContent = firstHand ? "Verified StayOdds" : "Market Odds";
             if (kpiOddsCard) kpiOddsCard.classList.toggle("is-caution", badgeClass === "tag-caution");
 
             const heroBadge = document.getElementById("heroStatusBadge");
@@ -556,41 +638,33 @@
               el.className = `tag ${badgeClass}`;
             });
 
-            if (left100 != null) {
-              const d = left100 - g100;
-              if (pill) pill.innerHTML = `<strong>${d > 0 ? "+" + d : d} pts</strong><span>Opinion Gap</span>`;
+            const rhs = firstHand ? mkt : g100;
+            if (left100 != null && rhs != null) {
+              const d = left100 - rhs;
+              if (pill) pill.innerHTML = `<strong>${d > 0 ? "+" + d : d} pts</strong><span>${firstHand ? "Founder vs Market" : "Opinion Gap"}</span>`;
               const gapHead = document.getElementById("gapHeadline");
               if (gapHead) {
                 if (Math.abs(d) <= 5) {
                   gapHead.textContent = firstHand
-                    ? `Tight agreement (${d >= 0 ? "+" + d : d} pts) — my stay matched real guest reviews.`
+                    ? `Tight agreement (${d >= 0 ? "+" + d : d} pts) — my stay matched Market Odds.`
                     : `Tight agreement (${d >= 0 ? "+" + d : d} pts) — ${criticLabel} and real guests agree.`;
                 } else if (d > 5) {
                   gapHead.textContent = firstHand
-                    ? `I rated this +${d} pts higher than real guests — see what I loved below.`
+                    ? `I rated this +${d} pts higher than Market Odds — see what stood out.`
                     : `${criticLabel} rated this +${d} pts higher than real guests.`;
                 } else {
                   gapHead.textContent = firstHand
-                    ? `I rated this ${d} pts stricter than real guests — see what stood out & what held it back.`
+                    ? `I rated this ${d} pts stricter than Market Odds — see what held it back.`
                     : `Real guests rated this +${Math.abs(d)} pts higher than ${criticLabel}.`;
                 }
               }
             }
 
-            const eqParts = [];
-            if (wFH > 0 && ours100 != null) {
-              const rawFh = personalLabel ? `${personalLabel} → ` : "";
-              eqParts.push(`${wFH}% My Stay (${rawFh}${ours100}%)`);
-            }
-            if (wCr > 0 && critic100 != null) {
-              eqParts.push(`${wCr}% Published Critics (${critic100}%)`);
-            }
-            if (wGu > 0) {
-              eqParts.push(`${wGu}% Google Guests (${g.rating.toFixed(1)}★ → ${g100}%)`);
-            }
             const eqEl = document.getElementById("stayOddsEquation");
-            if (eqEl && eqParts.length && odds != null) {
-              eqEl.textContent = `${eqParts.join(" + ")} = ${odds}% StayOdds`;
+            if (eqEl && odds != null) {
+              eqEl.textContent = firstHand && ours100 != null
+                ? `70% My Stay (${personalLabel ? personalLabel + " → " : ""}${ours100}%) + 30% Market Odds (${mkt}%) = ${odds}% Verified StayOdds`
+                : `${formula} = ${odds}% Market Odds`;
             }
 
             const wSub = document.getElementById("weightFormulaSub");
@@ -608,12 +682,6 @@
               shareCardState.odds.greatStayOdds = odds;
               shareCardState.odds.statusBadge = badgeText;
               shareCardState.odds.verifiedGuest = { rating: g.rating, scale: 5 };
-              if (left100 != null) {
-                const d = left100 - g100;
-                shareCardState.odds.opinionGap.deltaLabel = `${d > 0 ? "+" + d : d} pts`;
-                const ghEl = document.getElementById("gapHeadline");
-                if (ghEl) shareCardState.odds.opinionGap.headline = ghEl.textContent || shareCardState.odds.opinionGap.headline;
-              }
             }
           }
         })
@@ -622,7 +690,7 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "canopy-by-hilton-paris-eiffel-tower", "name": "Canopy by Hilton Paris Eiffel Tower", "location": "Paris", "country": "France", "brand": "Luxury Collection & Boutique", "priceRange": "", "standout": "Food, nice room finishes, and rooftop.", "watchOut": "Room and public-area cleanliness issues • Missing small in-room amenities (toothbrush cup, tea, comb)", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: ORY"}, "thumbnail": "assets/thumbs/canopy-by-hilton-paris-eiffel-tower.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "", "nearbyConstruction": "", "sourceUrl": "", "sourceNote": "", "verifiedAt": ""}}, "odds": {"greatStayOdds": 86, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 92, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "92/100 (Breakfast 5/10)", "normalized100": 92}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 8.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "The Flip-Flop Traveller rated this +10 pts higher than real guests.", "deltaLabel": "+10 pts"}}};
+    const shareCardState = {"hotel": {"id": "canopy-by-hilton-paris-eiffel-tower", "name": "Canopy by Hilton Paris Eiffel Tower", "location": "Paris", "country": "France", "brand": "Luxury Collection & Boutique", "priceRange": "", "standout": "Food, nice room finishes, and rooftop.", "watchOut": "Room and public-area cleanliness issues • Missing small in-room amenities (toothbrush cup, tea, comb)", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: ORY"}, "thumbnail": "assets/thumbs/canopy-by-hilton-paris-eiffel-tower.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "", "nearbyConstruction": "", "sourceUrl": "", "sourceNote": "", "verifiedAt": ""}}, "odds": {"greatStayOdds": 86, "statusBadge": "Mostly Aligned", "tierLabel": "Market Odds", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 92, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "92/100 (Breakfast 5/10)", "normalized100": 92}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 8.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "The Flip-Flop Traveller rated this +10 pts higher than real guests.", "deltaLabel": "+10 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
       const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);

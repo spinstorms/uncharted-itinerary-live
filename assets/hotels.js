@@ -1,10 +1,12 @@
 import {
+  MACRO_REGIONS,
   computeStayOdds,
   formatPersonalScore,
+  getPriceDisplay,
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=8";
+} from "./stayodds-engine.js?v=9";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
@@ -227,12 +229,34 @@ function getScopedHotels() {
   return state.hotels;
 }
 
+function getAwardsCompositeRank(h) {
+  const m = getMichelinKeyCount(h);
+  const w50 = getW50BestRank(h);
+  const f = getForbesRank(h);
+  if (m == null && w50 == null && f == null && !(h.officialAwards && h.officialAwards.length)) return null;
+  let score = 0;
+  if (m != null) score += m * 300;
+  if (w50 != null) score += w50 <= 50 ? 250 + (51 - w50) * 3 : 180;
+  if (f != null) score += f === 5 ? 140 : f === 4 ? 80 : 40;
+  score += (h.officialAwards || []).length * 10;
+  return score;
+}
+
 function getFilteredHotels() {
   const q = state.search.trim().toLowerCase();
   const list = getScopedHotels().filter((h) => {
     if (state.region !== "All" && h.region !== state.region) return false;
     if (state.brand !== "All" && !matchesBrandCategory(h, state.brand)) return false;
     if (!matchesTravelStyle(h, state.style)) return false;
+    if (state.month && !matchesBestMonth(h, state.month)) return false;
+    if (state.profileFilter !== "all") {
+      const gp = getGuestProfile(h);
+      const pp = getPartnerPrograms(h);
+      if (state.profileFilter === "adults" && !gp.isAdultsOnly) return false;
+      if (state.profileFilter === "family" && !gp.isFamilyFriendly) return false;
+      if (state.profileFilter === "preferred" && !pp.hasPreferredPerks) return false;
+      if (state.profileFilter === "points" && !pp.isPointsEligible) return false;
+    }
     if (state.coverage !== "All" && (h.coverageType || "Global Directory") !== state.coverage) {
       return false;
     }
@@ -296,14 +320,10 @@ function getFilteredHotels() {
         diff = cmpNullableNum(oa.critic100, ob.critic100, d);
       } else if (k === "guest") {
         diff = cmpNullableNum(oa.guest100, ob.guest100, d);
-      } else if (k === "gap") {
-        diff = cmpNullableNum(getDisagreementPts(oa), getDisagreementPts(ob), d);
-      } else if (k === "michelin") {
-        diff = cmpNullableNum(getMichelinKeyCount(a), getMichelinKeyCount(b), d);
-      } else if (k === "w50") {
-        diff = cmpNullableNum(getW50BestRank(a), getW50BestRank(b), d);
-      } else if (k === "forbes") {
-        diff = cmpNullableNum(getForbesRank(a), getForbesRank(b), d);
+      } else if (k === "awards") {
+        diff = cmpNullableNum(getAwardsCompositeRank(a), getAwardsCompositeRank(b), d);
+      } else if (k === "price") {
+        diff = cmpNullableNum(getPriceDisplay(a).numericGbp, getPriceDisplay(b).numericGbp, d);
       }
       if (diff !== 0) return diff;
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -389,7 +409,12 @@ function renderRegionPills() {
   const container = qs("#regionPills");
   if (!container) return;
   const scoped = getScopedHotels();
-  const regions = ["All", ...Array.from(new Set(scoped.map((h) => h.region)))];
+  const present = new Set(scoped.map((h) => h.region).filter(Boolean));
+  const ordered = MACRO_REGIONS.filter((r) => present.has(r));
+  for (const r of present) {
+    if (!ordered.includes(r)) ordered.push(r);
+  }
+  const regions = ["All", ...ordered];
   container.innerHTML = regions
     .map((r) => {
       const cnt = r === "All" ? scoped.length : scoped.filter((h) => h.region === r).length;
@@ -471,9 +496,10 @@ function populateBrands() {
 
 function buildPopupHtml(h) {
   const o = getOdds(h);
+  const priceInfo = getPriceDisplay(h);
   const awardsBadges = (h.officialAwards || [])
-    .slice(0, 2)
-    .map((a) => `<span class="tag tag-accent" style="font-size:10.5px;">${escapeHtml(a.label)}</span>`)
+    .slice(0, 1)
+    .map((a) => `<span class="tag tag-teal" style="font-size:10.5px;">🏆 ${escapeHtml(a.label)}</span>`)
     .join(" ");
 
   const reviewHref = getReviewHref(h);
@@ -484,16 +510,16 @@ function buildPopupHtml(h) {
       <div class="map-popup-media">
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
         <span class="map-popup-score">${
-          o.personalScoreLabel
-            ? `${escapeHtml(o.personalScoreLabel.replace(/ /g, ""))} My Stay`
-            : o.greatStayOdds != null
-            ? `${o.greatStayOdds}% StayOdds`
-            : escapeHtml(o.tierLabel)
+          o.greatStayOdds != null
+            ? `${o.greatStayOdds}% ${o.scoreTrack === "verified" ? "Verified" : "Market"}`
+            : escapeHtml(o.scoreTrackLabel)
         }</span>
       </div>
       <div class="map-popup-body">
         <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
-          <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}" style="font-size:10.5px;">${escapeHtml(o.tierLabel)}</span>
+          <span class="tag ${o.scoreTrack === "verified" ? "tag-accent" : "tag-slate"}" style="font-size:10.5px;">${escapeHtml(o.scoreTrackLabel)}</span>
+          ${o.personalScoreLabel ? `<span class="tag tag-accent" style="font-size:10.5px;">My Stay ${escapeHtml(o.personalScoreLabel)}</span>` : ""}
+          ${priceInfo.label ? `<span class="price-chip-indicative" style="font-size:10.5px;padding:2px 6px;">${escapeHtml(priceInfo.label)}</span>` : ""}
           ${awardsBadges}
         </div>
         <h4>${escapeHtml(h.name)}</h4>
@@ -612,12 +638,10 @@ function renderScorecards(hotels) {
       { key: "location", label: "Destination", defaultDir: "asc" },
       { key: "odds", label: "StayOdds", defaultDir: "desc" },
       { key: "overall", label: "My Stay", defaultDir: "desc" },
-      { key: "critic", label: "Critics / Other", defaultDir: "desc" },
+      { key: "critic", label: "Critics", defaultDir: "desc" },
       { key: "guest", label: "Guests", defaultDir: "desc" },
-      { key: "gap", label: "Disagreement", defaultDir: "desc" },
-      { key: "michelin", label: "MICHELIN Keys", defaultDir: "desc" },
-      { key: "w50", label: "World's 50 Best", defaultDir: "asc" },
-      { key: "forbes", label: "Forbes", defaultDir: "desc" },
+      { key: "awards", label: "Awards", defaultDir: "desc" },
+      { key: "price", label: "Indicative Rate", defaultDir: "asc" },
     ];
 
     const thHtml = cols
@@ -644,6 +668,7 @@ function renderScorecards(hotels) {
               const mKeys = getMichelinKeyCount(h);
               const w50Rank = getW50BestRank(h);
               const forbesRank = getForbesRank(h);
+              const priceInfo = getPriceDisplay(h);
               const criticCell =
                 o.critic100 != null
                   ? `<strong>${o.critic100}/100</strong><div class="table-sub">${escapeHtml(
@@ -656,36 +681,32 @@ function renderScorecards(hotels) {
                   : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
                   ? `<span class="table-sub">Unverified</span>`
                   : "—";
-              const mCell =
-                mKeys != null
-                  ? `<span class="table-rank-pill is-key">${mKeys} ${mKeys === 1 ? "Key" : "Keys"}</span>`
-                  : "—";
-              const w50Cell =
-                w50Rank != null
-                  ? `<span class="table-rank-pill is-50">${w50Rank < 999 ? `#${w50Rank}` : "50 Best"}</span>`
-                  : "—";
-              const forbesCell =
+              const awardPills = [
+                mKeys != null ? `<span class="table-rank-pill is-key">${mKeys}K</span>` : "",
+                w50Rank != null ? `<span class="table-rank-pill is-50">${w50Rank < 999 ? `#${w50Rank}` : "50B"}</span>` : "",
                 forbesRank === 5
-                  ? `<span class="table-rank-pill is-forbes">5-Star</span>`
+                  ? `<span class="table-rank-pill is-forbes">5★</span>`
                   : forbesRank === 4
-                  ? `<span class="table-rank-pill is-forbes">4-Star</span>`
-                  : forbesRank === 3
-                  ? `<span class="table-rank-pill is-forbes">Rec.</span>`
-                  : "—";
-              const gapLabel = o.opinionGap && o.opinionGap.deltaLabel ? o.opinionGap.deltaLabel : "—";
+                  ? `<span class="table-rank-pill is-forbes">4★</span>`
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ");
+              const oddsTrackSub =
+                o.scoreTrack === "verified"
+                  ? `Verified${o.founderVsMarketDelta != null ? ` (${o.founderVsMarketDelta > 0 ? "+" : ""}${o.founderVsMarketDelta})` : ""}`
+                  : "Market Odds";
 
               return `
                 <tr data-resort-name="${escapeHtml(h.name)}">
                   <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
                   <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
-                  <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
+                  <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(oddsTrackSub)}</div></td>
                   <td>${o.personalScoreLabel ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong>` : `<span class="table-sub">${escapeHtml(o.visited ? o.tierLabel : "—")}</span>`}</td>
                   <td>${criticCell}</td>
                   <td>${o.verifiedGuest ? `<strong>${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}</strong>` : `<span class="table-sub">Live</span>`}</td>
-                  <td><strong>${escapeHtml(gapLabel)}</strong></td>
-                  <td>${mCell}</td>
-                  <td>${w50Cell}</td>
-                  <td>${forbesCell}</td>
+                  <td style="white-space:nowrap;">${awardPills || "—"}</td>
+                  <td style="white-space:nowrap;">${priceInfo.label ? `<strong>${escapeHtml(priceInfo.label)}</strong>` : `<span class="table-sub">—</span>`}</td>
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
@@ -734,6 +755,16 @@ function renderScorecards(hotels) {
         const reviewHref = getReviewHref(h);
         const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
         const s = h.scores;
+        const priceInfo = getPriceDisplay(h);
+        const trackCls = o.scoreTrack === "verified" ? "is-verified-track" : "is-market-track";
+        const deltaToneCls =
+          o.founderVsMarketDelta != null
+            ? o.founderVsMarketDelta < -4
+              ? "is-neg"
+              : o.founderVsMarketDelta > 4
+              ? "is-pos"
+              : ""
+            : "";
 
         const bar = (lbl, val) => {
           if (val == null || Number.isNaN(Number(val))) return "";
@@ -746,19 +777,18 @@ function renderScorecards(hotels) {
           `;
         };
 
-        const awardsHtml = (h.officialAwards || [])
-          .slice(0, 3)
-          .map(
-            (a) =>
-              `<a class="tag tag-accent" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 ${escapeHtml(a.label)} ↗</a>`
-          )
-          .join("");
+        const topAwardChip = (h.officialAwards || []).length
+          ? `<a class="tag tag-teal" href="${escapeHtml(h.officialAwards[0].sourceUrl)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">🏆 ${escapeHtml(h.officialAwards[0].label)} ↗</a>`
+          : "";
 
         const editorialUrlSet = new Set((o.editorialRatings || []).map((e) => e.sourceUrl));
         const linkedReviewsHtml = [
+          ...(h.officialAwards || []).map(
+            (a) => `<a class="source-chip" href="${escapeHtml(a.sourceUrl)}" target="_blank" rel="noopener noreferrer">🏆 ${escapeHtml(a.label)} ↗</a>`
+          ),
           ...(o.editorialRatings || []).map((e) => {
             const suffix = isScoreUnverified(e)
-              ? " (Score/points awarded — unable to verify exact figure)"
+              ? " (unverified)"
               : e.rawScore
               ? ` (${escapeHtml(e.rawScore)})`
               : "";
@@ -773,23 +803,23 @@ function renderScorecards(hotels) {
             ),
         ].join("");
 
+        const takeawayLine = h.whereWeDiffer || h.standout || o.opinionGap.headline || "";
+
         return `
-          <article class="scorecard-card" data-resort-name="${escapeHtml(h.name)}">
+          <article class="scorecard-card ${trackCls}" data-resort-name="${escapeHtml(h.name)}">
             <div class="scorecard-media">
               <a href="${getSeoHref(h)}">
                 <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
               </a>
-              <div class="scorecard-badge-overall ${o.firstHand ? "" : "is-short"}">
+              <div class="scorecard-badge-overall ${trackCls}">
                 <strong>${
-                  o.personalScore25 != null
-                    ? formatPersonalScore(o.personalScore25)
-                    : o.greatStayOdds != null
+                  o.greatStayOdds != null
                     ? `${o.greatStayOdds}%`
                     : o.officialAwards.length
                     ? "Award"
                     : "Open"
                 }</strong>
-                <span>${o.personalScore25 != null ? `/ ${o.personalScoreMax} Stay` : o.greatStayOdds != null ? "StayOdds" : "Details"}</span>
+                <span>${o.scoreTrack === "verified" ? "Verified" : "Market Odds"}</span>
               </div>
               <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
                 📍 Map
@@ -798,12 +828,17 @@ function renderScorecards(hotels) {
 
             <div class="scorecard-body">
               <div class="meta-line">
-                <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
-                ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
-                ${awardsHtml}
+                <span class="tag ${o.scoreTrack === "verified" ? "tag-accent" : "tag-slate"}">${escapeHtml(o.scoreTrackLabel)}</span>
+                ${o.personalScoreLabel ? `<span class="tag tag-accent">My Stay ${escapeHtml(o.personalScoreLabel)}</span>` : ""}
+                ${
+                  o.founderVsMarketLabel
+                    ? `<span class="founder-delta-pill ${deltaToneCls}">${escapeHtml(o.founderVsMarketLabel)}</span>`
+                    : topAwardChip || (h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : "")
+                }
+                ${priceInfo.label ? `<span class="price-chip-indicative">${escapeHtml(priceInfo.label)}</span>` : ""}
               </div>
               <h3 class="scorecard-title"><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
-              <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}</div>
+              <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""}</div>
 
               ${
                 o.firstHand && s
@@ -814,28 +849,35 @@ function renderScorecards(hotels) {
                       ${bar("Food", s.food)}
                       ${bar("Service", s.service)}
                     </div>`
-                  : `<div class="card-opinion-strip" style="margin:10px 0;">
-                      <span><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}</span>
-                    </div>`
+                  : takeawayLine
+                  ? `<p class="card-takeaway-line" style="margin:8px 0 10px;"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(takeawayLine)}</p>`
+                  : ""
               }
 
-              <div class="scorecard-notes">
-                ${h.whereWeDiffer ? `<div><strong>What I Liked &amp; Where I Differ:</strong> ${escapeHtml(h.whereWeDiffer)}</div>` : ""}
-                ${h.standout && h.standout !== h.whereWeDiffer ? `<div><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>` : ""}
-                ${h.watchOut ? `<div><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>` : ""}
-              </div>
+              ${
+                o.firstHand && takeawayLine
+                  ? `<p class="card-takeaway-line" style="margin:6px 0 10px;"><strong>My Take:</strong> ${escapeHtml(takeawayLine)}</p>`
+                  : ""
+              }
 
-              <div class="consensus-sources" style="margin:8px 0 12px;">
-                ${linkedReviewsHtml}
-                <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
-              </div>
+              <details class="card-details-expander" style="margin-bottom:12px;">
+                <summary>Sources &amp; Details &#9662;</summary>
+                <div class="card-details-body">
+                  ${h.standout && h.standout !== takeawayLine ? `<div style="font-size:12.5px;margin-bottom:5px;"><strong>Standout:</strong> ${escapeHtml(h.standout)}</div>` : ""}
+                  ${h.watchOut ? `<div style="font-size:12.5px;margin-bottom:6px;"><strong>Watch out:</strong> ${escapeHtml(h.watchOut)}</div>` : ""}
+                  <div class="consensus-sources">
+                    ${linkedReviewsHtml}
+                    <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
+                  </div>
+                </div>
+              </details>
 
               <div class="scorecard-actions">
-                <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Breakdown</a>
+                <a class="btn btn-primary" href="${getSeoHref(h)}">Breakdown</a>
                 ${
                   reviewHref
                     ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Short" : "Review"}</a>`
-                    : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>`
+                    : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">VS</a>`
                 }
                 <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
               </div>
@@ -915,7 +957,78 @@ function renderHotelShorts(hotels) {
     .join("");
 }
 
+function renderMapActiveFiltersAndBadge() {
+  const badge = qs("#mapFilterCountBadge");
+  const strip = qs("#mapActiveFiltersStrip");
+  const chips = [];
+  if (state.brand !== "All") chips.push({ key: "brand", label: `Brand: ${state.brand}` });
+  if (state.coverage !== "All") chips.push({ key: "coverage", label: `Tier: ${state.coverage}` });
+  if (state.profileFilter !== "all") {
+    const mapP = { adults: "Adults-Only", family: "Family & Kids", preferred: "Preferred Perks", points: "Points Brands" };
+    chips.push({ key: "profile", label: mapP[state.profileFilter] || state.profileFilter });
+  }
+  if (state.style !== "all") {
+    const sObj = TRAVEL_STYLES.find((s) => s.id === state.style);
+    chips.push({ key: "style", label: sObj ? `${sObj.icon ? sObj.icon + " " : ""}${sObj.label}` : state.style });
+  }
+  if (state.month >= 1 && state.month <= 12) {
+    chips.push({ key: "month", label: `Best in ${MONTH_LABELS[state.month - 1]}` });
+  }
+  if (badge) {
+    badge.textContent = String(chips.length);
+    badge.hidden = chips.length === 0;
+  }
+  if (strip) {
+    if (!chips.length) {
+      strip.hidden = true;
+      strip.innerHTML = "";
+    } else {
+      strip.hidden = false;
+      strip.innerHTML =
+        chips
+          .map(
+            (c) =>
+              `<button type="button" class="active-filter-chip" data-clear-map-filter="${escapeHtml(c.key)}">${escapeHtml(c.label)} &times;</button>`
+          )
+          .join("") +
+        `<button type="button" class="btn-link-clear" id="mapStripClearAll">Clear all</button>`;
+
+      strip.querySelectorAll("[data-clear-map-filter]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const k = btn.dataset.clearMapFilter;
+          if (k === "brand") {
+            state.brand = "All";
+            const el = qs("#brandFilter");
+            if (el) el.value = "All";
+          } else if (k === "coverage") {
+            state.coverage = "All";
+            const el = qs("#coverageFilter");
+            if (el) el.value = "All";
+          } else if (k === "profile") {
+            state.profileFilter = "all";
+            const el = qs("#mapProfileFilter");
+            if (el) el.value = "all";
+          } else if (k === "style") {
+            state.style = "all";
+            renderStylePills();
+          } else if (k === "month") {
+            state.month = 0;
+            window._renderMapMonthPills?.();
+          }
+          state.visibleLimit = PAGE_SIZE;
+          syncUrlParams();
+          renderAll(true);
+        });
+      });
+      strip.querySelector("#mapStripClearAll")?.addEventListener("click", () => {
+        qs("#mapClearDrawerFiltersBtn")?.click();
+      });
+    }
+  }
+}
+
 function renderAll(fitBounds = false) {
+  renderMapActiveFiltersAndBadge();
   const filtered = getFilteredHotels();
   const badge = qs("#hotelCountBadge");
   if (badge) {
@@ -934,6 +1047,35 @@ async function boot() {
   if (["all", "visited", "global", "michelin", "w50"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
+
+  const mapDrawerBtn = qs("#mapMoreFiltersBtn");
+  const mapDrawerEl = qs("#mapMoreFiltersDrawer");
+  if (mapDrawerBtn && mapDrawerEl) {
+    mapDrawerBtn.addEventListener("click", () => {
+      const nextHidden = !mapDrawerEl.hidden;
+      mapDrawerEl.hidden = nextHidden;
+      mapDrawerBtn.setAttribute("aria-expanded", String(!nextHidden));
+      mapDrawerBtn.classList.toggle("is-open", !nextHidden);
+    });
+  }
+  qs("#mapClearDrawerFiltersBtn")?.addEventListener("click", () => {
+    state.brand = "All";
+    state.coverage = "All";
+    state.profileFilter = "all";
+    state.style = "all";
+    state.month = 0;
+    const bf = qs("#brandFilter");
+    if (bf) bf.value = "All";
+    const cf = qs("#coverageFilter");
+    if (cf) cf.value = "All";
+    const pf = qs("#mapProfileFilter");
+    if (pf) pf.value = "all";
+    state.visibleLimit = PAGE_SIZE;
+    syncUrlParams();
+    renderStylePills();
+    window._renderMapMonthPills?.();
+    renderAll(true);
+  });
 
   qs("#brandFilter")?.addEventListener("change", (e) => {
     state.brand = e.target.value || "All";
@@ -1016,9 +1158,10 @@ async function boot() {
       });
     });
   }
+  window._renderMapMonthPills = renderMapMonthPills;
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124b";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124c";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -1031,7 +1174,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124b`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124c`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

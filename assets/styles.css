@@ -3808,7 +3808,7 @@ body {
 
 
 
-/* ---------- StayOdds Phase 1B: Restored Opinion Gap & Middle Key Facts Panel ---------- */
+/* ---------- StayOdds Opinion Gap & Key Facts Panel ---------- */
 .opinion-gap-card {
   background: #ffffff;
   border: 1.5px solid #e6e1d9;
@@ -6029,6 +6029,355 @@ html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab.active {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Two-Track Scoring Visual Distinction (Verified StayOdds vs Market Odds) ---------- */
+.consensus-chance-ring.is-verified-track {
+  background: linear-gradient(145deg, #0b1d36 0%, #071323 100%);
+  border: 2.5px solid #ff5d22;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 93, 34, 0.22);
+}
+.consensus-chance-ring.is-verified-track strong {
+  color: #ffffff;
+}
+.consensus-chance-ring.is-verified-track span {
+  color: #ff9c73;
+  font-weight: 800;
+}
+.consensus-chance-ring.is-market-track {
+  background: #f8fafc;
+  border: 2px dashed #0f766e;
+  color: #0f172a;
+  box-shadow: none;
+}
+.consensus-chance-ring.is-market-track strong {
+  color: #0f766e;
+}
+.consensus-chance-ring.is-market-track span {
+  color: #475569;
+}
+
+.scorecard-badge-overall.is-verified-track {
+  background: linear-gradient(145deg, #0b1d36 0%, #071323 100%);
+  border: 2px solid #ff5d22;
+  color: #ffffff;
+}
+.scorecard-badge-overall.is-verified-track span {
+  color: #ff9c73;
+}
+.scorecard-badge-overall.is-market-track {
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid #0f766e;
+  color: #0f766e;
+}
+.scorecard-badge-overall.is-market-track strong {
+  color: #0f766e;
+}
+.scorecard-badge-overall.is-market-track span {
+  color: #475569;
+}
+
+.detail-kpi.is-verified-track {
+  background: linear-gradient(145deg, #0b1d36 0%, #071323 100%);
+  border: 2px solid #ff5d22;
+  color: #ffffff;
+}
+.detail-kpi.is-verified-track strong { color: #ffffff; }
+.detail-kpi.is-verified-track span { color: #ff9c73; }
+.detail-kpi.is-market-track {
+  background: #f8fafc;
+  border: 2px solid #0f766e;
+  color: #0f766e;
+}
+.detail-kpi.is-market-track strong { color: #0f766e; }
+.detail-kpi.is-market-track span { color: #475569; }
+
+.founder-delta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #071323;
+  color: #ffffff;
+}
+.founder-delta-pill.is-neg {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+.founder-delta-pill.is-pos {
+  background: #f0fdfa;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+.price-chip-indicative {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+/* ---------- Compact Methodology Bar ---------- */
+.methodology-compact-bar {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 11px 16px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+.methodology-compact-bar summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #334155;
+}
+.methodology-compact-bar summary::-webkit-details-marker { display: none; }
+.meth-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meth-badge-verified {
+  background: #071323;
+  color: #ffffff;
+  border: 1.5px solid #ff5d22;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 800;
+}
+.meth-badge-market {
+  background: #f8fafc;
+  color: #0f766e;
+  border: 1.5px dashed #0f766e;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 800;
+}
+.meth-sep { color: #94a3b8; }
+.meth-toggle-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ---------- Progressive Disclosure: More Filters Drawer ---------- */
+.controls-bar-compact {
+  margin-bottom: 10px !important;
+  gap: 10px;
+}
+.more-filters-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 8px 13px;
+  white-space: nowrap;
+}
+.more-filters-toggle-btn.has-active {
+  border-color: var(--accent);
+  background: #fff7ed;
+  color: #c2410c;
+}
+.filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+}
+.more-filters-drawer {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+.more-filters-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #0f172a;
+}
+.btn-link-clear {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.btn-link-clear:hover { text-decoration: underline; }
+.drawer-select-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.drawer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+.active-filters-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.active-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef2ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.active-filter-chip:hover { background: #e0e7ff; }
+
+/* ---------- Streamlined Directory Card Details Expander ---------- */
+.card-details-expander {
+  margin-top: 10px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 8px;
+}
+.card-details-expander summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-details-expander summary::-webkit-details-marker { display: none; }
+.card-details-expander summary:hover { color: var(--accent); }
+.card-details-expander[open] summary { margin-bottom: 10px; color: #0f172a; }
+.card-details-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- Date-Aware Pricing & On-Demand Live Rates Bar ---------- */
+.date-rate-bar {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 12px 0 14px;
+}
+.date-rate-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+}
+.date-rate-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #475569;
+}
+.date-rate-inputs input[type="date"],
+.date-rate-inputs select {
+  padding: 7px 10px;
+  border-radius: 9px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 13px;
+  color: #0f172a;
+  font-family: inherit;
+}
+.date-rate-check-btn {
+  padding: 7px 13px !important;
+  font-size: 12.5px !important;
+  white-space: nowrap;
+}
+.date-rate-status {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.4;
+}
+.h2h-live-rate-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdfa;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ---------- Comparison Table Sticky First Column (Clean Desktop & Mobile Scan) ---------- */
+.comparison-table-wrap {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #ffffff;
+  box-shadow: 2px 0 6px rgba(15, 23, 42, 0.05);
+  min-width: 175px;
+  max-width: 240px;
+}
+.comparison-table thead th:first-child {
+  background: #f8fafc;
+  z-index: 3;
+}
+
 
 
 
