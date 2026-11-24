@@ -6,7 +6,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=10";
+} from "./stayodds-engine.js?v=11";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
@@ -19,7 +19,9 @@ import {
 } from "./stayodds-insights.js?v=4";
 
 const PAGE_SIZE = 24;
+const MAP_STATE_KEY = "stayodds_map_state_v1";
 const oddsCache = new WeakMap();
+let suppressMapSave = false;
 
 function getOdds(h) {
   let c = oddsCache.get(h);
@@ -51,6 +53,47 @@ const state = {
 };
 
 const qs = (sel) => document.querySelector(sel);
+
+function saveMapState() {
+  if (suppressMapSave) return;
+  try {
+    const center = state.map ? state.map.getCenter() : null;
+    const zoom = state.map ? state.map.getZoom() : null;
+    const payload = {
+      scope: state.scope,
+      region: state.region,
+      brand: state.brand,
+      style: state.style,
+      profileFilter: state.profileFilter,
+      month: state.month,
+      coverage: state.coverage,
+      sortBy: state.sortBy,
+      search: state.search,
+      viewMode: state.viewMode,
+      lat: center ? Number(center.lat.toFixed(4)) : null,
+      lng: center ? Number(center.lng.toFixed(4)) : null,
+      zoom: typeof zoom === "number" ? zoom : null,
+    };
+    sessionStorage.setItem(MAP_STATE_KEY, JSON.stringify(payload));
+  } catch (_) {}
+}
+
+function readSavedMapState() {
+  try {
+    const raw = sessionStorage.getItem(MAP_STATE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function clearSavedMapState() {
+  try {
+    sessionStorage.removeItem(MAP_STATE_KEY);
+  } catch (_) {}
+}
 
 function escapeHtml(str = "") {
   return String(str)
@@ -96,6 +139,7 @@ function syncUrlParams() {
     else url.searchParams.delete("style");
     window.history.replaceState({}, "", url.toString());
   } catch (_) {}
+  saveMapState();
 }
 
 function resolveThumb(thumb) {
@@ -216,6 +260,8 @@ function initMap() {
   });
 
   cartoLayer.addTo(map);
+  map.on("moveend zoomend", () => saveMapState());
+  map.on("popupopen", () => window.stayOddsShortlist?.syncButtons?.());
   state.map = map;
   state.canvasRenderer = L.canvas({ padding: 0.5 });
   state.markersLayer = L.layerGroup().addTo(map);
@@ -511,9 +557,10 @@ function buildPopupHtml(h) {
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
         <span class="map-popup-score">${
           o.greatStayOdds != null
-            ? `${o.greatStayOdds}% ${o.scoreTrack === "verified" ? "Verified" : "Market"}`
+            ? `${o.greatStayOdds}% ${o.scoreTrack === "verified" ? "Verified" : "StayOdds"}`
             : escapeHtml(o.scoreTrackLabel)
         }</span>
+        <button type="button" class="card-heart-fab is-popup shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
       </div>
       <div class="map-popup-body">
         <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:4px;">
@@ -530,6 +577,7 @@ function buildPopupHtml(h) {
         <div class="map-popup-actions">
           <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
           <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
+          <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
           ${
             reviewHref
               ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Video</a>`
@@ -695,7 +743,11 @@ function renderScorecards(hotels) {
               const oddsTrackSub =
                 o.scoreTrack === "verified"
                   ? `Verified${o.founderVsMarketDelta != null ? ` (${o.founderVsMarketDelta > 0 ? "+" : ""}${o.founderVsMarketDelta})` : ""}`
-                  : "Market Odds";
+                  : o.marketSourceCount === 1
+                  ? "1 Source"
+                  : o.marketSourceCount >= 2
+                  ? `${o.marketSourceCount} Sources`
+                  : "StayOdds";
 
               return `
                 <tr data-resort-name="${escapeHtml(h.name)}">
@@ -709,6 +761,7 @@ function renderScorecards(hotels) {
                   <td style="white-space:nowrap;">${priceInfo.label ? `<strong>${escapeHtml(priceInfo.label)}</strong>` : `<span class="table-sub">—</span>`}</td>
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
+                    <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
                     <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
                     <a class="tripadvisor-link" style="margin-left:4px;" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor ↗</a>
                   </td>
@@ -820,8 +873,9 @@ function renderScorecards(hotels) {
                     ? "Award"
                     : "Open"
                 }</strong>
-                <span>${o.scoreTrack === "verified" ? "Verified" : "Market Odds"}</span>
+                <span>${o.scoreTrack === "verified" ? "Verified" : o.marketSourceCount === 1 ? "StayOdds · 1 src" : "StayOdds"}</span>
               </div>
+              <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
               <button class="map-focus-btn" data-focus-id="${escapeHtml(h.id)}" type="button" title="Locate on map">
                 📍 Map
               </button>
@@ -880,6 +934,7 @@ function renderScorecards(hotels) {
                     ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Short" : "Review"}</a>`
                     : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">VS</a>`
                 }
+                <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
                 <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
               </div>
             </div>
@@ -909,6 +964,8 @@ function renderScorecards(hotels) {
       });
     });
   }
+
+  window.stayOddsShortlist?.syncButtons?.();
 
   qs("#mapLoadMoreBtn")?.addEventListener("click", () => {
     state.visibleLimit += PAGE_SIZE;
@@ -1038,6 +1095,7 @@ function renderAll(fitBounds = false) {
   renderMapMarkers(filtered, fitBounds);
   renderScorecards(filtered);
   renderHotelShorts(filtered);
+  saveMapState();
 }
 
 async function boot() {
@@ -1045,9 +1103,46 @@ async function boot() {
   initMap();
 
   const params = new URLSearchParams(window.location.search);
+  const hasExplicitUrlFilter = Boolean(
+    params.get("region") || params.get("scope") || params.get("style") || params.get("month")
+  );
   if (["all", "visited", "global", "michelin", "w50"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
+
+  qs("#resetMapViewBtn")?.addEventListener("click", () => {
+    clearSavedMapState();
+    suppressMapSave = true;
+    state.scope = "all";
+    state.region = "All";
+    state.brand = "All";
+    state.coverage = "All";
+    state.profileFilter = "all";
+    state.style = "all";
+    state.month = 0;
+    state.search = "";
+    state.sortBy = "stayodds";
+    state.tableSortKey = null;
+    state.visibleLimit = PAGE_SIZE;
+    const bf = qs("#brandFilter");
+    if (bf) bf.value = "All";
+    const cf = qs("#coverageFilter");
+    if (cf) cf.value = "All";
+    const pf = qs("#mapProfileFilter");
+    if (pf) pf.value = "all";
+    const sf = qs("#hotelSearch");
+    if (sf) sf.value = "";
+    const sc = qs("#sortControl");
+    if (sc) sc.value = "stayodds";
+    renderScopeTabs();
+    renderRegionPills();
+    renderStylePills();
+    window._renderMapMonthPills?.();
+    renderAll(false);
+    if (state.map) state.map.setView([20.0, 20.0], 2, { animate: true });
+    suppressMapSave = false;
+    syncUrlParams();
+  });
 
   const mapDrawerBtn = qs("#mapMoreFiltersBtn");
   const mapDrawerEl = qs("#mapMoreFiltersDrawer");
@@ -1130,12 +1225,14 @@ async function boot() {
     qs("#viewCardsBtn")?.classList.add("active");
     qs("#viewTableBtn")?.classList.remove("active");
     renderScorecards(getFilteredHotels());
+    saveMapState();
   });
   qs("#viewTableBtn")?.addEventListener("click", () => {
     state.viewMode = "table";
     qs("#viewTableBtn")?.classList.add("active");
     qs("#viewCardsBtn")?.classList.remove("active");
     renderScorecards(getFilteredHotels());
+    saveMapState();
   });
 
   function renderMapMonthPills() {
@@ -1162,7 +1259,7 @@ async function boot() {
   window._renderMapMonthPills = renderMapMonthPills;
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124d";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124e";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -1175,7 +1272,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124d`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124e`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {
@@ -1184,21 +1281,73 @@ async function boot() {
     }
     state.hotels = payload.hotels || [];
 
-    const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());
-    if (matchedRegion) {
-      state.region = matchedRegion;
+    populateBrands();
+
+    // Restore prior World Map view & filters when returning from Compare VS / Breakdown (unless explicit URL filters passed)
+    let restoredViewport = null;
+    if (!hasExplicitUrlFilter) {
+      const saved = readSavedMapState();
+      if (saved) {
+        suppressMapSave = true;
+        if (["all", "visited", "global", "michelin", "w50"].includes(saved.scope)) state.scope = saved.scope;
+        const matchedSavedRegion = matchRegionParam(saved.region, getScopedHotels());
+        if (matchedSavedRegion) state.region = matchedSavedRegion;
+        if (typeof saved.brand === "string" && saved.brand) {
+          state.brand = saved.brand;
+          const bf = qs("#brandFilter");
+          if (bf) bf.value = saved.brand;
+        }
+        if (typeof saved.coverage === "string" && saved.coverage) {
+          state.coverage = saved.coverage;
+          const cf = qs("#coverageFilter");
+          if (cf) cf.value = saved.coverage;
+        }
+        if (typeof saved.profileFilter === "string" && saved.profileFilter) {
+          state.profileFilter = saved.profileFilter;
+          const pf = qs("#mapProfileFilter");
+          if (pf) pf.value = saved.profileFilter;
+        }
+        if (saved.style && TRAVEL_STYLES.some((s) => s.id === saved.style)) state.style = saved.style;
+        if (typeof saved.month === "number" && saved.month >= 0 && saved.month <= 12) state.month = saved.month;
+        if (typeof saved.search === "string") {
+          state.search = saved.search;
+          const sf = qs("#hotelSearch");
+          if (sf) sf.value = saved.search;
+        }
+        if (typeof saved.sortBy === "string" && saved.sortBy) {
+          state.sortBy = saved.sortBy;
+          const sc = qs("#sortControl");
+          if (sc) sc.value = saved.sortBy;
+        }
+        if (saved.viewMode === "table") {
+          state.viewMode = "table";
+          qs("#viewTableBtn")?.classList.add("active");
+          qs("#viewCardsBtn")?.classList.remove("active");
+        }
+        if (typeof saved.lat === "number" && typeof saved.lng === "number" && typeof saved.zoom === "number") {
+          restoredViewport = { lat: saved.lat, lng: saved.lng, zoom: saved.zoom };
+        }
+        suppressMapSave = false;
+      }
+    } else {
+      const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());
+      if (matchedRegion) state.region = matchedRegion;
+      const styleParam = params.get("style");
+      if (styleParam && TRAVEL_STYLES.some((s) => s.id === styleParam)) state.style = styleParam;
+      const monthParam = Number(params.get("month") || 0);
+      if (monthParam >= 1 && monthParam <= 12) state.month = monthParam;
     }
 
-    const styleParam = params.get("style");
-    if (styleParam && TRAVEL_STYLES.some((s) => s.id === styleParam)) state.style = styleParam;
-    const monthParam = Number(params.get("month") || 0);
-    if (monthParam >= 1 && monthParam <= 12) state.month = monthParam;
     renderScopeTabs();
     renderRegionPills();
     renderStylePills();
     renderMapMonthPills();
-    populateBrands();
-    renderAll(true);
+    if (restoredViewport && state.map) {
+      renderAll(false);
+      state.map.setView([restoredViewport.lat, restoredViewport.lng], restoredViewport.zoom, { animate: false });
+    } else {
+      renderAll(true);
+    }
   } catch (err) {
     const grid = qs("#scorecardGrid");
     if (grid) grid.innerHTML = `<div class="empty-state">Unable to load the hotel world map right now.</div>`;

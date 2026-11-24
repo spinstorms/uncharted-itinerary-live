@@ -563,10 +563,16 @@
       const isSaved = saved.has(id);
       btn.classList.toggle("is-saved", isSaved);
       btn.setAttribute("aria-pressed", String(isSaved));
+      const iconOnly = btn.getAttribute("data-shortlist-icon-only") === "1";
       const compact = btn.getAttribute("data-shortlist-compact") === "1";
-      btn.innerHTML = isSaved
-        ? (compact ? "&#9829; Saved" : "&#9829; Saved to Shortlist")
-        : (compact ? "&#9825; Save" : "&#9825; Save to Shortlist");
+      if (iconOnly) {
+        btn.innerHTML = isSaved ? "&#9829;" : "&#9825;";
+        btn.setAttribute("title", isSaved ? "Saved to shortlist (click to remove)" : "Save to shortlist");
+      } else {
+        btn.innerHTML = isSaved
+          ? (compact ? "&#9829; Saved" : "&#9829; Saved to Shortlist")
+          : (compact ? "&#9825; Save" : "&#9825; Save to Shortlist");
+      }
     });
   }
 

@@ -358,29 +358,41 @@ export function computeStayOdds(hotel) {
   const primaryCritic = scoredEditorial.length > 0 ? scoredEditorial[0] : null;
   const guest100 = verifiedGuest ? verifiedGuest.normalized100 : null;
 
-  // LAYER 1: Universal External Baseline ("Market Odds", 0-100%)
+  // LAYER 1: Universal External Consensus Baseline (0-100%)
   let marketOdds = null;
   let marketSourceCount = 0;
   let marketFormulaSummary = "No external numeric score yet";
+  let sourceBasisShort = "Live Google";
   if (critic100 != null && guest100 != null) {
     marketOdds = Math.round(critic100 * 0.35 + guest100 * 0.65);
     marketSourceCount = 2;
-    marketFormulaSummary = "35% Published Critics • 65% Verified Guests";
+    marketFormulaSummary = "Based on 2 sources: Published Critics (35%) + Verified Guests (65%)";
+    sourceBasisShort = "2 sources • Critics + Guests";
   } else if (guest100 != null) {
     marketOdds = guest100;
     marketSourceCount = 1;
+    const gName = verifiedGuest?.sourceName || "Verified Guests";
     marketFormulaSummary = verifiedGuest?.wasDampened
-      ? "100% Verified Guests (thin-sample adjusted)"
-      : "100% Verified Guest Ratings";
+      ? `Based on 1 source (${gName}, small-sample adjusted)`
+      : `Based on 1 source (${gName})`;
+    sourceBasisShort = `1 source • ${gName}`;
   } else if (critic100 != null) {
     marketOdds = critic100;
     marketSourceCount = 1;
-    marketFormulaSummary = "100% Published Critic Reviews";
+    marketFormulaSummary = "Based on 1 source (Published Critics)";
+    sourceBasisShort = "1 source • Critics";
   }
 
-  // LAYER 2: Two-Track Headline Score ("Verified StayOdds" vs "Market Odds")
+  // LAYER 2: Two-Track Headline Score ("Founder Verified" vs "StayOdds")
   const scoreTrack = firstHand && ours100 != null ? "verified" : "market";
-  const scoreTrackLabel = scoreTrack === "verified" ? "Verified StayOdds" : "Market Odds";
+  const scoreTrackLabel =
+    scoreTrack === "verified"
+      ? "Founder Verified"
+      : marketSourceCount >= 2
+      ? `StayOdds • ${marketSourceCount} Sources`
+      : marketSourceCount === 1
+      ? "StayOdds • 1 Source"
+      : "StayOdds";
 
   let weights = { firstHand: 0, market: 0, critics: 0, guests: 0 };
   let overallIndex = null;
@@ -401,7 +413,7 @@ export function computeStayOdds(hotel) {
     firstHand && ours100 != null && marketOdds != null ? ours100 - marketOdds : null;
   const founderVsMarketLabel =
     founderVsMarketDelta != null
-      ? `${founderVsMarketDelta > 0 ? "+" : ""}${founderVsMarketDelta} pts vs Market`
+      ? `${founderVsMarketDelta > 0 ? "+" : ""}${founderVsMarketDelta} pts vs Consensus`
       : null;
 
   if (scoreTrack === "verified") {
@@ -413,29 +425,31 @@ export function computeStayOdds(hotel) {
         critics: critic100 != null && guest100 != null ? 11 : critic100 != null ? 30 : 0,
         guests: critic100 != null && guest100 != null ? 19 : guest100 != null ? 30 : 0,
       };
-      formulaSummary = `70% My Stay (${personalScoreLabel || `${ours100}%`}) • 30% Market Odds (${marketOdds}%)`;
+      formulaSummary = `70% My Stay (${personalScoreLabel || `${ours100}%`}) • 30% Consensus (${marketOdds}%)`;
+      sourceBasisShort = `My Stay + ${marketSourceCount} source${marketSourceCount === 1 ? "" : "s"}`;
     } else {
       overallIndex = ours100;
       weights = { firstHand: 100, market: 0, critics: 0, guests: 0 };
       statusBadge = "First-Hand Verified";
       statusTone = "accent";
       formulaSummary = `100% My First-Hand Stay (${personalScoreLabel || `${ours100}%`})`;
+      sourceBasisShort = "1 source • My Stay";
     }
   } else {
     overallIndex = marketOdds;
     if (critic100 != null && guest100 != null) {
       weights = { firstHand: 0, market: 100, critics: 35, guests: 65 };
-      formulaSummary = "Market Odds: 35% Published Critics • 65% Verified Guests";
+      formulaSummary = marketFormulaSummary;
     } else if (guest100 != null) {
       weights = { firstHand: 0, market: 100, critics: 0, guests: 100 };
-      statusBadge = "Market Odds (1 Source)";
+      statusBadge = "1 Data Source";
       statusTone = "teal";
-      formulaSummary = `Market Odds: ${marketFormulaSummary}`;
+      formulaSummary = marketFormulaSummary;
     } else if (critic100 != null) {
       weights = { firstHand: 0, market: 100, critics: 100, guests: 0 };
-      statusBadge = "Critic Reviewed";
+      statusBadge = "1 Data Source";
       statusTone = "slate";
-      formulaSummary = "Market Odds: 100% Published Critic Reviews";
+      formulaSummary = marketFormulaSummary;
     }
   }
 
@@ -458,7 +472,7 @@ export function computeStayOdds(hotel) {
     }
   }
 
-  // Dual-Mode Opinion Gap Module ("Founder vs. Market Odds" OR "Published Critics vs. Real Guests")
+  // Dual-Mode Opinion Gap Module ("Founder vs. Consensus" OR "Published Critics vs. Real Guests")
   const left100 = firstHand ? ours100 : critic100;
   const right100 = firstHand ? marketOdds : guest100;
   const delta100 = left100 != null && right100 != null ? left100 - right100 : null;
@@ -469,22 +483,24 @@ export function computeStayOdds(hotel) {
     ? `${unverifiedEditorial.map((u) => u.sourceName).join(", ")} awards a score (unverified figure — excluded from numeric math).`
     : officialAwards.length > 0
     ? `Recognised with ${officialAwards.map((a) => a.label).join(" • ")} — compare with real guest reviews below.`
-    : "Market Odds baseline from verified external sources.";
+    : marketFormulaSummary !== "No external numeric score yet"
+    ? `${marketFormulaSummary}.`
+    : "Open breakdown to check live Google guest reviews.";
 
   if (delta100 != null) {
     const criticName =
       scoredEditorial.length === 1 ? primaryCritic.sourceName : `${scoredEditorial.length} published critics`;
     if (Math.abs(delta100) <= 5) {
       gapHeadline = firstHand
-        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched Market Odds.`
+        ? `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — my stay matched the wider consensus.`
         : `Tight agreement (${delta100 >= 0 ? `+${delta100}` : delta100} pts) — ${criticName} and real guests agree.`;
     } else if (delta100 > 5) {
       gapHeadline = firstHand
-        ? `I rated this +${delta100} pts higher than Market Odds — see what stood out.`
+        ? `I rated this +${delta100} pts higher than the wider consensus — see what stood out.`
         : `${criticName} rated this +${delta100} pts higher than real guests.`;
     } else {
       gapHeadline = firstHand
-        ? `I rated this ${delta100} pts stricter than Market Odds — see what held it back.`
+        ? `I rated this ${delta100} pts stricter than the wider consensus — see what held it back.`
         : `Real guests rated this +${Math.abs(delta100)} pts higher than ${criticName}.`;
     }
   }
@@ -501,7 +517,7 @@ export function computeStayOdds(hotel) {
 
   const opinionGap = {
     mode: firstHand ? "my_vs_market" : "critics_vs_guests",
-    title: firstHand ? "Founder vs. Market Odds" : "Published Critics vs. Real Guests",
+    title: firstHand ? "Founder vs. Consensus" : "Published Critics vs. Real Guests",
     leftLabel: firstHand
       ? "My First-Hand Stay"
       : scoredEditorial.length === 1
@@ -511,7 +527,7 @@ export function computeStayOdds(hotel) {
       : "Published Critics",
     left100,
     leftDisplay,
-    rightLabel: firstHand ? "Market Odds" : verifiedGuest ? `${verifiedGuest.sourceName}` : "Real Guest Score",
+    rightLabel: firstHand ? "Guest & Critic Consensus" : verifiedGuest ? `${verifiedGuest.sourceName}` : "Real Guest Score",
     right100,
     rightDisplay: firstHand
       ? marketOdds != null
@@ -532,14 +548,15 @@ export function computeStayOdds(hotel) {
   return {
     tier: firstHand ? "first_hand_verified" : visited ? "short_preview" : "global_directory",
     tierLabel: firstHand
-      ? "Verified StayOdds"
+      ? "Founder Verified"
       : isFullUnscored
       ? "Filmed Stay"
       : visited
       ? "Short Tour"
-      : "Market Odds",
+      : "Global Directory",
     scoreTrack,
     scoreTrackLabel,
+    sourceBasisShort,
     firstHand,
     visited,
     personalScore25,

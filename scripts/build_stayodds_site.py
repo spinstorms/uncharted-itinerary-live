@@ -122,22 +122,33 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         guest100 = raw_guest100
         guest_dampened = False
 
-    # LAYER 1: Universal External Baseline ("Market Odds")
+    # LAYER 1: Universal External Consensus Baseline
     market_odds = None
     market_src_cnt = 0
+    source_basis_short = "Live Google"
     if critic100 is not None and guest100 is not None:
         market_odds = int(round(critic100 * 0.35 + guest100 * 0.65))
         market_src_cnt = 2
+        source_basis_short = "2 sources • Critics + Guests"
     elif guest100 is not None:
         market_odds = guest100
         market_src_cnt = 1
+        source_basis_short = "1 source • Verified Guests"
     elif critic100 is not None:
         market_odds = critic100
         market_src_cnt = 1
+        source_basis_short = "1 source • Critics"
 
-    # LAYER 2: Two-Track Score ("Verified StayOdds" vs "Market Odds")
+    # LAYER 2: Two-Track Score ("Founder Verified" vs "StayOdds")
     score_track = "verified" if (first_hand and ours100 is not None) else "market"
-    score_track_label = "Verified StayOdds" if score_track == "verified" else "Market Odds"
+    if score_track == "verified":
+        score_track_label = "Founder Verified"
+    elif market_src_cnt >= 2:
+        score_track_label = f"StayOdds • {market_src_cnt} Sources"
+    elif market_src_cnt == 1:
+        score_track_label = "StayOdds • 1 Source"
+    else:
+        score_track_label = "StayOdds"
     founder_vs_market_delta = (ours100 - market_odds) if (first_hand and ours100 is not None and market_odds is not None) else None
 
     weights = {"firstHand": 0, "market": 0, "critics": 0, "guests": 0}
@@ -165,28 +176,30 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
                 "critics": 11 if (critic100 is not None and guest100 is not None) else (30 if critic100 is not None else 0),
                 "guests": 19 if (critic100 is not None and guest100 is not None) else (30 if guest100 is not None else 0),
             }
-            formula = f"70% My Stay ({personal_score_label or f'{ours100}%'}) • 30% Market Odds ({market_odds}%)"
+            formula = f"70% My Stay ({personal_score_label or f'{ours100}%'}) • 30% Consensus ({market_odds}%)"
+            source_basis_short = f"My Stay + {market_src_cnt} source{'s' if market_src_cnt != 1 else ''}"
         else:
             overall_idx = ours100
             weights = {"firstHand": 100, "market": 0, "critics": 0, "guests": 0}
             status_badge = "First-Hand Verified"
             status_tone = "accent"
             formula = f"100% My First-Hand Stay ({personal_score_label or f'{ours100}%'})"
+            source_basis_short = "1 source • My Stay"
     else:
         overall_idx = market_odds
         if critic100 is not None and guest100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 35, "guests": 65}
-            formula = "Market Odds: 35% Published Critics • 65% Verified Guests"
+            formula = "Based on 2 sources: Published Critics (35%) + Verified Guests (65%)"
         elif guest100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 0, "guests": 100}
-            status_badge = "Market Odds (1 Source)"
+            status_badge = "1 Data Source"
             status_tone = "teal"
-            formula = "Market Odds: 100% Verified Guests" + (" (thin-sample adjusted)" if guest_dampened else "")
+            formula = "Based on 1 source (Verified Guests" + (", small-sample adjusted)" if guest_dampened else ")")
         elif critic100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 100, "guests": 0}
-            status_badge = "Critic Reviewed"
+            status_badge = "1 Data Source"
             status_tone = "slate"
-            formula = "Market Odds: 100% Published Critic Reviews"
+            formula = "Based on 1 source (Published Critics)"
 
     odds = overall_idx
     if src_cnt >= 2 and overall_idx is not None:
@@ -211,19 +224,19 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         )
         if abs(delta100) <= 5:
             gap_head = (
-                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched Market Odds."
+                f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — my stay matched the wider consensus."
                 if first_hand
                 else f"Tight agreement ({'+' if delta100 >= 0 else ''}{delta100} pts) — {critic_name} and real guests agree."
             )
         elif delta100 > 5:
             gap_head = (
-                f"I rated this +{delta100} pts higher than Market Odds — see what stood out below."
+                f"I rated this +{delta100} pts higher than the wider consensus — see what stood out below."
                 if first_hand
                 else f"{critic_name} rated this +{delta100} pts higher than real guests."
             )
         else:
             gap_head = (
-                f"I rated this {delta100} pts stricter than Market Odds — see what held it back below."
+                f"I rated this {delta100} pts stricter than the wider consensus — see what held it back below."
                 if first_hand
                 else f"Real guests rated this +{abs(delta100)} pts higher than {critic_name}."
             )
@@ -236,7 +249,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         elif awards:
             gap_head = f"Recognised with {' • '.join(a['label'] for a in awards)} — compare with real guest reviews below."
         else:
-            gap_head = "Market Odds baseline from verified external reviews."
+            gap_head = f"{formula}."
 
     is_full_unscored = visited and not first_hand and h.get("coverageType") != "Short Tour"
     return {
@@ -244,10 +257,11 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         "visited": visited,
         "scoreTrack": score_track,
         "scoreTrackLabel": score_track_label,
+        "sourceBasisShort": source_basis_short,
         "tierLabel": (
-            "Verified StayOdds"
+            "Founder Verified"
             if first_hand
-            else ("Filmed Stay" if is_full_unscored else ("Short Tour" if visited else "Market Odds"))
+            else ("Filmed Stay" if is_full_unscored else ("Short Tour" if visited else "Global Directory"))
         ),
         "personalScore25": personal_score_25,
         "personalScoreMax": personal_score_max,
@@ -1044,6 +1058,65 @@ def render_seo_page(
 
     trip_context_html = f'<div class="detail-trip-context-strip">{"".join(trip_tiles)}</div>'
 
+    # Calm At-a-Glance Executive Summary Card (scannable top overview above full data breakdown)
+    price_summary_str = (snap.get("label") if isinstance(snap, dict) else "") or h.get("priceRange") or ""
+    awards_summary_str = " • ".join(a["label"] for a in o["awards"][:2]) if o["awards"] else ""
+    score_summary_line = (
+        f"<strong>{o['greatStayOdds']}% StayOdds</strong> — {esc(o['formula'])}"
+        if o["greatStayOdds"] is not None
+        else f"<strong>Live Google Check</strong> — {esc(o['formula'])}"
+    )
+    if o["firstHand"] and o.get("founderVsMarketDelta") is not None:
+        fd = o["founderVsMarketDelta"]
+        score_summary_line += f" (My Stay is {'+' if fd > 0 else ''}{fd} pts vs Consensus)"
+
+    fit_bits = [f"Best Dry Months: <strong>{esc(best_months_lbl)}</strong>"]
+    if price_summary_str:
+        fit_bits.append(f"Indicative: <strong>{esc(price_summary_str)}</strong>")
+    if awards_summary_str:
+        fit_bits.append(f"Awards: <strong>{esc(awards_summary_str)}</strong>")
+    if ps_has:
+        fit_bits.append(f"Status: <strong>{esc(ps_badge_lbl)}</strong>")
+
+    standout_summary = (h.get("standout") or h.get("verdict") or "").strip()
+    if len(standout_summary) > 190:
+        standout_summary = standout_summary[:187].rsplit(" ", 1)[0] + "…"
+    watchout_summary = (h.get("watchOut") or "").strip()
+    if len(watchout_summary) > 190:
+        watchout_summary = watchout_summary[:187].rsplit(" ", 1)[0] + "…"
+
+    glance_rows = [
+        f'<div class="glance-item"><span class="glance-kicker">Score &amp; Basis</span><p id="glanceScoreBasis">{score_summary_line}</p></div>',
+        f'<div class="glance-item"><span class="glance-kicker">Trip Fit</span><p>{" &bull; ".join(fit_bits)}</p></div>',
+    ]
+    if standout_summary:
+        glance_rows.append(
+            f'<div class="glance-item is-pro"><span class="glance-kicker">&#10003; Top Highlight</span><p>{esc(standout_summary)}</p></div>'
+        )
+    if watchout_summary:
+        glance_rows.append(
+            f'<div class="glance-item is-con"><span class="glance-kicker">&#9888; Key Watch-Out</span><p>{esc(watchout_summary)}</p></div>'
+        )
+    at_a_glance_html = f"""
+      <section class="detail-section" aria-label="At a glance summary">
+        <div class="at-a-glance-card">
+          <div class="at-a-glance-head">
+            <div>
+              <span class="at-a-glance-eyebrow">At a Glance &bull; 10-Second Summary</span>
+              <h2>Key Takeaways for {esc(h['name'])}</h2>
+            </div>
+            <div class="at-a-glance-jumps">
+              <a href="#opinion-gap">Score Gap &darr;</a>
+              <a href="#key-facts">Specs &amp; Facts &darr;</a>
+              <a href="#score-sources">All Sources &darr;</a>
+            </div>
+          </div>
+          <div class="at-a-glance-grid">
+            {''.join(glance_rows)}
+          </div>
+        </div>
+      </section>"""
+
     # Pre-loaded Head-to-Head Rival Matchups (same country / region peers)
     rival_list = rivals if rivals is not None else related
     rival_cards: list[str] = []
@@ -1147,7 +1220,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=41" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=42" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1169,17 +1242,17 @@ def render_seo_page(
 <body>
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
-      <a class="brand" href="../../compare/" rel="noopener">
+      <div class="brand stayodds-brand-group">
         <span class="stayodds-brand-stack">
-          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
-          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
+          <a class="stayodds-wordmark-lg" href="../../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
+          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
-      </a>
+      </div>
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../../">Home</a>
-        <a href="../../compare/">StayOdds</a>
+        <a href="../../compare/" class="active">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
-        <a href="../../">Videos</a>
+        <a href="../../brands/">Brands</a>
+        <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
         <a href="../../about/">About</a>
         <a href="../../faq/">FAQ</a>
         <a href="../../contact/">Contact</a>
@@ -1196,9 +1269,10 @@ def render_seo_page(
         <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab" href="../../">Latest Videos</a>
-        <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
         <a class="hub-tab active" id="hubTabStayOdds" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
+        <a class="hub-tab" id="hubTabMap" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab" href="../../brands/">Brands</a>
+        <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
         <a class="hub-tab" href="../../about/">About</a>
@@ -1250,7 +1324,7 @@ def render_seo_page(
             </div>
             <div class="detail-kpi">
               <strong>{f"{o['marketOdds']}%" if o.get('marketOdds') is not None else critic_kpi_val}</strong>
-              <span>{f"Market Odds ({o['marketSourceCount']} src)" if o.get('marketOdds') is not None else esc(critic_kpi_lbl)}</span>
+              <span>{f"Consensus ({o['marketSourceCount']} src)" if o.get('marketOdds') is not None else esc(critic_kpi_lbl)}</span>
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
@@ -1260,14 +1334,14 @@ def render_seo_page(
 
           <details class="stayodds-explainer">
             <summary>
-              <span>How is this {esc(o['scoreTrackLabel'])} % calculated?</span>
+              <span>How is this StayOdds % calculated?</span>
               <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
             </summary>
             <div class="stayodds-explainer-body">
               <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
               <ul class="stayodds-explainer-list">
-                <li><strong>Two-Track Scoring (My Voice Leads):</strong> When I have personally stayed and scored a hotel (/25), <strong>Verified StayOdds</strong> weights <strong>70% My Stay + 30% Market Odds</strong> (or 100% My Stay if no external score exists), with a transparent <strong>Founder vs. Market</strong> delta.</li>
-                <li><strong>Market Odds Baseline (All Hotels):</strong> Unvisited properties display an outlined <strong>Market Odds</strong> baseline (35% Published Critics &bull; 65% Verified Guests when both exist, or 100% of whichever verified source exists), with gentle Bayesian dampening on tiny (&lt;40 review) guest samples so thin 100% outliers don&rsquo;t distort rankings.</li>
+                <li><strong>Founder Verified (Audited Stays):</strong> When I have personally stayed and scored a hotel (/25), <strong>StayOdds</strong> weights <strong>70% My Stay + 30% Guest &amp; Critic Consensus</strong> (or 100% My Stay if no external score exists), with a transparent <strong>Founder vs. Consensus</strong> delta.</li>
+                <li><strong>Global Directory (Unvisited Hotels):</strong> Unvisited properties display a unified <strong>StayOdds %</strong> alongside the exact data-source count (35% Published Critics + 65% Verified Guests when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed), with gentle Bayesian dampening on tiny (&lt;40 review) samples.</li>
                 <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
               </ul>
             </div>
@@ -1303,20 +1377,22 @@ def render_seo_page(
         </div>
       </section>
 
+      {at_a_glance_html}
+
       {trip_context_html}
 
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
-      <section class="detail-section">
+      <section class="detail-section" id="opinion-gap">
         <div class="opinion-gap-card {delta_tone}">
           <div class="opinion-gap-head">
             <div>
               <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'Founder vs. Market Odds' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
+              <h2>{'Founder vs. Consensus' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
               <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
             </div>
             <div class="opinion-gap-delta" id="gapDeltaPill">
               <strong>{esc(delta_badge)}</strong>
-              <span>{'Founder vs Market' if o['firstHand'] else 'Opinion Gap'}</span>
+              <span>{'Founder vs Consensus' if o['firstHand'] else 'Opinion Gap'}</span>
             </div>
           </div>
 
@@ -1330,7 +1406,7 @@ def render_seo_page(
               <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['critic100']}%;background:#d97706;"></div></div>
             </div>''' if (o['firstHand'] and o['critic100'] is not None) else ''}
             <div class="gap-side">
-              <div class="gap-side-top"><span>{'Market Odds Baseline' if o['firstHand'] else 'Real Guest Score'}</span><strong id="gapGuestDisplay">{f"{o['marketOdds']}%" if (o['firstHand'] and o.get('marketOdds') is not None) else esc(right_display)}</strong></div>
+              <div class="gap-side-top"><span>{'Guest &amp; Critic Consensus' if o['firstHand'] else 'Real Guest Score'}</span><strong id="gapGuestDisplay">{f"{o['marketOdds']}%" if (o['firstHand'] and o.get('marketOdds') is not None) else esc(right_display)}</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>
             </div>
           </div>
@@ -1342,7 +1418,7 @@ def render_seo_page(
       </section>
 
       <!-- Structured Middle Key Facts Panel (Strictly Verified Specs) -->
-      <section class="detail-section">
+      <section class="detail-section" id="key-facts">
         <div class="key-facts-panel">
           <div class="detail-panel-head" style="margin-bottom:14px;">
             <div>
@@ -1362,7 +1438,7 @@ def render_seo_page(
       </section>
 
       <!-- Formula Transparency & First-Hand Scorecard -->
-      <section class="detail-section">
+      <section class="detail-section" id="score-sources">
         <div class="detail-two-col">
           <div class="detail-panel">
             <div class="detail-panel-head">
@@ -1456,7 +1532,7 @@ def render_seo_page(
     </div>
   </footer>
 
-  <script src="../../assets/stayodds-feedback.js?v=2" defer></script>
+  <script src="../../assets/stayodds-feedback.js?v=3" defer></script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -1677,19 +1753,19 @@ def render_seo_page(
               wCr = critic100 != null ? 11 : 0;
               wGu = critic100 != null ? 19 : 30;
               odds = Math.round(ours100 * 0.70 + mkt * 0.30);
-              formula = `70% My Stay • 30% Market Odds (${{mkt}}%)`;
+              formula = `70% My Stay • 30% Consensus (${{mkt}}%)`;
             }} else if (critic100 != null) {{
               wFH = 0; wCr = 35; wGu = 65;
               odds = mkt;
-              formula = "Market Odds: 35% Published Critics • 65% Google Guests";
+              formula = "Based on 2 sources: Published Critics (35%) + Google Reviews (65%)";
             }} else {{
               wFH = 0; wCr = 0; wGu = 100;
               odds = mkt;
-              formula = "Market Odds: 100% Google Guest Rating";
+              formula = "Based on 1 source (Google Reviews)";
             }}
 
             const active = [firstHand ? ours100 : null, critic100, g100].filter((v) => v != null);
-            let badgeText = active.length === 1 ? "Market Odds (1 Source)" : "Mostly Aligned";
+            let badgeText = active.length === 1 ? "1 Data Source" : "Mostly Aligned";
             let badgeClass = "tag-teal";
             if (active.length >= 2) {{
               const spread = firstHand && ours100 != null ? Math.abs(ours100 - mkt) : Math.max(...active) - Math.min(...active);
@@ -1702,8 +1778,19 @@ def render_seo_page(
             const kpiOddsLbl = document.getElementById("kpiOddsLbl");
             const kpiOddsCard = document.getElementById("kpiOddsCard");
             if (kpiOdds && odds != null) kpiOdds.textContent = `${{odds}}%`;
-            if (kpiOddsLbl) kpiOddsLbl.textContent = firstHand ? "Verified StayOdds" : "Market Odds";
+            if (kpiOddsLbl) {{
+              kpiOddsLbl.textContent = firstHand
+                ? "Founder Verified"
+                : active.length >= 2
+                ? `StayOdds • ${{active.length}} Sources`
+                : "StayOdds • 1 Source (Google)";
+            }}
             if (kpiOddsCard) kpiOddsCard.classList.toggle("is-caution", badgeClass === "tag-caution");
+
+            const glanceScoreEl = document.getElementById("glanceScoreBasis");
+            if (glanceScoreEl && odds != null) {{
+              glanceScoreEl.innerHTML = `<strong>${{odds}}% StayOdds</strong> — ${{formula}}`;
+            }}
 
             const heroBadge = document.getElementById("heroStatusBadge");
             const gapBadge = document.getElementById("gapStatusBadge");
@@ -1716,20 +1803,20 @@ def render_seo_page(
             const rhs = firstHand ? mkt : g100;
             if (left100 != null && rhs != null) {{
               const d = left100 - rhs;
-              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>${{firstHand ? "Founder vs Market" : "Opinion Gap"}}</span>`;
+              if (pill) pill.innerHTML = `<strong>${{d > 0 ? "+" + d : d}} pts</strong><span>${{firstHand ? "Founder vs Consensus" : "Opinion Gap"}}</span>`;
               const gapHead = document.getElementById("gapHeadline");
               if (gapHead) {{
                 if (Math.abs(d) <= 5) {{
                   gapHead.textContent = firstHand
-                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched Market Odds.`
+                    ? `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — my stay matched the wider consensus.`
                     : `Tight agreement (${{d >= 0 ? "+" + d : d}} pts) — ${{criticLabel}} and real guests agree.`;
                 }} else if (d > 5) {{
                   gapHead.textContent = firstHand
-                    ? `I rated this +${{d}} pts higher than Market Odds — see what stood out.`
+                    ? `I rated this +${{d}} pts higher than the wider consensus — see what stood out.`
                     : `${{criticLabel}} rated this +${{d}} pts higher than real guests.`;
                 }} else {{
                   gapHead.textContent = firstHand
-                    ? `I rated this ${{d}} pts stricter than Market Odds — see what held it back.`
+                    ? `I rated this ${{d}} pts stricter than the wider consensus — see what held it back.`
                     : `Real guests rated this +${{Math.abs(d)}} pts higher than ${{criticLabel}}.`;
                 }}
               }}
@@ -1738,8 +1825,8 @@ def render_seo_page(
             const eqEl = document.getElementById("stayOddsEquation");
             if (eqEl && odds != null) {{
               eqEl.textContent = firstHand && ours100 != null
-                ? `70% My Stay (${{personalLabel ? personalLabel + " → " : ""}}${{ours100}}%) + 30% Market Odds (${{mkt}}%) = ${{odds}}% Verified StayOdds`
-                : `${{formula}} = ${{odds}}% Market Odds`;
+                ? `70% My Stay (${{personalLabel ? personalLabel + " → " : ""}}${{ours100}}%) + 30% Consensus (${{mkt}}%) = ${{odds}}% StayOdds`
+                : `${{formula}} = ${{odds}}% StayOdds`;
             }}
 
             const wSub = document.getElementById("weightFormulaSub");
@@ -2048,14 +2135,17 @@ def render_destination_page(
         cards_parts.append(
             f"""
         <article class="dest-card" data-resort-name="{esc(h['name'])}">
-          <a class="dest-card-media" href="../../stayodds/{esc(h['id'])}/">
-            <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" loading="lazy" decoding="async" />
-            <span class="dest-card-rank">#{idx + 1}</span>
-            <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
-          </a>
+          <div class="dest-card-media-wrap">
+            <a class="dest-card-media" href="../../stayodds/{esc(h['id'])}/">
+              <img src="{esc(thumb_src)}" alt="{esc(h['name'])}" loading="lazy" decoding="async" />
+              <span class="dest-card-rank">#{idx + 1}</span>
+              <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
+            </a>
+            <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="{esc(h['id'])}" data-shortlist-icon-only="1" data-resort-name="{esc(h['name'])}" aria-label="Save {esc(h['name'])} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
+          </div>
           <div class="dest-card-body">
             <div class="meta-line">
-              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
+              <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['scoreTrackLabel'])}</span>
               {f'<span class="tag">{esc(h["brand"])}</span>' if h.get("brand") else ""}
             </div>
             <h3><a href="../../stayodds/{esc(h['id'])}/">{esc(h['name'])}</a></h3>
@@ -2135,7 +2225,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=41" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=42" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2157,17 +2247,17 @@ def render_destination_page(
 <body>
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
-      <a class="brand" href="../../compare/" rel="noopener">
+      <div class="brand stayodds-brand-group">
         <span class="stayodds-brand-stack">
-          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
-          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
+          <a class="stayodds-wordmark-lg" href="../../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
+          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
-      </a>
+      </div>
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../../">Home</a>
-        <a href="../../compare/">StayOdds</a>
+        <a href="../../compare/" class="active">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
-        <a href="../../">Videos</a>
+        <a href="../../brands/">Brands</a>
+        <a href="../../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
         <a href="../../about/">About</a>
         <a href="../../faq/">FAQ</a>
         <a href="../../contact/">Contact</a>
@@ -2184,9 +2274,10 @@ def render_destination_page(
         <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab" href="../../">Latest Videos</a>
-        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
         <a class="hub-tab active" href="../../compare/" aria-current="page">StayOdds<span class="stayodds-dot">.</span></a>
+        <a class="hub-tab" href="../../hotels/">Hotel Map &amp; Scores</a>
+        <a class="hub-tab" href="../../brands/">Brands</a>
+        <a class="hub-tab" href="../../">Uncharted Videos &nearr;</a>
         <a class="hub-tab" href="../../cameras/">Camera Reviews</a>
         <a class="hub-tab" href="../../links/">Deals &amp; Gear</a>
         <a class="hub-tab" href="../../about/">About</a>
@@ -2289,7 +2380,7 @@ def render_destination_page(
     </div>
   </footer>
 
-  <script src="../../assets/stayodds-feedback.js?v=2" defer></script>
+  <script src="../../assets/stayodds-feedback.js?v=3" defer></script>
 </body>
 </html>
 """

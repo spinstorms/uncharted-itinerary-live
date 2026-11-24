@@ -9,7 +9,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=10";
+} from "./stayodds-engine.js?v=11";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 import {
   MONTH_LABELS,
@@ -719,11 +719,11 @@ function renderH2HCard(h, allCompared) {
       <div class="h2h-odds-strip">
         <div class="odds-big">
           <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Awarded" : "Open"}</strong>
-          <span>${escapeHtml(o.scoreTrack === "verified" ? "Verified StayOdds" : `Market Odds (${o.marketSourceCount} src)`)}</span>
+          <span>${escapeHtml(o.scoreTrack === "verified" ? "★ Founder Verified" : o.marketSourceCount === 1 ? "StayOdds • 1 Source" : o.marketSourceCount >= 2 ? `StayOdds • ${o.marketSourceCount} Sources` : "StayOdds")}</span>
         </div>
         <div class="index-big">
           <strong>${escapeHtml(o.founderVsMarketDelta != null ? `${o.founderVsMarketDelta > 0 ? "+" : ""}${o.founderVsMarketDelta} pts` : o.opinionGap.deltaLabel)}</strong>
-          <span>${o.firstHand ? "Founder vs Market" : "Opinion Gap"}</span>
+          <span>${o.firstHand ? "Founder vs Consensus" : "Opinion Gap"}</span>
         </div>
       </div>
 
@@ -755,7 +755,7 @@ function renderH2HCard(h, allCompared) {
           o.personalScoreLabel || unratedLabel
         )}
         ${metricRow(
-          "Market Odds Baseline",
+          "Guest & Critic Consensus",
           o.marketOdds,
           otherOdds.map((x) => x.o.marketOdds),
           "%",
@@ -1191,6 +1191,54 @@ function renderMonthPills() {
   });
 }
 
+function renderDirectorySignpost(list) {
+  const bar = qs("#directorySignpostBar");
+  if (!bar) return;
+  const fhInList = list.filter(isVisitedProperty).length;
+  const globalInList = list.length - fhInList;
+  const showBanner =
+    state.scope === "all" &&
+    state.sortBy === "visited" &&
+    !state.tableSortKey &&
+    fhInList > 0 &&
+    globalInList > 0;
+  if (!showBanner) {
+    bar.hidden = true;
+    bar.innerHTML = "";
+    return;
+  }
+  bar.hidden = false;
+  bar.innerHTML = `
+    <div class="dir-signpost-copy">
+      <span class="dir-signpost-badge">&#9733; ${fhInList} First-Hand Video Stays Shown First</span>
+      <span>Plus <strong>${globalInList.toLocaleString("en-GB")} verified global hotels</strong> right below — not just our own videos.</span>
+    </div>
+    <div class="dir-signpost-actions">
+      <button type="button" class="btn btn-primary dir-signpost-btn" id="signpostBrowseGlobalBtn">Browse All ${globalInList} Global Hotels &rarr;</button>
+      <button type="button" class="btn btn-outline dir-signpost-btn" id="signpostSortOddsBtn">Sort All ${list.length} by Highest StayOdds %</button>
+    </div>
+  `;
+  bar.querySelector("#signpostBrowseGlobalBtn")?.addEventListener("click", () => {
+    state.scope = "world";
+    state.visibleLimit = PAGE_SIZE;
+    syncUrlParams();
+    renderScopeTabs();
+    renderRegionPills();
+    renderFeaturePills();
+    renderStylePills();
+    renderMonthPills();
+    renderLeaderboard();
+  });
+  bar.querySelector("#signpostSortOddsBtn")?.addEventListener("click", () => {
+    state.sortBy = "odds";
+    state.tableSortKey = null;
+    const sortEl = qs("#consensusSort");
+    if (sortEl) sortEl.value = "odds";
+    state.visibleLimit = PAGE_SIZE;
+    renderLeaderboard();
+  });
+}
+
 function renderLeaderboard() {
   const container = qs("#consensusList");
   const tableWrap = qs("#consensusTableWrap");
@@ -1205,10 +1253,25 @@ function renderLeaderboard() {
   const list = getScopedHotels().filter((h) => {
     const o = getOdds(h);
     if (state.region !== "All" && h.region !== state.region) return false;
+    if (
+      Array.isArray(state.smartExcludeCountries) &&
+      state.smartExcludeCountries.length > 0 &&
+      state.smartExcludeCountries.includes(String(h.country || "").toLowerCase())
+    ) {
+      return false;
+    }
+    if (Array.isArray(state.smartIncludeLocations) && state.smartIncludeLocations.length > 0) {
+      const locBlob = `${h.name || ""} ${h.location || ""} ${h.country || ""}`.toLowerCase();
+      if (!state.smartIncludeLocations.some((term) => locBlob.includes(term))) return false;
+    }
     if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
     if (state.priceTier !== "all") {
       const pd = getPriceDisplay(h);
       if (!pd.tierBucket || pd.tierBucket !== state.priceTier) return false;
+    }
+    if (typeof state.smartMaxGbp === "number" && state.smartMaxGbp > 0) {
+      const pd = getPriceDisplay(h);
+      if (pd.numericGbp == null || pd.numericGbp > state.smartMaxGbp) return false;
     }
     if (activeFeature.id !== "all" && !activeFeature.match(h)) return false;
     if (!matchesTravelStyle(h, state.style)) return false;
@@ -1348,6 +1411,7 @@ function renderLeaderboard() {
   });
 
   state.lastFilteredList = list;
+  renderDirectorySignpost(list);
 
   if (!list.length) {
     container.style.display = "";
@@ -1439,7 +1503,11 @@ function renderLeaderboard() {
               const oddsTrackSub =
                 o.scoreTrack === "verified"
                   ? `Verified${o.founderVsMarketDelta != null ? ` (${o.founderVsMarketDelta > 0 ? "+" : ""}${o.founderVsMarketDelta})` : ""}`
-                  : "Market Odds";
+                  : o.marketSourceCount === 1
+                  ? "1 Source"
+                  : o.marketSourceCount >= 2
+                  ? `${o.marketSourceCount} Sources`
+                  : "StayOdds";
 
               return `
                 <tr data-resort-name="${escapeHtml(h.name)}">
@@ -1454,7 +1522,7 @@ function renderLeaderboard() {
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <button type="button" class="btn btn-outline" style="padding:6px 10px;font-size:12px;" data-compare-id="${escapeHtml(h.id)}">VS &uarr;</button>
-                    <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
+                    <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
                     <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
                   </td>
                 </tr>
@@ -1487,9 +1555,26 @@ function renderLeaderboard() {
     container.style.display = "";
     if (tableWrap) tableWrap.style.display = "none";
 
+    let insertedGlobalDivider = false;
+    const totalGlobalInList = list.filter((x) => !isVisitedProperty(x)).length;
+    const shouldInsertDivider = state.scope === "all" && state.sortBy === "visited" && !state.tableSortKey && totalGlobalInList > 0;
+
     const cardsHtml = visibleList
       .map((h, i) => {
         const o = getOdds(h);
+        let dividerHtml = "";
+        if (shouldInsertDivider && !insertedGlobalDivider && !isVisitedProperty(h) && i > 0) {
+          insertedGlobalDivider = true;
+          dividerHtml = `
+            <div class="directory-section-divider">
+              <div>
+                <strong>Global Luxury Directory &bull; ${totalGlobalInList.toLocaleString("en-GB")} Additional Hotels</strong>
+                <span>Verified critic scores, official awards, and real guest ratings from around the world.</span>
+              </div>
+              <span class="tag tag-teal">All ${totalGlobalInList} Ranked Below</span>
+            </div>
+          `;
+        }
         const reviewHref = getReviewHref(h);
         const ext = isExternalReview(h) ? ' target="_blank" rel="noopener noreferrer"' : "";
         const isShortOnly = h.coverageType === "Short Tour";
@@ -1613,13 +1698,13 @@ function renderLeaderboard() {
           .filter(Boolean)
           .join("");
 
-        return `
+        return `${dividerHtml}
           <article class="consensus-row-card ${trackCls}" data-resort-name="${escapeHtml(h.name)}">
             <div class="consensus-rank-col">
               <span class="consensus-rank-num">#${i + 1}</span>
               <div class="consensus-chance-ring ${trackCls}">
                 <strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : o.officialAwards.length ? "Award" : "Open"}</strong>
-                <span>${o.scoreTrack === "verified" ? "Verified" : "Market Odds"}</span>
+                <span>${o.scoreTrack === "verified" ? "Verified" : "StayOdds"}</span>
               </div>
               <div class="consensus-index-chip">
                 ${
@@ -1668,7 +1753,7 @@ function renderLeaderboard() {
                   ${criticBoxHtml}
                 </div>
                 <div class="pillar-box is-google">
-                  <small>Verified Guests${o.marketOdds != null && o.firstHand ? ` · Mkt ${o.marketOdds}%` : ""}</small>
+                  <small>Verified Guests${o.marketOdds != null && o.firstHand ? ` · Cons ${o.marketOdds}%` : ""}</small>
                   <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Open Breakdown"}</strong>
                 </div>
               </div>
@@ -1696,9 +1781,12 @@ function renderLeaderboard() {
             </div>
 
             <div class="consensus-cta-col">
-              <a href="${getSeoHref(h)}">
-                <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
-              </a>
+              <div class="consensus-thumb-wrap">
+                <a href="${getSeoHref(h)}">
+                  <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+                </a>
+                <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
+              </div>
               <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
               ${
                 reviewHref
@@ -2159,7 +2247,7 @@ async function boot() {
       if (preset === "50best_50" || preset === "50best_100" || preset === "michelin" || preset === "michelin_3" || preset === "adults") {
         applyFeatureSelection(state.feature === preset ? "all" : preset);
       } else if (preset === "style_island") {
-        state.style = state.style === "island" ? "all" : "island";
+        state.style = state.style === "beach" ? "all" : "beach";
       } else if (preset === "budget_under500") {
         state.priceTier = state.priceTier === "under500" ? "all" : "under500";
         const pf = qs("#priceTierFilter");
@@ -2176,7 +2264,360 @@ async function boot() {
       renderLeaderboard();
     });
   });
+
+  // Natural-Language "Describe Your Ideal Trip" Smart Finder (instant client-side parser, zero API cost)
+  const MONTH_REGEXES = [
+    { m: 1, label: "Jan", re: /\b(january|jan)\b/i },
+    { m: 2, label: "Feb", re: /\b(february|feb)\b/i },
+    { m: 3, label: "Mar", re: /\b(march|mar)\b/i },
+    { m: 4, label: "Apr", re: /\b(april|apr)\b/i },
+    { m: 5, label: "May", re: /\b(may)\b/i },
+    { m: 6, label: "Jun", re: /\b(june|jun)\b/i },
+    { m: 7, label: "Jul", re: /\b(july|jul)\b/i },
+    { m: 8, label: "Aug", re: /\b(august|aug)\b/i },
+    { m: 9, label: "Sep", re: /\b(september|sept|sep)\b/i },
+    { m: 10, label: "Oct", re: /\b(october|oct)\b/i },
+    { m: 11, label: "Nov", re: /\b(november|nov)\b/i },
+    { m: 12, label: "Dec", re: /\b(december|dec)\b/i },
+  ];
+
+  const PLACE_RULES = [
+    { re: /\bcaribbean\b/i, region: "Caribbean & Mexico", excludeCountries: ["mexico"], label: "Caribbean Islands" },
+    { re: /\bmexico|riviera maya|cancun|cancún|los cabos|cabo|tulum|punta mita\b/i, region: "Caribbean & Mexico", search: "Mexico", label: "Mexico" },
+    {
+      re: /\bcanary islands|canaries\b/i,
+      region: "Europe",
+      includeLocations: ["tenerife", "gran canaria", "lanzarote", "fuerteventura", "la palma", "la gomera"],
+      label: "Canary Islands",
+    },
+    { re: /\btenerife\b/i, region: "Europe", search: "Tenerife", label: "Tenerife" },
+    { re: /\bgran canaria\b/i, region: "Europe", search: "Gran Canaria", label: "Gran Canaria" },
+    { re: /\blanzarote\b/i, region: "Europe", search: "Lanzarote", label: "Lanzarote" },
+    { re: /\bfuerteventura\b/i, region: "Europe", search: "Fuerteventura", label: "Fuerteventura" },
+    { re: /\bmaldives\b/i, region: "Maldives & Indian Ocean", search: "Maldives", label: "Maldives" },
+    { re: /\bseychelles\b/i, region: "Maldives & Indian Ocean", search: "Seychelles", label: "Seychelles" },
+    { re: /\bmauritius\b/i, region: "Maldives & Indian Ocean", search: "Mauritius", label: "Mauritius" },
+    { re: /\bbora bora|french polynesia|tahiti\b/i, region: "Australia & Pacific", search: "French Polynesia", label: "Bora Bora & French Polynesia" },
+    { re: /\bbali\b/i, region: "Asia", search: "Bali", label: "Bali" },
+    { re: /\bindonesia|lombok\b/i, region: "Asia", search: "Indonesia", label: "Indonesia" },
+    { re: /\bjapan|tokyo|kyoto|niseko\b/i, region: "Asia", search: "Japan", label: "Japan" },
+    { re: /\bthailand|phuket|bangkok|koh samui\b/i, region: "Asia", search: "Thailand", label: "Thailand" },
+    { re: /\bdubai|abu dhabi|uae|oman|qatar|doha|middle east\b/i, region: "Middle East", label: "Middle East" },
+    { re: /\bgreece|santorini|mykonos|athens|crete\b/i, region: "Europe", search: "Greece", label: "Greece" },
+    { re: /\bitaly|amalfi|como|tuscany|rome|milan|venice|florence|sicily\b/i, region: "Europe", search: "Italy", label: "Italy" },
+    { re: /\bfrance|paris|riviera|provence|courchevel\b/i, region: "Europe", search: "France", label: "France" },
+    { re: /\bspain|mallorca|ibiza|marbella|madrid|barcelona\b/i, region: "Europe", search: "Spain", label: "Spain" },
+    { re: /\bunited kingdom|\buk\b|london|scotland|cotswolds\b/i, region: "Europe", search: "United Kingdom", label: "United Kingdom" },
+    { re: /\bturkey|bodrum|istanbul\b/i, region: "Europe", search: "Turkey", label: "Turkey" },
+    { re: /\begypt|red sea|cairo\b/i, region: "Middle East", search: "Egypt", label: "Egypt" },
+    { re: /\bafrica|south africa|kenya|tanzania|botswana|morocco|marrakech\b/i, region: "Africa", label: "Africa" },
+    { re: /\baustralia|new zealand|fiji|pacific\b/i, region: "Australia & Pacific", label: "Australia & Pacific" },
+    { re: /\beurope\b/i, region: "Europe", label: "Europe" },
+    { re: /\basia\b/i, region: "Asia", label: "Asia" },
+    { re: /\bamericas|usa|united states|california|new york|hawaii|costa rica\b/i, region: "Americas", label: "Americas" },
+    { re: /\bindian ocean\b/i, region: "Maldives & Indian Ocean", label: "Maldives & Indian Ocean" },
+  ];
+
+  const BRAND_RULES = [
+    { re: /\bfour seasons\b/i, brand: "Four Seasons" },
+    { re: /\baman\b/i, brand: "Aman" },
+    { re: /\brosewood\b/i, brand: "Rosewood" },
+    { re: /\bmandarin oriental\b/i, brand: "Mandarin Oriental" },
+    { re: /\bsix senses\b/i, brand: "Six Senses" },
+    { re: /\bbelmond\b/i, brand: "Belmond" },
+    { re: /\bone\s*&\s*only\b/i, brand: "One&Only" },
+    { re: /\bst\.?\s*regis\b/i, brand: "St. Regis" },
+    { re: /\britz[- ]?carlton\b/i, brand: "The Ritz-Carlton" },
+    { re: /\bmarriott|bonvoy\b/i, brand: "Marriott Bonvoy" },
+    { re: /\bhyatt\b/i, brand: "World of Hyatt" },
+    { re: /\bhilton|waldorf|conrad\b/i, brand: "Hilton Honors" },
+    { re: /\bsoneva\b/i, brand: "Soneva" },
+    { re: /\bcapella\b/i, brand: "Capella" },
+  ];
+
+  function parseNaturalTripQuery(raw) {
+    const text = String(raw || "").trim();
+    const parsed = {
+      region: "All",
+      excludeCountries: [],
+      includeLocations: [],
+      search: "",
+      brand: null,
+      month: 0,
+      feature: "all",
+      style: "all",
+      priceTier: "all",
+      maxGbp: null,
+      sortBy: null,
+      chips: [],
+    };
+    if (!text) return parsed;
+
+    // 1. Place / Region
+    for (const rule of PLACE_RULES) {
+      if (rule.re.test(text)) {
+        if (rule.region) parsed.region = rule.region;
+        if (rule.excludeCountries) parsed.excludeCountries = rule.excludeCountries;
+        if (rule.includeLocations) parsed.includeLocations = rule.includeLocations;
+        if (rule.search) parsed.search = rule.search;
+        parsed.chips.push(`📍 ${rule.label}`);
+        break;
+      }
+    }
+
+    // 2. Month / Sunny Season
+    let matchedMonth = null;
+    for (const mr of MONTH_REGEXES) {
+      if (mr.re.test(text)) {
+        matchedMonth = mr;
+        break;
+      }
+    }
+    if (matchedMonth) {
+      parsed.month = matchedMonth.m;
+      parsed.chips.push(`☀ Best Dry Weather in ${matchedMonth.label}`);
+    } else if (/\bwinter sun\b/i.test(text)) {
+      parsed.month = 1;
+      parsed.chips.push("☀ Winter Sun (Jan Dry Weather)");
+    } else if (/\bsummer\b/i.test(text)) {
+      parsed.month = 7;
+      parsed.chips.push("☀ Summer (Jul Dry Weather)");
+    } else if (/\bspring|easter\b/i.test(text)) {
+      parsed.month = 4;
+      parsed.chips.push("☀ Spring (Apr Dry Weather)");
+    } else if (/\bautumn|fall\b/i.test(text)) {
+      parsed.month = 10;
+      parsed.chips.push("☀ Autumn (Oct Dry Weather)");
+    }
+
+    // 3. Budget / Price ceiling
+    const priceMatch = text.match(/(?:under|below|max|less than|up to|<)\s*[£$€]?\s*(\d{3,4})/i);
+    if (priceMatch) {
+      const cap = Number(priceMatch[1]);
+      if (cap <= 500) {
+        parsed.priceTier = "under500";
+        if (cap < 500) parsed.maxGbp = cap;
+        parsed.chips.push(`💎 Under £${cap}/nt`);
+      } else if (cap <= 1000) {
+        parsed.maxGbp = cap;
+        parsed.chips.push(`💎 Under £${cap}/nt`);
+      } else {
+        parsed.maxGbp = cap;
+        parsed.chips.push(`💎 Under £${cap}/nt`);
+      }
+    } else if (/\b(cheap|budget|affordable|great value|good value|value)\b/i.test(text)) {
+      parsed.priceTier = "under500";
+      parsed.sortBy = "price_asc";
+      parsed.chips.push("💎 Great Value (Under £500/nt)");
+    }
+
+    // 4. Awards & Profile Features
+    if (/\btop\s*50|50\s*best\b/i.test(text)) {
+      parsed.feature = "50best_50";
+      parsed.sortBy = "award_50best";
+      parsed.chips.push("🏆 World's 50 Best (#1–50)");
+    } else if (/\btop\s*100\b/i.test(text)) {
+      parsed.feature = "50best_100";
+      parsed.sortBy = "award_50best";
+      parsed.chips.push("💯 Top 100 (#1–100)");
+    } else if (/\b3\s*(?:michelin\s*)?keys?\b/i.test(text)) {
+      parsed.feature = "michelin_3";
+      parsed.sortBy = "award_michelin";
+      parsed.chips.push("🗝️ 3 MICHELIN Keys");
+    } else if (/\bmichelin\b/i.test(text)) {
+      parsed.feature = "michelin";
+      parsed.sortBy = "award_michelin";
+      parsed.chips.push("🗝️ MICHELIN Keys (3→1)");
+    } else if (/\bforbes\b/i.test(text)) {
+      parsed.feature = "forbes";
+      parsed.sortBy = "award_forbes";
+      parsed.chips.push("⭐ Forbes Star-Rated");
+    } else if (/\badults[- ]?only|honeymoon|romantic|couples\b/i.test(text)) {
+      parsed.feature = "adults";
+      parsed.chips.push("🥂 Adults-Only");
+    } else if (/\bfamily|families|kids|children\b/i.test(text)) {
+      parsed.feature = "family";
+      parsed.chips.push("👨‍👩‍👧 Family & Kids");
+    } else if (/\bpoints|bonvoy|hyatt points|hilton points\b/i.test(text)) {
+      parsed.feature = "points";
+      parsed.chips.push("★ Points Brands");
+    }
+
+    // 5. Travel Style
+    if (/\ball[- ]?inclusive\b/i.test(text)) {
+      parsed.style = "allinclusive";
+      parsed.chips.push("🍹 All-Inclusive");
+    } else if (/\boverwater|water villa\b/i.test(text)) {
+      parsed.style = "overwater";
+      parsed.chips.push("🛖 Overwater Villas");
+    } else if (/\bsnorkel|house reef|diving|reef\b/i.test(text)) {
+      parsed.style = "snorkel";
+      parsed.chips.push("🤿 Snorkelling & Reef");
+    } else if (/\bsafari|wildlife|jungle|nature\b/i.test(text)) {
+      parsed.style = "safari";
+      parsed.chips.push("🦁 Safari & Nature");
+    } else if (/\bski|mountain|alps|alpine|snow\b/i.test(text)) {
+      parsed.style = "mountain";
+      parsed.chips.push("🏔️ Mountain & Ski");
+    } else if (/\bspa|wellness|onsen|retreat\b/i.test(text)) {
+      parsed.style = "wellness";
+      parsed.chips.push("🧖 Spa & Wellness");
+    } else if (/\bcity|urban|shopping\b/i.test(text)) {
+      parsed.style = "city";
+      parsed.chips.push("🏙️ City Breaks");
+    } else if (/\bculture|heritage|palace|historic\b/i.test(text)) {
+      parsed.style = "culture";
+      parsed.chips.push("🏛️ Culture & Heritage");
+    } else if (/\bbeach|island|sunny|sunshine|tropical\b/i.test(text) && !parsed.month && parsed.region === "All") {
+      parsed.style = "beach";
+      parsed.chips.push("🏖️ Beach & Island Resorts");
+    } else if (/\bbeach|island\b/i.test(text) && parsed.region !== "All") {
+      parsed.style = "beach";
+      parsed.chips.push("🏖️ Beach & Island");
+    }
+
+    // 6. Brand
+    for (const br of BRAND_RULES) {
+      if (br.re.test(text)) {
+        parsed.brand = br.brand;
+        parsed.chips.push(`🏨 ${br.brand}`);
+        break;
+      }
+    }
+
+    // Fallback: if nothing structured matched, treat cleaned text as keyword search
+    if (!parsed.chips.length) {
+      const cleaned = text.replace(/\b(i want to|i would like to|stay in|looking for|find me|show me|hotels?|resorts?|in|the|a|an|with|for)\b/gi, " ").replace(/\s+/g, " ").trim();
+      parsed.search = cleaned || text;
+      parsed.chips.push(`🔎 "${parsed.search}"`);
+    }
+    return parsed;
+  }
+
+  function clearSmartTripBanner() {
+    const out = qs("#smartTripUnderstood");
+    const clr = qs("#smartTripClearBtn");
+    if (out) {
+      out.hidden = true;
+      out.innerHTML = "";
+    }
+    if (clr) clr.hidden = true;
+    state.smartExcludeCountries = [];
+    state.smartIncludeLocations = [];
+    state.smartMaxGbp = null;
+  }
+
+  function applySmartTripPrompt(rawText) {
+    const inp = qs("#smartTripInput");
+    const out = qs("#smartTripUnderstood");
+    const clr = qs("#smartTripClearBtn");
+    const text = String(rawText || "").trim();
+    if (inp && inp.value !== text) inp.value = text;
+    if (!text) {
+      clearSmartTripBanner();
+      return;
+    }
+
+    const p = parseNaturalTripQuery(text);
+    state.scope = "all";
+    state.brandFilter = p.brand || null;
+    state.region = p.region;
+    state.smartExcludeCountries = p.excludeCountries || [];
+    state.smartIncludeLocations = p.includeLocations || [];
+    state.smartMaxGbp = p.maxGbp;
+    state.search = p.search || "";
+    state.verdict = "All";
+    state.priceTier = p.priceTier || "all";
+    applyFeatureSelection(p.feature || "all");
+    state.style = p.style || "all";
+    state.month = p.month || 0;
+    state.tableSortKey = null;
+    if (p.sortBy) {
+      state.sortBy = p.sortBy;
+    } else if (state.sortBy === "visited") {
+      state.sortBy = "odds";
+    }
+    state.visibleLimit = PAGE_SIZE;
+
+    const searchInput = qs("#consensusSearch");
+    if (searchInput) searchInput.value = state.search;
+    const vf = qs("#verdictFilter");
+    if (vf) vf.value = "All";
+    const pf = qs("#priceTierFilter");
+    if (pf) pf.value = state.priceTier;
+    const sortEl = qs("#consensusSort");
+    if (sortEl) sortEl.value = state.sortBy;
+
+    syncUrlParams();
+    renderScopeTabs();
+    renderRegionPills();
+    renderFeaturePills();
+    renderStylePills();
+    renderMonthPills();
+    renderLeaderboard();
+
+    const matchedCount = state.lastFilteredList ? state.lastFilteredList.length : 0;
+    if (clr) clr.hidden = false;
+    if (out) {
+      out.hidden = false;
+      out.innerHTML = `
+        <span class="smart-understood-label">Understood (${matchedCount} match${matchedCount === 1 ? "" : "es"}):</span>
+        ${p.chips.map((c) => `<span class="smart-understood-pill">${escapeHtml(c)}</span>`).join("")}
+        <button type="button" class="btn-link-clear" id="smartTripResetInline">Reset</button>
+      `;
+      out.querySelector("#smartTripResetInline")?.addEventListener("click", () => {
+        qs("#smartTripClearBtn")?.click();
+      });
+    }
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("use_filter", "smart_trip", text.slice(0, 80));
+    }
+  }
+
+  qs("#smartTripForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    applySmartTripPrompt(qs("#smartTripInput")?.value || "");
+  });
+  qs("#smartTripClearBtn")?.addEventListener("click", () => {
+    const inp = qs("#smartTripInput");
+    if (inp) inp.value = "";
+    clearSmartTripBanner();
+    state.region = "All";
+    state.brandFilter = null;
+    state.search = "";
+    state.verdict = "All";
+    state.priceTier = "all";
+    applyFeatureSelection("all");
+    state.style = "all";
+    state.month = 0;
+    state.sortBy = "visited";
+    const searchInput = qs("#consensusSearch");
+    if (searchInput) searchInput.value = "";
+    const vf = qs("#verdictFilter");
+    if (vf) vf.value = "All";
+    const pf = qs("#priceTierFilter");
+    if (pf) pf.value = "all";
+    const sortEl = qs("#consensusSort");
+    if (sortEl) sortEl.value = "visited";
+    state.visibleLimit = PAGE_SIZE;
+    syncUrlParams();
+    renderScopeTabs();
+    renderRegionPills();
+    renderFeaturePills();
+    renderStylePills();
+    renderMonthPills();
+    renderLeaderboard();
+  });
+  document.querySelectorAll("[data-trip-prompt]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      applySmartTripPrompt(btn.dataset.tripPrompt || "");
+    });
+  });
+
   qs("#compareClearDrawerFiltersBtn")?.addEventListener("click", () => {
+    clearSmartTripBanner();
+    const inp = qs("#smartTripInput");
+    if (inp) inp.value = "";
     state.verdict = "All";
     state.priceTier = "all";
     applyFeatureSelection("all");
@@ -2300,7 +2741,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124d";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124e";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -2313,7 +2754,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124d`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124e`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

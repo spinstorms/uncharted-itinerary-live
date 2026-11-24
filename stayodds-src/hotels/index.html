@@ -36,13 +36,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124d" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124e" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=41" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=42" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -64,18 +64,18 @@
 <body>
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
-      <a class="brand" href="../compare/" rel="noopener">
+      <div class="brand stayodds-brand-group">
         <span class="stayodds-brand-stack">
-          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
-          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
+          <a class="stayodds-wordmark-lg" href="../compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
+          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
-      </a>
+      </div>
 
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../">Home</a>
         <a href="../compare/">StayOdds</a>
-        <a href="./">Hotel Map</a>
-        <a href="../">Videos</a>
+        <a href="./" class="active">Hotel Map</a>
+        <a href="../brands/">Brands</a>
+        <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
         <a href="../about/">About</a>
         <a href="../faq/">FAQ</a>
         <a href="../contact/">Contact</a>
@@ -90,9 +90,10 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="../">Latest Videos</a>
-      <a href="./" class="active">Hotel Map &amp; Scores</a>
       <a href="../compare/">StayOdds.</a>
+      <a href="./" class="active">Hotel Map &amp; Scores</a>
+      <a href="../brands/">Brand Leaderboard</a>
+      <a href="../">Uncharted Videos &nearr;</a>
       <a href="../cameras/">Camera Reviews</a>
       <a href="../links/">Deals &amp; Gear</a>
       <a href="../faq/">FAQ</a>
@@ -107,17 +108,21 @@
         <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab" href="../">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Latest Videos
+        <a class="hub-tab" href="../compare/">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          StayOdds<span class="stayodds-dot">.</span>
         </a>
         <a class="hub-tab active" href="./" aria-current="page">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Hotel Map (832)
         </a>
-        <a class="hub-tab" href="../compare/">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          StayOdds<span class="stayodds-dot">.</span>
+        <a class="hub-tab" href="../brands/">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          Brands
+        </a>
+        <a class="hub-tab" href="../">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Uncharted Videos &nearr;
         </a>
         <a class="hub-tab" href="../cameras/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -173,9 +178,10 @@
         <div class="map-toolbar">
           <div class="filter-pills" id="regionPills" role="tablist" aria-label="Jump to macro region"></div>
           <div class="map-legend">
-            <span><i class="map-legend-dot" style="background:#ff5d22;"></i>Verified Stays (36)</span>
-            <span><i class="map-legend-dot" style="background:#0f766e;"></i>Market Odds (796)</span>
+            <span><i class="map-legend-dot" style="background:#ff5d22;"></i>Founder Stays (36)</span>
+            <span><i class="map-legend-dot" style="background:#0f766e;"></i>Global Hotels (796)</span>
             <span><i class="map-legend-dot" style="background:#0f766e;border:2px solid #fbbf24;"></i>2026 MICHELIN Key</span>
+            <button type="button" class="map-reset-btn" id="resetMapViewBtn" title="Reset map zoom, position, and filters">&#8634; Reset View</button>
           </div>
         </div>
         <div class="map-shell">
@@ -198,8 +204,8 @@
           <div class="scorecard-filters" style="gap:8px;">
             <select id="sortControl" class="select-control" aria-label="Sort hotels">
               <option value="stayodds">Sort: Verified Stays First</option>
-              <option value="odds">Sort: Highest StayOdds / Market %</option>
-              <option value="gap">Sort: Biggest Founder vs. Market Gap</option>
+              <option value="odds">Sort: Highest StayOdds %</option>
+              <option value="gap">Sort: Biggest Founder vs. Consensus Gap</option>
               <option value="overall">Sort: Highest My Stay (/25)</option>
               <option value="awards">Sort: Most Official Awards</option>
               <option value="name">Sort: A &ndash; Z</option>
@@ -236,7 +242,7 @@
                 <option value="All">All 832 Properties</option>
                 <option value="Full Review">First-Hand Full Reviews (27)</option>
                 <option value="Short Tour">First-Hand Short Tours (9)</option>
-                <option value="Global Directory">Market Odds Directory (796)</option>
+                <option value="Global Directory">Global Directory (796)</option>
               </select>
             </label>
             <label class="drawer-field">
@@ -324,7 +330,7 @@
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/hotels.js?v=31"></script>
+  <script src="../assets/stayodds-feedback.js?v=3" defer></script>
+  <script type="module" src="../assets/hotels.js?v=32"></script>
 </body>
 </html>

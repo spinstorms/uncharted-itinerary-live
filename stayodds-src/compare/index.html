@@ -37,12 +37,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124d" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124e" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=41" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=42" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -64,18 +64,18 @@
 <body>
   <header class="site-header stayodds-site-header">
     <div class="container header-inner">
-      <a class="brand" href="./" rel="noopener">
+      <div class="brand stayodds-brand-group">
         <span class="stayodds-brand-stack">
-          <span class="stayodds-wordmark-lg">StayOdds<span class="stayodds-dot">.</span></span>
-          <span class="stayodds-brand-by">by The Uncharted Itinerary</span>
+          <a class="stayodds-wordmark-lg" href="./" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>
+          <a class="stayodds-brand-by" href="https://uncharteditinerary.com/" rel="noopener">by The Uncharted Itinerary &nearr;</a>
         </span>
-      </a>
+      </div>
 
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="../">Home</a>
         <a href="./" class="active">StayOdds</a>
         <a href="../hotels/">Hotel Map</a>
         <a href="../brands/">Brands</a>
+        <a href="../" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>
         <a href="../about/">About</a>
         <a href="../faq/">FAQ</a>
         <a href="../contact/">Contact</a>
@@ -90,10 +90,10 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="../">Latest Videos</a>
-      <a href="../hotels/">Hotel Map &amp; Scores</a>
       <a href="./" class="active">StayOdds.</a>
+      <a href="../hotels/">Hotel Map &amp; Scores</a>
       <a href="../brands/">Brand Leaderboard</a>
+      <a href="../">Uncharted Videos &nearr;</a>
       <a href="../cameras/">Camera Reviews</a>
       <a href="../links/">Deals &amp; Gear</a>
       <a href="../faq/">FAQ</a>
@@ -108,21 +108,21 @@
         <span class="stayodds-wordmark">StayOdds<span class="stayodds-dot">.</span></span>
       </a>
       <nav class="hub-tabs" aria-label="Switch hub sections">
-        <a class="hub-tab" href="../">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Latest Videos
+        <a class="hub-tab active" href="./" aria-current="page">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          StayOdds<span class="stayodds-dot">.</span>
         </a>
         <a class="hub-tab" href="../hotels/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Hotel Map &amp; Scores
         </a>
-        <a class="hub-tab active" href="./" aria-current="page">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          StayOdds<span class="stayodds-dot">.</span>
-        </a>
         <a class="hub-tab" href="../brands/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
           Brands
+        </a>
+        <a class="hub-tab" href="../">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Uncharted Videos &nearr;
         </a>
         <a class="hub-tab" href="../cameras/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -164,7 +164,7 @@
             </div>
             <div class="sync-meta">
               <span id="consensusSummaryStat">832 Luxury Properties</span>
-              <strong>Personally Curated &amp; Verified</strong>
+              <strong>36 First-Hand Videos + 796 Global Hotels</strong>
               <a class="btn btn-outline" href="../hotels/" style="margin-top:8px;background:#fff;color:#111;border-color:#fff;font-size:12.5px;padding:6px 12px;">Explore All 832 on World Map &rarr;</a>
             </div>
           </div>
@@ -172,17 +172,17 @@
       </div>
     </section>
 
-    <!-- Compact Expandable Two-Track Methodology Bar -->
+    <!-- Compact Expandable Scoring Methodology Bar -->
     <section class="methodology-section" style="padding:10px 0 6px;">
       <div class="container">
         <details class="methodology-compact-bar">
           <summary>
             <span class="meth-summary-left">
-              <span class="meth-badge-verified">Verified StayOdds</span>
-              <strong>70% My First-Hand Stay + 30% Market Odds</strong>
+              <span class="meth-badge-verified">&#9733; Founder Verified</span>
+              <strong>70% My Stay + 30% Consensus</strong>
               <span class="meth-sep">&bull;</span>
-              <span class="meth-badge-market">Market Odds</span>
-              <span>Unvisited external baseline (Critics &amp; Guests) &bull; Zero fabricated scores</span>
+              <span class="meth-badge-market">StayOdds</span>
+              <span>Global hotels show exact source count (Critics &amp; Guests) &bull; Zero fabricated scores</span>
             </span>
             <span class="meth-toggle-link">How scoring works &#9662;</span>
           </summary>
@@ -190,15 +190,15 @@
             <div class="method-pill is-highlight">
               <strong>70/30</strong>
               <div>
-                <span>Verified StayOdds (Audited Stays)</span>
-                <small>When I personally stay and score a hotel (/25 &times; 4), my verdict drives 70% of the score alongside 30% Market Odds — with an explicit Founder vs. Market delta (&#177; pts).</small>
+                <span>&#9733; Founder Verified (Audited Stays)</span>
+                <small>When I personally stay and score a hotel (/25 &times; 4), my verdict drives 70% of StayOdds alongside 30% Guest &amp; Critic Consensus — with an explicit Founder vs. Consensus delta (&#177; pts).</small>
               </div>
             </div>
             <div class="method-pill">
-              <strong>Market</strong>
+              <strong>Sources</strong>
               <div>
-                <span>Market Odds Baseline (Unvisited)</span>
-                <small>Outlined slate/teal badge for unvisited hotels: 35% Published Critics + 65% Verified Guests (Licensed Guest Feed / Live Google), with gentle dampening on tiny (&lt;40) review samples.</small>
+                <span>Global Directory StayOdds (Unvisited)</span>
+                <small>Outlined badge showing exact data sources: 35% Published Critics + 65% Verified Guests when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed, with gentle dampening on tiny (&lt;40) samples.</small>
               </div>
             </div>
             <div class="method-pill">
@@ -220,7 +220,7 @@
           <div class="section-header" style="margin-bottom:14px;flex-wrap:wrap;gap:12px;">
             <div>
               <h2 class="section-title">Compare Resorts Head-to-Head</h2>
-              <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side — Verified StayOdds vs. Market Odds, awards, property status, and live dates.</p>
+              <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side — StayOdds %, source count, awards, property status, and live dates.</p>
             </div>
             <div class="h2h-header-actions">
               <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Compare up to 3 hotels side-by-side">+ Add 3rd Hotel</button>
@@ -316,12 +316,32 @@
         <div class="section-header" style="flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
-            <p class="section-subtitle">Solid badges are <strong>Verified StayOdds</strong> (70% My Stay + 30% Market); outlined badges are unvisited <strong>Market Odds</strong>.</p>
+            <p class="section-subtitle">Solid badges are <strong>&#9733; Founder Verified</strong> (70% My Stay + 30% Consensus); outlined badges show unified <strong>StayOdds %</strong> with exact source counts across 796 global hotels.</p>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
             <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Leaderboard &rarr;</a>
             <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">&#x2B07; Export CSV</button>
           </div>
+        </div>
+
+        <!-- Natural-Language "Describe Your Trip" Smart Finder -->
+        <div class="smart-trip-box" id="smartTripFinderBar">
+          <form class="smart-trip-form" id="smartTripForm" autocomplete="off">
+            <div class="smart-trip-input-wrap">
+              <span class="smart-trip-spark" aria-hidden="true">&#10024;</span>
+              <input type="text" id="smartTripInput" class="smart-trip-input" placeholder="Describe your ideal trip — e.g. &ldquo;I want to stay in the Caribbean in sunny weather in January&rdquo;" aria-label="Describe your ideal hotel trip in plain English" />
+              <button type="button" id="smartTripClearBtn" class="smart-trip-clear" aria-label="Clear smart trip search" hidden>&times;</button>
+            </div>
+            <button type="submit" class="btn btn-primary smart-trip-submit">Find Hotels</button>
+          </form>
+          <div class="smart-trip-examples" aria-label="Try example trip searches">
+            <span class="smart-trip-ex-label">Try asking:</span>
+            <button type="button" class="smart-trip-chip" data-trip-prompt="I want to stay in the Caribbean in sunny weather in January">Sunny Caribbean in January</button>
+            <button type="button" class="smart-trip-chip" data-trip-prompt="Canary Islands winter sun under £500">Canary Islands under &pound;500</button>
+            <button type="button" class="smart-trip-chip" data-trip-prompt="Adults-only island resort in Maldives in February">Adults-only Maldives in Feb</button>
+            <button type="button" class="smart-trip-chip" data-trip-prompt="Top 50 luxury hotels in Japan">Top 50 hotels in Japan</button>
+          </div>
+          <div class="smart-trip-understood" id="smartTripUnderstood" hidden></div>
         </div>
 
         <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels, first-hand verified stays, and saved shortlist"></div>
@@ -353,7 +373,7 @@
               <option value="Mostly Aligned">Mostly Aligned (2+ Sources)</option>
               <option value="Opinions Differ">Opinions Differ (See Why)</option>
               <option value="First-Hand Verified">First-Hand Verified</option>
-              <option value="Market Odds (1 Source)">Market Odds (1 Source)</option>
+              <option value="1 Data Source">1 Data Source (Single Feed)</option>
               <option value="Award-Winning">Award-Winning</option>
             </select>
             <select id="priceTierFilter" class="select-control" aria-label="Filter by indicative nightly budget">
@@ -365,11 +385,11 @@
             </select>
             <select id="consensusSort" class="select-control" aria-label="Sort StayOdds directory">
               <option value="visited">Sort: Verified Stays First</option>
-              <option value="odds">Sort: Highest StayOdds / Market %</option>
+              <option value="odds">Sort: Highest StayOdds %</option>
               <option value="award_50best">Awards: World&rsquo;s 50 Best (#1 &rarr; #100)</option>
               <option value="award_michelin">Awards: MICHELIN Keys (3 &rarr; 1 Key)</option>
               <option value="award_forbes">Awards: Forbes Star Tier (5&#9733; &rarr; Rec.)</option>
-              <option value="gap">Sort: Biggest Founder vs. Market Gap</option>
+              <option value="gap">Sort: Biggest Founder vs. Consensus Gap</option>
               <option value="price_asc">Sort: Indicative Price (Low &rarr; High)</option>
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
               <option value="pillar_rooms">Pillar: Best Rooms (My Stay)</option>
@@ -447,6 +467,9 @@
             <div class="feature-filter-pills" id="bestMonthPills" role="group" aria-label="Filter hotels by best dry and peak weather months"></div>
           </div>
         </div>
+
+        <!-- Clear Signpost Banner so visitors know 796+ Global Hotels sit below the 36 First-Hand Videos -->
+        <div class="directory-signpost-bar" id="directorySignpostBar" hidden></div>
 
         <div class="consensus-list" id="consensusList"></div>
         <div class="comparison-table-wrap" id="consensusTableWrap" style="display:none; margin-bottom: 36px;"></div>
@@ -531,7 +554,7 @@
     </div>
   </footer>
 
-  <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=17"></script>
+  <script src="../assets/stayodds-feedback.js?v=3" defer></script>
+  <script type="module" src="../assets/compare.js?v=18"></script>
 </body>
 </html>
