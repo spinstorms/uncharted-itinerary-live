@@ -787,9 +787,26 @@ async function boot() {
   });
 
   try {
-    const res = await fetch(`../data/stayodds-index.json?v=20261123f`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const payload = await res.json();
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124";
+    const IDX_TTL_MS = 6 * 60 * 60 * 1000;
+    let payload = null;
+    try {
+      const raw = localStorage.getItem(IDX_CACHE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.ts && Date.now() - parsed.ts < IDX_TTL_MS && parsed.data && Array.isArray(parsed.data.hotels)) {
+          payload = parsed.data;
+        }
+      }
+    } catch (_) {}
+    if (!payload) {
+      const res = await fetch(`../data/stayodds-index.json?v=20261124a`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      payload = await res.json();
+      try {
+        localStorage.setItem(IDX_CACHE_KEY, JSON.stringify({ ts: Date.now(), data: payload }));
+      } catch (_) {}
+    }
     state.hotels = payload.hotels || [];
 
     const matchedRegion = matchRegionParam(params.get("region"), getScopedHotels());

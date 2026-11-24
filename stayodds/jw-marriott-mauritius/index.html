@@ -13,10 +13,10 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="JW Marriott Mauritius Resort — StayOdds Score (Live) &amp; Honest Review | Worth It?" />
   <meta property="og:description" content="Is JW Marriott Mauritius Resort in Le Morne, Mauritius worth it? Compare verified guest ratings, official awards, key hotel facts, and hype vs. reality opinion gap on StayOdds." />
-  <meta property="og:image" content="https://uncharteditinerary.com/assets/placeholders/jw-marriott-mauritius.webp" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/thumbs/jw-marriott-mauritius.webp" />
   <meta property="og:url" content="https://uncharteditinerary.com/stayodds/jw-marriott-mauritius/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "JW Marriott Mauritius Resort", "url": "https://uncharteditinerary.com/stayodds/jw-marriott-mauritius/", "image": "https://uncharteditinerary.com/assets/placeholders/jw-marriott-mauritius.webp", "address": {"@type": "PostalAddress", "addressLocality": "Le Morne", "addressCountry": "Mauritius"}, "geo": {"@type": "GeoCoordinates", "latitude": -20.4535, "longitude": 57.3137}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "JW Marriott Mauritius Resort", "url": "https://uncharteditinerary.com/stayodds/jw-marriott-mauritius/", "image": "https://uncharteditinerary.com/assets/thumbs/jw-marriott-mauritius.webp", "address": {"@type": "PostalAddress", "addressLocality": "Le Morne", "addressCountry": "Mauritius"}, "geo": {"@type": "GeoCoordinates", "latitude": -20.4535, "longitude": 57.3137}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -98,7 +98,7 @@
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="../../assets/placeholders/jw-marriott-mauritius.webp?v=169" alt="JW Marriott Mauritius Resort" fetchpriority="high" decoding="async" />
+          <img src="../../assets/thumbs/jw-marriott-mauritius.webp?v=169" alt="JW Marriott Mauritius Resort" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-slate" id="heroStatusBadge">Global Directory</span>
@@ -448,8 +448,31 @@
     }
 
     if (placeId) {
-      fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
-        .then((r) => (r.ok ? r.json() : null))
+      const grCacheKey = "stayodds_gr_v1_" + placeId;
+      const GR_TTL_MS = 24 * 60 * 60 * 1000;
+      let cachedGr = null;
+      try {
+        const raw = localStorage.getItem(grCacheKey);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.ts && (Date.now() - parsed.ts) < GR_TTL_MS && parsed.data) {
+            cachedGr = parsed.data;
+          }
+        }
+      } catch (_) {}
+
+      const grPromise = cachedGr
+        ? Promise.resolve(cachedGr)
+        : fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
+            .then((r) => (r.ok ? r.json() : null))
+            .then((g) => {
+              if (g && g.status === "ok" && typeof g.rating === "number") {
+                try { localStorage.setItem(grCacheKey, JSON.stringify({ ts: Date.now(), data: g })); } catch (_) {}
+              }
+              return g;
+            });
+
+      grPromise
         .then((g) => {
           if (!g || g.status !== "ok" || typeof g.rating !== "number") {
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);

@@ -13,10 +13,10 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Blackberry Mountain — StayOdds Score (Live) &amp; Honest Review | Worth It?" />
   <meta property="og:description" content="Is Blackberry Mountain in Walland, Tennessee, United States worth it? Compare verified guest ratings, official awards, key hotel facts, and hype vs. reality opinion gap on StayOdds." />
-  <meta property="og:image" content="https://uncharteditinerary.com/assets/placeholders/blackberry-mountain-tennessee.webp" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/thumbs/blackberry-mountain-tennessee.webp" />
   <meta property="og:url" content="https://uncharteditinerary.com/stayodds/blackberry-mountain-tennessee/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Blackberry Mountain", "url": "https://uncharteditinerary.com/stayodds/blackberry-mountain-tennessee/", "image": "https://uncharteditinerary.com/assets/placeholders/blackberry-mountain-tennessee.webp", "address": {"@type": "PostalAddress", "addressLocality": "Walland, Tennessee", "addressCountry": "United States"}, "geo": {"@type": "GeoCoordinates", "latitude": 35.7021, "longitude": -83.8404}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Blackberry Mountain", "url": "https://uncharteditinerary.com/stayodds/blackberry-mountain-tennessee/", "image": "https://uncharteditinerary.com/assets/thumbs/blackberry-mountain-tennessee.webp", "address": {"@type": "PostalAddress", "addressLocality": "Walland, Tennessee", "addressCountry": "United States"}, "geo": {"@type": "GeoCoordinates", "latitude": 35.7021, "longitude": -83.8404}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -98,7 +98,7 @@
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="../../assets/placeholders/blackberry-mountain-tennessee.webp?v=169" alt="Blackberry Mountain" fetchpriority="high" decoding="async" />
+          <img src="../../assets/thumbs/blackberry-mountain-tennessee.webp?v=169" alt="Blackberry Mountain" fetchpriority="high" decoding="async" />
           <div class="detail-hero-badges">
             <span class="tag tag-slate">Global Directory</span>
             <span class="tag tag-slate" id="heroStatusBadge">Global Directory</span>
@@ -448,8 +448,31 @@
     }
 
     if (placeId) {
-      fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
-        .then((r) => (r.ok ? r.json() : null))
+      const grCacheKey = "stayodds_gr_v1_" + placeId;
+      const GR_TTL_MS = 24 * 60 * 60 * 1000;
+      let cachedGr = null;
+      try {
+        const raw = localStorage.getItem(grCacheKey);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.ts && (Date.now() - parsed.ts) < GR_TTL_MS && parsed.data) {
+            cachedGr = parsed.data;
+          }
+        }
+      } catch (_) {}
+
+      const grPromise = cachedGr
+        ? Promise.resolve(cachedGr)
+        : fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
+            .then((r) => (r.ok ? r.json() : null))
+            .then((g) => {
+              if (g && g.status === "ok" && typeof g.rating === "number") {
+                try { localStorage.setItem(grCacheKey, JSON.stringify({ ts: Date.now(), data: g })); } catch (_) {}
+              }
+              return g;
+            });
+
+      grPromise
         .then((g) => {
           if (!g || g.status !== "ok" || typeof g.rating !== "number") {
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);

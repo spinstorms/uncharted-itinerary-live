@@ -1068,8 +1068,31 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
     }}
 
     if (placeId) {{
-      fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
-        .then((r) => (r.ok ? r.json() : null))
+      const grCacheKey = "stayodds_gr_v1_" + placeId;
+      const GR_TTL_MS = 24 * 60 * 60 * 1000;
+      let cachedGr = null;
+      try {{
+        const raw = localStorage.getItem(grCacheKey);
+        if (raw) {{
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.ts && (Date.now() - parsed.ts) < GR_TTL_MS && parsed.data) {{
+            cachedGr = parsed.data;
+          }}
+        }}
+      }} catch (_) {{}}
+
+      const grPromise = cachedGr
+        ? Promise.resolve(cachedGr)
+        : fetch("https://yfupehkygkkccybefuam.supabase.co/functions/v1/live-google-rating?place_id=" + encodeURIComponent(placeId))
+            .then((r) => (r.ok ? r.json() : null))
+            .then((g) => {{
+              if (g && g.status === "ok" && typeof g.rating === "number") {{
+                try {{ localStorage.setItem(grCacheKey, JSON.stringify({{ ts: Date.now(), data: g }})); }} catch (_) {{}}
+              }}
+              return g;
+            }});
+
+      grPromise
         .then((g) => {{
           if (!g || g.status !== "ok" || typeof g.rating !== "number") {{
             showMapsFallback((g && g.googleMapsUri) || mapsFallbackUrl);
