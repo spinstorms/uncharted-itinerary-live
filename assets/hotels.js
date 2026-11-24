@@ -5,7 +5,7 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
-import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=1";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();

@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = "https://live.uncharteditinerary.com"
+SITE_URL = "https://uncharteditinerary.com"
 
 
 def load_env_local() -> None:
@@ -647,6 +647,16 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             "visited": o["visited"],
             "personalScoreLabel": o.get("personalScoreLabel"),
             "critic100": o["critic100"],
+            "scoredEditorial": [
+                {"sourceName": e["sourceName"], "rawScore": e.get("rawScore", ""), "normalized100": e["normalized100"]}
+                for e in scored_ed
+            ],
+            "unverifiedEditorial": [
+                {"sourceName": e["sourceName"], "rawScore": e.get("rawScore", "")}
+                for e in (o.get("unverifiedEditorial") or [])
+            ],
+            "editorialCount": len(o.get("editorial") or []),
+            "youtubeCount": len(o.get("ytReviews") or []),
             "verifiedGuest": {"rating": vg["rating"], "scale": int(vg.get("scale", 10))} if (vg and vg.get("rating")) else None,
             "officialAwards": [{"label": a["label"]} for a in o["awards"]],
             "opinionGap": {
@@ -711,7 +721,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         </span>
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="../../">Home</a>
         <a href="../../compare/">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../">Videos</a>
@@ -1207,7 +1217,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=2");
+      const mod = await import("../../assets/stayodds-share-card.js?v=3");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -1521,7 +1531,7 @@ def render_destination_page(
         </span>
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="../../">Home</a>
         <a href="../../compare/">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../">Videos</a>

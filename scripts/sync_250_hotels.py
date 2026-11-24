@@ -526,7 +526,7 @@ def main() -> None:
                 "property_id": pid,
                 "channel_type": "direct_brand",
                 "partner_name": "StayOdds Web Rates",
-                "url": f"https://live.uncharteditinerary.com/stayodds/{pid}/",
+                "url": f"https://uncharteditinerary.com/stayodds/{pid}/",
                 "mobile_allowed": True,
                 "perks_summary": "Compare live rates & verified reviews on StayOdds web",
                 "priority": 2,

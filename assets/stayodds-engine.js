@@ -17,7 +17,7 @@ export const BRAND = Object.freeze({
   appStoreTitle: "StayOdds: Hotel Score Compare",
   subtitle: "Critics vs Real Guest Reviews",
   foundingContributor: "The Uncharted Itinerary",
-  foundingContributorUrl: "https://www.uncharteditinerary.com/",
+  foundingContributorUrl: "https://uncharteditinerary.com/",
   bundleId: "com.stayodds.app",
   supabaseUrl: "https://yfupehkygkkccybefuam.supabase.co",
   supabasePublishableKey: "sb_publishable_uOxstpHWaiYEhRUnmKY4hg_o_30iq0U",

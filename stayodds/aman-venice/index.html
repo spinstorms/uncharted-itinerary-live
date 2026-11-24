@@ -9,14 +9,14 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Aman Venice — StayOdds Score (85%) &amp; Honest Review | Worth It?</title>
   <meta name="description" content="Is Aman Venice in Venice, Italy worth it? Compare verified guest ratings, official awards, key hotel facts, and hype vs. reality opinion gap on StayOdds." />
-  <link rel="canonical" href="https://live.uncharteditinerary.com/stayodds/aman-venice/" />
+  <link rel="canonical" href="https://uncharteditinerary.com/stayodds/aman-venice/" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Aman Venice — StayOdds Score (85%) &amp; Honest Review | Worth It?" />
   <meta property="og:description" content="Is Aman Venice in Venice, Italy worth it? Compare verified guest ratings, official awards, key hotel facts, and hype vs. reality opinion gap on StayOdds." />
-  <meta property="og:image" content="https://live.uncharteditinerary.com/assets/thumbs/aman-venice.webp" />
-  <meta property="og:url" content="https://live.uncharteditinerary.com/stayodds/aman-venice/" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/thumbs/aman-venice.webp" />
+  <meta property="og:url" content="https://uncharteditinerary.com/stayodds/aman-venice/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Aman Venice", "url": "https://live.uncharteditinerary.com/stayodds/aman-venice/", "image": "https://live.uncharteditinerary.com/assets/thumbs/aman-venice.webp", "address": {"@type": "PostalAddress", "addressLocality": "Venice", "addressCountry": "Italy"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.4357, "longitude": 12.3289}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Hotel", "name": "Aman Venice", "url": "https://uncharteditinerary.com/stayodds/aman-venice/", "image": "https://uncharteditinerary.com/assets/thumbs/aman-venice.webp", "address": {"@type": "PostalAddress", "addressLocality": "Venice", "addressCountry": "Italy"}, "geo": {"@type": "GeoCoordinates", "latitude": 45.4357, "longitude": 12.3289}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -52,7 +52,7 @@
         </span>
       </a>
       <nav class="nav-links" aria-label="Main site navigation">
-        <a href="https://www.uncharteditinerary.com/home">Home</a>
+        <a href="../../">Home</a>
         <a href="../../compare/">StayOdds</a>
         <a href="../../hotels/">Hotel Map</a>
         <a href="../../">Videos</a>
@@ -595,9 +595,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "aman-venice", "name": "Aman Venice", "location": "Venice", "country": "Italy", "brand": "Aman", "priceRange": "", "standout": "Intimate 24-room 16th-century Palazzo Papadopoli directly on the Grand Canal, boasting rare private manicured gardens, Tiepolo frescoes paired with calm contemporary suites, and Arva seasonal dining", "watchOut": "Tiny 24-room inventory means rooms sell out far ahead at ultra-luxury Venetian pricing, and there is no swimming pool on property", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 85, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 85, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "aman-venice", "name": "Aman Venice", "location": "Venice", "country": "Italy", "brand": "Aman", "priceRange": "", "standout": "Intimate 24-room 16th-century Palazzo Papadopoli directly on the Grand Canal, boasting rare private manicured gardens, Tiepolo frescoes paired with calm contemporary suites, and Arva seasonal dining", "watchOut": "Tiny 24-room inventory means rooms sell out far ahead at ultra-luxury Venetian pricing, and there is no swimming pool on property", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 85, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 85, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "17/20", "normalized100": 85}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 3, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=2");
+      const mod = await import("../../assets/stayodds-share-card.js?v=3");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

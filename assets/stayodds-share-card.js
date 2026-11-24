@@ -402,6 +402,80 @@ export function extractTopKeyFacts(hotel, odds, maxCount = 3) {
   return facts.slice(0, maxCount);
 }
 
+function shortCriticSource(name = "") {
+  const s = String(name || "").trim();
+  if (!s) return "";
+  if (/flip-flop/i.test(s)) return "Flip-Flop";
+  if (/walker/i.test(s)) return "Walker Index";
+  if (/nonstop\s*dan/i.test(s)) return "Nonstop Dan";
+  if (/telegraph/i.test(s)) return "Telegraph";
+  if (/fat\s*voyage/i.test(s)) return "Fat Voyage";
+  if (/forbes/i.test(s)) return "Forbes";
+  return s.length > 14 ? `${s.slice(0, 13)}…` : s;
+}
+
+/**
+ * Formats the verified "Critics / Other Reviews" slot under strict Zero-Fake-Data rules:
+ * - Numeric score ONLY when a real verified critic/editorial/YouTube numeric score exists.
+ * - Explicit "Unverified" if a source awards scores that could not be verified.
+ * - Explicit "Review Only" if verified qualitative editorial/YouTube reviews exist with no number.
+ * - Clean neutral "—" / "None listed" when no verified review is on record.
+ */
+export function formatCriticSlot(odds) {
+  if (!odds) return { compact: "—", sub: "None listed", full: "None listed" };
+  const scored = Array.isArray(odds.scoredEditorial) ? odds.scoredEditorial : [];
+  const unverified = Array.isArray(odds.unverifiedEditorial) ? odds.unverifiedEditorial : [];
+  const edTotal = Array.isArray(odds.editorialRatings)
+    ? odds.editorialRatings.length
+    : Number(odds.editorialCount || 0);
+  const ytTotal = Array.isArray(odds.youtubeReviews)
+    ? odds.youtubeReviews.length
+    : Number(odds.youtubeCount || 0);
+
+  if (odds.critic100 != null) {
+    if (scored.length === 1) {
+      const src = scored[0].sourceName || "";
+      return {
+        compact: `${odds.critic100}/100`,
+        sub: shortCriticSource(src) || "Verified",
+        full: `${scored[0].rawScore || `${odds.critic100}/100`}${src ? ` (${src})` : ""}`,
+      };
+    }
+    if (scored.length > 1) {
+      return {
+        compact: `${odds.critic100}/100`,
+        sub: `${scored.length} critics`,
+        full: `${odds.critic100}/100 (${scored.length} verified critics)`,
+      };
+    }
+    return {
+      compact: `${odds.critic100}/100`,
+      sub: "Verified",
+      full: `${odds.critic100}/100`,
+    };
+  }
+
+  if (unverified.length > 0) {
+    const src = unverified[0].sourceName || "";
+    return {
+      compact: "Unverified",
+      sub: shortCriticSource(src) || "Score unverified",
+      full: `Score awarded — unverified${src ? ` (${src})` : ""}`,
+    };
+  }
+
+  const qualCount = edTotal + ytTotal;
+  if (qualCount > 0) {
+    return {
+      compact: "Review Only",
+      sub: `${qualCount} linked`,
+      full: `${qualCount} verified review${qualCount > 1 ? "s" : ""} (no numeric score)`,
+    };
+  }
+
+  return { compact: "—", sub: "None listed", full: "None listed" };
+}
+
 export function buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB) {
   const stA = getPropertyStatusMeta(hotelA);
   const stB = getPropertyStatusMeta(hotelB);
@@ -434,7 +508,7 @@ export function buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB) {
           ? `${hotelA.name} includes a first-hand stay scorecard.`
           : oddsB.firstHand && !oddsA.firstHand
           ? `${hotelB.name} includes a first-hand stay scorecard.`
-          : "Compare verified Key Facts, Opinion Gap, and beach/transfer trade-offs below.";
+          : "Compare verified Critics/Other scores, Key Facts, and Opinion Gap below.";
       detail = tierNote;
       return { headline, detail, winnerSide: "TIE" };
     }
@@ -449,8 +523,12 @@ export function buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB) {
     if (winO.firstHand && winO.personalScoreLabel) {
       reasons.push(`My Stay ${winO.personalScoreLabel}`);
     }
+    if (winO.critic100 != null) {
+      const cSlot = formatCriticSlot(winO);
+      reasons.push(`Critics ${cSlot.compact}${cSlot.sub && cSlot.sub !== "Verified" ? ` (${cSlot.sub})` : ""}`);
+    }
     if (winO.verifiedGuest) {
-      reasons.push(`Verified Guests ${winO.verifiedGuest.rating.toFixed(1)}/${winO.verifiedGuest.scale}`);
+      reasons.push(`Guests ${winO.verifiedGuest.rating.toFixed(1)}/${winO.verifiedGuest.scale}`);
     }
     if (winO.statusBadge) {
       reasons.push(winO.statusBadge);
@@ -475,11 +553,11 @@ export function buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB) {
 }
 
 export function buildVsDeepLink(hotelA, hotelB) {
-  return `https://live.uncharteditinerary.com/compare/?a=${encodeURIComponent(hotelA.id)}&b=${encodeURIComponent(hotelB.id)}`;
+  return `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(hotelA.id)}&b=${encodeURIComponent(hotelB.id)}`;
 }
 
 export function buildSingleDeepLink(hotel) {
-  return `https://live.uncharteditinerary.com/stayodds/${encodeURIComponent(hotel.id)}/`;
+  return `https://uncharteditinerary.com/stayodds/${encodeURIComponent(hotel.id)}/`;
 }
 
 export function buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB) {
@@ -497,6 +575,7 @@ export function buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB) {
     o && o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "Live on page";
   const myStr = (h, o) =>
     o && o.personalScoreLabel ? o.personalScoreLabel : o && o.visited ? "Filmed (Unscored)" : "Not Visited";
+  const criticStr = (o) => formatCriticSlot(o).full;
   const oddsStr = (o) => (o && o.greatStayOdds != null ? `**${o.greatStayOdds}%**` : "Open Breakdown");
 
   const url = buildVsDeepLink(hotelA, hotelB);
@@ -510,7 +589,8 @@ export function buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB) {
     `| **Location** | ${hotelA.location}, ${hotelA.country} | ${hotelB.location}, ${hotelB.country} |`,
     `| **StayOdds %** | ${oddsStr(oddsA)} | ${oddsStr(oddsB)} |`,
     `| **Consensus Badge** | ${oddsA.statusBadge} | ${oddsB.statusBadge} |`,
-    `| **My First-Hand Score** | ${myStr(hotelA, oddsA)} | ${myStr(hotelB, oddsB)} |`,
+    `| **My Stay** | ${myStr(hotelA, oddsA)} | ${myStr(hotelB, oddsB)} |`,
+    `| **Critics / Other Reviews** | ${criticStr(oddsA)} | ${criticStr(oddsB)} |`,
     `| **Verified Guests** | ${guestStr(oddsA)} | ${guestStr(oddsB)} |`,
     `| **Opinion Gap** | ${oddsA.opinionGap.deltaLabel} | ${oddsB.opinionGap.deltaLabel} |`,
     `| **Status & Works** | ${stA.hasDetails ? `${stA.operatingStatus}: ${stA.shortSummary}` : "No confirmed works listed"} | ${stB.hasDetails ? `${stB.operatingStatus}: ${stB.shortSummary}` : "No confirmed works listed"} |`,
@@ -532,7 +612,8 @@ export function buildRedditMarkdownSingle(hotel, odds) {
     `| :--- | :--- |`,
     `| **StayOdds %** | ${odds.greatStayOdds != null ? `**${odds.greatStayOdds}%**` : "Open Breakdown"} |`,
     `| **Status Badge** | ${odds.statusBadge} (${odds.tierLabel}) |`,
-    `| **My First-Hand Stay** | ${odds.personalScoreLabel || (odds.visited ? "Filmed (Unscored)" : "Not Visited")} |`,
+    `| **My Stay** | ${odds.personalScoreLabel || (odds.visited ? "Filmed (Unscored)" : "Not Visited")} |`,
+    `| **Critics / Other Reviews** | ${formatCriticSlot(odds).full} |`,
     `| **Verified Guests** | ${odds.verifiedGuest ? `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}` : "Live Google on page"} |`,
     `| **Opinion Gap** | ${odds.opinionGap.deltaLabel} — ${odds.opinionGap.headline} |`,
     `| **Property Status & Works** | ${st.hasDetails ? `${st.operatingStatus}: ${st.shortSummary}` : "No confirmed renovations, closures, or nearby works listed"} |`,
@@ -773,66 +854,107 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
       fillRoundRect(ctx, x + p, barY, Math.max(24, (barW * odds.greatStayOdds) / 100), 12, 6, accent);
     }
 
-    // Verified Pillars Strip (3 mini boxes)
-    const boxY = barY + (isStory ? 28 : 22);
-    const boxH = isStory ? 84 : 74;
-    const gap = 10;
-    const boxW = (barW - gap * 2) / 3;
+    // Verified 4-Slot Pillars (My Stay | Critics / Other | Guests | Opinion Gap)
+    const criticInfo = formatCriticSlot(odds);
     const pillars = [
       {
         label: "MY STAY",
         val: odds.personalScoreLabel ? odds.personalScoreLabel.replace(/ /g, "") : odds.visited ? "Filmed" : "—",
+        sub: odds.personalScoreLabel ? "First-hand" : odds.visited ? "Unscored" : "Not stayed",
+      },
+      {
+        label: "CRITICS / OTHER",
+        val: criticInfo.compact,
+        sub: criticInfo.sub,
       },
       {
         label: "GUESTS",
         val: odds.verifiedGuest ? `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}` : "Live",
+        sub: odds.verifiedGuest ? "Verified" : "Google Maps",
       },
       {
         label: "OPINION GAP",
         val: odds.opinionGap ? odds.opinionGap.deltaLabel : "—",
+        sub: odds.opinionGap && odds.opinionGap.deltaLabel && odds.opinionGap.deltaLabel !== "—" ? "Spread" : "No gap yet",
       },
     ];
-    pillars.forEach((pl, idx) => {
-      const bx = x + p + idx * (boxW + gap);
-      fillRoundRect(ctx, bx, boxY, boxW, boxH, 14, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)", 1);
-      ctx.font = `700 12px ${FONT_STACK}`;
-      ctx.fillStyle = "#94A3B8";
-      ctx.fillText(pl.label, bx + 12, boxY + 24);
-      ctx.font = `800 ${isStory ? 21 : 17}px ${FONT_STACK}`;
-      ctx.fillStyle = "#FFFFFF";
-      drawWrappedText(ctx, pl.val, bx + 12, boxY + (isStory ? 58 : 53), boxW - 22, 22, 1);
-    });
+
+    const boxY = barY + (isStory ? 24 : 18);
+    let afterBoxesY;
+    if (isStory) {
+      // Wide 9:16 Story panel -> crisp 4-column horizontal row
+      const boxH = 92;
+      const gap = 10;
+      const boxW = (barW - gap * 3) / 4;
+      pillars.forEach((pl, idx) => {
+        const bx = x + p + idx * (boxW + gap);
+        fillRoundRect(ctx, bx, boxY, boxW, boxH, 14, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.09)", 1);
+        ctx.font = `700 11.5px ${FONT_STACK}`;
+        ctx.fillStyle = "#94A3B8";
+        ctx.fillText(pl.label, bx + 12, boxY + 23);
+        ctx.font = `800 22px ${FONT_STACK}`;
+        ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
+        drawWrappedText(ctx, pl.val, bx + 12, boxY + 55, boxW - 22, 24, 1);
+        ctx.font = `600 12px ${FONT_STACK}`;
+        ctx.fillStyle = "#94A3B8";
+        drawWrappedText(ctx, pl.sub, bx + 12, boxY + 78, boxW - 22, 16, 1);
+      });
+      afterBoxesY = boxY + boxH;
+    } else {
+      // 1:1 side-by-side column -> generous 2x2 grid so all 4 labels & scores never clip
+      const gapX = 10;
+      const gapY = 10;
+      const boxW = (barW - gapX) / 2;
+      const boxH = 66;
+      pillars.forEach((pl, idx) => {
+        const col = idx % 2;
+        const row = Math.floor(idx / 2);
+        const bx = x + p + col * (boxW + gapX);
+        const by = boxY + row * (boxH + gapY);
+        fillRoundRect(ctx, bx, by, boxW, boxH, 12, "rgba(255,255,255,0.04)", "rgba(255,255,255,0.09)", 1);
+        ctx.font = `700 11px ${FONT_STACK}`;
+        ctx.fillStyle = "#94A3B8";
+        ctx.fillText(pl.label, bx + 11, by + 20);
+        ctx.font = `800 18px ${FONT_STACK}`;
+        ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
+        drawWrappedText(ctx, pl.val, bx + 11, by + 44, boxW - 20, 20, 1);
+        ctx.font = `600 11px ${FONT_STACK}`;
+        ctx.fillStyle = "#94A3B8";
+        drawWrappedText(ctx, pl.sub, bx + 11, by + 59, boxW - 20, 14, 1);
+      });
+      afterBoxesY = boxY + boxH * 2 + gapY;
+    }
 
     // Property Status & Works Strip
     const st = getPropertyStatusMeta(hotel);
     const stCol = statusPillColors(st.tone);
-    const stY = boxY + boxH + (isStory ? 22 : 16);
-    const stH = isStory ? 88 : 74;
+    const stY = afterBoxesY + (isStory ? 20 : 14);
+    const stH = isStory ? 84 : 68;
     fillRoundRect(ctx, x + p, stY, barW, stH, 14, stCol.bg, stCol.border, 1.2);
     ctx.font = `800 12px ${FONT_STACK}`;
     ctx.fillStyle = stCol.fg;
-    ctx.fillText(`STATUS & WORKS • ${st.badge.toUpperCase()}`, x + p + 14, stY + 24);
-    ctx.font = `500 ${isStory ? 17 : 14}px ${FONT_STACK}`;
+    ctx.fillText(`STATUS & WORKS • ${st.badge.toUpperCase()}`, x + p + 14, stY + 22);
+    ctx.font = `500 ${isStory ? 17 : 13.5}px ${FONT_STACK}`;
     ctx.fillStyle = "#F1F5F9";
-    drawWrappedText(ctx, st.shortSummary, x + p + 14, stY + 48, barW - 28, isStory ? 22 : 18, 2);
+    drawWrappedText(ctx, st.shortSummary, x + p + 14, stY + 44, barW - 28, isStory ? 22 : 17, 2);
 
     // Top 2-3 Verified Key Facts
     const facts = extractTopKeyFacts(hotel, odds, isStory ? 3 : 2);
-    let fy = stY + stH + (isStory ? 26 : 22);
+    let fy = stY + stH + (isStory ? 24 : 18);
     ctx.font = `800 12px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     ctx.fillText("VERIFIED KEY FACTS", x + p, fy);
-    fy += isStory ? 26 : 22;
+    fy += isStory ? 24 : 20;
 
     facts.forEach((f) => {
-      ctx.font = `700 ${isStory ? 17 : 14.5}px ${FONT_STACK}`;
+      ctx.font = `700 ${isStory ? 17 : 14}px ${FONT_STACK}`;
       ctx.fillStyle = accent;
       ctx.fillText(`• ${f.label}:`, x + p, fy);
       const lw = ctx.measureText(`• ${f.label}: `).width;
-      ctx.font = `500 ${isStory ? 17 : 14.5}px ${FONT_STACK}`;
+      ctx.font = `500 ${isStory ? 17 : 14}px ${FONT_STACK}`;
       ctx.fillStyle = "#E2E8F0";
-      const used = drawWrappedText(ctx, f.value, x + p + lw, fy, barW - lw, isStory ? 23 : 19, 2);
-      fy += used * (isStory ? 23 : 19) + (isStory ? 10 : 8);
+      const used = drawWrappedText(ctx, f.value, x + p + lw, fy, barW - lw, isStory ? 22 : 18, 2);
+      fy += used * (isStory ? 22 : 18) + (isStory ? 9 : 6);
     });
   };
 
@@ -918,7 +1040,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
 
   // Main Hero Panel
   const heroY = isStory ? 156 : 136;
-  const heroH = isStory ? 340 : 254;
+  const heroH = isStory ? 356 : 268;
   fillRoundRect(ctx, padX, heroY, W - padX * 2, heroH, 28, "rgba(15, 29, 50, 0.9)", "rgba(255,93,34,0.4)", 2);
 
   // Status badge pill
@@ -955,25 +1077,46 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     2
   );
 
-  // 3 Pillars inside hero bottom
-  const pY = heroY + heroH - (isStory ? 114 : 92);
-  const pGap = 14;
-  const pW = (W - padX * 2 - 60 - pGap * 2) / 3;
-  const pH = isStory ? 88 : 70;
+  // 4 Pillars inside hero bottom (My Stay | Critics / Other | Guests | Opinion Gap)
+  const criticInfo = formatCriticSlot(odds);
+  const pH = isStory ? 96 : 80;
+  const pY = heroY + heroH - pH - 22;
+  const pGap = 12;
+  const pW = (W - padX * 2 - 60 - pGap * 3) / 4;
   const pillars = [
-    { label: "MY FIRST-HAND STAY", val: odds.personalScoreLabel || (odds.visited ? "Filmed (Unscored)" : "Not Stayed") },
-    { label: "VERIFIED GUESTS", val: odds.verifiedGuest ? `${odds.verifiedGuest.rating.toFixed(1)} / ${odds.verifiedGuest.scale}` : "Live Google" },
-    { label: "PUBLISHED CRITICS", val: odds.critic100 != null ? `${odds.critic100} / 100` : odds.officialAwards.length ? `${odds.officialAwards.length} Official Award${odds.officialAwards.length > 1 ? "s" : ""}` : "None Scored" },
+    {
+      label: "MY STAY",
+      val: odds.personalScoreLabel ? odds.personalScoreLabel.replace(/ /g, "") : odds.visited ? "Filmed" : "—",
+      sub: odds.personalScoreLabel ? "First-hand" : odds.visited ? "Unscored" : "Not stayed",
+    },
+    {
+      label: "CRITICS / OTHER",
+      val: criticInfo.compact,
+      sub: criticInfo.sub,
+    },
+    {
+      label: "VERIFIED GUESTS",
+      val: odds.verifiedGuest ? `${odds.verifiedGuest.rating.toFixed(1)}/${odds.verifiedGuest.scale}` : "Live",
+      sub: odds.verifiedGuest ? "Verified" : "Google Maps",
+    },
+    {
+      label: "OPINION GAP",
+      val: odds.opinionGap ? odds.opinionGap.deltaLabel : "—",
+      sub: odds.opinionGap && odds.opinionGap.deltaLabel && odds.opinionGap.deltaLabel !== "—" ? "Spread" : "No gap yet",
+    },
   ];
   pillars.forEach((pl, idx) => {
     const bx = padX + 30 + idx * (pW + pGap);
     fillRoundRect(ctx, bx, pY, pW, pH, 16, "rgba(255,255,255,0.05)", "rgba(255,255,255,0.1)", 1);
-    ctx.font = `700 12px ${FONT_STACK}`;
+    ctx.font = `700 11.5px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
-    ctx.fillText(pl.label, bx + 16, pY + 24);
-    ctx.font = `800 ${isStory ? 24 : 20}px ${FONT_STACK}`;
-    ctx.fillStyle = "#FFFFFF";
-    drawWrappedText(ctx, pl.val, bx + 16, pY + (isStory ? 62 : 52), pW - 28, 24, 1);
+    ctx.fillText(pl.label, bx + 14, pY + 23);
+    ctx.font = `800 ${isStory ? 23 : 20}px ${FONT_STACK}`;
+    ctx.fillStyle = pl.val === "—" ? "#64748B" : "#FFFFFF";
+    drawWrappedText(ctx, pl.val, bx + 14, pY + (isStory ? 57 : 50), pW - 24, 24, 1);
+    ctx.font = `600 12px ${FONT_STACK}`;
+    ctx.fillStyle = "#94A3B8";
+    drawWrappedText(ctx, pl.sub, bx + 14, pY + (isStory ? 80 : 70), pW - 24, 16, 1);
   });
 
   // Opinion Gap Box
@@ -1006,8 +1149,8 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
   drawWrappedText(ctx, st.shortSummary, padX + 28, stY + 72, W - padX * 2 - 56, isStory ? 30 : 24, isStory ? 3 : 2);
 
   // Key Facts & Highlights Panel
-  const kfY = stY + stH + (isStory ? 28 : 20);
-  const kfH = isStory ? 630 : 292;
+  const kfY = stY + stH + (isStory ? 24 : 18);
+  const kfH = isStory ? 616 : 254;
   fillRoundRect(ctx, padX, kfY, W - padX * 2, kfH, 24, "rgba(15, 29, 50, 0.85)", "rgba(255,255,255,0.1)", 1.5);
   ctx.font = `800 15px ${FONT_STACK}`;
   ctx.fillStyle = "#FF8B5E";

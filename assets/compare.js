@@ -6,7 +6,7 @@ import {
   isScoreUnverified,
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
-import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=1";
+import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -348,6 +348,8 @@ function renderH2HCard(h, opponent) {
       ? `${o.critic100}/100 (${o.scoredEditorial.length} critics)`
       : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
       ? `Score awarded — unverified (${o.unverifiedEditorial[0].sourceName})`
+      : (o.editorialRatings.length + o.youtubeReviews.length) > 0
+      ? `${o.editorialRatings.length + o.youtubeReviews.length} review${o.editorialRatings.length + o.youtubeReviews.length > 1 ? "s" : ""} (no score)`
       : null;
 
   const awardsHtml =
@@ -417,17 +419,17 @@ function renderH2HCard(h, opponent) {
       ${statusHtml}
 
       <div class="h2h-metrics-list">
-        ${metricRow("My First-Hand Stay", o.ours100, oo.ours100, "", unratedLabel).replace(
+        ${metricRow("My Stay", o.ours100, oo.ours100, "", unratedLabel).replace(
           `${o.ours100}`,
           o.personalScoreLabel || unratedLabel
         )}
-        ${metricRow("Verified Guest Score", o.guest100, oo.guest100, "", "Open Breakdown").replace(
+        ${metricRow("Critics / Other Reviews", o.critic100, oo.critic100, "", criticDisplay || "— (None listed)").replace(
+          `${o.critic100}`,
+          criticDisplay || "— (None listed)"
+        )}
+        ${metricRow("Verified Guests", o.guest100, oo.guest100, "", "Open Breakdown").replace(
           `${o.guest100}`,
           guestDisplay || "Open Breakdown"
-        )}
-        ${metricRow("Published Critics", o.critic100, oo.critic100, "", "No critic score").replace(
-          `${o.critic100}`,
-          criticDisplay || "No critic score"
         )}
         <div class="h2h-metric">
           <span>Official Awards</span>
@@ -993,7 +995,7 @@ async function boot() {
     const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
     const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
     if (!ha || !hb) return;
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=2");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=3");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1048,7 +1050,7 @@ async function boot() {
 
   qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
     const btn = qs("#copyVsLinkBtn");
-    const shareUrl = `https://live.uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
+    const shareUrl = `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
     const ha = state.hotels.find((h) => h.id === state.idA);
     const hb = state.hotels.find((h) => h.id === state.idB);
     try {
