@@ -27,6 +27,8 @@ const state = {
   style: "all",
   coverage: "All",
   sortBy: "stayodds",
+  tableSortKey: null, // null | "name" | "location" | "odds" | "overall" | "critic" | "guest" | "gap" | "michelin" | "w50" | "forbes"
+  tableSortDir: "desc",
   search: "",
   viewMode: "cards",
   visibleLimit: PAGE_SIZE,
@@ -104,12 +106,53 @@ function isExternalReview(h) {
   return !(h.inLiveFeed && h.videoId);
 }
 
+function getMichelinKeyCount(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/michelin/i.test(txt)) {
+      const m = String(a.label || "").match(/([123])\s*michelin\s*key/i);
+      const val = m ? Number(m[1]) : 1;
+      if (best == null || val > best) best = val;
+    }
+  }
+  return best;
+}
+
+function getW50BestRank(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/50\s*best/i.test(txt)) {
+      const m = String(a.label || "").match(/(?:No\.?|#)\s*(\d{1,3})/i);
+      const val = m ? Number(m[1]) : 999;
+      if (best == null || val < best) best = val;
+    }
+  }
+  return best;
+}
+
+function getForbesRank(h) {
+  let best = null;
+  for (const a of h.officialAwards || []) {
+    const txt = `${a.awardBody || ""} ${a.label || ""}`;
+    if (/forbes/i.test(txt)) {
+      let val = 1;
+      if (/five[- ]star/i.test(txt)) val = 5;
+      else if (/four[- ]star/i.test(txt)) val = 4;
+      else if (/recommended/i.test(txt)) val = 3;
+      if (best == null || val > best) best = val;
+    }
+  }
+  return best;
+}
+
 function hasMichelinKey(h) {
-  return (h.officialAwards || []).some((a) => String(a.awardBody || "").includes("MICHELIN"));
+  return getMichelinKeyCount(h) != null;
 }
 
 function hasW50Best(h) {
-  return (h.officialAwards || []).some((a) => String(a.awardBody || "").includes("50 Best"));
+  return getW50BestRank(h) != null;
 }
 
 function initCommonUi() {
@@ -200,22 +243,68 @@ function getFilteredHotels() {
   });
 
   const getDisagreementPts = (o) => {
-    const absDelta = o.opinionGap && o.opinionGap.delta100 != null ? Math.abs(Number(o.opinionGap.delta100)) : -1;
-    const spread = o.spread100 != null ? Number(o.spread100) : -1;
-    return Math.max(absDelta, spread);
+    const absDelta = o.opinionGap && o.opinionGap.delta100 != null ? Math.abs(Number(o.opinionGap.delta100)) : null;
+    const spread = o.spread100 != null ? Number(o.spread100) : null;
+    if (absDelta == null && spread == null) return null;
+    return Math.max(absDelta ?? -1, spread ?? -1);
+  };
+
+  const cmpNullableNum = (va, vb, dir) => {
+    const aNull = va == null || Number.isNaN(va);
+    const bNull = vb == null || Number.isNaN(vb);
+    if (aNull && bNull) return 0;
+    if (aNull) return 1; // Always keep missing/unscored rows at the bottom
+    if (bNull) return -1;
+    return dir === "asc" ? va - vb : vb - va;
   };
 
   list.sort((a, b) => {
     const oa = getOdds(a);
     const ob = getOdds(b);
     const rank = (o) => (o.firstHand ? 2 : o.visited ? 1 : 0);
+
+    if (state.tableSortKey) {
+      const k = state.tableSortKey;
+      const d = state.tableSortDir;
+      let diff = 0;
+      if (k === "name") {
+        diff = d === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+      } else if (k === "location") {
+        const la = `${a.location || ""}, ${a.country || ""}`;
+        const lb = `${b.location || ""}, ${b.country || ""}`;
+        diff = d === "asc" ? la.localeCompare(lb) : lb.localeCompare(la);
+      } else if (k === "odds") {
+        diff = cmpNullableNum(oa.greatStayOdds, ob.greatStayOdds, d);
+      } else if (k === "overall") {
+        diff = cmpNullableNum(
+          oa.firstHand && a.overall != null ? Number(a.overall) : null,
+          ob.firstHand && b.overall != null ? Number(b.overall) : null,
+          d
+        );
+      } else if (k === "critic") {
+        diff = cmpNullableNum(oa.critic100, ob.critic100, d);
+      } else if (k === "guest") {
+        diff = cmpNullableNum(oa.guest100, ob.guest100, d);
+      } else if (k === "gap") {
+        diff = cmpNullableNum(getDisagreementPts(oa), getDisagreementPts(ob), d);
+      } else if (k === "michelin") {
+        diff = cmpNullableNum(getMichelinKeyCount(a), getMichelinKeyCount(b), d);
+      } else if (k === "w50") {
+        diff = cmpNullableNum(getW50BestRank(a), getW50BestRank(b), d);
+      } else if (k === "forbes") {
+        diff = cmpNullableNum(getForbesRank(a), getForbesRank(b), d);
+      }
+      if (diff !== 0) return diff;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
     if (state.sortBy === "gap") {
-      const ga = getDisagreementPts(oa);
-      const gb = getDisagreementPts(ob);
+      const ga = getDisagreementPts(oa) ?? -1;
+      const gb = getDisagreementPts(ob) ?? -1;
       if (gb !== ga) return gb - ga;
       if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -485,16 +574,34 @@ function renderScorecards(hotels) {
   if (state.viewMode === "table") {
     grid.style.display = "none";
     tableWrap.style.display = "";
+
+    const cols = [
+      { key: "name", label: "Hotel", defaultDir: "asc" },
+      { key: "location", label: "Destination", defaultDir: "asc" },
+      { key: "odds", label: "StayOdds", defaultDir: "desc" },
+      { key: "overall", label: "My Stay", defaultDir: "desc" },
+      { key: "critic", label: "Critics / Other", defaultDir: "desc" },
+      { key: "guest", label: "Guests", defaultDir: "desc" },
+      { key: "gap", label: "Disagreement", defaultDir: "desc" },
+      { key: "michelin", label: "MICHELIN Keys", defaultDir: "desc" },
+      { key: "w50", label: "World's 50 Best", defaultDir: "asc" },
+      { key: "forbes", label: "Forbes", defaultDir: "desc" },
+    ];
+
+    const thHtml = cols
+      .map((c) => {
+        const isActive = state.tableSortKey === c.key;
+        const arrow = isActive ? (state.tableSortDir === "asc" ? "▲" : "▼") : "⇅";
+        const ariaSort = isActive ? (state.tableSortDir === "asc" ? "ascending" : "descending") : "none";
+        return `<th class="is-sortable ${isActive ? "is-sorted" : ""}" data-sort-col="${c.key}" data-default-dir="${c.defaultDir}" aria-sort="${ariaSort}"><button type="button" class="sort-th-btn">${escapeHtml(c.label)} <span class="sort-arrow">${arrow}</span></button></th>`;
+      })
+      .join("");
+
     tableWrap.innerHTML = `
       <table class="comparison-table">
         <thead>
           <tr>
-            <th>Hotel</th>
-            <th>Destination</th>
-            <th>StayOdds</th>
-            <th>First-Hand</th>
-            <th>Guests</th>
-            <th>2026 Awards</th>
+            ${thHtml}
             <th>Actions</th>
           </tr>
         </thead>
@@ -502,15 +609,51 @@ function renderScorecards(hotels) {
           ${visible
             .map((h) => {
               const o = getOdds(h);
-              const aw = (h.officialAwards || []).map((a) => a.label).join(" • ") || "—";
+              const mKeys = getMichelinKeyCount(h);
+              const w50Rank = getW50BestRank(h);
+              const forbesRank = getForbesRank(h);
+              const criticCell =
+                o.critic100 != null
+                  ? `<strong>${o.critic100}/100</strong><div class="table-sub">${escapeHtml(
+                      o.scoredEditorial && o.scoredEditorial.length === 1
+                        ? o.scoredEditorial[0].sourceName
+                        : o.scoredEditorial && o.scoredEditorial.length > 1
+                        ? `${o.scoredEditorial.length} critics`
+                        : "Verified"
+                    )}</div>`
+                  : o.unverifiedEditorial && o.unverifiedEditorial.length > 0
+                  ? `<span class="table-sub">Unverified</span>`
+                  : "—";
+              const mCell =
+                mKeys != null
+                  ? `<span class="table-rank-pill is-key">${mKeys} ${mKeys === 1 ? "Key" : "Keys"}</span>`
+                  : "—";
+              const w50Cell =
+                w50Rank != null
+                  ? `<span class="table-rank-pill is-50">${w50Rank < 999 ? `#${w50Rank}` : "50 Best"}</span>`
+                  : "—";
+              const forbesCell =
+                forbesRank === 5
+                  ? `<span class="table-rank-pill is-forbes">5-Star</span>`
+                  : forbesRank === 4
+                  ? `<span class="table-rank-pill is-forbes">4-Star</span>`
+                  : forbesRank === 3
+                  ? `<span class="table-rank-pill is-forbes">Rec.</span>`
+                  : "—";
+              const gapLabel = o.opinionGap && o.opinionGap.deltaLabel ? o.opinionGap.deltaLabel : "—";
+
               return `
                 <tr data-resort-name="${escapeHtml(h.name)}">
                   <td><strong><a href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></strong><div class="table-sub">${escapeHtml(h.brand || "")}</div></td>
                   <td>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</td>
                   <td><strong>${o.greatStayOdds != null ? `${o.greatStayOdds}%` : "Live"}</strong><div class="table-sub">${escapeHtml(o.statusBadge)}</div></td>
-                  <td>${o.personalScoreLabel ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong>` : escapeHtml(o.tierLabel)}</td>
-                  <td>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "Live"}</td>
-                  <td><small>${escapeHtml(aw)}</small></td>
+                  <td>${o.personalScoreLabel ? `<strong>${escapeHtml(o.personalScoreLabel)}</strong>` : `<span class="table-sub">${escapeHtml(o.visited ? o.tierLabel : "—")}</span>`}</td>
+                  <td>${criticCell}</td>
+                  <td>${o.verifiedGuest ? `<strong>${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}</strong>` : `<span class="table-sub">Live</span>`}</td>
+                  <td><strong>${escapeHtml(gapLabel)}</strong></td>
+                  <td>${mCell}</td>
+                  <td>${w50Cell}</td>
+                  <td>${forbesCell}</td>
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
@@ -531,6 +674,24 @@ function renderScorecards(hotels) {
           : ""
       }
     `;
+
+    tableWrap.querySelectorAll("th[data-sort-col]").forEach((th) => {
+      th.addEventListener("click", () => {
+        const col = th.dataset.sortCol;
+        const defDir = th.dataset.defaultDir || "desc";
+        if (state.tableSortKey === col) {
+          state.tableSortDir = state.tableSortDir === "asc" ? "desc" : "asc";
+        } else {
+          state.tableSortKey = col;
+          state.tableSortDir = defDir;
+        }
+        state.visibleLimit = Math.max(state.visibleLimit, 50);
+        if (typeof window.trackEvent === "function") {
+          window.trackEvent("use_filter", "table_sort", `${col}:${state.tableSortDir}`);
+        }
+        renderScorecards(getFilteredHotels());
+      });
+    });
   } else {
     grid.style.display = "";
     tableWrap.style.display = "none";
@@ -760,6 +921,7 @@ async function boot() {
   });
   qs("#sortControl")?.addEventListener("change", (e) => {
     state.sortBy = e.target.value || "stayodds";
+    state.tableSortKey = null;
     if (typeof window.trackEvent === "function") {
       window.trackEvent("use_filter", "filter", `sort:${state.sortBy}`);
     }

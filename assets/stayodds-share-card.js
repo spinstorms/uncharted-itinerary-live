@@ -393,13 +393,101 @@ export function extractTopKeyFacts(hotel, odds, maxCount = 3) {
     if (kf.poolHeating) facts.push({ label: "Pool Heating", value: kf.poolHeating });
     if (kf.renovationYear) facts.push({ label: "Renovated", value: String(kf.renovationYear) });
   }
-  if (facts.length < maxCount && hotel && hotel.priceRange) {
-    facts.push({ label: "Indicative Tier", value: hotel.priceRange });
+  if (facts.length < maxCount && hotel && hotel.priceRange && !facts.some((f) => /tier|price/i.test(f.label))) {
+    facts.push({ label: "Price Tier", value: hotel.priceRange });
   }
-  if (facts.length < maxCount && hotel && hotel.standout) {
+  if (facts.length < maxCount && hotel && hotel.standout && !facts.some((f) => /standout/i.test(f.label))) {
     facts.push({ label: "Standout", value: hotel.standout });
   }
   return facts.slice(0, maxCount);
+}
+
+const LOCAL_IMG_CACHE = new Map();
+
+function resolveSameOriginPhotoUrl(hotel) {
+  const thumb = (hotel && hotel.thumbnail ? String(hotel.thumbnail) : "").trim();
+  const slug = hotel && hotel.id ? String(hotel.id).trim() : "";
+  const rel = thumb && !/^https?:\/\//i.test(thumb)
+    ? thumb.replace(/^\.+\//, "").replace(/^\//, "")
+    : slug
+    ? `assets/thumbs/${encodeURIComponent(slug)}.webp`
+    : "";
+  if (!rel) return "";
+  try {
+    const u = new URL(`/${rel}`, window.location.origin);
+    if (u.origin !== window.location.origin) return "";
+    return u.href;
+  } catch (_) {
+    return "";
+  }
+}
+
+function loadSameOriginHotelImg(hotel) {
+  const url = resolveSameOriginPhotoUrl(hotel);
+  if (!url) return Promise.resolve(null);
+  const cached = LOCAL_IMG_CACHE.get(url);
+  if (cached) {
+    return cached instanceof Promise ? cached : Promise.resolve(cached);
+  }
+  const p = new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      LOCAL_IMG_CACHE.set(url, img);
+      resolve(img);
+    };
+    img.onerror = () => {
+      LOCAL_IMG_CACHE.set(url, null);
+      resolve(null);
+    };
+    img.src = url;
+  });
+  LOCAL_IMG_CACHE.set(url, p);
+  return p;
+}
+
+function getCachedHotelImg(hotel) {
+  const url = resolveSameOriginPhotoUrl(hotel);
+  if (!url) return null;
+  const val = LOCAL_IMG_CACHE.get(url);
+  return val && !(val instanceof Promise) ? val : null;
+}
+
+function drawRoundedImageCover(ctx, img, x, y, w, h, r, borderCol = "rgba(255,255,255,0.16)", badgeText = "") {
+  if (!img || !img.naturalWidth || !img.naturalHeight) return false;
+  ctx.save();
+  roundRectPath(ctx, x, y, w, h, r);
+  ctx.clip();
+
+  const imgRatio = img.naturalWidth / img.naturalHeight;
+  const boxRatio = w / h;
+  let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
+  if (imgRatio > boxRatio) {
+    sw = img.naturalHeight * boxRatio;
+    sx = (img.naturalWidth - sw) / 2;
+  } else {
+    sh = img.naturalWidth / boxRatio;
+    sy = (img.naturalHeight - sh) / 2;
+  }
+  ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+
+  // Subtle dark bottom vignette for legibility when badgeText exists
+  const grad = ctx.createLinearGradient(x, y + h * 0.45, x, y + h);
+  grad.addColorStop(0, "rgba(7, 19, 35, 0)");
+  grad.addColorStop(1, badgeText ? "rgba(7, 19, 35, 0.78)" : "rgba(7, 19, 35, 0.32)");
+  ctx.fillStyle = grad;
+  ctx.fillRect(x, y, w, h);
+
+  if (badgeText) {
+    ctx.font = `700 13px ${FONT_STACK}`;
+    ctx.fillStyle = "#F8FAFC";
+    drawWrappedText(ctx, badgeText, x + 14, y + h - 14, w - 28, 18, 1);
+  }
+  ctx.restore();
+
+  if (borderCol) {
+    fillRoundRect(ctx, x, y, w, h, r, null, borderCol, 1.5);
+  }
+  return true;
 }
 
 function shortCriticSource(name = "") {
@@ -938,24 +1026,91 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
     ctx.fillStyle = "#F1F5F9";
     drawWrappedText(ctx, st.shortSummary, x + p + 14, stY + 44, barW - 28, isStory ? 22 : 17, 2);
 
-    // Top 2-3 Verified Key Facts
+    // Bottom Section: Verified Key Facts + Real Local Hotel Photo (fills card cleanly with zero dead space)
     const facts = extractTopKeyFacts(hotel, odds, isStory ? 3 : 2);
-    let fy = stY + stH + (isStory ? 24 : 18);
-    ctx.font = `800 12px ${FONT_STACK}`;
-    ctx.fillStyle = "#94A3B8";
-    ctx.fillText("VERIFIED KEY FACTS", x + p, fy);
-    fy += isStory ? 24 : 20;
+    const imgObj = getCachedHotelImg(hotel);
+    const awardLine =
+      odds.officialAwards && odds.officialAwards.length
+        ? `🏆 ${odds.officialAwards.slice(0, 2).map((a) => a.label).join(" • ")}`
+        : hotel.priceRange
+        ? `${hotel.location}, ${hotel.country} • ${hotel.priceRange}`
+        : `${hotel.location}, ${hotel.country}`;
 
-    facts.forEach((f) => {
-      ctx.font = `700 ${isStory ? 17 : 14}px ${FONT_STACK}`;
-      ctx.fillStyle = accent;
-      ctx.fillText(`• ${f.label}:`, x + p, fy);
-      const lw = ctx.measureText(`• ${f.label}: `).width;
-      ctx.font = `500 ${isStory ? 17 : 14}px ${FONT_STACK}`;
-      ctx.fillStyle = "#E2E8F0";
-      const used = drawWrappedText(ctx, f.value, x + p + lw, fy, barW - lw, isStory ? 22 : 18, 2);
-      fy += used * (isStory ? 22 : 18) + (isStory ? 9 : 6);
-    });
+    if (isStory) {
+      // Wide 9:16 Story bottom: 2-column split — 16:9 Hotel Photo (left) + Facts & Watch-Out (right)
+      const splitY = stY + stH + 18;
+      const splitH = Math.max(170, y + h - 18 - splitY);
+      const photoW = imgObj ? Math.min(368, Math.round(splitH * (16 / 9))) : 0;
+      const photoGap = imgObj ? 22 : 0;
+      if (imgObj) {
+        drawRoundedImageCover(ctx, imgObj, x + p, splitY, photoW, splitH, 16, "rgba(255,255,255,0.16)", awardLine);
+      }
+
+      const textX = x + p + photoW + photoGap;
+      const textW = barW - photoW - photoGap;
+      let fy = splitY + 14;
+      ctx.font = `800 12px ${FONT_STACK}`;
+      ctx.fillStyle = "#94A3B8";
+      ctx.fillText("VERIFIED KEY FACTS", textX, fy);
+      fy += 24;
+
+      facts.forEach((f) => {
+        if (fy > y + h - 42) return;
+        ctx.font = `700 15.5px ${FONT_STACK}`;
+        ctx.fillStyle = accent;
+        ctx.fillText(`• ${f.label}:`, textX, fy);
+        const lw = ctx.measureText(`• ${f.label}: `).width;
+        ctx.font = `500 15.5px ${FONT_STACK}`;
+        ctx.fillStyle = "#E2E8F0";
+        const used = drawWrappedText(ctx, f.value, textX + lw, fy, Math.max(120, textW - lw), 21, 2);
+        fy += used * 21 + 8;
+      });
+
+      if (hotel.watchOut && fy < y + h - 44) {
+        ctx.font = `800 13.5px ${FONT_STACK}`;
+        ctx.fillStyle = "#FBBF24";
+        ctx.fillText("WATCH-OUT:", textX, fy + 4);
+        const wlw = ctx.measureText("WATCH-OUT: ").width;
+        ctx.font = `500 14.5px ${FONT_STACK}`;
+        ctx.fillStyle = "#CBD5E1";
+        drawWrappedText(ctx, hotel.watchOut, textX + wlw, fy + 4, Math.max(120, textW - wlw), 20, 2);
+      }
+    } else {
+      // 1:1 Feed bottom: Compact Key Facts + Exact 16:9 Rounded Hotel Photo (zero YouTube thumbnail cropping!)
+      const photoW = imgObj ? 336 : 0;
+      const photoH = imgObj ? 189 : 0; // exact 16:9 matching 800x450 WebP & 1920x1080 YouTube thumbnails
+      const photoX = x + p + Math.round((barW - photoW) / 2);
+      const photoY = y + h - 16 - photoH;
+      let fy = stY + stH + 16;
+      ctx.font = `800 11.5px ${FONT_STACK}`;
+      ctx.fillStyle = "#94A3B8";
+      ctx.fillText("VERIFIED KEY FACTS", x + p, fy);
+      fy += 18;
+
+      const maxFactY = imgObj ? photoY - 10 : y + h - 24;
+      facts.forEach((f) => {
+        if (fy > maxFactY - 12) return;
+        ctx.font = `700 13px ${FONT_STACK}`;
+        ctx.fillStyle = accent;
+        ctx.fillText(`• ${f.label}:`, x + p, fy);
+        const lw = ctx.measureText(`• ${f.label}: `).width;
+        ctx.font = `500 13px ${FONT_STACK}`;
+        ctx.fillStyle = "#E2E8F0";
+        const used = drawWrappedText(ctx, f.value, x + p + lw, fy, Math.max(100, barW - lw), 16, 1);
+        fy += used * 16 + 5;
+      });
+
+      if (imgObj) {
+        drawRoundedImageCover(ctx, imgObj, photoX, photoY, photoW, photoH, 14, "rgba(255,255,255,0.18)", awardLine);
+      } else if (hotel.watchOut && fy < y + h - 42) {
+        ctx.font = `800 12.5px ${FONT_STACK}`;
+        ctx.fillStyle = "#FBBF24";
+        ctx.fillText("WATCH-OUT:", x + p, fy + 6);
+        ctx.font = `500 13px ${FONT_STACK}`;
+        ctx.fillStyle = "#CBD5E1";
+        drawWrappedText(ctx, hotel.watchOut, x + p, fy + 24, barW, 17, 3);
+      }
+    }
   };
 
   if (isStory) {
@@ -1148,34 +1303,88 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
   ctx.fillStyle = "#F8FAFC";
   drawWrappedText(ctx, st.shortSummary, padX + 28, stY + 72, W - padX * 2 - 56, isStory ? 30 : 24, isStory ? 3 : 2);
 
-  // Key Facts & Highlights Panel
+  // Key Facts & Highlights Panel (+ Real Local Hotel Photo)
   const kfY = stY + stH + (isStory ? 24 : 18);
   const kfH = isStory ? 616 : 254;
   fillRoundRect(ctx, padX, kfY, W - padX * 2, kfH, 24, "rgba(15, 29, 50, 0.85)", "rgba(255,255,255,0.1)", 1.5);
   ctx.font = `800 15px ${FONT_STACK}`;
   ctx.fillStyle = "#FF8B5E";
-  ctx.fillText("VERIFIED KEY FACTS & DECISION DETAILS", padX + 28, kfY + 36);
+  ctx.fillText("VERIFIED KEY FACTS & PROPERTY SNAPSHOT", padX + 28, kfY + 36);
+
+  const imgObj = getCachedHotelImg(hotel);
+  const awardOverlay =
+    odds.officialAwards && odds.officialAwards.length
+      ? `🏆 ${odds.officialAwards.slice(0, 2).map((a) => a.label).join(" • ")}`
+      : `${hotel.location}, ${hotel.country}`;
 
   const facts = extractTopKeyFacts(hotel, odds, isStory ? 4 : 3);
-  let fy = kfY + 76;
-  facts.forEach((f) => {
-    ctx.font = `800 ${isStory ? 21 : 17}px ${FONT_STACK}`;
-    ctx.fillStyle = "#5EEAD4";
-    ctx.fillText(`${f.label}:`, padX + 28, fy);
-    const lw = ctx.measureText(`${f.label}: `).width;
-    ctx.font = `500 ${isStory ? 21 : 17}px ${FONT_STACK}`;
-    ctx.fillStyle = "#E2E8F0";
-    const linesUsed = drawWrappedText(ctx, f.value, padX + 28 + lw, fy, W - padX * 2 - 56 - lw, isStory ? 29 : 23, 2);
-    fy += linesUsed * (isStory ? 29 : 23) + (isStory ? 18 : 12);
-  });
-
-  if (hotel.watchOut && fy < kfY + kfH - 60) {
-    ctx.font = `800 ${isStory ? 20 : 16}px ${FONT_STACK}`;
-    ctx.fillStyle = "#FBBF24";
-    ctx.fillText("Watch-Out:", padX + 28, fy + 8);
-    ctx.font = `500 ${isStory ? 20 : 16}px ${FONT_STACK}`;
-    ctx.fillStyle = "#E2E8F0";
-    drawWrappedText(ctx, hotel.watchOut, padX + 28, fy + (isStory ? 38 : 32), W - padX * 2 - 56, isStory ? 28 : 22, isStory ? 4 : 2);
+  if (isStory) {
+    let fy = kfY + 62;
+    if (imgObj) {
+      const phW = W - padX * 2 - 56;
+      const phH = 264;
+      drawRoundedImageCover(ctx, imgObj, padX + 28, fy, phW, phH, 18, "rgba(255,255,255,0.16)", awardOverlay);
+      fy += phH + 34;
+    } else {
+      fy = kfY + 76;
+    }
+    facts.forEach((f) => {
+      if (fy > kfY + kfH - 60) return;
+      ctx.font = `800 20px ${FONT_STACK}`;
+      ctx.fillStyle = "#5EEAD4";
+      ctx.fillText(`${f.label}:`, padX + 28, fy);
+      const lw = ctx.measureText(`${f.label}: `).width;
+      ctx.font = `500 20px ${FONT_STACK}`;
+      ctx.fillStyle = "#E2E8F0";
+      const linesUsed = drawWrappedText(ctx, f.value, padX + 28 + lw, fy, W - padX * 2 - 56 - lw, 27, 2);
+      fy += linesUsed * 27 + 14;
+    });
+    if (hotel.watchOut && fy < kfY + kfH - 48) {
+      ctx.font = `800 19px ${FONT_STACK}`;
+      ctx.fillStyle = "#FBBF24";
+      ctx.fillText("Watch-Out:", padX + 28, fy + 6);
+      ctx.font = `500 19px ${FONT_STACK}`;
+      ctx.fillStyle = "#E2E8F0";
+      drawWrappedText(ctx, hotel.watchOut, padX + 28, fy + 34, W - padX * 2 - 56, 26, 3);
+    }
+  } else {
+    // 1:1 Single Card: Left = Facts + Watch-Out, Right = crisp 16:9 Hotel Photo
+    const photoW = imgObj ? 320 : 0;
+    const photoH = 180;
+    const textMaxW = imgObj ? W - padX * 2 - 56 - photoW - 24 : W - padX * 2 - 56;
+    if (imgObj) {
+      drawRoundedImageCover(
+        ctx,
+        imgObj,
+        W - padX - 28 - photoW,
+        kfY + 52,
+        photoW,
+        photoH,
+        16,
+        "rgba(255,255,255,0.16)",
+        awardOverlay
+      );
+    }
+    let fy = kfY + 72;
+    facts.forEach((f) => {
+      if (fy > kfY + kfH - 40) return;
+      ctx.font = `800 16px ${FONT_STACK}`;
+      ctx.fillStyle = "#5EEAD4";
+      ctx.fillText(`${f.label}:`, padX + 28, fy);
+      const lw = ctx.measureText(`${f.label}: `).width;
+      ctx.font = `500 16px ${FONT_STACK}`;
+      ctx.fillStyle = "#E2E8F0";
+      const linesUsed = drawWrappedText(ctx, f.value, padX + 28 + lw, fy, Math.max(160, textMaxW - lw), 21, 2);
+      fy += linesUsed * 21 + 10;
+    });
+    if (hotel.watchOut && fy < kfY + kfH - 42) {
+      ctx.font = `800 15px ${FONT_STACK}`;
+      ctx.fillStyle = "#FBBF24";
+      ctx.fillText("Watch-Out:", padX + 28, fy + 4);
+      ctx.font = `500 15px ${FONT_STACK}`;
+      ctx.fillStyle = "#E2E8F0";
+      drawWrappedText(ctx, hotel.watchOut, padX + 28, fy + 26, textMaxW, 20, 2);
+    }
   }
 
   // Footer
@@ -1305,7 +1514,7 @@ async function copyText(str) {
   }
 }
 
-function openModalInternal({ title, filePrefix, deepLink, tweetText, redditMarkdown, renderFn }) {
+function openModalInternal({ title, filePrefix, deepLink, tweetText, redditMarkdown, preloadHotels = [], renderFn }) {
   const wrap = ensureModalDom();
   let currentFormat = "1:1";
   const canvas = wrap.querySelector("#soShareCanvas");
@@ -1321,6 +1530,10 @@ function openModalInternal({ title, filePrefix, deepLink, tweetText, redditMarkd
     });
   };
 
+  const imagesReady = Promise.all((preloadHotels || []).map((h) => loadSameOriginHotelImg(h))).then(() => {
+    if (wrap.style.display === "flex") rerender();
+  });
+
   wrap.querySelectorAll("[data-so-format]").forEach((btn) => {
     btn.onclick = () => {
       currentFormat = btn.dataset.soFormat || "1:1";
@@ -1329,6 +1542,7 @@ function openModalInternal({ title, filePrefix, deepLink, tweetText, redditMarkd
   });
 
   wrap.querySelector("#soDownloadPngBtn").onclick = async () => {
+    await imagesReady.catch(() => {});
     const filename = `${filePrefix}-${currentFormat === "9:16" ? "story-9x16" : "feed-1x1"}.png`;
     canvas.toBlob(async (blob) => {
       if (!blob) {
@@ -1393,6 +1607,7 @@ export function openVsShareModal(hotelA, hotelB, oddsA, oddsB) {
     deepLink,
     tweetText,
     redditMarkdown: buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB),
+    preloadHotels: [hotelA, hotelB],
     renderFn: (canvas, fmt) => renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, fmt),
   });
 }
@@ -1407,6 +1622,7 @@ export function openSingleHotelShareModal(hotel, odds) {
     deepLink,
     tweetText,
     redditMarkdown: buildRedditMarkdownSingle(hotel, odds),
+    preloadHotels: [hotel],
     renderFn: (canvas, fmt) => renderSingleHotelCanvas(canvas, hotel, odds, fmt),
   });
 }

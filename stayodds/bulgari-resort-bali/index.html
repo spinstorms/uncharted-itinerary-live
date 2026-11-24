@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -618,9 +618,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "bulgari-resort-bali", "name": "Bulgari Resort Bali", "location": "Uluwatu, Bali", "country": "Indonesia", "brand": "Bulgari / Marriott", "priceRange": "", "standout": "Dramatic 150m cliffside funicular to a secluded beach, Il Ristorante Niko Romito dining, and sleek Italian-Balinese stone villas", "watchOut": "Does NOT participate in Marriott Bonvoy points redemptions; cliffside ocean is too rough for swimming most days", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "scoredEditorial": [{"sourceName": "The Luxury Travel Expert", "rawScore": "9/10", "normalized100": 90}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 2, "verifiedGuest": null, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "bulgari-resort-bali", "name": "Bulgari Resort Bali", "location": "Uluwatu, Bali", "country": "Indonesia", "brand": "Bulgari / Marriott", "priceRange": "", "standout": "Dramatic 150m cliffside funicular to a secluded beach, Il Ristorante Niko Romito dining, and sleek Italian-Balinese stone villas", "watchOut": "Does NOT participate in Marriott Bonvoy points redemptions; cliffside ocean is too rough for swimming most days", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/bulgari-resort-bali.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Critic Reviewed", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 90, "scoredEditorial": [{"sourceName": "The Luxury Travel Expert", "rawScore": "9/10", "normalized100": 90}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 2, "verifiedGuest": null, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=3");
+      const mod = await import("../../assets/stayodds-share-card.js?v=4");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

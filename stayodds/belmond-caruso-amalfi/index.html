@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -618,9 +618,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "belmond-caruso-amalfi", "name": "Caruso, A Belmond Hotel", "location": "Ravello, Amalfi Coast", "country": "Italy", "brand": "Belmond / LVMH", "priceRange": "", "standout": "Outstanding service • Breathtaking views", "watchOut": "Winding cliff roads to Positano/Amalfi take patience — best savored at Ravello's relaxed hilltop pace", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: NAP)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 97, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 95, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "18.5/20", "normalized100": 92}, {"sourceName": "The Luxury Travel Expert", "rawScore": "9.8/10", "normalized100": 98}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 0, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [{"label": "1 MICHELIN Key"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (-3 pts) — 2 published critics and real guests agree.", "deltaLabel": "-3 pts"}}};
+    const shareCardState = {"hotel": {"id": "belmond-caruso-amalfi", "name": "Caruso, A Belmond Hotel", "location": "Ravello, Amalfi Coast", "country": "Italy", "brand": "Belmond / LVMH", "priceRange": "", "standout": "Outstanding service • Breathtaking views", "watchOut": "Winding cliff roads to Positano/Amalfi take patience — best savored at Ravello's relaxed hilltop pace", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: NAP)"}, "thumbnail": "assets/thumbs/belmond-caruso-amalfi.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 97, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 95, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "18.5/20", "normalized100": 92}, {"sourceName": "The Luxury Travel Expert", "rawScore": "9.8/10", "normalized100": 98}], "unverifiedEditorial": [], "editorialCount": 2, "youtubeCount": 0, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [{"label": "1 MICHELIN Key"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (-3 pts) — 2 published critics and real guests agree.", "deltaLabel": "-3 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=3");
+      const mod = await import("../../assets/stayodds-share-card.js?v=4");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

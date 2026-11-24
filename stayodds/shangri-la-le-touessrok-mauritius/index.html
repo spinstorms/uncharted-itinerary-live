@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -618,9 +618,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "shangri-la-le-touessrok-mauritius", "name": "Shangri-La Le Touessrok, Mauritius", "location": "Trou d'Eau Douce", "country": "Mauritius", "brand": "Shangri-La", "priceRange": "", "standout": "Outstanding staff • Excellent overall experience", "watchOut": "Stairs may be challenging for older guests", "keyFacts": {"poolHeating": "", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Nearest airport code: MRU"}, "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 86, "scoredEditorial": [{"sourceName": "The Luxury Travel Expert", "rawScore": "8.6/10", "normalized100": 86}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +6 pts higher than The Luxury Travel Expert.", "deltaLabel": "-6 pts"}}};
+    const shareCardState = {"hotel": {"id": "shangri-la-le-touessrok-mauritius", "name": "Shangri-La Le Touessrok, Mauritius", "location": "Trou d'Eau Douce", "country": "Mauritius", "brand": "Shangri-La", "priceRange": "", "standout": "Outstanding staff • Excellent overall experience", "watchOut": "Stairs may be challenging for older guests", "keyFacts": {"poolHeating": "", "beachOrReef": "Private beach with snorkeling/diving access", "renovationYear": null, "transferLogistics": "Nearest airport code: MRU"}, "thumbnail": "assets/thumbs/shangri-la-le-touessrok-mauritius.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 90, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 86, "scoredEditorial": [{"sourceName": "The Luxury Travel Expert", "rawScore": "8.6/10", "normalized100": 86}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.2, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +6 pts higher than The Luxury Travel Expert.", "deltaLabel": "-6 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=3");
+      const mod = await import("../../assets/stayodds-share-card.js?v=4");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

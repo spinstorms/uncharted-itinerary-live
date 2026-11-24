@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -618,9 +618,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "hotel-proverbs-taipei", "name": "HOTEL PROVERBS TAIPEI", "location": "Taipei", "country": "Taiwan", "brand": "Luxury Collection & Boutique", "priceRange": "", "standout": "Breakfast Score: 4/10", "watchOut": "Cleanliness issues • Lack of gym facilities", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: TSA)"}, "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "", "nearbyConstruction": "", "sourceUrl": "", "sourceNote": "", "verifiedAt": ""}}, "odds": {"greatStayOdds": 94, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 94, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "94/100 (Breakfast 4/10)", "normalized100": 94}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (+0 pts) — The Flip-Flop Traveller and real guests agree.", "deltaLabel": "0 pts"}}};
+    const shareCardState = {"hotel": {"id": "hotel-proverbs-taipei", "name": "HOTEL PROVERBS TAIPEI", "location": "Taipei", "country": "Taiwan", "brand": "Luxury Collection & Boutique", "priceRange": "", "standout": "Breakfast Score: 4/10", "watchOut": "Cleanliness issues • Lack of gym facilities", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: TSA)"}, "thumbnail": "assets/thumbs/hotel-proverbs-taipei.webp", "propertyStatus": {"operatingStatus": "Open", "renovationsExtensions": "", "nearbyConstruction": "", "sourceUrl": "", "sourceNote": "", "verifiedAt": ""}}, "odds": {"greatStayOdds": 94, "statusBadge": "Strong Agreement", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 94, "scoredEditorial": [{"sourceName": "The Flip-Flop Traveller", "rawScore": "94/100 (Breakfast 4/10)", "normalized100": 94}], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Tight agreement (+0 pts) — The Flip-Flop Traveller and real guests agree.", "deltaLabel": "0 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=3");
+      const mod = await import("../../assets/stayodds-share-card.js?v=4");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

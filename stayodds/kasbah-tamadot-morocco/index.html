@@ -23,7 +23,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=32" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=33" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -618,9 +618,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "kasbah-tamadot-morocco", "name": "Kasbah Tamadot", "location": "Asni, High Atlas Mountains", "country": "Morocco", "brand": "Virgin Limited Edition", "priceRange": "£800+/night", "standout": "Sir Richard Branson's enchanting 28-room High Atlas Mountains retreat freshly restored and reopened in late 2024 with six brand-new multi-bedroom Riads, Berber luxury tents with private pools, dramatic infinity pool, and heartfelt local Amazigh hospitality", "watchOut": "Approx. 60-minute drive south of Marrakech — best paired as a peaceful mountain contrast to a Marrakech city stay rather than commuting daily to the medina", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": 2024, "transferLogistics": "Approx. 60 minutes south of Marrakech Menara Airport (RAK)"}, "propertyStatus": null}, "odds": {"greatStayOdds": 98, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "kasbah-tamadot-morocco", "name": "Kasbah Tamadot", "location": "Asni, High Atlas Mountains", "country": "Morocco", "brand": "Virgin Limited Edition", "priceRange": "£800+/night", "standout": "Sir Richard Branson's enchanting 28-room High Atlas Mountains retreat freshly restored and reopened in late 2024 with six brand-new multi-bedroom Riads, Berber luxury tents with private pools, dramatic infinity pool, and heartfelt local Amazigh hospitality", "watchOut": "Approx. 60-minute drive south of Marrakech — best paired as a peaceful mountain contrast to a Marrakech city stay rather than commuting daily to the medina", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": 2024, "transferLogistics": "Approx. 60 minutes south of Marrakech Menara Airport (RAK)"}, "thumbnail": "assets/thumbs/kasbah-tamadot-morocco.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 98, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": {"rating": 9.8, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guest ratings, official awards, and linked reviews compared side-by-side.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=3");
+      const mod = await import("../../assets/stayodds-share-card.js?v=4");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

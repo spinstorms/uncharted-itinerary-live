@@ -123,20 +123,25 @@ button {
   background: var(--accent);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 12px rgba(255, 93, 34, 0.18);
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  min-height: 74px;
+  gap: 16px;
+  min-height: 70px;
+  min-width: 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .brand-logo {
@@ -179,16 +184,19 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  min-width: 0;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
-  padding: 7px 13px;
+  padding: 7px 11px;
   border-radius: 999px;
   position: relative;
+  white-space: nowrap;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -202,8 +210,8 @@ button {
 .nav-links a.active::after {
   content: "";
   position: absolute;
-  left: 13px;
-  right: 13px;
+  left: 11px;
+  right: 11px;
   bottom: 2px;
   height: 2px;
   background: #ffffff;
@@ -213,7 +221,8 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .site-header .btn-primary {
@@ -322,27 +331,34 @@ button {
 .hub-tabs-bar {
   background: #ffffff;
   border-bottom: 1px solid var(--border-hairline);
-  padding: 12px 0;
+  padding: 10px 0;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .hub-tabs-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 14px;
+  flex-wrap: nowrap;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hub-tabs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
   padding: 5px;
   background: #ffffff;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
+  min-width: 0;
   max-width: 100%;
+  flex: 0 1 auto;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -3076,7 +3092,95 @@ body.embed-mode .affiliate-hero {
   gap: 8px;
 }
 
+/* ---------- Sortable Comparison Table Headers ---------- */
+.comparison-table th.is-sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+.comparison-table th.is-sortable:hover {
+  background: #eef2f7;
+  color: var(--ink-primary);
+}
+.comparison-table th.is-sortable.is-sorted {
+  background: #fff5f0;
+  color: var(--accent);
+}
+.comparison-table .sort-th-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+.comparison-table .sort-arrow {
+  font-size: 10px;
+  opacity: 0.45;
+  line-height: 1;
+}
+.comparison-table th.is-sorted .sort-arrow {
+  opacity: 1;
+  color: var(--accent);
+}
+.comparison-table .table-rank-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.comparison-table .table-rank-pill.is-key {
+  background: #fef3c7;
+  color: #92400e;
+}
+.comparison-table .table-rank-pill.is-50 {
+  background: #ffedd5;
+  color: #c2410c;
+}
+.comparison-table .table-rank-pill.is-forbes {
+  background: #e0f2fe;
+  color: #075985;
+}
+
 /* ---------- Responsive ---------- */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+@media (max-width: 1120px) {
+  .nav-links,
+  .header-actions .btn-outline {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+  .hub-back-link {
+    display: none;
+  }
+  .hub-tabs {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .hub-tab {
+    padding: 7px 13px;
+    font-size: 12.5px;
+  }
+}
+
 @media (max-width: 1024px) {
   .featured-card,
   .review-hero-card,
@@ -3115,6 +3219,34 @@ body.embed-mode .affiliate-hero {
 }
 
 @media (max-width: 760px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header-inner {
+    min-height: 62px;
+    gap: 10px;
+  }
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+  .brand-name {
+    font-size: 15.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand-sub {
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .site-header .btn-primary {
+    padding: 7px 13px;
+    font-size: 12.5px;
+  }
   .methodology-grid,
   .formula-grid,
   .detail-kpi-row,
@@ -3125,24 +3257,12 @@ body.embed-mode .affiliate-hero {
   .h2h-vs {
     margin: 0 auto;
   }
-  .nav-links,
-  .header-actions .btn-outline,
-  .hub-back-link {
-    display: none;
-  }
-  .hub-tabs {
-    width: 100%;
-    justify-content: flex-start;
-  }
   .hub-tab {
-    padding: 8px 12px;
-    font-size: 12.5px;
+    padding: 7px 11px;
+    font-size: 12px;
   }
   #hotelMap {
     height: 340px;
-  }
-  .mobile-menu-btn {
-    display: inline-flex;
   }
   .sync-meta {
     align-items: flex-start;
@@ -3163,6 +3283,18 @@ body.embed-mode .affiliate-hero {
   }
   .promo-banner {
     padding: 26px 22px;
+  }
+}
+
+@media (max-height: 460px) and (orientation: landscape) {
+  .site-header {
+    position: relative;
+  }
+  .header-inner {
+    min-height: 54px;
+  }
+  .hub-tabs-bar {
+    padding: 6px 0;
   }
 }
 
