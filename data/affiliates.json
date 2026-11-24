@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T00:42:45Z",
+  "updatedAt": "2026-11-24T01:19:21Z",
   "sheetConnected": true,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
@@ -1177,7 +1177,7 @@
   ],
   "fromVideos": [
     {
-      "id": "yt-5295662",
+      "id": "yt-7323951",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1218,7 +1218,7 @@
       ]
     },
     {
-      "id": "yt-3852220",
+      "id": "yt-1228309",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1227,7 +1227,7 @@
       "badge": "From Video",
       "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
       "promoCode": "",
-      "url": "https://uncharteditinerary.com/hotels/",
+      "url": "https://live.uncharteditinerary.com/hotels/",
       "buttonLabel": "Open Link",
       "inCurated": false,
       "mentionedIn": [
@@ -1259,7 +1259,7 @@
       ]
     },
     {
-      "id": "yt-5149544",
+      "id": "yt-3095520",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1268,7 +1268,7 @@
       "badge": "From Video",
       "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
       "promoCode": "",
-      "url": "https://uncharteditinerary.com/links/",
+      "url": "https://live.uncharteditinerary.com/links/",
       "buttonLabel": "Open Link",
       "inCurated": false,
       "mentionedIn": [
@@ -1300,7 +1300,7 @@
       ]
     },
     {
-      "id": "yt-6261349",
+      "id": "yt-4525786",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1309,7 +1309,7 @@
       "badge": "From Video",
       "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
       "promoCode": "",
-      "url": "https://uncharteditinerary.com/cameras/",
+      "url": "https://live.uncharteditinerary.com/cameras/",
       "buttonLabel": "Open Link",
       "inCurated": false,
       "mentionedIn": [
