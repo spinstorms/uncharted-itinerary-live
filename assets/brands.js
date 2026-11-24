@@ -1,5 +1,5 @@
 import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=8";
-import { normalizeBrandName, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=1";
+import { normalizeBrandName, getPartnerPrograms, getVerifiedRoomTip } from "./stayodds-insights.js?v=2";
 
 const qs = (s) => document.querySelector(s);
 const oddsCache = new WeakMap();
@@ -97,7 +97,7 @@ function computeBrandStats(hotels) {
       const o = getOdds(h);
       if (o.greatStayOdds != null) oddsVals.push(Number(o.greatStayOdds));
       if (o.guest100 != null) guestVals.push(Number(o.guest100));
-      if (o.firstHand && h.overall != null) myVals.push(Number(h.overall));
+      if (o.firstHand && o.personalScore25 != null) myVals.push(Number(o.personalScore25));
       if (o.opinionGap && o.opinionGap.delta100 != null) gapVals.push(Math.abs(Number(o.opinionGap.delta100)));
       const mk = getMichelinKeyCount(h);
       if (mk != null) {

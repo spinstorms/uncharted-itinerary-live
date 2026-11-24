@@ -94,7 +94,7 @@ export function normalizeBrandName(hotel) {
   if (/ihg/i.test(rawBrand)) return "IHG";
   if (/accor/i.test(rawBrand)) return "Accor";
 
-  if (!rawBrand || /^(independent|boutique|luxury\s+collection\s*&\s*boutique)$/i.test(rawBrand)) {
+  if (!rawBrand || /^(independent|boutique|boutique\s+ultra[- ]luxury|luxury\s+collection\s*&\s*boutique)$/i.test(rawBrand)) {
     return "Independent & Boutique";
   }
   return rawBrand;
