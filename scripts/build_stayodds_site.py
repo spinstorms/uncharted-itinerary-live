@@ -638,6 +638,9 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             "watchOut": h.get("watchOut", ""),
             "keyFacts": h.get("keyFacts") or {},
             "thumbnail": h.get("thumbnail", ""),
+        "cardPhoto": f"assets/card-photos/{h['id']}.webp" if (ROOT / "assets" / "card-photos" / f"{h['id']}.webp").exists() else "",
+        "videoId": h.get("videoId", ""),
+        "coverageType": h.get("coverageType", ""),
             "propertyStatus": h.get("propertyStatus") or None,
         },
         "odds": {
@@ -674,7 +677,10 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(title_text)}</title>
@@ -693,7 +699,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -886,6 +892,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
             {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
+            {f'<div class="verdict-card" style="border-color:#c7d2fe;background:#f8faff;"><span class="tag" style="background:#eef2ff;color:#3730a3;">🛏️ First-Hand Room / Booking Tip</span><h3>Which Room / Villa to Book</h3><p>{esc(h.get("whereWeDiffer"))}</p></div>' if (o['firstHand'] and h.get("whereWeDiffer") and re.search(r"villa|suite|main building|overwater|room|pavilion|cottage|bungalow|book|pool|lagoon", h.get("whereWeDiffer",""), re.I)) else ''}
           </div>
         </div>
       </section>
@@ -1241,7 +1248,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -1504,7 +1511,10 @@ def render_destination_page(
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(page_title)}</title>
@@ -1526,7 +1536,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1901,6 +1911,7 @@ def main() -> None:
             "visitedByUs": r["visitedByUs"],
             "coverageType": r["coverageType"],
             "thumbnail": r["thumbnail"],
+            **({"cardPhoto": f"assets/card-photos/{r['id']}.webp"} if (ROOT / "assets" / "card-photos" / f"{r['id']}.webp").exists() else {}),
             "bookingUrl": r["bookingUrl"],
         }
         if r["videoId"]:
@@ -2043,6 +2054,7 @@ def main() -> None:
         (f"{SITE_URL}/", "1.0", "daily"),
         (f"{SITE_URL}/compare/", "1.0", "daily"),
         (f"{SITE_URL}/hotels/", "0.9", "weekly"),
+        (f"{SITE_URL}/brands/", "0.9", "weekly"),
         (f"{SITE_URL}/cameras/", "0.8", "weekly"),
         (f"{SITE_URL}/links/", "0.8", "daily"),
         (f"{SITE_URL}/about/", "0.85", "monthly"),

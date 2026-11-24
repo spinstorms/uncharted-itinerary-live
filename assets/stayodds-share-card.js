@@ -404,17 +404,30 @@ export function extractTopKeyFacts(hotel, odds, maxCount = 3) {
 
 const LOCAL_IMG_CACHE = new Map();
 
-function resolveSameOriginPhotoUrl(hotel) {
-  const thumb = (hotel && hotel.thumbnail ? String(hotel.thumbnail) : "").trim();
-  const slug = hotel && hotel.id ? String(hotel.id).trim() : "";
-  const rel = thumb && !/^https?:\/\//i.test(thumb)
-    ? thumb.replace(/^\.+\//, "").replace(/^\//, "")
-    : slug
-    ? `assets/thumbs/${encodeURIComponent(slug)}.webp`
-    : "";
-  if (!rel) return "";
+function hasChannelVideo(hotel) {
+  return Boolean(
+    hotel &&
+      (hotel.videoId ||
+        hotel.coverageType === "Full Review" ||
+        hotel.coverageType === "Short Tour" ||
+        (Array.isArray(hotel.shorts) && hotel.shorts.length > 0))
+  );
+}
+
+function getYouTubeVideoBadge(hotel) {
+  if (!hasChannelVideo(hotel)) return "";
+  if (hotel.coverageType === "Short Tour" && !hotel.inLiveFeed) {
+    return "▶ YOUTUBE SHORT";
+  }
+  return "▶ VIDEO ON YOUTUBE";
+}
+
+function toSameOriginUrl(relPath) {
+  if (!relPath || /^https?:\/\//i.test(relPath)) return "";
+  const clean = String(relPath).trim().replace(/^\.+\//, "").replace(/^\//, "");
+  if (!clean) return "";
   try {
-    const u = new URL(`/${rel}`, window.location.origin);
+    const u = new URL(`/${clean}`, window.location.origin);
     if (u.origin !== window.location.origin) return "";
     return u.href;
   } catch (_) {
@@ -422,37 +435,82 @@ function resolveSameOriginPhotoUrl(hotel) {
   }
 }
 
+function getCandidatePhotoUrls(hotel) {
+  if (!hotel) return [];
+  const slug = hotel.id ? String(hotel.id).trim() : "";
+  const urls = [];
+  // For filmed/YouTube-thumbnail properties, prefer clean official resort photo (no YouTube text overlay)
+  if (hotel.cardPhoto) {
+    const u = toSameOriginUrl(hotel.cardPhoto);
+    if (u) urls.push(u);
+  }
+  if (slug && hasChannelVideo(hotel)) {
+    const u = toSameOriginUrl(`assets/card-photos/${encodeURIComponent(slug)}.webp`);
+    if (u && !urls.includes(u)) urls.push(u);
+  }
+  if (hotel.thumbnail) {
+    const u = toSameOriginUrl(hotel.thumbnail);
+    if (u && !urls.includes(u)) urls.push(u);
+  }
+  if (slug) {
+    const u = toSameOriginUrl(`assets/thumbs/${encodeURIComponent(slug)}.webp`);
+    if (u && !urls.includes(u)) urls.push(u);
+  }
+  return urls;
+}
+
+function loadImgOnce(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
 function loadSameOriginHotelImg(hotel) {
-  const url = resolveSameOriginPhotoUrl(hotel);
-  if (!url) return Promise.resolve(null);
-  const cached = LOCAL_IMG_CACHE.get(url);
+  const candidates = getCandidatePhotoUrls(hotel);
+  if (!candidates.length) return Promise.resolve(null);
+  const cacheKey = (hotel && hotel.id) || candidates[0];
+  const cached = LOCAL_IMG_CACHE.get(cacheKey);
   if (cached) {
     return cached instanceof Promise ? cached : Promise.resolve(cached);
   }
-  const p = new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => {
-      LOCAL_IMG_CACHE.set(url, img);
-      resolve(img);
-    };
-    img.onerror = () => {
-      LOCAL_IMG_CACHE.set(url, null);
-      resolve(null);
-    };
-    img.src = url;
-  });
-  LOCAL_IMG_CACHE.set(url, p);
+  const p = (async () => {
+    for (const u of candidates) {
+      const img = await loadImgOnce(u);
+      if (img) {
+        LOCAL_IMG_CACHE.set(cacheKey, img);
+        return img;
+      }
+    }
+    LOCAL_IMG_CACHE.set(cacheKey, null);
+    return null;
+  })();
+  LOCAL_IMG_CACHE.set(cacheKey, p);
   return p;
 }
 
 function getCachedHotelImg(hotel) {
-  const url = resolveSameOriginPhotoUrl(hotel);
-  if (!url) return null;
-  const val = LOCAL_IMG_CACHE.get(url);
+  if (!hotel) return null;
+  const cacheKey = hotel.id || getCandidatePhotoUrls(hotel)[0];
+  if (!cacheKey) return null;
+  const val = LOCAL_IMG_CACHE.get(cacheKey);
   return val && !(val instanceof Promise) ? val : null;
 }
 
-function drawRoundedImageCover(ctx, img, x, y, w, h, r, borderCol = "rgba(255,255,255,0.16)", badgeText = "") {
+function drawRoundedImageCover(
+  ctx,
+  img,
+  x,
+  y,
+  w,
+  h,
+  r,
+  borderCol = "rgba(255,255,255,0.16)",
+  badgeText = "",
+  ytBadgeText = ""
+) {
   if (!img || !img.naturalWidth || !img.naturalHeight) return false;
   ctx.save();
   roundRectPath(ctx, x, y, w, h, r);
@@ -473,14 +531,27 @@ function drawRoundedImageCover(ctx, img, x, y, w, h, r, borderCol = "rgba(255,25
   // Subtle dark bottom vignette for legibility when badgeText exists
   const grad = ctx.createLinearGradient(x, y + h * 0.45, x, y + h);
   grad.addColorStop(0, "rgba(7, 19, 35, 0)");
-  grad.addColorStop(1, badgeText ? "rgba(7, 19, 35, 0.78)" : "rgba(7, 19, 35, 0.32)");
+  grad.addColorStop(1, badgeText ? "rgba(7, 19, 35, 0.80)" : "rgba(7, 19, 35, 0.30)");
   ctx.fillStyle = grad;
   ctx.fillRect(x, y, w, h);
 
+  if (ytBadgeText) {
+    const compact = w < 310;
+    ctx.font = `800 ${compact ? 10 : 11}px ${FONT_STACK}`;
+    const tw = ctx.measureText(ytBadgeText).width;
+    const pw = tw + (compact ? 16 : 20);
+    const ph = compact ? 22 : 25;
+    const bx = x + w - pw - 10;
+    const by = y + 10;
+    fillRoundRect(ctx, bx, by, pw, ph, ph / 2, "rgba(220, 38, 38, 0.94)", "rgba(255, 255, 255, 0.35)", 1);
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillText(ytBadgeText, bx + (compact ? 8 : 10), by + (compact ? 15 : 16.5));
+  }
+
   if (badgeText) {
-    ctx.font = `700 13px ${FONT_STACK}`;
+    ctx.font = `700 ${w < 310 ? 12 : 13}px ${FONT_STACK}`;
     ctx.fillStyle = "#F8FAFC";
-    drawWrappedText(ctx, badgeText, x + 14, y + h - 14, w - 28, 18, 1);
+    drawWrappedText(ctx, badgeText, x + 12, y + h - 13, w - 24, 17, 1);
   }
   ctx.restore();
 
@@ -1155,7 +1226,7 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
       const photoW = imgObj ? Math.min(368, Math.round(splitH * (16 / 9))) : 0;
       const photoGap = imgObj ? 22 : 0;
       if (imgObj) {
-        drawRoundedImageCover(ctx, imgObj, x + p, splitY, photoW, splitH, 16, "rgba(255,255,255,0.16)", awardLine);
+        drawRoundedImageCover(ctx, imgObj, x + p, splitY, photoW, splitH, 16, "rgba(255,255,255,0.16)", awardLine, getYouTubeVideoBadge(hotel));
       }
 
       const textX = x + p + photoW + photoGap;
@@ -1213,7 +1284,7 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
       });
 
       if (imgObj) {
-        drawRoundedImageCover(ctx, imgObj, photoX, photoY, photoW, photoH, 14, "rgba(255,255,255,0.18)", awardLine);
+        drawRoundedImageCover(ctx, imgObj, photoX, photoY, photoW, photoH, 14, "rgba(255,255,255,0.18)", awardLine, getYouTubeVideoBadge(hotel));
       } else if (hotel.watchOut && fy < y + h - 42) {
         ctx.font = `800 12.5px ${FONT_STACK}`;
         ctx.fillStyle = "#FBBF24";
@@ -1435,7 +1506,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     if (imgObj) {
       const phW = W - padX * 2 - 56;
       const phH = 264;
-      drawRoundedImageCover(ctx, imgObj, padX + 28, fy, phW, phH, 18, "rgba(255,255,255,0.16)", awardOverlay);
+      drawRoundedImageCover(ctx, imgObj, padX + 28, fy, phW, phH, 18, "rgba(255,255,255,0.16)", awardOverlay, getYouTubeVideoBadge(hotel));
       fy += phH + 34;
     } else {
       fy = kfY + 76;
@@ -1474,7 +1545,8 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
         photoH,
         16,
         "rgba(255,255,255,0.16)",
-        awardOverlay
+        awardOverlay,
+        getYouTubeVideoBadge(hotel)
       );
     }
     let fy = kfY + 72;
@@ -1880,7 +1952,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
           ? `🏆 ${odds.officialAwards.slice(0, 2).map((a) => a.label).join(" • ")}`
           : `${hotel.location}, ${hotel.country}`;
       if (imgObj) {
-        drawRoundedImageCover(ctx, imgObj, x + p, splitY, photoW, photoH, 14, "rgba(255,255,255,0.16)", awardOverlay);
+        drawRoundedImageCover(ctx, imgObj, x + p, splitY, photoW, photoH, 14, "rgba(255,255,255,0.16)", awardOverlay, getYouTubeVideoBadge(hotel));
       }
 
       const textX = x + p + photoW + photoGap;
@@ -2054,7 +2126,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
       }
 
       if (imgObj) {
-        drawRoundedImageCover(ctx, imgObj, x + p, photoY, photoW, photoH, 12, "rgba(255,255,255,0.18)", awardOverlay);
+        drawRoundedImageCover(ctx, imgObj, x + p, photoY, photoW, photoH, 12, "rgba(255,255,255,0.18)", awardOverlay, getYouTubeVideoBadge(hotel));
       }
     });
 

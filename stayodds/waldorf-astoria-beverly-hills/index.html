@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Waldorf Astoria Beverly Hills — StayOdds Score (86%) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -220,6 +223,7 @@
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Outstanding, attentive service across teams (bell, reception, concierge, valet, spa, rooftop) • Prime Beverly Hills location with convenient shuttle</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Serious housekeeping lapse (glass in shower, hairs in bed) reported by a guest • Poor handling of a refund/complaint in one instance</p></div>
+            
           </div>
         </div>
       </section>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "waldorf-astoria-beverly-hills", "name": "Waldorf Astoria Beverly Hills", "location": "Beverly Hills", "country": "United States", "brand": "Waldorf Astoria", "priceRange": "", "standout": "Outstanding, attentive service across teams (bell, reception, concierge, valet, spa, rooftop) • Prime Beverly Hills location with convenient shuttle", "watchOut": "Serious housekeeping lapse (glass in shower, hairs in bed) reported by a guest • Poor handling of a refund/complaint in one instance", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: LAX"}, "thumbnail": "assets/thumbs/waldorf-astoria-beverly-hills.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 86, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 1, "verifiedGuest": {"rating": 8.6, "scale": 10}, "officialAwards": [{"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "waldorf-astoria-beverly-hills", "name": "Waldorf Astoria Beverly Hills", "location": "Beverly Hills", "country": "United States", "brand": "Waldorf Astoria", "priceRange": "", "standout": "Outstanding, attentive service across teams (bell, reception, concierge, valet, spa, rooftop) • Prime Beverly Hills location with convenient shuttle", "watchOut": "Serious housekeeping lapse (glass in shower, hairs in bed) reported by a guest • Poor handling of a refund/complaint in one instance", "keyFacts": {"poolHeating": "Heated pool confirmed", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: LAX"}, "thumbnail": "assets/thumbs/waldorf-astoria-beverly-hills.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": 86, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 1, "verifiedGuest": {"rating": 8.6, "scale": 10}, "officialAwards": [{"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

@@ -6,6 +6,13 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
+import {
+  MONTH_LABELS,
+  getPartnerPrograms,
+  matchesBestMonth,
+  getGuestProfile,
+  exportHotelsToCsv,
+} from "./stayodds-insights.js?v=1";
 
 const PAGE_SIZE = 24;
 const oddsCache = new WeakMap();
@@ -25,6 +32,8 @@ const state = {
   region: "All",
   brand: "All",
   style: "all",
+  profileFilter: "all", // "all" | "adults" | "family" | "preferred" | "points"
+  month: 0, // 0 = All Months, 1..12 = Jan..Dec
   coverage: "All",
   sortBy: "stayodds",
   tableSortKey: null, // null | "name" | "location" | "odds" | "overall" | "critic" | "guest" | "gap" | "michelin" | "w50" | "forbes"
@@ -935,6 +944,21 @@ async function boot() {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => renderAll(false), 120);
   });
+  qs("#mapProfileFilter")?.addEventListener("change", (e) => {
+    state.profileFilter = e.target.value || "all";
+    state.visibleLimit = PAGE_SIZE;
+    renderAll(true);
+  });
+  qs("#mapExportCsvBtn")?.addEventListener("click", () => {
+    const list = getFilteredHotels();
+    if (!list.length) return;
+    exportHotelsToCsv(
+      list,
+      getOdds,
+      { getMichelinKeyCount, getW50BestRank, getForbesRank },
+      "stayodds-hotel-map.csv"
+    );
+  });
   qs("#viewCardsBtn")?.addEventListener("click", () => {
     state.viewMode = "cards";
     qs("#viewCardsBtn")?.classList.add("active");
@@ -947,6 +971,28 @@ async function boot() {
     qs("#viewCardsBtn")?.classList.remove("active");
     renderScorecards(getFilteredHotels());
   });
+
+  function renderMapMonthPills() {
+    const container = qs("#mapMonthPills");
+    if (!container) return;
+    const base = getScopedHotels().filter((h) => state.region === "All" || h.region === state.region);
+    container.innerHTML = [
+      `<button class="feature-pill month-pill ${state.month === 0 ? "active" : ""}" data-month="0" type="button">All Months (${base.length})</button>`,
+      ...MONTH_LABELS.map((lbl, idx) => {
+        const m = idx + 1;
+        const cnt = base.filter((h) => matchesBestMonth(h, m)).length;
+        return `<button class="feature-pill month-pill ${state.month === m ? "active" : ""}" data-month="${m}" type="button">${lbl} (${cnt})</button>`;
+      }),
+    ].join("");
+    container.querySelectorAll("[data-month]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.month = Number(btn.dataset.month || 0);
+        state.visibleLimit = PAGE_SIZE;
+        renderMapMonthPills();
+        renderAll(true);
+      });
+    });
+  }
 
   try {
     const IDX_CACHE_KEY = "stayodds_index_cache_v20261124";
@@ -978,9 +1024,12 @@ async function boot() {
 
     const styleParam = params.get("style");
     if (styleParam && TRAVEL_STYLES.some((s) => s.id === styleParam)) state.style = styleParam;
+    const monthParam = Number(params.get("month") || 0);
+    if (monthParam >= 1 && monthParam <= 12) state.month = monthParam;
     renderScopeTabs();
     renderRegionPills();
     renderStylePills();
+    renderMapMonthPills();
     populateBrands();
     renderAll(true);
   } catch (err) {

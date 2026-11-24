@@ -1,0 +1,550 @@
+/**
+ * StayOdds Verified Luxury Intelligence Module
+ * - Canonical brand normalization (for Brand Consistency Leaderboard)
+ * - Deterministic Preferred Partner & Loyalty Points programs (strictly by brand)
+ * - Established destination climatology ("Best Months to Go" dry/peak season filter)
+ * - Verified Adults-Only vs. Family / Kids-Club classification (zero false positives)
+ * - First-Hand "Which Room / Villa to Book" tip extraction (strictly from real stay notes)
+ * - RFC-4180 CSV exporter for Shortlists & Comparison Tables
+ */
+
+export const MONTH_LABELS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+/* ==================== 1. Canonical Brand Normalization ==================== */
+
+export function normalizeBrandName(hotel) {
+  const rawBrand = String((hotel && hotel.brand) || "").trim();
+  const name = String((hotel && hotel.name) || "").trim();
+  const combo = `${rawBrand} ${name}`.toLowerCase();
+
+  if (/four\s*seasons/i.test(combo)) return "Four Seasons";
+  if (/\baman(?!da)/i.test(rawBrand) || /^aman[a-z\s]/i.test(name) || /\baman\b/i.test(rawBrand)) return "Aman";
+  if (/rosewood/i.test(combo)) return "Rosewood";
+  if (/mandarin\s*oriental/i.test(combo)) return "Mandarin Oriental";
+  if (/one\s*&\s*only|one&only/i.test(combo)) return "One&Only";
+  if (/six\s*senses/i.test(combo)) return "Six Senses";
+  if (/belmond|splendido|hotel\s+cipriani|maroma.*belmond|cap\s+juluca|caruso.*belmond|la\s+samanna/i.test(combo)) return "Belmond";
+  if (/st\.?\s*regis/i.test(combo)) return "St. Regis";
+  if (/ritz-?carlton\s+reserve|mandapa|phulay\s+bay|zad[uú]n|higashiyama\s+niseko|dorado\s+beach.*ritz/i.test(combo)) return "Ritz-Carlton Reserve";
+  if (/ritz-?carlton/i.test(combo)) return "The Ritz-Carlton";
+  if (/waldorf\s*astoria/i.test(combo)) return "Waldorf Astoria";
+  if (/park\s*hyatt/i.test(combo)) return "Park Hyatt";
+  if (/cheval\s*blanc/i.test(combo)) return "Cheval Blanc";
+  if (/raffles/i.test(combo)) return "Raffles";
+  if (/peninsula/i.test(combo)) return "The Peninsula";
+  if (/auberge/i.test(combo)) return "Auberge Resorts";
+  if (/oetker|le\s+bristol|eden\s+rock|hotel\s+du\s+cap-eden-roc|brenners|lanesborough|jumby\s+bay/i.test(combo)) return "Oetker Collection";
+  if (/dorchester|the\s+lana|hotel\s+bel-air|beverly\s+hills\s+hotel|le\s+meurice|plaza\s+ath[eé]n[eé]e|eden\s+rome|principe\s+di\s+savoia|coworth\s+park/i.test(combo)) return "Dorchester Collection";
+  if (/maybourne|claridge|the\s+connaught|the\s+berkeley|the\s+emory|maybourne\s+riviera/i.test(combo)) return "Maybourne";
+  if (/bulgari|bvlgari/i.test(combo)) return "Bulgari Hotels";
+  if (/capella/i.test(combo)) return "Capella";
+  if (/soneva/i.test(combo)) return "Soneva";
+  if (/\bcomo\b/i.test(combo)) return "COMO Hotels";
+  if (/jumeirah/i.test(combo)) return "Jumeirah";
+  if (/oberoi/i.test(combo)) return "Oberoi";
+  if (/\btaj\b|umaid\s+bhawan|rambagh\s+palace|falaknuma|lake\s+palace/i.test(combo)) return "Taj Hotels";
+  if (/the\s+leela/i.test(combo)) return "The Leela";
+  if (/fairmont/i.test(combo)) return "Fairmont";
+  if (/\bedition\b/i.test(combo)) return "EDITION";
+  if (/\bw\s+(maldives|bali|koh\s+samui|sardinia|algarve|punta\s+cana|new\s+york|hotels)/i.test(combo)) return "W Hotels";
+  if (/luxury\s+collection|ta'aktana|the\s+sira|vana\s+belle|naka\s+island|gritti\s+palace|hotel\s+imperial|sanctuary\s+cap\s+cana/i.test(combo)) return "The Luxury Collection";
+  if (/conrad/i.test(combo)) return "Conrad";
+  if (/andaz/i.test(combo)) return "Andaz";
+  if (/alila/i.test(combo)) return "Alila";
+  if (/kimpton/i.test(combo)) return "Kimpton";
+  if (/regent\b/i.test(combo)) return "Regent";
+  if (/intercontinental/i.test(combo)) return "InterContinental";
+  if (/jw\s+marriott/i.test(combo)) return "JW Marriott";
+  if (/westin/i.test(combo)) return "Westin";
+  if (/le\s+m[eé]ridien/i.test(combo)) return "Le Méridien";
+  if (/sofitel/i.test(combo)) return "Sofitel";
+  if (/banyan\s+tree/i.test(combo)) return "Banyan Tree";
+  if (/shangri-?la/i.test(combo)) return "Shangri-La";
+  if (/kempinski/i.test(combo)) return "Kempinski";
+  if (/singita/i.test(combo)) return "Singita";
+  if (/andbeyond|&beyond/i.test(combo)) return "&Beyond";
+  if (/wilderness\b/i.test(combo)) return "Wilderness";
+  if (/secrets\b|impression.*secrets/i.test(combo)) return "Secrets Resorts";
+  if (/zo[eë]try/i.test(combo)) return "Zoëtry";
+  if (/excellence\b/i.test(combo)) return "Excellence Collection";
+  if (/sandals|beaches\s+turks/i.test(combo)) return "Sandals / Beaches";
+  if (/hyatt\s+zilara|hyatt\s+ziva/i.test(combo)) return "Hyatt All-Inclusive";
+  if (/viceroy/i.test(combo)) return "Viceroy";
+  if (/montage/i.test(combo)) return "Montage";
+  if (/relais\s*&\s*ch[aâ]teaux/i.test(rawBrand)) return "Relais & Châteaux";
+  if (/leading\s+hotels/i.test(rawBrand)) return "Leading Hotels of the World";
+  if (/small\s+luxury\s+hotels|\bslh\b/i.test(rawBrand)) return "Small Luxury Hotels";
+  if (/preferred\s+hotels/i.test(rawBrand)) return "Preferred Hotels";
+  if (/marriott/i.test(rawBrand)) return "Marriott Bonvoy";
+  if (/hyatt/i.test(rawBrand)) return "World of Hyatt";
+  if (/hilton/i.test(rawBrand)) return "Hilton Honors";
+  if (/ihg/i.test(rawBrand)) return "IHG";
+  if (/accor/i.test(rawBrand)) return "Accor";
+
+  if (!rawBrand || /^(independent|boutique|luxury\s+collection\s*&\s*boutique)$/i.test(rawBrand)) {
+    return "Independent & Boutique";
+  }
+  return rawBrand;
+}
+
+/* ==================== 2. Deterministic Preferred Partner & Loyalty Perks ==================== */
+
+export function getPartnerPrograms(hotel) {
+  const brand = normalizeBrandName(hotel);
+  const raw = `${(hotel && hotel.brand) || ""} ${(hotel && hotel.name) || ""}`.toLowerCase();
+
+  let preferredProgram = null;
+  let pointsProgram = null;
+  let perksNote = "";
+
+  // Brand Preferred Partner Programs (100% deterministic by brand)
+  if (brand === "Four Seasons") {
+    preferredProgram = "Four Seasons Preferred Partner";
+    perksNote = "Daily breakfast, property credit & upgrade priority via FSPP advisors";
+  } else if (brand === "Rosewood") {
+    preferredProgram = "Rosewood Elite";
+    perksNote = "Daily breakfast, resort credit & priority upgrade via Rosewood Elite";
+  } else if (brand === "Belmond") {
+    preferredProgram = "Belmond Bellini Club";
+    perksNote = "Breakfast, hotel credit & Bellini Club gift voucher perks";
+  } else if (brand === "Mandarin Oriental") {
+    preferredProgram = "MO Fan Club";
+    perksNote = "Daily breakfast, US$100 credit & upgrade priority via Fan Club";
+  } else if (brand === "The Peninsula") {
+    preferredProgram = "Peninsula PenClub";
+    perksNote = "Peninsula Time flexible check-in/out + breakfast & credit";
+  } else if (brand === "Oetker Collection") {
+    preferredProgram = "Oetker Pearl Partner";
+    perksNote = "Guaranteed upgrade at booking (select dates), breakfast & credit";
+  } else if (brand === "Dorchester Collection") {
+    preferredProgram = "Dorchester Diamond Club";
+    perksNote = "Guaranteed upgrade at booking (select rooms), breakfast & credit";
+  } else if (brand === "Shangri-La") {
+    preferredProgram = "Shangri-La Luxury Circle";
+    perksNote = "Upgrade at booking (subject to availability), breakfast & credit";
+  } else if (brand === "St. Regis" || brand === "The Ritz-Carlton" || brand === "Ritz-Carlton Reserve" || brand === "EDITION" || brand === "The Luxury Collection" || brand === "Bulgari Hotels") {
+    preferredProgram = "Marriott STARS";
+    pointsProgram = brand === "Bulgari Hotels" ? null : "Marriott Bonvoy";
+    perksNote = "Marriott STARS luxury perks (breakfast, US$100 credit, upgrade priority)";
+  } else if (brand === "W Hotels" || brand === "JW Marriott" || brand === "Westin" || brand === "Le Méridien" || brand === "Marriott Bonvoy" || /\b(courtyard|element|tribute\s+portfolio|autograph\s+collection|marriott)\b/i.test(raw)) {
+    preferredProgram = brand === "W Hotels" || brand === "JW Marriott" || brand === "Westin" || brand === "Le Méridien" ? "Marriott Luminous" : null;
+    pointsProgram = "Marriott Bonvoy";
+    perksNote = preferredProgram ? "Marriott Luminous advisor perks + Bonvoy points earning/redemption" : "Marriott Bonvoy points earning & redemption";
+  } else if (brand === "Park Hyatt" || brand === "Alila" || brand === "Andaz" || brand === "World of Hyatt" || brand === "Hyatt All-Inclusive" || brand === "Secrets Resorts" || brand === "Zoëtry" || /\b(thompson|miraval|hyatt)\b/i.test(raw)) {
+    preferredProgram = ["Park Hyatt", "Alila", "Andaz"].includes(brand) ? "Hyatt Privé" : null;
+    pointsProgram = "World of Hyatt";
+    perksNote = preferredProgram ? "Hyatt Privé perks (breakfast, credit, 24h upgrade confirmation) + Hyatt points" : "World of Hyatt points earning & redemption";
+  } else if (brand === "Waldorf Astoria" || brand === "Conrad" || brand === "Hilton Honors" || /\b(lxr|hilton|curio)\b/i.test(raw)) {
+    preferredProgram = ["Waldorf Astoria", "Conrad"].includes(brand) || /\blxr\b/i.test(raw) ? "Hilton for Luxury" : null;
+    pointsProgram = "Hilton Honors";
+    perksNote = preferredProgram ? "Hilton for Luxury perks (breakfast, US$100 credit, double points) + Honors points" : "Hilton Honors points earning & redemption";
+  } else if (brand === "Six Senses" || brand === "Regent" || brand === "InterContinental" || brand === "Kimpton" || brand === "IHG") {
+    preferredProgram = ["Six Senses", "Regent", "InterContinental", "Kimpton"].includes(brand) ? "IHG Destined" : null;
+    pointsProgram = "IHG One Rewards";
+    perksNote = preferredProgram ? "IHG Destined perks (breakfast, US$100 credit, upgrade priority) + IHG points" : "IHG One Rewards points";
+  } else if (brand === "Raffles" || brand === "Fairmont" || brand === "Sofitel" || brand === "Banyan Tree" || brand === "Accor") {
+    preferredProgram = ["Raffles", "Fairmont", "Sofitel", "Banyan Tree"].includes(brand) ? "Accor STEP" : null;
+    pointsProgram = "Accor ALL";
+    perksNote = preferredProgram ? "Accor STEP advisor perks (breakfast, US$100 credit) + ALL points" : "Accor ALL points";
+  } else if (brand === "Leading Hotels of the World") {
+    preferredProgram = "LHW Leaders Club";
+    perksNote = "Leaders Club member breakfast & upgrade benefits";
+  } else if (brand === "Relais & Châteaux") {
+    preferredProgram = "Relais & Châteaux";
+    perksNote = "Boutique heritage collection (check Virtuoso / FHR per property)";
+  } else if (brand === "Small Luxury Hotels") {
+    preferredProgram = "SLH Invited";
+    pointsProgram = "Hilton Honors (select SLH)";
+    perksNote = "SLH Invited perks; many SLH properties also link to Hilton Honors";
+  } else if (/\bradisson\b/i.test(raw)) {
+    pointsProgram = "Radisson Rewards";
+    perksNote = "Radisson Rewards points earning & redemption";
+  }
+
+  return {
+    brand,
+    preferredProgram,
+    pointsProgram,
+    perksNote,
+    hasPreferredPerks: Boolean(preferredProgram),
+    isPointsEligible: Boolean(pointsProgram),
+  };
+}
+
+/* ==================== 3. Destination Climatological "Best Months" ==================== */
+
+const CLIMATE_RULES = [
+  // Maldives
+  {
+    match: /maldives|baa atoll|noonu|raa atoll|ari atoll|mal[eé]|lhaviyani|gaafu|laamu|dhaalu/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Dry NE monsoon, calmest lagoons & clearest house-reef visibility",
+  },
+  // Bali, Lombok, Flores, Sumba, Java (Indonesia dry season)
+  {
+    match: /bali|lombok|gili|labuan bajo|flores|sumba|ubud|seminyak|canggu|nusa dua|uluwatu|jimbaran|indonesia|penida|bintan|jakarta/i,
+    months: [5, 6, 7, 8, 9, 10],
+    label: "May–Oct",
+    reason: "Dry season with sunny skies, lower humidity & calm seas",
+  },
+  // Koh Samui / Gulf of Thailand (opposite monsoon from Phuket!)
+  {
+    match: /koh samui|samui|koh phangan/i,
+    months: [1, 2, 3, 4, 5, 6, 7, 8],
+    label: "Jan–Aug",
+    reason: "Gulf of Thailand dry window (avoids Oct–Dec NE monsoon)",
+  },
+  // Phuket, Krabi, Yao Noi, Bangkok, Chiang Mai, Thailand (Andaman & mainland)
+  {
+    match: /krabi|phuket|yao noi|bangkok|chiang mai|chiang rai|khao lak|koh kood|thailand/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Cool dry season & calm Andaman Sea conditions",
+  },
+  // Seychelles (shoulder months calmest seas)
+  {
+    match: /seychelles|mah[eé]|praslin|f[eé]licit[eé]|platte|desroches|north island/i,
+    months: [4, 5, 10, 11, 12, 1, 2, 3],
+    label: "Apr–May & Oct–Mar",
+    reason: "Calmest seas & best diving in Apr–May and Oct–Nov transition windows",
+  },
+  // Mauritius
+  {
+    match: /mauritius/i,
+    months: [5, 6, 7, 8, 9, 10, 11],
+    label: "May–Nov",
+    reason: "Cool, dry winter & spring avoiding Jan–Mar cyclone season",
+  },
+  // Bora Bora & French Polynesia
+  {
+    match: /bora bora|tahiti|tetiaroa|moorea|french polynesia/i,
+    months: [5, 6, 7, 8, 9, 10],
+    label: "May–Oct",
+    reason: "Dry winter season with lower humidity and clear turquoise lagoons",
+  },
+  // Fiji
+  {
+    match: /fiji|laucala|vomo|kokomo|malolo/i,
+    months: [5, 6, 7, 8, 9, 10],
+    label: "May–Oct",
+    reason: "Dry trade-wind season outside Nov–Apr cyclone window",
+  },
+  // Mexico Riviera Maya / Cancun / Tulum / Caribbean (dry + lower sargassum & hurricane risk)
+  {
+    match: /riviera maya|cancun|canc[uú]n|costa mujeres|playa mujeres|tulum|mayakoba|caribbean|st\.?\s*barts|st\.?\s*lucia|anguilla|turks|caicos|antigua|barbados|jamaica|bahamas|grenada|aruba|cura[cç]ao|st\.?\s*kitts|dominican|punta cana|cap cana|la romana|puerto rico|bermuda|cayman|st\.?\s*vincent|canouan|nevis|british virgin|virgin gorda/i,
+    months: [12, 1, 2, 3, 4],
+    label: "Dec–Apr",
+    reason: "Dry season with lower hurricane & summer sargassum seaweed risk",
+  },
+  // Los Cabos / Punta Mita / Pacific Mexico
+  {
+    match: /cabo|punta mita|punta de mita|nayarit|riviera nayarit|zihuatanejo|careyes|mexico city|san miguel|oaxaca|mexico/i,
+    months: [11, 12, 1, 2, 3, 4, 5],
+    label: "Nov–May",
+    reason: "Dry Pacific season with sunny skies and whale-watching in winter",
+  },
+  // Central America (Costa Rica, Belize, Panama, Nicaragua)
+  {
+    match: /costa rica|papagayo|belize|panama|nicaragua/i,
+    months: [12, 1, 2, 3, 4],
+    label: "Dec–Apr",
+    reason: "Dry season with clearest coastal water & trail access",
+  },
+  // Ski / Alpine Mountains (Alps, Dolomites, Aspen, Jackson Hole, Deer Valley, Whistler, Niseko)
+  {
+    match: /st\.?\s*moritz|gstaad|courchevel|meg[eè]ve|andermatt|zermatt|verbier|bürgenstock|burgenstock|alps|dolomites|aspen|vail|jackson hole|deer valley|park city|whistler|niseko|estes park|banff|chamonix|lech|kitzb/i,
+    months: [12, 1, 2, 3, 6, 7, 8, 9],
+    label: "Dec–Mar (Ski) & Jun–Sep",
+    reason: "Prime snowpack in winter; crisp alpine hiking & lakes in summer",
+  },
+  // Middle East (Dubai, Abu Dhabi, Oman, Qatar, Red Sea, Saudi, Jordan)
+  {
+    match: /dubai|abu dhabi|oman|muscat|zighy|doha|qatar|red sea|alula|saudi|jordan|marrakech|morocco|egypt/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Pleasant 22–30°C sunshine avoiding extreme summer heat",
+  },
+  // India & Rajasthan
+  {
+    match: /udaipur|jaipur|jodhpur|mumbai|new delhi|delhi|hyderabad|bengaluru|chennai|rajasthan|ranthambore|jawai|india/i,
+    months: [10, 11, 12, 1, 2, 3],
+    label: "Oct–Mar",
+    reason: "Cool dry season outside summer heat and Jun–Sep monsoon",
+  },
+  // Sri Lanka
+  {
+    match: /sri lanka|yala|galle|tangalle|weligama|colombo/i,
+    months: [12, 1, 2, 3, 4],
+    label: "Dec–Apr",
+    reason: "Dry south & west coast season with calm seas",
+  },
+  // Japan
+  {
+    match: /tokyo|kyoto|osaka|hakone|amanemu|naoshima|okinawa|japan/i,
+    months: [3, 4, 5, 10, 11],
+    label: "Mar–May & Oct–Nov",
+    reason: "Cherry blossom spring & crisp autumn foliage seasons",
+  },
+  // Singapore, Hong Kong, Malaysia, Vietnam, Cambodia, Korea
+  {
+    match: /singapore|langkawi|kuala lumpur|malaysia|hong kong|seoul|korea|vietnam|hanoi|ph[uú] qu[oố]c|ninh van|bai san ho|cambodia|song saa|phnom penh|siem reap|shanghai|beijing|china|taipei/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Drier, less humid months across East & Southeast Asia",
+  },
+  // East & Southern Africa Safari (Kenya, Tanzania, Botswana, Kruger, Rwanda, Namibia)
+  {
+    match: /serengeti|masai mara|kenya|tanzania|botswana|okavango|kruger|sabi|singita|rwanda|zambia|zimbabwe|namibia|safari/i,
+    months: [6, 7, 8, 9, 10, 1, 2],
+    label: "Jun–Oct & Jan–Feb",
+    reason: "Dry safari game-viewing season with sparse bush & wildlife concentrations",
+  },
+  // Cape Town & South Africa Winelands
+  {
+    match: /cape town|winelands|franschhoek|hermanus|south africa/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Warm, dry austral summer ideal for beaches & wine country",
+  },
+  // Australia & New Zealand
+  {
+    match: /sydney|melbourne|brisbane|kangaroo island|southern ocean|qualia|hayman|australia|queenstown|auckland|new zealand/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Warm Southern Hemisphere spring, summer & early autumn",
+  },
+  // Mediterranean & Southern Europe (Italy, Greece, Spain, Portugal, South of France, Turkey, Croatia)
+  {
+    match: /amalfi|positano|capri|como|portofino|tuscany|florence|rome|milan|venice|sardinia|sicily|taormina|puglia|italy|greece|santorini|mykonos|athens|paros|crete|mallorca|ibiza|marbella|barcelona|madrid|spain|algarve|lisbon|douro|comporta|portugal|bodrum|istanbul|turkey|antibes|cannes|st\.?\s*tropez|riviera|provence|monaco|croatia|dubrovnik|montenegro/i,
+    months: [5, 6, 7, 8, 9, 10],
+    label: "May–Oct",
+    reason: "Warm Mediterranean sunshine & full seasonal beach-club openings",
+  },
+  // Northern / Western Europe & UK (London, Cotswolds, Paris, Zurich, Vienna, Amsterdam, Iceland)
+  {
+    match: /london|cotswolds|castle combe|wiltshire|somerset|scotland|uk|united kingdom|ireland|paris|france|zurich|geneva|switzerland|vienna|austria|amsterdam|netherlands|germany|munich|berlin|stockholm|copenhagen|norway|iceland|blue lagoon/i,
+    months: [5, 6, 7, 8, 9],
+    label: "May–Sep",
+    reason: "Long daylight hours, mild temperatures & peak garden/terrace season",
+  },
+  // Hawaii
+  {
+    match: /hawaii|maui|lanai|lānaʻi|kauai|oahu|big island|kona/i,
+    months: [4, 5, 6, 7, 8, 9, 10, 12, 1, 2, 3],
+    label: "Year-Round (Apr–Oct driest)",
+    reason: "Warm year-round; Apr–Oct driest, Dec–Mar peak whale-watching",
+  },
+  // South America (Brazil, Argentina, Peru, Chile, Colombia)
+  {
+    match: /mendoza|buenos aires|patagonia|argentina|rio|s[aã]o paulo|brazil|peru|cusco|chile|atacama|colombia|cartagena/i,
+    months: [10, 11, 12, 1, 2, 3, 4],
+    label: "Oct–Apr",
+    reason: "Warm spring/summer weather & wine harvest months in South America",
+  },
+  // North America General (California, NYC, Miami, Florida, Napa, New England, Desert SW)
+  {
+    match: /florida|miami|palm beach|keys|scottsdale|arizona|sedona|amangiri|utah|desert/i,
+    months: [11, 12, 1, 2, 3, 4],
+    label: "Nov–Apr",
+    reason: "Comfortable sunny winter/spring escaping summer heat & humidity",
+  },
+  {
+    match: /california|napa|big sur|santa monica|beverly hills|los angeles|malibu|montecito|new york|manhattan|vermont|new england|georgia|sea island|charleston|washington|chicago|boston|usa|united states|canada|toronto|vancouver/i,
+    months: [4, 5, 6, 7, 8, 9, 10],
+    label: "Apr–Oct",
+    reason: "Pleasant spring, summer & crisp autumn travel seasons",
+  },
+];
+
+export function getBestMonthsMeta(hotel) {
+  const hay = `${(hotel && hotel.name) || ""} ${(hotel && hotel.location) || ""} ${(hotel && hotel.country) || ""} ${(hotel && hotel.region) || ""}`;
+  for (const rule of CLIMATE_RULES) {
+    if (rule.match.test(hay)) {
+      return {
+        months: rule.months,
+        label: rule.label,
+        reason: rule.reason,
+      };
+    }
+  }
+  return {
+    months: [4, 5, 6, 9, 10],
+    label: "Spring & Autumn",
+    reason: "Mild shoulder-season conditions",
+  };
+}
+
+export function matchesBestMonth(hotel, monthNum) {
+  const m = Number(monthNum || 0);
+  if (!m || m < 1 || m > 12) return true;
+  const meta = getBestMonthsMeta(hotel);
+  return meta.months.includes(m);
+}
+
+/* ==================== 4. Verified Adults-Only vs. Family / Kids-Club ==================== */
+
+// Strictly verified adults-only properties/brands (never tagging family resorts that merely have an adults-only pool)
+const STRICT_ADULTS_ONLY_ID_RE = /^(secrets-|impression-.*secrets|zoetry-|excellence-|sandals-|hyatt-zilara-|sanctuary-cap-cana|atelier-playa-mujeres|hotel-xcaret-arte|la-casa-de-la-playa|ladera-resort|jade-mountain|the-caves-jamaica|hermitage-bay|hammock-cove|galley-bay|cocos-hotel|little-palm-island|milaidhoo-maldives|naviva-four-seasons|sensei-lanai|twin-farms|la-casa-que-canta|saii-koh-samui-villas-adult-only|hurawalhi|kudadoo|komandoo|post-ranch-inn|o2-beach-club|amankora)/i;
+
+const STRICT_ADULTS_ONLY_NAME_RE = /\b(adults?\s*[- ]?only|secrets\s+|zo[eë]try\s+|sandals\s+|excellence\s+|hyatt\s+zilara|naviva|sensei\s+lanai|milaidhoo|jade\s+mountain|ladera\s+resort|twin\s+farms|little\s+palm\s+island|post\s+ranch\s+inn|hotel\s+xcaret\s+arte|la\s+casa\s+de\s+la\s+playa|atelier\s+playa\s+mujeres|sanctuary\s+cap\s+cana|hermitage\s+bay|hammock\s+cove|galley\s+bay|cocos\s+hotel|kudadoo|hurawalhi)\b/i;
+
+const FAMILY_EXPLICIT_RE = /\b(kids['’]?\s*club|children['’]?s?\s*club|family[- ]friendly|great\s+for\s+families|water\s*park|beaches\s+turks|kids\s+for\s+all\s+seasons|ritz\s+kids|the\s+den\b|explorer\s+club|babysitting|teens?\s+club)\b/i;
+
+const FAMILY_FLAGSHIP_BRANDS = new Set([
+  "Four Seasons",
+  "Soneva",
+  "One&Only",
+  "The Ritz-Carlton",
+  "Ritz-Carlton Reserve",
+  "St. Regis",
+  "Six Senses",
+  "Jumeirah",
+  "Rosewood",
+  "Mandarin Oriental",
+  "Waldorf Astoria",
+  "Auberge Resorts",
+  "Belmond",
+  "COMO Hotels",
+  "Banyan Tree",
+]);
+
+export function getGuestProfile(hotel) {
+  const id = String((hotel && hotel.id) || "");
+  const name = String((hotel && hotel.name) || "");
+  const brand = normalizeBrandName(hotel);
+  const notes = `${(hotel && hotel.verdict) || ""} ${(hotel && hotel.standout) || ""} ${(hotel && hotel.whereWeDiffer) || ""} ${JSON.stringify((hotel && hotel.keyFacts) || {})}`;
+
+  // Avoid false positive when text merely mentions "adults-only pool" or "adults-only wing" on a family resort
+  const explicitResortAdultsOnly =
+    STRICT_ADULTS_ONLY_ID_RE.test(id) ||
+    STRICT_ADULTS_ONLY_NAME_RE.test(name) ||
+    (/\b(adults?[- ]only\s+(resort|hotel|retreat|sanctuary|property|island|all-inclusive)|no\s+children\s+(under|allowed))\b/i.test(notes) &&
+      !/\b(family|kids\s*club|children\s+welcome)\b/i.test(notes));
+
+  const isAdultsOnly = Boolean(explicitResortAdultsOnly);
+  const isFamilyFriendly = !isAdultsOnly && (FAMILY_EXPLICIT_RE.test(`${name} ${notes}`) || FAMILY_FLAGSHIP_BRANDS.has(brand));
+
+  return {
+    isAdultsOnly,
+    isFamilyFriendly,
+    badge: isAdultsOnly ? "Adults-Only" : isFamilyFriendly ? "Family / Kids Welcome" : null,
+  };
+}
+
+/* ==================== 5. Verified First-Hand Room / Villa Booking Tip ==================== */
+
+const ROOM_TIP_KEYWORDS_RE = /\b(villa|suite|main\s+building|overwater|beach\s+villa|pool\s+villa|pavilion|cottage|room|book\s+direct|upgrade|lagoon|sunset|sunrise|cliff|2-bedroom|bunk|pod|bungalow|ground[- ]floor)\b/i;
+
+export function getVerifiedRoomTip(hotel) {
+  if (!hotel) return null;
+  // Strictly first-hand visited/scored stays only — zero fabricated tips!
+  const isFirstHand = Boolean(
+    hotel.videoId ||
+      (hotel.scores && hotel.overall != null) ||
+      hotel.coverageType === "Full Review" ||
+      hotel.coverageType === "Short Tour"
+  );
+  if (!isFirstHand) return null;
+
+  const candidates = [hotel.whereWeDiffer, hotel.watchOut, hotel.standout]
+    .map((s) => String(s || "").trim())
+    .filter(Boolean);
+
+  for (const txt of candidates) {
+    if (ROOM_TIP_KEYWORDS_RE.test(txt)) {
+      return txt;
+    }
+  }
+  return null;
+}
+
+/* ==================== 6. Clean RFC-4180 CSV Exporter ==================== */
+
+function csvCell(v) {
+  const s = v == null ? "" : String(v);
+  if (/[",\r\n]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+  return s;
+}
+
+export function exportHotelsToCsv(hotels, getOddsFn, awardHelpers, filename = "stayodds-luxury-hotels.csv") {
+  const headers = [
+    "Hotel",
+    "Location",
+    "Country",
+    "Region",
+    "Brand",
+    "StayOdds %",
+    "Status Badge",
+    "My Stay (/25)",
+    "Critics (/100)",
+    "Verified Guests",
+    "Opinion Gap",
+    "MICHELIN Keys",
+    "World's 50 Best",
+    "Forbes Rating",
+    "Preferred Partner Program",
+    "Points Program",
+    "Guest Profile",
+    "Best Months",
+    "Operating Status",
+    "StayOdds Page URL",
+  ];
+
+  const rows = hotels.map((h) => {
+    const o = getOddsFn(h);
+    const partner = getPartnerPrograms(h);
+    const profile = getGuestProfile(h);
+    const climate = getBestMonthsMeta(h);
+    const mKeys = awardHelpers.getMichelinKeyCount(h);
+    const w50 = awardHelpers.getW50BestRank(h);
+    const forbes = awardHelpers.getForbesRank(h);
+    const st = (h.propertyStatus && h.propertyStatus.operatingStatus) || "No works listed";
+    return [
+      h.name || "",
+      h.location || "",
+      h.country || "",
+      h.region || "",
+      partner.brand || "",
+      o.greatStayOdds != null ? `${o.greatStayOdds}%` : "",
+      o.statusBadge || "",
+      o.personalScoreLabel || "",
+      o.critic100 != null ? `${o.critic100}/100` : "",
+      o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)}/${o.verifiedGuest.scale}` : "",
+      (o.opinionGap && o.opinionGap.deltaLabel) || "",
+      mKeys != null ? `${mKeys} ${mKeys === 1 ? "Key" : "Keys"}` : "",
+      w50 != null ? (w50 < 999 ? `#${w50}` : "50 Best") : "",
+      forbes === 5 ? "5-Star" : forbes === 4 ? "4-Star" : forbes === 3 ? "Recommended" : "",
+      partner.preferredProgram || "",
+      partner.pointsProgram || "",
+      profile.badge || "",
+      climate.label || "",
+      st,
+      `https://uncharteditinerary.com/stayodds/${encodeURIComponent(h.id)}/`,
+    ];
+  });
+
+  const csv = [headers.map(csvCell).join(","), ...rows.map((r) => r.map(csvCell).join(","))].join("\r\n");
+  const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+}

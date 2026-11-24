@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Hotel Xcaret Arte — StayOdds Score (93%) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -220,6 +223,7 @@
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Forbes Four-Star adults-only (16+) &#x27;All-Fun Inclusive&#x27; masterpiece featuring turquoise river inlets, dramatic rooftop pools, authentic regional Mexican dining by celebrity chefs, artisan workshops, and unlimited included access to all Xcaret eco-parks and airport shuttles</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Natural ocean beach is small and rocky (swimming focuses on the calm turquoise coves and pools); high nightly rates make the most sense if you plan to enjoy Xcaret parks and top-tier Mexican dining</p></div>
+            
           </div>
         </div>
       </section>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "hotel-xcaret-arte", "name": "Hotel Xcaret Arte", "location": "Playa del Carmen, Riviera Maya", "country": "Mexico", "brand": "Hoteles Xcaret", "priceRange": "£750+/night (All-Fun Inclusive)", "standout": "Forbes Four-Star adults-only (16+) 'All-Fun Inclusive' masterpiece featuring turquoise river inlets, dramatic rooftop pools, authentic regional Mexican dining by celebrity chefs, artisan workshops, and unlimited included access to all Xcaret eco-parks and airport shuttles", "watchOut": "Natural ocean beach is small and rocky (swimming focuses on the calm turquoise coves and pools); high nightly rates make the most sense if you plan to enjoy Xcaret parks and top-tier Mexican dining", "keyFacts": {"poolHeating": "Private / plunge pools listed", "beachOrReef": "Turquoise saltwater lagoons, coves, and a compact sandy beach inlet (limited open-ocean surf swimming)", "renovationYear": null, "transferLogistics": "Complimentary Xcaret shuttle (~50–60 minutes south of Cancún International Airport CUN)"}, "thumbnail": "assets/thumbs/hotel-xcaret-arte.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 93, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [{"label": "Forbes Four-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Four-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "hotel-xcaret-arte", "name": "Hotel Xcaret Arte", "location": "Playa del Carmen, Riviera Maya", "country": "Mexico", "brand": "Hoteles Xcaret", "priceRange": "£750+/night (All-Fun Inclusive)", "standout": "Forbes Four-Star adults-only (16+) 'All-Fun Inclusive' masterpiece featuring turquoise river inlets, dramatic rooftop pools, authentic regional Mexican dining by celebrity chefs, artisan workshops, and unlimited included access to all Xcaret eco-parks and airport shuttles", "watchOut": "Natural ocean beach is small and rocky (swimming focuses on the calm turquoise coves and pools); high nightly rates make the most sense if you plan to enjoy Xcaret parks and top-tier Mexican dining", "keyFacts": {"poolHeating": "Private / plunge pools listed", "beachOrReef": "Turquoise saltwater lagoons, coves, and a compact sandy beach inlet (limited open-ocean surf swimming)", "renovationYear": null, "transferLogistics": "Complimentary Xcaret shuttle (~50–60 minutes south of Cancún International Airport CUN)"}, "thumbnail": "assets/thumbs/hotel-xcaret-arte.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": 93, "statusBadge": "Verified Guest Score", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.3, "scale": 10}, "officialAwards": [{"label": "Forbes Four-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with Forbes Four-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

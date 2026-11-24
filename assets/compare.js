@@ -7,6 +7,16 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=8";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=2";
+import {
+  MONTH_LABELS,
+  normalizeBrandName,
+  getPartnerPrograms,
+  getBestMonthsMeta,
+  matchesBestMonth,
+  getGuestProfile,
+  getVerifiedRoomTip,
+  exportHotelsToCsv,
+} from "./stayodds-insights.js?v=1";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -105,14 +115,29 @@ const VERIFIED_FEATURES = [
     match: (h) => (h.officialAwards || []).some((a) => /50\s*best/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
   },
   {
-    id: "video",
-    label: "Video Reviews",
-    match: (h) => Boolean(h.videoId || (h.youtubeReviews && h.youtubeReviews.length > 0)),
+    id: "adults",
+    label: "🥂 Adults-Only",
+    match: (h) => getGuestProfile(h).isAdultsOnly,
+  },
+  {
+    id: "family",
+    label: "👨‍👩‍👧 Family & Kids",
+    match: (h) => getGuestProfile(h).isFamilyFriendly,
+  },
+  {
+    id: "preferred",
+    label: "✨ Preferred Partner",
+    match: (h) => getPartnerPrograms(h).hasPreferredPerks,
   },
   {
     id: "points",
     label: "Points Brands",
-    match: (h) => POINTS_BRAND_RE.test(`${h.brand || ""} ${h.name || ""}`),
+    match: (h) => getPartnerPrograms(h).isPointsEligible || POINTS_BRAND_RE.test(`${h.brand || ""} ${h.name || ""}`),
+  },
+  {
+    id: "video",
+    label: "Video Reviews",
+    match: (h) => Boolean(h.videoId || (h.youtubeReviews && h.youtubeReviews.length > 0)),
   },
   {
     id: "beach",
@@ -170,6 +195,10 @@ const state = {
   region: "All",
   feature: "all",
   style: "all",
+  month: 0, // 0 = All Months, 1..12 = Jan..Dec
+  brandFilter: "",
+  sharedSavedIds: null, // populated when opened via ?saved=slug1,slug2
+  lastFilteredList: [],
   verdict: "All",
   sortBy: "visited",
   viewMode: "cards", // "cards" | "table"
@@ -230,6 +259,10 @@ function syncUrlParams(includeCompare = false) {
     else url.searchParams.delete("scope");
     if (state.style && state.style !== "all") url.searchParams.set("style", state.style);
     else url.searchParams.delete("style");
+    if (state.month && state.month >= 1 && state.month <= 12) url.searchParams.set("month", String(state.month));
+    else url.searchParams.delete("month");
+    if (state.brandFilter) url.searchParams.set("brand", state.brandFilter);
+    else url.searchParams.delete("brand");
     if (includeCompare && state.idA && state.idB) {
       url.searchParams.set("a", state.idA);
       url.searchParams.set("b", state.idB);
@@ -598,6 +631,23 @@ function renderH2HCard(h, allCompared) {
         h.whereWeDiffer ? `<br><span style="color:#334155;"><strong>My Take:</strong> ${escapeHtml(h.whereWeDiffer)}</span>` : ""
       }</p>
 
+      ${(() => {
+        const partner = getPartnerPrograms(h);
+        const profile = getGuestProfile(h);
+        const climate = getBestMonthsMeta(h);
+        const roomTip = getVerifiedRoomTip(h);
+        const tags = [
+          partner.preferredProgram ? `<span class="tag tag-accent" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : "",
+          partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : "",
+          profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag tag-slate">👨‍👩‍👧 Family / Kids</span>` : "",
+          `<span class="tag" title="${escapeHtml(climate.reason)}">📅 Best: ${escapeHtml(climate.label)}</span>`,
+        ].filter(Boolean).join("");
+        const tipHtml = roomTip && roomTip !== h.whereWeDiffer
+          ? `<div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:12px;color:#334155;"><strong>🛏️ Room / Booking Tip:</strong> ${escapeHtml(roomTip)}</div>`
+          : "";
+        return `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">${tags}</div>${tipHtml}`;
+      })()}
+
       <div class="scorecard-actions">
         <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
         ${
@@ -633,26 +683,93 @@ function renderH2H() {
   window.stayOddsShortlist?.syncButtons?.();
 }
 
-function getScopedHotels() {
-  if (state.scope === "visited") return state.hotels.filter(isVisitedProperty);
-  if (state.scope === "world") return state.hotels.filter((h) => !isVisitedProperty(h));
-  if (state.scope === "saved") {
-    const savedSet = new Set(getShortlistIds());
-    return state.hotels.filter((h) => savedSet.has(h.id));
+function getActiveShortlistIds() {
+  if (Array.isArray(state.sharedSavedIds) && state.sharedSavedIds.length > 0) {
+    return state.sharedSavedIds;
   }
-  return state.hotels;
+  return getShortlistIds();
+}
+
+function getScopedHotels() {
+  let base = state.hotels;
+  if (state.scope === "visited") base = base.filter(isVisitedProperty);
+  else if (state.scope === "world") base = base.filter((h) => !isVisitedProperty(h));
+  else if (state.scope === "saved") {
+    const savedSet = new Set(getActiveShortlistIds());
+    base = base.filter((h) => savedSet.has(h.id));
+  }
+  if (state.brandFilter) {
+    const target = state.brandFilter.toLowerCase();
+    base = base.filter((h) => normalizeBrandName(h).toLowerCase() === target);
+  }
+  return base;
+}
+
+function renderActiveBrandBanner() {
+  const el = qs("#activeBrandBanner");
+  if (!el) return;
+  if (!state.brandFilter) {
+    el.style.display = "none";
+    return;
+  }
+  const cnt = state.hotels.filter((h) => normalizeBrandName(h).toLowerCase() === state.brandFilter.toLowerCase()).length;
+  el.style.display = "flex";
+  el.innerHTML = `
+    <span><strong>Brand Filter Active:</strong> Showing all <strong>${cnt}</strong> verified <strong>${escapeHtml(state.brandFilter)}</strong> properties.</span>
+    <div style="display:flex;gap:8px;">
+      <a class="btn btn-outline" href="../brands/" style="font-size:12px;padding:5px 10px;">&larr; Brand Leaderboard</a>
+      <button type="button" class="btn btn-primary" id="clearBrandFilterBtn" style="font-size:12px;padding:5px 10px;">&times; Show All Brands</button>
+    </div>
+  `;
+  qs("#clearBrandFilterBtn")?.addEventListener("click", () => {
+    state.brandFilter = "";
+    state.visibleLimit = PAGE_SIZE;
+    syncUrlParams();
+    renderActiveBrandBanner();
+    renderScopeTabs();
+    renderRegionPills();
+    renderFeaturePills();
+    renderStylePills();
+    renderMonthPills();
+    renderLeaderboard();
+  });
+}
+
+function renderShortlistUtilityBar() {
+  const bar = qs("#shortlistUtilityBar");
+  const txt = qs("#shortlistUtilityText");
+  const importBtn = qs("#importSharedShortlistBtn");
+  if (!bar) return;
+
+  const isSavedView = state.scope === "saved";
+  const activeIds = getActiveShortlistIds();
+  if (!isSavedView || !activeIds.length) {
+    bar.style.display = "none";
+    return;
+  }
+  bar.style.display = "flex";
+  const isShared = Array.isArray(state.sharedSavedIds) && state.sharedSavedIds.length > 0;
+  if (txt) {
+    txt.innerHTML = isShared
+      ? `<strong>Shared Shortlist (${activeIds.length} hotels):</strong> Someone shared this verified StayOdds shortlist with you. Save it to your browser or export to CSV.`
+      : `<strong>Your Saved Shortlist (${activeIds.length} hotel${activeIds.length === 1 ? "" : "s"}):</strong> Share a direct link with a partner or travel advisor, or download as a CSV spreadsheet.`;
+  }
+  if (importBtn) {
+    importBtn.style.display = isShared ? "" : "none";
+  }
 }
 
 function renderScopeTabs() {
   const container = qs("#stayOddsScopeTabs");
   if (!container) return;
-  const savedIds = getShortlistIds();
+  const savedIds = getActiveShortlistIds();
   const savedCount = state.hotels.filter((h) => savedIds.includes(h.id)).length;
+  const isShared = Array.isArray(state.sharedSavedIds) && state.sharedSavedIds.length > 0;
   const tabs = [
     { id: "all", label: `All Luxury Properties (${state.hotels.length})` },
     { id: "visited", label: `First-Hand Verified & Shorts (${state.visitedCount})` },
     { id: "world", label: `Global Directory (${state.worldCount})` },
-    { id: "saved", label: `♥ Saved (${savedCount})` },
+    { id: "saved", label: isShared ? `♥ Shared Shortlist (${savedCount})` : `♥ Saved (${savedCount})` },
   ];
   container.innerHTML = tabs
     .map(
@@ -666,6 +783,7 @@ function renderScopeTabs() {
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
       state.scope = btn.dataset.scope || "all";
+      if (state.scope !== "saved") state.sharedSavedIds = null;
       if (typeof window.trackEvent === "function") {
         window.trackEvent("use_filter", "filter", `scope:${state.scope}`);
       }
@@ -676,9 +794,11 @@ function renderScopeTabs() {
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderScopeTabs();
+      renderShortlistUtilityBar();
       renderRegionPills();
       renderFeaturePills();
       renderStylePills();
+      renderMonthPills();
       renderLeaderboard();
     });
   });
@@ -709,6 +829,7 @@ function renderRegionPills() {
       renderRegionPills();
       renderFeaturePills();
       renderStylePills();
+      renderMonthPills();
       renderLeaderboard();
     });
   });
@@ -734,6 +855,7 @@ function renderFeaturePills() {
       state.visibleLimit = PAGE_SIZE;
       renderFeaturePills();
       renderStylePills();
+      renderMonthPills();
       renderLeaderboard();
     });
   });
@@ -760,6 +882,34 @@ function renderStylePills() {
       state.visibleLimit = PAGE_SIZE;
       syncUrlParams();
       renderStylePills();
+      renderMonthPills();
+      renderLeaderboard();
+    });
+  });
+}
+
+function renderMonthPills() {
+  const container = qs("#bestMonthPills");
+  if (!container) return;
+  const baseList = getScopedHotels().filter((h) => state.region === "All" || h.region === state.region);
+  const pills = [
+    `<button class="feature-pill month-pill ${state.month === 0 ? "active" : ""}" data-month="0" type="button">All Months (${baseList.length})</button>`,
+    ...MONTH_LABELS.map((lbl, idx) => {
+      const m = idx + 1;
+      const cnt = baseList.filter((h) => matchesBestMonth(h, m)).length;
+      return `<button class="feature-pill month-pill ${state.month === m ? "active" : ""}" data-month="${m}" type="button">${lbl} (${cnt})</button>`;
+    }),
+  ];
+  container.innerHTML = pills.join("");
+  container.querySelectorAll("[data-month]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.month = Number(btn.dataset.month || 0);
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "filter", `month:${state.month}`);
+      }
+      state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
+      renderMonthPills();
       renderLeaderboard();
     });
   });
@@ -770,6 +920,9 @@ function renderLeaderboard() {
   const tableWrap = qs("#consensusTableWrap");
   if (!container) return;
 
+  renderActiveBrandBanner();
+  renderShortlistUtilityBar();
+
   const q = state.search.trim().toLowerCase();
   const activeFeature = VERIFIED_FEATURES.find((f) => f.id === state.feature) || VERIFIED_FEATURES[0];
   const list = getScopedHotels().filter((h) => {
@@ -778,13 +931,18 @@ function renderLeaderboard() {
     if (state.verdict !== "All" && o.statusBadge !== state.verdict) return false;
     if (activeFeature.id !== "all" && !activeFeature.match(h)) return false;
     if (!matchesTravelStyle(h, state.style)) return false;
+    if (state.month && !matchesBestMonth(h, state.month)) return false;
     if (!q) return true;
+    const partner = getPartnerPrograms(h);
     const hay = [
       h.name,
       h.location,
       h.country,
       h.region,
       h.brand,
+      partner.brand,
+      partner.preferredProgram,
+      partner.pointsProgram,
       h.verdict,
       h.standout,
       h.watchOut,
@@ -855,6 +1013,21 @@ function renderLeaderboard() {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
 
+    if (state.sortBy.startsWith("pillar_")) {
+      const pKey = state.sortBy.replace("pillar_", "");
+      const va = oa.firstHand && a.scores && a.scores[pKey] != null ? Number(a.scores[pKey]) : null;
+      const vb = ob.firstHand && b.scores && b.scores[pKey] != null ? Number(b.scores[pKey]) : null;
+      const diff = cmpNullableNum(va, vb, "desc");
+      if (diff !== 0) return diff;
+      const totDiff = cmpNullableNum(
+        oa.firstHand && a.overall != null ? Number(a.overall) : null,
+        ob.firstHand && b.overall != null ? Number(b.overall) : null,
+        "desc"
+      );
+      if (totDiff !== 0) return totDiff;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
@@ -875,6 +1048,8 @@ function renderLeaderboard() {
     if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
     return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
   });
+
+  state.lastFilteredList = list;
 
   if (!list.length) {
     container.style.display = "";
@@ -1121,6 +1296,16 @@ function renderLeaderboard() {
             ? `<span class="tag tag-caution">ⓘ ${escapeHtml(propStatus.badge)}</span>`
             : "";
 
+        const partner = getPartnerPrograms(h);
+        const profile = getGuestProfile(h);
+        const climate = getBestMonthsMeta(h);
+        const activePillarKey = state.sortBy.startsWith("pillar_") ? state.sortBy.replace("pillar_", "") : null;
+        const pillarLabels = { rooms: "Rooms", service: "Service", food: "Food", grounds: "Vibe", value: "Value" };
+        const activePillarPill =
+          activePillarKey && o.firstHand && h.scores && h.scores[activePillarKey] != null
+            ? `<span class="tag tag-accent">★ ${pillarLabels[activePillarKey]}: ${escapeHtml(formatPersonalScore(h.scores[activePillarKey]))}/5</span>`
+            : "";
+
         return `
           <article class="consensus-row-card ${toneClass}" data-resort-name="${escapeHtml(h.name)}">
             <div class="consensus-rank-col">
@@ -1144,9 +1329,14 @@ function renderLeaderboard() {
               <div class="meta-line">
                 <span class="tag ${o.firstHand ? "tag-accent" : "tag-slate"}">${escapeHtml(o.tierLabel)}</span>
                 <span class="tag ${tagClass}">${escapeHtml(o.statusBadge)}</span>
+                ${activePillarPill}
                 ${propStatusPill}
                 ${shortCount ? `<span class="tag">${shortCount} Short${shortCount === 1 ? "" : "s"}</span>` : ""}
                 ${h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : ""}
+                ${partner.preferredProgram ? `<span class="tag" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : ""}
+                ${partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : ""}
+                ${profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag">👨‍👩‍👧 Family</span>` : ""}
+                <span class="tag" title="${escapeHtml(climate.reason)}">📅 ${escapeHtml(climate.label)}</span>
                 <span>${escapeHtml(h.location)}, ${escapeHtml(h.country)}</span>
               </div>
 
@@ -1329,6 +1519,24 @@ async function boot() {
   if (["all", "visited", "world", "saved"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
+  if (params.get("brand")) {
+    state.brandFilter = params.get("brand").trim();
+  }
+  const monthParam = Number(params.get("month") || 0);
+  if (monthParam >= 1 && monthParam <= 12) {
+    state.month = monthParam;
+  }
+  const savedParam = (params.get("saved") || "").trim();
+  if (savedParam) {
+    const parsedSaved = savedParam
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    if (parsedSaved.length) {
+      state.sharedSavedIds = Array.from(new Set(parsedSaved));
+      state.scope = "saved";
+    }
+  }
 
   function trackH2HDropdown() {
     if (typeof window.trackEvent !== "function") return;
@@ -1370,7 +1578,7 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=5");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=6");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
           window.trackEvent("open_share_card", "vs_three_way", `${ha.name} vs ${hb.name} vs ${hc.name}`);
@@ -1378,7 +1586,7 @@ async function boot() {
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=5");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=6");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1430,6 +1638,21 @@ async function boot() {
   wireSelectorSearch("B");
   wireSelectorSearch("C");
 
+  const copyToClipboard = async (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const tmp = document.createElement("textarea");
+      tmp.value = text;
+      tmp.style.position = "fixed";
+      tmp.style.opacity = "0";
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand("copy");
+      tmp.remove();
+    }
+  };
+
   qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
     const btn = qs("#copyVsLinkBtn");
     const baseShare = `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
@@ -1438,18 +1661,7 @@ async function boot() {
     const hb = state.hotels.find((h) => h.id === state.idB);
     const hc = state.threeWay ? state.hotels.find((h) => h.id === state.idC) : null;
     try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(shareUrl);
-      } else {
-        const tmp = document.createElement("textarea");
-        tmp.value = shareUrl;
-        tmp.style.position = "fixed";
-        tmp.style.opacity = "0";
-        document.body.appendChild(tmp);
-        tmp.select();
-        document.execCommand("copy");
-        tmp.remove();
-      }
+      await copyToClipboard(shareUrl);
       if (typeof window.trackEvent === "function" && ha && hb) {
         window.trackEvent(
           "share_comparison",
@@ -1470,12 +1682,74 @@ async function boot() {
     }
   });
 
+  const triggerCsvExport = (isShortlist = false) => {
+    const targetList = state.lastFilteredList && state.lastFilteredList.length ? state.lastFilteredList : getScopedHotels();
+    if (!targetList.length) return;
+    const fname = isShortlist
+      ? "stayodds-saved-shortlist.csv"
+      : state.brandFilter
+      ? `stayodds-${state.brandFilter.toLowerCase().replace(/[^a-z0-9]+/g, "-")}.csv`
+      : "stayodds-luxury-hotels.csv";
+    exportHotelsToCsv(
+      targetList,
+      getOdds,
+      { getMichelinKeyCount, getW50BestRank, getForbesRank },
+      fname
+    );
+    if (typeof window.trackEvent === "function") {
+      window.trackEvent("export_csv", isShortlist ? "shortlist" : "directory", String(targetList.length));
+    }
+  };
+
+  qs("#exportDirectoryCsvBtn")?.addEventListener("click", () => triggerCsvExport(false));
+  qs("#exportShortlistCsvBtn")?.addEventListener("click", () => triggerCsvExport(true));
+
+  qs("#shareShortlistBtn")?.addEventListener("click", async () => {
+    const btn = qs("#shareShortlistBtn");
+    const ids = getActiveShortlistIds().slice(0, 40);
+    if (!ids.length) return;
+    const shareUrl = `https://uncharteditinerary.com/compare/?scope=saved&saved=${encodeURIComponent(ids.join(","))}`;
+    try {
+      await copyToClipboard(shareUrl);
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.textContent = "✓ Copied Shortlist Link!";
+        setTimeout(() => {
+          btn.innerHTML = orig;
+        }, 2200);
+      }
+    } catch (_) {
+      window.prompt("Copy this shareable Shortlist link:", shareUrl);
+    }
+  });
+
+  qs("#importSharedShortlistBtn")?.addEventListener("click", () => {
+    if (!Array.isArray(state.sharedSavedIds) || !state.sharedSavedIds.length) return;
+    const existing = getShortlistIds();
+    const merged = Array.from(new Set([...existing, ...state.sharedSavedIds]));
+    try {
+      localStorage.setItem(SHORTLIST_KEY, JSON.stringify(merged));
+    } catch (_) {}
+    state.sharedSavedIds = null;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("saved");
+      window.history.replaceState({}, "", url.toString());
+    } catch (_) {}
+    window.stayOddsShortlist?.syncButtons?.();
+    renderScopeTabs();
+    renderShortlistUtilityBar();
+    renderLeaderboard();
+  });
+
   window.addEventListener("stayodds:shortlist-changed", () => {
     renderScopeTabs();
+    renderShortlistUtilityBar();
     if (state.scope === "saved") {
       renderRegionPills();
       renderFeaturePills();
       renderStylePills();
+      renderMonthPills();
       renderLeaderboard();
     }
   });
@@ -1584,14 +1858,15 @@ async function boot() {
     renderScopeTabs();
     renderRegionPills();
     renderFeaturePills();
-      renderStylePills();
+    renderStylePills();
+    renderMonthPills();
     renderLeaderboard();
 
     if (hadCompareParams) {
       requestAnimationFrame(() => {
         qs(".h2h-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
-    } else if (matchedRegion && matchedRegion !== "All") {
+    } else if (state.brandFilter || state.sharedSavedIds || (matchedRegion && matchedRegion !== "All")) {
       requestAnimationFrame(() => {
         qs(".leaderboard-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
       });

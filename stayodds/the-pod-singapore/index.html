@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>The Pod @ Beach Road — StayOdds Score (60%) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -220,6 +223,7 @@
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Spotless shared suites (hair dryers &amp; curling irons included), free coffee &amp; steps from Sultan Mosque</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Shared-room noise is unavoidable even with earplugs provided — best for 1–2 night solo stopovers</p></div>
+            <div class="verdict-card" style="border-color:#c7d2fe;background:#f8faff;"><span class="tag" style="background:#eef2ff;color:#3730a3;">🛏️ First-Hand Room / Booking Tip</span><h3>Which Room / Villa to Book</h3><p>Our budget experiment in one of the world&#x27;s priciest cities — surprisingly spotless &#x27;bookshelf&#x27; capsules with privacy blinds, well-stocked bathrooms, and unbeatable Kampong Glam location.</p></div>
           </div>
         </div>
       </section>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "the-pod-singapore", "name": "The Pod @ Beach Road", "location": "Kampong Glam, Singapore", "country": "Singapore", "brand": "Boutique Capsule", "priceRange": "£40–£65/night", "standout": "Spotless shared suites (hair dryers & curling irons included), free coffee & steps from Sultan Mosque", "watchOut": "Shared-room noise is unavoidable even with earplugs provided — best for 1–2 night solo stopovers", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/the-pod-singapore.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 60, "statusBadge": "First-Hand Verified", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "12 / 20", "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "My first-hand stay notes below — compare directly with real guest reviews.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "the-pod-singapore", "name": "The Pod @ Beach Road", "location": "Kampong Glam, Singapore", "country": "Singapore", "brand": "Boutique Capsule", "priceRange": "£40–£65/night", "standout": "Spotless shared suites (hair dryers & curling irons included), free coffee & steps from Sultan Mosque", "watchOut": "Shared-room noise is unavoidable even with earplugs provided — best for 1–2 night solo stopovers", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/the-pod-singapore.webp", "cardPhoto": "assets/card-photos/the-pod-singapore.webp", "videoId": "SBnS6gon20Y", "coverageType": "Full Review", "propertyStatus": null}, "odds": {"greatStayOdds": 60, "statusBadge": "First-Hand Verified", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "12 / 20", "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "My first-hand stay notes below — compare directly with real guest reviews.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

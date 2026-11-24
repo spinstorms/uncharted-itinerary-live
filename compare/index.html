@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews</title>
@@ -13,12 +16,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
   <meta property="og:description" content="Personally curated luxury hotel comparisons separating First-Hand Verified stays from our Global Directory." />
-  <meta property="og:image" content="https://uncharteditinerary.com/assets/banners/maldives.jpg" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_promo_og_facebook_1200x630.png" />
   <meta property="og:url" content="https://uncharteditinerary.com/compare/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
   <meta name="twitter:description" content="Transparent luxury hotel score comparison: First-Hand Verified stays, sourced critics, and live verified guest ratings." />
-  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/banners/maldives.jpg" />
+  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_promo_og_facebook_1200x630.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,7 +42,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -70,9 +73,9 @@
 
       <nav class="nav-links" aria-label="Main site navigation">
         <a href="../">Home</a>
-        <a href="./">StayOdds</a>
+        <a href="./" class="active">StayOdds</a>
         <a href="../hotels/">Hotel Map</a>
-        <a href="../">Videos</a>
+        <a href="../brands/">Brands</a>
         <a href="../about/">About</a>
         <a href="../faq/">FAQ</a>
         <a href="../contact/">Contact</a>
@@ -90,6 +93,7 @@
       <a href="../">Latest Videos</a>
       <a href="../hotels/">Hotel Map &amp; Scores</a>
       <a href="./" class="active">StayOdds.</a>
+      <a href="../brands/">Brand Leaderboard</a>
       <a href="../cameras/">Camera Reviews</a>
       <a href="../links/">Deals &amp; Gear</a>
       <a href="../faq/">FAQ</a>
@@ -115,6 +119,10 @@
         <a class="hub-tab active" href="./" aria-current="page">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           StayOdds<span class="stayodds-dot">.</span>
+        </a>
+        <a class="hub-tab" href="../brands/">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          Brands
         </a>
         <a class="hub-tab" href="../cameras/">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -274,14 +282,29 @@
     <!-- Full StayOdds Global Leaderboard -->
     <section class="leaderboard-section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" style="flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">StayOdds Luxury Hotel Directory</h2>
             <p class="section-subtitle">Switch between First-Hand Verified stays filmed by The Uncharted Itinerary, our Global Luxury Directory, or your saved Shortlist — every award, critic score, and YouTube review links directly to its source.</p>
           </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <a class="btn btn-outline" href="../brands/" style="font-size:13px;padding:8px 14px;">🏆 Brand Consistency Leaderboard &rarr;</a>
+            <button type="button" class="btn btn-outline" id="exportDirectoryCsvBtn" style="font-size:13px;padding:8px 14px;">&#x2B07; Export CSV</button>
+          </div>
         </div>
 
         <div class="scope-tabs-bar" id="stayOddsScopeTabs" role="tablist" aria-label="Switch between global luxury hotels, first-hand verified stays, and saved shortlist"></div>
+
+        <div id="activeBrandBanner" style="display:none;margin-bottom:12px;padding:10px 14px;border-radius:12px;background:#eef2ff;border:1px solid #c7d2fe;color:#312e81;font-size:13.5px;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;"></div>
+
+        <div id="shortlistUtilityBar" style="display:none;margin-bottom:14px;padding:12px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;font-size:13.5px;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <span id="shortlistUtilityText"><strong>Your Saved Shortlist:</strong> Share this list with a partner or travel advisor, or export to a spreadsheet.</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" class="btn btn-primary" id="shareShortlistBtn" style="font-size:12.5px;padding:7px 13px;">&#128279; Share Shortlist Link</button>
+            <button type="button" class="btn btn-outline" id="importSharedShortlistBtn" style="display:none;font-size:12.5px;padding:7px 13px;">&#9829; Save All to My Shortlist</button>
+            <button type="button" class="btn btn-outline" id="exportShortlistCsvBtn" style="font-size:12.5px;padding:7px 13px;">&#x2B07; Export Shortlist CSV</button>
+          </div>
+        </div>
 
         <div class="controls-bar">
           <div class="scorecard-filters">
@@ -300,6 +323,11 @@
               <option value="odds">Sort: Highest StayOdds %</option>
               <option value="gap">Sort: Most Disagreement (Points Difference)</option>
               <option value="reviews">Sort: Most Verified Guest Reviews</option>
+              <option value="pillar_rooms">Pillar: Best Hard Product / Rooms (My Stay)</option>
+              <option value="pillar_service">Pillar: Best Service (My Stay)</option>
+              <option value="pillar_food">Pillar: Best Food &amp; Breakfast (My Stay)</option>
+              <option value="pillar_grounds">Pillar: Best Vibe &amp; Layout (My Stay)</option>
+              <option value="pillar_value">Pillar: Best Value (My Stay)</option>
               <option value="name">Sort: A–Z Name</option>
             </select>
             <div class="view-toggle" role="group" aria-label="Switch StayOdds layout">
@@ -319,12 +347,17 @@
 
         <div class="feature-filter-bar">
           <span class="feature-filter-label">Verified Filters:</span>
-          <div class="feature-filter-pills" id="featureFilterPills" role="group" aria-label="Filter by verified hotel awards, video reviews, loyalty brands, or beach access"></div>
+          <div class="feature-filter-pills" id="featureFilterPills" role="group" aria-label="Filter by verified hotel awards, video reviews, loyalty perks, adults-only, family kids-club, or beach access"></div>
         </div>
 
         <div class="feature-filter-bar style-filter-bar">
           <span class="feature-filter-label">Travel Style:</span>
           <div class="feature-filter-pills" id="travelStylePills" role="group" aria-label="Filter by travel style: beach, snorkelling, overwater, city, culture, safari, mountain, spa, all-inclusive"></div>
+        </div>
+
+        <div class="feature-filter-bar month-filter-bar">
+          <span class="feature-filter-label">Best Month to Go:</span>
+          <div class="feature-filter-pills" id="bestMonthPills" role="group" aria-label="Filter hotels by best dry and peak weather months"></div>
         </div>
 
         <div class="consensus-list" id="consensusList"></div>
@@ -388,6 +421,7 @@
           <a href="../">Latest Videos</a>
           <a href="../hotels/">Hotel Map &amp; Scores</a>
           <a href="./">StayOdds</a>
+          <a href="../brands/">Brand Leaderboard</a>
           <a href="../cameras/">Camera Reviews</a>
           <a href="../links/">Deals &amp; Gear</a>
           <a href="../about/">About</a>
@@ -405,6 +439,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=32"></script>
+  <script type="module" src="../assets/compare.js?v=34"></script>
 </body>
 </html>

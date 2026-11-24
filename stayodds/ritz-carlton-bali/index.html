@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>The Ritz-Carlton, Bali — StayOdds Score (91%) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -220,6 +223,7 @@
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Half the price of St. Regis Bali with newer villas and better cliff-to-beach views</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Recycled grey-water toilet system can look brown and cause occasional bathroom odors</p></div>
+            <div class="verdict-card" style="border-color:#c7d2fe;background:#f8faff;"><span class="tag" style="background:#eef2ff;color:#3730a3;">🛏️ First-Hand Room / Booking Tip</span><h3>Which Room / Villa to Book</h3><p>Dramatic 70m cliffside glass elevator, modern Pavilion Pool Villas, and a calmer swimmable beach — at roughly half the price of St. Regis next door.</p></div>
           </div>
         </div>
       </section>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "ritz-carlton-bali", "name": "The Ritz-Carlton, Bali", "location": "Nusa Dua, Bali", "country": "Indonesia", "brand": "Marriott Bonvoy", "priceRange": "£450–£750/night", "standout": "Half the price of St. Regis Bali with newer villas and better cliff-to-beach views", "watchOut": "Recycled grey-water toilet system can look brown and cause occasional bathroom odors", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach area", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: DPS)"}, "thumbnail": "assets/thumbs/ritz-carlton-bali.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 91, "statusBadge": "Strong Agreement", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "22 / 25", "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 2, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "I rated this -6 pts stricter than real guests — see what stood out & what held it back.", "deltaLabel": "-6 pts"}}};
+    const shareCardState = {"hotel": {"id": "ritz-carlton-bali", "name": "The Ritz-Carlton, Bali", "location": "Nusa Dua, Bali", "country": "Indonesia", "brand": "Marriott Bonvoy", "priceRange": "£450–£750/night", "standout": "Half the price of St. Regis Bali with newer villas and better cliff-to-beach views", "watchOut": "Recycled grey-water toilet system can look brown and cause occasional bathroom odors", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "Private beach area", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: DPS)"}, "thumbnail": "assets/thumbs/ritz-carlton-bali.webp", "cardPhoto": "assets/card-photos/ritz-carlton-bali.webp", "videoId": "NL2ccUHteZs", "coverageType": "Full Review", "propertyStatus": null}, "odds": {"greatStayOdds": 91, "statusBadge": "Strong Agreement", "tierLabel": "First-Hand Scored", "firstHand": true, "visited": true, "personalScoreLabel": "22 / 25", "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 2, "verifiedGuest": {"rating": 9.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "My Score vs. Real Guest Score", "headline": "I rated this -6 pts stricter than real guests — see what stood out & what held it back.", "deltaLabel": "-6 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

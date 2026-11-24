@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Rosewood Hong Kong — StayOdds Score (92%) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -220,6 +223,7 @@
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Warm hospitality • Spacious rooms</p></div>
             <div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>Minor check-out service issues • Housekeeping noise</p></div>
+            
           </div>
         </div>
       </section>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "rosewood-hong-kong", "name": "Rosewood Hong Kong", "location": "Victoria Dockside, Kowloon", "country": "Hong Kong", "brand": "Rosewood Hotels", "priceRange": "", "standout": "Warm hospitality • Spacious rooms", "watchOut": "Minor check-out service issues • Housekeeping noise", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: HKG"}, "thumbnail": "assets/thumbs/rosewood-hong-kong.webp", "propertyStatus": null}, "odds": {"greatStayOdds": 92, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 86, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "16.5/20", "normalized100": 82}, {"sourceName": "The Luxury Travel Expert", "rawScore": "9/10", "normalized100": 90}], "unverifiedEditorial": [], "editorialCount": 3, "youtubeCount": 4, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "No. 1 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +10 pts higher than 2 published critics.", "deltaLabel": "-10 pts"}}};
+    const shareCardState = {"hotel": {"id": "rosewood-hong-kong", "name": "Rosewood Hong Kong", "location": "Victoria Dockside, Kowloon", "country": "Hong Kong", "brand": "Rosewood Hotels", "priceRange": "", "standout": "Warm hospitality • Spacious rooms", "watchOut": "Minor check-out service issues • Housekeeping noise", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Nearest airport code: HKG"}, "thumbnail": "assets/thumbs/rosewood-hong-kong.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": 92, "statusBadge": "Mostly Aligned", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": 86, "scoredEditorial": [{"sourceName": "Fat Voyage", "rawScore": "16.5/20", "normalized100": 82}, {"sourceName": "The Luxury Travel Expert", "rawScore": "9/10", "normalized100": 90}], "unverifiedEditorial": [], "editorialCount": 3, "youtubeCount": 4, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "No. 1 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Real guests rated this +10 pts higher than 2 published critics.", "deltaLabel": "-10 pts"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

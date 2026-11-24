@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/png" href="../../assets/stayodds-logo.png" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
+  <link rel="shortcut icon" href="../../favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>Chablé Yucatán — StayOdds Score (Live) &amp; Honest Review | Worth It?</title>
@@ -23,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=34" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=35" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -219,6 +222,7 @@
           </div>
           <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>Amazing staff • Beautiful property</p></div>
+            
             
           </div>
         </div>
@@ -618,9 +622,9 @@
       showMapsFallback("");
     }
 
-    const shareCardState = {"hotel": {"id": "chable-yucatan", "name": "Chablé Yucatán", "location": "Chocholá", "country": "Mexico", "brand": "Leading Hotels", "priceRange": "", "standout": "Amazing staff • Beautiful property", "watchOut": "", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: MID)"}, "thumbnail": "assets/thumbs/chable-yucatan.webp", "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Award-Winning", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "No. 9 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • No. 9 in the World (2026) — compare with real guest reviews below.", "deltaLabel": "—"}}};
+    const shareCardState = {"hotel": {"id": "chable-yucatan", "name": "Chablé Yucatán", "location": "Chocholá", "country": "Mexico", "brand": "Leading Hotels", "priceRange": "", "standout": "Amazing staff • Beautiful property", "watchOut": "", "keyFacts": {"poolHeating": "Outdoor pool (heating not listed)", "beachOrReef": "", "renovationYear": null, "transferLogistics": "Airport transfers available (nearest code: MID)"}, "thumbnail": "assets/thumbs/chable-yucatan.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Award-Winning", "tierLabel": "Global Directory", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 0, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [{"label": "2 MICHELIN Keys"}, {"label": "No. 9 in the World (2026)"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 2 MICHELIN Keys • No. 9 in the World (2026) — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=5");
+      const mod = await import("../../assets/stayodds-share-card.js?v=6");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
