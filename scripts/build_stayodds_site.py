@@ -280,7 +280,92 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str, Any]], total_props: int = 500) -> str:
+CLIMATE_RULES_PY: list[tuple[re.Pattern[str], str, str]] = [
+    (re.compile(r"maldives|baa atoll|noonu|raa atoll|ari atoll|mal[eé]|lhaviyani|gaafu|laamu|dhaalu", re.I), "Nov–Apr", "Dry NE monsoon, calmest lagoons & clearest house-reef visibility"),
+    (re.compile(r"bali|lombok|gili|labuan bajo|flores|sumba|ubud|seminyak|canggu|nusa dua|uluwatu|jimbaran|indonesia|penida|bintan|jakarta", re.I), "May–Oct", "Dry season with sunny skies, lower humidity & calm seas"),
+    (re.compile(r"koh samui|samui|koh phangan", re.I), "Jan–Aug", "Gulf of Thailand dry window (avoids Oct–Dec NE monsoon)"),
+    (re.compile(r"krabi|phuket|yao noi|bangkok|chiang mai|chiang rai|khao lak|koh kood|thailand", re.I), "Nov–Apr", "Cool dry season & calm Andaman Sea conditions"),
+    (re.compile(r"seychelles|mah[eé]|praslin|f[eé]licit[eé]|platte|desroches|north island", re.I), "Apr–May & Oct–Mar", "Calmest seas & best diving in Apr–May and Oct–Nov transition windows"),
+    (re.compile(r"mauritius", re.I), "May–Nov", "Cool, dry winter & spring avoiding Jan–Mar cyclone season"),
+    (re.compile(r"bora bora|tahiti|tetiaroa|moorea|french polynesia", re.I), "May–Oct", "Dry winter season with lower humidity and clear turquoise lagoons"),
+    (re.compile(r"fiji|laucala|vomo|kokomo|malolo", re.I), "May–Oct", "Dry trade-wind season outside Nov–Apr cyclone window"),
+    (re.compile(r"riviera maya|cancun|canc[uú]n|costa mujeres|playa mujeres|tulum|mayakoba|caribbean|st\.?\s*barts|st\.?\s*lucia|anguilla|turks|caicos|antigua|barbados|jamaica|bahamas|grenada|aruba|cura[cç]ao|st\.?\s*kitts|dominican|punta cana|cap cana|la romana|puerto rico|bermuda|cayman|st\.?\s*vincent|canouan|nevis|british virgin|virgin gorda", re.I), "Dec–Apr", "Dry season with lower hurricane & summer sargassum seaweed risk"),
+    (re.compile(r"cabo|punta mita|punta de mita|nayarit|riviera nayarit|zihuatanejo|careyes|mexico city|san miguel|oaxaca|mexico", re.I), "Nov–May", "Dry Pacific season with sunny skies and whale-watching in winter"),
+    (re.compile(r"costa rica|papagayo|belize|panama|nicaragua", re.I), "Dec–Apr", "Dry season with clearest coastal water & trail access"),
+    (re.compile(r"st\.?\s*moritz|gstaad|courchevel|meg[eè]ve|andermatt|zermatt|verbier|bürgenstock|burgenstock|alps|dolomites|aspen|vail|jackson hole|deer valley|park city|whistler|niseko|estes park|banff|chamonix|lech|kitzb", re.I), "Dec–Mar (Ski) & Jun–Sep", "Prime snowpack in winter; crisp alpine hiking & lakes in summer"),
+    (re.compile(r"dubai|abu dhabi|oman|muscat|zighy|doha|qatar|red sea|alula|saudi|jordan|marrakech|morocco|egypt", re.I), "Nov–Apr", "Pleasant 22–30°C sunshine avoiding extreme summer heat"),
+    (re.compile(r"udaipur|jaipur|jodhpur|mumbai|new delhi|delhi|hyderabad|bengaluru|chennai|rajasthan|ranthambore|jawai|india", re.I), "Oct–Mar", "Cool dry season outside summer heat and Jun–Sep monsoon"),
+    (re.compile(r"sri lanka|yala|galle|tangalle|weligama|colombo", re.I), "Dec–Apr", "Dry south & west coast season with calm seas"),
+    (re.compile(r"tokyo|kyoto|osaka|hakone|amanemu|naoshima|okinawa|japan", re.I), "Mar–May & Oct–Nov", "Cherry blossom spring & crisp autumn foliage seasons"),
+    (re.compile(r"singapore|langkawi|kuala lumpur|malaysia|hong kong|seoul|korea|vietnam|hanoi|ph[uú] qu[oố]c|ninh van|bai san ho|cambodia|song saa|phnom penh|siem reap|shanghai|beijing|china|taipei", re.I), "Nov–Apr", "Drier, less humid months across East & Southeast Asia"),
+    (re.compile(r"serengeti|masai mara|kenya|tanzania|botswana|okavango|kruger|sabi|singita|rwanda|zambia|zimbabwe|namibia|safari", re.I), "Jun–Oct & Jan–Feb", "Dry safari game-viewing season with sparse bush & wildlife concentrations"),
+    (re.compile(r"cape town|winelands|franschhoek|hermanus|south africa", re.I), "Nov–Apr", "Warm, dry austral summer ideal for beaches & wine country"),
+    (re.compile(r"sydney|melbourne|brisbane|kangaroo island|southern ocean|qualia|hayman|australia|queenstown|auckland|new zealand", re.I), "Nov–Apr", "Warm Southern Hemisphere spring, summer & early autumn"),
+    (re.compile(r"amalfi|positano|capri|como|portofino|tuscany|florence|rome|milan|venice|sardinia|sicily|taormina|puglia|italy|greece|santorini|mykonos|athens|paros|crete|mallorca|ibiza|marbella|barcelona|madrid|spain|algarve|lisbon|douro|comporta|portugal|bodrum|istanbul|turkey|antibes|cannes|st\.?\s*tropez|riviera|provence|monaco|croatia|dubrovnik|montenegro", re.I), "May–Oct", "Warm Mediterranean sunshine & full seasonal beach-club openings"),
+    (re.compile(r"london|cotswolds|castle combe|wiltshire|somerset|scotland|uk|united kingdom|ireland|paris|france|zurich|geneva|switzerland|vienna|austria|amsterdam|netherlands|germany|munich|berlin|stockholm|copenhagen|norway|iceland|blue lagoon", re.I), "May–Sep", "Long daylight hours, mild temperatures & peak garden/terrace season"),
+    (re.compile(r"hawaii|maui|lanai|lānaʻi|kauai|oahu|big island|kona", re.I), "Year-Round (Apr–Oct driest)", "Warm year-round; Apr–Oct driest, Dec–Mar peak whale-watching"),
+    (re.compile(r"mendoza|buenos aires|patagonia|argentina|rio|s[aã]o paulo|brazil|peru|cusco|chile|atacama|colombia|cartagena", re.I), "Oct–Apr", "Warm spring/summer weather & wine harvest months in South America"),
+    (re.compile(r"florida|miami|palm beach|keys|scottsdale|arizona|sedona|amangiri|utah|desert", re.I), "Nov–Apr", "Comfortable sunny winter/spring escaping summer heat & humidity"),
+    (re.compile(r"california|napa|big sur|santa monica|beverly hills|los angeles|malibu|montecito|new york|manhattan|vermont|new england|georgia|sea island|charleston|washington|chicago|boston|usa|united states|canada|toronto|vancouver", re.I), "Apr–Oct", "Pleasant spring, summer & crisp autumn travel seasons"),
+]
+
+ROOM_TIP_KEYWORDS_PY = re.compile(
+    r"\b(villa|suite|main\s+building|overwater|beach\s+villa|pool\s+villa|pavilion|cottage|room|book\s+direct|upgrade|lagoon|sunset|sunrise|cliff|2-bedroom|bunk|pod|bungalow|ground[- ]floor)\b",
+    re.I,
+)
+
+
+def get_best_months_py(h: dict[str, Any]) -> tuple[str, str]:
+    hay = f"{h.get('name', '')} {h.get('location', '')} {h.get('country', '')} {h.get('region', '')}"
+    for pat, label, reason in CLIMATE_RULES_PY:
+        if pat.search(hay):
+            return label, reason
+    return "Spring & Autumn", "Mild shoulder-season conditions"
+
+
+def get_verified_room_tip_py(h: dict[str, Any]) -> str | None:
+    is_fh = bool(
+        h.get("videoId")
+        or (h.get("scores") and h.get("overall") is not None)
+        or h.get("coverageType") in ("Full Review", "Short Tour")
+    )
+    if not is_fh:
+        return None
+    for txt in (h.get("whereWeDiffer"), h.get("watchOut"), h.get("standout")):
+        s = (txt or "").strip()
+        if s and ROOM_TIP_KEYWORDS_PY.search(s):
+            return s
+    return None
+
+
+def compute_price_medians(directory: list[dict[str, Any]]) -> dict[str, dict[str, tuple[int, int]]]:
+    """Compute real GBP nightly medians per country and region (only when >=3 priced properties exist)."""
+    import statistics
+
+    by_country: dict[str, list[float]] = {}
+    by_region: dict[str, list[float]] = {}
+    for h in directory:
+        snap = h.get("priceSnapshot") or {}
+        gbp = snap.get("nightlyGbp")
+        if isinstance(gbp, (int, float)) and gbp > 0:
+            if h.get("country"):
+                by_country.setdefault(h["country"], []).append(float(gbp))
+            if h.get("region"):
+                by_region.setdefault(h["region"], []).append(float(gbp))
+    return {
+        "country": {k: (int(round(statistics.median(v))), len(v)) for k, v in by_country.items() if len(v) >= 3},
+        "region": {k: (int(round(statistics.median(v))), len(v)) for k, v in by_region.items() if len(v) >= 3},
+    }
+
+
+def render_seo_page(
+    h: dict[str, Any],
+    o: dict[str, Any],
+    related: list[dict[str, Any]],
+    total_props: int = 500,
+    price_medians: dict[str, dict[str, tuple[int, int]]] | None = None,
+    rivals: list[dict[str, Any]] | None = None,
+) -> str:
     slug = h["id"]
     canonical = f"{SITE_URL}/stayodds/{slug}/"
     vg = o["vg"]
@@ -648,6 +733,118 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             {ps_body_html}
           </div>"""
 
+    # Trip Planning & Price-to-Score Context Strip (strictly zero invented data)
+    best_months_lbl, best_months_reason = get_best_months_py(h)
+    verified_room_tip = get_verified_room_tip_py(h)
+    trip_tiles: list[str] = []
+
+    snap = h.get("priceSnapshot") or {}
+    gbp_val = snap.get("nightlyGbp")
+    if isinstance(gbp_val, (int, float)) and gbp_val > 0:
+        med_info = None
+        med_scope = ""
+        if price_medians:
+            if h.get("country") in price_medians.get("country", {}):
+                med_info = price_medians["country"][h["country"]]
+                med_scope = h["country"]
+            elif h.get("region") in price_medians.get("region", {}):
+                med_info = price_medians["region"][h["region"]]
+                med_scope = h["region"]
+        if med_info:
+            med_gbp, med_cnt = med_info
+            pct_diff = int(round(((float(gbp_val) - med_gbp) / med_gbp) * 100))
+            if abs(pct_diff) <= 5:
+                rel_note = f"Right around the {med_scope} luxury median (£{med_gbp:,}/nt across {med_cnt} priced stays)."
+            elif pct_diff < 0:
+                rel_note = f"{abs(pct_diff)}% below the {med_scope} luxury median (£{med_gbp:,}/nt across {med_cnt} priced stays)."
+            else:
+                rel_note = f"{pct_diff}% above the {med_scope} luxury median (£{med_gbp:,}/nt across {med_cnt} priced stays)."
+        else:
+            rel_note = f"Indicative nightly benchmark (checked {snap.get('checkedAt') or 'recently'}) — click Booking.com for exact dates."
+        trip_tiles.append(
+            f'<div class="detail-trip-tile">'
+            f'<span class="detail-trip-kicker">Indicative Nightly Rate</span>'
+            f'<strong class="detail-trip-val">{esc(snap.get("label") or f"From £{int(round(gbp_val)):,}/nt")}</strong>'
+            f'<span class="detail-trip-sub">{esc(rel_note)}</span>'
+            f'</div>'
+        )
+    elif h.get("priceRange"):
+        trip_tiles.append(
+            f'<div class="detail-trip-tile">'
+            f'<span class="detail-trip-kicker">Price Tier</span>'
+            f'<strong class="detail-trip-val">{esc(h["priceRange"])}</strong>'
+            f'<span class="detail-trip-sub">Select dates above to check live partner rates on Booking.com.</span>'
+            f'</div>'
+        )
+
+    trip_tiles.append(
+        f'<div class="detail-trip-tile">'
+        f'<span class="detail-trip-kicker">☀ Best Dry Months</span>'
+        f'<strong class="detail-trip-val">{esc(best_months_lbl)}</strong>'
+        f'<span class="detail-trip-sub">{esc(best_months_reason)}</span>'
+        f'</div>'
+    )
+
+    if ps_has:
+        ps_short_sub = ps_reno or ps_nearby or "Confirmed operating status — full details in Property Status below."
+        if len(ps_short_sub) > 130:
+            ps_short_sub = ps_short_sub[:127].rsplit(" ", 1)[0] + "…"
+        trip_tiles.append(
+            f'<div class="detail-trip-tile {"is-alert" if ps_box_cls in ("is-danger", "is-warn") else ""}">'
+            f'<span class="detail-trip-kicker">Property Status &amp; Works</span>'
+            f'<strong class="detail-trip-val">{esc(ps_badge_lbl)}</strong>'
+            f'<span class="detail-trip-sub">{esc(ps_short_sub)}</span>'
+            f'</div>'
+        )
+    else:
+        trip_tiles.append(
+            '<div class="detail-trip-tile">'
+            '<span class="detail-trip-kicker">Property Status &amp; Works</span>'
+            '<strong class="detail-trip-val">No Confirmed Works Listed</strong>'
+            '<span class="detail-trip-sub">No active closures, renovations, or nearby works flagged.</span>'
+            '</div>'
+        )
+
+    if verified_room_tip:
+        trip_tiles.append(
+            f'<div class="detail-trip-tile is-tip">'
+            f'<span class="detail-trip-kicker">🛏️ First-Hand Room / Booking Tip</span>'
+            f'<strong class="detail-trip-val">{esc(verified_room_tip)}</strong>'
+            f'</div>'
+        )
+
+    trip_context_html = f'<div class="detail-trip-context-strip">{"".join(trip_tiles)}</div>'
+
+    # Pre-loaded Head-to-Head Rival Matchups (same country / region peers)
+    rival_list = rivals if rivals is not None else related
+    rival_cards: list[str] = []
+    for rv in (rival_list or [])[:3]:
+        rvo = compute_stayodds_py(rv)
+        rv_odds = f"{rvo['greatStayOdds']}%" if rvo["greatStayOdds"] is not None else rvo["tierLabel"]
+        rv_price = (rv.get("priceSnapshot") or {}).get("label") or rv.get("priceRange") or ""
+        rv_meta = f"{rv['name']}: {rv_odds}" + (f" · {rv_price}" if rv_price else "")
+        rival_cards.append(
+            f'<a class="rival-matchup-card" href="../../compare/?a={esc(slug)}&amp;b={esc(rv["id"])}">'
+            f'<div class="rival-matchup-vs">{esc(h["name"])} <span style="color:var(--accent);">vs</span> {esc(rv["name"])}</div>'
+            f'<div class="rival-matchup-meta"><span>{esc(rv_meta)}</span><span class="rival-matchup-cta">Compare &rarr;</span></div>'
+            f'</a>'
+        )
+    three_hotel_link = ""
+    if len(rival_list or []) >= 2:
+        three_hotel_link = (
+            f'<a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" '
+            f'href="../../compare/?a={esc(slug)}&amp;b={esc(rival_list[0]["id"])}&amp;c={esc(rival_list[1]["id"])}">'
+            f'Compare All 3 Side-by-Side &rarr;</a>'
+        )
+    rival_matchups_html = (
+        f'<div class="rival-matchups-box">'
+        f'<div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3>{three_hotel_link}</div>'
+        f'<div class="rival-matchups-grid">{"".join(rival_cards)}</div>'
+        f'</div>'
+        if rival_cards
+        else ""
+    )
+
     share_card_payload = {
         "hotel": {
             "id": h["id"],
@@ -721,7 +918,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -877,6 +1074,8 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
         </div>
       </section>
 
+      {trip_context_html}
+
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
       <section class="detail-section">
         <div class="opinion-gap-card {delta_tone}">
@@ -996,6 +1195,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
+        {rival_matchups_html}
         <div class="related-grid">{related_html}</div>
       </section>
     </div>
@@ -1338,7 +1538,7 @@ def render_seo_page(h: dict[str, Any], o: dict[str, Any], related: list[dict[str
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=6");
+      const mod = await import("../../assets/stayodds-share-card.js?v=7");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -1635,6 +1835,43 @@ def render_destination_page(
 
     cards_html = "\n".join(cards_parts)
 
+    # Build up to 3 Pre-Loaded Head-to-Head Rival Matchups from this destination's top real properties
+    dest_matchup_cards: list[str] = []
+    if len(dest_hotels) >= 2:
+        pair_indices: list[tuple[int, int]] = [(0, 1)]
+        if len(dest_hotels) >= 3:
+            pair_indices.append((0, 2))
+        if len(dest_hotels) >= 4:
+            pair_indices.append((1, 3))
+        elif len(dest_hotels) >= 3:
+            pair_indices.append((1, 2))
+        for ia, ib in pair_indices:
+            ha, hb = dest_hotels[ia], dest_hotels[ib]
+            oa, ob = compute_stayodds_py(ha), compute_stayodds_py(hb)
+            sa = f"{oa['greatStayOdds']}%" if oa["greatStayOdds"] is not None else oa["tierLabel"]
+            sb = f"{ob['greatStayOdds']}%" if ob["greatStayOdds"] is not None else ob["tierLabel"]
+            dest_matchup_cards.append(
+                f'<a class="rival-matchup-card" href="../../compare/?a={esc(ha["id"])}&amp;b={esc(hb["id"])}">'
+                f'<div class="rival-matchup-vs">{esc(ha["name"])} <span style="color:var(--accent);">vs</span> {esc(hb["name"])}</div>'
+                f'<div class="rival-matchup-meta"><span>{esc(sa)} vs {esc(sb)}</span><span class="rival-matchup-cta">Compare &rarr;</span></div>'
+                f'</a>'
+            )
+    dest_three_link = ""
+    if len(dest_hotels) >= 3:
+        dest_three_link = (
+            f'<a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" '
+            f'href="../../compare/?a={esc(dest_hotels[0]["id"])}&amp;b={esc(dest_hotels[1]["id"])}&amp;c={esc(dest_hotels[2]["id"])}">'
+            f'Compare Top 3 Side-by-Side &rarr;</a>'
+        )
+    dest_matchups_html = (
+        f'<div class="rival-matchups-box">'
+        f'<div class="rival-matchups-head"><h3>Popular Head-to-Head Rival Matchups in {esc(title)}</h3>{dest_three_link}</div>'
+        f'<div class="rival-matchups-grid">{"".join(dest_matchup_cards)}</div>'
+        f'</div>'
+        if dest_matchup_cards
+        else ""
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1666,7 +1903,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1784,6 +2021,8 @@ def render_destination_page(
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
+
+        {dest_matchups_html}
 
         <div class="dest-grid">
           {cards_html}
@@ -2017,6 +2256,23 @@ def main() -> None:
 
     directory.sort(key=sort_key)
 
+    # Pre-build Brand & Loyalty Validation Gate (blocks fake/placeholder brand regressions)
+    import sys as _sys
+
+    scripts_dir = str(Path(__file__).resolve().parent)
+    if scripts_dir not in _sys.path:
+        _sys.path.insert(0, scripts_dir)
+    from audit_brands_and_loyalty import audit_hotels
+
+    brand_errors, brand_warnings = audit_hotels(directory)
+    print(f"Pre-build Brand & Loyalty Audit ({len(directory)} properties): {len(brand_errors)} errors, {len(brand_warnings)} warnings")
+    for w in brand_warnings:
+        print(f"  [WARN] {w}")
+    if brand_errors:
+        for e in brand_errors:
+            print(f"  [ERROR] {e}", file=_sys.stderr)
+        raise RuntimeError(f"Brand & Loyalty Audit failed with {len(brand_errors)} error(s). Fix Supabase before building.")
+
     now_iso = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     out_json = ROOT / "data" / "stayodds-directory.json"
     out_json.write_text(
@@ -2158,16 +2414,22 @@ def main() -> None:
     # Generate static SEO HTML pages at /stayodds/<slug>/index.html
     total_props = len(directory)
     world_props = total_props - len(visited_hotels)
+    price_medians = compute_price_medians(directory)
     stayodds_dir = ROOT / "stayodds"
     stayodds_dir.mkdir(exist_ok=True)
     for h in directory:
         o = compute_stayodds_py(h)
-        same_reg = [r for r in directory if r["id"] != h["id"] and r["region"] == h["region"]][:3]
-        if len(same_reg) < 3:
-            same_reg += [r for r in directory if r["id"] != h["id"] and r not in same_reg][: 3 - len(same_reg)]
+        same_country = [r for r in directory if r["id"] != h["id"] and r["country"] == h["country"]]
+        same_reg = [r for r in directory if r["id"] != h["id"] and r["region"] == h["region"] and r not in same_country]
+        rivals = (same_country + same_reg)[:3]
+        if len(rivals) < 3:
+            rivals += [r for r in directory if r["id"] != h["id"] and r not in rivals][: 3 - len(rivals)]
         pdir = stayodds_dir / h["id"]
         pdir.mkdir(parents=True, exist_ok=True)
-        (pdir / "index.html").write_text(render_seo_page(h, o, same_reg, total_props), encoding="utf-8")
+        (pdir / "index.html").write_text(
+            render_seo_page(h, o, rivals, total_props, price_medians=price_medians, rivals=rivals),
+            encoding="utf-8",
+        )
 
     # Sync recalculated total_props and world_props counts in compare/index.html, hotels/index.html, about/index.html, faq/index.html
     for rel_html in ["compare/index.html", "hotels/index.html", "about/index.html", "faq/index.html"]:

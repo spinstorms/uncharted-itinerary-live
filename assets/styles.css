@@ -6410,6 +6410,204 @@ html.is-embedded .stayodds-site-header + .hub-tabs-bar .hub-tab.active {
   z-index: 3;
 }
 
+/* ---------- H2H Pre-Loaded Rival Matchups Bar & Room Tip Box ---------- */
+.h2h-quick-matchups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+.h2h-quick-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-right: 2px;
+}
+.h2h-quick-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease, color 0.16s ease, transform 0.14s ease;
+}
+.h2h-quick-chip:hover {
+  border-color: var(--accent);
+  background: #fff7f3;
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.h2h-price-delta {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.h2h-price-delta.is-best {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+.h2h-price-delta.is-higher {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+.h2h-room-tip-box {
+  margin: 12px 0 10px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #fff9f5;
+  border: 1px solid rgba(255, 93, 34, 0.28);
+  border-left: 3.5px solid var(--accent);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #334155;
+}
+.h2h-room-tip-label {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+
+/* ---------- Detail Page Trip Planning & Price-to-Score Context Strip ---------- */
+.detail-trip-context-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+.detail-trip-tile {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+}
+.detail-trip-tile.is-tip {
+  background: #fff9f5;
+  border-color: rgba(255, 93, 34, 0.3);
+  border-left: 3.5px solid var(--accent);
+  grid-column: 1 / -1;
+}
+.detail-trip-tile.is-alert {
+  background: #fffbeb;
+  border-color: #fde68a;
+  border-left: 3.5px solid #d97706;
+}
+.detail-trip-kicker {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+.detail-trip-tile.is-tip .detail-trip-kicker {
+  color: var(--accent);
+}
+.detail-trip-tile.is-alert .detail-trip-kicker {
+  color: #b45309;
+}
+.detail-trip-val {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+.detail-trip-sub {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.45;
+}
+
+/* ---------- Pre-Loaded Rival Matchups Grid (Detail Pages & Destination Guides) ---------- */
+.rival-matchups-box {
+  margin: 0 0 22px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fafc 0%, #fff8f5 100%);
+  border: 1px solid #e2e8f0;
+}
+.rival-matchups-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.rival-matchups-head h3 {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.rival-matchups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+}
+.rival-matchup-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: #0f172a;
+  transition: border-color 0.16s ease, transform 0.14s ease, box-shadow 0.16s ease;
+}
+.rival-matchup-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+.rival-matchup-vs {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+.rival-matchup-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #475569;
+  font-weight: 600;
+}
+.rival-matchup-cta {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 
 
 

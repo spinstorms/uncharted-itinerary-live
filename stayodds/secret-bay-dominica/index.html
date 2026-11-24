@@ -26,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -182,6 +182,8 @@
         </div>
       </section>
 
+      <div class="detail-trip-context-strip"><div class="detail-trip-tile"><span class="detail-trip-kicker">Price Tier</span><strong class="detail-trip-val">£1,050+/night</strong><span class="detail-trip-sub">Select dates above to check live partner rates on Booking.com.</span></div><div class="detail-trip-tile"><span class="detail-trip-kicker">☀ Best Dry Months</span><strong class="detail-trip-val">Dec–Apr</strong><span class="detail-trip-sub">Dry season with lower hurricane &amp; summer sargassum seaweed risk</span></div><div class="detail-trip-tile"><span class="detail-trip-kicker">Property Status &amp; Works</span><strong class="detail-trip-val">No Confirmed Works Listed</strong><span class="detail-trip-sub">No active closures, renovations, or nearby works flagged.</span></div></div>
+
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
       <section class="detail-section">
         <div class="opinion-gap-card ">
@@ -305,6 +307,7 @@
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
+        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=secret-bay-dominica&amp;b=curtain-bluff-antigua&amp;c=grand-velas-boutique-los-cabos">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=secret-bay-dominica&amp;b=curtain-bluff-antigua"><div class="rival-matchup-vs">Secret Bay <span style="color:var(--accent);">vs</span> Curtain Bluff</div><div class="rival-matchup-meta"><span>Curtain Bluff: 100% · From £2,590/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=secret-bay-dominica&amp;b=grand-velas-boutique-los-cabos"><div class="rival-matchup-vs">Secret Bay <span style="color:var(--accent);">vs</span> Grand Velas Boutique Los Cabos</div><div class="rival-matchup-meta"><span>Grand Velas Boutique Los Cabos: 96% · From £945/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=secret-bay-dominica&amp;b=oil-nut-bay-bvi"><div class="rival-matchup-vs">Secret Bay <span style="color:var(--accent);">vs</span> Oil Nut Bay</div><div class="rival-matchup-meta"><span>Oil Nut Bay: 91% · £1,600+/night</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
         <div class="related-grid">
           <article class="related-card">
             <img src="../../assets/thumbs/curtain-bluff-antigua.webp?v=169" alt="Curtain Bluff" loading="lazy" decoding="async" />
@@ -692,7 +695,7 @@
 
     const shareCardState = {"hotel": {"id": "secret-bay-dominica", "name": "Secret Bay", "location": "Portsmouth, Dominica", "country": "Dominica", "brand": "Relais & Châteaux", "priceRange": "£1,050+/night", "standout": "Six-star Relais & Châteaux rainforest clifftop sanctuary of sustainable hardwood villas — every villa has a private plunge pool, dedicated villa host, no-menu farm-to-table chef dining at Zing Zing, and access to Dominica's boiling lakes, waterfalls & sperm whales", "watchOut": "Reaching Dominica involves regional island hops or limited direct flights + a scenic 60-min winding drive from DOM airport; secluded dark-sand cove beaches are secondary to rainforest/cliff drama", "keyFacts": {"poolHeating": "Private / plunge pools listed", "beachOrReef": "Two secluded clifftop coves (Tibay & Secret Beach) with kayaking & reef snorkeling", "renovationYear": 2023, "transferLogistics": "Approx. 60 minutes by car from Douglas-Charles Airport (DOM)"}, "thumbnail": "assets/thumbs/secret-bay-dominica.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": 92, "statusBadge": "Market Odds (1 Source)", "tierLabel": "Market Odds", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 9.6, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Market Odds baseline from verified external reviews.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=6");
+      const mod = await import("../../assets/stayodds-share-card.js?v=7");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

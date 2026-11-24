@@ -22,7 +22,7 @@ import {
   getGuestProfile,
   getVerifiedRoomTip,
   exportHotelsToCsv,
-} from "./stayodds-insights.js?v=3";
+} from "./stayodds-insights.js?v=4";
 
 function getPropertyStatusMeta(hotel) {
   const st = (hotel && hotel.propertyStatus) || {};
@@ -455,13 +455,13 @@ function syncThreeWayUi() {
   if (toggleBtn) {
     toggleBtn.setAttribute("aria-pressed", String(state.threeWay));
     toggleBtn.classList.toggle("is-active", state.threeWay);
-    toggleBtn.textContent = state.threeWay ? "− Back to 2-Way" : "+ Add 3rd Hotel";
+    toggleBtn.textContent = state.threeWay ? "− Back to 2 Hotels" : "+ Add 3rd Hotel";
   }
   if (shareBtn) {
-    shareBtn.innerHTML = state.threeWay ? "&#x1F4F8; Share 3-Way Card" : "&#x1F4F8; Share VS Card";
+    shareBtn.innerHTML = state.threeWay ? "&#x1F4F8; Share 3-Hotel Card" : "&#x1F4F8; Share VS Card";
   }
   if (copyBtn && !copyBtn.classList.contains("is-copied")) {
-    copyBtn.innerHTML = state.threeWay ? "&#128279; Copy 3-Way Link" : "&#128279; Copy VS Link";
+    copyBtn.innerHTML = state.threeWay ? "&#128279; Copy 3-Hotel Link" : "&#128279; Copy VS Link";
   }
 }
 
@@ -562,6 +562,39 @@ function renderH2HCard(h, allCompared) {
         : ""
       : "";
 
+  // Zero-API-waste relative indicative price comparison across compared hotels
+  const effectiveGbp = (item) => {
+    const lr = item.nuiteeHotelId ? state.liveRates[item.nuiteeHotelId] : null;
+    if (lr && Number(lr.perNight) > 0) return Math.round(Number(lr.perNight));
+    const pi = getPriceDisplay(item);
+    return pi.numericGbp != null ? Math.round(pi.numericGbp) : null;
+  };
+  const myGbp = effectiveGbp(h);
+  const otherGbps = allCompared.filter((x) => x !== h).map(effectiveGbp).filter((v) => v != null);
+  const allGbps = [myGbp, ...otherGbps].filter((v) => v != null);
+  const minGbp = allGbps.length >= 2 ? Math.min(...allGbps) : null;
+  const isLowestPrice = myGbp != null && minGbp != null && otherGbps.length > 0 && myGbp < Math.min(...otherGbps);
+  let priceDeltaNote = "";
+  if (myGbp != null && minGbp != null && otherGbps.length > 0) {
+    const diffVsMin = myGbp - minGbp;
+    if (isLowestPrice) {
+      const nextMin = Math.min(...otherGbps);
+      priceDeltaNote = `£${(nextMin - myGbp).toLocaleString("en-GB")}/nt less`;
+    } else if (diffVsMin > 0) {
+      priceDeltaNote = `+£${diffVsMin.toLocaleString("en-GB")}/nt vs lowest`;
+    }
+  }
+  const priceRowDisplay = liveRate
+    ? `£${Number(liveRate.perNight).toLocaleString("en-GB")}/nt (live)`
+    : priceInfo.label
+    ? `${priceInfo.label}${priceDeltaNote ? ` · ${priceDeltaNote}` : ""}`
+    : "Check Dates";
+
+  const partner = getPartnerPrograms(h);
+  const profile = getGuestProfile(h);
+  const climate = getBestMonthsMeta(h);
+  const roomTip = getVerifiedRoomTip(h);
+
   const personalPillarRowsHtml = anyFirstHandCompared
     ? `
         ${metricRow(
@@ -602,6 +635,16 @@ function renderH2HCard(h, allCompared) {
       `
     : "";
 
+  const tagsHtml = [
+    partner.preferredProgram ? `<span class="tag tag-accent" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : "",
+    partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : "",
+    profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag tag-slate">👨‍👩‍👧 Family / Kids</span>` : "",
+  ].filter(Boolean).join("");
+
+  const roomTipHtml = roomTip
+    ? `<div class="h2h-room-tip-box"><strong>🛏️ First-Hand Room / Booking Tip:</strong> ${escapeHtml(roomTip)}</div>`
+    : "";
+
   return `
     <article class="h2h-card ${trackCls}" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
@@ -609,7 +652,7 @@ function renderH2HCard(h, allCompared) {
         <div>
           <span class="tag ${o.scoreTrack === "verified" ? "tag-accent" : "tag-slate"}">${escapeHtml(o.scoreTrackLabel)}</span>
           <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
-          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.brand ? ` &bull; ${escapeHtml(h.brand)}` : ""}</div>
+          <div class="scorecard-location">${escapeHtml(h.location)}, ${escapeHtml(h.country)}${h.brand && !/^independent$/i.test(h.brand) ? ` &bull; ${escapeHtml(h.brand)}` : ""}</div>
         </div>
       </div>
 
@@ -628,9 +671,11 @@ function renderH2HCard(h, allCompared) {
         liveRate
           ? `<div class="h2h-live-rate-pill">&#128176; Live: £${Number(liveRate.perNight).toLocaleString("en-GB")}/nt (£${Number(liveRate.total).toLocaleString("en-GB")} for ${liveRate.nights}nt${liveRate.refundable ? " · Refundable" : ""})</div>`
           : priceInfo.label
-          ? `<div style="margin-bottom:10px;"><span class="price-chip-indicative">${escapeHtml(priceInfo.label)}${priceInfo.isIndicative ? " (indicative)" : ""}</span>${
+          ? `<div style="margin-bottom:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;"><span class="price-chip-indicative">${escapeHtml(priceInfo.label)}${priceInfo.isIndicative ? " (indicative)" : ""}</span>${
+              priceDeltaNote ? `<span class="tag ${isLowestPrice ? "tag-teal" : "tag-slate"}" style="font-size:11px;">${escapeHtml(priceDeltaNote)}</span>` : ""
+            }${
               o.founderVsMarketLabel
-                ? ` <span class="founder-delta-pill ${deltaToneCls}">${escapeHtml(o.founderVsMarketLabel)}</span>`
+                ? `<span class="founder-delta-pill ${deltaToneCls}">${escapeHtml(o.founderVsMarketLabel)}</span>`
                 : ""
             }</div>`
           : o.founderVsMarketLabel
@@ -673,6 +718,14 @@ function renderH2HCard(h, allCompared) {
           "Open Breakdown",
           guestDisplay || "Open Breakdown"
         )}
+        <div class="h2h-metric ${isLowestPrice ? "is-best" : ""}">
+          <span>Indicative Nightly Rate</span>
+          <strong>${escapeHtml(priceRowDisplay)}${isLowestPrice ? " ★" : ""}</strong>
+        </div>
+        <div class="h2h-metric" title="${escapeHtml(climate.reason)}">
+          <span>Best Dry Months</span>
+          <strong>&#9728; ${escapeHtml(climate.label)}</strong>
+        </div>
         <div class="h2h-metric">
           <span>Official Awards</span>
           <strong style="text-align:right;font-size:12.5px;">${awardsHtml}</strong>
@@ -680,26 +733,13 @@ function renderH2HCard(h, allCompared) {
         ${personalPillarRowsHtml}
       </div>
 
+      ${roomTipHtml}
+
       <p class="h2h-diff"><strong>${escapeHtml(o.opinionGap.title)}:</strong> ${escapeHtml(o.opinionGap.headline)}${
-        h.whereWeDiffer ? `<br><span style="color:#334155;"><strong>My Take:</strong> ${escapeHtml(h.whereWeDiffer)}</span>` : ""
+        h.whereWeDiffer && h.whereWeDiffer !== roomTip ? `<br><span style="color:#334155;"><strong>My Take:</strong> ${escapeHtml(h.whereWeDiffer)}</span>` : ""
       }</p>
 
-      ${(() => {
-        const partner = getPartnerPrograms(h);
-        const profile = getGuestProfile(h);
-        const climate = getBestMonthsMeta(h);
-        const roomTip = getVerifiedRoomTip(h);
-        const tags = [
-          partner.preferredProgram ? `<span class="tag tag-accent" title="${escapeHtml(partner.perksNote)}">✨ ${escapeHtml(partner.preferredProgram)}</span>` : "",
-          partner.pointsProgram ? `<span class="tag tag-teal">★ ${escapeHtml(partner.pointsProgram)}</span>` : "",
-          profile.isAdultsOnly ? `<span class="tag tag-slate">🥂 Adults-Only</span>` : profile.isFamilyFriendly ? `<span class="tag tag-slate">👨‍👩‍👧 Family / Kids</span>` : "",
-          `<span class="tag" title="${escapeHtml(climate.reason)}">📅 Best: ${escapeHtml(climate.label)}</span>`,
-        ].filter(Boolean).join("");
-        const tipHtml = roomTip && roomTip !== h.whereWeDiffer
-          ? `<div style="margin-top:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:12px;color:#334155;"><strong>🛏️ Room / Booking Tip:</strong> ${escapeHtml(roomTip)}</div>`
-          : "";
-        return `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">${tags}</div>${tipHtml}`;
-      })()}
+      ${tagsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">${tagsHtml}</div>` : ""}
 
       <div class="scorecard-actions">
         <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
@@ -1712,6 +1752,28 @@ async function boot() {
   qs("#toggleThreeWayBtn")?.addEventListener("click", () => setThreeWayMode(!state.threeWay));
   qs("#removeHotelCBtn")?.addEventListener("click", () => setThreeWayMode(false));
 
+  qs("#h2hQuickMatchups")?.querySelectorAll("[data-matchup-a]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const a = btn.dataset.matchupA;
+      const b = btn.dataset.matchupB;
+      if (!a || !b) return;
+      state.threeWay = false;
+      state.idA = a;
+      state.idB = b;
+      state.searchA = "";
+      state.searchB = "";
+      state.liveRates = {};
+      ["#compareSearchA", "#compareSearchB", "#compareSearchC"].forEach((sel) => {
+        const inp = qs(sel);
+        if (inp) inp.value = "";
+      });
+      populateH2HSelectors();
+      renderH2H();
+      syncUrlParams(true);
+      trackH2HDropdown();
+    });
+  });
+
   qs("#shareVsCardBtn")?.addEventListener("click", async () => {
     const ha = state.hotels.find((h) => h.id === state.idA) || state.hotels[0];
     const hb = state.hotels.find((h) => h.id === state.idB) || state.hotels[1];
@@ -1721,15 +1783,15 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=6");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=7");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
-          window.trackEvent("open_share_card", "vs_three_way", `${ha.name} vs ${hb.name} vs ${hc.name}`);
+          window.trackEvent("open_share_card", "vs_three_hotel", `${ha.name} vs ${hb.name} vs ${hc.name}`);
         }
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=6");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=7");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1808,16 +1870,16 @@ async function boot() {
       if (typeof window.trackEvent === "function" && ha && hb) {
         window.trackEvent(
           "share_comparison",
-          hc ? "vs_three_way" : "vs_pair",
+          hc ? "vs_three_hotel" : "vs_pair",
           hc ? `${ha.name} vs ${hb.name} vs ${hc.name}` : `${ha.name} vs ${hb.name}`
         );
       }
       if (btn) {
         btn.classList.add("is-copied");
-        btn.textContent = state.threeWay ? "✓ Copied 3-Way Link!" : "✓ Copied VS Link!";
+        btn.textContent = state.threeWay ? "✓ Copied 3-Hotel Link!" : "✓ Copied VS Link!";
         setTimeout(() => {
           btn.classList.remove("is-copied");
-          btn.innerHTML = state.threeWay ? "&#128279; Copy 3-Way Link" : "&#128279; Copy VS Link";
+          btn.innerHTML = state.threeWay ? "&#128279; Copy 3-Hotel Link" : "&#128279; Copy VS Link";
         }, 2200);
       }
     } catch (_) {
@@ -2083,7 +2145,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124c";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124d";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -2096,7 +2158,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124c`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261124d`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {

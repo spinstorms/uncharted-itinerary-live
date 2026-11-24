@@ -16,12 +16,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
   <meta property="og:description" content="Personally curated luxury hotel comparisons separating First-Hand Verified stays from our Global Directory." />
-  <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_promo_og_facebook_1200x630.png" />
+  <meta property="og:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v3_bright_og_hero_1200x630.png" />
   <meta property="og:url" content="https://uncharteditinerary.com/compare/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="StayOdds. — Hotel Score Compare: Critics vs Real Guest Reviews" />
   <meta name="twitter:description" content="Transparent luxury hotel score comparison: First-Hand Verified stays, sourced critics, and live verified guest ratings." />
-  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_promo_og_facebook_1200x630.png" />
+  <meta name="twitter:image" content="https://uncharteditinerary.com/assets/promo/stayodds_v3_bright_og_hero_1200x630.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,12 +37,12 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="../data/stayodds-index.json?v=20261124c" as="fetch" crossorigin />
+  <link rel="preload" href="../data/stayodds-index.json?v=20261124d" as="fetch" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../assets/styles.min.css?v=37" />
+  <link rel="stylesheet" href="../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -223,10 +223,19 @@
               <p class="section-subtitle">Pick 2 (or 3) luxury stays side-by-side — Verified StayOdds vs. Market Odds, awards, property status, and live dates.</p>
             </div>
             <div class="h2h-header-actions">
-              <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Toggle 3-way hotel comparison">+ Add 3rd Hotel</button>
+              <button type="button" class="btn btn-outline" id="toggleThreeWayBtn" aria-pressed="false" aria-label="Compare up to 3 hotels side-by-side">+ Add 3rd Hotel</button>
               <button type="button" class="btn btn-primary" id="shareVsCardBtn" aria-label="Open branded VS Scorecard share modal">&#x1F4F8; Share VS Card</button>
               <button type="button" class="btn btn-outline copy-vs-btn" id="copyVsLinkBtn" aria-label="Copy shareable Head-to-Head comparison link">&#128279; Copy VS Link</button>
             </div>
+          </div>
+
+          <div class="h2h-quick-matchups" id="h2hQuickMatchups" aria-label="Popular rival hotel matchups">
+            <span class="h2h-quick-label">Rival Matchups:</span>
+            <button type="button" class="h2h-quick-chip" data-matchup-a="four-seasons-jimbaran" data-matchup-b="st-regis-bali">FS Jimbaran vs St. Regis Bali</button>
+            <button type="button" class="h2h-quick-chip" data-matchup-a="w-maldives" data-matchup-b="soneva-jani">W Maldives vs Soneva Jani</button>
+            <button type="button" class="h2h-quick-chip" data-matchup-a="the-sira-lombok" data-matchup-b="taaktana-labuan-bajo">The Sira vs TA&rsquo;AKTANA</button>
+            <button type="button" class="h2h-quick-chip" data-matchup-a="capella-bangkok" data-matchup-b="aman-tokyo">Capella Bangkok vs Aman Tokyo</button>
+            <button type="button" class="h2h-quick-chip" data-matchup-a="amanzoe-greece" data-matchup-b="four-seasons-astir-palace-athens">Amanzoe vs FS Astir Palace</button>
           </div>
 
           <div class="date-rate-bar h2h-date-bar" id="h2hDateRateBar">
@@ -495,6 +504,6 @@
   </footer>
 
   <script src="../assets/stayodds-feedback.js?v=2" defer></script>
-  <script type="module" src="../assets/compare.js?v=36"></script>
+  <script type="module" src="../assets/compare.js?v=37"></script>
 </body>
 </html>

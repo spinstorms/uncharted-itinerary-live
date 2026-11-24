@@ -749,7 +749,7 @@ export function buildFactualThreeWayVerdict(hotelA, hotelB, hotelC, oddsA, oddsB
         .join(" & ");
       return {
         headline: `Tied at Top: ${tiedNames} (${top.odds.greatStayOdds}% StayOdds)`,
-        detail: `3-Way StayOdds split: ${scoreLine}. Compare verified My Stay, Critics/Other, Guests, and Key Facts below.`,
+        detail: `3-Hotel StayOdds split: ${scoreLine}. Compare verified My Stay, Critics/Other, Guests, and Key Facts below.`,
         winnerSide: "TIE",
       };
     }
@@ -767,7 +767,7 @@ export function buildFactualThreeWayVerdict(hotelA, hotelB, hotelC, oddsA, oddsB
       reasons.push(`Note: ${closedList[0].hotel.name} is ${closedList[0].st.operatingStatus}`);
     }
     return {
-      headline: `${top.hotel.name} leads 3-way by +${margin}% (${scoreLine})`,
+      headline: `${top.hotel.name} leads 3-hotel matchup by +${margin}% (${scoreLine})`,
       detail: reasons.length
         ? `Backed by ${reasons.join(" • ")}. Zero fabricated numbers.`
         : `Highest verified StayOdds across all 3 properties (${scoreLine}).`,
@@ -810,7 +810,7 @@ export function buildRedditMarkdownThreeWay(hotelA, hotelB, hotelC, oddsA, oddsB
 
   const url = buildThreeWayDeepLink(hotelA, hotelB, hotelC);
   return [
-    `### ${hotelA.name} vs ${hotelB.name} vs ${hotelC.name} — StayOdds 3-Way Verified Breakdown`,
+    `### ${hotelA.name} vs ${hotelB.name} vs ${hotelC.name} — StayOdds 3-Hotel Verified Breakdown`,
     ``,
     `**Verdict:** ${verdict.headline}${verdict.detail ? ` — ${verdict.detail}` : ""}`,
     ``,
@@ -826,8 +826,8 @@ export function buildRedditMarkdownThreeWay(hotelA, hotelB, hotelC, oddsA, oddsB
     `| **Status & Works** | ${statusStr(stA)} | ${statusStr(stB)} | ${statusStr(stC)} |`,
     `| **Verified Key Facts** | ${factsStr(hotelA, oddsA)} | ${factsStr(hotelB, oddsB)} | ${factsStr(hotelC, oddsC)} |`,
     ``,
-    `*Zero fabricated scores — real verified ratings, awards, and property facts only at **[stayodds.com](https://stayodds.com)**.*`,
-    `Explore at https://stayodds.com • Direct 3-way comparison: ${url}`,
+    `*Zero fabricated scores — real verified ratings, awards, and property facts only at **[uncharteditinerary.com](https://uncharteditinerary.com)**.*`,
+    `Explore at https://uncharteditinerary.com • Direct 3-hotel comparison: ${url}`,
   ].join("\n");
 }
 
@@ -867,8 +867,8 @@ export function buildRedditMarkdownVs(hotelA, hotelB, oddsA, oddsB) {
     `| **Status & Works** | ${stA.hasDetails ? `${stA.operatingStatus}: ${stA.shortSummary}` : "No confirmed works listed"} | ${stB.hasDetails ? `${stB.operatingStatus}: ${stB.shortSummary}` : "No confirmed works listed"} |`,
     `| **Verified Key Facts** | ${factsA.replace(/\|/g, "/")} | ${factsB.replace(/\|/g, "/")} |`,
     ``,
-    `*Zero fabricated scores — real verified ratings, awards, and property facts only at **[stayodds.com](https://stayodds.com)**.*`,
-    `Explore at https://stayodds.com • Direct comparison: ${url}`,
+    `*Zero fabricated scores — real verified ratings, awards, and property facts only at **[uncharteditinerary.com](https://uncharteditinerary.com)**.*`,
+    `Explore at https://uncharteditinerary.com • Direct comparison: ${url}`,
   ].join("\n");
 }
 
@@ -894,8 +894,8 @@ export function buildRedditMarkdownSingle(hotel, odds) {
   }
   lines.push(
     ``,
-    `*Zero fabricated scores — real verified data only at **[stayodds.com](https://stayodds.com)**.*`,
-    `Explore at https://stayodds.com • Direct breakdown: ${url}`
+    `*Zero fabricated scores — real verified data only at **[uncharteditinerary.com](https://uncharteditinerary.com)**.*`,
+    `Explore at https://uncharteditinerary.com • Direct breakdown: ${url}`
   );
   return lines.join("\n");
 }
@@ -1320,7 +1320,7 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
 
     ctx.font = `800 34px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX + 28, footY + 96);
+    ctx.fillText("uncharteditinerary.com", padX + 28, footY + 96);
 
     ctx.font = `500 18px ${FONT_STACK}`;
     ctx.fillStyle = "#CBD5E1";
@@ -1351,7 +1351,7 @@ export function renderVsCanvas(canvas, hotelA, hotelB, oddsA, oddsB, format = "1
     const footY = 974;
     ctx.font = `800 22px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX, footY + 30);
+    ctx.fillText("uncharteditinerary.com", padX, footY + 30);
     ctx.font = `500 16px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     const rightTxt = "Zero fabricated scores • Real verified data only";
@@ -1581,7 +1581,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     ctx.fillText("SCAN FOR FULL VERIFIED BREAKDOWN", padX + 28, footY + 52);
     ctx.font = `800 34px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX + 28, footY + 96);
+    ctx.fillText("uncharteditinerary.com", padX + 28, footY + 96);
     ctx.font = `500 18px ${FONT_STACK}`;
     ctx.fillStyle = "#CBD5E1";
     drawWrappedText(
@@ -1597,7 +1597,7 @@ export function renderSingleHotelCanvas(canvas, hotel, odds, format = "1:1") {
     const footY = 994;
     ctx.font = `800 22px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX, footY + 26);
+    ctx.fillText("uncharteditinerary.com", padX, footY + 26);
     ctx.font = `500 15px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     const rightTxt = "Zero fabricated scores • Real verified data only";
@@ -1784,7 +1784,7 @@ function openModalInternal({ title, filePrefix, deepLink, tweetText, redditMarkd
 export function openVsShareModal(hotelA, hotelB, oddsA, oddsB) {
   const verdict = buildFactualVsVerdict(hotelA, hotelB, oddsA, oddsB);
   const deepLink = buildVsDeepLink(hotelA, hotelB);
-  const tweetText = `${hotelA.name} vs ${hotelB.name} on StayOdds (stayodds.com): ${verdict.headline}. Verified scores & key facts — zero made-up numbers:`;
+  const tweetText = `${hotelA.name} vs ${hotelB.name} on StayOdds (uncharteditinerary.com): ${verdict.headline}. Verified scores & key facts — zero made-up numbers:`;
   openModalInternal({
     title: `${hotelA.name} vs ${hotelB.name}`,
     filePrefix: `stayodds-${hotelA.id}-vs-${hotelB.id}`,
@@ -1796,7 +1796,7 @@ export function openVsShareModal(hotelA, hotelB, oddsA, oddsB) {
   });
 }
 
-/* ==================== Render 3-Way Comparison Card (1:1 or 9:16) ==================== */
+/* ==================== Render 3-Hotel Comparison Card (1:1 or 9:16) ==================== */
 export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, oddsB, oddsC, format = "1:1") {
   const isStory = format === "9:16";
   const W = 1080;
@@ -1807,7 +1807,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
 
   drawCardBackground(ctx, W, H);
   const padX = isStory ? 48 : 44;
-  drawHeaderBrand(ctx, W, padX, isStory ? 96 : 86, "VERIFIED 3-WAY COMPARE");
+  drawHeaderBrand(ctx, W, padX, isStory ? 96 : 86, "VERIFIED 3-HOTEL COMPARE");
 
   const verdict = buildFactualThreeWayVerdict(hotelA, hotelB, hotelC, oddsA, oddsB, oddsC);
   const deepLink = buildThreeWayDeepLink(hotelA, hotelB, hotelC);
@@ -1818,7 +1818,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
   fillRoundRect(ctx, padX, vY, W - padX * 2, vH, 22, "rgba(255,93,34,0.13)", "rgba(255,93,34,0.48)", 2);
   ctx.font = `800 14px ${FONT_STACK}`;
   ctx.fillStyle = "#FF8B5E";
-  ctx.fillText("VERIFIED 3-WAY VERDICT", padX + 22, vY + 30);
+  ctx.fillText("VERIFIED 3-HOTEL VERDICT", padX + 22, vY + 30);
 
   ctx.font = `800 ${isStory ? 26 : 23}px ${FONT_STACK}`;
   ctx.fillStyle = "#FFFFFF";
@@ -1989,11 +1989,11 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
 
     ctx.font = `800 16px ${FONT_STACK}`;
     ctx.fillStyle = "#FF8B5E";
-    ctx.fillText("SCAN TO OPEN LIVE 3-WAY COMPARISON", padX + 28, footY + 56);
+    ctx.fillText("SCAN TO OPEN LIVE 3-HOTEL COMPARISON", padX + 28, footY + 56);
 
     ctx.font = `800 34px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX + 28, footY + 100);
+    ctx.fillText("uncharteditinerary.com", padX + 28, footY + 100);
 
     ctx.font = `500 18px ${FONT_STACK}`;
     ctx.fillStyle = "#CBD5E1";
@@ -2134,7 +2134,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
     const footY = 986;
     ctx.font = `800 22px ${FONT_STACK}`;
     ctx.fillStyle = "#FFFFFF";
-    ctx.fillText("stayodds.com", padX, footY + 26);
+    ctx.fillText("uncharteditinerary.com", padX, footY + 26);
     ctx.font = `500 15.5px ${FONT_STACK}`;
     ctx.fillStyle = "#94A3B8";
     const rightTxt = "Zero fabricated scores • Real verified data only";
@@ -2145,7 +2145,7 @@ export function renderThreeWayCanvas(canvas, hotelA, hotelB, hotelC, oddsA, odds
 export function openThreeWayShareModal(hotelA, hotelB, hotelC, oddsA, oddsB, oddsC) {
   const verdict = buildFactualThreeWayVerdict(hotelA, hotelB, hotelC, oddsA, oddsB, oddsC);
   const deepLink = buildThreeWayDeepLink(hotelA, hotelB, hotelC);
-  const tweetText = `${hotelA.name} vs ${hotelB.name} vs ${hotelC.name} on StayOdds (stayodds.com): ${verdict.headline}. Verified 3-way breakdown — zero made-up numbers:`;
+  const tweetText = `${hotelA.name} vs ${hotelB.name} vs ${hotelC.name} on StayOdds (uncharteditinerary.com): ${verdict.headline}. Verified 3-hotel breakdown — zero made-up numbers:`;
   openModalInternal({
     title: `${hotelA.name} vs ${hotelB.name} vs ${hotelC.name}`,
     filePrefix: `stayodds-${hotelA.id}-vs-${hotelB.id}-vs-${hotelC.id}`,
@@ -2160,7 +2160,7 @@ export function openThreeWayShareModal(hotelA, hotelB, hotelC, oddsA, oddsB, odd
 export function openSingleHotelShareModal(hotel, odds) {
   const deepLink = buildSingleDeepLink(hotel);
   const scorePart = odds.greatStayOdds != null ? ` (${odds.greatStayOdds}% StayOdds)` : "";
-  const tweetText = `${hotel.name}${scorePart} — ${odds.statusBadge} on StayOdds (stayodds.com). Real verified guest ratings, official awards & property status:`;
+  const tweetText = `${hotel.name}${scorePart} — ${odds.statusBadge} on StayOdds (uncharteditinerary.com). Real verified guest ratings, official awards & property status:`;
   openModalInternal({
     title: `${hotel.name} — StayOdds Card`,
     filePrefix: `stayodds-${hotel.id}`,

@@ -26,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -182,6 +182,8 @@
         </div>
       </section>
 
+      <div class="detail-trip-context-strip"><div class="detail-trip-tile"><span class="detail-trip-kicker">☀ Best Dry Months</span><strong class="detail-trip-val">May–Sep</strong><span class="detail-trip-sub">Long daylight hours, mild temperatures &amp; peak garden/terrace season</span></div><div class="detail-trip-tile"><span class="detail-trip-kicker">Property Status &amp; Works</span><strong class="detail-trip-val">No Confirmed Works Listed</strong><span class="detail-trip-sub">No active closures, renovations, or nearby works flagged.</span></div></div>
+
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
       <section class="detail-section">
         <div class="opinion-gap-card ">
@@ -305,6 +307,7 @@
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
+        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=adare-manor-ireland&amp;b=w-sardinia&amp;c=manor-house-castle-combe">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=adare-manor-ireland&amp;b=w-sardinia"><div class="rival-matchup-vs">Adare Manor <span style="color:var(--accent);">vs</span> W Sardinia — Poltu Quatu</div><div class="rival-matchup-meta"><span>W Sardinia — Poltu Quatu: 88% · €1,000/night (Peak)</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=adare-manor-ireland&amp;b=manor-house-castle-combe"><div class="rival-matchup-vs">Adare Manor <span style="color:var(--accent);">vs</span> The Manor House, Castle Combe</div><div class="rival-matchup-meta"><span>The Manor House, Castle Combe: 73% · From £85/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=adare-manor-ireland&amp;b=w-algarve"><div class="rival-matchup-vs">Adare Manor <span style="color:var(--accent);">vs</span> W Algarve</div><div class="rival-matchup-meta"><span>W Algarve: 72% · £350–£700/night</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
         <div class="related-grid">
           <article class="related-card">
             <img src="../../assets/thumbs/w-sardinia.webp?v=169" alt="W Sardinia — Poltu Quatu" loading="lazy" decoding="async" />
@@ -692,7 +695,7 @@
 
     const shareCardState = {"hotel": {"id": "adare-manor-ireland", "name": "Adare Manor", "location": "Limerick", "country": "Ireland", "brand": "Leading Hotels", "priceRange": "", "standout": "Restored 1832 Neo-Gothic manor across 840 acres of County Limerick parkland, featuring vaulted leaded-window rooms, Michelin-starred Oak Room, championship golf, falconry, and a skylit spa pool", "watchOut": "Countryside estate roughly 45 minutes from Shannon Airport (or ~2.5 hours from Dublin); dining and estate activities carry top-tier Irish luxury pricing", "keyFacts": {"poolHeating": "", "beachOrReef": "", "renovationYear": null, "transferLogistics": ""}, "thumbnail": "assets/thumbs/adare-manor-ireland.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": null, "statusBadge": "Award-Winning", "tierLabel": "Market Odds", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": null, "officialAwards": [{"label": "3 MICHELIN Keys"}, {"label": "Forbes Five-Star"}], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Recognised with 3 MICHELIN Keys • Forbes Five-Star — compare with real guest reviews below.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=6");
+      const mod = await import("../../assets/stayodds-share-card.js?v=7");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

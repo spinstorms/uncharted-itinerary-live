@@ -26,7 +26,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{background:#071323!important;}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{display:none!important;}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=36" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -182,6 +182,8 @@
         </div>
       </section>
 
+      <div class="detail-trip-context-strip"><div class="detail-trip-tile"><span class="detail-trip-kicker">Indicative Nightly Rate</span><strong class="detail-trip-val">From £1,205/nt</strong><span class="detail-trip-sub">25% above the Caribbean &amp; Mexico luxury median (£965/nt across 82 priced stays).</span></div><div class="detail-trip-tile"><span class="detail-trip-kicker">☀ Best Dry Months</span><strong class="detail-trip-val">Dec–Apr</strong><span class="detail-trip-sub">Dry season with lower hurricane &amp; summer sargassum seaweed risk</span></div><div class="detail-trip-tile"><span class="detail-trip-kicker">Property Status &amp; Works</span><strong class="detail-trip-val">No Confirmed Works Listed</strong><span class="detail-trip-sub">No active closures, renovations, or nearby works flagged.</span></div></div>
+
       <!-- Dual-Mode Comparison & Opinion Gap Module -->
       <section class="detail-section">
         <div class="opinion-gap-card ">
@@ -305,6 +307,7 @@
             <button type="button" class="so-request-btn" data-open-resort-request>+ Request a Resort</button>
           </div>
         </div>
+        <div class="rival-matchups-box"><div class="rival-matchups-head"><h3>Pre-Loaded Head-to-Head Matchups</h3><a class="btn btn-outline" style="font-size:12.5px;padding:7px 12px;" href="../../compare/?a=ritz-carlton-st-thomas&amp;b=curtain-bluff-antigua&amp;c=grand-velas-boutique-los-cabos">Compare All 3 Side-by-Side &rarr;</a></div><div class="rival-matchups-grid"><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-st-thomas&amp;b=curtain-bluff-antigua"><div class="rival-matchup-vs">The Ritz-Carlton, St. Thomas <span style="color:var(--accent);">vs</span> Curtain Bluff</div><div class="rival-matchup-meta"><span>Curtain Bluff: 100% · From £2,590/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-st-thomas&amp;b=grand-velas-boutique-los-cabos"><div class="rival-matchup-vs">The Ritz-Carlton, St. Thomas <span style="color:var(--accent);">vs</span> Grand Velas Boutique Los Cabos</div><div class="rival-matchup-meta"><span>Grand Velas Boutique Los Cabos: 96% · From £945/nt</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a><a class="rival-matchup-card" href="../../compare/?a=ritz-carlton-st-thomas&amp;b=oil-nut-bay-bvi"><div class="rival-matchup-vs">The Ritz-Carlton, St. Thomas <span style="color:var(--accent);">vs</span> Oil Nut Bay</div><div class="rival-matchup-meta"><span>Oil Nut Bay: 91% · £1,600+/night</span><span class="rival-matchup-cta">Compare &rarr;</span></div></a></div></div>
         <div class="related-grid">
           <article class="related-card">
             <img src="../../assets/thumbs/curtain-bluff-antigua.webp?v=169" alt="Curtain Bluff" loading="lazy" decoding="async" />
@@ -692,7 +695,7 @@
 
     const shareCardState = {"hotel": {"id": "ritz-carlton-st-thomas", "name": "The Ritz-Carlton, St. Thomas", "location": "Great Bay, St. Thomas", "country": "US Virgin Islands", "brand": "The Ritz-Carlton", "priceRange": "£850+/night", "standout": "Fully rebuilt in 2019 across 30 waterfront acres overlooking St. John — featuring a private 53-foot Lady Lynsey II sailing catamaran, family & adults pools, Club Lounge, and zero passport requirement for US travelers", "watchOut": "Compact resort beach (narrower than St. John's Trunk Bay or Grand Cayman's Seven Mile Beach); exterior architecture feels large/resort-like compared to boutique BVI escapes", "keyFacts": {"poolHeating": "Private / plunge pools listed", "beachOrReef": "Calm Great Bay beachfront with private catamaran excursions to St. John & BVI reefs", "renovationYear": 2019, "transferLogistics": "Approx. 35 minutes from Cyril E. King Airport (STT)"}, "thumbnail": "assets/thumbs/ritz-carlton-st-thomas.webp", "cardPhoto": "", "videoId": "", "coverageType": "Global Directory", "propertyStatus": null}, "odds": {"greatStayOdds": 84, "statusBadge": "Market Odds (1 Source)", "tierLabel": "Market Odds", "firstHand": false, "visited": false, "personalScoreLabel": null, "critic100": null, "scoredEditorial": [], "unverifiedEditorial": [], "editorialCount": 1, "youtubeCount": 0, "verifiedGuest": {"rating": 8.4, "scale": 10}, "officialAwards": [], "opinionGap": {"title": "Critics & Awards vs. Real Guest Score", "headline": "Market Odds baseline from verified external reviews.", "deltaLabel": "—"}}};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {
-      const mod = await import("../../assets/stayodds-share-card.js?v=6");
+      const mod = await import("../../assets/stayodds-share-card.js?v=7");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);

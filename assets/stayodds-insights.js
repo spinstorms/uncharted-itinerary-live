@@ -30,76 +30,97 @@ export function normalizeBrandName(hotel) {
   const name = String((hotel && hotel.name) || "").trim();
   const combo = `${rawBrand} ${name}`.toLowerCase();
 
-  if (/four\s*seasons/i.test(combo)) return "Four Seasons";
-  if (/\baman(?!da)/i.test(rawBrand) || /^aman[a-z\s]/i.test(name) || /\baman\b/i.test(rawBrand)) return "Aman";
-  if (/rosewood/i.test(combo)) return "Rosewood";
-  if (/mandarin\s*oriental/i.test(combo)) return "Mandarin Oriental";
-  if (/one\s*&\s*only|one&only/i.test(combo)) return "One&Only";
-  if (/six\s*senses/i.test(combo)) return "Six Senses";
-  if (/belmond|splendido|hotel\s+cipriani|maroma.*belmond|cap\s+juluca|caruso.*belmond|la\s+samanna/i.test(combo)) return "Belmond";
-  if (/st\.?\s*regis/i.test(combo)) return "St. Regis";
-  if (/ritz-?carlton\s+reserve|mandapa|phulay\s+bay|zad[uú]n|higashiyama\s+niseko|dorado\s+beach.*ritz/i.test(combo)) return "Ritz-Carlton Reserve";
-  if (/ritz-?carlton/i.test(combo)) return "The Ritz-Carlton";
-  if (/waldorf\s*astoria/i.test(combo)) return "Waldorf Astoria";
-  if (/park\s*hyatt/i.test(combo)) return "Park Hyatt";
-  if (/cheval\s*blanc/i.test(combo)) return "Cheval Blanc";
-  if (/raffles/i.test(combo)) return "Raffles";
-  if (/peninsula/i.test(combo)) return "The Peninsula";
-  if (/auberge/i.test(combo)) return "Auberge Resorts";
-  if (/oetker|le\s+bristol|eden\s+rock|hotel\s+du\s+cap-eden-roc|brenners|lanesborough|jumby\s+bay/i.test(combo)) return "Oetker Collection";
-  if (/dorchester|the\s+lana|hotel\s+bel-air|beverly\s+hills\s+hotel|le\s+meurice|plaza\s+ath[eé]n[eé]e|eden\s+rome|principe\s+di\s+savoia|coworth\s+park/i.test(combo)) return "Dorchester Collection";
-  if (/maybourne|claridge|the\s+connaught|the\s+berkeley|the\s+emory|maybourne\s+riviera/i.test(combo)) return "Maybourne";
-  if (/bulgari|bvlgari/i.test(combo)) return "Bulgari Hotels";
-  if (/capella/i.test(combo)) return "Capella";
-  if (/soneva/i.test(combo)) return "Soneva";
-  if (/\bcomo\b/i.test(combo)) return "COMO Hotels";
-  if (/jumeirah/i.test(combo)) return "Jumeirah";
-  if (/oberoi/i.test(combo)) return "Oberoi";
-  if (/\btaj\b|umaid\s+bhawan|rambagh\s+palace|falaknuma|lake\s+palace/i.test(combo)) return "Taj Hotels";
-  if (/the\s+leela/i.test(combo)) return "The Leela";
-  if (/fairmont/i.test(combo)) return "Fairmont";
-  if (/\bedition\b/i.test(combo)) return "EDITION";
-  if (/^w\s+/i.test(name) || /\bw\s+hotels\b/i.test(combo)) return "W Hotels";
-  if (/luxury\s+collection|ta'aktana|the\s+sira|vana\s+belle|naka\s+island|gritti\s+palace|hotel\s+imperial|sanctuary\s+cap\s+cana/i.test(combo)) return "The Luxury Collection";
-  if (/conrad/i.test(combo)) return "Conrad";
-  if (/andaz/i.test(combo)) return "Andaz";
-  if (/alila/i.test(combo)) return "Alila";
-  if (/kimpton/i.test(combo)) return "Kimpton";
-  if (/regent\b/i.test(combo)) return "Regent";
-  if (/intercontinental/i.test(combo)) return "InterContinental";
-  if (/jw\s+marriott/i.test(combo)) return "JW Marriott";
-  if (/westin/i.test(combo)) return "Westin";
-  if (/le\s+m[eé]ridien/i.test(combo)) return "Le Méridien";
-  if (/sofitel/i.test(combo)) return "Sofitel";
-  if (/banyan\s+tree/i.test(combo)) return "Banyan Tree";
-  if (/shangri-?la/i.test(combo)) return "Shangri-La";
-  if (/kempinski/i.test(combo)) return "Kempinski";
-  if (/singita/i.test(combo)) return "Singita";
-  if (/andbeyond|&beyond/i.test(combo)) return "&Beyond";
-  if (/wilderness\b/i.test(combo)) return "Wilderness";
-  if (/secrets\b|impression.*secrets/i.test(combo)) return "Secrets Resorts";
-  if (/zo[eë]try/i.test(combo)) return "Zoëtry";
-  if (/excellence\b/i.test(combo)) return "Excellence Collection";
-  if (/sandals|beaches\s+turks/i.test(combo)) return "Sandals / Beaches";
-  if (/hyatt\s+zilara|hyatt\s+ziva/i.test(combo)) return "Hyatt All-Inclusive";
-  if (/viceroy/i.test(combo)) return "Viceroy";
-  if (/montage/i.test(combo)) return "Montage";
-  if (/hoshinoya/i.test(combo)) return "HOSHINOYA";
-  if (/baillie\s+lodges|longitude\s+131|silky\s+oaks|the\s+louise|huka\s+lodge|tierra\s+patagonia|southern\s+ocean\s+lodge/i.test(combo)) return "Baillie Lodges";
-  if (/relais\s*&\s*ch[aâ]teaux/i.test(rawBrand)) return "Relais & Châteaux";
-  if (/leading\s+hotels/i.test(rawBrand)) return "Leading Hotels of the World";
-  if (/small\s+luxury\s+hotels|\bslh\b/i.test(rawBrand)) return "Small Luxury Hotels";
-  if (/preferred\s+hotels/i.test(rawBrand)) return "Preferred Hotels";
-  if (/marriott/i.test(rawBrand)) return "Marriott Bonvoy";
-  if (/hyatt/i.test(rawBrand)) return "World of Hyatt";
-  if (/hilton/i.test(rawBrand)) return "Hilton Honors";
-  if (/ihg/i.test(rawBrand)) return "IHG";
-  if (/accor/i.test(rawBrand)) return "Accor";
+  // Never let legacy generic placeholder strings trigger Marriott's "The Luxury Collection"
+  const isGenericRaw = /^(independent|boutique|boutique\s+ultra[- ]luxury|luxury\s+collection\s*&\s*boutique)$/i.test(rawBrand);
+  const safeRaw = isGenericRaw ? "" : rawBrand;
+  const safeCombo = `${safeRaw} ${name}`.toLowerCase();
 
-  if (!rawBrand || /^(independent|boutique|boutique\s+ultra[- ]luxury|luxury\s+collection\s*&\s*boutique)$/i.test(rawBrand)) {
+  if (/four\s*seasons/i.test(safeCombo)) return "Four Seasons";
+  if (/\baman(?!da)/i.test(safeRaw) || /^aman[a-z\s]/i.test(name) || /\baman\b/i.test(safeRaw)) return "Aman";
+  if (/rosewood/i.test(safeCombo)) return "Rosewood";
+  if (/mandarin\s*oriental/i.test(safeCombo)) return "Mandarin Oriental";
+  if (/one\s*&\s*only|one&only/i.test(safeCombo)) return "One&Only";
+  if (/six\s*senses/i.test(safeCombo)) return "Six Senses";
+  if (/belmond|splendido|hotel\s+cipriani|maroma.*belmond|cap\s+juluca|caruso.*belmond|la\s+samanna/i.test(safeCombo)) return "Belmond";
+  if (/st\.?\s*regis/i.test(safeCombo)) return "St. Regis";
+  if (/ritz-?carlton\s+reserve|mandapa|phulay\s+bay|zad[uú]n|higashiyama\s+niseko|dorado\s+beach.*ritz/i.test(safeCombo)) return "Ritz-Carlton Reserve";
+  if (/ritz-?carlton/i.test(safeCombo)) return "The Ritz-Carlton";
+  if (/waldorf\s*astoria/i.test(safeCombo)) return "Waldorf Astoria";
+  if (/park\s*hyatt/i.test(safeCombo)) return "Park Hyatt";
+  if (/cheval\s*blanc/i.test(safeCombo)) return "Cheval Blanc";
+  if (/raffles/i.test(safeCombo)) return "Raffles";
+  if (/auberge/i.test(safeCombo)) return "Auberge Resorts";
+  if (/oetker|le\s+bristol|eden\s+rock|hotel\s+du\s+cap-eden-roc|brenners|lanesborough|jumby\s+bay/i.test(safeCombo)) return "Oetker Collection";
+  if (/dorchester|the\s+lana|hotel\s+bel-air|beverly\s+hills\s+hotel|le\s+meurice|plaza\s+ath[eé]n[eé]e|eden\s+rome|principe\s+di\s+savoia|coworth\s+park/i.test(safeCombo)) return "Dorchester Collection";
+  if (/maybourne|claridge|the\s+connaught|the\s+berkeley|the\s+emory|maybourne\s+riviera/i.test(safeCombo)) return "Maybourne";
+  if (/bulgari|bvlgari/i.test(safeCombo)) return "Bulgari Hotels";
+  if (/baillie\s+lodges|longitude\s+131|silky\s+oaks|the\s+louise|huka\s+lodge|tierra\s+patagonia|southern\s+ocean\s+lodge|capella\s+lodge/i.test(safeCombo)) return "Baillie Lodges";
+  if (/capella/i.test(safeCombo)) return "Capella";
+  if (/soneva/i.test(safeCombo)) return "Soneva";
+  if (/\bcomo\b/i.test(safeRaw) || /^como\b/i.test(name)) return "COMO Hotels";
+  if (/jumeirah/i.test(safeCombo)) return "Jumeirah";
+  if (/oberoi/i.test(safeCombo)) return "Oberoi";
+  if (/\btaj\b|umaid\s+bhawan|rambagh\s+palace|falaknuma|lake\s+palace/i.test(safeCombo)) return "Taj Hotels";
+  if (/the\s+leela/i.test(safeCombo)) return "The Leela";
+  if (/fairmont/i.test(safeCombo)) return "Fairmont";
+  if (/virgin\s+limited\s+edition/i.test(safeCombo)) return "Virgin Limited Edition";
+  if (/\bedition\b/i.test(safeCombo)) return "EDITION";
+  if (/^w\s+/i.test(name) || /\bw\s+hotels\b/i.test(safeCombo)) return "W Hotels";
+  // Match Marriott's "The Luxury Collection" ONLY from verified brand or explicit official title (never generic 'Luxury Collection & Boutique')
+  if (/^(the\s+luxury\s+collection|marriott\s+luxury\s+collection)$/i.test(safeRaw) || /,\s*a\s+luxury\s+collection\b/i.test(name) || /ta'aktana|the\s+sira|vana\s+belle|naka\s+island|gritti\s+palace|hotel\s+imperial|sanctuary\s+cap\s+cana/i.test(name)) return "The Luxury Collection";
+  if (/conrad/i.test(safeCombo)) return "Conrad";
+  if (/andaz/i.test(safeCombo)) return "Andaz";
+  if (/alila/i.test(safeCombo)) return "Alila";
+  if (/kimpton/i.test(safeCombo)) return "Kimpton";
+  if (/regent\b/i.test(safeCombo)) return "Regent";
+  if (/intercontinental/i.test(safeCombo)) return "InterContinental";
+  if (/vignette\s+collection/i.test(safeCombo)) return "Vignette Collection";
+  if (/hotel\s+indigo/i.test(safeCombo)) return "Hotel Indigo";
+  if (/crowne\s+plaza/i.test(safeCombo)) return "Crowne Plaza";
+  if (/jw\s+marriott/i.test(safeCombo)) return "JW Marriott";
+  if (/element\s+by\s+westin/i.test(safeCombo)) return "Element by Westin";
+  if (/westin/i.test(safeCombo)) return "Westin";
+  if (/le\s+m[eé]ridien/i.test(safeCombo)) return "Le Méridien";
+  if (/autograph\s+collection/i.test(safeCombo)) return "Autograph Collection";
+  if (/tribute\s+portfolio/i.test(safeCombo)) return "Tribute Portfolio";
+  if (/courtyard\s+by\s+marriott/i.test(safeCombo)) return "Courtyard by Marriott";
+  if (/tapestry\s+collection/i.test(safeCombo)) return "Tapestry Collection by Hilton";
+  if (/canopy\s+by\s+hilton/i.test(safeCombo)) return "Canopy by Hilton";
+  if (/lxr\b/i.test(safeCombo)) return "LXR Hotels & Resorts";
+  if (/\bthe\s+peninsula\b/i.test(safeCombo) || /^peninsula$/i.test(safeRaw)) return "The Peninsula";
+  if (/sofitel/i.test(safeCombo)) return "Sofitel";
+  if (/banyan\s+tree/i.test(safeCombo)) return "Banyan Tree";
+  if (/shangri-?la/i.test(safeCombo)) return "Shangri-La";
+  if (/kempinski/i.test(safeCombo)) return "Kempinski";
+  if (/singita/i.test(safeCombo)) return "Singita";
+  if (/andbeyond|&beyond/i.test(safeCombo)) return "&Beyond";
+  if (/wilderness\b/i.test(safeCombo)) return "Wilderness";
+  if (/secrets\b|impression.*secrets/i.test(safeCombo)) return "Secrets Resorts";
+  if (/zo[eë]try/i.test(safeCombo)) return "Zoëtry";
+  if (/excellence\b/i.test(safeCombo)) return "Excellence Collection";
+  if (/sandals|beaches\s+turks/i.test(safeCombo)) return "Sandals / Beaches";
+  if (/hyatt\s+zilara|hyatt\s+ziva/i.test(safeCombo)) return "Hyatt All-Inclusive";
+  if (/hyatt\s+regency/i.test(safeCombo)) return "Hyatt Regency";
+  if (/hyatt\s+centric/i.test(safeCombo)) return "Hyatt Centric";
+  if (/thompson/i.test(safeCombo)) return "Thompson Hotels";
+  if (/viceroy/i.test(safeCombo)) return "Viceroy";
+  if (/montage/i.test(safeCombo)) return "Montage";
+  if (/hoshinoya/i.test(safeCombo)) return "HOSHINOYA";
+  if (/relais\s*&\s*ch[aâ]teaux/i.test(safeRaw)) return "Relais & Châteaux";
+  if (/leading\s+hotels|\blhw\b/i.test(safeRaw)) return "Leading Hotels of the World";
+  if (/small\s+luxury\s+hotels|\bslh\b/i.test(safeRaw) || /,\s*an\s+slh\s+hotel/i.test(name)) return "Small Luxury Hotels";
+  if (/preferred\s+hotels|^preferred$/i.test(safeRaw)) return "Preferred Hotels";
+  if (/design\s+hotels/i.test(safeRaw)) return "Design Hotels";
+  if (/marriott/i.test(safeRaw) || /\bmarriott\b/i.test(name)) return "Marriott Bonvoy";
+  if (/hyatt/i.test(safeRaw)) return "World of Hyatt";
+  if (/hilton/i.test(safeRaw)) return "Hilton Honors";
+  if (/ihg/i.test(safeRaw)) return "IHG";
+  if (/accor/i.test(safeRaw)) return "Accor";
+
+  if (!safeRaw || isGenericRaw) {
     return "Independent & Boutique";
   }
-  return rawBrand;
+  return safeRaw;
 }
 
 const BRAND_PARENT_GROUP = {
@@ -112,23 +133,33 @@ const BRAND_PARENT_GROUP = {
   "JW Marriott": "Marriott Bonvoy",
   "Westin": "Marriott Bonvoy",
   "Le Méridien": "Marriott Bonvoy",
+  "Autograph Collection": "Marriott Bonvoy",
   "Courtyard by Marriott": "Marriott Bonvoy",
   "Element by Westin": "Marriott Bonvoy",
   "Tribute Portfolio": "Marriott Bonvoy",
-  "Bulgari Hotels": "Marriott Bonvoy",
+  // Note: Bulgari Hotels does NOT participate in Marriott Bonvoy points/status.
   "Park Hyatt": "World of Hyatt",
   "Alila": "World of Hyatt",
   "Andaz": "World of Hyatt",
+  "Hyatt Regency": "World of Hyatt",
+  "Hyatt Centric": "World of Hyatt",
+  "Thompson Hotels": "World of Hyatt",
   "Secrets Resorts": "World of Hyatt",
   "Zoëtry": "World of Hyatt",
   "Hyatt All-Inclusive": "World of Hyatt",
   "Waldorf Astoria": "Hilton Honors",
   "Conrad": "Hilton Honors",
-  "Small Luxury Hotels": "Hilton Honors",
+  "LXR Hotels & Resorts": "Hilton Honors",
+  "Tapestry Collection by Hilton": "Hilton Honors",
+  "Canopy by Hilton": "Hilton Honors",
+  // Note: Small Luxury Hotels (SLH) is NOT blanket-mapped to Hilton Honors (only select properties opt in).
   "Six Senses": "IHG One Rewards",
   "Regent": "IHG One Rewards",
   "InterContinental": "IHG One Rewards",
   "Kimpton": "IHG One Rewards",
+  "Vignette Collection": "IHG One Rewards",
+  "Hotel Indigo": "IHG One Rewards",
+  "Crowne Plaza": "IHG One Rewards",
   "IHG": "IHG One Rewards",
   "Raffles": "Accor",
   "Fairmont": "Accor",
@@ -144,12 +175,15 @@ const BRAND_PARENT_GROUP = {
  */
 export function getBrandCategories(hotel) {
   const primaryBrand = normalizeBrandName(hotel);
-  const parentGroup = BRAND_PARENT_GROUP[primaryBrand] || null;
+  const raw = String((hotel && hotel.brand) || "").trim();
+  let parentGroup = BRAND_PARENT_GROUP[primaryBrand] || null;
+  // Cap Karoso (verified Bonvoy-participating Design Hotel) carries explicit "Design Hotels / Marriott"
+  if (primaryBrand === "Design Hotels" && /marriott/i.test(raw)) {
+    parentGroup = "Marriott Bonvoy";
+  }
   const allBrands = [];
   if (primaryBrand && primaryBrand !== "Independent & Boutique") allBrands.push(primaryBrand);
   if (parentGroup && !allBrands.includes(parentGroup)) allBrands.push(parentGroup);
-  // Also preserve explicit secondary collection tags (e.g. Relais & Châteaux / LHW)
-  const raw = String((hotel && hotel.brand) || "").trim();
   if (/relais\s*&\s*ch[aâ]teaux/i.test(raw) && !allBrands.includes("Relais & Châteaux")) {
     allBrands.push("Relais & Châteaux");
   }
@@ -172,14 +206,14 @@ export function matchesBrandCategory(hotel, targetBrand) {
 /* ==================== 2. Deterministic Preferred Partner & Loyalty Perks ==================== */
 
 export function getPartnerPrograms(hotel) {
-  const brand = normalizeBrandName(hotel);
+  const { primaryBrand: brand, parentGroup } = getBrandCategories(hotel);
   const raw = `${(hotel && hotel.brand) || ""} ${(hotel && hotel.name) || ""}`.toLowerCase();
 
   let preferredProgram = null;
   let pointsProgram = null;
   let perksNote = "";
 
-  // Brand Preferred Partner Programs (100% deterministic by brand)
+  // Strictly verified brand-wide Preferred Partner & Loyalty programs (zero blanket guessing)
   if (brand === "Four Seasons") {
     preferredProgram = "Four Seasons Preferred Partner";
     perksNote = "Daily breakfast, property credit & upgrade priority via FSPP advisors";
@@ -204,24 +238,31 @@ export function getPartnerPrograms(hotel) {
   } else if (brand === "Shangri-La") {
     preferredProgram = "Shangri-La Luxury Circle";
     perksNote = "Upgrade at booking (subject to availability), breakfast & credit";
-  } else if (brand === "St. Regis" || brand === "The Ritz-Carlton" || brand === "Ritz-Carlton Reserve" || brand === "EDITION" || brand === "The Luxury Collection" || brand === "Bulgari Hotels") {
+  } else if (brand === "Bulgari Hotels") {
     preferredProgram = "Marriott STARS";
-    pointsProgram = brand === "Bulgari Hotels" ? null : "Marriott Bonvoy";
-    perksNote = "Marriott STARS luxury perks (breakfast, US$100 credit, upgrade priority)";
-  } else if (brand === "W Hotels" || brand === "JW Marriott" || brand === "Westin" || brand === "Le Méridien" || brand === "Marriott Bonvoy" || /\b(courtyard|element|tribute\s+portfolio|autograph\s+collection|marriott)\b/i.test(raw)) {
-    preferredProgram = brand === "W Hotels" || brand === "JW Marriott" || brand === "Westin" || brand === "Le Méridien" ? "Marriott Luminous" : null;
+    pointsProgram = null; // Bulgari does NOT participate in Marriott Bonvoy points/status
+    perksNote = "Marriott STARS advisor perks (Note: Bulgari Hotels does not participate in Marriott Bonvoy points)";
+  } else if (brand === "St. Regis" || brand === "The Ritz-Carlton" || brand === "Ritz-Carlton Reserve" || brand === "EDITION" || brand === "The Luxury Collection") {
+    preferredProgram = "Marriott STARS";
     pointsProgram = "Marriott Bonvoy";
-    perksNote = preferredProgram ? "Marriott Luminous advisor perks + Bonvoy points earning/redemption" : "Marriott Bonvoy points earning & redemption";
-  } else if (brand === "Park Hyatt" || brand === "Alila" || brand === "Andaz" || brand === "World of Hyatt" || brand === "Hyatt All-Inclusive" || brand === "Secrets Resorts" || brand === "Zoëtry" || /\b(thompson|miraval|hyatt)\b/i.test(raw)) {
-    preferredProgram = ["Park Hyatt", "Alila", "Andaz"].includes(brand) ? "Hyatt Privé" : null;
+    perksNote = "Marriott STARS luxury perks (breakfast, US$100 credit, upgrade priority) + Bonvoy points";
+  } else if (brand === "W Hotels" || brand === "JW Marriott" || brand === "Westin" || brand === "Le Méridien" || brand === "Autograph Collection" || brand === "Tribute Portfolio") {
+    preferredProgram = ["W Hotels", "JW Marriott", "Westin", "Le Méridien", "Autograph Collection", "Tribute Portfolio"].includes(brand) ? "Marriott Luminous" : null;
+    pointsProgram = "Marriott Bonvoy";
+    perksNote = "Marriott Luminous advisor perks + Bonvoy points earning/redemption";
+  } else if (brand === "Element by Westin" || brand === "Courtyard by Marriott" || brand === "Marriott Bonvoy" || (brand === "Design Hotels" && parentGroup === "Marriott Bonvoy")) {
+    pointsProgram = "Marriott Bonvoy";
+    perksNote = "Marriott Bonvoy points earning & redemption";
+  } else if (brand === "Park Hyatt" || brand === "Alila" || brand === "Andaz" || brand === "Thompson Hotels" || brand === "Hyatt Regency" || brand === "Hyatt Centric" || brand === "World of Hyatt" || brand === "Hyatt All-Inclusive" || brand === "Secrets Resorts" || brand === "Zoëtry") {
+    preferredProgram = ["Park Hyatt", "Alila", "Andaz", "Thompson Hotels"].includes(brand) ? "Hyatt Privé" : null;
     pointsProgram = "World of Hyatt";
     perksNote = preferredProgram ? "Hyatt Privé perks (breakfast, credit, 24h upgrade confirmation) + Hyatt points" : "World of Hyatt points earning & redemption";
-  } else if (brand === "Waldorf Astoria" || brand === "Conrad" || brand === "Hilton Honors" || /\b(lxr|hilton|curio)\b/i.test(raw)) {
-    preferredProgram = ["Waldorf Astoria", "Conrad"].includes(brand) || /\blxr\b/i.test(raw) ? "Hilton for Luxury" : null;
+  } else if (brand === "Waldorf Astoria" || brand === "Conrad" || brand === "LXR Hotels & Resorts" || brand === "Tapestry Collection by Hilton" || brand === "Canopy by Hilton" || brand === "Hilton Honors") {
+    preferredProgram = ["Waldorf Astoria", "Conrad", "LXR Hotels & Resorts"].includes(brand) ? "Hilton for Luxury" : null;
     pointsProgram = "Hilton Honors";
     perksNote = preferredProgram ? "Hilton for Luxury perks (breakfast, US$100 credit, double points) + Honors points" : "Hilton Honors points earning & redemption";
-  } else if (brand === "Six Senses" || brand === "Regent" || brand === "InterContinental" || brand === "Kimpton" || brand === "IHG") {
-    preferredProgram = ["Six Senses", "Regent", "InterContinental", "Kimpton"].includes(brand) ? "IHG Destined" : null;
+  } else if (brand === "Six Senses" || brand === "Regent" || brand === "InterContinental" || brand === "Kimpton" || brand === "Vignette Collection" || brand === "Hotel Indigo" || brand === "Crowne Plaza" || brand === "IHG") {
+    preferredProgram = ["Six Senses", "Regent", "InterContinental", "Kimpton", "Vignette Collection"].includes(brand) ? "IHG Destined" : null;
     pointsProgram = "IHG One Rewards";
     perksNote = preferredProgram ? "IHG Destined perks (breakfast, US$100 credit, upgrade priority) + IHG points" : "IHG One Rewards points";
   } else if (brand === "Raffles" || brand === "Fairmont" || brand === "Sofitel" || brand === "Banyan Tree" || brand === "Accor") {
@@ -233,11 +274,11 @@ export function getPartnerPrograms(hotel) {
     perksNote = "Leaders Club member breakfast & upgrade benefits";
   } else if (brand === "Relais & Châteaux") {
     preferredProgram = "Relais & Châteaux";
-    perksNote = "Boutique heritage collection (check Virtuoso / FHR per property)";
+    perksNote = "Independent heritage collection (verify Virtuoso / FHR perks per property)";
   } else if (brand === "Small Luxury Hotels") {
     preferredProgram = "SLH Invited";
-    pointsProgram = "Hilton Honors (select SLH)";
-    perksNote = "SLH Invited perks; many SLH properties also link to Hilton Honors";
+    pointsProgram = null; // Do not blanket-tag Hilton Honors; participation varies per SLH property
+    perksNote = "SLH Invited benefits (verify individual property participation for Hilton Honors)";
   } else if (/\bradisson\b/i.test(raw)) {
     pointsProgram = "Radisson Rewards";
     perksNote = "Radisson Rewards points earning & redemption";
@@ -245,6 +286,7 @@ export function getPartnerPrograms(hotel) {
 
   return {
     brand,
+    parentGroup,
     preferredProgram,
     pointsProgram,
     perksNote,
