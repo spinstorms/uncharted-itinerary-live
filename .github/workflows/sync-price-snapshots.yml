@@ -31,14 +31,14 @@ jobs:
           NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
         run: |
           python3 scripts/normalize_regions_and_prices.py --prices-only
-          python3 scripts/build_stayodds_site.py
+          python3 scripts/build_stayodds_site.py --data-only
 
       - name: Commit refreshed snapshots if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet data/ stayodds/; then
-            git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json stayodds/
+          if ! git diff --quiet data/; then
+            git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json
             git commit -m "chore: refresh weekly indicative hotel price snapshots"
             git pull --rebase -X ours origin main
             git push origin main

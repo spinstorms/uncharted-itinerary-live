@@ -1208,38 +1208,17 @@ def main() -> None:
             base_url = f"https://{custom_domain}".rstrip("/")
 
     today_utc = now_iso[:10]
+    # StayOdds routes now live on https://stayodds.com/ with their own sitemap.
+    # Keep uncharteditinerary.com/sitemap.xml strictly Hub-only to avoid duplicate URLs.
     sitemap_entries = [
         (f"{base_url}/", "daily", "1.0"),
-        (f"{base_url}/hotels/", "weekly", "0.95"),
-        (f"{base_url}/compare/", "daily", "1.0"),
         (f"{base_url}/cameras/", "monthly", "0.85"),
         (f"{base_url}/links/", "weekly", "0.85"),
         (f"{base_url}/about/", "monthly", "0.85"),
         (f"{base_url}/faq/", "monthly", "0.85"),
         (f"{base_url}/contact/", "monthly", "0.80"),
+        (f"{base_url}/privacy/", "monthly", "0.60"),
     ]
-    dest_dir = ROOT / "destinations"
-    if dest_dir.exists():
-        for d in sorted(dest_dir.iterdir()):
-            if d.is_dir() and (d / "index.html").exists():
-                sitemap_entries.append((f"{base_url}/destinations/{urllib.parse.quote(d.name)}/", "weekly", "0.90"))
-    seen_hotel_ids: set[str] = set()
-    stayodds_dir_path = DATA_DIR / "stayodds-directory.json"
-    if stayodds_dir_path.exists():
-        dir_hotels = json.loads(stayodds_dir_path.read_text(encoding="utf-8")).get("hotels", [])
-        for h in dir_hotels:
-            hid = h.get("id")
-            if hid and hid not in seen_hotel_ids:
-                seen_hotel_ids.add(hid)
-                prio = "0.90" if h.get("tier") == "first_hand_verified" else "0.80"
-                sitemap_entries.append((f"{base_url}/stayodds/{urllib.parse.quote(hid)}/", "weekly", prio))
-    elif hotels_path.exists():
-        current_hotels = json.loads(hotels_path.read_text(encoding="utf-8")).get("hotels", [])
-        for h in current_hotels:
-            hid = h.get("id")
-            if hid and hid not in seen_hotel_ids:
-                seen_hotel_ids.add(hid)
-                sitemap_entries.append((f"{base_url}/stayodds/{urllib.parse.quote(hid)}/", "weekly", "0.85"))
 
     url_blocks = "\n".join(
         f"  <url>\n    <loc>{html.escape(loc)}</loc>\n    <lastmod>{today_utc}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>"

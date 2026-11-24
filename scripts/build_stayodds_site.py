@@ -16,6 +16,7 @@ import html
 import json
 import os
 import re
+import sys
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -1145,7 +1146,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=39" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1765,7 +1766,7 @@ def render_seo_page(
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=7");
+      const mod = await import("../../assets/stayodds-share-card.js?v=8");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -2123,7 +2124,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=38" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=39" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2627,13 +2628,53 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    # Generate static SEO HTML pages at /stayodds/<slug>/index.html
+    # Generate static SEO HTML pages at <out_dir>/stayodds/<slug>/index.html & destinations/<slug>/index.html
+    args = sys.argv[1:]
+    data_only = "--data-only" in args
+    out_dir = ROOT
+    if "--out-dir" in args:
+        idx = args.index("--out-dir")
+        if idx + 1 < len(args):
+            out_dir = Path(args[idx + 1]).resolve()
+            out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Build minified assets/styles.min.css from assets/styles.css (safe comment & whitespace stripping)
+    css_src = ROOT / "assets" / "styles.css"
+    css_min = ROOT / "assets" / "styles.min.css"
+    if css_src.exists():
+        raw_css = css_src.read_text(encoding="utf-8")
+        min_css = re.sub(r"/\*[\s\S]*?\*/", "", raw_css)
+        min_css = re.sub(r"\s+", " ", min_css)
+        min_css = re.sub(r"\s*([{};,>~])\s*", r"\1", min_css)
+        min_css = re.sub(r":\s+", ":", min_css)
+        min_css = min_css.replace(";}", "}").strip()
+        css_min.write_text(min_css + "\n", encoding="utf-8")
+
+    if data_only:
+        print(
+            f"BUILT STAYODDS DATA (--data-only)!\n"
+            f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json ({out_json.stat().st_size/1024:.1f} KB)\n"
+            f"  Lean Index JSON: {len(lean_hotels)} verified properties -> data/stayodds-index.json ({lean_json.stat().st_size/1024:.1f} KB)\n"
+            f"  Minified CSS: assets/styles.css ({css_src.stat().st_size/1024:.1f} KB) -> assets/styles.min.css ({css_min.stat().st_size/1024:.1f} KB)"
+        )
+        return
+
+    render_static_pages_from_directory(directory, out_dir, write_root_sitemap=(out_dir == ROOT))
+
+
+def render_static_pages_from_directory(
+    directory: list[dict[str, Any]],
+    out_dir: Path,
+    write_root_sitemap: bool = False,
+) -> tuple[int, list[str]]:
+    visited_hotels = [h for h in directory if h.get("videoId")]
     total_props = len(directory)
     world_props = total_props - len(visited_hotels)
     price_medians = compute_price_medians(directory)
     odds_map = {h["id"]: compute_stayodds_py(h) for h in directory}
-    stayodds_dir = ROOT / "stayodds"
-    stayodds_dir.mkdir(exist_ok=True)
+
+    stayodds_dir = out_dir / "stayodds"
+    stayodds_dir.mkdir(parents=True, exist_ok=True)
     for h in directory:
         o = odds_map[h["id"]]
         rivals = pick_comparable_rivals(h, directory, odds_map, limit=3)
@@ -2644,19 +2685,20 @@ def main() -> None:
             encoding="utf-8",
         )
 
-    # Sync recalculated total_props and world_props counts in compare/index.html, hotels/index.html, about/index.html, faq/index.html
-    for rel_html in ["compare/index.html", "hotels/index.html", "about/index.html", "faq/index.html"]:
-        hp = ROOT / rel_html
-        if hp.exists():
-            txt = hp.read_text(encoding="utf-8")
-            txt = re.sub(r"\b(?:500|678)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
-            txt = re.sub(r"(All\s+)(?:500|678)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
-            txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642)(\))", f"\\g<1>{world_props}\\2", txt)
-            hp.write_text(txt, encoding="utf-8")
+    # Sync recalculated total_props and world_props counts in templates when building to ROOT
+    if out_dir == ROOT:
+        for rel_html in ["stayodds-src/compare/index.html", "stayodds-src/hotels/index.html", "about/index.html", "faq/index.html"]:
+            hp = ROOT / rel_html
+            if hp.exists():
+                txt = hp.read_text(encoding="utf-8")
+                txt = re.sub(r"\b(?:500|678)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
+                txt = re.sub(r"(All\s+)(?:500|678)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
+                txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642)(\))", f"\\g<1>{world_props}\\2", txt)
+                hp.write_text(txt, encoding="utf-8")
 
-    # Generate static SEO destination landing pages at /destinations/<slug>/index.html
-    dest_root = ROOT / "destinations"
-    dest_root.mkdir(exist_ok=True)
+    # Generate static SEO destination landing pages at <out_dir>/destinations/<slug>/index.html
+    dest_root = out_dir / "destinations"
+    dest_root.mkdir(parents=True, exist_ok=True)
     generated_dests: list[str] = []
     for guide in DESTINATION_GUIDES:
         ft = guide["filterType"]
@@ -2683,56 +2725,42 @@ def main() -> None:
         )
         generated_dests.append(guide["slug"])
 
-    # Build sitemap.xml covering all hub pages + destination guides + all 300 /stayodds/<slug>/ pages
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    urls = [
-        (f"{SITE_URL}/", "1.0", "daily"),
-        (f"{SITE_URL}/compare/", "1.0", "daily"),
-        (f"{SITE_URL}/hotels/", "0.9", "weekly"),
-        (f"{SITE_URL}/brands/", "0.9", "weekly"),
-        (f"{SITE_URL}/cameras/", "0.8", "weekly"),
-        (f"{SITE_URL}/links/", "0.8", "daily"),
-        (f"{SITE_URL}/about/", "0.85", "monthly"),
-        (f"{SITE_URL}/faq/", "0.85", "monthly"),
-        (f"{SITE_URL}/contact/", "0.80", "monthly"),
-        (f"{SITE_URL}/privacy/", "0.60", "monthly"),
-    ]
-    for dslug in generated_dests:
-        urls.append((f"{SITE_URL}/destinations/{dslug}/", "0.9", "weekly"))
-    for h in directory:
-        prio = "0.9" if h["tier"] == "first_hand_verified" else "0.8"
-        urls.append((f"{SITE_URL}/stayodds/{h['id']}/", prio, "weekly"))
-
-    sm_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, prio, freq in urls:
-        sm_lines.append(
-            f"  <url><loc>{esc(loc)}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{prio}</priority></url>"
-        )
-    sm_lines.append("</urlset>\n")
-    (ROOT / "sitemap.xml").write_text("\n".join(sm_lines), encoding="utf-8")
-
-    # Build minified assets/styles.min.css from assets/styles.css (safe comment & whitespace stripping)
-    css_src = ROOT / "assets" / "styles.css"
-    css_min = ROOT / "assets" / "styles.min.css"
-    if css_src.exists():
-        raw_css = css_src.read_text(encoding="utf-8")
-        min_css = re.sub(r"/\*[\s\S]*?\*/", "", raw_css)
-        min_css = re.sub(r"\s+", " ", min_css)
-        min_css = re.sub(r"\s*([{};,>~])\s*", r"\1", min_css)
-        min_css = re.sub(r":\s+", ":", min_css)
-        min_css = min_css.replace(";}", "}").strip()
-        css_min.write_text(min_css + "\n", encoding="utf-8")
+    if write_root_sitemap:
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        urls = [
+            (f"{SITE_URL}/", "1.0", "daily"),
+            (f"{SITE_URL}/cameras/", "0.85", "monthly"),
+            (f"{SITE_URL}/links/", "0.85", "weekly"),
+            (f"{SITE_URL}/about/", "0.85", "monthly"),
+            (f"{SITE_URL}/faq/", "0.85", "monthly"),
+            (f"{SITE_URL}/contact/", "0.80", "monthly"),
+            (f"{SITE_URL}/privacy/", "0.60", "monthly"),
+        ]
+        sm_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        for loc, prio, freq in urls:
+            sm_lines.append(
+                f"  <url><loc>{esc(loc)}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{prio}</priority></url>"
+            )
+        sm_lines.append("</urlset>\n")
+        (ROOT / "sitemap.xml").write_text("\n".join(sm_lines), encoding="utf-8")
 
     print(
-        f"BUILT STAYODDS SITE!\n"
-        f"  Directory JSON: {len(directory)} verified properties -> data/stayodds-directory.json ({out_json.stat().st_size/1024:.1f} KB)\n"
-        f"  Lean Index JSON: {len(lean_hotels)} verified properties -> data/stayodds-index.json ({lean_json.stat().st_size/1024:.1f} KB)\n"
-        f"  Minified CSS: assets/styles.css ({css_src.stat().st_size/1024:.1f} KB) -> assets/styles.min.css ({css_min.stat().st_size/1024:.1f} KB)\n"
-        f"  Static SEO Pages: {len(directory)} pages -> stayodds/<slug>/index.html\n"
-        f"  Destination Guides: {len(generated_dests)} pages -> destinations/<slug>/index.html\n"
-        f"  Sitemap URLs: {len(urls)} URLs -> sitemap.xml"
+        f"RENDERED STAYODDS STATIC PAGES -> {out_dir}\n"
+        f"  Static SEO Pages: {len(directory)} pages -> {stayodds_dir}\n"
+        f"  Destination Guides: {len(generated_dests)} pages -> {dest_root}"
     )
+    return len(directory), generated_dests
 
 
 if __name__ == "__main__":
-    main()
+    if "--from-local-json" in sys.argv[1:]:
+        out_dir = ROOT
+        if "--out-dir" in sys.argv[1:]:
+            idx = sys.argv.index("--out-dir")
+            if idx + 1 < len(sys.argv):
+                out_dir = Path(sys.argv[idx + 1]).resolve()
+                out_dir.mkdir(parents=True, exist_ok=True)
+        local_dir = json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8")).get("hotels", [])
+        render_static_pages_from_directory(local_dir, out_dir, write_root_sitemap=False)
+    else:
+        main()

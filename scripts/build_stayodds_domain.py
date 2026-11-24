@@ -25,9 +25,35 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SRC_TEMPLATES = ROOT / "stayodds-src"
 DIST = ROOT / ".stayodds-dist"
 HUB_URL = "https://uncharteditinerary.com"
 STAYODDS_URL = "https://stayodds.com"
+STAYODDS_GA4_ID = "G-NR74H0P96J"
+
+STAYODDS_GA4_SNIPPET = f"""  <!-- Google tag (gtag.js) — StayOdds.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={STAYODDS_GA4_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{STAYODDS_GA4_ID}');
+  </script>"""
+
+STAYODDS_DRIVE_SNIPPET = """  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+    (function () {
+        var script = document.createElement("script");
+        script.async = 1;
+        script.setAttribute("data-cmp-ab","2");
+        script.src = 'https://emrld.ltd/NjA2MTYz.js?t=606163';
+        document.head.appendChild(script);
+    })();
+  </script>"""
+
+EMRLD_SCRIPT_RE = re.compile(
+    r'<script\b[^>]*>(?:(?!</script>)[\s\S])*?emrld\.ltd/(?:(?!</script>)[\s\S])*?</script>',
+    re.IGNORECASE,
+)
 
 
 def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
@@ -42,6 +68,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = html.replace(f"{HUB_URL}/stayodds/", f"{STAYODDS_URL}/stayodds/")
     html = html.replace(f"{HUB_URL}/destinations/", f"{STAYODDS_URL}/destinations/")
     html = html.replace(f"{HUB_URL}/assets/", f"{STAYODDS_URL}/assets/")
+    html = html.replace("stayodds_v3_bright_og_hero_1200x630.png", "stayodds_v4_bright_og_hero_1200x630.png")
 
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+assets/', r'\1/assets/', html)
@@ -50,6 +77,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = re.sub(r"url\(['\"]?(?:\.\./)+assets/", "url('/assets/", html)
     html = re.sub(r'data-hero-base=["\'](?:\.\./)+assets/', 'data-hero-base="/assets/', html)
     html = html.replace('import("../../assets/stayodds-share-card.js', 'import("/assets/stayodds-share-card.js')
+    html = re.sub(r'styles\.min\.css\?v=\d+', 'styles.min.css?v=39', html)
 
     # 3. Cross-domain navigation links to The Uncharted Itinerary Hub
     for hub_section in ("cameras", "links", "about", "faq", "contact", "privacy"):
@@ -80,12 +108,21 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
         html = html.replace('"../../compare/?region="', '"/?region="')
         html = html.replace('"../../compare/?embed=1"', '"/?embed=1"')
         html = html.replace('href="../', 'href="/stayodds/')
-        # Keep the footer/brand StayOdds home link tidy
         html = html.replace('href="../../compare/"', 'href="/"')
 
     # On destination pages (/destinations/<slug>/), fix sibling guide links & compare links
     if page_kind == "destination":
         html = re.sub(r'href="\.\./([a-z0-9-]+)/"', r'href="/destinations/\1/"', html)
+
+    # 5. Swap Travelpayouts Drive/Emerald script to StayOdds.com project (NjA2MTYz.js?t=606163)
+    if EMRLD_SCRIPT_RE.search(html):
+        html = EMRLD_SCRIPT_RE.sub(STAYODDS_DRIVE_SNIPPET.strip(), html, count=1)
+    elif "</head>" in html:
+        html = html.replace("</head>", f"{STAYODDS_DRIVE_SNIPPET}\n</head>", 1)
+
+    # 6. Inject StayOdds.com Google Analytics 4 tag (G-NR74H0P96J)
+    if STAYODDS_GA4_ID not in html and "</head>" in html:
+        html = html.replace("</head>", f"{STAYODDS_GA4_SNIPPET}\n</head>", 1)
 
     return html
 
@@ -205,7 +242,8 @@ def write_404_page(out_dir: Path) -> None:
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — StayOdds.</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="stylesheet" href="/assets/styles.min.css?v=38" />
+  <link rel="stylesheet" href="/assets/styles.min.css?v=39" />
+{STAYODDS_GA4_SNIPPET}
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
   <div style="max-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:32px;text-align:center;box-shadow:0 14px 36px rgba(15,23,42,0.08);">
@@ -281,6 +319,7 @@ def main() -> None:
     if scripts_dir not in sys.path:
         sys.path.insert(0, scripts_dir)
     from audit_brands_and_loyalty import audit_hotels, format_audit_summary
+    from build_stayodds_site import render_static_pages_from_directory
 
     dir_data = json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))
     hotels = dir_data.get("hotels", [])
@@ -316,8 +355,14 @@ def main() -> None:
     rewrite_js_for_stayodds(DIST / "assets")
 
     # 4. Root comparator (/index.html) + /compare/ alias + /hotels/ + /brands/
+    def load_template(rel: str) -> str:
+        t_path = SRC_TEMPLATES / rel
+        if not t_path.is_file():
+            t_path = ROOT / rel
+        return t_path.read_text(encoding="utf-8")
+
     (DIST / "index.html").write_text(
-        rewrite_html_for_stayodds((ROOT / "compare" / "index.html").read_text(encoding="utf-8"), "root_compare"),
+        rewrite_html_for_stayodds(load_template("compare/index.html"), "root_compare"),
         encoding="utf-8",
     )
     write_compare_alias_redirect(DIST)
@@ -326,38 +371,20 @@ def main() -> None:
         sec_dir = DIST / section
         sec_dir.mkdir(parents=True, exist_ok=True)
         (sec_dir / "index.html").write_text(
-            rewrite_html_for_stayodds((ROOT / section / "index.html").read_text(encoding="utf-8"), section),
+            rewrite_html_for_stayodds(load_template(f"{section}/index.html"), section),
             encoding="utf-8",
         )
 
-    # 5. All active hotel SEO pages -> /stayodds/<slug>/index.html (exact 1:1 with directory)
-    hotel_count = 0
+    # 5 & 6. Render all 758 hotel SEO pages + 19 destination guides straight from directory JSON into DIST
+    hotel_count, dest_slugs = render_static_pages_from_directory(hotels, DIST, write_root_sitemap=False)
     for h in hotels:
-        slug = h["id"]
-        idx = ROOT / "stayodds" / slug / "index.html"
-        if not idx.is_file():
-            continue
-        out_pdir = DIST / "stayodds" / slug
-        out_pdir.mkdir(parents=True, exist_ok=True)
-        (out_pdir / "index.html").write_text(
-            rewrite_html_for_stayodds(idx.read_text(encoding="utf-8"), "detail"),
-            encoding="utf-8",
-        )
-        hotel_count += 1
-
-    # 6. All 19 destination guides -> /destinations/<slug>/index.html
-    dest_slugs: list[str] = []
-    for ddir in sorted((ROOT / "destinations").iterdir()):
-        idx = ddir / "index.html"
-        if not idx.is_file():
-            continue
-        out_ddir = DIST / "destinations" / ddir.name
-        out_ddir.mkdir(parents=True, exist_ok=True)
-        (out_ddir / "index.html").write_text(
-            rewrite_html_for_stayodds(idx.read_text(encoding="utf-8"), "destination"),
-            encoding="utf-8",
-        )
-        dest_slugs.append(ddir.name)
+        pfile = DIST / "stayodds" / h["id"] / "index.html"
+        if pfile.is_file():
+            pfile.write_text(rewrite_html_for_stayodds(pfile.read_text(encoding="utf-8"), "detail"), encoding="utf-8")
+    for dslug in dest_slugs:
+        dfile = DIST / "destinations" / dslug / "index.html"
+        if dfile.is_file():
+            dfile.write_text(rewrite_html_for_stayodds(dfile.read_text(encoding="utf-8"), "destination"), encoding="utf-8")
 
     # 7. Dedicated stayodds.com sitemap.xml
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -390,7 +417,8 @@ def main() -> None:
         f"  Hub views: /hotels/ + /brands/\n"
         f"  Hotel SEO pages: {hotel_count} -> /stayodds/<slug>/\n"
         f"  Destination guides: {len(dest_slugs)} -> /destinations/<slug>/\n"
-        f"  Sitemap URLs: {len(urls)} -> /sitemap.xml"
+        f"  Sitemap URLs: {len(urls)} -> /sitemap.xml\n"
+        f"  Tracking: GA4 {STAYODDS_GA4_ID} + Travelpayouts Drive NjA2MTYz + AdSense"
     )
 
 

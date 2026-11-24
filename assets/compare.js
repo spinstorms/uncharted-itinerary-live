@@ -106,19 +106,61 @@ function getShortlistIds() {
 const VERIFIED_FEATURES = [
   { id: "all", label: "All", match: () => true },
   {
+    id: "50best_50",
+    label: "🏆 Top 50 (#1–50)",
+    autoSort: "award_50best",
+    match: (h) => {
+      const r = getW50BestRank(h);
+      return r != null && r >= 1 && r <= 50;
+    },
+  },
+  {
+    id: "50best_100",
+    label: "💯 Top 100 (#1–100)",
+    autoSort: "award_50best",
+    match: (h) => {
+      const r = getW50BestRank(h);
+      return r != null && r >= 1 && r <= 100;
+    },
+  },
+  {
+    id: "50best_51_100",
+    label: "Top 51–100",
+    autoSort: "award_50best",
+    match: (h) => {
+      const r = getW50BestRank(h);
+      return r != null && r >= 51 && r <= 100;
+    },
+  },
+  {
     id: "michelin",
-    label: "MICHELIN Key",
-    match: (h) => (h.officialAwards || []).some((a) => /michelin/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
+    label: "🗝️ MICHELIN Keys (3→1)",
+    autoSort: "award_michelin",
+    match: (h) => getMichelinKeyCount(h) != null,
+  },
+  {
+    id: "michelin_3",
+    label: "🗝️ 3 MICHELIN Keys",
+    autoSort: "award_michelin",
+    match: (h) => getMichelinKeyCount(h) === 3,
+  },
+  {
+    id: "michelin_2",
+    label: "🗝️ 2 MICHELIN Keys",
+    autoSort: "award_michelin",
+    match: (h) => getMichelinKeyCount(h) === 2,
+  },
+  {
+    id: "michelin_1",
+    label: "🗝️ 1 MICHELIN Key",
+    autoSort: "award_michelin",
+    match: (h) => getMichelinKeyCount(h) === 1,
   },
   {
     id: "forbes",
-    label: "Forbes Five-Star",
-    match: (h) => (h.officialAwards || []).some((a) => /forbes/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
-  },
-  {
-    id: "50best",
-    label: "World's 50 Best",
-    match: (h) => (h.officialAwards || []).some((a) => /50\s*best/i.test(`${a.awardBody || ""} ${a.label || ""}`)),
+    label: "⭐ Forbes Star-Rated",
+    autoSort: "award_forbes",
+    match: (h) => getForbesRank(h) != null,
   },
   {
     id: "adults",
@@ -151,6 +193,24 @@ const VERIFIED_FEATURES = [
     match: (h) => Boolean((h.keyFacts && h.keyFacts.beachOrReef) || h.region === "Maldives"),
   },
 ];
+
+function applyFeatureSelection(featureId) {
+  const normalized = featureId === "50best" ? "50best_100" : featureId || "all";
+  state.feature = normalized;
+  const meta = VERIFIED_FEATURES.find((f) => f.id === normalized);
+  const sortEl = qs("#consensusSort");
+  if (meta && meta.autoSort) {
+    state.sortBy = meta.autoSort;
+    state.tableSortKey = null;
+    if (sortEl) sortEl.value = meta.autoSort;
+  } else if (
+    normalized === "all" &&
+    (state.sortBy === "award_50best" || state.sortBy === "award_michelin" || state.sortBy === "award_forbes")
+  ) {
+    state.sortBy = "visited";
+    if (sortEl) sortEl.value = "visited";
+  }
+}
 
 function getMichelinKeyCount(h) {
   let best = null;
@@ -968,7 +1028,7 @@ function renderActiveFiltersAndDrawerBadge() {
             const el = qs("#priceTierFilter");
             if (el) el.value = "all";
           } else if (k === "feature") {
-            state.feature = "all";
+            applyFeatureSelection("all");
           } else if (k === "style") {
             state.style = "all";
           } else if (k === "month") {
@@ -987,6 +1047,23 @@ function renderActiveFiltersAndDrawerBadge() {
       });
     }
   }
+  syncQuickPresetsUI();
+}
+
+function syncQuickPresetsUI() {
+  document.querySelectorAll("[data-quick-preset]").forEach((btn) => {
+    const p = btn.dataset.quickPreset;
+    let isActive = false;
+    if (p === "50best_50" || p === "50best_100" || p === "michelin" || p === "michelin_3" || p === "adults") {
+      isActive = state.feature === p;
+    } else if (p === "style_island") {
+      isActive = state.style === "island";
+    } else if (p === "budget_under500") {
+      isActive = state.priceTier === "under500";
+    }
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
+  });
 }
 
 function renderRegionPills() {
@@ -1038,11 +1115,12 @@ function renderFeaturePills() {
 
   container.querySelectorAll("[data-feature]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      state.feature = btn.dataset.feature || "all";
+      applyFeatureSelection(btn.dataset.feature || "all");
       if (typeof window.trackEvent === "function") {
         window.trackEvent("use_filter", "filter", `feature:${state.feature}`);
       }
       state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
       renderFeaturePills();
       renderStylePills();
       renderMonthPills();
@@ -1220,6 +1298,22 @@ function renderLeaderboard() {
     }
 
     if (state.sortBy === "name") return a.name.localeCompare(b.name);
+    if (state.sortBy === "award_50best") {
+      const diff = cmpNullableNum(getW50BestRank(a), getW50BestRank(b), "asc");
+      if (diff !== 0) return diff;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+    if (state.sortBy === "award_michelin") {
+      const diff = cmpNullableNum(getMichelinKeyCount(a), getMichelinKeyCount(b), "desc");
+      if (diff !== 0) return diff;
+      if (rank(ob) !== rank(oa)) return rank(ob) - rank(oa);
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
+    if (state.sortBy === "award_forbes") {
+      const diff = cmpNullableNum(getForbesRank(a), getForbesRank(b), "desc");
+      if (diff !== 0) return diff;
+      return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
+    }
     if (state.sortBy === "odds") {
       return (ob.greatStayOdds ?? -1) - (oa.greatStayOdds ?? -1) || a.name.localeCompare(b.name);
     }
@@ -1474,11 +1568,30 @@ function renderLeaderboard() {
             ? `<span class="tag tag-accent">★ ${pillarLabels[activePillarKey]}: ${escapeHtml(formatPersonalScore(h.scores[activePillarKey]))}/5</span>`
             : "";
 
+        // Highlight exact award rank when filtering/sorting by Top 50, Top 100, MICHELIN Keys, or Forbes
+        const w50Rank = getW50BestRank(h);
+        const mKeysCard = getMichelinKeyCount(h);
+        const fRankCard = getForbesRank(h);
+        let activeAwardRankPill = "";
+        if ((state.sortBy === "award_50best" || state.feature.startsWith("50best")) && w50Rank != null) {
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#127942; World&rsquo;s 50 Best #${w50Rank}</span>`;
+        } else if ((state.sortBy === "award_michelin" || state.feature.startsWith("michelin")) && mKeysCard != null) {
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#128477;&#65039; ${mKeysCard} MICHELIN Key${mKeysCard > 1 ? "s" : ""}</span>`;
+        } else if ((state.sortBy === "award_forbes" || state.feature === "forbes") && fRankCard != null) {
+          const fLbl = fRankCard === 5 ? "Forbes Five-Star" : fRankCard === 4 ? "Forbes Four-Star" : "Forbes Recommended";
+          activeAwardRankPill = `<span class="award-rank-pill-highlight">&#11088; ${fLbl}</span>`;
+        }
+
         // Max 3 high-signal top badges (+ indicative price chip)
         const topAwardChip = o.officialAwards.length
           ? `<span class="tag tag-teal">🏆 ${escapeHtml(o.officialAwards[0].label)}</span>`
           : "";
-        const secondaryTopBadge = activePillarPill || propStatusPill || topAwardChip || (h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : "");
+        const secondaryTopBadge =
+          activeAwardRankPill ||
+          activePillarPill ||
+          propStatusPill ||
+          topAwardChip ||
+          (h.brand ? `<span class="tag">${escapeHtml(h.brand)}</span>` : "");
 
         const takeawayLine = h.whereWeDiffer || h.standout || o.opinionGap.headline || "";
 
@@ -1783,7 +1896,7 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=7");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=8");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
           window.trackEvent("open_share_card", "vs_three_hotel", `${ha.name} vs ${hb.name} vs ${hc.name}`);
@@ -1791,7 +1904,7 @@ async function boot() {
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=7");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=8");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);
@@ -1860,7 +1973,7 @@ async function boot() {
 
   qs("#copyVsLinkBtn")?.addEventListener("click", async () => {
     const btn = qs("#copyVsLinkBtn");
-    const baseShare = `https://uncharteditinerary.com/compare/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
+    const baseShare = `https://stayodds.com/?a=${encodeURIComponent(state.idA)}&b=${encodeURIComponent(state.idB)}`;
     const shareUrl = state.threeWay && state.idC ? `${baseShare}&c=${encodeURIComponent(state.idC)}` : baseShare;
     const ha = state.hotels.find((h) => h.id === state.idA);
     const hb = state.hotels.find((h) => h.id === state.idB);
@@ -1913,7 +2026,7 @@ async function boot() {
     const btn = qs("#shareShortlistBtn");
     const ids = getActiveShortlistIds().slice(0, 40);
     if (!ids.length) return;
-    const shareUrl = `https://uncharteditinerary.com/compare/?scope=saved&saved=${encodeURIComponent(ids.join(","))}`;
+    const shareUrl = `https://stayodds.com/?scope=saved&saved=${encodeURIComponent(ids.join(","))}`;
     try {
       await copyToClipboard(shareUrl);
       if (btn) {
@@ -2010,21 +2123,55 @@ async function boot() {
     renderLeaderboard();
   });
 
-  // More Filters collapsible drawer
+  // More Filters collapsible drawer + hover preview popover + Quick Presets
   const drawerBtn = qs("#compareMoreFiltersBtn");
   const drawerEl = qs("#compareMoreFiltersDrawer");
+  const previewPopover = qs("#compareFiltersPreviewPopover");
+  const setDrawerOpen = (open) => {
+    if (!drawerBtn || !drawerEl) return;
+    drawerEl.hidden = !open;
+    drawerBtn.setAttribute("aria-expanded", String(open));
+    drawerBtn.classList.toggle("is-open", open);
+    if (previewPopover) previewPopover.dataset.drawerOpen = String(open);
+  };
   if (drawerBtn && drawerEl) {
     drawerBtn.addEventListener("click", () => {
-      const nextHidden = !drawerEl.hidden;
-      drawerEl.hidden = nextHidden;
-      drawerBtn.setAttribute("aria-expanded", String(!nextHidden));
-      drawerBtn.classList.toggle("is-open", !nextHidden);
+      setDrawerOpen(drawerEl.hidden);
     });
   }
+  document.querySelectorAll("[data-open-more-drawer]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setDrawerOpen(true);
+      drawerEl?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  });
+  document.querySelectorAll("[data-quick-preset]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const preset = btn.dataset.quickPreset;
+      if (preset === "50best_50" || preset === "50best_100" || preset === "michelin" || preset === "michelin_3" || preset === "adults") {
+        applyFeatureSelection(state.feature === preset ? "all" : preset);
+      } else if (preset === "style_island") {
+        state.style = state.style === "island" ? "all" : "island";
+      } else if (preset === "budget_under500") {
+        state.priceTier = state.priceTier === "under500" ? "all" : "under500";
+        const pf = qs("#priceTierFilter");
+        if (pf) pf.value = state.priceTier;
+      }
+      if (typeof window.trackEvent === "function") {
+        window.trackEvent("use_filter", "quick_preset", String(preset));
+      }
+      state.visibleLimit = PAGE_SIZE;
+      syncUrlParams();
+      renderFeaturePills();
+      renderStylePills();
+      renderMonthPills();
+      renderLeaderboard();
+    });
+  });
   qs("#compareClearDrawerFiltersBtn")?.addEventListener("click", () => {
     state.verdict = "All";
     state.priceTier = "all";
-    state.feature = "all";
+    applyFeatureSelection("all");
     state.style = "all";
     state.month = 0;
     const vf = qs("#verdictFilter");

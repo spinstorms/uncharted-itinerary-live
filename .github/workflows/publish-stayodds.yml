@@ -5,15 +5,12 @@ on:
     branches:
       - main
     paths:
-      - "compare/**"
-      - "hotels/**"
-      - "brands/**"
-      - "stayodds/**"
-      - "destinations/**"
+      - "stayodds-src/**"
       - "assets/**"
       - "data/stayodds-*.json"
       - "data/price-snapshots.json"
       - "scripts/build_stayodds_domain.py"
+      - "scripts/build_stayodds_site.py"
       - "scripts/audit_brands_and_loyalty.py"
       - "ads.txt"
   workflow_dispatch:
