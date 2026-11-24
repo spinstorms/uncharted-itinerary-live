@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T08:53:02Z",
+  "updatedAt": "2026-11-24T10:45:55Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -8,7 +8,7 @@
     "shortsPlaylistId": "UUSHtSEMj7vSYDUYbDeIumnEOw"
   },
   "totalVideos": 37,
-  "totalShorts": 78,
+  "totalShorts": 79,
   "videos": [
     {
       "id": "E_DfGSAMeTU",
@@ -324,7 +324,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/pyfGUOlFr3A/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/pyfGUOlFr3A/hqdefault.jpg",
-      "views": 530,
+      "views": 531,
       "category": "Hotel Reviews",
       "location": "Gili Trawangan, Indonesia",
       "chapters": [
@@ -946,7 +946,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
-      "views": 1934,
+      "views": 1938,
       "category": "Hotel Reviews",
       "location": "Jimbaran, Bali",
       "chapters": [
@@ -1598,7 +1598,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
-      "views": 1909,
+      "views": 1910,
       "category": "Hotel Reviews",
       "location": "Labuan Bajo, Indonesia",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6293,
+      "views": 6297,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -2784,7 +2784,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4691,
+      "views": 4697,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5389,6 +5389,158 @@
   ],
   "shorts": [
     {
+      "id": "Xdwl17wHZ8w",
+      "title": "Charming part of over the water villa at Park Hyatt  Maldives 🇲🇻🤍",
+      "url": "https://www.youtube.com/shorts/Xdwl17wHZ8w",
+      "publishedAt": "2026-11-24T10:00:08+00:00",
+      "publishedDate": "2026-11-24",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
+      "fallbackThumbnail": "https://i1.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
+      "views": 11,
+      "category": "Travel Gear",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay scores vs. verified guest ratings, published critics & official awards (MICHELIN Keys, Forbes & World’s 50 Best) on StayOdds: 👉 🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & Scorecards: 👉",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
       "id": "9ZTs2dVW63M",
       "title": "Breakfast with amazing food and view at Park Hyatt Maldives 🇲🇻",
       "url": "https://www.youtube.com/shorts/9ZTs2dVW63M",
@@ -5791,7 +5943,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/Ipx5anqLbSc/hqdefault.jpg",
-      "views": 1270,
+      "views": 1272,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
