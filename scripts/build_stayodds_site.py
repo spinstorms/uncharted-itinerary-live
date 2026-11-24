@@ -302,6 +302,7 @@ CLIMATE_RULES_PY: list[tuple[re.Pattern[str], str, str]] = [
     (re.compile(r"serengeti|masai mara|kenya|tanzania|botswana|okavango|kruger|sabi|singita|rwanda|zambia|zimbabwe|namibia|safari", re.I), "Jun–Oct & Jan–Feb", "Dry safari game-viewing season with sparse bush & wildlife concentrations"),
     (re.compile(r"cape town|winelands|franschhoek|hermanus|south africa", re.I), "Nov–Apr", "Warm, dry austral summer ideal for beaches & wine country"),
     (re.compile(r"sydney|melbourne|brisbane|kangaroo island|southern ocean|qualia|hayman|australia|queenstown|auckland|new zealand", re.I), "Nov–Apr", "Warm Southern Hemisphere spring, summer & early autumn"),
+    (re.compile(r"tenerife|lanzarote|gran canaria|fuerteventura|la gomera|la palma|costa adeje|maspalomas|meloneras|playa blanca|corralejo|canary", re.I), "Year-Round (Oct–May Winter Sun)", "Europe's warm year-round subtropical islands — sunny 21–27°C beaches even in winter"),
     (re.compile(r"amalfi|positano|capri|como|portofino|tuscany|florence|rome|milan|venice|sardinia|sicily|taormina|puglia|italy|greece|santorini|mykonos|athens|paros|crete|mallorca|ibiza|marbella|barcelona|madrid|spain|algarve|lisbon|douro|comporta|portugal|bodrum|istanbul|turkey|antibes|cannes|st\.?\s*tropez|riviera|provence|monaco|croatia|dubrovnik|montenegro", re.I), "May–Oct", "Warm Mediterranean sunshine & full seasonal beach-club openings"),
     (re.compile(r"london|cotswolds|castle combe|wiltshire|somerset|scotland|uk|united kingdom|ireland|paris|france|zurich|geneva|switzerland|vienna|austria|amsterdam|netherlands|germany|munich|berlin|stockholm|copenhagen|norway|iceland|blue lagoon", re.I), "May–Sep", "Long daylight hours, mild temperatures & peak garden/terrace season"),
     (re.compile(r"hawaii|maui|lanai|lānaʻi|kauai|oahu|big island|kona", re.I), "Year-Round (Apr–Oct driest)", "Warm year-round; Apr–Oct driest, Dec–Mar peak whale-watching"),
@@ -1969,6 +1970,16 @@ DESTINATION_GUIDES: list[dict[str, str]] = [
         "banner": "maldives.jpg",
         "compareRegion": "Africa",
     },
+    {
+        "slug": "canary-islands",
+        "title": "Canary Islands",
+        "headline": "Best Hotels & Resorts in the Canary Islands — StayOdds Guide",
+        "lead": "Compare verified hotels across Tenerife, Lanzarote, Gran Canaria, Fuerteventura, La Gomera, and La Palma — from 5-star luxury and loyalty chains to top-rated family-friendly, adults-only, and great-value all-inclusive resorts.",
+        "filterType": "location_regex",
+        "filterValue": "tenerife|lanzarote|gran canaria|fuerteventura|la gomera|la palma",
+        "banner": "seychelles.jpg",
+        "compareRegion": "Europe",
+    },
 ]
 
 
@@ -2691,9 +2702,9 @@ def render_static_pages_from_directory(
             hp = ROOT / rel_html
             if hp.exists():
                 txt = hp.read_text(encoding="utf-8")
-                txt = re.sub(r"\b(?:500|678)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
-                txt = re.sub(r"(All\s+)(?:500|678)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
-                txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642)(\))", f"\\g<1>{world_props}\\2", txt)
+                txt = re.sub(r"\b(?:500|678|758)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
+                txt = re.sub(r"(All\s+)(?:500|678|758)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
+                txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642|722)(\))", f"\\g<1>{world_props}\\2", txt)
                 hp.write_text(txt, encoding="utf-8")
 
     # Generate static SEO destination landing pages at <out_dir>/destinations/<slug>/index.html
@@ -2713,6 +2724,9 @@ def render_static_pages_from_directory(
         elif ft == "countries":
             allowed = {c.strip() for c in guide["filterValue"].split("|") if c.strip()}
             matched = [r for r in directory if r["country"] in allowed]
+        elif ft == "location_regex":
+            loc_re = re.compile(guide["filterValue"], re.I)
+            matched = [r for r in directory if loc_re.search(f"{r.get('location', '')} {r.get('name', '')}")]
         else:
             matched = [r for r in directory if r["country"] == guide["filterValue"]]
         if not matched:

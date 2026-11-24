@@ -79,6 +79,7 @@ export function normalizeBrandName(hotel) {
   if (/crowne\s+plaza/i.test(safeCombo)) return "Crowne Plaza";
   if (/jw\s+marriott/i.test(safeCombo)) return "JW Marriott";
   if (/element\s+by\s+westin/i.test(safeCombo)) return "Element by Westin";
+  if (/\bsheraton\b/i.test(safeCombo)) return "Sheraton";
   if (/westin/i.test(safeCombo)) return "Westin";
   if (/le\s+m[eé]ridien/i.test(safeCombo)) return "Le Méridien";
   if (/autograph\s+collection/i.test(safeCombo)) return "Autograph Collection";
@@ -96,6 +97,8 @@ export function normalizeBrandName(hotel) {
   if (/andbeyond|&beyond/i.test(safeCombo)) return "&Beyond";
   if (/wilderness\b/i.test(safeCombo)) return "Wilderness";
   if (/secrets\b|impression.*secrets/i.test(safeCombo)) return "Secrets Resorts";
+  if (/\bdreams\b/i.test(safeCombo)) return "Dreams Resorts";
+  if (/\balua\b/i.test(safeCombo)) return "Alua Hotels";
   if (/zo[eë]try/i.test(safeCombo)) return "Zoëtry";
   if (/excellence\b/i.test(safeCombo)) return "Excellence Collection";
   if (/sandals|beaches\s+turks/i.test(safeCombo)) return "Sandals / Beaches";
@@ -145,8 +148,11 @@ const BRAND_PARENT_GROUP = {
   "Hyatt Centric": "World of Hyatt",
   "Thompson Hotels": "World of Hyatt",
   "Secrets Resorts": "World of Hyatt",
+  "Dreams Resorts": "World of Hyatt",
+  "Alua Hotels": "World of Hyatt",
   "Zoëtry": "World of Hyatt",
   "Hyatt All-Inclusive": "World of Hyatt",
+  "Sheraton": "Marriott Bonvoy",
   "Waldorf Astoria": "Hilton Honors",
   "Conrad": "Hilton Honors",
   "LXR Hotels & Resorts": "Hilton Honors",
@@ -250,10 +256,10 @@ export function getPartnerPrograms(hotel) {
     preferredProgram = ["W Hotels", "JW Marriott", "Westin", "Le Méridien", "Autograph Collection", "Tribute Portfolio"].includes(brand) ? "Marriott Luminous" : null;
     pointsProgram = "Marriott Bonvoy";
     perksNote = "Marriott Luminous advisor perks + Bonvoy points earning/redemption";
-  } else if (brand === "Element by Westin" || brand === "Courtyard by Marriott" || brand === "Marriott Bonvoy" || (brand === "Design Hotels" && parentGroup === "Marriott Bonvoy")) {
+  } else if (brand === "Element by Westin" || brand === "Courtyard by Marriott" || brand === "Sheraton" || brand === "Marriott Bonvoy" || (brand === "Design Hotels" && parentGroup === "Marriott Bonvoy")) {
     pointsProgram = "Marriott Bonvoy";
     perksNote = "Marriott Bonvoy points earning & redemption";
-  } else if (brand === "Park Hyatt" || brand === "Alila" || brand === "Andaz" || brand === "Thompson Hotels" || brand === "Hyatt Regency" || brand === "Hyatt Centric" || brand === "World of Hyatt" || brand === "Hyatt All-Inclusive" || brand === "Secrets Resorts" || brand === "Zoëtry") {
+  } else if (brand === "Park Hyatt" || brand === "Alila" || brand === "Andaz" || brand === "Thompson Hotels" || brand === "Hyatt Regency" || brand === "Hyatt Centric" || brand === "World of Hyatt" || brand === "Hyatt All-Inclusive" || brand === "Secrets Resorts" || brand === "Dreams Resorts" || brand === "Alua Hotels" || brand === "Zoëtry") {
     preferredProgram = ["Park Hyatt", "Alila", "Andaz", "Thompson Hotels"].includes(brand) ? "Hyatt Privé" : null;
     pointsProgram = "World of Hyatt";
     perksNote = preferredProgram ? "Hyatt Privé perks (breakfast, credit, 24h upgrade confirmation) + Hyatt points" : "World of Hyatt points earning & redemption";
@@ -437,6 +443,13 @@ const CLIMATE_RULES = [
     months: [11, 12, 1, 2, 3, 4],
     label: "Nov–Apr",
     reason: "Warm Southern Hemisphere spring, summer & early autumn",
+  },
+  // Canary Islands (Tenerife, Lanzarote, Gran Canaria, Fuerteventura, La Gomera, La Palma)
+  {
+    match: /tenerife|lanzarote|gran canaria|fuerteventura|la gomera|la palma|costa adeje|maspalomas|meloneras|playa blanca|corralejo|canary/i,
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    label: "Year-Round (Oct–May Winter Sun)",
+    reason: "Europe's warm year-round subtropical islands — sunny 21–27°C beaches even in winter",
   },
   // Mediterranean & Southern Europe (Italy, Greece, Spain, Portugal, South of France, Turkey, Croatia)
   {

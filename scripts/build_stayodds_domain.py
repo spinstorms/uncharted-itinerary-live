@@ -249,7 +249,7 @@ def write_404_page(out_dir: Path) -> None:
   <div style="max-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:32px;text-align:center;box-shadow:0 14px 36px rgba(15,23,42,0.08);">
     <div style="font-size:28px;font-weight:800;color:#071323;margin-bottom:8px;">StayOdds<span style="color:#ff5d22;">.</span></div>
     <h1 style="font-size:22px;margin:0 0 10px;color:#0f172a;">That hotel page wasn&rsquo;t found</h1>
-    <p style="font-size:14.5px;color:#475569;margin:0 0 22px;line-height:1.6;">Compare all 758 verified luxury hotels, explore the interactive world map, or head back to The Uncharted Itinerary.</p>
+    <p style="font-size:14.5px;color:#475569;margin:0 0 22px;line-height:1.6;">Compare all 832 verified luxury hotels, explore the interactive world map, or head back to The Uncharted Itinerary.</p>
     <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
       <a class="btn btn-primary" href="/">Open StayOdds Compare</a>
       <a class="btn btn-outline" href="/hotels/">World Map</a>
@@ -375,7 +375,7 @@ def main() -> None:
             encoding="utf-8",
         )
 
-    # 5 & 6. Render all 758 hotel SEO pages + 19 destination guides straight from directory JSON into DIST
+    # 5 & 6. Render all 832 hotel SEO pages + 19 destination guides straight from directory JSON into DIST
     hotel_count, dest_slugs = render_static_pages_from_directory(hotels, DIST, write_root_sitemap=False)
     for h in hotels:
         pfile = DIST / "stayodds" / h["id"] / "index.html"
