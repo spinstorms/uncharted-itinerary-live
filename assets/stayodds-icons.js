@@ -81,3 +81,40 @@ export function svgIcon(name, size = 15, extraClass = "") {
   const cls = extraClass ? `so-ico ${extraClass}` : "so-ico";
   return `<svg class="${cls}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
 }
+
+/* ---------- Video review helpers (YouTube + Uncharted Itinerary badge) ---------- */
+const YT_GLYPH =
+  '<svg class="yt-glyph" viewBox="0 0 28 20" width="22" height="16" aria-hidden="true"><rect width="28" height="20" rx="5.5" fill="#ff0033"/><path d="M11.2 5.6v8.8l7.6-4.4z" fill="#fff"/></svg>';
+
+function ytEsc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+export function ytAttrs(h) {
+  return `data-yt-id="${ytEsc(h.videoId)}" data-yt-short="${h.coverageType === "Short Tour" ? 1 : 0}" data-yt-title="${ytEsc(h.name)} - The Uncharted Itinerary"`;
+}
+
+/* Overlay for a hotel photo: a play button plus a "YouTube + Uncharted Itinerary" pill.
+   Place inside a position:relative media box. Returns "" if the hotel has no video.
+   variant "mini" = just the logo + YouTube glyph, for small thumbnails. */
+export function ytOverlay(h, variant = "card") {
+  if (!h || !h.videoId) return "";
+  const label = `Play The Uncharted Itinerary video review of ${h.name}`;
+  if (variant === "mini") {
+    return `<button type="button" class="yt-overlay is-mini" ${ytAttrs(h)} aria-label="${ytEsc(label)}" title="Watch our video review"><span class="yt-badge-logo" aria-hidden="true"></span>${YT_GLYPH}</button>`;
+  }
+  return `<span class="yt-overlay"><button type="button" class="yt-play" ${ytAttrs(h)} aria-label="${ytEsc(label)}" title="Watch our video review"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button><button type="button" class="yt-badge" ${ytAttrs(h)} tabindex="-1" aria-hidden="true"><span class="yt-badge-logo"></span>${YT_GLYPH}<span class="yt-badge-text">${h.coverageType === "Short Tour" ? "Video tour" : "Video review"}</span></button></span>`;
+}
+
+/* A text button that plays the hotel's video in-page (replaces "Watch ..." links). */
+export function ytWatchBtn(h, label = "Watch Review", cls = "btn btn-outline") {
+  if (!h || !h.videoId) return "";
+  return `<button type="button" class="${cls} yt-watch-btn" ${ytAttrs(h)}>${YT_GLYPH}<span>${label}</span></button>`;
+}
+
+export { YT_GLYPH };
+
+/* Non-interactive version of the overlay, for use inside an element that is itself the click target. */
+export function ytStaticOverlay(label = "Short") {
+  return `<span class="yt-overlay"><span class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span><span class="yt-badge" aria-hidden="true"><span class="yt-badge-logo"></span>${YT_GLYPH}<span class="yt-badge-text">${ytEsc(label)}</span></span></span>`;
+}

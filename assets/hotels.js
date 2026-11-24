@@ -8,7 +8,7 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=12";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
-import { svgIcon } from "./stayodds-icons.js?v=1";
+import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {
   MONTH_LABELS,
   getBrandCategories,
@@ -571,6 +571,7 @@ function buildPopupHtml(h) {
     <div class="map-popup-card">
       <div class="map-popup-media">
         <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
+        ${ytOverlay(h)}
         <span class="map-popup-score">${
           o.greatStayOdds != null
             ? `${o.greatStayOdds}% ${o.scoreTrack === "verified" ? "Verified" : "StayOdds"}`
@@ -596,7 +597,7 @@ function buildPopupHtml(h) {
           <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
           ${
             reviewHref
-              ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>Video</a>`
+              ? `${ytWatchBtn(h, `Video`)}`
               : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
           }
         </div>
@@ -881,6 +882,7 @@ function renderScorecards(hotels) {
               <a href="${getSeoHref(h)}">
                 <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
               </a>
+              ${ytOverlay(h)}
               <div class="scorecard-badge-overall ${trackCls}">
                 <strong>${
                   o.greatStayOdds != null
@@ -947,7 +949,7 @@ function renderScorecards(hotels) {
                 <a class="btn btn-primary" href="${getSeoHref(h)}">Breakdown</a>
                 ${
                   reviewHref
-                    ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Short" : "Review"}</a>`
+                    ? `${ytWatchBtn(h, `${h.coverageType === "Short Tour" ? "Short" : "Review"}`)}`
                     : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">VS</a>`
                 }
                 <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
@@ -1003,7 +1005,7 @@ function renderHotelShorts(hotels) {
     for (const sh of h.shorts || []) {
       if (!seen.has(sh.id)) {
         seen.add(sh.id);
-        items.push({ ...sh, hotelName: h.name });
+        items.push({ ...sh, hotelName: h.name, thumb: h.thumbnail });
       }
     }
   }
@@ -1016,10 +1018,10 @@ function renderHotelShorts(hotels) {
     .slice(0, 24)
     .map(
       (sh) => `
-      <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
+      <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer" data-yt-id="${escapeHtml(sh.id)}" data-yt-short="1" data-yt-title="${escapeHtml(sh.title)}">
         <div class="short-thumb">
-          <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" decoding="async" />
-          <span class="short-badge">Short</span>
+          <img src="${escapeHtml(resolveThumb(sh.thumb))}" alt="${escapeHtml(sh.hotelName)}" loading="lazy" decoding="async" />
+          ${ytStaticOverlay("Short")}
         </div>
         <div class="short-info">
           <h3 class="short-title">${escapeHtml(sh.title)}</h3>

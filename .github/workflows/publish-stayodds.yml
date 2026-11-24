@@ -12,6 +12,7 @@ on:
       - "scripts/build_stayodds_domain.py"
       - "scripts/build_stayodds_site.py"
       - "scripts/audit_brands_and_loyalty.py"
+      - "ads.txt"
       - "scripts/stayodds_chrome.py"
   workflow_dispatch:
 

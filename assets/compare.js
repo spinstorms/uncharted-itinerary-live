@@ -11,7 +11,7 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=12";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
-import { svgIcon } from "./stayodds-icons.js?v=1";
+import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {
   MONTH_LABELS,
   normalizeBrandName,
@@ -718,7 +718,7 @@ function renderH2HCard(h, allCompared) {
   return `
     <article class="h2h-card ${trackCls}" data-resort-name="${escapeHtml(h.name)}">
       <div class="h2h-card-head">
-        <img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />
+        <span class="yt-media"><img src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" decoding="async" />${ytOverlay(h, "mini")}</span>
         <div>
           <span class="tag ${o.scoreTrack === "verified" ? "tag-accent" : "tag-slate"}">${escapeHtml(o.scoreTrackLabel)}</span>
           <h3><a class="consensus-title-link" href="${getSeoHref(h)}">${escapeHtml(h.name)}</a></h3>
@@ -815,7 +815,7 @@ function renderH2HCard(h, allCompared) {
         <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
         ${
           reviewHref
-            ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}</a>`
+            ? `${ytWatchBtn(h, `${h.coverageType === "Short Tour" ? "Watch Short" : "Watch Review"}`)}`
             : ""
         }
         <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
@@ -1799,12 +1799,13 @@ function renderLeaderboard() {
                 <a href="${getSeoHref(h)}">
                   <img class="consensus-thumb" src="${escapeHtml(resolveThumb(h.thumbnail))}" alt="${escapeHtml(h.name)}" loading="lazy" decoding="async" />
                 </a>
+                ${ytOverlay(h)}
                 <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
               </div>
               <a class="btn btn-primary" href="${getSeoHref(h)}">Full Breakdown &rarr;</a>
               ${
                 reviewHref
-                  ? `<a class="btn btn-outline" href="${escapeHtml(reviewHref)}"${ext}>${isShortOnly ? "Watch Short" : "Watch Review"}</a>`
+                  ? `${ytWatchBtn(h, `${isShortOnly ? "Watch Short" : "Watch Review"}`)}`
                   : ""
               }
               <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
@@ -1841,7 +1842,7 @@ function renderLeaderboard() {
       for (const sh of h.shorts || []) {
         if (!seenS.has(sh.id)) {
           seenS.add(sh.id);
-          collected.push({ ...sh, hotelName: h.name, hotelId: h.id });
+          collected.push({ ...sh, hotelName: h.name, hotelId: h.id, thumb: h.thumbnail });
         }
       }
     }
@@ -1853,10 +1854,10 @@ function renderLeaderboard() {
         .slice(0, 24)
         .map(
           (sh) => `
-          <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer">
+          <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer" data-yt-id="${escapeHtml(sh.id)}" data-yt-short="1" data-yt-title="${escapeHtml(sh.title)}">
             <div class="short-thumb">
-              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" decoding="async" />
-              <span class="short-badge">Short</span>
+              <img src="${escapeHtml(resolveThumb(sh.thumb))}" alt="${escapeHtml(sh.hotelName)}" loading="lazy" decoding="async" />
+              ${ytStaticOverlay("Short")}
             </div>
             <div class="short-info">
               <h3 class="short-title">${escapeHtml(sh.title)}</h3>

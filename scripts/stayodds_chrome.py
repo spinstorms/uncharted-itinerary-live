@@ -167,3 +167,45 @@ def partner_strip(p: str) -> str:
       </div>
     </section>
 '''
+
+
+# ---------- Video review badge (mirrors ytOverlay / ytWatchBtn in assets/stayodds-icons.js) ----------
+YT_GLYPH = (
+    '<svg class="yt-glyph" viewBox="0 0 28 20" width="22" height="16" aria-hidden="true">'
+    '<rect width="28" height="20" rx="5.5" fill="#ff0033"/><path d="M11.2 5.6v8.8l7.6-4.4z" fill="#fff"/></svg>'
+)
+_PLAY_SVG = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>'
+
+
+def _yt_attrs(h: dict, inline: bool = False) -> str:
+    import html as _html
+
+    esc = lambda v: _html.escape(str(v or ""), quote=True)  # noqa: E731
+    short = 1 if h.get("coverageType") == "Short Tour" else 0
+    return (
+        f'data-yt-id="{esc(h.get("videoId"))}" data-yt-short="{short}" '
+        f'data-yt-title="{esc(h.get("name"))} - The Uncharted Itinerary"' + (" data-yt-inline" if inline else "")
+    )
+
+
+def yt_overlay(h: dict, inline: bool = False) -> str:
+    """Play button + 'YouTube + Uncharted Itinerary' pill over a hotel photo (empty if no video)."""
+    if not h.get("videoId"):
+        return ""
+    import html as _html
+
+    label = _html.escape(f"Play The Uncharted Itinerary video review of {h.get('name', '')}", quote=True)
+    text = "Video tour" if h.get("coverageType") == "Short Tour" else "Video review"
+    a = _yt_attrs(h, inline)
+    return (
+        f'<span class="yt-overlay"><button type="button" class="yt-play" {a} aria-label="{label}" '
+        f'title="Watch our video review">{_PLAY_SVG}</button>'
+        f'<button type="button" class="yt-badge" {a} tabindex="-1" aria-hidden="true">'
+        f'<span class="yt-badge-logo"></span>{YT_GLYPH}<span class="yt-badge-text">{text}</span></button></span>'
+    )
+
+
+def yt_watch_btn(h: dict, label: str, cls: str = "btn btn-outline") -> str:
+    if not h.get("videoId"):
+        return ""
+    return f'<button type="button" class="{cls} yt-watch-btn" {_yt_attrs(h)}>{YT_GLYPH}<span>{label}</span></button>'

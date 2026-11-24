@@ -35,6 +35,9 @@ from stayodds_chrome import (  # noqa: E402
     header as chrome_header,
     DETAIL_OTA_STRIP,
     partner_strip as chrome_partner_strip,
+    yt_overlay,
+    yt_watch_btn,
+    YT_GLYPH as YT_GLYPH_INLINE,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -898,7 +901,7 @@ def render_seo_page(
         yt_html += (
             f'<article class="channel-row"><div class="channel-row-head"><div>'
             f'<span class="tag tag-accent">Founding Contributor</span>'
-            f'<h4><a href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">The Uncharted Itinerary — {esc(h.get("coverageType"))} ↗</a></h4>'
+            f'<h4><a href="{esc(review_href)}" target="_blank" rel="noopener noreferrer" data-yt-id="{esc(h.get("videoId"))}" data-yt-short="{1 if h.get("coverageType") == "Short Tour" else 0}" data-yt-title="{esc(h.get("name"))} - The Uncharted Itinerary">{YT_GLYPH_INLINE} The Uncharted Itinerary — {esc(h.get("coverageType"))}</a></h4>'
             f'</div><div class="channel-row-score"><strong>{fh_score_lbl}</strong></div></div>'
             f'<p class="channel-takeaway">{esc(h.get("verdict") or "")}</p></article>'
         )
@@ -1343,7 +1346,10 @@ def render_seo_page(
 
       <section class="detail-hero">
         <div class="detail-hero-media">
-          <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
+          <div class="yt-stage"{' data-yt-host' if h.get('videoId') else ''}>
+            <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
+            {yt_overlay(h, inline=True)}
+          </div>
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
@@ -1416,7 +1422,7 @@ def render_seo_page(
 
           <div class="detail-actions">
             <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
-            {f'<a class="btn btn-outline" href="{esc(review_href)}" target="_blank" rel="noopener noreferrer">Watch Our {"Short" if h.get("coverageType") == "Short Tour" else "Full Review"} &nearr;</a>' if review_href else ""}
+            {yt_watch_btn(h, "Watch Our " + ("Short" if h.get("coverageType") == "Short Tour" else "Full Review"), "btn btn-outline btn-yt-hero") if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share StayOdds Card</button>
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
@@ -1580,6 +1586,7 @@ def render_seo_page(
   </footer>
 
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
+  <script src="../../assets/stayodds-video.js?v=1" defer></script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -2188,6 +2195,7 @@ def render_destination_page(
               <span class="dest-card-rank">#{idx + 1}</span>
               <span class="dest-card-odds"><strong>{esc(odds_val)}</strong><small>{esc(odds_lbl)}</small></span>
             </a>
+            {yt_overlay(h)}
             <button type="button" class="card-heart-fab shortlist-btn" data-shortlist-id="{esc(h['id'])}" data-shortlist-icon-only="1" data-resort-name="{esc(h['name'])}" aria-label="Save {esc(h['name'])} to shortlist" aria-pressed="false" title="Save to shortlist">&#9825;</button>
           </div>
           <div class="dest-card-body">
@@ -2388,6 +2396,7 @@ def render_destination_page(
   </footer>
 
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
+  <script src="../../assets/stayodds-video.js?v=1" defer></script>
 </body>
 </html>
 """
@@ -2482,7 +2491,11 @@ def main() -> None:
         raw_hero = (p.get("hero_image_url") or "").strip()
         is_blocked = any(bad in raw_hero for bad in ("www.fourseasons.com", "www.lungarnocollection.com"))
         is_self_hosted_ph = f"/assets/placeholders/{pid}.webp" in raw_hero
-        if local_thumb.exists() and local_thumb.stat().st_size > 1500:
+        card_photo = ROOT / "assets" / "card-photos" / f"{pid}.webp"
+        if card_photo.exists() and card_photo.stat().st_size > 1500:
+            # Clean hotel photo (no YouTube thumbnail text/faces). Video is flagged with a badge + in-page player.
+            resolved_thumb = f"assets/card-photos/{pid}.webp"
+        elif local_thumb.exists() and local_thumb.stat().st_size > 1500:
             resolved_thumb = f"assets/thumbs/{pid}.webp"
         elif (not raw_hero or is_blocked or is_self_hosted_ph) and local_ph.exists() and local_ph.stat().st_size > 1500:
             resolved_thumb = f"assets/placeholders/{pid}.webp"
