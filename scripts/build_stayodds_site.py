@@ -163,6 +163,12 @@ def is_score_unverified(e: dict[str, Any]) -> bool:
     return "unable to verify" in txt or "unverified" in txt
 
 
+def _round_half_up(x: float) -> int:
+    """Same rounding as the site's JavaScript (Math.round): 92.5 -> 93, so page and live scores always match."""
+    import math
+    return int(math.floor(float(x) + 0.5))
+
+
 def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     first_hand = bool(h.get("visitedByUs") and h.get("overall") is not None and h.get("scores"))
     visited = bool(h.get("visitedByUs"))
@@ -177,9 +183,9 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
             personal_score_max = len(vals) * 5
             personal_score_label = f"{fmt_score_num(personal_score_25)} / {personal_score_max}"
     ours100 = (
-        int(round((personal_score_25 / personal_score_max) * 100))
+        _round_half_up(((personal_score_25 / personal_score_max) * 100))
         if personal_score_25 is not None
-        else (int(round(float(h["overall"]) * 20)) if first_hand else None)
+        else (_round_half_up((float(h["overall"]) * 20)) if first_hand else None)
     )
 
     editorial = [e for e in (h.get("editorialRatings") or []) if str(e.get("sourceUrl", "")).startswith("http")]
@@ -194,14 +200,14 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     ]
     unverified_editorial = [e for e in editorial if is_score_unverified(e)]
     critic_scores = [int(e["normalized100"]) for e in scored_editorial]
-    critic100 = int(round(sum(critic_scores) / len(critic_scores))) if critic_scores else None
+    critic100 = _round_half_up((sum(critic_scores) / len(critic_scores))) if critic_scores else None
     primary_critic = scored_editorial[0] if scored_editorial else None
 
     vg = (h.get("verifiedGuest") or {}).get("licensed")
     raw_guest100 = int(vg["normalized100"]) if vg and vg.get("normalized100") else None
     guest_rc = vg.get("reviewCount") if vg else None
     if raw_guest100 is not None and guest_rc is not None and 0 < int(guest_rc) < 40:
-        guest100 = int(round((raw_guest100 * int(guest_rc) + 90 * 8) / (int(guest_rc) + 8)))
+        guest100 = _round_half_up(((raw_guest100 * int(guest_rc) + 90 * 8) / (int(guest_rc) + 8)))
         guest_dampened = True
     else:
         guest100 = raw_guest100
@@ -212,7 +218,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     market_src_cnt = 0
     source_basis_short = "Live Google"
     if critic100 is not None and guest100 is not None:
-        market_odds = int(round(critic100 * 0.35 + guest100 * 0.65))
+        market_odds = _round_half_up((critic100 * 0.35 + guest100 * 0.65))
         market_src_cnt = 2
         source_basis_short = "2 sources • Critics + Guests"
     elif guest100 is not None:
@@ -254,7 +260,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
 
     if score_track == "verified" and ours100 is not None:
         if market_odds is not None:
-            overall_idx = int(round(ours100 * 0.70 + market_odds * 0.30))
+            overall_idx = _round_half_up((ours100 * 0.70 + market_odds * 0.30))
             weights = {
                 "firstHand": 70,
                 "market": 30,

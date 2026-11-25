@@ -843,7 +843,122 @@ function renderH2H() {
     if (c) compared.push(c);
   }
   out.innerHTML = compared.map((h) => renderH2HCard(h, compared)).join("");
+  const pickEl = qs("#h2hPick");
+  if (pickEl) pickEl.innerHTML = renderPickBox(compared);
   window.stayOddsShortlist?.syncButtons?.();
+}
+
+/* ---------------------------------------------------------------------------------------------
+   "StayOdds Pick": which compared hotel to choose, and why, written only from the scores, review
+   counts and awards shown on the page (no invented claims).
+--------------------------------------------------------------------------------------------- */
+function pickAwardLabels(h) {
+  const out = [];
+  for (const a of h.officialAwards || []) {
+    const body = String(a.awardBody || "");
+    const label = String(a.label || "");
+    if (/50\s*best/i.test(body)) {
+      const m = label.match(/No\.\s*(\d+)/);
+      out.push(m ? `No. ${m[1]} World's 50 Best Hotels` : "World's 50 Best Hotels");
+    } else if (/michelin/i.test(body) || /michelin/i.test(label)) out.push(label);
+    else if (/forbes/i.test(body)) out.push(label);
+  }
+  return [...new Set(out)].slice(0, 3);
+}
+
+function renderPickBox(compared) {
+  const rows = compared.map((h) => {
+    const o = computeStayOdds(h);
+    const st = getPropertyStatusMeta(h);
+    return {
+      h,
+      o,
+      closed: st.tone === "danger",
+      status: st.operatingStatus,
+      score: o.greatStayOdds ?? null,
+      guest: o.verifiedGuest ? o.verifiedGuest.normalized100 : null,
+      reviews: o.verifiedGuest ? o.verifiedGuest.reviewCount : null,
+      critic: o.critic100 ?? null,
+      critics: (o.scoredEditorial || []).length,
+    };
+  });
+  const open = rows.filter((r) => !r.closed && r.score != null).sort((a, b) => b.score - a.score);
+  if (!open.length) return "";
+  const top = open[0];
+  const others = rows.filter((r) => r !== top);
+  const second = open[1];
+  const margin = second ? top.score - second.score : null;
+  const esc = escapeHtml;
+  const n = (v) => Number(v).toLocaleString("en-GB");
+
+  let title;
+  if (margin === 0) title = "Too close to call";
+  else if (margin != null && margin <= 2) title = `Narrow pick: ${esc(top.h.name)}`;
+  else title = `StayOdds pick: ${esc(top.h.name)}`;
+
+  const why = [];
+  if (margin === 0) {
+    const tied = open.filter((r) => r.score === top.score).map((r) => esc(r.h.name)).join(" and ");
+    why.push(`${tied} share the same StayOdds score of ${top.score}%. Choose on location, style and price.`);
+  } else {
+    const line = others
+      .filter((r) => r.score != null)
+      .map((r) => `${r.score}% for ${esc(r.h.name)}`)
+      .join(" and ");
+    why.push(`Highest StayOdds score: <strong>${top.score}%</strong>${line ? `, against ${line}` : ""}.`);
+  }
+  if (top.guest != null) {
+    const better = others.filter((r) => r.guest != null && r.guest > top.guest);
+    const rest = others.filter((r) => r.guest != null && r.guest <= top.guest);
+    const rc = top.reviews ? ` from ${n(top.reviews)} reviews` : "";
+    if (!better.length && rest.length) {
+      why.push(`Guests rate it highest: ${top.guest}/100${rc}, against ${rest.map((r) => `${r.guest}/100 for ${esc(r.h.name)}`).join(" and ")}.`);
+    } else if (!better.length) {
+      why.push(`Guests rate it ${top.guest}/100${rc}.`);
+    }
+  }
+  if (top.critic != null) {
+    const beaten = others.filter((r) => r.critic != null && r.critic < top.critic);
+    const higher = others.filter((r) => r.critic != null && r.critic > top.critic);
+    if (!higher.length) {
+      why.push(
+        `Published critics score it ${top.critic}/100 (${top.critics} critic${top.critics === 1 ? "" : "s"})` +
+          (beaten.length ? `, against ${beaten.map((r) => `${r.critic}/100 for ${esc(r.h.name)}`).join(" and ")}.` : "."),
+      );
+    }
+  }
+  const awards = pickAwardLabels(top.h);
+  if (awards.length) why.push(`Recognised by ${awards.map(esc).join(" · ")}.`);
+  if (top.o.firstHand && top.o.personalScoreLabel) why.push(`We stayed here and scored it ${esc(top.o.personalScoreLabel)}.`);
+
+  const consider = [];
+  for (const r of others) {
+    if (r.closed) {
+      consider.push(`${esc(r.h.name)} is listed as ${esc(r.status || "closed")}, so it was left out.`);
+      continue;
+    }
+    const bits = [];
+    if (r.guest != null && top.guest != null && r.guest > top.guest) {
+      bits.push(`guests rate it higher (${r.guest}/100${r.reviews ? ` from ${n(r.reviews)} reviews` : ""})`);
+    }
+    if (r.critic != null && (top.critic == null || r.critic > top.critic)) {
+      bits.push(`critics score it ${r.critic}/100`);
+    }
+    if (bits.length) consider.push(`Consider ${esc(r.h.name)} if that matters most: ${bits.join(" and ")}.`);
+  }
+  if (top.reviews != null && top.reviews < 100) {
+    consider.push(`The guest score for ${esc(top.h.name)} rests on fewer than 100 reviews, so treat it as a guide.`);
+  }
+
+  const li = (t) => `<li style="margin:0 0 6px;">${t}</li>`;
+  return `
+    <div class="h2h-pick" style="margin:0 0 18px;padding:18px 20px;border-radius:16px;border:1px solid var(--line, #e2e8f0);border-top:4px solid #ff5d22;background:var(--card, #fff);">
+      <div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#ff5d22;margin-bottom:4px;">Which should you choose?</div>
+      <div style="font-size:20px;font-weight:900;line-height:1.25;margin-bottom:10px;">${title}</div>
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.5;">${why.map(li).join("")}</ul>
+      ${consider.length ? `<ul style="margin:10px 0 0;padding-left:18px;font-size:13.5px;line-height:1.5;opacity:.85;">${consider.map(li).join("")}</ul>` : ""}
+      <div style="margin-top:10px;font-size:12px;opacity:.65;">Worked out from the scores, review counts and awards below. Nothing is estimated.</div>
+    </div>`;
 }
 
 function getActiveShortlistIds() {
