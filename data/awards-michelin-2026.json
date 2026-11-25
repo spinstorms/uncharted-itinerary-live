@@ -1,19 +1,32 @@
 {
  "source": "https://guide.michelin.com/en/article/travel/all-the-key-hotels-in-the-world-michelin-guide",
  "year": 2026,
- "note": "3 Keys: all 155. 2 Keys: first 250 of 657 only. 1 Key: not added.",
+ "note": "3 Keys: all 155. 2 Keys: 2026 country lists (US, Japan, Italy, France, UK & Ireland, Mexico, Greece, Thailand, Indonesia, Turkey, Vietnam, Malaysia, Australia, Hong Kong & Macau, New Zealand) plus the 250-hotel global sample. 1 Key: not added.",
  "hotels": {
+  "137-pillars-house": {
+   "keys": 2,
+   "replace": true
+  },
+  "45-park-lane-dorchester-collection": {
+   "keys": 2,
+   "replace": true
+  },
   "abadia-retuerta-ledomaine": {
    "keys": 3
   },
   "adare-manor-ireland": {
    "keys": 3
   },
+  "adler-sicilia": {
+   "keys": 2,
+   "replace": true
+  },
   "airelles-chateau-de-versailles": {
    "keys": 3
   },
   "airelles-saint-tropez-chateau-de-la-messardiere": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "airelles-venezia-a-virtuoso-preview-property": {
    "keys": 3
@@ -24,11 +37,16 @@
   "al-moudira-hotel": {
    "keys": 2
   },
+  "alila-ventana-big-sur": {
+   "keys": 2,
+   "replace": true
+  },
   "alpen-wellness-resort-hochfirst": {
    "keys": 2
   },
   "alpine-falls-ranch": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "althoff-seehotel-uberfahrt": {
    "keys": 3
@@ -36,11 +54,28 @@
   "alvear-palace-hotel": {
    "keys": 2
   },
+  "aman-kyoto": {
+   "keys": 2,
+   "replace": true
+  },
   "aman-le-melezin": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "aman-nai-lert-bangkok": {
+   "keys": 2,
+   "replace": true
   },
   "aman-new-york": {
    "keys": 3
+  },
+  "aman-rosa-alpina": {
+   "keys": 2,
+   "replace": true
+  },
+  "aman-tokyo": {
+   "keys": 2,
+   "replace": true
   },
   "aman-venice": {
    "keys": 3
@@ -60,6 +95,10 @@
   "amanjiwo-java": {
    "keys": 3
   },
+  "amankila-bali": {
+   "keys": 2,
+   "replace": true
+  },
   "amankora-bhutan": {
    "keys": 2
   },
@@ -76,10 +115,16 @@
    "keys": 2
   },
   "amanzoe-greece": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "ambiente-a-landscape-hotel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "anantara-golden-triangle-elephant-camp-and-resort": {
+   "keys": 2,
+   "replace": true
   },
   "anantara-palais-hansen-vienna-hotel": {
    "keys": 2
@@ -87,14 +132,24 @@
   "anantara-stanley-and-livingstone-victoria-falls-hotel": {
    "keys": 2
   },
+  "argos-in-cappadocia": {
+   "keys": 2,
+   "replace": true
+  },
   "aristi-mountain-resort": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "aristide-hotel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "asaba-ryokan-izu": {
    "keys": 3
+  },
+  "ashford-castle": {
+   "keys": 2,
+   "replace": true
   },
   "atlantis-the-royal": {
    "keys": 3
@@ -129,11 +184,29 @@
   "ballyfin-demesne": {
    "keys": 3
   },
+  "banyan-tree-krabi": {
+   "keys": 2,
+   "replace": true
+  },
   "banyan-tree-lang-co": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "banyan-tree-macau": {
+   "keys": 2,
+   "replace": true
+  },
+  "banyan-tree-mayakoba": {
+   "keys": 2,
+   "replace": true
+  },
+  "banyan-tree-samui": {
+   "keys": 2,
+   "replace": true
   },
   "bardessono-hotel-and-spa": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "baumaniere-les-baux-de-provence": {
    "keys": 3
@@ -144,14 +217,51 @@
   "beau-rivage-palace": {
    "keys": 3
   },
+  "beaverbrook-surrey": {
+   "keys": 2,
+   "replace": true
+  },
+  "bellevue-hotel-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
+  "bellevue-syrene-1820": {
+   "keys": 2,
+   "replace": true
+  },
+  "benesse-house-naoshima": {
+   "keys": 2,
+   "replace": true
+  },
+  "bernardus-lodge-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
   "beverly-hills-hotel": {
    "keys": 3
   },
+  "beverly-wilshire-four-seasons": {
+   "keys": 2,
+   "replace": true
+  },
   "blackberry-farm-tennessee": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "blanket-bay-glenorchy": {
+   "keys": 2,
+   "replace": true
   },
   "boardwalk-boutique-hotel-aruba": {
    "keys": 2
+  },
+  "borgo-egnazia-puglia": {
+   "keys": 2,
+   "replace": true
+  },
+  "borgo-san-felice-resort": {
+   "keys": 2,
+   "replace": true
   },
   "borgo-santandrea-amalfi": {
    "keys": 3
@@ -162,11 +272,23 @@
   "botanic-sanctuary-antwerp": {
    "keys": 2
   },
+  "bowie-house-auberge-collection": {
+   "keys": 2,
+   "replace": true
+  },
   "breidenbacher-hof-dusseldorf": {
    "keys": 2
   },
   "brenners-park-hotel-and-spa": {
    "keys": 2
+  },
+  "browns-hotel-a-rocco-forte-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "buahan-a-banyan-tree-escape": {
+   "keys": 2,
+   "replace": true
   },
   "budersand-hotel": {
    "keys": 2
@@ -174,8 +296,17 @@
   "bulgari-hotel-beijing": {
    "keys": 2
   },
+  "bulgari-hotel-london": {
+   "keys": 2,
+   "replace": true
+  },
+  "bulgari-hotel-milano": {
+   "keys": 2,
+   "replace": true
+  },
   "bulgari-hotel-paris": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "bulgari-hotel-roma": {
    "keys": 3
@@ -185,6 +316,10 @@
   },
   "bulgari-hotel-tokyo": {
    "keys": 3
+  },
+  "bulgari-resort-bali": {
+   "keys": 2,
+   "replace": true
   },
   "bulow-palais": {
    "keys": 2
@@ -196,10 +331,15 @@
    "keys": 2
   },
   "caldera-house": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "cannua-lodge": {
    "keys": 2
+  },
+  "canyon-ranch-lenox": {
+   "keys": 2,
+   "replace": true
   },
   "canyon-ranch-tucson": {
    "keys": 3
@@ -214,16 +354,27 @@
    "keys": 3
   },
   "capella-kyoto": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "capella-lodge": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "capella-shanghai-jian-ye-li": {
    "keys": 2
   },
   "capella-sydney": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "capella-ubud": {
+   "keys": 2,
+   "replace": true
+  },
+  "capri-palace-jumeirah": {
+   "keys": 2,
+   "replace": true
   },
   "carlton-hotel-st-moritz": {
    "keys": 3
@@ -234,11 +385,19 @@
   "casa-cipriani-new-york": {
    "keys": 3
   },
+  "casa-de-sierra-nevada-a-belmond-hotel": {
+   "keys": 2,
+   "replace": true
+  },
   "casa-maria-luigia-modena": {
    "keys": 3
   },
   "casa-pestagua": {
    "keys": 2
+  },
+  "casa-polanco-mexico-city": {
+   "keys": 2,
+   "replace": true
   },
   "casa-san-agustin": {
    "keys": 2
@@ -246,41 +405,74 @@
   "casamolle": {
    "keys": 2
   },
+  "cashel-palace": {
+   "keys": 2,
+   "replace": true
+  },
+  "castel-fragsburg": {
+   "keys": 2,
+   "replace": true
+  },
   "castelbrac": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "castelfalfi": {
+   "keys": 2,
+   "replace": true
+  },
+  "castello-di-casole-a-belmond-hotel-tuscany": {
+   "keys": 2,
+   "replace": true
   },
   "castello-di-reschio-umbria": {
    "keys": 3
   },
+  "cataloochee-ranch": {
+   "keys": 2,
+   "replace": true
+  },
   "cavallo-point-lodge": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "ceylon-tea-trails": {
    "keys": 3
+  },
+  "chable-yucatan": {
+   "keys": 2,
+   "replace": true
   },
   "chateau-de-la-chevre-dor": {
    "keys": 3
   },
   "chateau-de-la-gaude": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-de-montcaud": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-du-grand-luce": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-eza": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-lafaurie-peyraguey-hotel-and-restaurant-lalique": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-marmont": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "chateau-richeux-les-maisons-de-bricourt": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "cheval-blanc-courchevel": {
    "keys": 3
@@ -294,8 +486,16 @@
   "cheval-blanc-st-barth": {
    "keys": 3
   },
+  "chewton-glen-hotel": {
+   "keys": 2,
+   "replace": true
+  },
   "chiemgauhof-lakeside-retreat": {
    "keys": 2
+  },
+  "chileno-bay-auberge-cabo": {
+   "keys": 2,
+   "replace": true
   },
   "city-of-dreams-morpheus": {
    "keys": 3
@@ -306,11 +506,19 @@
   "clayoquot-wilderness-lodge": {
    "keys": 3
   },
+  "cliveden-house": {
+   "keys": 2,
+   "replace": true
+  },
   "cobergher-hotel": {
    "keys": 2
   },
   "collegio-alla-querce-florence": {
    "keys": 3
+  },
+  "commodore-perry-estate-auberge-collection": {
+   "keys": 2,
+   "replace": true
   },
   "como-laucala-island-fiji": {
    "keys": 2
@@ -319,13 +527,26 @@
    "keys": 2
   },
   "coquillade-provence": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "corinthia-grand-hotel-astoria-brussels": {
    "keys": 2
   },
+  "corinthia-hotel-london": {
+   "keys": 2,
+   "replace": true
+  },
   "corte-della-maesta": {
    "keys": 3
+  },
+  "coworth-park-dorchester-collection": {
+   "keys": 2,
+   "replace": true
+  },
+  "cromlix-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "crosby-street-hotel": {
    "keys": 3
@@ -345,6 +566,10 @@
   "delaire-graff-estate": {
    "keys": 3
   },
+  "delamore-lodge": {
+   "keys": 2,
+   "replace": true
+  },
   "der-birkenhof-spa-and-genuss-resort": {
    "keys": 2
   },
@@ -355,13 +580,27 @@
    "keys": 3
   },
   "domaine-des-etangs": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "domaine-le-mouflon-dor": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "domaine-les-crayeres": {
    "keys": 3
+  },
+  "dunton-hot-springs": {
+   "keys": 2,
+   "replace": true
+  },
+  "dusit-thani-bangkok": {
+   "keys": 2,
+   "replace": true
+  },
+  "eala-my-lakeside-dream": {
+   "keys": 2,
+   "replace": true
   },
   "eden-roc-cap-cana": {
    "keys": 2
@@ -370,7 +609,12 @@
    "keys": 2
   },
   "eliamos-villas-hotel-and-spa": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "enowa-yufu": {
+   "keys": 2,
+   "replace": true
   },
   "eolo-patagonias-spirit": {
    "keys": 2
@@ -378,14 +622,26 @@
   "esencia-riviera-maya": {
    "keys": 3
   },
+  "esperanza-auberge-cabo": {
+   "keys": 2,
+   "replace": true
+  },
   "estancia-cristina": {
    "keys": 2
+  },
+  "etereo-auberge-riviera-maya": {
+   "keys": 2,
+   "replace": true
   },
   "explora-rapa-nui": {
    "keys": 2
   },
   "explora-torres-del-paine": {
    "keys": 2
+  },
+  "faena-hotel-miami-beach": {
+   "keys": 2,
+   "replace": true
   },
   "fairmont-chateau-whistler": {
    "keys": 2
@@ -405,11 +661,19 @@
   "fogo-island-inn-canada": {
    "keys": 3
   },
+  "forestis-dolomites": {
+   "keys": 2,
+   "replace": true
+  },
   "four-seasons-anguilla": {
    "keys": 2
   },
   "four-seasons-astir-palace-athens": {
    "keys": 3
+  },
+  "four-seasons-bangkok": {
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-bora-bora": {
    "keys": 2
@@ -424,7 +688,8 @@
    "keys": 3
   },
   "four-seasons-hong-kong": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-hotel-bahrain-bay": {
    "keys": 2
@@ -441,17 +706,51 @@
   "four-seasons-hotel-hangzhou-at-west-lake": {
    "keys": 2
   },
+  "four-seasons-hotel-jakarta": {
+   "keys": 2,
+   "replace": true
+  },
+  "four-seasons-hotel-london-at-park-lane": {
+   "keys": 2,
+   "replace": true
+  },
+  "four-seasons-hotel-milano": {
+   "keys": 2,
+   "replace": true
+  },
   "four-seasons-hotel-montreal": {
    "keys": 2
   },
+  "four-seasons-hotel-nashville": {
+   "keys": 2,
+   "replace": true
+  },
   "four-seasons-hotel-philadelphia-at-comcast-center": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-hotel-san-francisco-at-embarcadero": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-hotel-toronto": {
    "keys": 2
+  },
+  "four-seasons-hualalai": {
+   "keys": 2,
+   "replace": true
+  },
+  "four-seasons-jimbaran": {
+   "keys": 2,
+   "replace": true
+  },
+  "four-seasons-koh-samui": {
+   "keys": 2,
+   "replace": true
+  },
+  "four-seasons-langkawi": {
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-megeve": {
    "keys": 3
@@ -459,14 +758,23 @@
   "four-seasons-peninsula-papagayo": {
    "keys": 2
   },
+  "four-seasons-punta-mita": {
+   "keys": 2,
+   "replace": true
+  },
   "four-seasons-resort-sharm-el-sheikh": {
    "keys": 2
   },
   "four-seasons-resort-the-nam-hai-hoi-an": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-sultanahmet-istanbul": {
    "keys": 3
+  },
+  "four-seasons-surfside-miami": {
+   "keys": 2,
+   "replace": true
   },
   "four-seasons-tokyo-otemachi": {
    "keys": 3
@@ -474,11 +782,31 @@
   "four-seasons-whistler": {
    "keys": 2
   },
+  "fufu-kawaguchiko": {
+   "keys": 2,
+   "replace": true
+  },
+  "fufu-nikko": {
+   "keys": 2,
+   "replace": true
+  },
   "gaia-riverlodge": {
    "keys": 2
   },
+  "gajoen": {
+   "keys": 2,
+   "replace": true
+  },
   "gangtey-lodge": {
    "keys": 2
+  },
+  "gidleigh-park": {
+   "keys": 2,
+   "replace": true
+  },
+  "gilpin-hotel-and-lake-house": {
+   "keys": 2,
+   "replace": true
   },
   "giraffe-manor-kenya": {
    "keys": 3
@@ -486,14 +814,47 @@
   "gleneagles-scotland": {
    "keys": 3
   },
+  "gleneagles-townhouse": {
+   "keys": 2,
+   "replace": true
+  },
   "goda-hakone-gora-kadan": {
    "keys": 3
   },
+  "gora-kadan-fuji": {
+   "keys": 2,
+   "replace": true
+  },
   "grace-hotel-santorini": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "grand-hotel-du-cap-ferrat": {
    "keys": 3
+  },
+  "grand-hotel-et-de-milan": {
+   "keys": 2,
+   "replace": true
+  },
+  "grand-hotel-principe-di-piemonte": {
+   "keys": 2,
+   "replace": true
+  },
+  "grand-hotel-timeo-a-belmond-hotel-taormina": {
+   "keys": 2,
+   "replace": true
+  },
+  "grand-hotel-tremezzo-como": {
+   "keys": 2,
+   "replace": true
+  },
+  "grand-hotel-victoria": {
+   "keys": 2,
+   "replace": true
+  },
+  "grand-lisboa-palace-macau": {
+   "keys": 2,
+   "replace": true
   },
   "grand-resort-bad-ragaz": {
    "keys": 3
@@ -501,8 +862,44 @@
   "grand-tirolia-kitzbuhel": {
    "keys": 2
   },
+  "grantley-hall": {
+   "keys": 2,
+   "replace": true
+  },
+  "gravetye-manor": {
+   "keys": 2,
+   "replace": true
+  },
   "gut-steinbach-hotel-chalets-spa": {
    "keys": 2
+  },
+  "halekulani": {
+   "keys": 2,
+   "replace": true
+  },
+  "halekulani-okinawa": {
+   "keys": 2,
+   "replace": true
+  },
+  "ham-yard-hotel-firmdale-hotels": {
+   "keys": 2,
+   "replace": true
+  },
+  "hambleton-hall": {
+   "keys": 2,
+   "replace": true
+  },
+  "hampton-manor": {
+   "keys": 2,
+   "replace": true
+  },
+  "haymarket-hotel-firmdale-hotels": {
+   "keys": 2,
+   "replace": true
+  },
+  "heckfield-place": {
+   "keys": 2,
+   "replace": true
   },
   "hermitage-bay-antigua": {
    "keys": 2
@@ -516,11 +913,20 @@
   "hotel-bareiss": {
    "keys": 3
   },
+  "hotel-barriere-fouquets-new-york": {
+   "keys": 2,
+   "replace": true
+  },
   "hotel-bel-air-la": {
    "keys": 3
   },
+  "hotel-cafe-royal": {
+   "keys": 2,
+   "replace": true
+  },
   "hotel-cheval-blanc-st-tropez": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "hotel-cipriani-venice": {
    "keys": 3
@@ -532,22 +938,34 @@
    "keys": 3
   },
   "hotel-de-crillon-paris": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "hotel-de-la-ville-a-rocco-forte-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "hotel-de-paris-monte-carlo": {
    "keys": 3
+  },
+  "hotel-de-russie-rome": {
+   "keys": 2,
+   "replace": true
   },
   "hotel-du-cap-eden-roc": {
    "keys": 3
   },
   "hotel-du-palais": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "hotel-emma": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "hotel-grande-bretagne-athens": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "hotel-imperial": {
    "keys": 2
@@ -556,10 +974,15 @@
    "keys": 3
   },
   "hotel-lily-of-the-valley": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "hotel-louis-c-jacob": {
    "keys": 2
+  },
+  "hotel-metropole-monte-carlo": {
+   "keys": 2,
+   "replace": true
   },
   "hotel-plaza-athenee-paris": {
    "keys": 3
@@ -582,23 +1005,56 @@
   "hotel-villa-dubrovnik": {
    "keys": 2
   },
+  "huka-lodge-taupo": {
+   "keys": 2,
+   "replace": true
+  },
   "huttenhof-wellnesshotel-and-luxus-bergchalets": {
    "keys": 2
+  },
+  "i-borghi-delleremo": {
+   "keys": 2,
+   "replace": true
+  },
+  "il-borro": {
+   "keys": 2,
+   "replace": true
   },
   "il-san-pietro-positano": {
    "keys": 3
   },
+  "il-sereno": {
+   "keys": 2,
+   "replace": true
+  },
+  "iniala-beach-house": {
+   "keys": 2,
+   "replace": true
+  },
+  "intercontinental-phuket-resort": {
+   "keys": 2,
+   "replace": true
+  },
   "j-hotel-shanghai-tower": {
    "keys": 2
   },
+  "jackalope-hotel-mornington": {
+   "keys": 2,
+   "replace": true
+  },
   "jackalope-hotel-mornington-peninsula": {
    "keys": 2
+  },
+  "janu-tokyo": {
+   "keys": 2,
+   "replace": true
   },
   "jk-place-capri": {
    "keys": 3
   },
   "jk-place-paris": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "joali-being-maldives": {
    "keys": 3
@@ -609,8 +1065,24 @@
   "jumby-bay-island-antigua": {
    "keys": 2
   },
+  "jusandi": {
+   "keys": 2,
+   "replace": true
+  },
+  "kamenoi-besso": {
+   "keys": 2,
+   "replace": true
+  },
+  "kanamean-nishitomiya": {
+   "keys": 2,
+   "replace": true
+  },
   "kasbah-tamadot-morocco": {
    "keys": 3
+  },
+  "keemala-phuket": {
+   "keys": 2,
+   "replace": true
   },
   "kempinski-hotel-berchtesgaden": {
    "keys": 2
@@ -619,7 +1091,8 @@
    "keys": 2
   },
   "kinsterna-hotel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "kokomo-private-island-fiji": {
    "keys": 2
@@ -634,10 +1107,16 @@
    "keys": 3
   },
   "la-cheneaudiere": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "la-ferme-saint-simeon": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "la-fiermontina-palazzo-bozzi-corso": {
+   "keys": 2,
+   "replace": true
   },
   "la-maison": {
    "keys": 2
@@ -645,11 +1124,17 @@
   "la-mamounia-marrakech": {
    "keys": 3
   },
+  "la-minervetta": {
+   "keys": 2,
+   "replace": true
+  },
   "la-mirande": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "la-reserve-de-beaulieu": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "la-reserve-paris": {
    "keys": 3
@@ -661,10 +1146,19 @@
    "keys": 2
   },
   "lapogee-courchevel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "las-alamandas": {
+   "keys": 2,
+   "replace": true
   },
   "las-casitas-a-belmond-hotel": {
    "keys": 3
+  },
+  "las-ventanas-al-paraiso": {
+   "keys": 2,
+   "replace": true
   },
   "le-bora-bora": {
    "keys": 2
@@ -673,16 +1167,19 @@
    "keys": 3
   },
   "le-chateau-de-beaulieu": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "le-couvent-des-minimes-un-hotel-and-spa-loccitane-en-provenc": {
    "keys": 3
   },
   "le-domaine-du-mas-de-pierre": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "le-k2-chogori": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "le-k2-palace": {
    "keys": 3
@@ -691,28 +1188,46 @@
    "keys": 3
   },
   "le-negresco": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "le-royal-monceau": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "le-tahaa-pearl-resorts": {
    "keys": 2
   },
+  "lefay-resort-and-spa-dolomiti": {
+   "keys": 2,
+   "replace": true
+  },
+  "lermitage-beverly-hills": {
+   "keys": 2,
+   "replace": true
+  },
   "les-pres-deugenie": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "les-roches-blanches": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "les-sources-de-caudalie": {
    "keys": 3
   },
   "les-sources-de-cheverny": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "les-sources-de-vougeot": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "lime-wood-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "little-palm-island-florida-keys": {
    "keys": 3
@@ -724,7 +1239,12 @@
    "keys": 3
   },
   "longitude-131-uluru": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "los-poblanos-historic-inn-and-organic-farm": {
+   "keys": 2,
+   "replace": true
   },
   "lovango-resort-and-beach-club": {
    "keys": 2
@@ -734,6 +1254,10 @@
   },
   "luisenhohe": {
    "keys": 2
+  },
+  "lympstone-manor": {
+   "keys": 2,
+   "replace": true
   },
   "malliouhana-anguilla": {
    "keys": 2
@@ -748,7 +1272,16 @@
    "keys": 3
   },
   "mandarin-oriental-lutetia-paris": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "mandarin-oriental-mayfair-london": {
+   "keys": 2,
+   "replace": true
+  },
+  "mandarin-oriental-milan": {
+   "keys": 2,
+   "replace": true
   },
   "mandarin-oriental-munich": {
    "keys": 2
@@ -768,17 +1301,58 @@
   "manoir-hovey": {
    "keys": 2
   },
+  "maroma-belmond-riviera-maya": {
+   "keys": 2,
+   "replace": true
+  },
   "mashpi-lodge": {
    "keys": 2
+  },
+  "masseria-torre-maizza-a-rocco-forte-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "matild-palace-a-luxury-collection-hotel": {
    "keys": 2
   },
+  "maybourne-beverly-hills": {
+   "keys": 2,
+   "replace": true
+  },
   "meadowood-napa-valley": {
    "keys": 3
   },
+  "milliken-creek-inn": {
+   "keys": 2,
+   "replace": true
+  },
+  "montage-healdsburg": {
+   "keys": 2,
+   "replace": true
+  },
+  "montage-kapalua-bay": {
+   "keys": 2,
+   "replace": true
+  },
   "montage-laguna-beach": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "montage-los-cabos": {
+   "keys": 2,
+   "replace": true
+  },
+  "monteverdi-tuscany": {
+   "keys": 2,
+   "replace": true
+  },
+  "moor-hall": {
+   "keys": 2,
+   "replace": true
+  },
+  "museum-hotel-cappadocia": {
+   "keys": 2,
+   "replace": true
   },
   "naturhotel-waldklause": {
    "keys": 2
@@ -801,17 +1375,51 @@
   "nihi-sumba": {
    "keys": 3
   },
+  "nine-orchard": {
+   "keys": 2,
+   "replace": true
+  },
+  "nishimuraya-honkan-kinosaki": {
+   "keys": 2,
+   "replace": true
+  },
   "nolinski": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "nolinski-venezia": {
+   "keys": 2,
+   "replace": true
   },
   "north-block": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "oberoi-amarvilas-agra": {
    "keys": 2
   },
   "one-and-only-mandarina": {
    "keys": 3
+  },
+  "one-and-only-moonlight-basin": {
+   "keys": 2,
+   "replace": true
+  },
+  "one-and-only-palmilla": {
+   "keys": 2,
+   "replace": true
+  },
+  "onyado-chikurintei": {
+   "keys": 2,
+   "replace": true
+  },
+  "orient-express-la-minerva-rome": {
+   "keys": 2,
+   "replace": true
+  },
+  "otahuna-lodge-christchurch": {
+   "keys": 2,
+   "replace": true
   },
   "pacuare-lodge": {
    "keys": 2
@@ -821,6 +1429,30 @@
   },
   "palacio-tangara": {
    "keys": 2
+  },
+  "palazzo-portinari-salviati-residenza-depoca": {
+   "keys": 2,
+   "replace": true
+  },
+  "palazzo-talia": {
+   "keys": 2,
+   "replace": true
+  },
+  "palazzo-versace-macau": {
+   "keys": 2,
+   "replace": true
+  },
+  "palmaia-house-of-aia": {
+   "keys": 2,
+   "replace": true
+  },
+  "park-hotel-kenmare": {
+   "keys": 2,
+   "replace": true
+  },
+  "park-hyatt-bangkok": {
+   "keys": 2,
+   "replace": true
   },
   "park-hyatt-vienna": {
    "keys": 2
@@ -834,8 +1466,16 @@
   "patrick-hellmann-schlosshotel": {
    "keys": 2
   },
+  "pendry-manhattan-west": {
+   "keys": 2,
+   "replace": true
+  },
   "penha-longa-resort": {
    "keys": 3
+  },
+  "peninsula-beverly-hills": {
+   "keys": 2,
+   "replace": true
   },
   "peninsula-london": {
    "keys": 3
@@ -846,14 +1486,38 @@
   "pikaia-lodge-galapagos": {
    "keys": 2
   },
+  "pimalai-resort-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
+  "playa-viva": {
+   "keys": 2,
+   "replace": true
+  },
+  "portrait-milano": {
+   "keys": 2,
+   "replace": true
+  },
   "post-ranch-inn": {
    "keys": 3
   },
   "purs-luxury-boutique-hotel-and-restaurant": {
    "keys": 2
   },
+  "rachamankha": {
+   "keys": 2,
+   "replace": true
+  },
   "raffles-al-areen-palace-bahrain": {
    "keys": 2
+  },
+  "raffles-bali": {
+   "keys": 2,
+   "replace": true
+  },
+  "raffles-boston": {
+   "keys": 2,
+   "replace": true
   },
   "raffles-london-owo": {
    "keys": 3
@@ -873,20 +1537,33 @@
   "rissai-valley-a-ritz-carlton-reserve": {
    "keys": 3
   },
+  "ritz-carlton-nikko": {
+   "keys": 2,
+   "replace": true
+  },
   "ritz-paris": {
    "keys": 3
   },
   "rocco-forte-charles-hotel": {
    "keys": 2
   },
+  "rosewood-bangkok": {
+   "keys": 2,
+   "replace": true
+  },
   "rosewood-beijing": {
    "keys": 2
+  },
+  "rosewood-cape-kidnappers": {
+   "keys": 2,
+   "replace": true
   },
   "rosewood-castiglion-del-bosco": {
    "keys": 3
   },
   "rosewood-courchevel-le-jardin-alpin": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "rosewood-guangzhou": {
    "keys": 2
@@ -897,14 +1574,46 @@
   "rosewood-hotel-georgia": {
    "keys": 2
   },
+  "rosewood-kauri-cliffs": {
+   "keys": 2,
+   "replace": true
+  },
+  "rosewood-london": {
+   "keys": 2,
+   "replace": true
+  },
   "rosewood-luang-prabang": {
    "keys": 3
+  },
+  "rosewood-matakauri-queenstown": {
+   "keys": 2,
+   "replace": true
+  },
+  "rosewood-mayakoba": {
+   "keys": 2,
+   "replace": true
+  },
+  "rosewood-miramar-beach": {
+   "keys": 2,
+   "replace": true
+  },
+  "rosewood-miyakojima": {
+   "keys": 2,
+   "replace": true
   },
   "rosewood-munich": {
    "keys": 2
   },
   "rosewood-phnom-penh": {
    "keys": 2
+  },
+  "rosewood-phuket": {
+   "keys": 2,
+   "replace": true
+  },
+  "rosewood-san-miguel-de-allende": {
+   "keys": 2,
+   "replace": true
   },
   "rosewood-sao-paulo": {
    "keys": 3
@@ -916,7 +1625,8 @@
    "keys": 2
   },
   "rosewood-washington-dc": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "royal-champagne-hotel-and-spa": {
    "keys": 3
@@ -933,8 +1643,20 @@
   "saint-james-paris": {
    "keys": 3
   },
+  "saltmoore": {
+   "keys": 2,
+   "replace": true
+  },
+  "samujana-villas": {
+   "keys": 2,
+   "replace": true
+  },
   "san-domenico-palace-taormina": {
    "keys": 3
+  },
+  "santa-caterina": {
+   "keys": 2,
+   "replace": true
   },
   "schloss-elmau-luxury-spa-retreat-and-cultural-hideaway": {
    "keys": 3
@@ -951,8 +1673,17 @@
   "seesteg-norderney": {
    "keys": 2
   },
+  "sekitei": {
+   "keys": 2,
+   "replace": true
+  },
   "sequoia-lodge": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "setai-miami-beach": {
+   "keys": 2,
+   "replace": true
   },
   "severins-resort-and-spa": {
    "keys": 2
@@ -960,11 +1691,16 @@
   "severins-the-alpine-retreat": {
    "keys": 2
   },
+  "sheen-falls-lodge": {
+   "keys": 2,
+   "replace": true
+  },
   "shinta-mani-wild": {
    "keys": 2
   },
   "silky-oaks-lodge-daintree": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "singlethread-farm-inn": {
    "keys": 3
@@ -978,6 +1714,14 @@
   "six-senses-krabey-island": {
    "keys": 2
   },
+  "six-senses-samui": {
+   "keys": 2,
+   "replace": true
+  },
+  "six-senses-yao-noi": {
+   "keys": 2,
+   "replace": true
+  },
   "six-senses-zighy-bay": {
    "keys": 2
   },
@@ -985,7 +1729,12 @@
    "keys": 2
   },
   "sofitel-legend-metropole-hanoi": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "solage-auberge-collection": {
+   "keys": 2,
+   "replace": true
   },
   "solring-hof": {
    "keys": 2
@@ -999,6 +1748,10 @@
   "sonnenalp-resort": {
    "keys": 2
   },
+  "soori-bali": {
+   "keys": 2,
+   "replace": true
+  },
   "southern-ocean-lodge": {
    "keys": 3
   },
@@ -1006,13 +1759,19 @@
    "keys": 2
   },
   "spicers-peak-lodge": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "spicers-sangoma-retreat": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "splendido-belmond-portofino": {
    "keys": 3
+  },
+  "splendido-mare-a-belmond-hotel-portofino": {
+   "keys": 2,
+   "replace": true
   },
   "st-regis-bora-bora": {
    "keys": 2
@@ -1020,14 +1779,23 @@
   "steigenberger-icon-europaischer-hof-baden-baden": {
    "keys": 2
   },
+  "stillpoint-lodge": {
+   "keys": 2,
+   "replace": true
+  },
   "sujan-jawai-india": {
    "keys": 2
   },
   "susana-balbo-winemakers-house-and-spa-suites-relais-and-chat": {
    "keys": 2
   },
+  "susurros-del-corazon-auberge": {
+   "keys": 2,
+   "replace": true
+  },
   "tainaron-blue-retreat": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "taj-falaknuma-palace-hyderabad": {
    "keys": 3
@@ -1047,62 +1815,213 @@
   "the-amauris-vienna": {
    "keys": 2
   },
+  "the-apurva-kempinski-bali": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-balmoral": {
+   "keys": 2,
+   "replace": true
+  },
   "the-battery": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-beaumont-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-berkeley-london": {
+   "keys": 2,
+   "replace": true
   },
   "the-brando": {
    "keys": 3
   },
   "the-breakers": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-burman-hotel": {
    "keys": 2
+  },
+  "the-cadogan-a-belmond-hotel-london": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-capitol-hotel-tokyu": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-carlton-milan-a-rocco-forte-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-carlyle-new-york": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-chancery-rosewood": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-chanler-at-cliff-walk": {
+   "keys": 2,
+   "replace": true
   },
   "the-connaught-london": {
    "keys": 3
   },
   "the-dolli-at-acropolis": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-dorchester-dorchester-collection": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-fife-arms": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-fifth-avenue-hotel-new-york": {
+   "keys": 2,
+   "replace": true
   },
   "the-fontenay": {
    "keys": 3
   },
+  "the-gritti-palace-a-luxury-collection-hotel-venice": {
+   "keys": 2,
+   "replace": true
+  },
   "the-hay-adams-hotel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-hazelton-hotel": {
    "keys": 2
   },
+  "the-hermitage-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-hiramatsu-karuizawa-miyota": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-hornibrook-mansion": {
+   "keys": 2,
+   "replace": true
+  },
   "the-inn-at-little-washington": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-ivy-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "the-jefferson": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-karl-lagerfeld": {
+   "keys": 2,
+   "replace": true
   },
   "the-kumaon": {
    "keys": 2
   },
   "the-landmark-mandarin-oriental-hong-kong": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-lanesborough": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-langham-boston": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-langham-chicago": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-langham-jakarta": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-langham-london": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-lindis-ahuriri": {
+   "keys": 2,
+   "replace": true
   },
   "the-lodge-at-blue-sky-auberge-resorts-collection": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-lodge-at-primland-auberge-collection": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-loutrel": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-lowell": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-madrona": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-mark-new-york": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-marquesa-hotel": {
+   "keys": 2,
+   "replace": true
   },
   "the-maybourne-riviera": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-merrion": {
+   "keys": 2,
+   "replace": true
   },
   "the-mitsui-kyoto": {
    "keys": 3
   },
+  "the-newbury-boston": {
+   "keys": 2,
+   "replace": true
+  },
   "the-newt-in-somerset": {
    "keys": 3
   },
+  "the-peninsula-chicago": {
+   "keys": 2,
+   "replace": true
+  },
   "the-peninsula-hong-kong": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-peninsula-istanbul": {
+   "keys": 2,
+   "replace": true
   },
   "the-peninsula-paris": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-peninsula-shanghai": {
    "keys": 2
@@ -1110,17 +2029,50 @@
   "the-remote-resort": {
    "keys": 2
   },
+  "the-resort-at-paws-up": {
+   "keys": 2,
+   "replace": true
+  },
   "the-retreat-blue-lagoon-iceland": {
    "keys": 2
   },
   "the-ritz-carlton-berlin": {
    "keys": 2
   },
+  "the-ritz-carlton-dove-mountain": {
+   "keys": 2,
+   "replace": true
+  },
   "the-ritz-carlton-new-york-nomad": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "the-ritz-london": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-royal-crescent-hotel-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-samling-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-sanchaya": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-sarojin": {
+   "keys": 2,
+   "replace": true
   },
   "the-savoy-london": {
    "keys": 3
+  },
+  "the-shinmonzen-kyoto": {
+   "keys": 2,
+   "replace": true
   },
   "the-siam-bangkok": {
    "keys": 3
@@ -1128,17 +2080,40 @@
   "the-singular-patagonia": {
    "keys": 2
   },
+  "the-st-regis-rome": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-stavrand": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-sukhothai-bangkok": {
+   "keys": 2,
+   "replace": true
+  },
+  "the-surrey-a-corinthia-hotel": {
+   "keys": 2,
+   "replace": true
+  },
   "the-swag": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-telegraph-hotel": {
    "keys": 2
   },
+  "the-twenty-two": {
+   "keys": 2,
+   "replace": true
+  },
   "the-upper-house-hk": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-vineta": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "the-whitby-hotel": {
    "keys": 3
@@ -1146,8 +2121,17 @@
   "the-woodward": {
    "keys": 3
   },
+  "therasia-resort-sea-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
   "thorngrove-manor": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "thyme": {
+   "keys": 2,
+   "replace": true
   },
   "tierra-atacama-hotel-and-spa": {
    "keys": 2
@@ -1161,8 +2145,29 @@
   "torre-del-marques-hotel-spa-and-winery": {
    "keys": 3
   },
+  "tourists": {
+   "keys": 2,
+   "replace": true
+  },
+  "triple-creek-ranch": {
+   "keys": 2,
+   "replace": true
+  },
+  "trisara-phuket": {
+   "keys": 2,
+   "replace": true
+  },
   "troisgros": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
+  },
+  "twin-farms-vermont": {
+   "keys": 2,
+   "replace": true
+  },
+  "vetera-matera": {
+   "keys": 2,
+   "replace": true
   },
   "vik-chile": {
    "keys": 2
@@ -1176,11 +2181,39 @@
   "villa-contessa": {
    "keys": 2
   },
+  "villa-cora": {
+   "keys": 2,
+   "replace": true
+  },
+  "villa-deste-como": {
+   "keys": 2,
+   "replace": true
+  },
+  "villa-eden-the-private-retreat": {
+   "keys": 2,
+   "replace": true
+  },
+  "villa-igiea-a-rocco-forte-hotel": {
+   "keys": 2,
+   "replace": true
+  },
   "villa-la-coste": {
    "keys": 3
   },
+  "villa-la-massa": {
+   "keys": 2,
+   "replace": true
+  },
   "villa-nai-33": {
    "keys": 3
+  },
+  "villa-santandrea-a-belmond-hotel": {
+   "keys": 2,
+   "replace": true
+  },
+  "villa-treville-positano": {
+   "keys": 2,
+   "replace": true
   },
   "villeroy": {
    "keys": 3
@@ -1188,17 +2221,50 @@
   "vitalhotel-alter-meierhof": {
    "keys": 2
   },
+  "wakax-hacienda": {
+   "keys": 2,
+   "replace": true
+  },
   "waldorf-astoria-berlin": {
    "keys": 2
   },
+  "waldorf-astoria-los-cabos-pedregal": {
+   "keys": 2,
+   "replace": true
+  },
+  "waldorf-astoria-new-york": {
+   "keys": 2,
+   "replace": true
+  },
+  "wallingford-homestead": {
+   "keys": 2,
+   "replace": true
+  },
+  "warren-street-hotel": {
+   "keys": 2,
+   "replace": true
+  },
   "washington-school-house-hotel": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "weissenhaus-private-nature-luxury-resort": {
    "keys": 2
   },
   "wellness-and-sport-hotel-jagdhof": {
    "keys": 2
+  },
+  "wharekauhau-country-estate": {
+   "keys": 2,
+   "replace": true
+  },
+  "whatley-manor-hotel-and-spa": {
+   "keys": 2,
+   "replace": true
+  },
+  "wildflower-farms-auberge-collection": {
+   "keys": 2,
+   "replace": true
   },
   "xigera-safari-lodge-botswana": {
    "keys": 2
@@ -1209,8 +2275,17 @@
   "xitan-hotel-beijing": {
    "keys": 2
   },
+  "zaborin-niseko": {
+   "keys": 2,
+   "replace": true
+  },
+  "zadun-ritz-carlton-reserve": {
+   "keys": 2,
+   "replace": true
+  },
   "zannier-bai-san-ho": {
-   "keys": 2
+   "keys": 2,
+   "replace": true
   },
   "zannier-phum-baitang": {
    "keys": 2

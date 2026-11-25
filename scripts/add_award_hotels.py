@@ -165,8 +165,17 @@ def run_awards(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
             keys = int(rec["keys"])
             existing_labels = have_michelin.get(pid, set())
             if existing_labels and label[keys] not in existing_labels:
-                print(f"  CONFLICT {pid}: site has {sorted(existing_labels)}, list says {label[keys]} - left unchanged")
-                continue
+                if not rec.get("replace"):
+                    print(f"  CONFLICT {pid}: site has {sorted(existing_labels)}, list says {label[keys]} - left unchanged")
+                    continue
+                # an official 2026 country list supersedes an older tag
+                print(f"  UPDATE {pid}: {sorted(existing_labels)} -> {label[keys]}")
+                sb(
+                    "DELETE",
+                    f"/rest/v1/official_awards?property_id=eq.{urllib.parse.quote(pid)}&award_body=eq.{urllib.parse.quote('MICHELIN Guide')}",
+                    None,
+                    {"Prefer": "return=minimal"},
+                )
             mrows.append(
                 {
                     "property_id": pid,
