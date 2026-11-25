@@ -413,7 +413,8 @@ def main() -> None:
     nuitee_key = os.environ["NUITEE_API_KEY"].strip()
 
     props = sb_get_all(sb_url, sb_secret, "properties", "id,name,city,country,nuitee_hotel_id,visited_by_founder,hero_image_url,lat,lng")
-    guest_existing = {r["property_id"]: r for r in sb_get_all(sb_url, sb_secret, "licensed_guest_scores", "property_id,rating,review_count")}
+    guest_existing = {r["property_id"]: r for r in sb_get_all(sb_url, sb_secret, "licensed_guest_scores", "property_id,rating,review_count,partner_source")
+                      if r.get("partner_source") != "tripadvisor"}
     facts_existing = {r["property_id"]: r for r in sb_get_all(sb_url, sb_secret, "property_facts", "property_id,standout,watch_out,pool_heating,beach_or_reef,transfer_logistics,red_flag_tags,source_note")}
 
     targets = [

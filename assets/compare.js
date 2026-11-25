@@ -9,7 +9,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=12";
+} from "./stayodds-engine.js?v=13";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
 import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {
@@ -25,7 +25,7 @@ import {
   buildHotelQuickSummary,
   exportHotelsToCsv,
   parseNaturalTripQuery,
-} from "./stayodds-insights.js?v=6";
+} from "./stayodds-insights.js?v=7";
 
 const I = (name, size = 13) => svgIcon(name, size);
 
@@ -781,7 +781,7 @@ function renderH2HCard(h, allCompared) {
           criticDisplay || "— (None listed)"
         )}
         ${metricRow(
-          "Verified Guests",
+          "Guest Reviews",
           o.guest100,
           otherOdds.map((x) => x.o.guest100),
           "",
@@ -1773,7 +1773,7 @@ function renderLeaderboard() {
                   ${criticBoxHtml}
                 </div>
                 <div class="pillar-box is-google">
-                  <small>Verified Guests${o.marketOdds != null && o.firstHand ? ` · Cons ${o.marketOdds}%` : ""}</small>
+                  <small>Guest Reviews${o.marketOdds != null && o.firstHand ? ` · Cons ${o.marketOdds}%` : ""}</small>
                   <strong>${o.verifiedGuest ? `${o.verifiedGuest.rating.toFixed(1)} / ${o.verifiedGuest.scale}` : "Open Breakdown"}</strong>
                 </div>
               </div>
@@ -2007,7 +2007,7 @@ async function boot() {
         state.hotels.find((h) => h.id === state.idC) ||
         state.hotels.find((h) => h.id !== ha.id && h.id !== hb.id);
       if (hc) {
-        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=10");
+        const { openThreeWayShareModal } = await import("./stayodds-share-card.js?v=11");
         openThreeWayShareModal(ha, hb, hc, getOdds(ha), getOdds(hb), getOdds(hc));
         if (typeof window.trackEvent === "function") {
           window.trackEvent("open_share_card", "vs_three_hotel", `${ha.name} vs ${hb.name} vs ${hc.name}`);
@@ -2015,7 +2015,7 @@ async function boot() {
         return;
       }
     }
-    const { openVsShareModal } = await import("./stayodds-share-card.js?v=10");
+    const { openVsShareModal } = await import("./stayodds-share-card.js?v=11");
     openVsShareModal(ha, hb, getOdds(ha), getOdds(hb));
     if (typeof window.trackEvent === "function") {
       window.trackEvent("open_share_card", "vs_pair", `${ha.name} vs ${hb.name}`);

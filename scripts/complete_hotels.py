@@ -152,7 +152,8 @@ def best_match(p: dict[str, Any], iso2: str, key: str, used: set[str]) -> tuple[
 def main() -> int:
     key = os.environ["NUITEE_API_KEY"]
     props = sb_all("properties", "id,name,city,country,lat,lng,tier,visited_by_founder,nuitee_hotel_id,hero_image_url")
-    guest = {r["property_id"] for r in sb_all("licensed_guest_scores", "property_id")}
+    guest = {r["property_id"] for r in sb_all("licensed_guest_scores", "property_id,partner_source")
+             if r.get("partner_source") != "tripadvisor"}
     facts = {r["property_id"]: r for r in sb_all("property_facts", "property_id,standout,watch_out")}
     used = {str(p["nuitee_hotel_id"]) for p in props if p.get("nuitee_hotel_id")}
     print(f"{len(props)} properties | {len(used)} with a LiteAPI id")

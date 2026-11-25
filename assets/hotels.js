@@ -6,7 +6,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=12";
+} from "./stayodds-engine.js?v=13";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
 import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {
@@ -18,7 +18,7 @@ import {
   getGuestProfile,
   exportHotelsToCsv,
   parseNaturalTripQuery,
-} from "./stayodds-insights.js?v=6";
+} from "./stayodds-insights.js?v=7";
 
 const PAGE_SIZE = 24;
 const MAP_STATE_KEY = "stayodds_map_state_v1";

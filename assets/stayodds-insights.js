@@ -778,7 +778,7 @@ export function exportHotelsToCsv(hotels, getOddsFn, awardHelpers, filename = "s
     "Status Badge",
     "Uncharted Stay (/25)",
     "Critics (/100)",
-    "Verified Guests",
+    "Guest Reviews",
     "Opinion Gap",
     "MICHELIN Keys",
     "World's 50 Best",

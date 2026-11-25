@@ -218,7 +218,7 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     elif guest100 is not None:
         market_odds = guest100
         market_src_cnt = 1
-        source_basis_short = "1 source • Verified Guests"
+        source_basis_short = "1 source • Guest Reviews"
     elif critic100 is not None:
         market_odds = critic100
         market_src_cnt = 1
@@ -274,12 +274,12 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
         overall_idx = market_odds
         if critic100 is not None and guest100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 35, "guests": 65}
-            formula = "Based on 2 sources: Published Critics (35%) + Verified Guests (65%)"
+            formula = "Based on 2 sources: Published Critics (35%) + Guest Reviews (65%)"
         elif guest100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 0, "guests": 100}
             status_badge = "1 Data Source"
             status_tone = "teal"
-            formula = "Based on 1 source (Verified Guests" + (", small-sample adjusted)" if guest_dampened else ")")
+            formula = "Based on 1 source (Guest Reviews" + (", small-sample adjusted)" if guest_dampened else ")")
         elif critic100 is not None:
             weights = {"firstHand": 0, "market": 100, "critics": 100, "guests": 0}
             status_badge = "1 Data Source"
@@ -760,6 +760,48 @@ LANG_NAMES = {"fr": "French", "de": "German", "es": "Spanish", "it": "Italian", 
               "el": "Greek", "hu": "Hungarian", "ro": "Romanian", "uk": "Ukrainian", "vi": "Vietnamese"}
 
 
+def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None) -> dict[str, Any] | None:
+    """One guest score from every real guest rating we hold, weighted by how many reviews each is based on.
+
+    Booking-platform guest ratings are out of 10 and Tripadvisor ratings out of 5; both become a % of the maximum
+    (9.2/10 -> 92, 4.5/5 -> 90) and are averaged by review count, so 4,000 Tripadvisor reviews count for more than
+    40 booking reviews. Each part keeps its own source, rating and review count for display.
+    """
+    parts = []
+    if gs and gs.get("normalized_100") is not None:
+        parts.append({
+            "name": "Verified booking guests", "rating": float(gs["rating"]), "scale": float(gs.get("scale") or 10.0),
+            "normalized100": int(gs["normalized_100"]), "reviewCount": gs.get("review_count"),
+            "checked": gs.get("verified_at"),
+        })
+    if ta and ta.get("rating") is not None and (ta.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS:
+        parts.append({
+            "name": "Tripadvisor", "rating": float(ta["rating"]), "scale": 5.0,
+            "normalized100": int(round(float(ta["rating"]) * 20)), "reviewCount": int(ta["reviewCount"]),
+            "checked": ta.get("fetched"), "url": ta.get("url"),
+        })
+    if not parts:
+        return None
+    counts = [int(p["reviewCount"] or 0) for p in parts]
+    if sum(counts) > 0:
+        n100 = int(round(sum(p["normalized100"] * c for p, c in zip(parts, counts)) / sum(counts)))
+    else:
+        n100 = int(round(sum(p["normalized100"] for p in parts) / len(parts)))
+    total = sum(counts) or None
+    return {
+        "licensed": {
+            "sourceName": "Guest Reviews" if len(parts) > 1 else ("Tripadvisor" if parts[0]["name"] == "Tripadvisor" else "Verified booking guests"),
+            "rating": round(n100 / 10, 1),
+            "scale": 10.0,
+            "normalized100": n100,
+            "reviewCount": total,
+            "attribution": " + ".join(p["name"] for p in parts),
+            "verifiedAt": max((str(p.get("checked") or "") for p in parts), default=None),
+            "sources": parts,
+        }
+    }
+
+
 def voices_section_html(h: dict[str, Any]) -> str:
     """Real guest comments (dated, sourced, unedited) and links to traveller discussions and reviews. No scores made up."""
     # read the data files directly too, so a publish-only run picks up newly added links and ratings
@@ -969,10 +1011,21 @@ def render_seo_page(
         left_display = "No numeric critic review yet"
 
     right_display = (
-        f"{vg['rating']} / {vg.get('scale', 10)} ({o['guest100']}/100)"
+        (f"{o['guest100']} / 100 ({int(vg['reviewCount']):,} reviews)" if vg.get("reviewCount") else f"{o['guest100']} / 100")
         if vg and vg.get("rating")
         else "Checking Google Reviews…"
     )
+    guest_parts = (vg or {}).get("sources") or []
+    guest_breakdown_html = (
+        '<small class="detail-panel-sub" style="display:block;margin-top:6px;">'
+        + " · ".join(
+            f"{esc(p['name'])} {p['rating']:g}/{int(p['scale'])}"
+            + (f" ({int(p['reviewCount']):,})" if p.get("reviewCount") else "")
+            for p in guest_parts
+        )
+        + (" — combined by number of reviews" if len(guest_parts) > 1 else "")
+        + "</small>"
+    ) if guest_parts else ""
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
         if o["delta100"] is not None
@@ -1139,7 +1192,7 @@ def render_seo_page(
         eq_parts.append(f"{o['weights']['critics']}% Published Critics ({o['critic100']}%)")
     if o["weights"]["guests"] > 0 and o["guest100"] is not None:
         g_raw = f"{vg['rating']}/{int(vg.get('scale', 10))} → " if vg and vg.get("rating") else ""
-        eq_parts.append(f"{o['weights']['guests']}% Verified Guests ({g_raw}{o['guest100']}%)")
+        eq_parts.append(f"{o['weights']['guests']}% Guest Reviews ({g_raw}{o['guest100']}%)")
 
     if eq_parts and o["greatStayOdds"] is not None:
         equation_text = " + ".join(eq_parts) + f" = {o['greatStayOdds']}% StayOdds"
@@ -1527,7 +1580,7 @@ def render_seo_page(
             </div>
             <div class="detail-kpi">
               <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
-              <span id="kpiGuestLbl">{f"Verified Guests ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Google Guests"}</span>
+              <span id="kpiGuestLbl">{f"Guest Reviews ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Google Guests"}</span>
             </div>
           </div>
 
@@ -1540,7 +1593,7 @@ def render_seo_page(
               <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
               <ul class="stayodds-explainer-list">
                 <li><strong>Uncharted Verified (Filmed Stays):</strong> When <strong>The Uncharted Itinerary</strong> has stayed and scored a hotel (/25), <strong>StayOdds</strong> weights <strong>70% Uncharted Stay + 30% Guest &amp; Critic Consensus</strong> (or 100% Uncharted Stay if no external score exists), with a transparent <strong>Uncharted vs. Consensus</strong> delta.</li>
-                <li><strong>Global Directory (Unvisited Hotels):</strong> Unvisited properties display a unified <strong>StayOdds %</strong> alongside the exact data-source count (35% Published Critics + 65% Verified Guests when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed), with gentle Bayesian dampening on tiny (&lt;40 review) samples.</li>
+                <li><strong>Global Directory (Unvisited Hotels):</strong> Unvisited properties display a unified <strong>StayOdds %</strong> alongside the exact data-source count (35% Published Critics + 65% Guest Reviews when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed), with gentle Bayesian dampening on tiny (&lt;40 review) samples.</li>
                 <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
               </ul>
             </div>
@@ -1606,6 +1659,7 @@ def render_seo_page(
             <div class="gap-side">
               <div class="gap-side-top"><span>{'Guest &amp; Critic Consensus' if o['firstHand'] else 'Real Guest Score'}</span><strong id="gapGuestDisplay">{f"{o['marketOdds']}%" if (o['firstHand'] and o.get('marketOdds') is not None) else esc(right_display)}</strong></div>
               <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>
+              {'' if o['firstHand'] else guest_breakdown_html}
             </div>
           </div>
 
@@ -1647,7 +1701,7 @@ def render_seo_page(
             <div class="formula-grid" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
               <div class="formula-step"><span class="formula-weight" id="weightFirstHandPct">{o['weights']['firstHand']}%</span><strong>{f"{o['personalScoreLabel'].replace(' ', '')} → {o['ours100']}%" if (o['ours100'] is not None and o.get('personalScoreLabel')) else (f"{o['ours100']}%" if o['ours100'] is not None else "—")}</strong><small>Uncharted Stay</small></div>
               <div class="formula-step"><span class="formula-weight" id="weightCriticsPct">{o['weights']['critics']}%</span><strong>{f"{o['critic100']}%" if o['critic100'] is not None else ("Unverified" if unverified_ed else "—")}</strong><small>Published Critics</small></div>
-              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Verified Guests</small></div>
+              <div class="formula-step"><span class="formula-weight" id="weightGuestsPct">{o['weights']['guests']}%</span><strong id="weightGuestVal">{f"{o['guest100']}%" if o['guest100'] is not None else "Live…"}</strong><small>Guest Reviews</small></div>
             </div>
             {unverified_transparency_html}
           </div>
@@ -2060,7 +2114,7 @@ def render_seo_page(
 
     const shareCardState = {json.dumps(share_card_payload, ensure_ascii=False)};
     document.getElementById("shareHotelCardBtn")?.addEventListener("click", async () => {{
-      const mod = await import("../../assets/stayodds-share-card.js?v=10");
+      const mod = await import("../../assets/stayodds-share-card.js?v=11");
       mod.openSingleHotelShareModal(shareCardState.hotel, shareCardState.odds);
       if (typeof window.trackEvent === "function") {{
         window.trackEvent("open_share_card", "single_hotel", shareCardState.hotel.name);
@@ -2564,6 +2618,8 @@ def main() -> None:
     fh_map = {r["property_id"]: r for r in sb_get_all(sb_url, sb_key, "first_hand_reviews")}
     guest_map: dict[str, dict[str, Any]] = {}
     for r in sb_get_all(sb_url, sb_key, "licensed_guest_scores"):
+        if r.get("partner_source") == "tripadvisor":
+            continue  # added from data/tripadvisor.json in combined_guest_score()
         n = r.get("review_count")
         if (n is not None and int(n) < MIN_GUEST_REVIEWS) or (n is None and r.get("partner_source") == "nuitee_connect"):
             continue  # too few reviews to be a reliable guest score: leave it off
@@ -2721,19 +2777,7 @@ def main() -> None:
             "redFlags": f.get("red_flag_tags") or [],
             "bookingUrl": web_booking,
             "bookingLinks": bks,
-            "verifiedGuest": {
-                "licensed": {
-                    "sourceName": "Verified Guests",
-                    "rating": float(gs["rating"]),
-                    "scale": float(gs.get("scale") or 10.0),
-                    "normalized100": int(gs["normalized_100"]),
-                    "reviewCount": gs.get("review_count"),
-                    "attribution": gs.get("attribution", "Verified Guest Score"),
-                    "verifiedAt": gs.get("verified_at"),
-                }
-            }
-            if gs
-            else None,
+            "verifiedGuest": combined_guest_score(gs, TRIPADVISOR.get(pid)),
             "editorialRatings": ed_map.get(pid) or [],
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],

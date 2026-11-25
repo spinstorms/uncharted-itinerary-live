@@ -366,12 +366,12 @@ export function computeStayOdds(hotel) {
   if (critic100 != null && guest100 != null) {
     marketOdds = Math.round(critic100 * 0.35 + guest100 * 0.65);
     marketSourceCount = 2;
-    marketFormulaSummary = "Based on 2 sources: Published Critics (35%) + Verified Guests (65%)";
+    marketFormulaSummary = "Based on 2 sources: Published Critics (35%) + Guest Reviews (65%)";
     sourceBasisShort = "2 sources • Critics + Guests";
   } else if (guest100 != null) {
     marketOdds = guest100;
     marketSourceCount = 1;
-    const gName = verifiedGuest?.sourceName || "Verified Guests";
+    const gName = verifiedGuest?.sourceName || "Guest Reviews";
     marketFormulaSummary = verifiedGuest?.wasDampened
       ? `Based on 1 source (${gName}, small-sample adjusted)`
       : `Based on 1 source (${gName})`;
