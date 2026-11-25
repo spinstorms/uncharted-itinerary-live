@@ -788,7 +788,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
             f"{q['score']:g}/10" if isinstance(q.get("score"), (int, float)) else "",
             q.get("travellerType", "").title(),
             q.get("date", ""),
-            f"{q.get('source', '')} review",
+            f"{'Verified guest' if q.get('source') == 'LiteAPI guest' else q.get('source', '')} review",
             f"written in {LANG_NAMES.get(q.get('language', ''), q.get('language', '').upper())}" if q.get("language") not in ("", "en", None) else "",
         ) if x)
         q_html += (f'<div class="channel-row" style="display:block;"><div style="display:flex;flex-direction:column;gap:4px;">'

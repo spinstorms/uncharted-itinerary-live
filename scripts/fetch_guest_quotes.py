@@ -28,7 +28,7 @@ from sync_250_hotels import nuitee_get  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "guest-quotes.json"
-SOURCE_NAMES = {"tripadvisor": "Tripadvisor", "nuitee": "LiteAPI guest", "booking": "Booking.com", "expedia": "Expedia"}
+SOURCE_NAMES = {"tripadvisor": "Tripadvisor", "nuitee": "Verified guest", "booking": "Booking.com", "expedia": "Expedia"}
 
 
 def clean(s: Any) -> str:
