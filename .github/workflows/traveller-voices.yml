@@ -1,4 +1,4 @@
-name: Guest comments and traveller links
+name: Guest comments, traveller links and press awards
 
 # Real guest comments from the LiteAPI reviews feed (no AI ratings), then rebuild and publish stayodds.com.
 
@@ -40,6 +40,9 @@ jobs:
           python-version: "3.12"
       - name: Real guest comments (LiteAPI reviews feed)
         run: python3 scripts/fetch_guest_quotes.py
+      - name: Forbes Travel Guide 2026 Star Awards (official list)
+        run: python3 scripts/forbes_awards.py
+        continue-on-error: true
       - name: Tripadvisor ratings (skips until the TRIPADVISOR_API_KEY secret exists)
         run: python3 scripts/fetch_tripadvisor.py --max-calls ${{ inputs.tripadvisor_calls || 900 }}
         continue-on-error: true
