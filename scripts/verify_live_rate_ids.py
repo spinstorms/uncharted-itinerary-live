@@ -6,7 +6,8 @@ fetches the LiteAPI hotel record and compares its location and name with ours:
 
   verified  within 5 km and the names overlap -> added to ``verifiedLiveRates``. These keep live pricing even if
             a heuristic price rule would otherwise hide them.
-  mismatch  more than 10 km away              -> added to ``blockLiveRates``. Live pricing is hidden and the
+  conflict  more than 10 km away but same name -> left alone (our coordinates are probably off); listed in report
+  mismatch  more than 10 km away, names differ -> added to ``blockLiveRates``. Live pricing is hidden and the
             page explains why (see scripts/live_rate_policy.py).
   unchecked API error, no coordinates, 5-10 km away or weak name overlap -> left exactly as it is.
 
@@ -39,6 +40,15 @@ VERIFIED_KM = 5.0
 MISMATCH_KM = 10.0
 
 
+def strong_name_match(ours: set[str], theirs: set[str]) -> bool:
+    if not ours or not theirs:
+        return False
+    inter = len(ours & theirs)
+    if inter / len(ours | theirs) >= 0.8:
+        return True
+    return ours <= theirs and len(ours) >= 3
+
+
 def classify(
     our_name: str, our_lat: Any, our_lng: Any, detail: dict[str, Any] | None
 ) -> tuple[str, float | None, str]:
@@ -50,9 +60,10 @@ def classify(
     km = km_between(our_lat, our_lng, loc.get("latitude"), loc.get("longitude"))
     if km is None:
         return "unchecked", None, lite_name
-    if km > MISMATCH_KM:
-        return "mismatch", km, lite_name
     ours, theirs = norm_tokens(our_name), norm_tokens(lite_name)
+    if km > MISMATCH_KM:
+        # Same name but far away usually means OUR coordinates are off: report it, don't hide live pricing.
+        return ("conflict" if strong_name_match(ours, theirs) else "mismatch"), km, lite_name
     overlap = len(ours & theirs) / max(1, min(len(ours), len(theirs)))
     if km <= VERIFIED_KM and overlap >= 0.5:
         return "verified", km, lite_name
@@ -100,8 +111,9 @@ def update_policy(policy_path: Path, rows: list[dict[str, Any]]) -> tuple[int, i
             if r["id"] not in blocks:
                 added += 1
             blocks[r["id"]] = f"id_mismatch: LiteAPI id is '{r['liteapiName']}', {r['km']} km away"
-        elif r["status"] == "verified":
-            verified.add(r["id"])
+        else:
+            if r["status"] == "verified":
+                verified.add(r["id"])
             if str(blocks.get(r["id"], "")).startswith("id_mismatch"):
                 del blocks[r["id"]]  # an earlier automatic block that no longer applies
     raw["blockLiveRates"] = dict(sorted(blocks.items()))
@@ -141,6 +153,7 @@ def main(argv: list[str]) -> int:
                 "checkedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
                 "counts": result["counts"],
                 "mismatch": mism,
+                "conflict": [r for r in rows if r["status"] == "conflict"],
                 "unchecked": [r for r in rows if r["status"] == "unchecked"],
             },
             indent=2,
