@@ -2,7 +2,20 @@
   "publishers": [
     {
       "publisher_id": "1110l47856",
-      "campaigns": []
+      "campaigns": [
+        {
+          "campaign_id": "100l51",
+          "title": "Marriott Bonvoy Boutiques",
+          "status": "a",
+          "destination_url": "https://shop.marriott.com"
+        },
+        {
+          "campaign_id": "1100l595",
+          "title": "Marriott International Global",
+          "status": "a",
+          "destination_url": "https://marriott.com/default.mi"
+        }
+      ]
     }
   ]
 }
