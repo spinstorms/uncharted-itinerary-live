@@ -1,0 +1,24 @@
+name: Probe guest review sources (read-only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Property ids (space separated); blank for the default sample"
+        required: false
+        default: ""
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe LiteAPI reviews
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+        run: python3 scripts/probe_reviews.py ${{ inputs.ids }}
