@@ -604,11 +604,8 @@ function buildPopupHtml(h) {
           <a class="btn btn-primary" href="${getSeoHref(h)}">StayOdds Page</a>
           <a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">Compare VS</a>
           <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
-          ${
-            reviewHref
-              ? `${ytWatchBtn(h, `Video`)}`
-              : `<a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>`
-          }
+          ${reviewHref ? `${ytWatchBtn(h, `Video`)}` : ""}
+          ${checkPricesBtn(h)}
         </div>
         <div style="margin-top:8px;">
           <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
@@ -788,7 +785,7 @@ function renderScorecards(hotels) {
                   <td style="white-space:nowrap;">
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
-                    <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates ↗</a>
+                    ${checkPricesBtn(h, true)}
                     <a class="tripadvisor-link" style="margin-left:4px;" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor ↗</a>
                   </td>
                 </tr>
@@ -962,7 +959,7 @@ function renderScorecards(hotels) {
                     : `<a class="btn btn-outline" href="../compare/?a=${encodeURIComponent(h.id)}">VS</a>`
                 }
                 <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
-                <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+                ${checkPricesBtn(h)}
               </div>
             </div>
           </article>
@@ -1490,3 +1487,11 @@ async function boot() {
 }
 
 boot();
+
+// "Check prices" button for hotel cards: booking-site link (monetised by Travelpayouts Drive), with the indicative price when known
+function checkPricesBtn(h, small) {
+  if (!h || !h.bookingUrl) return "";
+  const p = h.priceSnapshot && h.priceSnapshot.nightlyGbp ? ` · from £${Number(h.priceSnapshot.nightlyGbp).toLocaleString("en-GB")}` : "";
+  const st = `background:#16a34a;border-color:#16a34a;color:#fff;font-weight:700;${small ? "padding:6px 10px;font-size:12px;" : ""}`;
+  return `<a class="btn btn-primary check-prices-btn" style="${st}" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" data-track="check-prices">Check prices${p} &nearr;</a>`;
+}

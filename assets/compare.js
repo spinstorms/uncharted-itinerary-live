@@ -819,7 +819,7 @@ function renderH2HCard(h, allCompared) {
             : ""
         }
         <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
-        <a class="btn btn-outline" href="${escapeHtml(datedBookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+        ${checkPricesBtn({ ...h, bookingUrl: datedBookingUrl })}
       </div>
       <div style="margin-top:8px;">
         <a class="tripadvisor-link" href="${escapeHtml(getTripAdvisorUrl(h))}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
@@ -1648,7 +1648,7 @@ function renderLeaderboard() {
                     <a class="btn btn-primary" style="padding:6px 10px;font-size:12px;" href="${getSeoHref(h)}">Open</a>
                     <button type="button" class="btn btn-outline" style="padding:6px 10px;font-size:12px;" data-compare-id="${escapeHtml(h.id)}">VS &uarr;</button>
                     <button type="button" class="btn btn-outline shortlist-btn" style="padding:6px 10px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-icon-only="1" data-resort-name="${escapeHtml(h.name)}" aria-label="Save ${escapeHtml(h.name)}" aria-pressed="false">&#9825;</button>
-                    <a class="btn btn-outline" style="padding:6px 10px;font-size:12px;" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+                    ${checkPricesBtn(h, true)}
                   </td>
                 </tr>
               `;
@@ -1923,7 +1923,7 @@ function renderLeaderboard() {
                   ? `${ytWatchBtn(h, `${isShortOnly ? "Watch Short" : "Watch Review"}`)}`
                   : ""
               }
-              <a class="btn btn-outline" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+              ${checkPricesBtn(h)}
               <div style="display:flex;gap:6px;">
                 <button type="button" class="btn btn-outline shortlist-btn" style="flex:1;padding:6px 8px;font-size:12px;" data-shortlist-id="${escapeHtml(h.id)}" data-shortlist-compact="1" data-resort-name="${escapeHtml(h.name)}" aria-pressed="false">&#9825; Save</button>
                 <button class="copy-link-btn" style="flex:1;" data-compare-id="${escapeHtml(h.id)}" type="button">VS &uarr;</button>
@@ -2539,7 +2539,7 @@ async function boot() {
               <div class="tf-card-actions">
                 <a class="btn btn-primary" href="${getSeoHref(h)}" style="font-size:12.5px;padding:7px 12px;">Full Breakdown &rarr;</a>
                 <button type="button" class="btn btn-outline tf-compare-btn" data-tf-compare-id="${escapeHtml(h.id)}" style="font-size:12.5px;padding:7px 11px;">Compare VS</button>
-                <a class="btn btn-outline" href="${escapeHtml(datedBookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" style="font-size:12.5px;padding:7px 11px;">Rates &nearr;</a>
+                ${checkPricesBtn({ ...h, bookingUrl: datedBookingUrl }, true)}
               </div>
             </div>
           </article>
@@ -2825,8 +2825,8 @@ async function boot() {
     const uncoveredNames = uncovered.map((h) => h.name).join(", ");
     const officialAll = uncovered.length > 0 && uncovered.every((h) => h.officialSite);
     const gapHint = officialAll
-      ? `use Rates ↗ to open the official ${uncovered[0].officialSite.partner} page`
-      : "use Rates ↗ to check Booking.com and partner sites directly";
+      ? `use Check prices ↗ to open the official ${uncovered[0].officialSite.partner} page`
+      : "use Check prices ↗ to check Booking.com and partner sites directly";
     const gapNote = uncovered.length ? ` No live pricing for ${uncoveredNames} — ${gapHint}.` : "";
     if (!nuiteeIds.length) {
       if (liveStatusEl) {
@@ -2853,11 +2853,11 @@ async function boot() {
       }
     } else if (res && res.status === "quota_exceeded") {
       if (liveStatusEl) {
-        liveStatusEl.textContent = "Daily live-rate lookup limit reached — click Rates ↗ on each card to view Booking.com with your dates pre-filled.";
+        liveStatusEl.textContent = "Daily live-rate lookup limit reached — click Check prices ↗ on each card to view Booking.com with your dates pre-filled.";
       }
     } else {
       if (liveStatusEl) {
-        liveStatusEl.textContent = `No live rooms returned for those exact dates — try different dates or click Rates ↗ to check Booking.com directly.${gapNote}`;
+        liveStatusEl.textContent = `No live rooms returned for those exact dates — try different dates or click Check prices ↗ to check Booking.com directly.${gapNote}`;
       }
     }
   });
@@ -2960,3 +2960,11 @@ async function boot() {
 }
 
 boot();
+
+// "Check prices" button for hotel cards: booking-site link (monetised by Travelpayouts Drive), with the indicative price when known
+function checkPricesBtn(h, small) {
+  if (!h || !h.bookingUrl) return "";
+  const p = h.priceSnapshot && h.priceSnapshot.nightlyGbp ? ` · from £${Number(h.priceSnapshot.nightlyGbp).toLocaleString("en-GB")}` : "";
+  const st = `background:#16a34a;border-color:#16a34a;color:#fff;font-weight:700;${small ? "padding:6px 10px;font-size:12px;" : ""}`;
+  return `<a class="btn btn-primary check-prices-btn" style="${st}" href="${escapeHtml(h.bookingUrl)}" target="_blank" rel="sponsored noopener noreferrer" data-track="check-prices">Check prices${p} &nearr;</a>`;
+}

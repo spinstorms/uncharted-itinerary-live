@@ -2516,7 +2516,7 @@ def render_destination_page(
               <a class="btn btn-primary" href="../../stayodds/{esc(h['id'])}/">Full Breakdown &rarr;</a>
               <a class="btn btn-outline" href="../../compare/?a={esc(h['id'])}">Compare VS</a>
               <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(h['id'])}" data-shortlist-compact="1" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save</button>
-              <a class="btn btn-outline" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Rates &nearr;</a>
+              <a class="btn btn-primary check-prices-btn" style="background:#16a34a;border-color:#16a34a;color:#fff;font-weight:700" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check prices{(" · from £" + format(int((h.get("priceSnapshot") or {}).get("nightlyGbp")), ",")) if (h.get("priceSnapshot") or {}).get("nightlyGbp") else ""} &nearr;</a>
             </div>
           </div>
         </article>"""
