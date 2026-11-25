@@ -185,7 +185,7 @@ def render(lst: dict[str, Any], hotels: list[dict[str, Any]], head: str, foot: s
     else:
         note = f"{present} of {total} three-Key hotels are listed."
     tabs = "".join(
-        f'<a href="../{x["slug"]}/"{" class=on" if x["slug"] == lst["slug"] else ""}>{esc(x["short"])}</a>' for x in LISTS
+        f'<a href="/lists/{x["slug"]}/"{" class=on" if x["slug"] == lst["slug"] else ""}>{esc(x["short"])}</a>' for x in LISTS
     )
     url = f"{SITE}/lists/{lst['slug']}/"
     desc = f"{lst['sub']} {note}"[:300]
@@ -238,7 +238,7 @@ def write_award_lists(dist: Path, hotels: list[dict[str, Any]], template: str) -
     # index page
     idx = dist / "lists"
     cards = "".join(
-        f'<li class="al-row"><div class="al-rank">★</div><div><a class="al-name" href="{x["slug"]}/">{esc(x["h1"])}</a>'
+        f'<li class="al-row"><div class="al-rank">★</div><div><a class="al-name" href="/lists/{x["slug"]}/">{esc(x["h1"])}</a>'
         f'<div class="al-meta">{esc(x["sub"])}</div></div><div class="al-score"><strong>{len(select(x, hotels))}</strong>hotels</div></li>'
         for x in LISTS
     )

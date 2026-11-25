@@ -355,8 +355,10 @@ def main() -> None:
     )
     if (ROOT / "ads.txt").exists():
         shutil.copy2(ROOT / "ads.txt", DIST / "ads.txt")
-    if (ROOT / "favicon.ico?v=2").exists():
-        shutil.copy2(ROOT / "favicon.ico?v=2", DIST / "favicon.ico?v=2")
+    for fav in ("favicon.ico", "favicon.ico?v=2"):
+        if (ROOT / fav).exists():
+            shutil.copy2(ROOT / fav, DIST / "favicon.ico")
+            break
 
     # 2. Copy assets/ and required data/ JSONs
     shutil.copytree(ROOT / "assets", DIST / "assets")
