@@ -303,7 +303,9 @@ def write_award_lists(dist: Path, hotels: list[dict[str, Any]], template: str) -
         h2.replace("</head>", PAGE_CSS + "</head>", 1)
         + '<main><div class="al-wrap"><div class="al-eyebrow">Award lists</div><h1>Hotel award lists</h1>'
         '<p class="al-sub">The World\'s 50 Best Hotels and the MICHELIN Keys, ordered and linked to full StayOdds scorecards.</p>'
-        f'<ol class="al-list">{cards}</ol><section class="al-about">{MICHELIN_ABOUT}</section>'
+        f'<ol class="al-list">{cards}</ol>'
+        '<p class="al-actions" style="margin-top:18px"><a class="al-btn" href="/insights/">How guests rate award winners →</a></p>'
+        f'<section class="al-about">{MICHELIN_ABOUT}</section>'
         f'<section class="al-about">{W50_ABOUT}</section></div></main>' + foot + "</body>\n</html>\n"
     )
     (idx / "index.html").write_text(page, encoding="utf-8")

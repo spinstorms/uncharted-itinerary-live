@@ -1,0 +1,161 @@
+<style>
+.gi{--bg:#f4f6f9;--panel:#ffffff;--ink:#0f172a;--ink2:#475569;--muted:#8392a6;--line:#e3e8ef;--track:#e9edf3;--accent:#ff5d22;--accent-soft:#ffe3d8;--display:inherit;--body:inherit;color:var(--ink)}
+.gi 
+/* Layout: one reading column of mock-up panels, each panel = one idea, chart first, then what it adds */
+.wrap{max-width:880px;margin:0 auto;display:grid;gap:22px}
+.gi header h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.1;letter-spacing:-.02em;margin:6px 0 8px;text-wrap:balance}
+.gi header p{color:var(--ink2);max-width:62ch;margin:0}
+.gi .eyebrow{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.gi .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.gi .panel h2{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2;margin:4px 0 4px;text-wrap:balance}
+.gi .panel .sub{color:var(--ink2);margin:0 0 16px;font-size:14px}
+.gi .note{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;font-size:14px;color:var(--ink2)}
+.gi .note b{color:var(--ink)}
+.gi .foot{font-size:12px;color:var(--muted);margin-top:10px}
+.gi .chart{overflow-x:auto}
+.gi svg text{font-family:var(--body)}
+.gi .tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--panel);font-size:12.5px;padding:7px 10px;border-radius:8px;max-width:260px;z-index:20;line-height:1.4}
+.gi .ideas{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gi .idea{border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.gi .idea h3{font-family:var(--display);font-size:15.5px;margin:0 0 4px}
+.gi .idea p{margin:0;font-size:13.5px;color:var(--ink2)}
+.gi .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--accent-soft);color:var(--ink);margin:0 4px 4px 0}
+.gi .mod{border:1px solid var(--line);border-radius:14px;padding:16px;max-width:420px}
+.gi .mod .big{font-family:var(--display);font-weight:800;font-size:30px;line-height:1}
+.gi .mod .lbl{font-size:13px;color:var(--ink2)}
+.gi :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+</style>
+<div class="gi"><div class="wrap">
+<header>
+  <div class="eyebrow">StayOdds insights · updated __DATE__</div>
+  <h1>How guests really rate award-winning hotels</h1>
+  <p>What __NHOTELS__ luxury hotels look like when you put real guest reviews next to the critics and the awards. Every chart uses hotels with a guest score from 20 or more reviews, and every rank is among the hotels on StayOdds.</p>
+</header>
+
+<section class="panel" aria-labelledby="h1a">
+  <div class="eyebrow">Guests versus awards</div>
+  <h2 id="h1a">Award winners guests don't love</h2>
+  <p class="sub">Award-winning hotels that rank lowest with guests in their own country. Each is ranked by guest score against the other hotels in that country on StayOdds (only countries with 10 or more hotels). Left is guests' best, right is guests' worst.</p>
+  <div id="disappoint" style="display:grid;gap:14px"></div>
+  <div class="note">Luxury guest scores sit close together (most are between 88 and 98), so a hotel can rank last in its country on a score that is still good. That is why the score and the number of reviews are shown under every rank.</div>
+</section>
+
+<section class="panel" aria-labelledby="h3a">
+  <div class="eyebrow" id="brands-chart">Hotel brands</div>
+  <h2 id="h3a">How guests rate each luxury brand</h2>
+  <p class="sub">Dot = the brand's typical (median) hotel. Thick bar = the middle half of its hotels. Thin line = best to worst hotel. A short bar means a consistent brand. Brands with 8 or more rated hotels.</p>
+  <div class="chart" id="brands"></div>
+  <div class="note">__BRAND_NOTE__ Hover over or tap a brand to see its best and lowest-rated hotel.</div>
+</section>
+
+<section class="panel" aria-labelledby="h4a">
+  <div class="eyebrow">Critics versus guests</div>
+  <h2 id="h4a">Where critics and guests disagree</h2>
+  <p class="sub">Every hotel with both a published critic score and a guest score (__NSCATTER__ hotels). Above the line, guests like it more than critics; below it, critics like it more. Orange dots are the six biggest "critics loved it, guests less so" gaps; hover or tap any dot for its name.</p>
+  <div class="chart" id="scatter"></div>
+  <div class="note">Critic scores are the published scores linked on each hotel page, converted to a score out of 100.</div>
+</section>
+
+<section class="panel" aria-labelledby="h5a">
+  <div class="eyebrow">Awards</div>
+  <h2 id="h5a">Do awards match guest opinion?</h2>
+  <p class="sub">Typical guest score by award. Dot = median hotel, bar = middle half.</p>
+  <div class="chart" id="tiers"></div>
+  <div class="note">__TIER_NOTE__</div>
+</section>
+
+<p class="foot">Sources: StayOdds hotel scorecards (guest reviews from booking sites and Tripadvisor, published critic scores, World's 50 Best Hotels 2026, MICHELIN Guide 2026 Keys, Forbes Travel Guide 2026). Groups and ranks are among hotels on StayOdds only.</p>
+</div>
+</div><div class="tip gi-tip" id="tip" hidden></div>
+<script>
+const D = __DATA__;
+const css = (v) => getComputedStyle(document.querySelector('.gi')).getPropertyValue(v).trim();
+const tip = document.getElementById('tip');
+function showTip(e, html){ tip.innerHTML = html; tip.hidden = false; const x = Math.min(e.clientX + 14, innerWidth - 270); tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px'; }
+function hideTip(){ tip.hidden = true; }
+const ord = (n) => { const s=['th','st','nd','rd'], v=n%100; return n + (s[(v-20)%10]||s[v]||s[0]); };
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent, text){ const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if (text != null) n.textContent = text; if (parent) parent.appendChild(n); return n; }
+
+// Idea 1
+document.getElementById('disappoint').innerHTML = D.disappoint.map((r) => {
+  const pct = r.of > 1 ? (r.rank - 1) / (r.of - 1) * 100 : 0;
+  const chips = r.awards.map((a) => `<span class="tag">${esc(a.replace(' (2026)', '').replace('in the World', "World's 50 Best").replace(/^No\. (\d+) World's 50 Best$/, "World's 50 Best #$1"))}</span>`).join('');
+  return `<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px 18px;align-items:center">
+    <div style="min-width:0"><div style="font-family:var(--display);font-weight:700;font-size:17px">${esc(r.name)}</div>${chips}</div>
+    <div style="min-width:0"><div style="position:relative;height:14px;border-radius:99px;background:var(--track)" aria-hidden="true">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:${pct}%;border-radius:99px;background:var(--accent-soft)"></div>
+      <div style="position:absolute;top:50%;left:${pct}%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--panel)"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px"><span>guests' best</span><span>guests' worst</span></div>
+      <div style="font-family:var(--display);font-weight:700;font-size:18px;color:var(--accent);line-height:1.2">${ord(r.rank)} of ${r.of}</div>
+      <div style="font-size:12.5px;color:var(--ink2)">${esc(r.group)} hotels on StayOdds · ${r.guest}/100 from ${r.reviews.toLocaleString('en-GB')} reviews</div></div></div>`;
+}).join('');
+
+
+// shared dot + range chart (Ideas 3 and 5)
+function rangeChart(id, rows, opts){
+  const box = document.getElementById(id); box.innerHTML = '';
+  const W = 760, rowH = 30, top = 26, left = opts.left, right = 70, H = top + rows.length * rowH + 30;
+  const svg = el('svg', {viewBox:`0 0 ${W} ${H}`, width:'100%', role:'img', 'aria-label': opts.label, style:'min-width:560px;display:block'}, box);
+  const x0 = opts.min, x1 = 100, sx = (v) => left + (v - x0) / (x1 - x0) * (W - left - right);
+  for (let v = x0; v <= x1; v += 5){
+    el('line', {x1:sx(v), x2:sx(v), y1:top-6, y2:H-26, stroke:css('--line'), 'stroke-width':1}, svg);
+    el('text', {x:sx(v), y:H-8, 'text-anchor':'middle', 'font-size':11, fill:css('--muted')}, svg, v);
+  }
+  el('text', {x:W-right+8, y:top-10, 'font-size':11, fill:css('--muted')}, svg, opts.nLabel);
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + rowH / 2;
+    const g = el('g', {tabindex:0}, svg);
+    el('rect', {x:0, y:y-rowH/2, width:W, height:rowH, fill:'transparent'}, g);
+    el('text', {x:left-10, y:y+4, 'text-anchor':'end', 'font-size':12.5, fill:css('--ink')}, g, r.label);
+    if (r.min != null) el('line', {x1:sx(r.min), x2:sx(r.max), y1:y, y2:y, stroke:css('--muted'), 'stroke-width':2, 'stroke-linecap':'round'}, g);
+    el('rect', {x:sx(r.q1), y:y-5, width:Math.max(4, sx(r.q3)-sx(r.q1)), height:10, rx:5, fill:css('--accent-soft')}, g);
+    el('circle', {cx:sx(r.median), cy:y, r:6, fill:css('--accent'), stroke:css('--panel'), 'stroke-width':2}, g);
+    el('text', {x:W-right+8, y:y+4, 'font-size':12, fill:css('--ink2')}, g, r.n);
+    const enter = (e) => showTip(e, r.tip);
+    g.addEventListener('mousemove', enter); g.addEventListener('mouseleave', hideTip);
+    g.addEventListener('focus', () => { const b = g.getBoundingClientRect(); showTip({clientX:b.left+left, clientY:b.top}, r.tip); }); g.addEventListener('blur', hideTip);
+  });
+}
+function drawAll(){
+  rangeChart('brands', D.brands.map((b) => ({label:b.brand, n:b.n, median:b.median, q1:b.q1, q3:b.q3, min:b.min, max:b.max,
+    tip:`<b>${esc(b.brand)}</b><br>Typical hotel ${b.median}/100 · ${b.n} hotels<br>Best: ${esc(b.best)}<br>Lowest: ${esc(b.worst)}`})),
+    {left:190, min:70, nLabel:'hotels', label:'Guest score by hotel brand'});
+  const order = ["3 MICHELIN Keys","2 MICHELIN Keys","1 MICHELIN Key","Forbes Five-Star","World's 50 Best Top 100","No major award"];
+  rangeChart('tiers', order.filter((k) => D.tiers[k]).map((k) => ({label:k, n:D.tiers[k].n, median:D.tiers[k].median, q1:D.tiers[k].q1, q3:D.tiers[k].q3,
+    tip:`<b>${esc(k)}</b><br>Typical guest score ${D.tiers[k].median}/100<br>Middle half: ${D.tiers[k].q1.toFixed(0)}–${D.tiers[k].q3.toFixed(0)} · ${D.tiers[k].n} hotels`})),
+    {left:190, min:85, nLabel:'hotels', label:'Guest score by award'});
+  // Idea 4 scatter
+  const box = document.getElementById('scatter'); box.innerHTML = '';
+  const W = 760, H = 460, L = 54, R = 20, T = 16, B = 46;
+  const svg = el('svg', {viewBox:`0 0 ${W} ${H}`, width:'100%', role:'img', 'aria-label':'Critic score against guest score', style:'min-width:520px;display:block'}, box);
+  const xs = (v) => L + (v - 20) / 80 * (W - L - R), ys = (v) => T + (100 - v) / 40 * (H - T - B);
+  for (let v = 20; v <= 100; v += 10){ el('line',{x1:xs(v),x2:xs(v),y1:T,y2:H-B,stroke:css('--line')},svg); el('text',{x:xs(v),y:H-B+18,'text-anchor':'middle','font-size':11,fill:css('--muted')},svg,v); }
+  for (let v = 60; v <= 100; v += 10){ el('line',{x1:L,x2:W-R,y1:ys(v),y2:ys(v),stroke:css('--line')},svg); el('text',{x:L-8,y:ys(v)+4,'text-anchor':'end','font-size':11,fill:css('--muted')},svg,v); }
+  el('line',{x1:xs(60),y1:ys(60),x2:xs(100),y2:ys(100),stroke:css('--ink2'),'stroke-dasharray':'4 4','stroke-width':1.5},svg);
+  el('text',{x:xs(61)+8,y:ys(60)-8,'text-anchor':'start','font-size':11,fill:css('--ink2')},svg,'critics = guests');
+  el('text',{x:(L+W-R)/2,y:H-6,'text-anchor':'middle','font-size':12,fill:css('--ink2')},svg,'Published critic score (out of 100)');
+  el('text',{x:14,y:(T+H-B)/2,'text-anchor':'middle','font-size':12,fill:css('--ink2'),transform:`rotate(-90 14 ${(T+H-B)/2})`},svg,'Guest score (out of 100)');
+  const pts = D.scatter.filter((p) => p.g >= 60).map((p) => ({...p, gap:p.c - p.g}));
+  const labelled = [];
+  const hot = new Set(pts.slice().sort((a,b) => b.gap - a.gap).slice(0, 6).map((p) => p.n));
+  pts.sort((a,b) => hot.has(a.n) - hot.has(b.n)).forEach((p) => {
+    const isHot = hot.has(p.n);
+    const c = el('circle',{cx:xs(p.c),cy:ys(p.g),r:isHot?6:4,fill:isHot?css('--accent'):css('--muted'),'fill-opacity':isHot?1:.55,stroke:css('--panel'),'stroke-width':1.5},svg);
+    const hit = el('circle',{cx:xs(p.c),cy:ys(p.g),r:9,fill:'transparent'},svg);
+    hit.addEventListener('mousemove',(e)=>showTip(e,`<b>${esc(p.n)}</b><br>Critics ${p.c}/100 · Guests ${p.g}/100`)); hit.addEventListener('mouseleave',hideTip);
+    if (isHot) labelled.push(p);
+  });
+  // label orange dots, skipping any label that would overlap one already placed
+  const placed = [];
+  labelled.sort((a, b) => a.g - b.g).forEach((p) => {
+    const y = ys(p.g) + 4, x = xs(p.c) - 9;
+    if (placed.some((q) => Math.abs(q.y - y) < 15 && Math.abs(q.x - x) < 140)) return;
+    placed.push({x, y});
+    el('text',{x,y,'text-anchor':'end','font-size':11.5,'font-weight':600,fill:css('--ink')},svg,p.n);
+  });
+}
+drawAll();
+</script>

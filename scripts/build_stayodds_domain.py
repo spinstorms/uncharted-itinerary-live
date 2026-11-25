@@ -412,6 +412,10 @@ def main() -> None:
     from build_award_lists import write_award_lists
 
     list_paths = write_award_lists(DIST, hotels, load_template("hotels/index.html"))
+    from build_insights import write_insights
+    from build_stayodds_site import compute_stayodds_py
+
+    list_paths += write_insights(DIST, hotels, load_template("hotels/index.html"), compute_stayodds_py)
     for lp in list_paths:
         lfile = DIST / lp.strip("/") / "index.html"
         lfile.write_text(rewrite_html_for_stayodds(lfile.read_text(encoding="utf-8"), "destination"), encoding="utf-8")

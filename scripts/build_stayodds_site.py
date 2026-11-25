@@ -56,6 +56,7 @@ def _load_json(name: str) -> dict[str, Any]:
         return {}
 
 
+GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
 def _ta_ok(pid: str, t: dict[str, Any]) -> bool:
@@ -1056,6 +1057,20 @@ def render_seo_page(
         + (" — combined by number of reviews" if len(guest_parts) > 1 else "")
         + "</small>"
     ) if guest_parts else ""
+    gr = GUEST_RANKS.get(h.get("id", ""))
+    if gr and vg and not o["firstHand"]:
+        pos = 0 if gr["of"] <= 1 else round((gr["rank"] - 1) / (gr["of"] - 1) * 100)
+        def _ord(n: int) -> str:
+            return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+        guest_breakdown_html += (
+            f'<div style="margin-top:10px;font-size:13.5px;font-weight:600">Guests rank it '
+            f'<span style="color:#ff5d22">{_ord(gr["rank"])} of {gr["of"]}</span> {esc(gr["group"])} hotels on StayOdds</div>'
+            f'<div style="position:relative;height:8px;border-radius:99px;background:rgba(100,110,130,.18);margin:8px 0 4px" aria-hidden="true">'
+            f'<div style="position:absolute;top:50%;left:{pos}%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;'
+            f'background:#ff5d22;box-shadow:0 0 0 3px #fff"></div></div>'
+            f'<div style="display:flex;justify-content:space-between;font-size:11px;opacity:.7"><span>Top: {esc(gr["top"])} ({gr["topScore"]})</span>'
+            f'<span><a href="/insights/" style="color:inherit">How guests rank hotels</a></span></div>'
+        )
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
         if o["delta100"] is not None
@@ -3037,6 +3052,10 @@ def render_static_pages_from_directory(
     world_props = total_props - len(visited_hotels)
     price_medians = compute_price_medians(directory)
     odds_map = {h["id"]: compute_stayodds_py(h) for h in directory}
+    from build_insights import guest_ranks
+
+    GUEST_RANKS.clear()
+    GUEST_RANKS.update(guest_ranks(directory))
 
     stayodds_dir = out_dir / "stayodds"
     stayodds_dir.mkdir(parents=True, exist_ok=True)
