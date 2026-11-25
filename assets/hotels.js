@@ -1029,7 +1029,7 @@ function renderHotelShorts(hotels) {
       (sh) => `
       <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer" data-yt-id="${escapeHtml(sh.id)}" data-yt-short="1" data-yt-title="${escapeHtml(sh.title)}">
         <div class="short-thumb">
-          <img src="${escapeHtml(resolveThumb(sh.thumb))}" alt="${escapeHtml(sh.hotelName)}" loading="lazy" decoding="async" />
+          <img style="transform:scale(1.16)" src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" onerror="this.onerror=null;this.style.transform='none';this.src='${escapeHtml(resolveThumb(sh.thumb))}'" alt="${escapeHtml(sh.title || sh.hotelName)}" loading="lazy" decoding="async" />
           ${ytStaticOverlay("Short")}
         </div>
         <div class="short-info">

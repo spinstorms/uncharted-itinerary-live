@@ -34,6 +34,17 @@ def main() -> int:
         sb("DELETE", f"/rest/v1/licensed_guest_scores?property_id=eq.{urllib.parse.quote(pid)}&partner_source=eq.tripadvisor",
            None, {"Prefer": "return=minimal"})
     print(f"Tripadvisor -> Supabase: {len(rows)} ratings saved, {len(stale)} removed")
+    # Google Maps ratings, saved the same way for the app
+    gdata = json.loads((ROOT / "data" / "google-ratings.json").read_text(encoding="utf-8")).get("hotels", {}) \
+        if (ROOT / "data" / "google-ratings.json").exists() else {}
+    grows = [{
+        "property_id": pid, "partner_source": "google", "rating": float(t["rating"]), "scale": 5.0,
+        "normalized_100": int(round(float(t["rating"]) * 20)), "review_count": int(t["reviewCount"]),
+        "attribution": "Google", "verified_at": t["fetched"] + "T00:00:00+00:00",
+    } for pid, t in gdata.items() if pid in props and (t.get("reviewCount") or 0) >= 20]
+    if grows:
+        upsert("licensed_guest_scores", grows, "property_id,partner_source")
+    print(f"Google -> Supabase: {len(grows)} ratings saved")
     return 0
 
 

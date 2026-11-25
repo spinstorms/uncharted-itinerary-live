@@ -34,4 +34,6 @@ CRITIC_HOTEL_ADDITIONS = [
     ('rosewood-amsterdam', 'Rosewood Amsterdam', 'Amsterdam', 'Netherlands', 'NL', 'Europe', 'Rosewood'),
     ('four-seasons-hotel-miami', 'Four Seasons Hotel Miami', 'Miami', 'United States', 'US', 'Americas', 'Four Seasons'),
     ('amilla-maldives', 'Amilla Maldives', 'Baa Atoll', 'Maldives', 'MV', 'Maldives & Indian Ocean', 'Independent'),
+    # added at the owner's request
+    ('impression-isla-mujeres-by-secrets', 'Impression Isla Mujeres by Secrets', 'Isla Mujeres', 'Mexico', 'MX', 'Caribbean & Mexico', 'Secrets Resorts'),
 ]

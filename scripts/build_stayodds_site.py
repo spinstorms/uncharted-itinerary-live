@@ -59,6 +59,10 @@ def _load_json(name: str) -> dict[str, Any]:
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
+GOOGLE_RATINGS = {k: v for k, v in _load_json("google-ratings.json").get("hotels", {}).items()
+                  if (v.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS}  # saved Google Maps ratings (fetch_google_ratings.py)
+
+
 def _ta_ok(pid: str, t: dict[str, Any]) -> bool:
     return (t.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS
 
@@ -782,10 +786,11 @@ LANG_NAMES = {"fr": "French", "de": "German", "es": "Spanish", "it": "Italian", 
               "el": "Greek", "hu": "Hungarian", "ro": "Romanian", "uk": "Ukrainian", "vi": "Vietnamese"}
 
 
-def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None) -> dict[str, Any] | None:
+def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None,
+                         gg: dict[str, Any] | None = None) -> dict[str, Any] | None:
     """One guest score from every real guest rating we hold, weighted by how many reviews each is based on.
 
-    Booking-platform guest ratings are out of 10 and Tripadvisor ratings out of 5; both become a % of the maximum
+    Booking-platform guest ratings are out of 10, Tripadvisor and Google ratings out of 5; both become a % of the maximum
     (9.2/10 -> 92, 4.5/5 -> 90) and are averaged by review count, so 4,000 Tripadvisor reviews count for more than
     40 booking reviews. Each part keeps its own source, rating and review count for display.
     """
@@ -802,6 +807,12 @@ def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None) -
             "normalized100": int(round(float(ta["rating"]) * 20)), "reviewCount": int(ta["reviewCount"]),
             "checked": ta.get("fetched"), "url": ta.get("url"),
         })
+    if gg and gg.get("rating") is not None and (gg.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS:
+        parts.append({
+            "name": "Google", "rating": float(gg["rating"]), "scale": 5.0,
+            "normalized100": int(round(float(gg["rating"]) * 20)), "reviewCount": int(gg["reviewCount"]),
+            "checked": gg.get("fetched"),
+        })
     if not parts:
         return None
     counts = [int(p["reviewCount"] or 0) for p in parts]
@@ -812,7 +823,7 @@ def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None) -
     total = sum(counts) or None
     return {
         "licensed": {
-            "sourceName": "Guest Reviews" if len(parts) > 1 else ("Tripadvisor" if parts[0]["name"] == "Tripadvisor" else "Verified booking guests"),
+            "sourceName": "Guest Reviews" if len(parts) > 1 else parts[0]["name"],
             "rating": round(n100 / 10, 1),
             "scale": 10.0,
             "normalized100": n100,
@@ -2663,8 +2674,8 @@ def main() -> None:
     fh_map = {r["property_id"]: r for r in sb_get_all(sb_url, sb_key, "first_hand_reviews")}
     guest_map: dict[str, dict[str, Any]] = {}
     for r in sb_get_all(sb_url, sb_key, "licensed_guest_scores"):
-        if r.get("partner_source") == "tripadvisor":
-            continue  # added from data/tripadvisor.json in combined_guest_score()
+        if r.get("partner_source") in ("tripadvisor", "google"):
+            continue  # added from the saved data files in combined_guest_score()
         n = r.get("review_count")
         if (n is not None and int(n) < MIN_GUEST_REVIEWS) or (n is None and r.get("partner_source") == "nuitee_connect"):
             continue  # too few reviews to be a reliable guest score: leave it off
@@ -2822,7 +2833,7 @@ def main() -> None:
             "redFlags": f.get("red_flag_tags") or [],
             "bookingUrl": web_booking,
             "bookingLinks": bks,
-            "verifiedGuest": combined_guest_score(gs, TRIPADVISOR.get(pid)),
+            "verifiedGuest": combined_guest_score(gs, TRIPADVISOR.get(pid), GOOGLE_RATINGS.get(pid)),
             "editorialRatings": ed_map.get(pid) or [],
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],
