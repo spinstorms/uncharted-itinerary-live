@@ -725,6 +725,258 @@
       "url": "https://www.banyantree.com/assets/2025-02/bt-langco-Banyan%20Tree%20Lang%20Co%20-%20Resort%20Overview.jpg",
       "source": "liteapi",
       "note": "exterior"
+    },
+    "londolozi-game-reserve": {
+      "url": "https://cdn.londolozi.com/wp-content/uploads/2021/09/Nature-Reunion-Twk_Elsa-Young_Londolozi-100-1386x924.jpg",
+      "source": "official",
+      "site": "https://www.londolozi.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "singita-kruger": {
+      "url": "https://images.ctfassets.net/wds1hqrprqxb/1QDz1bsYcVVHTXHr0f6got/22149a85eaf7d3e507c65c293be14160/Singita_Lebombo_Suite_Bedroom_Emma_Jackson_2.jpg",
+      "source": "official",
+      "site": "https://singita.com/lodge/singita-lebombo-lodge?utm_source=gmb&utm_medium=organic&utm_campaign=singita-lebombo-lodge-gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "hotel-sans-souci-wien": {
+      "url": "https://www.sanssouci-wien.com/websLINE-ABM/Assets/sans-souci-websiteshooting-7.196.jpg",
+      "source": "official",
+      "site": "http://www.sanssouci-wien.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "ishara-masai-mara": {
+      "url": "https://ishara.ke/wp-content/uploads/2025/05/Ishara-Reimagined-thumbnail.webp",
+      "source": "official",
+      "site": "http://www.ishara.ke/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "playa-viva": {
+      "url": "https://irp.cdn-website.com/fc746e6b/dms3rep/multi/opt/Treehouse_Callout-1920w.jpg",
+      "source": "official",
+      "site": "https://www.playaviva.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "singita-boulders-lodge": {
+      "url": "https://images.ctfassets.net/wds1hqrprqxb/3AdAnNAJKKfYFe8L6ONul3/12022048d370618f6449568d12239be3/thumb__3_.jpg",
+      "source": "official",
+      "site": "https://singita.com/lodge/singita-boulders-lodge?utm_source=gmb&utm_medium=organic&utm_campaign=singita-boulders-lodge-gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "singita-sabora": {
+      "url": "https://s3-eu-west-1.amazonaws.com/singitacdn/library/wp-content/uploads/OGS5786-1024x683.jpg",
+      "source": "official",
+      "site": "https://singita.com/lodge/singita-sabora-tented-camp?utm_source=gmb&utm_medium=organic&utm_campaign=singita-sabora-tented-camp-gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "triple-creek-ranch": {
+      "url": "https://www.triplecreekranch.com/wp-content/uploads/2015/05/lodge_summer_1920x960.jpg",
+      "source": "official",
+      "site": "http://www.triplecreekranch.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "capella-lodge": {
+      "url": "https://cdn-ianad.nitrocdn.com/gnEGRmqmclMoPHlZEkAoZwUwJrlCxLDN/assets/images/optimized/rev-6fdd4ce/capellalodge.com.au/wp-content/uploads/2024/10/CAP-Lodge-News-CNT-1.jpg",
+      "source": "official",
+      "site": "https://capellalodge.com.au/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "casa-maria-luigia-modena": {
+      "url": "https://casamarialuigia.com/wp-content/uploads/2023/06/casa_maria_luigia_slider_home_credit-Marco-Poderi.jpg",
+      "source": "official",
+      "site": "https://casamarialuigia.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "clayoquot-wilderness-lodge": {
+      "url": "https://cdn-ianab.nitrocdn.com/NKeDhgLIZLGkvOVERiufVaGOHtaUlrIX/assets/images/optimized/rev-9dbb5de/clayoquotwildernesslodge.com/wp-content/uploads/2025/10/Texas-Lifestyle-Mag.jpg",
+      "source": "official",
+      "site": "https://clayoquotwildernesslodge.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "das-kranzbach-hotel-and-wellness-retreat": {
+      "url": "https://www.daskranzbach.de/media/animation/z08-8127.webp",
+      "source": "official",
+      "site": "https://www.daskranzbach.de/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "hotel-almhof-schneider": {
+      "url": "https://www.almhof.at/wp-content/uploads/2016/09/hotel6.jpg",
+      "source": "official",
+      "site": "https://www.almhof.at/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "purs-luxury-boutique-hotel-and-restaurant": {
+      "url": "https://speisekartenweb.de/blog/wall.webp",
+      "source": "official",
+      "site": "https://speisekartenweb.de/restaurants/andernach/purs-25031?utm_source=google_profile&utm_medium=google_profile&utm_campaign=admin",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "shamwari-private-game-reserve": {
+      "url": "https://www.shamwari.com/wp-content/uploads/2025/05/Activities_028-scaled.jpg",
+      "source": "official",
+      "site": "https://www.shamwari.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "singita-grumeti": {
+      "url": "https://images.ctfassets.net/wds1hqrprqxb/1WMhQFbFEYtkL6zNa47Fav/ea87223729fc31bfee9d498a386d2ec3/Singita_Serengeti_House_Fire_Pit_7.jpg",
+      "source": "official",
+      "site": "https://singita.com/lodge/singita-serengeti-house?utm_source=gmb&utm_medium=organic&utm_campaign=singita-serengeti-house-gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "the-hornibrook-mansion": {
+      "url": "https://static.wixstatic.com/media/3cc082_cc4011e04c744e4ea4956636e7e9e7f2~mv2.jpg/v1/fill/w_969,h_434,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3cc082_cc4011e04c744e4ea4956636e7e9e7f2~mv2.jpg",
+      "source": "official",
+      "site": "http://www.theempress.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "velaa-private-island": {
+      "url": "https://framerusercontent.com/images/zMl71OBLa7kBpDSwMViosN5T9k.jpeg?width=3000&height=2000",
+      "source": "official",
+      "site": "http://www.velaaprivateisland.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "twin-farms-vermont": {
+      "url": "https://www.twinfarms.com/wp-content/uploads/2025/08/home-hero-fall.jpg",
+      "source": "official",
+      "site": "https://www.twinfarms.com/?NCK=8669918178&utm_source=google&utm_medium=local&utm_campaign=gmb_listing",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-i-khas": {
+      "url": "https://www.aman.com/sites/default/files/2021-03/Aman_Aman-i-khas_Dining_2.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/aman-i-khas?utm_source=Google&utm_medium=Yext&y_source=1_MTU3MDc0OTgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "como-laucala-island-fiji": {
+      "url": "https://www.laucala.com/videos/laucala_hero_desktop_poster.webp?w=3840&q=95",
+      "source": "official",
+      "site": "https://www.laucala.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "family-nature-resort-moar-gut": {
+      "url": "https://assets.moargut.com/moargut/2025/12/Winter_hell-2-2500x956.jpg",
+      "source": "official",
+      "site": "https://www.moargut.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "les-pres-deugenie": {
+      "url": "https://lespresdeugenie.com/wp-content/uploads/2023/03/LPDE_hiddencliffs-49-1024x683.jpg",
+      "source": "official",
+      "site": "https://lespresdeugenie.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "seesteg-norderney": {
+      "url": "https://seesteg-norderney.de/wp-content/uploads/Home_Header_Aussenansicht.jpg",
+      "source": "official",
+      "site": "http://www.seesteg-norderney.de/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "singita-kwitonda-lodge": {
+      "url": "https://singitacdn.s3.eu-west-1.amazonaws.com/library/wp-content/uploads/SVNP_ROOM_Kwitonda_Lodge_Bedroom_Ross_Couper-3-1024x682.jpg",
+      "source": "official",
+      "site": "https://singita.com/lodge/singita-kwitonda-lodge?utm_source=gmb&utm_medium=organic&utm_campaign=singita-kwitonda-lodge-gmb",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "villa-deste-como": {
+      "url": "https://www.villadeste.com/assets/img/transform/_1920x1080_crop_center-center_none/menu-villadeste.jpg",
+      "source": "official",
+      "site": "https://www.villadeste.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-villas-at-nusa-dua": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/Two-Bedroom%20Villa%2C%20Aman%20Villas%20at%20Nusa%20Dua%2C%20Bali_1.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/villas/aman-villas-at-nusa-dua?utm_source=Google&utm_medium=Yext&y_source=1_MTU3MDczOTctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "amanbagh": {
+      "url": "https://www.aman.com/sites/default/files/2023-01/Amanbagh%2C%20India%20-%20Main%20Building%2C%20Pool%20View-3.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/amanbagh?utm_source=Google&utm_medium=Yext&y_source=1_MTU3MDc0OTYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "amanfayun": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanfayun.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/zh-cn/resorts/amanfayun",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "le-k2-palace": {
+      "url": "https://www.lek2palace.com/media/cache/jadro_resize/rc/F3enDnZn1795620395/jadroRoot/medias/5c114a0d69f63/k2p_drone_exterieur_-31_stephane_berthe.jpg",
+      "source": "official",
+      "site": "https://www.lek2palace.com/?utm_source=google&utm_medium=my_business",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "la-reserve-ramatuelle-hotel-spa-and-villas": {
+      "url": "https://www.lareserve-ramatuelle.com/wp-content/uploads/2021/05/la_reserve_ramatuelle_exterior_rooftop.jpg",
+      "source": "official",
+      "site": "http://www.lareserve-ramatuelle.com/?utm_source=google&utm_medium=local&utm_campaign=lrr",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "kamenoi-besso": {
+      "url": "https://www.kamenoi-bessou.jp/assets/img/orig/d_2020.01.23_009.jpg",
+      "source": "official",
+      "site": "http://www.kamenoi-bessou.jp/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "airelles-venezia-a-virtuoso-preview-property": {
+      "url": "https://images.prismic.io/airelles2023/tTQOpfZensanfZVY_VNZ-Fac%CC%A7adeAirellesPalladioVenice.png?auto=format%2Ccompress&rect=0%2C296%2C2248%2C1180&w=2400&h=1260",
+      "source": "official",
+      "site": "https://airelles.com/en/destination/venezia",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-le-melezin": {
+      "url": "https://www.aman.com/sites/default/files/2025-11/Aman%20Le%20Melezin%2C%20France%20-%20Resort%2C%20Exterior%20%285%29.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/aman-le-melezin?utm_source=Google&utm_medium=Yext&y_source=1_MTU3MDczOTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-rosa-alpina": {
+      "url": "https://www.aman.com/sites/default/files/2026-09/Aman-Rosa-Alpina--Italy---Exterior--270.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/aman-rosa-alpina?utm_source=Google&utm_medium=Yext&utm_campaign=yext_listing&utm_id=GMB&y_source=1_MTg2MDI1NjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "beaverbrook-surrey": {
+      "url": "https://hotelcms-production.imgix.net/beaverbrook.co.uk/wp-content/uploads/2020/09/DJI_0112-1.jpg",
+      "source": "official",
+      "site": "https://www.beaverbrook.co.uk/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "the-fife-arms": {
+      "url": "https://thefifearms.com/wp-content/uploads/2026/03/Exterior02-1024x576.jpg",
+      "source": "official",
+      "site": "https://thefifearms.com/?utm_source=google&utm_medium=organic&utm_campaign=google_hotel-thefifearms",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "juliana-hotel-brussels": {
+      "url": "https://www.juliana-brussels.com/imagecache/og/50322f99f8a1b9d2277f878dc7f71970.jpg",
+      "source": "official",
+      "site": "https://www.juliana-brussels.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "chiemgauhof-lakeside-retreat": {
+      "url": "https://www.chiemgauhof.com/media/system/singleimage/chiemgauhof-2025-elias-hassos-web-48.jpg",
+      "source": "official",
+      "site": "https://www.chiemgauhof.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "patrick-hellmann-schlosshotel": {
+      "url": "https://image-tc.galaxy.tf/wijpeg-42p27dv9n07dynrlfzs4ct9v7/50-1_standard.jpg?crop=164%2C0%2C1673%2C1255",
+      "source": "official",
+      "site": "https://www.schlosshotelberlin.com/",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "hoshinoya-kyoto": {
+      "url": "https://media.hoshinoresorts.com/image/authenticated/s--qARc3gJf--/c_crop,h_1500,w_3000,x_0,y_352/c_scale,h_1500,w_3000/c_fill,g_auto,h_600/f_auto,q_auto/v1686280109/%E6%98%9F%E3%81%AE%E3%82%84%E4%BA%AC%E9%83%BD_%E5%A4%96%E8%A6%B3_%E7%A9%BA%E4%B8%AD%E8%8C%B6%E5%AE%A4_mwirob.jpg",
+      "source": "official",
+      "site": "https://hoshinoresorts.com/ja/hotels/hoshinoyakyoto/?utm_source=google&utm_medium=mybusiness",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "janu-tokyo": {
+      "url": "https://d26ityues3jcbs.cloudfront.net/wp-content/uploads/sites/2/2025/02/13002827/Janu-Tokyo-Japan-Suite-Lounge-Area.jpg",
+      "source": "official",
+      "site": "https://www.janu.com/janu-tokyo/",
+      "note": "hotel's official website (checked by eye)"
     }
   }
 }

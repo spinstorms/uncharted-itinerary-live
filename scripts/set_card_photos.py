@@ -26,7 +26,7 @@ def main() -> int:
     for pid, o in cfg.items():
         out = ROOT / "assets" / "card-photos" / f"{pid}.webp"
         try:
-            req = urllib.request.Request(o["url"], headers={"User-Agent": "Mozilla/5.0 StayOdds/1.0"})
+            req = urllib.request.Request(o["url"], headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36", **({"Referer": o["site"]} if o.get("site") else {})})
             raw = urllib.request.urlopen(req, timeout=30).read()
             im = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
             if im.width < 600:
@@ -38,11 +38,11 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  {pid}: failed ({e})")
             continue
-        if "--no-db" not in sys.argv and o.get("source") == "liteapi":
+        if "--no-db" not in sys.argv and o.get("source") in ("liteapi", "official"):
             try:
                 from add_award_hotels import sb
                 sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(pid)}",
-                   {"hero_image_url": o["url"], "image_license_source": "nuitee_connect"}, {"Prefer": "return=minimal"})
+                   {"hero_image_url": o["url"], "image_license_source": "nuitee_connect" if o.get("source") == "liteapi" else "hotel_official_site"}, {"Prefer": "return=minimal"})
             except Exception as e:  # noqa: BLE001
                 print(f"  {pid}: database not updated ({e})")
     print(f"Card photos: {done} replaced")
