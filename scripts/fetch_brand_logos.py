@@ -23,9 +23,18 @@ def main() -> int:
         try:
             raw = urllib.request.urlopen(urllib.request.Request(o["source"], headers=UA), timeout=30).read()
             im = Image.open(io.BytesIO(raw)).convert("RGBA")
+            corner = im.getpixel((0, 0))
+            if corner[3] == 255 and sum(corner[:3]) < 735:  # flat coloured backdrop (e.g. a JPG): make it transparent
+                px = im.load()
+                for yy in range(im.height):
+                    for xx in range(im.width):
+                        c = px[xx, yy]
+                        if sum(abs(c[k] - corner[k]) for k in range(3)) < 40:
+                            px[xx, yy] = (255, 255, 255, 0)
             bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
             flat = Image.alpha_composite(bg, im).convert("RGB")
-            box = ImageChops.difference(flat, Image.new("RGB", flat.size, (255, 255, 255))).getbbox()
+            box = im.getchannel("A").getbbox() if corner[3] == 255 and sum(corner[:3]) < 735 else \
+                ImageChops.difference(flat, Image.new("RGB", flat.size, (255, 255, 255))).getbbox()
             if box:
                 im = im.crop(box)
             im.thumbnail((240, 72), Image.Resampling.LANCZOS)
