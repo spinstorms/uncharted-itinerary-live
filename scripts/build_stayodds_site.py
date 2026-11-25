@@ -49,6 +49,46 @@ SITE_URL = "https://uncharteditinerary.com"
 
 MIN_GUEST_REVIEWS = 20
 
+
+# --- Marriott direct booking through Partnerize (Nov 2026) ---------------------------------
+# data/partnerize-campaigns.json is written by scripts/partnerize_campaigns.py (keys stay in repo
+# secrets). Until a Marriott campaign is approved there is no camref and nothing changes.
+MARRIOTT_BRAND_RE = re.compile(
+    r"marriott|ritz-carlton|st\.? regis|\bw hotels?\b|\bjw\b|edition|luxury collection|bulgari|westin|sheraton|"
+    r"le m[eé]ridien|autograph collection|design hotels|courtyard|element by westin|renaissance|aloft|tribute portfolio|gaylord",
+    re.I,
+)
+MARRIOTT_NAME_RE = re.compile(r"ritz-carlton|st\.? regis|jw marriott|marriott|luxury collection|\bedition\b|bulgari|bvlgari", re.I)
+
+
+def _marriott_camref() -> str:
+    try:
+        data = json.loads((ROOT / "data" / "partnerize-campaigns.json").read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    for pub in data.get("publishers") or []:
+        for c in pub.get("campaigns") or []:
+            title = f"{c.get('title') or ''} {c.get('name') or ''}"
+            if "marriott" in title.lower() and c.get("camref"):
+                return str(c["camref"])
+    return ""
+
+
+MARRIOTT_CAMREF = _marriott_camref()
+
+
+def marriott_affiliate_link(pid: str, name: str, city: str, brand: str) -> str:
+    """Partnerize tracking link to the hotel on marriott.com, or "" when not Marriott / not approved yet."""
+    if not MARRIOTT_CAMREF:
+        return ""
+    if not (MARRIOTT_BRAND_RE.search(brand) or MARRIOTT_NAME_RE.search(name)):
+        return ""
+    from urllib.parse import quote, urlencode
+    dest = "https://www.marriott.com/search/findHotels.mi?" + urlencode(
+        {"destinationAddress.destination": f"{name}, {city}".strip(", "), "roomCount": "1", "numAdultsPerRoom": "2"}
+    )
+    return f"https://prf.hn/click/camref:{MARRIOTT_CAMREF}/pubref:{pid}/destination:{quote(dest, safe='')}"
+
 def _load_json(name: str) -> dict[str, Any]:
     try:
         return json.loads((Path(__file__).resolve().parent.parent / "data" / name).read_text(encoding="utf-8"))
@@ -2024,6 +2064,17 @@ def render_seo_page(
       const ad = adEl?.value || "2";
       try {{
         const u = new URL(baseUrl);
+        if (/prf\\.hn$/i.test(u.hostname) && ci && co && co > ci) {{
+          const m = baseUrl.match(/destination:(.+)$/);
+          if (m) {{
+            const d = new URL(decodeURIComponent(m[1]));
+            const us = (x) => x.slice(5, 7) + "/" + x.slice(8, 10) + "/" + x.slice(0, 4);
+            d.searchParams.set("fromDate", us(ci));
+            d.searchParams.set("toDate", us(co));
+            d.searchParams.set("numAdultsPerRoom", ad);
+            bookBtn.href = baseUrl.slice(0, m.index) + "destination:" + encodeURIComponent(d.toString());
+          }}
+        }}
         if (/booking\\.com/i.test(u.hostname) && ci && co && co > ci) {{
           u.searchParams.set("checkin", ci);
           u.searchParams.set("checkout", co);
@@ -2869,6 +2920,12 @@ def main() -> None:
         web_booking = next((b["url"] for b in bks if b["channelType"] == "ota_affiliate"), "") or (
             bks[0]["url"] if bks else ""
         )
+        _mlink = marriott_affiliate_link(pid, p.get("name") or "", p.get("city") or p.get("location") or "", p.get("brand") or p.get("brand_name") or "")
+        if _mlink:
+            web_booking = _mlink
+            bks = [{"channelType": "direct_brand", "partnerName": "Marriott.com", "url": _mlink, "mobileAllowed": True,
+                    "perksSummary": "Book direct: Marriott Bonvoy points and member rates", "priority": 0}] + [
+                b for b in bks if b.get("partnerName") != "Marriott.com"]
 
         rated = bool(fh and fh.get("overall_score") is not None)
         scores = (

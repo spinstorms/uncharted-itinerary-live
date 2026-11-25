@@ -52,6 +52,15 @@ jobs:
       - name: Tripadvisor ratings into the app's database
         run: python3 scripts/sync_tripadvisor_scores.py
         continue-on-error: true
+      - name: Partnerize campaigns (Marriott direct-booking link, once approved)
+        run: python3 scripts/partnerize_campaigns.py
+        continue-on-error: true
+        env:
+          PARTNERIZE_APP_KEY: ${{ secrets.PARTNERIZE_APP_KEY }}
+          PARTNERIZE_USER_KEY: ${{ secrets.PARTNERIZE_USER_KEY }}
+      - name: Marriott links into the app's database
+        run: python3 scripts/sync_marriott_links.py
+        continue-on-error: true
       - name: Hand corrections (data/property-corrections.json)
         run: python3 scripts/apply_corrections.py
         continue-on-error: true

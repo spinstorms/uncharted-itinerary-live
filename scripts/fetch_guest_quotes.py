@@ -77,7 +77,20 @@ def main() -> int:
     todo = [p for p in props if p["id"] not in blocked and p["nuitee_hotel_id"] not in blocked]
     print(f"Guest quotes: {len(todo)} hotels with a verified LiteAPI id ({len(props) - len(todo)} skipped as unverified)")
     today = datetime.now(timezone.utc).date().isoformat()
-    result: dict[str, Any] = {}
+    # Reuse what we already saved: each hotel is asked again at most every REFRESH_DAYS.
+    try:
+        saved = json.loads(OUT.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        saved = {}
+    REFRESH_DAYS = 30
+    cutoff = (datetime.now(timezone.utc).date().toordinal()) - REFRESH_DAYS
+    todo_ids = {p["id"] for p in todo}
+    result: dict[str, Any] = {
+        k: v for k, v in saved.items()
+        if k in todo_ids and datetime.fromisoformat(str(v.get("fetched", "1970-01-01"))).date().toordinal() >= cutoff
+    }
+    todo = [p for p in todo if p["id"] not in result]
+    print(f"Guest quotes: {len(result)} reused from the saved copy, {len(todo)} to fetch")
 
     def work(p: dict[str, Any]) -> None:
         try:
