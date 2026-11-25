@@ -1,0 +1,21 @@
+name: Hotel restaurants (MICHELIN Guide)
+on: workflow_dispatch
+permissions:
+  contents: write
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 scripts/michelin_dining.py
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/hotel-dining.json
+          git diff --cached --quiet || { git commit -m "Hotel restaurants (MICHELIN Guide)"; git pull --rebase -X ours; git push; }

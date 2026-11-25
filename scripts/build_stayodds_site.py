@@ -98,6 +98,7 @@ def _load_json(name: str) -> dict[str, Any]:
 
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 ALTERNATIVES: dict[str, list[dict[str, Any]]] = {}  # better-rated hotels nearby (build_insights.better_alternatives)
+DINING = _load_json("hotel-dining.json")  # restaurants at the hotel, MICHELIN Guide (scripts/michelin_dining.py)
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
 _NO_PLACE = {k for k, v in (_load_json("property-corrections.json").get("properties") or {}).items()
@@ -1461,6 +1462,16 @@ def render_seo_page(
             '</div>'
         )
 
+    if h.get("dining"):
+        _d = h["dining"]
+        trip_tiles.append(
+            '<div class="detail-trip-tile">'
+            '<span class="detail-trip-kicker">Dine at the hotel</span>'
+            f'<strong class="detail-trip-val">{esc(_d[0]["name"])}: {esc(_d[0]["distinction"])}</strong>'
+            '<span class="detail-trip-sub">' + " · ".join(f'<a href="{esc(r["url"])}" target="_blank" rel="noopener noreferrer">{esc(r["name"])}</a> ({esc(r["distinction"])})' for r in _d)
+            + '. Source: MICHELIN Guide.</span></div>'
+        )
+
     # Drinking water, as guests report it in their reviews (scripts/fetch_guest_quotes.py)
     _w = h.get("water") or {}
     if _w.get("reports"):
@@ -1760,6 +1771,8 @@ def render_seo_page(
     if o["ytReviews"]:
         _n = len(o["ytReviews"])
         _chips.append(f'<a class="so2-chip is-video" href="#more-reviews" data-open-tab="reviews">&#9654; {_n} more video review{"s" if _n != 1 else ""}</a>')
+    for _r in (h.get("dining") or [])[:2]:
+        _chips.append(f'<a class="so2-chip is-award" href="{esc(_r["url"])}" target="_blank" rel="noopener noreferrer">{esc(_r["name"])} · {esc(_r["distinction"])}</a>')
     for _a in o["awards"][:3]:
         _chips.append(f'<a class="so2-chip is-award" href="{esc(_a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(_a["label"])}</a>')
     _rest = max(0, len(o["awards"]) - 3) + len(o["editorial"])
@@ -3080,6 +3093,7 @@ def main() -> None:
             "officialAwards": awards_map.get(pid) or [],
             "guestQuotes": None if pid in wrong_lite else GUEST_QUOTES.get(pid),
             "water": None if pid in wrong_lite else (GUEST_QUOTES.get(pid) or {}).get("water"),
+            "dining": [r for r in ((DINING.get(pid) or {}).get("restaurants") or []) if r.get("distinction") != "MICHELIN Guide selected"][:3] or None,
             "communityMentions": COMMUNITY.get(pid) or [],
             "tripadvisor": TRIPADVISOR.get(pid),
         }
