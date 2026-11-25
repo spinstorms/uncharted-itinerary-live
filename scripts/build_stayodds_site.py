@@ -3170,7 +3170,13 @@ def main() -> None:
                     "ranks": {k: {t: {f: r[f] for f in ("rank", "of", "group", "top", "topScore", "low", "where") if f in r}
                                   for t, r in v.items()} for k, v in _gr(directory).items()},
                     "alternatives": {k: [{f: a[f] for f in ("id", "name", "g", "rc", "band")} for a in v]
-                                     for k, v in better_alternatives(directory).items()}},
+                                     for k, v in better_alternatives(directory).items()},
+                    "extras": {h["id"]: {k: v for k, v in {
+                        "water": ({"free": h["water"]["free"], "paid": h["water"]["paid"], "latest": h["water"]["latest"],
+                                   "text": h["water"]["reports"][0]["text"], "source": h["water"]["reports"][0]["source"]}
+                                  if h.get("water") else None),
+                        "dining": [{f: r[f] for f in ("name", "distinction", "url")} for r in (h.get("dining") or [])] or None,
+                    }.items() if v} for h in directory if h.get("water") or h.get("dining")}},
                    separators=(",", ":"), ensure_ascii=False),
         encoding="utf-8",
     )
