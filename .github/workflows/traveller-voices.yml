@@ -1,0 +1,57 @@
+name: Guest comments and traveller links
+
+# Real guest comments from the LiteAPI reviews feed (no AI ratings), then rebuild and publish stayodds.com.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "complete-hotels"
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+  SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+  NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+  GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+
+jobs:
+  voices:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Real guest comments (LiteAPI reviews feed)
+        run: python3 scripts/fetch_guest_quotes.py
+      - name: Rebuild data
+        run: |
+          python3 scripts/normalize_regions_and_prices.py --prices-only
+          python3 scripts/build_stayodds_site.py --data-only
+      - name: Commit results
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "pushed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m "chore: real guest comments and traveller links"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X ours origin main && git push origin main && { echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; }
+            sleep $((i * 10))
+          done
+          exit 1
+      - name: Publish stayodds.com
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-stayodds.yml --ref main

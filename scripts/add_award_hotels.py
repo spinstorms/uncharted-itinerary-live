@@ -607,6 +607,8 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
                 res = []
             if res:
                 found = (float(res[0]["lat"]), float(res[0]["lon"]), f"address: {a['address'][:70]}")
+        if not found and not r.get("google_place_id"):
+            print(f"  {r['id']} has no Google place id")
         if not found and r.get("google_place_id") and os.environ.get("GOOGLE_PLACES_API_KEY"):
             # the hotel's own Google Maps listing (already matched to this hotel by place id); name must still match
             try:
@@ -618,6 +620,8 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
                     gp = json.loads(resp.read().decode("utf-8"))
                 gname = (gp.get("displayName") or {}).get("text", "")
                 loc = gp.get("location") or {}
+                if not (loc and name_ok(r["name"], gname)):
+                    print(f"  google listing for {r['id']} is '{gname}' - name does not match, not used")
                 if loc and name_ok(r["name"], gname):
                     pt = (float(loc["latitude"]), float(loc["longitude"]))
                     cp = city_point(r.get("city") or "", r.get("country") or "")

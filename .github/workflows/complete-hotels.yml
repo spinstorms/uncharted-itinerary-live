@@ -83,6 +83,11 @@ jobs:
         run: python3 scripts/add_award_hotels.py youtube --missing
         continue-on-error: true
 
+      - name: Real guest comments (LiteAPI reviews feed)
+        if: ${{ !inputs.quick }}
+        run: python3 scripts/fetch_guest_quotes.py
+        continue-on-error: true
+
       - name: Remove guest scores based on fewer than 20 reviews
         run: python3 scripts/add_award_hotels.py guestcheck
 

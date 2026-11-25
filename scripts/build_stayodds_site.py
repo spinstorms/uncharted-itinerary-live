@@ -47,7 +47,17 @@ SITE_URL = "https://uncharteditinerary.com"
 
 
 
-MIN_GUEST_REVIEWS = 20  # a guest score needs at least this many verified reviews to be shown
+MIN_GUEST_REVIEWS = 20
+
+def _load_json(name: str) -> dict[str, Any]:
+    try:
+        return json.loads((Path(__file__).resolve().parent.parent / "data" / name).read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
+COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links  # a guest score needs at least this many verified reviews to be shown
 
 def load_env_local() -> None:
     env_path = ROOT / ".env.local"
@@ -736,6 +746,47 @@ def pick_destination_matchups(
     else:
         trio = dest_hotels[:3]
     return pairs, trio
+
+
+def voices_section_html(h: dict[str, Any]) -> str:
+    """Real guest comments (dated, sourced, unedited) and links to traveller discussions and reviews. No scores made up."""
+    quotes = h.get("guestQuotes") or {}
+    qs = quotes.get("quotes") or []
+    mentions = h.get("communityMentions") or []
+    if not qs and not mentions:
+        return ""
+    q_html = ""
+    for q in qs:
+        parts = []
+        if q.get("headline"):
+            parts.append(f'<strong>{esc(q["headline"])}</strong>')
+        if q.get("liked"):
+            parts.append(f'<span><b>Liked:</b> {esc(q["liked"])}</span>')
+        if q.get("disliked"):
+            parts.append(f'<span><b>Disliked:</b> {esc(q["disliked"])}</span>')
+        meta = " · ".join(x for x in (
+            f"{q['score']:g}/10" if isinstance(q.get("score"), (int, float)) else "",
+            q.get("travellerType", "").title(),
+            q.get("date", ""),
+            f"{q.get('source', '')} review",
+        ) if x)
+        q_html += (f'<div class="channel-row" style="display:block;"><div style="display:flex;flex-direction:column;gap:4px;">'
+                   f'{"".join(parts)}</div><small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')
+    m_html = ""
+    for m in mentions:
+        quote = f'<span>&ldquo;{esc(m["quote"])}&rdquo;</span>' if m.get("quote") else ""
+        meta = " · ".join(x for x in (m.get("site", ""), m.get("author", ""), m.get("date", "")) if x)
+        m_html += (f'<div class="channel-row" style="display:block;"><a href="{esc(m["url"])}" target="_blank" rel="noopener noreferrer">'
+                   f'<strong>{esc(m.get("title") or m["url"])}</strong> &#8599;</a>{"<br>" + quote if quote else ""}'
+                   f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')
+    left = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Recent Guest Comments</h3><span class="tag">{len(qs)} real review{"" if len(qs) == 1 else "s"}</span></div>
+      <p class="detail-panel-sub">The most recent written reviews in our booking-data feed ({esc(quotes.get("provider", ""))}), shown as written, good or bad. Checked {esc(quotes.get("fetched", ""))}.</p>
+      <div class="channel-breakdown-list" style="margin-top:12px;">{q_html}</div></div>''') if qs else ""
+    right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions)} linked</span></div>
+      <p class="detail-panel-sub">Forum threads, blogs and reviews about this hotel. Short quotes are credited and link to the original.</p>
+      <div class="channel-breakdown-list" style="margin-top:12px;">{m_html}</div></div>''') if mentions else ""
+    return f'''<section class="detail-section"><h2 class="section-title" style="margin-bottom:14px;">What Guests &amp; Travellers Say</h2>
+      <div class="detail-two-col">{left}{right}</div></section>'''
 
 
 def render_seo_page(
@@ -1608,6 +1659,8 @@ def render_seo_page(
           </div>
         </div>
       </section>
+
+      {voices_section_html(h)}
 
       <section class="detail-section" style="margin-bottom:56px;">
         <div class="section-header" style="margin-bottom:18px;flex-wrap:wrap;gap:12px;">
@@ -2658,6 +2711,8 @@ def main() -> None:
             "editorialRatings": ed_map.get(pid) or [],
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],
+            "guestQuotes": GUEST_QUOTES.get(pid),
+            "communityMentions": COMMUNITY.get(pid) or [],
         }
         directory.append(rec)
 
