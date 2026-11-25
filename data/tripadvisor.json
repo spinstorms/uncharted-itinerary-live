@@ -594,17 +594,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "beverly-hills-hotel": {
-   "locationId": 1088060,
-   "name": "The Maybourne Beverly Hills",
-   "rating": 4.8,
-   "reviewCount": 277,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g32070-d1088060-Reviews-The_Maybourne_Beverly_Hills-Beverly_Hills_California.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "beverly-wilshire-four-seasons": {
    "locationId": 125138,
    "name": "Beverly Wilshire, Beverly Hills, A Four Seasons Hotel",
@@ -1353,17 +1342,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "das-edelweiss": {
-   "locationId": 953293,
-   "name": "Das Edelweiss Salzburg Mountain Resort",
-   "rating": 4.8,
-   "reviewCount": 401,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g808078-d953293-Reviews-Das_Edelweiss_Salzburg_Mountain_Resort-Grossarl_Salzburg_Region.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "delaire-graff-estate": {
    "locationId": 1823342,
    "name": "Delaire Graff Estate",
@@ -1581,17 +1559,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g670171-d308010-Reviews-Explora_en_Torres_del_Paine-Torres_del_Paine_National_Park_Magallanes_Region.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "faena-hotel-miami-beach": {
-   "locationId": 217412,
-   "name": "Casa Faena Miami Beach",
-   "rating": 4.2,
-   "reviewCount": 603,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g34439-d217412-Reviews-Casa_Faena_Miami_Beach-Miami_Beach_Florida.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -2013,17 +1980,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "four-seasons-punta-mita": {
-   "locationId": 25326042,
-   "name": "Naviva, A Four Seasons Resort, Punta Mita, Mexico",
-   "rating": 4.8,
-   "reviewCount": 26,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g499443-d25326042-Reviews-Naviva_A_Four_Seasons_Resort_Punta_Mita_Mexico-Punta_de_Mita_Riviera_Nayarit.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "four-seasons-resort-sharm-el-sheikh": {
    "locationId": 301880,
    "name": "Four Seasons Resort Sharm El Sheikh",
@@ -2164,17 +2120,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g298182-d21013984-Reviews-FUFU_Nikko-Nikko_Tochigi_Prefecture.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "gajoen": {
-   "locationId": 557525,
-   "name": "Gajoen Tokyo",
-   "rating": 5.0,
-   "reviewCount": 2,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g1066450-d557525-Reviews-Gajoen_Tokyo-Meguro_Tokyo.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -2321,17 +2266,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "grand-hotel-victoria": {
-   "locationId": 239208,
-   "name": "Grand Hotel Victoria Concept & Spa",
-   "rating": 4.7,
-   "reviewCount": 219,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g194821-d239208-Reviews-Grand_Hotel_Victoria_Concept_&_Spa-Menaggio_Lake_Como.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "grand-lisboa-palace-macau": {
    "locationId": 23595022,
    "name": "Grand Lisboa Palace Macau",
@@ -2395,17 +2329,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g188079-d232995-Reviews-Gstaad_Palace-Gstaad_Saanen.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "halekulani": {
-   "locationId": 114026,
-   "name": "Halepuna Waikiki by Halekulani",
-   "rating": 4.7,
-   "reviewCount": 1204,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g60982-d114026-Reviews-Halepuna_Waikiki_by_Halekulani-Honolulu_Oahu.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -2794,17 +2717,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "il-sereno": {
-   "locationId": 10382443,
-   "name": "Il Sereno Lago Di Como",
-   "rating": 4.7,
-   "reviewCount": 237,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g262050-d10382443-Reviews-Il_Sereno_Lago_Di_Como-Torno_Lake_Como.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "iniala-beach-house": {
    "locationId": 7198263,
    "name": "Iniala Beach House",
@@ -3036,17 +2948,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "la-bastide-de-gordes": {
-   "locationId": 239230,
-   "name": "Airelles La Bastide, Gordes",
-   "rating": 4.6,
-   "reviewCount": 624,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g187248-d239230-Reviews-Airelles_La_Bastide_Gordes-Gordes_Luberon.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "la-cheneaudiere": {
    "locationId": 274472,
    "name": "Cheneaudière - Hôtel Spa 5*",
@@ -3088,17 +2989,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g187782-d579275-Reviews-Maison_La_Minervetta-Sorrento_Province_of_Naples.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "la-mirande": {
-   "locationId": 12805982,
-   "name": "Glamping La Mirande",
-   "rating": 5.0,
-   "reviewCount": 1,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g616084-d12805982-Reviews-Glamping_La_Mirande-Villeneuve_sur_Lot_Lot_et_Garonne.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -3495,17 +3385,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g294009-d14211795-Reviews-Mandarin_Oriental_Doha-Doha.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "mandarin-oriental-hong-kong": {
-   "locationId": 33068621,
-   "name": "Original Mandarin Oriental Hotel ,central District Hong Kong",
-   "rating": 5.0,
-   "reviewCount": 3,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g294217-d33068621-Reviews-Original_Mandarin_Oriental_Hotel_central_District_Hong_Kong-Hong_Kong.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -4290,17 +4169,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "rachamankha": {
-   "locationId": 5988032,
-   "name": "Wachira@Rachamankha Guesthouse",
-   "rating": 4.9,
-   "reviewCount": 16,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g293917-d5988032-Reviews-Wachira@Rachamankha_Guesthouse-Chiang_Mai_Chiang_Mai_Province.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "raffles-al-areen-palace-bahrain": {
    "locationId": 1943229,
    "name": "Raffles Al Areen Palace Bahrain",
@@ -4708,17 +4576,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "saltmoore": {
-   "locationId": 32708640,
-   "name": "Sandsend Retreats at Saltmoore",
-   "rating": 5.0,
-   "reviewCount": 18,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g186345-d32708640-Reviews-Sandsend_Retreats_at_Saltmoore-Whitby_Scarborough_District.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "samujana-villas": {
    "locationId": 9466413,
    "name": "Samujana Villas",
@@ -5115,17 +4972,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "splendido-belmond-portofino": {
-   "locationId": 13370041,
-   "name": "Splendido Mare, A Belmond Hotel, Portofino",
-   "rating": 4.8,
-   "reviewCount": 136,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g187825-d13370041-Reviews-Splendido_Mare_A_Belmond_Hotel_Portofino-Portofino_Italian_Riviera.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "splendido-mare-a-belmond-hotel-portofino": {
    "locationId": 13370041,
    "name": "Splendido Mare, A Belmond Hotel, Portofino",
@@ -5456,17 +5302,6 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
-  "the-fifth-avenue-hotel-new-york": {
-   "locationId": 1776857,
-   "name": "The Langham, New York, Fifth Avenue",
-   "rating": 4.7,
-   "reviewCount": 3440,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g60763-d1776857-Reviews-The_Langham_New_York_Fifth_Avenue-New_York_City_New_York.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
   "the-fontenay": {
    "locationId": 11809998,
    "name": "The Fontenay Hamburg",
@@ -5662,17 +5497,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g186338-d187569-Reviews-The_Langham_London-London_England.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "the-legian-seminyak": {
-   "locationId": 16835040,
-   "name": "The Club by The Legian Seminyak, Bali",
-   "rating": 5.0,
-   "reviewCount": 337,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g469404-d16835040-Reviews-The_Club_by_The_Legian_Seminyak_Bali-Seminyak_Kuta_District.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
@@ -5970,17 +5794,6 @@
    "ranking": null,
    "awards": [],
    "url": "https://www.tripadvisor.com/Hotel_Review-g664891-d8662602-Reviews-Wynn_Palace-Macao.html?m=70260",
-   "status": "OPEN",
-   "fetched": "2026-11-25"
-  },
-  "xinalani": {
-   "locationId": 2098104,
-   "name": "Xinalani Yoga Retreat Mexico",
-   "rating": 4.7,
-   "reviewCount": 343,
-   "ranking": null,
-   "awards": [],
-   "url": "https://www.tripadvisor.com/Hotel_Review-g13157762-d2098104-Reviews-Xinalani_Yoga_Retreat_Mexico-Quimixto_Cabo_Corrientes.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
   },

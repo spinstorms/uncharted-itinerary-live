@@ -30,7 +30,8 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from add_award_hotels import km_between, name_ok, sb_all  # noqa: E402
+from add_award_hotels import km_between, sb_all  # noqa: E402
+from strict_names import same_hotel  # noqa: E402
 from enrich_missing_hotels import COUNTRY_TO_ISO2  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -123,6 +124,13 @@ def main() -> int:
             return False
 
     props = sb_all("properties", "id,name,city,country,lat,lng")
+    # drop stored matches that fail the strict same-hotel check (e.g. a sister hotel); they are searched again
+    pmap = {p["id"]: p for p in props}
+    for pid in list(store["hotels"]):
+        p, t = pmap.get(pid), store["hotels"][pid]
+        if not p or not same_hotel(p["name"], t.get("name") or "", p.get("city") or "", p.get("country") or ""):
+            print(f"  dropped earlier match {pid}: '{t.get('name')}' is not the same hotel")
+            del store["hotels"][pid]
     todo = [p for p in priority(props)
             if not fresh((store["hotels"].get(p["id"]) or {}).get("fetched")) and not fresh(store["unmatched"].get(p["id"]))]
     print(f"Tripadvisor: {len(todo)} hotels to check, budget {args.max_calls} calls")
@@ -150,7 +158,7 @@ def main() -> int:
         hit = None
         for item in res.get("data") or []:
             loc = item.get("location") or {}
-            if not name_ok(p["name"], primary_name(loc)):
+            if not same_hotel(p["name"], primary_name(loc), p.get("city") or "", p.get("country") or ""):
                 continue
             c = loc.get("coordinates") or {}
             if isinstance(p.get("lat"), (int, float)) and p.get("lat") and c.get("latitude") is not None:

@@ -58,7 +58,11 @@ def _load_json(name: str) -> dict[str, Any]:
 
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
-TRIPADVISOR = (_load_json("tripadvisor.json").get("hotels", {})
+def _ta_ok(pid: str, t: dict[str, Any]) -> bool:
+    return (t.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS
+
+
+TRIPADVISOR = ({k: v for k, v in _load_json("tripadvisor.json").get("hotels", {}).items() if _ta_ok(k, v)}
                if _load_json("tripadvisor-settings.json").get("enabled", True) else {})  # one switch removes it all  # a guest score needs at least this many verified reviews to be shown
 
 def load_env_local() -> None:

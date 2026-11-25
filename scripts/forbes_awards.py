@@ -17,7 +17,10 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from add_award_hotels import http_get, name_ok, norm_words, now_iso, sb_all, upsert  # noqa: E402
+import urllib.parse  # noqa: E402
+
+from add_award_hotels import http_get, norm_words, now_iso, sb, sb_all, upsert  # noqa: E402
+from strict_names import same_hotel  # noqa: E402
 
 URL = "https://www.forbestravelguide.com/award-winners"
 TOKEN = re.compile(
@@ -72,13 +75,30 @@ def main(argv: list[str]) -> int:
     print(f"Forbes: {sum(e['rating'] == 'Five-Star' for e in entries)} Five-Star and "
           f"{sum(e['rating'] == 'Four-Star' for e in entries)} Four-Star hotels on the official list")
     props = sb_all("properties", "id,name,city,country")
+    by_id = {p["id"]: p for p in props}
+    by_url = {e["url"]: e for e in entries}
+    # repair: remove any Forbes tag whose Forbes page is a different hotel (an earlier, looser match)
+    removed = 0
+    for r in sb_all("official_awards", "property_id,award_body,label,source_url"):
+        if r["award_body"] != "Forbes Travel Guide":
+            continue
+        e = by_url.get(r.get("source_url") or "")
+        p = by_id.get(r["property_id"])
+        if e and p and not same_hotel(p["name"], e["name"], p.get("city") or "", p.get("country") or ""):
+            print(f"  REMOVE wrong tag {r['property_id']} ({p['name']}): Forbes page is {e['name']} - {r['label']}")
+            removed += 1
+            if not dry:
+                sb("DELETE", f"/rest/v1/official_awards?property_id=eq.{urllib.parse.quote(r['property_id'])}"
+                             f"&award_body=eq.{urllib.parse.quote('Forbes Travel Guide')}&label=eq.{urllib.parse.quote(r['label'])}",
+                   None, {"Prefer": "return=minimal"})
+    print(f"Forbes: removed {removed} tags that pointed at a different hotel")
     have: dict[str, set[str]] = {}
     for r in sb_all("official_awards", "property_id,award_body,label"):
         if r["award_body"] == "Forbes Travel Guide":
             have.setdefault(r["property_id"], set()).add(r["label"])
     rows, unmatched_five = [], []
     for e in entries:
-        hits = [p for p in props if name_ok(p["name"], e["name"]) and name_ok(e["name"], p["name"]) and place_ok(p, e["dest"])]
+        hits = [p for p in props if same_hotel(p["name"], e["name"], p.get("city") or "", p.get("country") or "") and place_ok(p, e["dest"])]
         if len(hits) != 1:
             if e["rating"] == "Five-Star" and not hits:
                 unmatched_five.append(f"{e['name']} ({e['dest']})")
