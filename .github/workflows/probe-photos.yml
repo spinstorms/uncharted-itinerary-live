@@ -25,7 +25,7 @@ jobs:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          python3 scripts/photo_candidates.py /tmp/out ${{ inputs.ids }}
+          if [[ "${{ inputs.ids }}" == *--official* ]]; then python3 scripts/official_photos.py /tmp/out $(echo "${{ inputs.ids }}" | sed 's/--official//'); else python3 scripts/photo_candidates.py /tmp/out ${{ inputs.ids }}; fi
           cd /tmp/out && git init -q && git checkout -q -b probe-photos
           git config user.name "github-actions" && git config user.email "actions@github.com"
           git add . && git commit -qm "photo candidates"
