@@ -61,3 +61,10 @@
   .so2-actions .btn{flex:1 1 auto}
   .so2-btn-price{flex:1 1 100%;justify-content:center}
 }
+.so2-highlights{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0 4px}
+.so2-hl-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748B;margin-right:4px}
+.so2-chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border-radius:99px;border:1px solid #E7E2DA;background:#fff;color:#0F172A!important;font-size:13px;font-weight:600;text-decoration:none}
+.so2-chip:hover{border-color:#FF5D22}
+.so2-chip.is-video{background:#FFF1F0;border-color:#FECACA;color:#B91C1C!important}
+.so2-chip.is-award{background:#FFFBEB;border-color:#FDE68A;color:#92400E!important}
+.so2-count{display:inline-block;min-width:20px;padding:0 6px;margin-left:4px;border-radius:99px;background:#FF5D22;color:#fff;font-size:11.5px;line-height:20px;text-align:center}

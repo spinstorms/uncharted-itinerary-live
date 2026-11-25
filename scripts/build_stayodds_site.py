@@ -1726,6 +1726,22 @@ def render_seo_page(
           </details>
 {DETAIL_OTA_STRIP}"""
 
+    # Highlights strip (Nov 2026): videos and awards visible up top, details stay in the tab
+    _chips = []
+    if o["ytReviews"]:
+        _n = len(o["ytReviews"])
+        _chips.append(f'<a class="so2-chip is-video" href="#more-reviews" data-open-tab="reviews">&#9654; {_n} more video review{"s" if _n != 1 else ""}</a>')
+    for _a in o["awards"][:3]:
+        _chips.append(f'<a class="so2-chip is-award" href="{esc(_a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(_a["label"])}</a>')
+    _rest = max(0, len(o["awards"]) - 3) + len(o["editorial"])
+    if _rest:
+        _chips.append(f'<a class="so2-chip" href="#more-reviews" data-open-tab="reviews">+{_rest} more award{"s" if _rest != 1 else ""} &amp; critic review{"s" if _rest != 1 else ""}</a>')
+    so_highlights_html = (
+        '<section class="so2-highlights" aria-label="Videos and awards"><span class="so2-hl-label">Watch &amp; awards</span>'
+        + "".join(_chips) + "</section>"
+    ) if _chips else ""
+    _rev_count = (1 if review_href else 0) + len(o["ytReviews"]) + len(o["awards"]) + len(o["editorial"])
+
     # three voices
     if o["firstHand"] and o.get("personalScore25") is not None:
         ours_body = (f'<div class="so2-big">{fmt_score_num(o["personalScore25"])}<small>/{o["personalScoreMax"]}</small></div>'
@@ -1803,7 +1819,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
-  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=1" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=2" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1863,6 +1879,8 @@ def render_seo_page(
         </div>
       </section>
 
+      {so_highlights_html}
+
       {so_voices_html}
 
       {f'''<section class="detail-section" id="guest-rank">
@@ -1876,10 +1894,10 @@ def render_seo_page(
       <section class="so2-section"><h2 class="so2-h2">Before you book</h2>{trip_context_html}{so_more_facts}</section>
       {so_love_html}
 
-      <section class="so2-tabs" data-so2-tabs>
+      <section class="so2-tabs" data-so2-tabs id="more-reviews">
         <div class="so2-tablist" role="tablist">
           <button type="button" role="tab" aria-selected="true" data-tab="comments">Guest comments</button>
-          <button type="button" role="tab" aria-selected="false" data-tab="reviews">Reviews, awards &amp; videos</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="reviews">Reviews, awards &amp; videos{f' <span class="so2-count">{_rev_count}</span>' if _rev_count else ''}</button>
           <button type="button" role="tab" aria-selected="false" data-tab="nearby">Compare nearby</button>
           <button type="button" role="tab" aria-selected="false" data-tab="score">How the score works</button>
         </div>
@@ -1988,6 +2006,13 @@ def render_seo_page(
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
   <script src="../../assets/stayodds-video.js?v=2" defer></script>
   <script>
+    document.querySelectorAll("[data-open-tab]").forEach(function (a) {{
+      a.addEventListener("click", function (e) {{
+        var t = document.querySelector('[data-so2-tabs] [data-tab="' + a.getAttribute("data-open-tab") + '"]');
+        if (!t) return; e.preventDefault(); t.click();
+        document.getElementById("more-reviews").scrollIntoView({{ behavior: "smooth", block: "start" }});
+      }});
+    }});
     document.querySelectorAll("[data-so2-tabs]").forEach(function (box) {{
       box.addEventListener("click", function (e) {{
         var b = e.target.closest("[data-tab]"); if (!b) return;

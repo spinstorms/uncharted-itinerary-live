@@ -138,7 +138,7 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
         for i, r in enumerate(ordered, 1):
             big = [a for a in r["awards"] if re.search(r"in the World|3 MICHELIN Keys|Forbes Five-Star", a)]
             if any(re.search(r"in the World|3 MICHELIN Keys", a) for a in big):
-                low.append({"name": r["h"]["name"], "guest": r["g"], "reviews": r["rc"], "rank": i, "of": len(ordered),
+                low.append({"id": r["h"]["id"], "name": r["h"]["name"], "guest": r["g"], "reviews": r["rc"], "rank": i, "of": len(ordered),
                             "group": country, "awards": big[:2], "pct": i / len(ordered)})
     low.sort(key=lambda x: (-x["pct"], x["guest"]))
     for x in low:
@@ -183,7 +183,7 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
     tier_stats = {k: {"n": len(v), "median": st.median(v), "q1": st.quantiles(v, n=4)[0], "q3": st.quantiles(v, n=4)[2]}
                   for k, v in tiers.items() if len(v) >= 8}
 
-    scatter = [{"n": r["h"]["name"], "c": r["c"], "g": r["g"]} for r in guests if r["c"] is not None]
+    scatter = [{"id": r["h"]["id"], "n": r["h"]["name"], "c": r["c"], "g": r["g"]} for r in guests if r["c"] is not None]
 
     def _spread(vals: list[int]) -> dict[str, Any]:
         q = st.quantiles(sorted(vals), n=4)
@@ -203,7 +203,7 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
             continue
         top = sorted(rs, key=lambda r: (-r["g"], -r["rc"]))[:3]
         price.append({"band": label, **_spread([r["g"] for r in rs]),
-                      "top": [{"name": r["h"]["name"], "g": r["g"], "rc": r["rc"]} for r in top]})
+                      "top": [{"id": r["h"]["id"], "name": r["h"]["name"], "g": r["g"], "rc": r["rc"]} for r in top]})
 
     # guest score by destination (town or island with 8+ rated hotels)
     by_area: dict[tuple[str, str], list] = defaultdict(list)
@@ -229,7 +229,7 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
 
     # guests' favourites: highest guest score, from 500+ reviews so a small sample can't top the list
     fav = sorted((r for r in guests if r["rc"] >= 500), key=lambda r: (-r["g"], -r["rc"]))[:15]
-    favourites = [{"name": r["h"]["name"], "where": _city(r["h"]) or _country(r["h"]), "g": r["g"], "rc": r["rc"]} for r in fav]
+    favourites = [{"id": r["h"]["id"], "name": r["h"]["name"], "where": _city(r["h"]) or _country(r["h"]), "g": r["g"], "rc": r["rc"]} for r in fav]
     return {"disappoint": low[:6], "brands": brands, "tiers": tier_stats, "scatter": scatter, "n": len(guests),
             "price": price, "areas": areas, "favourites": favourites}
 

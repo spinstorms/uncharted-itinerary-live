@@ -52,7 +52,7 @@
 <section class="panel" aria-labelledby="h4a">
   <div class="eyebrow">Critics versus guests</div>
   <h2 id="h4a">Where critics and guests disagree</h2>
-  <p class="sub">Every hotel with both a published critic score and a guest score (__NSCATTER__ hotels). Above the line, guests like it more than critics; below it, critics like it more. Orange dots are the six biggest "critics loved it, guests less so" gaps; hover or tap any dot for its name.</p>
+  <p class="sub">Every hotel with both a published critic score and a guest score (__NSCATTER__ hotels). Above the line, guests like it more than critics; below it, critics like it more. Orange dots are the six biggest "critics loved it, guests less so" gaps; hover any dot for its name, click to open its page.</p>
   <div class="chart" id="scatter"></div>
   <div class="note">Critic scores are the published scores linked on each hotel page, converted to a score out of 100.</div>
 </section>
@@ -97,6 +97,7 @@
 const D = __DATA__;
 const css = (v) => getComputedStyle(document.querySelector('.gi')).getPropertyValue(v).trim();
 const tip = document.getElementById('tip');
+const hotelUrl = (id) => '/stayodds/' + encodeURIComponent(id) + '/';
 function showTip(e, html){ tip.innerHTML = html; tip.hidden = false; const x = Math.min(e.clientX + 14, innerWidth - 270); tip.style.left = x + 'px'; tip.style.top = (e.clientY + 14) + 'px'; }
 function hideTip(){ tip.hidden = true; }
 const ord = (n) => { const s=['th','st','nd','rd'], v=n%100; return n + (s[(v-20)%10]||s[v]||s[0]); };
@@ -109,7 +110,7 @@ document.getElementById('disappoint').innerHTML = D.disappoint.map((r) => {
   const pct = r.of > 1 ? (r.rank - 1) / (r.of - 1) * 100 : 0;
   const chips = r.awards.map((a) => `<span class="tag">${esc(a.replace(' (2026)', '').replace('in the World', "World's 50 Best").replace(/^No\. (\d+) World's 50 Best$/, "World's 50 Best #$1"))}</span>`).join('');
   return `<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:10px 18px;align-items:center">
-    <div style="min-width:0"><div style="font-family:var(--display);font-weight:700;font-size:17px">${esc(r.name)}</div>${chips}</div>
+    <div style="min-width:0"><a href="${hotelUrl(r.id)}" style="font-family:var(--display);font-weight:700;font-size:17px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent-soft);text-underline-offset:3px">${esc(r.name)}</a>${chips}</div>
     <div style="min-width:0"><div style="position:relative;height:14px;border-radius:99px;background:var(--track)" aria-hidden="true">
       <div style="position:absolute;left:0;top:0;bottom:0;width:${pct}%;border-radius:99px;background:var(--accent-soft)"></div>
       <div style="position:absolute;top:50%;left:${pct}%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--panel)"></div></div>
@@ -171,7 +172,7 @@ function drawAll(){
     const isHot = hot.has(p.n);
     const c = el('circle',{cx:xs(p.c),cy:ys(p.g),r:isHot?6:4,fill:isHot?css('--accent'):css('--muted'),'fill-opacity':isHot?1:.55,stroke:css('--panel'),'stroke-width':1.5},svg);
     const hit = el('circle',{cx:xs(p.c),cy:ys(p.g),r:9,fill:'transparent'},svg);
-    hit.addEventListener('mousemove',(e)=>showTip(e,`<b>${esc(p.n)}</b><br>Critics ${p.c}/100 · Guests ${p.g}/100`)); hit.addEventListener('mouseleave',hideTip);
+    hit.addEventListener('mousemove',(e)=>showTip(e,`<b>${esc(p.n)}</b><br>Critics ${p.c}/100 · Guests ${p.g}/100<br><span style="opacity:.7">Click to open</span>`)); hit.addEventListener('mouseleave',hideTip); if (p.id){ hit.style.cursor='pointer'; hit.addEventListener('click',()=>{ location.href = hotelUrl(p.id); }); }
     if (isHot) labelled.push(p);
   });
   // label orange dots, skipping any label that would overlap one already placed
@@ -188,7 +189,7 @@ function drawAll(){
       tip:`<b>${esc(b.band)} a night</b><br>Typical guest score ${b.median}/100 · ${b.n} hotels`})),
       {left:130, min:70, nLabel:'hotels', label:'Guest score by price level'});
     document.getElementById('priceTop').innerHTML = D.price.map((b) => `<div class="idea"><h3>Top rated, ${esc(b.band)}</h3>` +
-      b.top.map((t) => `<p>${esc(t.name)} · <b>${t.g}</b>/100 <span style="color:var(--muted)">(${t.rc.toLocaleString('en-GB')} reviews)</span></p>`).join('') + '</div>').join('');
+      b.top.map((t) => `<p><a href="${hotelUrl(t.id)}" style="color:var(--ink)">${esc(t.name)}</a> · <b>${t.g}</b>/100 <span style="color:var(--muted)">(${t.rc.toLocaleString('en-GB')} reviews)</span></p>`).join('') + '</div>').join('');
   }
   if (D.areas && D.areas.length){
     rangeChart('areas', D.areas.map((a) => ({label:a.area, n:a.n, median:a.median, q1:a.q1, q3:a.q3, min:a.min, max:a.max,
@@ -196,7 +197,7 @@ function drawAll(){
       {left:210, min:70, nLabel:'hotels', label:'Guest score by destination'});
   }
   document.getElementById('fav').innerHTML = (D.favourites || []).map((f) =>
-    `<li><b>${esc(f.name)}</b> <span style="color:var(--ink2)">· ${esc(f.where)}</span> · <b style="color:var(--accent)">${f.g}</b>/100 <span style="color:var(--muted)">from ${f.rc.toLocaleString('en-GB')} reviews</span></li>`).join('');
+    `<li><a href="${hotelUrl(f.id)}" style="color:var(--ink);font-weight:700">${esc(f.name)}</a> <span style="color:var(--ink2)">· ${esc(f.where)}</span> · <b style="color:var(--accent)">${f.g}</b>/100 <span style="color:var(--muted)">from ${f.rc.toLocaleString('en-GB')} reviews</span></li>`).join('');
 }
 drawAll();
 </script>
