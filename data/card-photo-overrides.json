@@ -991,10 +991,10 @@
       "note": "File:Amankila.jpg"
     },
     "chateau-richeux-les-maisons-de-bricourt": {
-      "url": "https://www.maisons-de-bricourt.com/media/cache/app_menu_image/media/image/87/4c/874cef464663ec264ef4580b7d9e9da3.jpg",
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1381046.jpg",
       "source": "official",
-      "site": "https://www.maisons-de-bricourt.com/en/",
-      "note": "official site: chateau (checked by eye)"
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): chateau (checked by eye)"
     },
     "hotel-du-cap-eden-roc": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Gartenfassade_Hotel_Du_Cap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -1069,10 +1069,10 @@
       "note": "MICHELIN Guide listing (hotel-supplied): pool and resort (checked by eye)"
     },
     "ambiente-a-landscape-hotel": {
-      "url": "https://upload.ambientesedona.com/wp-content/uploads/2022/11/12101258/Ambiente-Pop-Up-Image.jpg",
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1678387.jpg",
       "source": "official",
-      "site": "https://www.ambientesedona.com/",
-      "note": "official site: pool and atriums (checked by eye)"
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): aerial of the atriums (checked by eye)"
     },
     "palazzo-portinari-salviati-residenza-depoca": {
       "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1390167.jpg",
@@ -1199,6 +1199,24 @@
       "source": "official",
       "site": "https://www.relaischateaux.com/",
       "note": "Relais & Chateaux listing (hotel-supplied): chateau and gardens (checked by eye)"
+    },
+    "le-tahaa-pearl-resorts": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1463318.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): aerial of overwater villas (checked by eye)"
+    },
+    "four-seasons-hotel-new-york": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/57th_St_Park_Av_td_13_-_Four_Seasons.jpg/1280px-57th_St_Park_Av_td_13_-_Four_Seasons.jpg",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY-SA 4.0|Tdorante10|https://commons.wikimedia.org/wiki/File:57th_St_Park_Av_td_13_-_Four_Seasons.jpg",
+      "note": "File:57th St Park Av td 13 - Four Seasons.jpg (entrance on 57th St)"
+    },
+    "the-carlton-milan-a-rocco-forte-hotel": {
+      "url": "https://www.roccofortehotels.com/media/5aundags/crop-banner-rfh-the-carlton-junior-family-suite-1.jpg",
+      "source": "official",
+      "site": "https://www.roccofortehotels.com/hotels-and-resorts/the-carlton-milan/",
+      "note": "official site: suite (no exterior shot published) (checked by eye)"
     }
   }
 }
