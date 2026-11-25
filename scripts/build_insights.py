@@ -154,6 +154,14 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
         brands.append({"brand": b, "n": len(rs), "median": st.median(gs), "q1": round(q[0], 1), "q3": round(q[2], 1),
                        "min": gs[0], "max": gs[-1], "best": best["h"]["name"], "worst": worst["h"]["name"]})
     brands.sort(key=lambda x: (-x["median"], -x["n"]))
+    try:  # official logos (Wikimedia Commons), only where the file has been downloaded
+        logos = json.loads((ROOT / "data" / "brand-logos.json").read_text(encoding="utf-8"))["brands"]
+    except Exception:
+        logos = {}
+    for b in brands:
+        lg = logos.get(b["brand"]) or {}
+        if lg.get("file") and (ROOT / lg["file"]).exists():
+            b["logo"] = "/" + lg["file"]
 
     # award tiers
     tiers: dict[str, list] = defaultdict(list)

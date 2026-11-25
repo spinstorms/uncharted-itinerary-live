@@ -46,7 +46,7 @@
   <h2 id="h3a">How guests rate each luxury brand</h2>
   <p class="sub">Dot = the brand's typical (median) hotel. Thick bar = the middle half of its hotels. Thin line = best to worst hotel. A short bar means a consistent brand. Brands with 8 or more rated hotels.</p>
   <div class="chart" id="brands"></div>
-  <div class="note">__BRAND_NOTE__ Hover over or tap a brand to see its best and lowest-rated hotel.</div>
+  <div class="note">__BRAND_NOTE__ Hover over or tap a brand to see its best and lowest-rated hotel. Brand logos: Wikimedia Commons.</div>
 </section>
 
 <section class="panel" aria-labelledby="h4a">
@@ -135,6 +135,7 @@ function rangeChart(id, rows, opts){
     const g = el('g', {tabindex:0}, svg);
     el('rect', {x:0, y:y-rowH/2, width:W, height:rowH, fill:'transparent'}, g);
     el('text', {x:left-10, y:y+4, 'text-anchor':'end', 'font-size':12.5, fill:css('--ink')}, g, r.label);
+    if (r.logo){ const im = el('image', {x:2, y:y-10, width:64, height:20, preserveAspectRatio:'xMinYMid meet'}, g); im.setAttributeNS('http://www.w3.org/1999/xlink', 'href', r.logo); im.setAttribute('href', r.logo); }
     if (r.min != null) el('line', {x1:sx(r.min), x2:sx(r.max), y1:y, y2:y, stroke:css('--muted'), 'stroke-width':2, 'stroke-linecap':'round'}, g);
     el('rect', {x:sx(r.q1), y:y-5, width:Math.max(4, sx(r.q3)-sx(r.q1)), height:10, rx:5, fill:css('--accent-soft')}, g);
     el('circle', {cx:sx(r.median), cy:y, r:6, fill:css('--accent'), stroke:css('--panel'), 'stroke-width':2}, g);
@@ -145,9 +146,9 @@ function rangeChart(id, rows, opts){
   });
 }
 function drawAll(){
-  rangeChart('brands', D.brands.map((b) => ({label:b.brand, n:b.n, median:b.median, q1:b.q1, q3:b.q3, min:b.min, max:b.max,
+  rangeChart('brands', D.brands.map((b) => ({label:b.brand, logo:b.logo, n:b.n, median:b.median, q1:b.q1, q3:b.q3, min:b.min, max:b.max,
     tip:`<b>${esc(b.brand)}</b><br>Typical hotel ${b.median}/100 · ${b.n} hotels<br>Best: ${esc(b.best)}<br>Lowest: ${esc(b.worst)}`})),
-    {left:190, min:70, nLabel:'hotels', label:'Guest score by hotel brand'});
+    {left:250, min:70, nLabel:'hotels', label:'Guest score by hotel brand'});
   const order = ["3 MICHELIN Keys","2 MICHELIN Keys","1 MICHELIN Key","Forbes Five-Star","World's 50 Best Top 100","No major award"];
   rangeChart('tiers', order.filter((k) => D.tiers[k]).map((k) => ({label:k, n:D.tiers[k].n, median:D.tiers[k].median, q1:D.tiers[k].q1, q3:D.tiers[k].q3,
     tip:`<b>${esc(k)}</b><br>Typical guest score ${D.tiers[k].median}/100<br>Middle half: ${D.tiers[k].q1.toFixed(0)}–${D.tiers[k].q3.toFixed(0)} · ${D.tiers[k].n} hotels`})),

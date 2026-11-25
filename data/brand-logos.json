@@ -1,0 +1,53 @@
+{
+  "note": "Brand logos from Wikimedia Commons (file page linked for licence). Shown at small size beside the brand's name to identify it.",
+  "brands": {
+    "Banyan Tree": {
+      "file": "assets/brand-logos/banyan-tree.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Banyan_Tree_logo.svg/500px-Banyan_Tree_logo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:Banyan_Tree_logo.svg",
+      "licence": "Public domain"
+    },
+    "Mandarin Oriental": {
+      "file": "assets/brand-logos/mandarin-oriental.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Mandarin_Oriental_Hotel_Group_logo.svg/500px-Mandarin_Oriental_Hotel_Group_logo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Hotel_Group_logo.svg",
+      "licence": "Public domain"
+    },
+    "Waldorf Astoria": {
+      "file": "assets/brand-logos/waldorf-astoria.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Waldorf-Astoria-Logo.svg/500px-Waldorf-Astoria-Logo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:Waldorf-Astoria-Logo.svg",
+      "licence": "Public domain"
+    },
+    "St. Regis": {
+      "file": "assets/brand-logos/st-regis.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/St._Regis_Hotels_%26_Resorts_logo.svg/500px-St._Regis_Hotels_%26_Resorts_logo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:St._Regis_Hotels_%26_Resorts_logo.svg",
+      "licence": "Public domain"
+    },
+    "Fairmont": {
+      "file": "assets/brand-logos/fairmont.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Fairmont_Logo.svg/500px-Fairmont_Logo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:Fairmont_Logo.svg",
+      "licence": "Public domain"
+    },
+    "The Peninsula": {
+      "file": "assets/brand-logos/the-peninsula.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/ThePeninsulaHotelsLogo.svg/500px-ThePeninsulaHotelsLogo.svg.png",
+      "commons": "https://commons.wikimedia.org/wiki/File:ThePeninsulaHotelsLogo.svg",
+      "licence": "Public domain"
+    },
+    "Rosewood": {
+      "file": "assets/brand-logos/rosewood.png",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/d/db/Rosewood_hotel_resorts_logo.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Rosewood_hotel_resorts_logo.jpg",
+      "licence": "Public domain"
+    },
+    "Ritz-Carlton": {
+      "file": "assets/brand-logos/ritz-carlton.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Rsz_trc-primary-logo_blk3-memblue.jpg/500px-Rsz_trc-primary-logo_blk3-memblue.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Rsz_trc-primary-logo_blk3-memblue.jpg",
+      "licence": "CC BY-SA 4.0"
+    }
+  }
+}

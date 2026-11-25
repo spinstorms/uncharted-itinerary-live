@@ -1,10 +1,10 @@
-name: Set hand-picked hotel card photos
+name: Set hand-picked hotel photos and brand logos
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["data/card-photo-overrides.json"]
+    paths: ["data/card-photo-overrides.json", "data/brand-logos.json"]
 
 permissions:
   contents: write
@@ -28,13 +28,15 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: python3 scripts/set_card_photos.py
+      - name: Brand logos (Wikimedia Commons)
+        run: python3 scripts/fetch_brand_logos.py
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/card-photos
+          git add assets/card-photos assets/brand-logos
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Hand-picked overview photos for hotel cards"
+          git commit -m "Hand-picked hotel photos and brand logos"
           for i in 1 2 3 4 5; do git pull --rebase origin main && git push origin main && break; sleep $((i*10)); done
       - name: Publish stayodds.com
         env:
