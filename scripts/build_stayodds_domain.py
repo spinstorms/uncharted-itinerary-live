@@ -109,6 +109,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = re.sub(r'href=["\'](?:\.\./)+brands/', 'href="/brands/', html)
     html = re.sub(r'href=["\'](?:\.\./)+stayodds/', 'href="/stayodds/', html)
     html = re.sub(r'href=["\'](?:\.\./)+destinations/', 'href="/destinations/', html)
+    html = re.sub(r'href=["\'](?:\.\./)+lists/', 'href="/lists/', html)
 
     # On root_compare (/index.html), replace "./" self-links with "/"
     if page_kind == "root_compare":
@@ -400,6 +401,14 @@ def main() -> None:
         if dfile.is_file():
             dfile.write_text(rewrite_html_for_stayodds(dfile.read_text(encoding="utf-8"), "destination"), encoding="utf-8")
 
+    # 6b. Ordered award list pages (World's 50 Best 1-100, MICHELIN 3 Keys / 2 Keys)
+    from build_award_lists import write_award_lists
+
+    list_paths = write_award_lists(DIST, hotels, load_template("hotels/index.html"))
+    for lp in list_paths:
+        lfile = DIST / lp.strip("/") / "index.html"
+        lfile.write_text(rewrite_html_for_stayodds(lfile.read_text(encoding="utf-8"), "destination"), encoding="utf-8")
+
     # 7. Dedicated stayodds.com sitemap.xml
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     urls: list[tuple[str, str, str]] = [
@@ -407,6 +416,8 @@ def main() -> None:
         (f"{STAYODDS_URL}/hotels/", "0.9", "weekly"),
         (f"{STAYODDS_URL}/brands/", "0.9", "weekly"),
     ]
+    for lp in list_paths:
+        urls.append((f"{STAYODDS_URL}{lp}", "0.9", "weekly"))
     for dslug in dest_slugs:
         urls.append((f"{STAYODDS_URL}/destinations/{dslug}/", "0.9", "weekly"))
     for h in hotels:
