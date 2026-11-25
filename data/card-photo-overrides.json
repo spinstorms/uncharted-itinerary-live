@@ -665,6 +665,66 @@
       "url": "https://static.cupid.travel/hotels/543199202.jpg",
       "source": "liteapi",
       "note": "building"
+    },
+    "bulgari-hotel-shanghai": {
+      "url": "https://static.cupid.travel/hotels/528571367.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "capella-hanoi": {
+      "url": "https://static.cupid.travel/hotels/285817878.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "the-ivy-hotel": {
+      "url": "https://static.cupid.travel/hotels/ex_b334f624_z.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "the-peninsula-bangkok": {
+      "url": "https://static.cupid.travel/hotels/254672677.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "the-peninsula-chicago": {
+      "url": "https://static.cupid.travel/hotels/13427082.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "bulgari-hotel-milano": {
+      "url": "https://static.cupid.travel/hotels/599182763.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "mandarin-oriental-downtown-dubai": {
+      "url": "https://static.cupid.travel/hotels/ex_w4354h2448x33y10-b9f26630_z.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "four-seasons-hotel-nashville": {
+      "url": "https://static.cupid.travel/hotels/ex_79fb1a36_z.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "four-seasons-hotel-san-francisco-at-embarcadero": {
+      "url": "https://static.cupid.travel/hotels/265018574.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "estancia-cristina": {
+      "url": "https://static.cupid.travel/hotels/ex_9cac4572_z.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "casa-chameleon-las-catalinas": {
+      "url": "https://static.cupid.travel/hotels/ex_4def7ab3_z.jpg",
+      "source": "liteapi",
+      "note": "checked by eye"
+    },
+    "banyan-tree-lang-co": {
+      "url": "https://www.banyantree.com/assets/2025-02/bt-langco-Banyan%20Tree%20Lang%20Co%20-%20Resort%20Overview.jpg",
+      "source": "liteapi",
+      "note": "exterior"
     }
   }
 }
