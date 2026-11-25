@@ -2966,6 +2966,18 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # Guest ranks + better-rated alternatives for the app (same numbers as the hotel pages)
+    from build_insights import better_alternatives, guest_ranks as _gr
+    (ROOT / "data" / "guest-ranks.json").write_text(
+        json.dumps({"updatedAt": now_iso,
+                    "ranks": {k: {t: {f: r[f] for f in ("rank", "of", "group", "top", "topScore", "low", "where") if f in r}
+                                  for t, r in v.items()} for k, v in _gr(directory).items()},
+                    "alternatives": {k: [{f: a[f] for f in ("id", "name", "g", "rc", "band")} for a in v]
+                                     for k, v in better_alternatives(directory).items()}},
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
+    )
+
     # Build lean index JSON specifically for fast /hotels/ map & /compare/ directory initial load
     lean_hotels = []
     for r in directory:
