@@ -25,6 +25,7 @@ env:
   SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
   NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
   GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+  TRIPADVISOR_API_KEY: ${{ secrets.TRIPADVISOR_API_KEY }}
 
 jobs:
   complete:

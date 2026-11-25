@@ -57,7 +57,9 @@ def _load_json(name: str) -> dict[str, Any]:
 
 
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
-COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links  # a guest score needs at least this many verified reviews to be shown
+COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
+TRIPADVISOR = (_load_json("tripadvisor.json").get("hotels", {})
+               if _load_json("tripadvisor-settings.json").get("enabled", True) else {})  # one switch removes it all  # a guest score needs at least this many verified reviews to be shown
 
 def load_env_local() -> None:
     env_path = ROOT / ".env.local"
@@ -753,8 +755,20 @@ def voices_section_html(h: dict[str, Any]) -> str:
     quotes = h.get("guestQuotes") or {}
     qs = quotes.get("quotes") or []
     mentions = h.get("communityMentions") or []
-    if not qs and not mentions:
+    ta = h.get("tripadvisor") or {}
+    if not qs and not mentions and not ta.get("rating"):
         return ""
+    ta_html = ""
+    if ta.get("rating") is not None:
+        bits = [f'<strong>Tripadvisor: {float(ta["rating"]):.1f} / 5</strong>'
+                + (f' from {int(ta["reviewCount"]):,} reviews' if ta.get("reviewCount") else "")]
+        if ta.get("ranking"):
+            bits.append(esc(ta["ranking"]))
+        for a in ta.get("awards") or []:
+            bits.append(esc(f'{a.get("name")} {a.get("year") or ""}'.strip()))
+        link = f' <a href="{esc(ta["url"])}" target="_blank" rel="noopener noreferrer">Read the reviews on Tripadvisor &#8599;</a>' if ta.get("url") else ""
+        ta_html = (f'<div class="channel-row" style="display:block;">{"<br>".join(bits)}{link}'
+                   f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">Source: Tripadvisor · checked {esc(ta.get("fetched", ""))}</small></div>')
     q_html = ""
     for q in qs:
         parts = []
@@ -782,9 +796,9 @@ def voices_section_html(h: dict[str, Any]) -> str:
     left = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Recent Guest Comments</h3><span class="tag">{len(qs)} real review{"" if len(qs) == 1 else "s"}</span></div>
       <p class="detail-panel-sub">The most recent written reviews in our booking-data feed ({esc(quotes.get("provider", ""))}), shown as written, good or bad. Checked {esc(quotes.get("fetched", ""))}.</p>
       <div class="channel-breakdown-list" style="margin-top:12px;">{q_html}</div></div>''') if qs else ""
-    right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions)} linked</span></div>
-      <p class="detail-panel-sub">Forum threads, blogs and reviews about this hotel. Short quotes are credited and link to the original.</p>
-      <div class="channel-breakdown-list" style="margin-top:12px;">{m_html}</div></div>''') if mentions else ""
+    right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions) + (1 if ta_html else 0)} linked</span></div>
+      <p class="detail-panel-sub">Ratings on other sites, forum threads, blogs and reviews about this hotel. Short quotes are credited and link to the original.</p>
+      <div class="channel-breakdown-list" style="margin-top:12px;">{ta_html}{m_html}</div></div>''') if (mentions or ta_html) else ""
     return f'''<section class="detail-section"><h2 class="section-title" style="margin-bottom:14px;">What Guests &amp; Travellers Say</h2>
       <div class="detail-two-col">{left}{right}</div></section>'''
 
@@ -2713,6 +2727,7 @@ def main() -> None:
             "officialAwards": awards_map.get(pid) or [],
             "guestQuotes": GUEST_QUOTES.get(pid),
             "communityMentions": COMMUNITY.get(pid) or [],
+            "tripadvisor": TRIPADVISOR.get(pid),
         }
         directory.append(rec)
 

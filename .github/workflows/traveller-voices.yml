@@ -4,6 +4,12 @@ name: Guest comments and traveller links
 
 on:
   workflow_dispatch:
+    inputs:
+      tripadvisor_calls:
+        description: "Most Tripadvisor API calls to use this run (1,000 free a month)"
+        default: "900"
+  schedule:
+    - cron: "17 4 2 * *"   # monthly: new free Tripadvisor allowance, fresh guest comments
 
 permissions:
   contents: write
@@ -19,6 +25,7 @@ env:
   SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
   NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
   GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+  TRIPADVISOR_API_KEY: ${{ secrets.TRIPADVISOR_API_KEY }}
 
 jobs:
   voices:
@@ -33,6 +40,9 @@ jobs:
           python-version: "3.12"
       - name: Real guest comments (LiteAPI reviews feed)
         run: python3 scripts/fetch_guest_quotes.py
+      - name: Tripadvisor ratings (skips until the TRIPADVISOR_API_KEY secret exists)
+        run: python3 scripts/fetch_tripadvisor.py --max-calls ${{ inputs.tripadvisor_calls || 900 }}
+        continue-on-error: true
       - name: Rebuild data
         run: |
           python3 scripts/normalize_regions_and_prices.py --prices-only
