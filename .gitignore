@@ -2,3 +2,5 @@ __pycache__/
 .env*
 supabase/.temp/
 .stayodds-dist/
+marketing/social-kit/
+marketing/*.zip
