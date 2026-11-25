@@ -991,10 +991,10 @@
       "note": "File:Amankila.jpg"
     },
     "chateau-richeux-les-maisons-de-bricourt": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Le_chateau_richeux_a_st_meloir_des_ondes_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "source": "commons",
-      "license_source": "wikimedia|CC BY 3.0|chisloup|https://commons.wikimedia.org/wiki/File:Le_chateau_richeux_a_st_meloir_des_ondes_-_panoramio.jpg",
-      "note": "File:Le chateau richeux a st meloir des ondes - panoramio.jpg"
+      "url": "https://www.maisons-de-bricourt.com/media/cache/app_menu_image/media/image/87/4c/874cef464663ec264ef4580b7d9e9da3.jpg",
+      "source": "official",
+      "site": "https://www.maisons-de-bricourt.com/en/",
+      "note": "official site: chateau (checked by eye)"
     },
     "hotel-du-cap-eden-roc": {
       "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Gartenfassade_Hotel_Du_Cap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
@@ -1049,6 +1049,162 @@
       "source": "official",
       "site": "https://www.aman.com/resorts/amanoi",
       "note": "hotel's official website (checked by eye)"
+    },
+    "shinta-mani-wild": {
+      "url": "https://shintamani.com/wp-content/uploads/2024/08/SMMBC-Jhong-2-7-1100x600.jpg",
+      "source": "official",
+      "site": "https://shintamani.com/wild/",
+      "note": "official site: jungle deck (checked by eye)"
+    },
+    "the-swag": {
+      "url": "https://d1m7xnn75ypr6t.cloudfront.net/transform/bdac1c81-7465-4306-806e-0173ee1588c5/?io=transform:fill,width:1600,height:900&format=jpg&quality=80",
+      "source": "official",
+      "site": "https://www.relaischateaux.com/",
+      "note": "Relais & Chateaux listing (hotel-supplied): lodge exterior (checked by eye)"
+    },
+    "adler-sicilia": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1706481.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): pool and resort (checked by eye)"
+    },
+    "ambiente-a-landscape-hotel": {
+      "url": "https://upload.ambientesedona.com/wp-content/uploads/2022/11/12101258/Ambiente-Pop-Up-Image.jpg",
+      "source": "official",
+      "site": "https://www.ambientesedona.com/",
+      "note": "official site: pool and atriums (checked by eye)"
+    },
+    "palazzo-portinari-salviati-residenza-depoca": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1390167.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): courtyard (checked by eye)"
+    },
+    "rosewood-courchevel-le-jardin-alpin": {
+      "url": "https://picasso.rosewoodhotelgroup.com/transform/05a1ec31-3256-4845-82c3-fb51e818ad4c/RWCCV_Accommodation_Premier-Junior-Suite_seated-terrace-view",
+      "source": "official",
+      "site": "https://www.rosewoodhotels.com/en/courchevel",
+      "note": "official site: terrace and mountain view (checked by eye)"
+    },
+    "wharekauhau-country-estate": {
+      "url": "https://wharekauhau.co.nz/files/7345/WCE_-_FV_exterior_back.jpg",
+      "source": "official",
+      "site": "https://wharekauhau.co.nz/",
+      "note": "official site: lodge exterior (checked by eye)"
+    },
+    "mandarin-oriental-milan": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1446409.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): courtyard (checked by eye)"
+    },
+    "onyado-chikurintei": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1498137.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): grounds (checked by eye)"
+    },
+    "villa-la-coste": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1457027.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): villa and vines (checked by eye)"
+    },
+    "alpen-wellness-resort-hochfirst": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1409907.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): hotel exterior (checked by eye)"
+    },
+    "atrio-caceres": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1417264.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): courtyard pool (checked by eye)"
+    },
+    "bulgari-hotel-london": {
+      "url": "https://www.bulgarihotels.com/mgnl/.imaging/mte/theme/landscape/dam/London/hotel/overview/Altro/02.BHR-London_-Hotel-Facade-landscape.jpg/jcr:content/02.BHR%20London_%20Hotel%20Facade-landscape.jpg",
+      "source": "official",
+      "site": "https://www.bulgarihotels.com/en-US/london",
+      "note": "official site: facade (checked by eye)"
+    },
+    "bulgari-hotel-paris": {
+      "url": "https://www.bulgarihotels.com/mgnl/.imaging/mte/theme/landscape/dam/Paris/Landing/BH-Paris_Facade-landscape.jpg/jcr:content/BH%20Paris_Facade-landscape.jpg",
+      "source": "official",
+      "site": "https://www.bulgarihotels.com/en-US/paris",
+      "note": "official site: facade (checked by eye)"
+    },
+    "jk-place-capri": {
+      "url": "https://www.jkplaces.com/jkcapri/wp-content/themes/startup_pro/inc/php-global/s-image/index.php?img=/var/www/vhosts/jkplaces.com/httpdocs/jkcapri/wp-content/uploads//2024/08/1_xl-1.jpg&mod=1&h=646&w=1032",
+      "source": "official",
+      "site": "https://www.jkplaces.com/jkcapri/",
+      "note": "official site: pool and sea (checked by eye)"
+    },
+    "singlethread-farm-inn": {
+      "url": "https://singlethreadfarms.com/wp-content/uploads/2024/05/KimCarroll.Com_DJI_0083-1400-0x0x3800x2539_q85.jpg",
+      "source": "official",
+      "site": "https://singlethreadfarms.com/",
+      "note": "official site: aerial of farm and inn (checked by eye)"
+    },
+    "enowa-yufu": {
+      "url": "https://d1m7xnn75ypr6t.cloudfront.net/transform/0c2cdb47-5602-4d42-a16c-5ff9450be71b/?io=transform:fill,width:1600,height:900&format=jpg&quality=80",
+      "source": "official",
+      "site": "https://www.relaischateaux.com/",
+      "note": "Relais & Chateaux listing (hotel-supplied): villa in forest (checked by eye)"
+    },
+    "four-seasons-hotel-new-york": {
+      "url": "https://www.fourseasons.com/alt/img-opt/~75.1402.0,0000-0,4375-1889,0000-1062,5625/publish/content/dam/fourseasons/images/web/NYF/NYF_1296_aspect16x9.jpg",
+      "source": "official",
+      "site": "https://www.fourseasons.com/newyork/",
+      "note": "official site: suite with skyline (checked by eye)"
+    },
+    "hotel-and-spa-du-castellet": {
+      "url": "https://www.hotelducastellet.net/_novaimg/5615142-1589739_0_0_4800_3602_1332_1000-1024.webp",
+      "source": "official",
+      "site": "https://www.hotelducastellet.net/en/",
+      "note": "official site: pool terrace (checked by eye)"
+    },
+    "hotel-cheval-blanc-st-tropez": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1435101.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): hotel and beach (checked by eye)"
+    },
+    "canyon-ranch-tucson": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1351897.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): casitas and mountains (checked by eye)"
+    },
+    "kanamean-nishitomiya": {
+      "url": "https://d1m7xnn75ypr6t.cloudfront.net/transform/0677e46c-da61-418b-8763-ef1a088cbf04/?io=transform:fill,width:1600,height:900&format=jpg&quality=80",
+      "source": "official",
+      "site": "https://www.relaischateaux.com/",
+      "note": "Relais & Chateaux listing (hotel-supplied): ryokan and garden (checked by eye)"
+    },
+    "lime-wood-hotel": {
+      "url": "https://www.limewoodhotel.co.uk/media/spdlvxmt/exterior-credit-helen-cathcart_-0385.jpg?width=1600&v=1dbf0eb24815c80",
+      "source": "official",
+      "site": "https://www.limewoodhotel.co.uk/",
+      "note": "official site: house and gardens (checked by eye)"
+    },
+    "canyon-ranch-lenox": {
+      "url": "https://us-east-1-shared-usea1-02.graphassets.com/AbltN5ThcTDi6XXh1GSBTz/cm8xguk55vjvs07lgxh0rtl4l",
+      "source": "official",
+      "site": "https://www.canyonranch.com/lenox",
+      "note": "official site: Bellefontaine Mansion (checked by eye)"
+    },
+    "four-seasons-resort-mallorca-at-formentor": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1704783.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): aerial of resort and bay (checked by eye)"
+    },
+    "le-chateau-de-beaulieu": {
+      "url": "https://d1m7xnn75ypr6t.cloudfront.net/transform/205e22b3-de4c-42f7-b10f-3aed26fb6e79/?io=transform:fill,width:1600,height:900&format=jpg&quality=80",
+      "source": "official",
+      "site": "https://www.relaischateaux.com/",
+      "note": "Relais & Chateaux listing (hotel-supplied): chateau and gardens (checked by eye)"
     }
   }
 }
