@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-25T13:42:13Z",
-  "sheetConnected": false,
+  "updatedAt": "2026-11-25T13:55:22Z",
+  "sheetConnected": true,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
   "curated": [
     {
-      "id": "curated-holafly-esim",
+      "id": "sheet-1",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "curated-amex-gold-uk",
+      "id": "sheet-2",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "id": "curated-marriott-currensea",
+      "id": "sheet-3",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -128,171 +128,7 @@
       ]
     },
     {
-      "id": "curated-fuse-energy",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Everyday Perks",
-      "title": "Fuse Energy UK",
-      "badge": "£100 Credit",
-      "description": "Switch to Fuse Energy UK and enter referral code OLIVER97690 to get £100 credit toward your energy bill.",
-      "promoCode": "OLIVER97690",
-      "url": "https://www.fuseenergy.com/",
-      "buttonLabel": "Join Fuse Energy",
-      "sortOrder": 4,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "curated-epidemic-sound",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Creator Offers",
-      "title": "Epidemic Sound — Royalty-Free Travel Music",
-      "badge": "Free Trial Referral",
-      "description": "The music library behind our resort tours and travel guides. Start a free trial via our referral link.",
-      "promoCode": "",
-      "url": "https://www.epidemicsound.com/referral/vo2tr9/",
-      "buttonLabel": "Try Epidemic Sound",
-      "sortOrder": 5,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-tubebuddy",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Creator Offers",
-      "title": "TubeBuddy — YouTube SEO & Growth",
-      "badge": "Creator Offer",
-      "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
-      "promoCode": "",
-      "url": "https://www.tubebuddy.com/Techinthecar",
-      "buttonLabel": "Explore TubeBuddy",
-      "sortOrder": 6,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-freetrade",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Everyday Perks",
-      "title": "Freetrade — Commission-Free Investing",
-      "badge": "Free Share £3–£200",
-      "description": "Join Freetrade via our link to get a free share worth between £3 and £200 when you fund your account.",
-      "promoCode": "",
-      "url": "https://magic.freetrade.io/join/oliver/238af2d9",
-      "buttonLabel": "Get Free Share",
-      "sortOrder": 7,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "-YVVwwlUTTs",
-          "title": "The Brutal TRUTH About Nusa Penida!",
-          "date": "2026-09-18"
-        },
-        {
-          "id": "n9RsiNReoFI",
-          "title": "Komodo in One Day: Can You Actually See It All?",
-          "date": "2026-07-30"
-        },
-        {
-          "id": "1y19wX4Varg",
-          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
-          "date": "2026-07-18"
-        }
-      ]
-    },
-    {
-      "id": "curated-insta360-standard",
+      "id": "sheet-8",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": true,
@@ -333,7 +169,171 @@
       ]
     },
     {
-      "id": "curated-insta360-creator-black",
+      "id": "sheet-4",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Fuse Energy UK",
+      "badge": "£100 Credit",
+      "description": "Switch to Fuse Energy UK and enter referral code OLIVER97690 to get £100 credit toward your energy bill.",
+      "promoCode": "OLIVER97690",
+      "url": "https://www.fuseenergy.com/",
+      "buttonLabel": "Join Fuse Energy",
+      "sortOrder": 4,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "sheet-5",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Creator Offers",
+      "title": "Epidemic Sound — Royalty-Free Travel Music",
+      "badge": "Free Trial Referral",
+      "description": "The music library behind our resort tours and travel guides. Start a free trial via our referral link.",
+      "promoCode": "",
+      "url": "https://www.epidemicsound.com/referral/vo2tr9/",
+      "buttonLabel": "Try Epidemic Sound",
+      "sortOrder": 5,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-6",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Creator Offers",
+      "title": "TubeBuddy — YouTube SEO & Growth",
+      "badge": "Creator Offer",
+      "description": "What we use to research keywords, optimize video tags, and grow The Uncharted Itinerary channel.",
+      "promoCode": "",
+      "url": "https://www.tubebuddy.com/Techinthecar",
+      "buttonLabel": "Explore TubeBuddy",
+      "sortOrder": 6,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-7",
+      "source": "curated",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Everyday Perks",
+      "title": "Freetrade — Commission-Free Investing",
+      "badge": "Free Share £3–£200",
+      "description": "Join Freetrade via our link to get a free share worth between £3 and £200 when you fund your account.",
+      "promoCode": "",
+      "url": "https://magic.freetrade.io/join/oliver/238af2d9",
+      "buttonLabel": "Get Free Share",
+      "sortOrder": 7,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "-YVVwwlUTTs",
+          "title": "The Brutal TRUTH About Nusa Penida!",
+          "date": "2026-09-18"
+        },
+        {
+          "id": "n9RsiNReoFI",
+          "title": "Komodo in One Day: Can You Actually See It All?",
+          "date": "2026-07-30"
+        },
+        {
+          "id": "1y19wX4Varg",
+          "title": "Four Seasons Jimbaran Bali: Luxury or Overpriced?",
+          "date": "2026-07-18"
+        }
+      ]
+    },
+    {
+      "id": "sheet-9",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -374,7 +374,7 @@
       ]
     },
     {
-      "id": "curated-insta360-creator-white",
+      "id": "sheet-10",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -415,7 +415,7 @@
       ]
     },
     {
-      "id": "curated-insta360-wide-lens",
+      "id": "sheet-11",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -456,7 +456,7 @@
       ]
     },
     {
-      "id": "curated-insta360-battery",
+      "id": "sheet-12",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -468,6 +468,88 @@
       "url": "https://link.amazon/B0cxr0rKz",
       "buttonLabel": "Shop on Amazon",
       "sortOrder": 14,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "sheet-13",
+      "source": "curated",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket 4P Vlog Combo, Dual-Lens Vlog Camera, Cinematic 4K",
+      "badge": "Gear Essential",
+      "description": "Osmo Pocket 4P features a 1-inch wide-angle camera with 17-stop dynamic range* and D-Log 2* for stunning light and shadow, plus a 60mm lens with an f/1.8 aperture for natural portraits. With 3-axis stabilization, ActiveTrack 8.0*, and up to 8× ultra HD slow motion*, cinematic 4K footage* is always within reach.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0i23UUah",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 15,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "sheet-14",
+      "source": "curated",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket 4P Vlog Combo, Pearl White, Dual-Lens Vlog, Cinematic 4K",
+      "badge": "",
+      "description": "Osmo Pocket 4P features a 1-inch wide-angle camera with 17-stop dynamic range* and D-Log 2* for stunning light and shadow, plus a 60mm lens with an f/1.8 aperture for natural portraits. With 3-axis stabilization, ActiveTrack 8.0*, and up to 8× ultra HD slow motion*, cinematic 4K footage* is always within reach.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0cFNVPHy",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 16,
       "mentionedIn": [
         {
           "id": "E_DfGSAMeTU",
@@ -1095,7 +1177,7 @@
   ],
   "fromVideos": [
     {
-      "id": "yt-3020974",
+      "id": "yt-5023061",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1136,7 +1218,7 @@
       ]
     },
     {
-      "id": "yt-1929127",
+      "id": "yt-7564390",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1177,7 +1259,7 @@
       ]
     },
     {
-      "id": "yt-2887772",
+      "id": "yt-3099470",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1218,7 +1300,7 @@
       ]
     },
     {
-      "id": "yt-7364152",
+      "id": "yt-773440",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1229,88 +1311,6 @@
       "promoCode": "",
       "url": "https://live.uncharteditinerary.com/cameras/",
       "buttonLabel": "Open Link",
-      "inCurated": false,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "yt-9065284",
-      "source": "youtube",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
-      "badge": "Filming Gear",
-      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
-      "promoCode": "",
-      "url": "https://link.amazon/B0i23UUah",
-      "buttonLabel": "Shop on Amazon",
-      "inCurated": false,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "yt-193817",
-      "source": "youtube",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
-      "badge": "Filming Gear",
-      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
-      "promoCode": "",
-      "url": "https://link.amazon/B0cFNVPHy",
-      "buttonLabel": "Shop on Amazon",
       "inCurated": false,
       "mentionedIn": [
         {
