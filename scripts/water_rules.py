@@ -15,13 +15,22 @@ PAID = re.compile(r"\b(charg\w*|pay|paid|paying|cost\w*|overpriced|expensive)\b|
 NOT_FREE = re.compile(r"\b(no|not|isn't|wasn't|aren't|weren't) (free|complimentary)\b|\bno (free|complimentary) (bottled )?water\b", re.I)
 
 
+WISH = re.compile(r"\b(would (have been|be) nice|wish|should (have|be|provide|include)|would have liked|hoped for)\b", re.I)
+
+
+def _near(rx: re.Pattern, s: str, w: re.Match, chars: int = 60) -> bool:
+    return any(abs(m.start() - w.start()) <= chars or abs(m.end() - w.end()) <= chars for m in rx.finditer(s))
+
+
 def classify(sentence: str) -> str | None:
+    """'paid' = guests say water was charged or not free; 'free' = guests say it was free. Unclear -> None."""
     s = sentence.strip()
-    if not WATER_CTX.search(s) or len(s) > 260:
+    w = WATER_CTX.search(s)
+    if not w or len(s) > 260:
         return None
-    if NOT_FREE.search(s) or (PAID.search(s) and not FREE.search(s)):
+    if _near(NOT_FREE, s, w) or (_near(PAID, s, w) and not FREE.search(s)) or (WISH.search(s) and FREE.search(s)):
         return "paid"
-    if FREE.search(s) and not NEG.search(s):
+    if FREE.search(s) and not NEG.search(s) and not WISH.search(s):
         return "free"
     return None
 

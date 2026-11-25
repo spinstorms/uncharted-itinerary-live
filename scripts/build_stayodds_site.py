@@ -1478,7 +1478,7 @@ def render_seo_page(
     if _w.get("reports"):
         _free, _paid = int(_w.get("free") or 0), int(_w.get("paid") or 0)
         if _paid and not _free:
-            _wv, _wcls = "Guests report paying for water", "is-alert"
+            _wv, _wcls = "Guests say water isn't free", "is-alert"
         elif _free and not _paid:
             _wv, _wcls = "Guests report free water", ""
         else:
@@ -1495,7 +1495,7 @@ def render_seo_page(
         _n = _free + _paid
         trip_tiles.append(
             f'<div class="detail-trip-tile {_wcls}">'
-            f'<span class="detail-trip-kicker">Drinking water in the room</span>'
+            f'<span class="detail-trip-kicker">Drinking water</span>'
             f'<strong class="detail-trip-val">{_wv}</strong>'
             f'<span class="detail-trip-sub">{_n} guest report{"s" if _n != 1 else ""} · latest {esc(_ym)}: '
             f'&ldquo;{esc(_rep.get("text", ""))}&rdquo; ({esc(_rep.get("source", ""))}).{_alt}</span>'
