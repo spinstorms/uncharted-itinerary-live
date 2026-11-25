@@ -1,0 +1,63 @@
+/* StayOdds hotel page redesign (Nov 2026): score story first, even rows, tabs */
+.so2-score{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:14px 0 4px}
+.so2-ring{width:112px;height:112px;border-radius:50%;background:#F1E7E0;display:flex;align-items:center;justify-content:center;flex:none}
+.so2-ring>div{width:90px;height:90px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.so2-ring b{font-size:29px;font-weight:800;line-height:1;color:#0F172A}
+.so2-ring span{font-size:11px;color:#64748B;margin-top:3px}
+.so2-verdict{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.so2-verdict strong{font-size:19px;line-height:1.35;color:#0F172A}
+.so2-verdict span{font-size:13px;color:#64748B}
+.so2-gap{background:#FFF7F2;border:1px solid #FBD9C7;border-radius:16px;padding:14px 18px 12px;margin:14px 0}
+.so2-gap-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.so2-gap-head span{font-size:14px;font-weight:700;color:#0F172A}
+.so2-gap-head b{font-size:21px;font-weight:800;color:#C2410C}
+.so2-gap-track{position:relative;height:10px;border-radius:99px;background:#E9EEF4;margin:30px 4px 8px}
+.so2-dot{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;border:3px solid #fff}
+.so2-dot.is-a{background:#FF5D22;box-shadow:0 0 0 1px #FF5D22}
+.so2-dot.is-b{background:#0F172A;box-shadow:0 0 0 1px #0F172A}
+.so2-lbl{position:absolute;font-style:normal;font-size:12px;font-weight:700;white-space:nowrap;transform:translateX(-50%)}
+.so2-lbl.is-a{top:-24px;color:#C2410C}
+.so2-lbl.is-b{top:16px;color:#0F172A}
+.so2-gap-scale{display:flex;justify-content:space-between;font-size:10.5px;color:#94A3B8;margin-top:22px}
+.so2-gap p{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:#334155}
+.so2-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.so2-btn-price{background:#16A34A;color:#fff!important;text-decoration:none;font-weight:700;font-size:15px;padding:12px 20px;border-radius:12px;display:inline-flex;align-items:center;min-height:44px}
+.so2-btn-price:hover{background:#15803D}
+.so2-dates{margin-top:12px}
+.so2-dates summary{cursor:pointer;font-size:13px;font-weight:600;color:#475569}
+.so2-dates .date-rate-bar{margin-top:10px}
+.so2-three{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:22px 0}
+.so2-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:22px 0}
+.so2-card{background:#fff;border:1px solid #E7E2DA;border-radius:18px;padding:18px 20px;min-width:0}
+.so2-card h3{margin:0;font-size:16px}
+.so2-card p{margin:8px 0 0;font-size:14px;line-height:1.55;color:#334155}
+.so2-card.is-love{border-top:4px solid #16A34A}
+.so2-card.is-know{border-top:4px solid #F59E0B}
+.so2-kicker{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#334155}
+.so2-kicker.is-accent{color:#C2410C}
+.so2-big{font-size:30px;font-weight:800;margin:6px 0 8px;color:#0F172A}
+.so2-big small{font-size:16px;color:#64748B;font-weight:600}
+.so2-mid{font-size:16px;font-weight:700;margin:10px 0 4px}
+.so2-muted{font-size:13px!important;color:#64748B!important;margin:4px 0 10px!important}
+.so2-row{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:5px 0;border-bottom:1px solid #F1F5F9}
+.so2-row small{font-weight:400;color:#64748B}
+.so2-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.so2-section{margin:22px 0}
+.so2-h2{font-size:20px;margin:0 0 4px}
+.so2-section .detail-trip-context-strip{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.so2-section .detail-trip-tile.is-tip{grid-column:auto}
+.so2-more{margin-top:6px}
+.so2-more summary{cursor:pointer;font-size:13.5px;font-weight:600;color:#475569;padding:6px 0}
+.so2-tabs{background:#fff;border:1px solid #E7E2DA;border-radius:18px;padding:4px 18px 18px;margin:22px 0 48px}
+.so2-tablist{display:flex;gap:2px;border-bottom:1px solid #E2E8F0;overflow-x:auto}
+.so2-tablist button{font:inherit;font-size:14px;font-weight:600;padding:14px 14px 11px;border:0;border-bottom:3px solid transparent;background:none;color:#64748B;cursor:pointer;white-space:nowrap;min-height:44px}
+.so2-tablist button[aria-selected="true"]{color:#0F172A;border-bottom-color:#FF5D22}
+.so2-panel{padding-top:8px}
+.so2-panel .detail-section{margin-top:12px}
+#guest-rank{margin:22px 0}
+@media (max-width:640px){
+  .so2-ring{width:92px;height:92px}.so2-ring>div{width:72px;height:72px}.so2-ring b{font-size:23px}
+  .so2-verdict strong{font-size:16.5px}
+  .so2-actions .btn{flex:1 1 auto}
+  .so2-btn-price{flex:1 1 100%;justify-content:center}
+}

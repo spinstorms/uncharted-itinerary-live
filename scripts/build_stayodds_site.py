@@ -1570,6 +1570,170 @@ def render_seo_page(
         },
     }
 
+
+    # ---------- Redesign (Nov 2026): score story first ----------
+    so_odds = o["greatStayOdds"]
+    so_left, so_right, so_d = o.get("left100"), o.get("right100"), o.get("delta100")
+    so_alts = ALTERNATIVES.get(h.get("id", "")) or []
+    so_area = (GUEST_RANKS.get(h.get("id", "")) or {}).get("area") or {}
+    if so_odds is None:
+        so_band = ""
+    elif so_odds >= 90:
+        so_band = "A great stay"
+    elif so_odds >= 82:
+        so_band = "A very good stay"
+    elif so_odds >= 74:
+        so_band = "A good stay, with caveats"
+    else:
+        so_band = "Mixed reviews"
+    so_n_reviews = int((vg or {}).get("reviewCount") or 0)
+    if o["firstHand"] and so_left is not None and so_right is not None:
+        if abs(so_d) <= 5:
+            so_verdict = f"{so_band}, and guests agree with us."
+        elif so_d < 0:
+            so_verdict = f"{so_band}, and guests like it even more than we did."
+        else:
+            so_verdict = f"{so_band}: we rated it higher than guests do."
+        so_sub = f"Built from our filmed stay ({o['weights']['firstHand']}%)" + (f" and {so_n_reviews:,} guest reviews ({100 - o['weights']['firstHand']}%)." if so_n_reviews else ".")
+        so_gap_title, so_left_lbl, so_right_lbl = "Our score vs guests", "Us", ("Guests" if o["critic100"] is None else "Guests & critics")
+    elif so_left is not None and so_right is not None:
+        if abs(so_d) <= 5:
+            so_verdict = f"{so_band}: critics and guests agree."
+        elif so_d < 0:
+            so_verdict = f"{so_band}: guests rate it higher than the critics."
+        else:
+            so_verdict = f"{so_band}: critics rate it higher than guests do."
+        so_sub = f"Built from {so_n_reviews:,} guest reviews ({o['weights']['guests']}%) and {len(scored_ed)} published critic{'s' if len(scored_ed) != 1 else ''} ({o['weights']['critics']}%)."
+        so_gap_title, so_left_lbl, so_right_lbl = "Critics vs guests", "Critics", "Guests"
+    elif so_odds is not None:
+        so_verdict = f"{so_band}, rated {o['guest100']}/100 by guests." if o.get("guest100") is not None else so_band + "."
+        so_sub = (f"Built from {so_n_reviews:,} guest reviews." if so_n_reviews else "Built from 1 source.") + " No published critic score yet."
+        so_gap_title = ""
+        so_left_lbl = so_right_lbl = ""
+    else:
+        so_verdict = "Not enough reviews for a StayOdds score yet."
+        so_sub = "We only show a score when there are 20+ guest reviews or a published critic score."
+        so_gap_title = ""
+        so_left_lbl = so_right_lbl = ""
+    if so_alts and so_area.get("group"):
+        so_verdict = so_verdict.rstrip(".") + f", but {so_area['group']} has better-rated options at this price."
+    elif so_area.get("rank") == 1 and so_area.get("group"):
+        so_verdict = so_verdict.rstrip(".") + f". Guests' top-rated hotel in {so_area['group']}."
+    if not o["firstHand"] and not o["visited"]:
+        so_sub += " We haven't stayed yet."
+
+    def _so_pos(v):  # place a 0-100 score on a 60-100 scale
+        return max(0, min(100, round((float(v) - 60) / 40 * 100)))
+
+    if so_gap_title:
+        so_gap_txt = (f"{'+' if so_d > 0 else ''}{so_d} pts" if o["firstHand"] else
+                      ("Level" if so_d == 0 else (f"Guests +{abs(so_d)} pts" if so_d < 0 else f"Critics +{so_d} pts")))
+        lp, rp = _so_pos(so_left), _so_pos(so_right)
+        why = ""
+        if o["firstHand"] and h.get("scores"):
+            low = [lbl for lbl, k in (("rooms", "rooms"), ("grounds", "grounds"), ("food", "food"), ("service", "service"), ("value", "value"))
+                   if h["scores"].get(k) is not None and float(h["scores"][k]) < 4.5]
+            if low and so_d < -5:
+                why = f"We marked {', '.join(low[:-1]) + ' and ' + low[-1] if len(low) > 1 else low[0]} down a little. "
+        if vg and vg.get("rating"):
+            why += f"Guests rate it {vg['rating']}/{int(vg.get('scale', 10))} from {so_n_reviews:,} reviews."
+        if not o["firstHand"] and pc:
+            why = f"{pc.get('sourceName')} scored it {pc.get('rawScore') or str(o['critic100']) + '/100'}. " + why
+        so_gap_html = (
+            f'<div class="so2-gap"><div class="so2-gap-head"><span>{esc(so_gap_title)}</span><b>{esc(so_gap_txt)}</b></div>'
+            f'<div class="so2-gap-track">'
+            f'<i class="so2-dot is-a" style="left:{lp}%"></i><em class="so2-lbl is-a" style="left:{lp}%">{esc(so_left_lbl)} {so_left}</em>'
+            f'<i class="so2-dot is-b" style="left:{rp}%"></i><em class="so2-lbl is-b" style="left:{rp}%">{esc(so_right_lbl)} {so_right}</em>'
+            f'</div><div class="so2-gap-scale"><span>60</span><span>100</span></div>'
+            f'<p>{esc(why.strip())}</p></div>'
+        )
+    else:
+        so_gap_html = ""
+
+    so_ring = (
+        f'<div class="so2-ring" style="background:conic-gradient(#FF5D22 0 {so_odds}%,#F1E7E0 {so_odds}% 100%)">'
+        f'<div><b>{so_odds}%</b><span>StayOdds</span></div></div>' if so_odds is not None else
+        '<div class="so2-ring"><div><b>—</b><span>StayOdds</span></div></div>'
+    )
+    price_bits = ""
+    if (h.get("priceSnapshot") or {}).get("nightlyGbp"):
+        price_bits = f" · from £{int(h['priceSnapshot']['nightlyGbp']):,}"
+    so_hero_html = f"""
+          <div class="so2-score">{so_ring}<div class="so2-verdict"><strong>{esc(so_verdict)}</strong><span>{esc(so_sub)}</span></div></div>
+          {so_gap_html}
+          <div class="so2-actions">
+            <a class="so2-btn-price" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="{primary_book_rel}">Check prices{price_bits} &nearr;</a>
+            {yt_watch_btn(h, "Watch our " + ("Short" if h.get("coverageType") == "Short Tour" else "review"), "btn btn-outline btn-yt-hero") if review_href else ""}
+            <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare</a>
+            <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save</button>
+            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share</button>
+          </div>
+          <details class="so2-dates">
+            <summary>Pick dates for live prices</summary>
+            <div class="date-rate-bar" id="detailDateRateBar">
+              <div class="date-rate-inputs">
+                <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>
+                <label><span>Check-out</span><input type="date" id="detailCheckout" /></label>
+                <label><span>Guests</span>
+                  <select id="detailAdults"><option value="1">1 Adult</option><option value="2" selected>2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option></select>
+                </label>
+                <button type="button" class="{live_btn_cls}" id="detailLiveRateBtn" data-nuitee-id="{esc(h.get("nuiteeHotelId") or "")}">Check Live Rate</button>
+              </div>
+              <div class="date-rate-status" id="detailLiveRateStatus">
+                {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))})" if h.get("priceSnapshot") else date_hint}
+              </div>
+            </div>
+          </details>
+{DETAIL_OTA_STRIP}"""
+
+    # three voices
+    if o["firstHand"] and o.get("personalScore25") is not None:
+        ours_body = (f'<div class="so2-big">{fmt_score_num(o["personalScore25"])}<small>/{o["personalScoreMax"]}</small></div>'
+                     f'<div class="detail-bars">{scores_html}</div>')
+    elif o["visited"]:
+        ours_body = ('<div class="so2-mid">We filmed it</div><p class="so2-muted">We reviewed this stay on video without a numeric '
+                     'scorecard. We never add numbers afterwards.</p>')
+    else:
+        ours_body = ('<div class="so2-mid">Not stayed yet</div><p class="so2-muted">When we stay and publish a scored review, '
+                     'our score appears here and counts for 70% of StayOdds.</p>')
+    if vg and vg.get("rating"):
+        src_rows = "".join(
+            f'<div class="so2-row"><span>{esc(sp["name"])}</span><b>{sp["rating"]:g}/{int(sp["scale"])} '
+            f'<small>({int(sp["reviewCount"]):,})</small></b></div>' if sp.get("reviewCount") else
+            f'<div class="so2-row"><span>{esc(sp["name"])}</span><b>{sp["rating"]:g}/{int(sp["scale"])}</b></div>'
+            for sp in (vg.get("sources") or [])
+        )
+        guests_body = (f'<div class="so2-big">{vg["rating"]}<small>/{int(vg.get("scale", 10))}</small></div>'
+                       f'<p class="so2-muted">from {so_n_reviews:,} reviews{", combined by number of reviews" if len(vg.get("sources") or []) > 1 else ""}</p>{src_rows}')
+    else:
+        guests_body = '<div class="so2-mid">Not enough reviews</div><p class="so2-muted">We show a guest score only from 20+ reviews.</p>'
+    critic_rows = "".join(
+        f'<div class="so2-row"><a href="{esc(e.get("sourceUrl") or "#")}" target="_blank" rel="noopener">{esc(e["sourceName"])} &nearr;</a>'
+        f'<b>{esc(e.get("rawScore") or str(e["normalized100"]) + "/100")}</b></div>'
+        for e in scored_ed
+    )
+    critics_body = (critic_rows or '<div class="so2-mid">No published critic score yet</div>') + (
+        f'<div class="so2-chips">{hero_awards_html}</div>' if hero_awards_html else
+        '<p class="so2-muted">Awards (MICHELIN Keys, Forbes, 50 Best) are listed by name and never turned into points.</p>')
+    so_voices_html = f"""
+      <section class="so2-three">
+        <div class="so2-card"><div class="so2-kicker is-accent">Our stay</div>{ours_body}</div>
+        <div class="so2-card"><div class="so2-kicker">Guests</div>{guests_body}</div>
+        <div class="so2-card"><div class="so2-kicker">Critics &amp; awards</div>{critics_body}</div>
+      </section>"""
+
+    so_love_html = ""
+    if h.get("standout") or h.get("watchOut"):
+        so_love_html = '<section class="so2-two">' + (
+            f'<div class="so2-card is-love"><h3>Why guests love it</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else "") + (
+            f'<div class="so2-card is-know"><h3>Know before you book</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else "") + "</section>"
+    so_more_facts = ""
+    if facts_html or red_flags_html or ps_has:
+        so_more_facts = (f'<details class="so2-more"><summary>Hotel facts &amp; property status</summary>'
+                         f'{f"<div class=\'key-facts-grid\'>{facts_html}</div>" if facts_html else ""}'
+                         f'{f"<div class=\'key-facts-flags\'>{red_flags_html}</div>" if red_flags_html else ""}'
+                         f'{property_status_html if ps_has else ""}</details>')
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1599,6 +1763,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=1" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1654,111 +1819,11 @@ def render_seo_page(
           {f'<div class="meta-line" style="margin-top:8px;gap:6px;">{hero_awards_html}</div>' if hero_awards_html else ''}
           <h1 class="detail-title">{esc(h['name'])}</h1>
 
-          {top_quick_summary_html}
-
-          <div class="detail-kpi-row">
-            <div class="detail-kpi is-primary {'is-verified-track' if o['scoreTrack'] == 'verified' else 'is-market-track'} {'is-caution' if o['statusTone'] == 'amber' else ''}" id="kpiOddsCard">
-              <strong id="kpiOdds">{f"{o['greatStayOdds']}%" if o['greatStayOdds'] is not None else ("Award" if o['awards'] else "Live…")}</strong>
-              <span id="kpiOddsLbl">{o['scoreTrackLabel'] if o['greatStayOdds'] is not None else o['statusBadge']}</span>
-            </div>
-            <div class="detail-kpi">
-              <strong>{f"{fmt_score_num(o['personalScore25'])}<span>/{o['personalScoreMax']}</span>" if (o['firstHand'] and o.get('personalScore25') is not None) else ("Short" if (o['visited'] and h.get("coverageType") == "Short Tour") else ("Filmed" if o['visited'] else "Not Stayed"))}</strong>
-              <span>{'Uncharted Stay' if o['firstHand'] else ('Short Tour' if (o['visited'] and h.get("coverageType") == "Short Tour") else ('Full Video Review' if o['visited'] else 'Uncharted Stay'))}</span>
-            </div>
-            <div class="detail-kpi">
-              <strong>{f"{o['marketOdds']}%" if o.get('marketOdds') is not None else critic_kpi_val}</strong>
-              <span>{f"Consensus ({o['marketSourceCount']} src)" if o.get('marketOdds') is not None else esc(critic_kpi_lbl)}</span>
-            </div>
-            <div class="detail-kpi">
-              <strong id="kpiGuestVal">{f"{vg['rating']}<span>/{int(vg.get('scale', 10))}</span>" if vg and vg.get('rating') else "Live…"}</strong>
-              <span id="kpiGuestLbl">{f"Guest Reviews ({vg['reviewCount']:,})" if vg and vg.get('reviewCount') else "Google Guests"}</span>
-            </div>
-          </div>
-
-          <details class="stayodds-explainer">
-            <summary>
-              <span>How is this StayOdds % calculated?</span>
-              <span class="stayodds-explainer-caret" aria-hidden="true">&#9662;</span>
-            </summary>
-            <div class="stayodds-explainer-body">
-              <div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div>
-              <ul class="stayodds-explainer-list">
-                <li><strong>Uncharted Verified (Filmed Stays):</strong> When <strong>The Uncharted Itinerary</strong> has stayed and scored a hotel (/25), <strong>StayOdds</strong> weights <strong>70% Uncharted Stay + 30% Guest &amp; Critic Consensus</strong> (or 100% Uncharted Stay if no external score exists), with a transparent <strong>Uncharted vs. Consensus</strong> delta.</li>
-                <li><strong>Global Directory (Unvisited Hotels):</strong> Unvisited properties display a unified <strong>StayOdds %</strong> alongside the exact data-source count (35% Published Critics + 65% Guest Reviews when both exist, or clearly tagged <strong>1 Source</strong> when based on a single guest/critic feed), with gentle Bayesian dampening on tiny (&lt;40 review) samples.</li>
-                <li><strong>Zero Fabricated Numbers:</strong> Official awards (MICHELIN Keys, 50 Best, Forbes 5-Star) and comments-only reviews are linked transparently without invented numeric conversions.</li>
-              </ul>
-            </div>
-          </details>
-
-          <div class="date-rate-bar" id="detailDateRateBar">
-            <div class="date-rate-inputs">
-              <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>
-              <label><span>Check-out</span><input type="date" id="detailCheckout" /></label>
-              <label><span>Guests</span>
-                <select id="detailAdults">
-                  <option value="1">1 Adult</option>
-                  <option value="2" selected>2 Adults</option>
-                  <option value="3">3 Adults</option>
-                  <option value="4">4 Adults</option>
-                </select>
-              </label>
-              <button type="button" class="{live_btn_cls}" id="detailLiveRateBtn" data-nuitee-id="{esc(h.get("nuiteeHotelId") or "")}">Check Live Rate</button>
-            </div>
-            <div class="date-rate-status" id="detailLiveRateStatus">
-              {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))}) &bull; Select dates to update Booking.com link" if h.get("priceSnapshot") else date_hint}
-            </div>
-          </div>
-
-          <div class="detail-actions">
-            <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="{primary_book_rel}">{primary_book_label}</a>
-            {yt_watch_btn(h, "Watch Our " + ("Short" if h.get("coverageType") == "Short Tour" else "Full Review"), "btn btn-outline btn-yt-hero") if review_href else ""}
-            <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
-            <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share StayOdds Card</button>
-            <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save to Shortlist</button>
-            <a class="tripadvisor-link" href="{esc(tripadvisor_url)}" target="_blank" rel="noopener noreferrer">TripAdvisor &nearr;</a>
-          </div>
-{DETAIL_OTA_STRIP}
+          {so_hero_html}
         </div>
       </section>
 
-      {trip_context_html}
-
-      <!-- Dual-Mode Comparison & Opinion Gap Module -->
-      <section class="detail-section" id="opinion-gap">
-        <div class="opinion-gap-card {delta_tone}">
-          <div class="opinion-gap-head">
-            <div>
-              <span class="tag {tag_class}" id="gapStatusBadge">{esc(o['statusBadge'])}</span>
-              <h2>{'The Uncharted Itinerary vs. Consensus' if o['firstHand'] else 'Published Critics vs. Real Guests'}</h2>
-              <p class="opinion-gap-headline" id="gapHeadline">{esc(o['gapHeadline'])}</p>
-            </div>
-            <div class="opinion-gap-delta" id="gapDeltaPill">
-              <strong>{esc(delta_badge)}</strong>
-              <span>{'Uncharted vs Consensus' if o['firstHand'] else 'Opinion Gap'}</span>
-            </div>
-          </div>
-
-          <div class="opinion-gap-bars">
-            <div class="gap-side">
-              <div class="gap-side-top"><span>{esc(left_label)}</span><strong>{esc(left_display)}</strong></div>
-              <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['left100'] or 0}%"></div></div>
-            </div>
-            {f'''<div class="gap-side">
-              <div class="gap-side-top"><span>Published Critic{'' if len(scored_ed) == 1 else 's'} ({esc(', '.join(e['sourceName'] for e in scored_ed))})</span><strong>{o['critic100']} / 100</strong></div>
-              <div class="detail-bar-track"><div class="detail-bar-fill" style="width:{o['critic100']}%;background:#d97706;"></div></div>
-            </div>''' if (o['firstHand'] and o['critic100'] is not None) else ''}
-            <div class="gap-side">
-              <div class="gap-side-top"><span>{'Guest &amp; Critic Consensus' if o['firstHand'] else 'Real Guest Score'}</span><strong id="gapGuestDisplay">{f"{o['marketOdds']}%" if (o['firstHand'] and o.get('marketOdds') is not None) else esc(right_display)}</strong></div>
-              <div class="detail-bar-track"><div class="detail-bar-fill is-secondary" id="gapGuestBar" style="width:{o['right100'] or 0}%"></div></div>
-              {'' if o['firstHand'] else guest_breakdown_html}
-            </div>
-          </div>
-
-          {f'<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;"><strong style="font-size:13px;color:#334155;">Official Awards (Listed by Name, Never Scored):</strong> {hero_awards_html}</div>' if hero_awards_html else ''}
-          <div class="live-google-bar" id="liveGoogleStrip" style="display:none;"></div>
-          {f'<p class="opinion-gap-narrative"><strong>What We Liked &amp; Where Our Take Differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
-        </div>
-      </section>
+      {so_voices_html}
 
       {f'''<section class="detail-section" id="guest-rank">
         <div class="key-facts-panel">
@@ -1768,27 +1833,18 @@ def render_seo_page(
         </div>
       </section>''' if rank_html else ''}
 
-      <!-- Structured Middle Key Facts Panel (Strictly Verified Specs) -->
-      <section class="detail-section" id="key-facts">
-        <div class="key-facts-panel">
-          <div class="detail-panel-head" style="margin-bottom:14px;">
-            <div>
-              <h2 class="section-title" style="font-size:20px;">Key Hotel Facts &amp; Decision Details</h2>
-              <p class="section-subtitle">Strictly verified property specs, property status &amp; works, standout highlights, honest watch-outs, and specific room guidance — blank fields are omitted rather than guessed.</p>
-            </div>
-          </div>
-          {f'<div class="key-facts-grid">{facts_html}</div>' if facts_html else ''}
-          {f'<div class="key-facts-flags">{red_flags_html}</div>' if red_flags_html else ''}
-          {property_status_html}
-          <div class="verdict-trio" style="margin-top:16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-            {f'<div class="verdict-card"><span class="tag tag-accent">Standout Strengths</span><h3>What Stands Out</h3><p>{esc(h.get("standout"))}</p></div>' if h.get("standout") else ''}
-            {f'<div class="verdict-card is-warn"><span class="tag tag-caution">Watch-Outs</span><h3>Know Before Booking</h3><p>{esc(h.get("watchOut"))}</p></div>' if h.get("watchOut") else ''}
-            {f'<div class="verdict-card" style="border-color:#fed7aa;background:#fff7ed;"><span class="tag" style="background:#ffedd5;color:#9a3412;">{ICO_BED} {esc(verified_room_tip["label"])}</span><h3>Rooms to Book</h3><p>{esc(verified_room_tip["text"])}</p></div>' if verified_room_tip else ''}
-          </div>
-        </div>
-      </section>
+      <section class="so2-section"><h2 class="so2-h2">Before you book</h2>{trip_context_html}{so_more_facts}</section>
+      {so_love_html}
 
-      <!-- Formula Transparency & First-Hand Scorecard -->
+      <section class="so2-tabs" data-so2-tabs>
+        <div class="so2-tablist" role="tablist">
+          <button type="button" role="tab" aria-selected="true" data-tab="comments">Guest comments</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="reviews">Reviews, awards &amp; videos</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="nearby">Compare nearby</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="score">How the score works</button>
+        </div>
+      <div class="so2-panel" data-panel="score" hidden>
+      <details class="stayodds-explainer" open><summary><span>How is this StayOdds % calculated?</span></summary><div class="stayodds-explainer-body"><div class="stayodds-explainer-eq" id="stayOddsEquation">{esc(equation_text)}</div><ul class="stayodds-explainer-list"><li><strong>Hotels we stayed at:</strong> 70% our filmed stay + 30% guest &amp; critic consensus.</li><li><strong>Other hotels:</strong> 35% published critics + 65% guest reviews when both exist, otherwise the one source.</li><li><strong>No made-up numbers:</strong> awards and comment-only reviews are linked, never converted into points.</li></ul></div></details>
       <section class="detail-section" id="score-sources">
         <div class="detail-two-col">
           <div class="detail-panel">
@@ -1815,7 +1871,8 @@ def render_seo_page(
         </div>
       </section>
 
-      <!-- Curated Awards, Critics & YouTube Reviews -->
+      </div>
+      <div class="so2-panel" data-panel="reviews" hidden>
       <section class="detail-section">
         <div class="detail-two-col">
           <div class="detail-panel">
@@ -1839,9 +1896,10 @@ def render_seo_page(
         </div>
       </section>
 
-      {voices_section_html(h)}
-
-      <section class="detail-section" style="margin-bottom:56px;">
+      </div>
+      <div class="so2-panel" data-panel="comments">{voices_section_html(h)}</div>
+      <div class="so2-panel" data-panel="nearby" hidden>
+      <section class="detail-section" style="margin-bottom:24px;">
         <div class="section-header" style="margin-bottom:18px;flex-wrap:wrap;gap:12px;">
           <div>
             <h2 class="section-title">Compare Nearby Luxury Stays</h2>
@@ -1855,6 +1913,8 @@ def render_seo_page(
         </div>
         {rival_matchups_html}
         <div class="related-grid">{related_html}</div>
+      </section>
+      </div>
       </section>
     </div>
 {chrome_partner_strip("../../")}  </main>
@@ -1887,6 +1947,15 @@ def render_seo_page(
 
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
   <script src="../../assets/stayodds-video.js?v=2" defer></script>
+  <script>
+    document.querySelectorAll("[data-so2-tabs]").forEach(function (box) {{
+      box.addEventListener("click", function (e) {{
+        var b = e.target.closest("[data-tab]"); if (!b) return;
+        box.querySelectorAll("[data-tab]").forEach(function (x) {{ x.setAttribute("aria-selected", x === b ? "true" : "false"); }});
+        box.querySelectorAll("[data-panel]").forEach(function (p) {{ p.hidden = p.getAttribute("data-panel") !== b.getAttribute("data-tab"); }});
+      }});
+    }});
+  </script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -2044,7 +2113,8 @@ def render_seo_page(
       }}
     }}
 
-    if (placeId) {{
+    if (placeId && !document.getElementById("kpiOdds")) {{ showMapsFallback(mapsFallbackUrl); }}
+    if (false && placeId) {{
       const grCacheKey = "stayodds_gr_v1_" + placeId;
       const GR_TTL_MS = 24 * 60 * 60 * 1000;
       let cachedGr = null;

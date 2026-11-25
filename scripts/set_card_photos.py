@@ -22,9 +22,13 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def main() -> int:
     cfg = json.loads((ROOT / "data" / "card-photo-overrides.json").read_text(encoding="utf-8"))["hotels"]
+    man_path = ROOT / "assets" / "card-photos" / "sources.json"  # id -> source url already saved (download once only)
+    manifest = json.loads(man_path.read_text(encoding="utf-8")) if man_path.exists() else {}
     done = 0
     for pid, o in cfg.items():
         out = ROOT / "assets" / "card-photos" / f"{pid}.webp"
+        if manifest.get(pid) == o["url"] and out.exists():
+            continue
         try:
             req = urllib.request.Request(o["url"], headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36", **({"Referer": o["site"]} if o.get("site") else {})})
             raw = urllib.request.urlopen(req, timeout=30).read()
@@ -34,6 +38,7 @@ def main() -> int:
                 continue
             ImageOps.fit(im, (800, 450), method=Image.Resampling.LANCZOS).save(out, "WEBP", quality=80, method=6)
             done += 1
+            manifest[pid] = o["url"]
             print(f"  {pid}: saved ({o.get('source')})")
         except Exception as e:  # noqa: BLE001
             print(f"  {pid}: failed ({e})")
@@ -45,6 +50,7 @@ def main() -> int:
                    {"hero_image_url": o["url"], "image_license_source": o.get("license_source") or ("nuitee_connect" if o.get("source") == "liteapi" else "hotel_official_site")}, {"Prefer": "return=minimal"})
             except Exception as e:  # noqa: BLE001
                 print(f"  {pid}: database not updated ({e})")
+    man_path.write_text(json.dumps(dict(sorted(manifest.items())), indent=1) + "\n", encoding="utf-8")
     print(f"Card photos: {done} replaced")
     return 0
 
