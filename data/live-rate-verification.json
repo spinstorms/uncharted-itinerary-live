@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-25T02:49:35Z",
+  "checkedAt": "2026-11-25T09:31:12Z",
   "counts": {
-    "verified": 905,
+    "verified": 1081,
     "conflict": 10,
-    "unchecked": 23,
+    "unchecked": 20,
     "mismatch": 7
   },
   "mismatch": [
@@ -172,6 +172,22 @@
       "status": "unchecked"
     },
     {
+      "id": "the-brando",
+      "name": "The Brando",
+      "liteapiId": "lp776e2",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "1-hotel-west-hollywood",
+      "name": "1 Hotel West Hollywood",
+      "liteapiId": "lp92726",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
       "id": "w-algarve",
       "name": "W Algarve",
       "liteapiId": "lp655cadce",
@@ -220,22 +236,6 @@
       "status": "unchecked"
     },
     {
-      "id": "park-hyatt-bangkok",
-      "name": "Park Hyatt Bangkok",
-      "liteapiId": "lpa34d0",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "palacio-nazarenas-cusco",
-      "name": "Palacio Nazarenas, A Belmond Hotel",
-      "liteapiId": "lp63227",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "st-regis-costa-mujeres",
       "name": "The St. Regis Costa Mujeres Resort, Cancun",
       "liteapiId": "lp65891ccc",
@@ -244,17 +244,25 @@
       "status": "unchecked"
     },
     {
-      "id": "rissai-valley-a-ritz-carlton-reserve",
-      "name": "Rissai Valley, a Ritz-Carlton Reserve",
-      "liteapiId": "lp656d0696",
+      "id": "de-leurope-amsterdam",
+      "name": "De L’Europe Amsterdam",
+      "liteapiId": "lp1ab22",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "xinalani",
-      "name": "Xinalani",
-      "liteapiId": "lp655b874f",
+      "id": "collegio-alla-querce-florence",
+      "name": "Collegio alla Querce, Auberge Resorts Collection",
+      "liteapiId": "lp657b4b4e",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "sage-lodge",
+      "name": "Sage Lodge",
+      "liteapiId": "lpd79f3",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -268,17 +276,9 @@
       "status": "unchecked"
     },
     {
-      "id": "aristide-hotel",
-      "name": "Aristide Hotel",
-      "liteapiId": "lp655ba294",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "sala-phuket-mai-khao-beach-resort",
-      "name": "SALA Phuket Mai Khao Beach Resort",
-      "liteapiId": "lp4b5d5",
+      "id": "botanic-sanctuary-antwerp",
+      "name": "Botanic Sanctuary Antwerp",
+      "liteapiId": "lp65548d4d",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -300,33 +300,9 @@
       "status": "unchecked"
     },
     {
-      "id": "four-seasons-hotel-baku",
-      "name": "Four Seasons Hotel Baku",
-      "liteapiId": "lp62377",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "gaia-riverlodge",
-      "name": "GAÏA Riverlodge",
-      "liteapiId": "lp62b3b",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-landmark-mandarin-oriental-hong-kong",
-      "name": "The Landmark Mandarin Oriental, Hong Kong",
-      "liteapiId": "lp3a07f",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "la-reserve-de-beaulieu",
-      "name": "La Réserve de Beaulieu",
-      "liteapiId": "lp655bd245",
+      "id": "le-couvent-des-minimes-un-hotel-and-spa-loccitane-en-provenc",
+      "name": "Le Couvent des Minimes, Un Hôtel & Spa L'Occitane en Provence",
+      "liteapiId": "lp406fb",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
