@@ -1123,16 +1123,16 @@
       "note": "MICHELIN Guide listing (hotel-supplied): courtyard pool (checked by eye)"
     },
     "bulgari-hotel-london": {
-      "url": "https://www.bulgarihotels.com/mgnl/.imaging/mte/theme/landscape/dam/London/hotel/overview/Altro/02.BHR-London_-Hotel-Facade-landscape.jpg/jcr:content/02.BHR%20London_%20Hotel%20Facade-landscape.jpg",
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1648488.jpg",
       "source": "official",
-      "site": "https://www.bulgarihotels.com/en-US/london",
-      "note": "official site: facade (checked by eye)"
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): facade (checked by eye)"
     },
     "bulgari-hotel-paris": {
-      "url": "https://www.bulgarihotels.com/mgnl/.imaging/mte/theme/landscape/dam/Paris/Landing/BH-Paris_Facade-landscape.jpg/jcr:content/BH%20Paris_Facade-landscape.jpg",
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1371478.jpg",
       "source": "official",
-      "site": "https://www.bulgarihotels.com/en-US/paris",
-      "note": "official site: facade (checked by eye)"
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): facade (checked by eye)"
     },
     "jk-place-capri": {
       "url": "https://www.jkplaces.com/jkcapri/wp-content/themes/startup_pro/inc/php-global/s-image/index.php?img=/var/www/vhosts/jkplaces.com/httpdocs/jkcapri/wp-content/uploads//2024/08/1_xl-1.jpg&mod=1&h=646&w=1032",
@@ -1151,12 +1151,6 @@
       "source": "official",
       "site": "https://www.relaischateaux.com/",
       "note": "Relais & Chateaux listing (hotel-supplied): villa in forest (checked by eye)"
-    },
-    "four-seasons-hotel-new-york": {
-      "url": "https://www.fourseasons.com/alt/img-opt/~75.1402.0,0000-0,4375-1889,0000-1062,5625/publish/content/dam/fourseasons/images/web/NYF/NYF_1296_aspect16x9.jpg",
-      "source": "official",
-      "site": "https://www.fourseasons.com/newyork/",
-      "note": "official site: suite with skyline (checked by eye)"
     },
     "hotel-and-spa-du-castellet": {
       "url": "https://www.hotelducastellet.net/_novaimg/5615142-1589739_0_0_4800_3602_1332_1000-1024.webp",
