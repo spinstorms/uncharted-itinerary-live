@@ -41,6 +41,57 @@ def main() -> int:
     hs = {h["id"]: h for h in json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]}
     lk, gk = os.environ.get("NUITEE_API_KEY", ""), os.environ.get("GOOGLE_PLACES_API_KEY", "")
     index: dict[str, list] = {}
+    if "--best" in sys.argv:  # top 3 overview-looking LiteAPI photos per hotel, as review sheets
+        from PIL import ImageDraw
+        GOOD = ("aerial", "exterior", "building", "facade", "view from property", "beach", "property grounds", "garden",
+                "landmark", "overview", "pool", "balance & terrace", "terrace", "island", "outdoor")
+        BAD = ("bath", "room", "bed", "restaurant", "food", "bar", "spa", "fitness", "gym", "meeting", "lounge", "lobby",
+               "recepcion", "kitchen", "suite", "dining", "interior", "breakfast", "toilet", "shower", "sauna")
+        def rank(i):
+            c = str(i.get("caption") or "").lower()
+            return (0 if any(k in c for k in GOOD) else (2 if any(k in c for k in BAD) else 1), i.get("order") or 0)
+        rows = []
+        for pid in ids:
+            h = hs.get(pid) or {}
+            if not h.get("nuiteeHotelId"):
+                continue
+            try:
+                d = json.loads(get(f"https://api.liteapi.travel/v3.0/data/hotel?hotelId={urllib.parse.quote(h['nuiteeHotelId'])}",
+                                   {"X-API-Key": lk, "Accept": "application/json"}))["data"]
+            except Exception as e:  # noqa: BLE001
+                print(pid, e); continue
+            imgs = sorted([i for i in d.get("hotelImages") or [] if isinstance(i, dict)], key=rank)
+            picks = []
+            for i in imgs:
+                if len(picks) >= 3:
+                    break
+                u = i.get("urlHd") or i.get("url")
+                try:
+                    raw = get(u, {"User-Agent": "Mozilla/5.0"})
+                    im = Image.open(io.BytesIO(raw)).convert("RGB")
+                    if im.width < 700:
+                        continue
+                    picks.append({"url": u, "caption": i.get("caption") or "", "w": im.width, "im": im})
+                except Exception:  # noqa: BLE001
+                    continue
+            index[pid] = [{k: v for k, v in pk.items() if k != "im"} for pk in picks]
+            rows.append((pid, picks))
+        out.mkdir(parents=True, exist_ok=True)
+        W, H, per = 300, 170, 12
+        for sidx in range(0, len(rows), per):
+            chunk = rows[sidx:sidx + per]
+            sheet = Image.new("RGB", (260 + 3 * W, len(chunk) * (H + 6)), "white")
+            dr = ImageDraw.Draw(sheet)
+            for r, (pid, picks) in enumerate(chunk):
+                y = r * (H + 6)
+                dr.text((4, y + 60), f"{sidx + r} {pid[:34]}", fill="black")
+                for k, pk in enumerate(picks):
+                    im = pk["im"].copy(); im.thumbnail((W - 6, H))
+                    sheet.paste(im, (260 + k * W, y))
+                    dr.text((262 + k * W, y + H - 12), f"{k} {pk['caption'][:22]}", fill="yellow")
+            sheet.save(out / f"best-{sidx // per:02d}.jpg", quality=70)
+        (out / "index.json").write_text(json.dumps(index, indent=1, ensure_ascii=False), encoding="utf-8")
+        return 0
     if "--names" in sys.argv:  # just print what each stored id points at
         for pid in ids:
             h = hs.get(pid) or {}
