@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-25T09:59:53Z",
+  "checkedAt": "2026-11-25T11:08:44Z",
   "counts": {
-    "verified": 1041,
+    "verified": 1134,
     "conflict": 10,
-    "unchecked": 62,
-    "mismatch": 6
+    "unchecked": 13,
+    "mismatch": 7
   },
   "mismatch": [
     {
@@ -37,6 +37,14 @@
       "liteapiId": "lp655aa5af",
       "liteapiName": "L'hôtel du Couvent",
       "km": 243.8,
+      "status": "mismatch"
+    },
+    {
+      "id": "sujan-jawai-india",
+      "name": "SUJÁN JAWAI",
+      "liteapiId": "lp6570093a",
+      "liteapiName": "SUJÁN JAWAI - Relais & Chateaux",
+      "km": 74.8,
       "status": "mismatch"
     },
     {
@@ -140,43 +148,11 @@
   ],
   "unchecked": [
     {
-      "id": "the-ungasan-bali",
-      "name": "The Ungasan Clifftop Resort",
-      "liteapiId": "lp5f9cd",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "cap-karoso-sumba",
       "name": "Cap Karoso, Sumba",
       "liteapiId": "lp656dbdb1",
       "liteapiName": "Cap Karoso Sumba - a member of Design Hotels",
       "km": 8.4,
-      "status": "unchecked"
-    },
-    {
-      "id": "como-uma-canggu",
-      "name": "COMO Uma Canggu",
-      "liteapiId": "lpc492e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "parkhotel-egerner-hofe",
-      "name": "Parkhotel Egerner Höfe",
-      "liteapiId": "lp4c212",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "joali-maldives",
-      "name": "JOALI Maldives",
-      "liteapiId": "lpcd535",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -188,35 +164,11 @@
       "status": "unchecked"
     },
     {
-      "id": "capella-bangkok",
-      "name": "Capella Bangkok",
-      "liteapiId": "lp65561e38",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "six-senses-zighy-bay",
       "name": "Six Senses Zighy Bay",
       "liteapiId": "lp3e868",
       "liteapiName": "Six Senses Zighy Bay",
       "km": 9.1,
-      "status": "unchecked"
-    },
-    {
-      "id": "santa-monica-proper",
-      "name": "Santa Monica Proper Hotel",
-      "liteapiId": "lp1c6c54",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "halekulani-okinawa",
-      "name": "Halekulani Okinawa",
-      "liteapiId": "lp1ca2bf",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -260,115 +212,11 @@
       "status": "unchecked"
     },
     {
-      "id": "four-seasons-lanai",
-      "name": "Four Seasons Resort Lanai",
-      "liteapiId": "lp1f0a8",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "zannier-bai-san-ho",
       "name": "Zannier Hotels Bãi San Hô",
       "liteapiId": "lp6554d192",
       "liteapiName": "Zannier Bai San Hô",
       "km": 5.5,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-connaught-london",
-      "name": "The Connaught",
-      "liteapiId": "lp2a32e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "claridges-london",
-      "name": "Claridge's",
-      "liteapiId": "lp2a32c",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "st-regis-bora-bora",
-      "name": "The St. Regis Bora Bora Resort",
-      "liteapiId": "lp3a7b5",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "gf-gran-costa-adeje-tenerife",
-      "name": "GF Gran Costa Adeje",
-      "liteapiId": "lp3631e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-savoy-london",
-      "name": "The Savoy",
-      "liteapiId": "lp2a32f",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "como-maalifushi",
-      "name": "COMO Maalifushi",
-      "liteapiId": "lp65716b66",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "las-ventanas-al-paraiso",
-      "name": "Las Ventanas al Paraíso, A Rosewood Resort",
-      "liteapiId": "lp56720",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-dolder-grand-zurich",
-      "name": "The Dolder Grand",
-      "liteapiId": "lp3dbd8",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "barcelo-fuerteventura-mar",
-      "name": "Barceló Fuerteventura Mar",
-      "liteapiId": "lp34a80",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "french-coco-martinique",
-      "name": "French Coco Luxury Boutique Hotel",
-      "liteapiId": "lp9cf18",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "canaves-oia-epitome",
-      "name": "Canaves Ena & Epitome",
-      "liteapiId": "lpba555",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-okura-prestige-bangkok",
-      "name": "The Okura Prestige Bangkok",
-      "liteapiId": "lp6375c",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -380,139 +228,11 @@
       "status": "unchecked"
     },
     {
-      "id": "britannia-hotel-trondheim",
-      "name": "Britannia Hotel",
-      "liteapiId": "lp1f55b1",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "delaire-graff-estate",
-      "name": "Delaire Graff Estate",
-      "liteapiId": "lp620be",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "mandarin-oriental-costa-navarino",
-      "name": "Mandarin Oriental, Costa Navarino",
-      "liteapiId": "lp656d2bfe",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "sujan-jawai-india",
-      "name": "SUJÁN JAWAI",
-      "liteapiId": "lp6570093a",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "mount-nelson-belmond-cape-town",
-      "name": "Mount Nelson, A Belmond Hotel, Cape Town",
-      "liteapiId": "lp22757",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-whitby-hotel",
-      "name": "The Whitby Hotel",
-      "liteapiId": "lp22f71e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "banyan-tree-krabi",
-      "name": "Banyan Tree Krabi",
-      "liteapiId": "lp65562d36",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "fairmont-jaipur",
-      "name": "Fairmont Jaipur",
-      "liteapiId": "lp60bf8",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "rosewood-cape-kidnappers",
       "name": "Rosewood Cape Kidnappers",
       "liteapiId": "lp7a168",
       "liteapiName": "Rosewood Cape Kidnappers",
       "km": 5.4,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-london-nyc",
-      "name": "The London, a Luxury Collection Hotel, New York City",
-      "liteapiId": "lp1ca73",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "equinox-hotel-new-york",
-      "name": "Equinox Hotel New York",
-      "liteapiId": "lp1f65f1",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "fairmont-monte-carlo",
-      "name": "Fairmont Monte Carlo",
-      "liteapiId": "lp2b743",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "jumeirah-marsa-al-arab-dubai",
-      "name": "Jumeirah Marsa Al Arab",
-      "liteapiId": "lp656dc6a3",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "breidenbacher-hof-dusseldorf",
-      "name": "Breidenbacher Hof Düsseldorf",
-      "liteapiId": "lp40e18",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "waldorf-astoria-doha-lusail",
-      "name": "Waldorf Astoria Doha Lusail",
-      "liteapiId": "lp65580713",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "palazzo-talia",
-      "name": "Palazzo Tàlia",
-      "liteapiId": "lp656c8913",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "cap-juluca-anguilla",
-      "name": "Cap Juluca, A Belmond Hotel, Anguilla",
-      "liteapiId": "lp4c305",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -524,115 +244,11 @@
       "status": "unchecked"
     },
     {
-      "id": "rosewood-le-guanahani-st-barth",
-      "name": "Rosewood Le Guanahani St. Barth",
-      "liteapiId": "lp23071",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "bodyholiday-saint-lucia",
       "name": "BodyHoliday Saint Lucia",
       "liteapiId": "lp6557080d",
       "liteapiName": "BodyHoliday - All inclusive",
       "km": 1.5,
-      "status": "unchecked"
-    },
-    {
-      "id": "carlton-hotel-st-moritz",
-      "name": "Carlton Hotel St. Moritz",
-      "liteapiId": "lp6571a1c3",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "rosewood-luang-prabang",
-      "name": "Rosewood Luang Prabang",
-      "liteapiId": "lpe4c8f",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "aristide-hotel",
-      "name": "Aristide Hotel",
-      "liteapiId": "lp655ba294",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-langham-boston",
-      "name": "The Langham Boston",
-      "liteapiId": "lp1be43",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "xitan-hotel-beijing",
-      "name": "Xitan Hotel Beijing",
-      "liteapiId": "lp657e040c",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "grand-hotel-victoria",
-      "name": "Grand Hotel Victoria",
-      "liteapiId": "lp65555bf6",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "solage-auberge-collection",
-      "name": "Solage, Auberge Collection",
-      "liteapiId": "lp3de04",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "warren-street-hotel",
-      "name": "Warren Street Hotel",
-      "liteapiId": "lp657e0276",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "grand-hotel-principe-di-piemonte",
-      "name": "Grand Hotel Principe di Piemonte",
-      "liteapiId": "lp39457",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "browns-hotel-a-rocco-forte-hotel",
-      "name": "Brown's Hotel, a Rocco Forte Hotel",
-      "liteapiId": "lp29cad",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "haymarket-hotel-firmdale-hotels",
-      "name": "Haymarket Hotel, Firmdale Hotels",
-      "liteapiId": "lp3e139",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-merrion",
-      "name": "The Merrion",
-      "liteapiId": "lp22746",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     }
   ]
