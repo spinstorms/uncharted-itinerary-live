@@ -1,0 +1,506 @@
+{
+ "source": "https://www.the50.com/hotels/best-in-the-world/list/1-50 and https://www.the50.com/stories/News/the-50-best-hotels-2026-the-51-100-list.html",
+ "year": 2026,
+ "hotels": [
+  {
+   "rank": 1,
+   "name": "Rosewood Hong Kong",
+   "city": "Hong Kong"
+  },
+  {
+   "rank": 2,
+   "name": "Capella Bangkok",
+   "city": "Bangkok"
+  },
+  {
+   "rank": 3,
+   "name": "Four Seasons Bangkok at Chao Phraya River",
+   "city": "Bangkok"
+  },
+  {
+   "rank": 4,
+   "name": "Atlantis The Royal",
+   "city": "Dubai"
+  },
+  {
+   "rank": 5,
+   "name": "Passalacqua",
+   "city": "Lake Como"
+  },
+  {
+   "rank": 6,
+   "name": "Rosewood São Paulo",
+   "city": "São Paulo"
+  },
+  {
+   "rank": 7,
+   "name": "Mandarin Oriental Qianmen",
+   "city": "Beijing"
+  },
+  {
+   "rank": 8,
+   "name": "Upper House Hong Kong",
+   "city": "Hong Kong"
+  },
+  {
+   "rank": 9,
+   "name": "Chablé Yucatán",
+   "city": "Chocholá"
+  },
+  {
+   "rank": 10,
+   "name": "Mandarin Oriental Bangkok",
+   "city": "Bangkok"
+  },
+  {
+   "rank": 11,
+   "name": "Aman Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 12,
+   "name": "Four Seasons Firenze",
+   "city": "Florence"
+  },
+  {
+   "rank": 13,
+   "name": "Claridge's",
+   "city": "London"
+  },
+  {
+   "rank": 14,
+   "name": "Hôtel de Crillon",
+   "city": "Paris"
+  },
+  {
+   "rank": 15,
+   "name": "Jumeirah Marsa Al Arab",
+   "city": "Dubai"
+  },
+  {
+   "rank": 16,
+   "name": "Capella Sydney",
+   "city": "Sydney"
+  },
+  {
+   "rank": 17,
+   "name": "Raffles Singapore",
+   "city": "Singapore"
+  },
+  {
+   "rank": 18,
+   "name": "Casa Maria Luigia",
+   "city": "Modena"
+  },
+  {
+   "rank": 19,
+   "name": "Le Bristol",
+   "city": "Paris"
+  },
+  {
+   "rank": 20,
+   "name": "Cheval Blanc Paris",
+   "city": "Paris"
+  },
+  {
+   "rank": 21,
+   "name": "Desa Potato Head",
+   "city": "Bali"
+  },
+  {
+   "rank": 22,
+   "name": "San Ysidro Ranch",
+   "city": "Santa Barbara"
+  },
+  {
+   "rank": 23,
+   "name": "One&Only Mandarina",
+   "city": "Riviera Nayarit"
+  },
+  {
+   "rank": 24,
+   "name": "Bulgari Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 25,
+   "name": "Las Ventanas al Paraíso",
+   "city": "Los Cabos"
+  },
+  {
+   "rank": 26,
+   "name": "Royal Mansour",
+   "city": "Marrakech"
+  },
+  {
+   "rank": 27,
+   "name": "Four Seasons Astir Palace",
+   "city": "Athens"
+  },
+  {
+   "rank": 28,
+   "name": "Raffles London at The OWO",
+   "city": "London"
+  },
+  {
+   "rank": 29,
+   "name": "Copacabana Palace",
+   "city": "Rio de Janeiro"
+  },
+  {
+   "rank": 30,
+   "name": "The Taj Mahal Palace",
+   "city": "Mumbai"
+  },
+  {
+   "rank": 31,
+   "name": "The Peninsula Istanbul",
+   "city": "Istanbul"
+  },
+  {
+   "rank": 32,
+   "name": "Bulgari Roma",
+   "city": "Rome"
+  },
+  {
+   "rank": 33,
+   "name": "Patina Osaka",
+   "city": "Osaka"
+  },
+  {
+   "rank": 34,
+   "name": "Mount Nelson",
+   "city": "Cape Town"
+  },
+  {
+   "rank": 35,
+   "name": "Nihi Sumba",
+   "city": "Sumba Island"
+  },
+  {
+   "rank": 36,
+   "name": "Badrutt's Palace",
+   "city": "St. Moritz"
+  },
+  {
+   "rank": 37,
+   "name": "Park Hyatt Kyoto",
+   "city": "Kyoto"
+  },
+  {
+   "rank": 38,
+   "name": "Hôtel du Couvent",
+   "city": "Nice"
+  },
+  {
+   "rank": 39,
+   "name": "Portrait Milano",
+   "city": "Milan"
+  },
+  {
+   "rank": 40,
+   "name": "Hôtel de Paris Monte-Carlo",
+   "city": "Monaco"
+  },
+  {
+   "rank": 41,
+   "name": "Plaza Athénée",
+   "city": "Paris"
+  },
+  {
+   "rank": 42,
+   "name": "Hotel Sacher Vienna",
+   "city": "Vienna"
+  },
+  {
+   "rank": 43,
+   "name": "Estelle Manor",
+   "city": "Witney"
+  },
+  {
+   "rank": 44,
+   "name": "Hotel du Cap-Eden-Roc",
+   "city": "Antibes"
+  },
+  {
+   "rank": 45,
+   "name": "Amangiri",
+   "city": "Canyon Point"
+  },
+  {
+   "rank": 46,
+   "name": "The Peninsula Hong Kong",
+   "city": "Hong Kong"
+  },
+  {
+   "rank": 47,
+   "name": "Maroma",
+   "city": "Riviera Maya"
+  },
+  {
+   "rank": 48,
+   "name": "Aman Nai Lert",
+   "city": "Bangkok"
+  },
+  {
+   "rank": 49,
+   "name": "The Connaught",
+   "city": "London"
+  },
+  {
+   "rank": 50,
+   "name": "San Domenico Palace",
+   "city": "Taormina"
+  },
+  {
+   "rank": 51,
+   "name": "La Réserve Paris",
+   "city": "Paris"
+  },
+  {
+   "rank": 52,
+   "name": "Janu Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 53,
+   "name": "Park Hyatt Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 54,
+   "name": "Palacio Nazarenas",
+   "city": "Cusco"
+  },
+  {
+   "rank": 55,
+   "name": "Soneva Fushi",
+   "city": "Maldives"
+  },
+  {
+   "rank": 56,
+   "name": "Rosewood London",
+   "city": "London"
+  },
+  {
+   "rank": 57,
+   "name": "Hotel Bel-Air",
+   "city": "Los Angeles"
+  },
+  {
+   "rank": 58,
+   "name": "Il San Pietro di Positano",
+   "city": "Positano"
+  },
+  {
+   "rank": 59,
+   "name": "Mandarin Oriental Hong Kong",
+   "city": "Hong Kong"
+  },
+  {
+   "rank": 60,
+   "name": "Splendido",
+   "city": "Portofino"
+  },
+  {
+   "rank": 61,
+   "name": "Mandapa",
+   "city": "Bali"
+  },
+  {
+   "rank": 62,
+   "name": "Castiglion del Bosco",
+   "city": "Montalcino"
+  },
+  {
+   "rank": 63,
+   "name": "Sofitel Legend Casco Viejo",
+   "city": "Panama City"
+  },
+  {
+   "rank": 64,
+   "name": "Hotel Esencia",
+   "city": "Tulum"
+  },
+  {
+   "rank": 65,
+   "name": "The Beverly Hills Hotel",
+   "city": "Los Angeles"
+  },
+  {
+   "rank": 66,
+   "name": "Orient Express La Minerva",
+   "city": "Rome"
+  },
+  {
+   "rank": 67,
+   "name": "Montage Los Cabos",
+   "city": "Cabo San Lucas"
+  },
+  {
+   "rank": 68,
+   "name": "Forestis Dolomites",
+   "city": "Brixen"
+  },
+  {
+   "rank": 69,
+   "name": "The Okura",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 70,
+   "name": "Rosewood Bangkok",
+   "city": "Bangkok"
+  },
+  {
+   "rank": 71,
+   "name": "Amangalla",
+   "city": "Galle"
+  },
+  {
+   "rank": 72,
+   "name": "Ritz Paris",
+   "city": "Paris"
+  },
+  {
+   "rank": 73,
+   "name": "Palace Hotel Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 74,
+   "name": "Four Seasons Tamarindo",
+   "city": "La Manzanilla"
+  },
+  {
+   "rank": 75,
+   "name": "La Mamounia",
+   "city": "Marrakech"
+  },
+  {
+   "rank": 76,
+   "name": "Maçakızı",
+   "city": "Bodrum"
+  },
+  {
+   "rank": 77,
+   "name": "Hotel das Cataratas",
+   "city": "Iguassu Falls"
+  },
+  {
+   "rank": 78,
+   "name": "The Fifth Avenue Hotel",
+   "city": "New York"
+  },
+  {
+   "rank": 79,
+   "name": "Hotel The Mitsui",
+   "city": "Kyoto"
+  },
+  {
+   "rank": 80,
+   "name": "Carlton Cannes",
+   "city": "Cannes"
+  },
+  {
+   "rank": 81,
+   "name": "Capella Hanoi",
+   "city": "Hanoi"
+  },
+  {
+   "rank": 82,
+   "name": "Huka Lodge",
+   "city": "Taupō"
+  },
+  {
+   "rank": 83,
+   "name": "The Calile",
+   "city": "Brisbane"
+  },
+  {
+   "rank": 84,
+   "name": "Borgo Santandrea",
+   "city": "Amalfi"
+  },
+  {
+   "rank": 85,
+   "name": "Hoshinoya Tokyo",
+   "city": "Tokyo"
+  },
+  {
+   "rank": 86,
+   "name": "Four Seasons Hong Kong",
+   "city": "Hong Kong"
+  },
+  {
+   "rank": 87,
+   "name": "Aman New York",
+   "city": "New York"
+  },
+  {
+   "rank": 88,
+   "name": "Borgo Egnazia",
+   "city": "Savelletri"
+  },
+  {
+   "rank": 89,
+   "name": "Waldorf Astoria Osaka",
+   "city": "Osaka"
+  },
+  {
+   "rank": 90,
+   "name": "Mandarin Oriental Shenzhen",
+   "city": "Shenzhen"
+  },
+  {
+   "rank": 91,
+   "name": "Villa Treville",
+   "city": "Positano"
+  },
+  {
+   "rank": 92,
+   "name": "The Greenwich Hotel",
+   "city": "New York"
+  },
+  {
+   "rank": 93,
+   "name": "The Maybourne Riviera",
+   "city": "Roquebrune-Cap-Martin"
+  },
+  {
+   "rank": 94,
+   "name": "The Johri",
+   "city": "Jaipur"
+  },
+  {
+   "rank": 95,
+   "name": "Reschio",
+   "city": "Lisciano Niccone"
+  },
+  {
+   "rank": 96,
+   "name": "Wynn Palace",
+   "city": "Macau"
+  },
+  {
+   "rank": 97,
+   "name": "Capella Singapore",
+   "city": "Singapore"
+  },
+  {
+   "rank": 98,
+   "name": "The Oberoi Udaivilas",
+   "city": "Udaipur"
+  },
+  {
+   "rank": 99,
+   "name": "The Peninsula Shanghai",
+   "city": "Shanghai"
+  },
+  {
+   "rank": 100,
+   "name": "Gleneagles",
+   "city": "Auchterarder"
+  }
+ ]
+}

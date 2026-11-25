@@ -1,0 +1,96 @@
+name: Add award hotels and reviews
+
+# Manual run. Adds hotels from the official award lists (World's 50 Best 2026, MICHELIN Keys 2026) that are missing
+# from the directory, tags their awards, then looks up REAL YouTube reviews (verified with oEmbed) and REAL
+# published critic scores. Strictly additive: nothing in Supabase is deleted. Then rebuilds data and republishes.
+on:
+  workflow_dispatch:
+    inputs:
+      reviews_scope:
+        description: "Which hotels to search for videos and critic scores"
+        type: choice
+        default: "award-and-new"
+        options:
+          - award-and-new
+          - all-missing
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "add-award-hotels"
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+  SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+  NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+  GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add missing hotels (LiteAPI metadata, photo, guest score)
+        run: python3 scripts/sync_250_hotels.py --new-only
+
+      - name: Fill ids, coordinates and facts for the new hotels
+        run: python3 scripts/enrich_missing_hotels.py
+
+      - name: Tag World's 50 Best ranks and MICHELIN Keys
+        run: python3 scripts/add_award_hotels.py awards
+
+      - name: Look up real YouTube reviews
+        run: |
+          if [ "${{ inputs.reviews_scope }}" = "all-missing" ]; then
+            python3 scripts/add_award_hotels.py youtube --missing
+          else
+            python3 scripts/add_award_hotels.py youtube --missing --award-set
+          fi
+        continue-on-error: true
+
+      - name: Look up real critic scores
+        run: |
+          if [ "${{ inputs.reviews_scope }}" = "all-missing" ]; then
+            python3 scripts/add_award_hotels.py editorial --missing
+          else
+            python3 scripts/add_award_hotels.py editorial --missing --award-set
+          fi
+        continue-on-error: true
+
+      - name: Rebuild data
+        run: |
+          python3 scripts/normalize_regions_and_prices.py --prices-only
+          python3 scripts/build_stayodds_site.py --data-only
+
+      - name: Commit results
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add 2026 award hotels, awards, videos and critic scores"
+            git pull --rebase -X ours origin main
+            git push origin main
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish stayodds.com
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-stayodds.yml --ref main

@@ -341,3 +341,13 @@ VERIFIED_AWARDS_BY_SLUG = {
     "bulgari-hotel-roma": [("World's 50 Best Hotels", "World's 50 Best Hotels", "2024", 95, "https://www.theworlds50best.com/hotels/")],
     "hotel-sacher-vienna": [("MICHELIN Guide", "3 MICHELIN Keys", "2024", 98, "https://guide.michelin.com/en/hotels")],
 }
+
+
+# 2026 World's 50 Best / MICHELIN Keys hotels that were missing from the directory
+from catalog_awards import AWARD_HOTEL_ADDITIONS  # noqa: E402
+
+ADDITIONAL_138_LUXURY_HOTELS = list(ADDITIONAL_138_LUXURY_HOTELS) + list(AWARD_HOTEL_ADDITIONS)
+
+from catalog_michelin import MICHELIN_HOTEL_ADDITIONS  # noqa: E402
+
+ADDITIONAL_138_LUXURY_HOTELS = list(ADDITIONAL_138_LUXURY_HOTELS) + list(MICHELIN_HOTEL_ADDITIONS)
