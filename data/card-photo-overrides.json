@@ -30,6 +30,641 @@
       "url": "https://static.cupid.travel/hotels/607292570.jpg",
       "source": "liteapi",
       "note": "recepcion & lobby"
+    },
+    "al-maha-dubai": {
+      "url": "https://static.cupid.travel/hotels/ex_95230a4c_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "ana-intercontinental-beppu": {
+      "url": "https://static.cupid.travel/hotels/453041080.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "anantara-bophut-koh-samui-resort": {
+      "url": "https://static.cupid.travel/hotels/216148650.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "argos-in-cappadocia": {
+      "url": "https://static.cupid.travel/hotels/406926523.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "babylonstoren-winelands": {
+      "url": "https://static.cupid.travel/hotels/183229839.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "bohemia-suites-and-spa-gran-canaria": {
+      "url": "https://static.cupid.travel/hotels/27037192.jpg",
+      "source": "liteapi",
+      "note": "hotel building"
+    },
+    "bulgari-resort-bali": {
+      "url": "https://static.cupid.travel/hotels/508864006.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "bulgari-resort-dubai": {
+      "url": "https://static.cupid.travel/hotels/ex_eb987b17_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "burj-al-arab": {
+      "url": "https://static.cupid.travel/hotels/ex_ce0e0ec5_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "canaves-oia-epitome": {
+      "url": "https://static.cupid.travel/hotels/464319279.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "curtain-bluff-antigua": {
+      "url": "https://static.cupid.travel/hotels/574336646.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "deplar-farm-iceland": {
+      "url": "https://static.cupid.travel/hotels/ex_d49f7b4e_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "dreams-lanzarote-playa-dorada": {
+      "url": "https://static.cupid.travel/hotels/ex_e9828562_z.jpg",
+      "source": "liteapi",
+      "note": "swimming pool"
+    },
+    "esencia-riviera-maya": {
+      "url": "https://static.cupid.travel/hotels/ex_823f52b4_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "faena-hotel-miami-beach": {
+      "url": "https://static.cupid.travel/hotels/488017863.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "fairmont-chateau-lake-louise": {
+      "url": "https://static.cupid.travel/hotels/180587134.jpg",
+      "source": "liteapi",
+      "note": "hotel building"
+    },
+    "fairmont-miramar-santa-monica": {
+      "url": "https://static.cupid.travel/hotels/65524213.jpg",
+      "source": "liteapi",
+      "note": "hotel building"
+    },
+    "fairmont-udaipur-palace": {
+      "url": "https://m.ahstatic.com/is/image/accorhotels/acf_p_B026_76:4by3?fmt=jpg&wid=1600&qlt=85",
+      "source": "liteapi",
+      "note": "pool"
+    },
+    "four-seasons-bosphorus-istanbul": {
+      "url": "https://static.cupid.travel/hotels/182015446.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "four-seasons-cairo-nile-plaza": {
+      "url": "https://static.cupid.travel/hotels/94190040.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "four-seasons-dubai-jumeirah": {
+      "url": "https://static.cupid.travel/hotels/ex_5be10268_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "four-seasons-hotel-minneapolis": {
+      "url": "https://static.cupid.travel/hotels/414837893.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "four-seasons-hotel-ritz-lisbon": {
+      "url": "https://static.cupid.travel/hotels/250759445.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "four-seasons-whistler": {
+      "url": "https://static.cupid.travel/hotels/566989537.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "fufu-hakone": {
+      "url": "https://static.cupid.travel/hotels/412897023.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "h10-timanfaya-palace-lanzarote": {
+      "url": "https://static.cupid.travel/hotels/ex_f4b58af6_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "hoshinoya-karuizawa": {
+      "url": "https://static.cupid.travel/hotels/ex_627e324f_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "hoshinoya-taketomi-island": {
+      "url": "https://static.cupid.travel/hotels/ex_3d537c8e_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "hotel-grande-bretagne-athens": {
+      "url": "https://static.cupid.travel/hotels/590504513.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "hotel-suite-villa-maria-tenerife": {
+      "url": "https://static.cupid.travel/hotels/80330081.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "jackalope-hotel-mornington": {
+      "url": "https://static.cupid.travel/hotels/ex_ed161e4d_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "jumeirah-al-naseem": {
+      "url": "https://static.cupid.travel/hotels/ex_edbbb6db_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "jumeirah-marsa-al-arab-dubai": {
+      "url": "https://static.cupid.travel/hotels/ex_90131c17_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "jw-marriott-essex-house-new-york": {
+      "url": "https://static.cupid.travel/hotels/520923079.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "kimpton-de-witt-hotel": {
+      "url": "https://static.cupid.travel/hotels/557607644.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "kimpton-margot-sydney": {
+      "url": "https://static.cupid.travel/hotels/605270154.jpg",
+      "source": "liteapi",
+      "note": "swimming pool"
+    },
+    "kimpton-naluria-kuala-lumpur-by-ihg": {
+      "url": "https://static.cupid.travel/hotels/ex_37ccf057_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "kimpton-theta-new-york": {
+      "url": "https://static.cupid.travel/hotels/606708744.jpg",
+      "source": "liteapi",
+      "note": "outdoor lounge"
+    },
+    "la-casa-que-canta-zihuatanejo": {
+      "url": "https://static.cupid.travel/hotels/250489483.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "le-bristol-paris": {
+      "url": "https://static.cupid.travel/hotels/ex_375ded0b_z.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "lopesan-costa-meloneras-gran-canaria": {
+      "url": "https://static.cupid.travel/hotels/ex_838e5815_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "mandarin-oriental-bangkok": {
+      "url": "https://static.cupid.travel/hotels/ex_1db158b2_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "mandarin-oriental-ritz-madrid": {
+      "url": "https://static.cupid.travel/hotels/583566664.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "mount-nelson-belmond-cape-town": {
+      "url": "https://static.cupid.travel/hotels/601512495.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "nekajui-ritz-carlton-reserve-costa-rica": {
+      "url": "https://static.cupid.travel/hotels/ex_c9dfbd17_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "nishimuraya-honkan-kinosaki": {
+      "url": "https://static.cupid.travel/hotels/25236199.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "one-and-only-reethi-rah": {
+      "url": "https://static.cupid.travel/hotels/554781715.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "one-and-only-the-palm": {
+      "url": "https://dam.kerzner.com/i/kerzner/2602223_One&Only_ThePalm_Pool_Wide_Exterior_1834_Opt1_MASTER_Medium?fmt=auto&w=2880",
+      "source": "liteapi",
+      "note": "pool"
+    },
+    "otahuna-lodge-christchurch": {
+      "url": "https://static.cupid.travel/hotels/520405299.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "park-hyatt-melbourne": {
+      "url": "https://static.cupid.travel/hotels/493761918.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "pendry-west-hollywood": {
+      "url": "https://static.cupid.travel/hotels/592234323.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "pretty-beach-house": {
+      "url": "https://static.cupid.travel/hotels/148789048.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "raffles-london-owo": {
+      "url": "https://static.cupid.travel/hotels/424856207.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "regent-santa-monica-beach": {
+      "url": "https://static.cupid.travel/hotels/ex_9c370e69_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "regent-taipei": {
+      "url": "https://digital.ihg.com/is/image/ihg/SwimmingPool_s?fmt=jpg&qlt=85",
+      "source": "liteapi",
+      "note": "pool"
+    },
+    "ritz-carlton-kyoto": {
+      "url": "https://static.cupid.travel/hotels/613569414.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "ritz-paris": {
+      "url": "https://static.cupid.travel/hotels/ex_96336eac_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "rosewood-bangkok": {
+      "url": "https://static.cupid.travel/hotels/529252278.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "rosewood-hong-kong": {
+      "url": "https://static.cupid.travel/hotels/181786582.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "rosewood-kauri-cliffs": {
+      "url": "https://static.cupid.travel/hotels/ex_d6be4003_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "rosewood-villa-magna-madrid": {
+      "url": "https://static.cupid.travel/hotels/325292826.jpg",
+      "source": "liteapi",
+      "note": "hotel building"
+    },
+    "sandals-saint-vincent": {
+      "url": "https://static.cupid.travel/hotels/ex_950de55f_edited_b5be_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "santa-monica-proper": {
+      "url": "https://static.cupid.travel/hotels/449459530.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "signiel-seoul": {
+      "url": "https://static.cupid.travel/hotels/ex_66feb802_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "silky-oaks-lodge-daintree": {
+      "url": "https://static.cupid.travel/hotels/ex_8b20f945_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "six-senses-kyoto": {
+      "url": "https://static.cupid.travel/hotels/544312926.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "six-senses-uluwatu": {
+      "url": "https://static.cupid.travel/hotels/505113246.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "six-senses-yao-noi": {
+      "url": "https://static.cupid.travel/hotels/497523064.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "sofitel-legend-old-cataract-aswan": {
+      "url": "https://static.cupid.travel/hotels/515872221.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "sofitel-legend-santa-clara-cartagena": {
+      "url": "https://www.ahstatic.com/photos/1871_ho_03_p_1024x768.jpg",
+      "source": "liteapi",
+      "note": "pool"
+    },
+    "sofitel-winter-palace-luxor": {
+      "url": "https://static.cupid.travel/hotels/496537283.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "spicers-peak-lodge": {
+      "url": "https://static.cupid.travel/hotels/ex_3c71df10_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "taj-cape-town-south-africa": {
+      "url": "https://static.cupid.travel/hotels/506583050.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "the-apurva-kempinski-bali": {
+      "url": "https://static.cupid.travel/hotels/543683992.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "the-mitsui-kyoto": {
+      "url": "https://static.cupid.travel/hotels/ex_ed6aa230_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "the-savoy-london": {
+      "url": "https://static.cupid.travel/hotels/177109798.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "the-stanley-hotel-estes-park": {
+      "url": "https://static.cupid.travel/hotels/ex_1e3ce4c8_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "the-times-square-edition-new-york": {
+      "url": "https://static.cupid.travel/hotels/ex_316e8f96_z.jpg",
+      "source": "liteapi",
+      "note": "outdoor seating"
+    },
+    "the-tokyo-edition-toranomon": {
+      "url": "https://static.cupid.travel/hotels/459599659.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "viceroy-riviera-maya": {
+      "url": "https://static.cupid.travel/hotels/594059438.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "w-osaka": {
+      "url": "https://static.cupid.travel/hotels/500794559.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "zaborin-niseko": {
+      "url": "https://static.cupid.travel/hotels/204120203.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "soneva-fushi": {
+      "url": "https://static.cupid.travel/hotels/321459533.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "soneva-jani": {
+      "url": "https://static.cupid.travel/hotels/287331792.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "waldorf-astoria-maldives": {
+      "url": "https://static.cupid.travel/hotels/483820519.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "joali-maldives": {
+      "url": "https://static.cupid.travel/hotels/213299907.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "st-regis-maldives": {
+      "url": "https://static.cupid.travel/hotels/469211271.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "patina-maldives": {
+      "url": "https://static.cupid.travel/hotels/380232020.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "kudadoo-maldives": {
+      "url": "https://static.cupid.travel/hotels/ex_6bf1cba2_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "nihi-sumba": {
+      "url": "https://static.cupid.travel/hotels/252067362.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "capella-ubud": {
+      "url": "https://static.cupid.travel/hotels/160819836.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "four-seasons-sayan": {
+      "url": "https://static.cupid.travel/hotels/ex_3b707222_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "raffles-bali": {
+      "url": "https://static.cupid.travel/hotels/582575488.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "alila-villas-uluwatu": {
+      "url": "https://static.cupid.travel/hotels/376826801.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "como-shambhala-estate": {
+      "url": "https://static.cupid.travel/hotels/371100432.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "bawah-reserve": {
+      "url": "https://static.cupid.travel/hotels/ex_6a16d0b2_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "capella-bangkok": {
+      "url": "https://static.cupid.travel/hotels/300728536.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "soneva-kiri": {
+      "url": "https://static.cupid.travel/hotels/339795526.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "rosewood-phuket": {
+      "url": "https://static.cupid.travel/hotels/144081465.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "raffles-singapore": {
+      "url": "https://static.cupid.travel/hotels/260384694.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "capella-singapore": {
+      "url": "https://static.cupid.travel/hotels/618565008.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "marina-bay-sands": {
+      "url": "https://static.cupid.travel/hotels/611676302.jpg",
+      "source": "liteapi",
+      "note": "hotel building"
+    },
+    "the-upper-house-hk": {
+      "url": "https://static.cupid.travel/hotels/ex_80f300ff_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "park-hyatt-kyoto": {
+      "url": "https://static.cupid.travel/hotels/233107363.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "peninsula-tokyo": {
+      "url": "https://static.cupid.travel/hotels/ex_b51d3c88_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "atlantis-the-royal": {
+      "url": "https://static.cupid.travel/hotels/ex_38671574_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "six-senses-zighy-bay": {
+      "url": "https://static.cupid.travel/hotels/360492770.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "emirates-palace-abu-dhabi": {
+      "url": "https://static.cupid.travel/hotels/ex_06bcaa86_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "passalacqua-lake-como": {
+      "url": "https://static.cupid.travel/hotels/400535324.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "cheval-blanc-paris": {
+      "url": "https://static.cupid.travel/hotels/ex_da7c5826_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "claridges-london": {
+      "url": "https://static.cupid.travel/hotels/474967777.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "the-connaught-london": {
+      "url": "https://static.cupid.travel/hotels/545911680.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "gleneagles-scotland": {
+      "url": "https://static.cupid.travel/hotels/292313222.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "badrutts-palace": {
+      "url": "https://static.cupid.travel/hotels/120743178.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "belmond-caruso-amalfi": {
+      "url": "https://static.cupid.travel/hotels/117270412.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "four-seasons-maui": {
+      "url": "https://static.cupid.travel/hotels/275628657.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "post-ranch-inn": {
+      "url": "https://static.cupid.travel/hotels/ex_543034f5_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "beverly-hills-hotel": {
+      "url": "https://static.cupid.travel/hotels/ex_4bf2946c_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "rosewood-mayakoba": {
+      "url": "https://static.cupid.travel/hotels/ex_508cc801_z.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "one-and-only-palmilla": {
+      "url": "https://static.cupid.travel/hotels/548611974.jpg",
+      "source": "liteapi",
+      "note": "building"
+    },
+    "jade-mountain-st-lucia": {
+      "url": "https://static.cupid.travel/hotels/ex_1cb43e4d_z.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "four-seasons-bora-bora": {
+      "url": "https://static.cupid.travel/hotels/51610543.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "the-brando": {
+      "url": "https://thebrando.com/wp-content/uploads/2023/02/Brando-IG17-wide-high-1.png",
+      "source": "liteapi",
+      "note": "exterior"
+    },
+    "conrad-bora-bora-nui": {
+      "url": "https://static.cupid.travel/hotels/484121129.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "royal-mansour-marrakech": {
+      "url": "https://static.cupid.travel/hotels/28161951.jpg",
+      "source": "liteapi",
+      "note": "overview (checked by eye)"
+    },
+    "la-mamounia-marrakech": {
+      "url": "https://static.cupid.travel/hotels/ex_20e9c1c2_z.jpg",
+      "source": "liteapi",
+      "note": "balance & terrace"
+    },
+    "one-and-only-cape-town": {
+      "url": "https://static.cupid.travel/hotels/543199202.jpg",
+      "source": "liteapi",
+      "note": "building"
     }
   }
 }

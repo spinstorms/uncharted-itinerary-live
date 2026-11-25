@@ -1,5 +1,5 @@
 {
-  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club). merge: duplicate id -> the id we keep. nuitee_hotel_id null = the LiteAPI id we had pointed at a different hotel; delete = rows to remove.",
+  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club). merge: duplicate id -> the id we keep. nuitee_hotel_id null = the LiteAPI id we had pointed at a different hotel; delete = rows to remove. hero_image_url '' = the photo we had was not of this hotel (stock image, another hotel, or another site's branded image).",
   "properties": {
     "heights-melasti-bali": {
       "name": "The Heights Melasti",
@@ -39,6 +39,96 @@
     "st-regis-bahia-beach-puerto-rico": {
       "name": "Four Seasons Resort Puerto Rico",
       "brand": "Four Seasons"
+    },
+    "aman-kyoto": {
+      "hero_image_url": ""
+    },
+    "aman-nai-lert-bangkok": {
+      "hero_image_url": ""
+    },
+    "aman-new-york": {
+      "hero_image_url": ""
+    },
+    "aman-tokyo": {
+      "hero_image_url": ""
+    },
+    "amandari-ubud": {
+      "hero_image_url": ""
+    },
+    "amangiri-utah": {
+      "hero_image_url": ""
+    },
+    "amankila-bali": {
+      "hero_image_url": ""
+    },
+    "amanoi-vietnam": {
+      "hero_image_url": ""
+    },
+    "amanpuri-phuket": {
+      "hero_image_url": ""
+    },
+    "amanyara-turks-caicos": {
+      "hero_image_url": ""
+    },
+    "amanzoe-greece": {
+      "hero_image_url": ""
+    },
+    "bulgari-hotel-tokyo": {
+      "hero_image_url": ""
+    },
+    "cheval-blanc-courchevel": {
+      "hero_image_url": ""
+    },
+    "cheval-blanc-randheli": {
+      "hero_image_url": ""
+    },
+    "cheval-blanc-st-barth": {
+      "hero_image_url": ""
+    },
+    "clayoquot-wilderness-lodge": {
+      "hero_image_url": ""
+    },
+    "eden-rock-st-barths": {
+      "hero_image_url": ""
+    },
+    "four-seasons-anguilla": {
+      "hero_image_url": ""
+    },
+    "giraffe-manor-kenya": {
+      "hero_image_url": ""
+    },
+    "guana-island-bvi": {
+      "hero_image_url": ""
+    },
+    "hoshinoya-kyoto": {
+      "hero_image_url": ""
+    },
+    "hotel-du-cap-eden-roc": {
+      "hero_image_url": ""
+    },
+    "ishara-masai-mara": {
+      "hero_image_url": ""
+    },
+    "janu-tokyo": {
+      "hero_image_url": ""
+    },
+    "mandarin-oriental-qianmen-beijing": {
+      "hero_image_url": ""
+    },
+    "shamwari-private-game-reserve": {
+      "hero_image_url": ""
+    },
+    "singita-kruger": {
+      "hero_image_url": ""
+    },
+    "twin-farms-vermont": {
+      "hero_image_url": ""
+    },
+    "velaa-private-island": {
+      "hero_image_url": ""
+    },
+    "villa-deste-como": {
+      "hero_image_url": ""
     }
   },
   "property_facts": {
