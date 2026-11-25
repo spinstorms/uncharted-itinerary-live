@@ -802,6 +802,15 @@ def combined_guest_score(gs: dict[str, Any] | None, ta: dict[str, Any] | None) -
     }
 
 
+def nice_date(iso: str) -> str:
+    """2026-11-25 -> 25 November 2026 (anything else is returned unchanged)."""
+    try:
+        d = datetime.strptime(str(iso)[:10], "%Y-%m-%d")
+        return f"{d.day} {d.strftime('%B %Y')}"
+    except Exception:
+        return str(iso or "")
+
+
 def voices_section_html(h: dict[str, Any]) -> str:
     """Real guest comments (dated, sourced, unedited) and links to traveller discussions and reviews. No scores made up."""
     # read the data files directly too, so a publish-only run picks up newly added links and ratings
@@ -821,7 +830,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
             bits.append(esc(f'{a.get("name")} {a.get("year") or ""}'.strip()))
         link = f' <a href="{esc(ta["url"])}" target="_blank" rel="noopener noreferrer">Read the reviews on Tripadvisor &#8599;</a>' if ta.get("url") else ""
         ta_html = (f'<div class="channel-row" style="display:block;">{"<br>".join(bits)}{link}'
-                   f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">Source: Tripadvisor · checked {esc(ta.get("fetched", ""))}</small></div>')
+                   f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">Source: Tripadvisor · last updated {esc(nice_date(ta.get("fetched", "")))}</small></div>')
     q_html = ""
     for q in qs:
         parts = []
@@ -834,7 +843,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
         meta = " · ".join(x for x in (
             f"{q['score']:g}/10" if isinstance(q.get("score"), (int, float)) else "",
             q.get("travellerType", "").title(),
-            q.get("date", ""),
+            nice_date(q.get("date", "")),
             f"{'Verified booking guest' if q.get('source') in ('LiteAPI guest', 'Verified guest') else q.get('source', '')} review",
             f"written in {LANG_NAMES.get(q.get('language', ''), q.get('language', '').upper())}" if q.get("language") not in ("", "en", None) else "",
         ) if x)
@@ -848,10 +857,10 @@ def voices_section_html(h: dict[str, Any]) -> str:
                    f'<strong>{esc(m.get("title") or m["url"])}</strong> &#8599;</a>{"<br>" + quote if quote else ""}'
                    f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')
     left = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Recent Guest Comments</h3><span class="tag">{len(qs)} real review{"" if len(qs) == 1 else "s"}</span></div>
-      <p class="detail-panel-sub">The latest written guest reviews, shown as written, good or bad, with where each one comes from. Checked {esc(quotes.get("fetched", ""))}.</p>
+      <p class="detail-panel-sub">The most recent reviews written by guests who stayed here, shown word for word, whether positive or negative. Each one shows the guest's score, their type of trip, the date and the site it was posted on. Last updated {esc(nice_date(quotes.get("fetched", "")))}.</p>
       <div class="channel-breakdown-list" style="margin-top:12px;">{q_html}</div></div>''') if qs else ""
     right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions) + (1 if ta_html else 0)} linked</span></div>
-      <p class="detail-panel-sub">Ratings on other sites, forum threads, blogs and reviews about this hotel. Short quotes are credited and link to the original.</p>
+      <p class="detail-panel-sub">This hotel's rating on Tripadvisor, plus forum discussions and independent reviews by travel writers. Each link opens the original page.</p>
       <div class="channel-breakdown-list" style="margin-top:12px;">{ta_html}{m_html}</div></div>''') if (mentions or ta_html) else ""
     return f'''<section class="detail-section"><h2 class="section-title" style="margin-bottom:14px;">What Guests &amp; Travellers Say</h2>
       <div class="detail-two-col">{left}{right}</div></section>'''
