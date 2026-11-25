@@ -206,6 +206,7 @@ def main() -> int:
 
     stats = {"photo": 0, "pin": 0, "guest": 0, "facts": 0}
     far: dict[str, str] = {}
+    trusted: dict[str, str] = {}
     guest_rows, fact_rows = [], []
     for p, d in details:
         if not d:
@@ -227,6 +228,9 @@ def main() -> int:
             else:
                 patch.update({"lat": pt[0], "lng": pt[1]})
                 stats["pin"] += 1
+                if cp and km_between(pt, cp) > 60:
+                    # far from the geocoded town but the LiteAPI record has the same name: the town lookup was vague
+                    trusted[p["id"]] = f"LiteAPI '{d.get('name')}'"
         if patch:
             patch["updated_at"] = now_iso()
             sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(p['id'])}", patch, {"Prefer": "return=minimal"})
@@ -276,6 +280,11 @@ def main() -> int:
         for rows in by_shape.values():
             upsert("property_facts", rows, "property_id")
     print(f"Filled: {stats}")
+    if trusted:
+        tp = Path(__file__).resolve().parent.parent / "data" / "pin-trusted.json"
+        cur = json.loads(tp.read_text(encoding="utf-8")) if tp.exists() else {}
+        cur.update(trusted)
+        tp.write_text(json.dumps(dict(sorted(cur.items())), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     if far:
         pol_path = Path(__file__).resolve().parent.parent / "data" / "live-rate-coverage.json"
         pol = json.loads(pol_path.read_text(encoding="utf-8"))

@@ -456,6 +456,9 @@ def run_pincheck(props: dict[str, dict[str, Any]], only: set[str] | None) -> Non
     """Clear pins that sit far from the hotel's stated town (they are re-found from a reliable source next)."""
     addr_path = ROOT / "data" / "hotel-addresses.json"
     sourced = set(json.loads(addr_path.read_text(encoding="utf-8")).get("hotels", {})) if addr_path.exists() else set()
+    tp = ROOT / "data" / "pin-trusted.json"
+    if tp.exists():
+        sourced |= set(json.loads(tp.read_text(encoding="utf-8")))  # same-name LiteAPI pins in vaguely named areas
     rows = sb_all("properties", "id,name,city,country,lat,lng,visited_by_founder")
     cleared = checked = 0
     for r in rows:
@@ -500,6 +503,11 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
         a = addresses.get(r["id"])
         if a and isinstance(a.get("lat"), (int, float)):
             found = (float(a["lat"]), float(a["lng"]), f"source page: {a.get('source', '')[:70]}")
+        elif a and "guide.michelin.com" in str(a.get("source") or ""):
+            pt = michelin_page_coords(a["source"])
+            cp = city_point(r.get("city") or "", r.get("country") or "")
+            if pt and (not cp or km_between(pt, cp) <= 60):
+                found = (pt[0], pt[1], f"MICHELIN page: {a['source'][:70]}")
         for q in ((f"{r['name']}, {r.get('city') or ''}", r["name"]) if not found else ()):
             params = {"q": q, "format": "jsonv2", "limit": "5", "addressdetails": "1", "accept-language": "en"}
             if cc:
@@ -590,6 +598,28 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
         else:
             print(f"  no confident match: {r['id']} ({r['name']})")
     print(f"Coordinates: added {fixed} map pins")
+
+
+def michelin_page_coords(url: str) -> tuple[float, float] | None:
+    """The MICHELIN Guide hotel page carries the hotel's own map position (JSON-LD geo / map data)."""
+    code, body = http_get(url, headers={"User-Agent": "Mozilla/5.0 (compatible; StayOddsBot/1.0; +https://stayodds.com)",
+                                        "Accept-Language": "en"})
+    time.sleep(1.0)
+    if code != 200 or not body:
+        return None
+    text = body if isinstance(body, str) else body.decode("utf-8", "replace")
+    pats = [
+        (r'"latitude"\s*:\s*"?(-?\d{1,3}\.\d+)', r'"longitude"\s*:\s*"?(-?\d{1,3}\.\d+)'),
+        (r'data-lat="(-?\d{1,3}\.\d+)"', r'data-lng="(-?\d{1,3}\.\d+)"'),
+        (r'\blat(?:itude)?["\']?\s*[:=]\s*["\']?(-?\d{1,3}\.\d{3,})', r'\b(?:lng|lon|longitude)["\']?\s*[:=]\s*["\']?(-?\d{1,3}\.\d{3,})'),
+    ]
+    for la, lo in pats:
+        m1, m2 = re.search(la, text), re.search(lo, text)
+        if m1 and m2:
+            lat, lng = float(m1.group(1)), float(m2.group(1))
+            if -90 <= lat <= 90 and -180 <= lng <= 180 and (lat or lng):
+                return lat, lng
+    return None
 
 
 def main(argv: list[str]) -> int:
