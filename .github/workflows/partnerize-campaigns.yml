@@ -1,0 +1,18 @@
+name: Partnerize campaigns (camrefs)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - run: python3 scripts/partnerize_campaigns.py
+        env:
+          PARTNERIZE_APP_KEY: ${{ secrets.PARTNERIZE_APP_KEY }}
+          PARTNERIZE_USER_KEY: ${{ secrets.PARTNERIZE_USER_KEY }}
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/partnerize-campaigns.json
+          git diff --cached --quiet || { git commit -m "Partnerize campaign list"; git pull --rebase -X ours; git push; }
