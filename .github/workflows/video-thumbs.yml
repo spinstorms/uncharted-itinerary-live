@@ -1,0 +1,15 @@
+name: Save our video thumbnails
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - run: python3 scripts/fetch_video_thumbs.py
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add assets/video-thumbs
+          git diff --cached --quiet || { git commit -m "Save video thumbnails"; git pull --rebase -X ours; git push; }
