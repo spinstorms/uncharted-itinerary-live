@@ -4243,6 +4243,53 @@
    }
   ]
  },
+ "bernardus-lodge-and-spa": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 369,
+  "quotes": [
+   {
+    "date": "2026-11-04",
+    "source": "Verified booking guest",
+    "score": 1.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "",
+    "disliked": "They had a faulty kettle in the room and as a result my husband got badly burned and no one got back to us after the incident report was filled out",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-03",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "A must see and must stay.",
+    "liked": "Everything! The staff is incredible. The properties beyond compare. This is a 5 star hotel without exception.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-19",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Wonderful welcoming experience.",
+    "liked": "Great friendly experience. The staff always remembers us from previous stays and always makes us feel truly welcomed. The service is always top notch. The complimentary snacks and beverages in the room are definitely an added bonus.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-18",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Business",
+    "headline": "Perfect Venue for a Business Meeting",
+    "liked": "Our two-day business meeting was exceptional. BJ, the manager, and his team went above and beyond, constantly checking on us and making sure everything ran smoothly. Every staff member we encountered was professional, friendly, and courteous. Dinner at the restaurant was outstanding. Chef Gus created an amazing menu, and both the food and service were exceptional. The beautiful location made the experience even more …",
+    "disliked": "",
+    "language": "en"
+   }
+  ]
+ },
  "beverly-hills-hotel": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -19220,6 +19267,53 @@
    }
   ]
  },
+ "hotel-de-paris-monte-carlo": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 221,
+  "quotes": [
+   {
+    "date": "2026-11-09",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Very nice service. Restaurant Le Louis XV is a must-visit for everyone.",
+    "liked": "This is by far the best breakfast I've had during my France trip",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "The Hotel of My Dreams",
+    "liked": "Simply everything was perfect.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-26",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Opulence",
+    "liked": "Unadulterated opulence",
+    "disliked": "Unfortunately having to pay",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-19",
+    "source": "Verified booking guest",
+    "score": 1.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "",
+    "disliked": "€2,000 disappeared from my room safe — unacceptable experience at Hôtel de Paris Monte-Carlo I am giving Hôtel de Paris Monte-Carlo the lowest possible rating following an extremely disturbing experience during my stay. I personally counted €7,800 in cash and placed it inside my locked electronic room safe. The following day, I opened the safe using my own code and discovered that exactly €2,000 was missing. The rema…",
+    "language": "en"
+   }
+  ]
+ },
  "hotel-de-russie-rome": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -28020,6 +28114,53 @@
    }
   ]
  },
+ "milliken-creek-inn": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 230,
+  "quotes": [
+   {
+    "date": "2026-10-29",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Wonderful!",
+    "liked": "Breakfasts were wonderful, as was the room, staff and location. A great experience.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "It was a pleasure and special retreat!",
+    "liked": "Beautiful property placed in the perfect driving distance from downtown Napa, Yountville, Helena and the local vineyards. We highly recommend if you want a romantic getaway with time for an outdoor massage, home away from home and relaxing staff and atmosphere 💕",
+    "disliked": "Everything!",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Beautiful boutique property with excellent service",
+    "liked": "It's a beautiful property with excellent amenities. Our room was spacious and light, with a pleasant view over the adjoining creek.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-11",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Very warm welcome to Napa",
+    "liked": "very charming property; great communal spaces; loved the breakfast concept - for rooms that have patios, breakfast is served on the patio with the heat lamp on - makes for a charming way to start the day!",
+    "disliked": "N/A",
+    "language": "en"
+   }
+  ]
+ },
  "monasterio-belmond-cusco": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -28443,53 +28584,6 @@
    }
   ]
  },
- "mount-nelson-belmond-cape-town": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 834,
-  "quotes": [
-   {
-    "date": "2026-10-31",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "A unique stay in an historical hotel.",
-    "liked": "The atmosphere is unique, created by the friendly and attentive staff together with the magnificent building that is the Mount Nelson.",
-    "disliked": "The layout and interior is fantastic.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-29",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Family",
-    "headline": "Amazing tea!",
-    "liked": "Such a stunning day. Amazing atmosphere and food. Thuli looked well after us and even chose all the tea for us. It was excellent.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-29",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Family",
-    "headline": "Perfect",
-    "liked": "The atmosphere was amazing and our waitress Zona was very attentive and polite & sung happy birthday to my Mother 💚🤗",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-29",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Family",
-    "headline": "High tea at Mount Nelson",
-    "liked": "What a wonderful experience! The staff were lovely, friendly, and created such a happy and welcoming environment. Our host, Thuli, was absolutely fantastic, so knowledgeable, helpful, and full of great suggestions. She truly went above and beyond to make our experience special. Thank you, Thuli! You made our visit extra special, and we really appreciate it.",
-    "disliked": "",
-    "language": "en"
-   }
-  ]
- },
  "napasai-samui-residence": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -28616,6 +28710,53 @@
     "travellerType": "",
     "headline": "",
     "liked": "It was beyond expected. We cannot stop talking about how well treated we felt. Everything from the gorgeous surroundings to the excursions was just wonderful.",
+    "disliked": "",
+    "language": "en"
+   }
+  ]
+ },
+ "nayara-bocas-del-toro": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 41,
+  "quotes": [
+   {
+    "date": "2025-09-27",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "⭐️⭐️⭐️⭐️⭐️ Unforgettable Anniversary at Nayara Bocas del Toro We recently celebrated our 10th wedding anniversary at Nayara Bocas del Toro, and our experience was nothing short of unbelievable. Having traveled all over the world—including the Maldives, which we thought would be impossible to beat—we can now say with confidence this is our number one destination. The service and food were by far the best we have ever …",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-08-02",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "Amazing time across the board staying at both the Treehouse and the Ocean Villa for the week. The attention to the details made this an experience like no other. The treehouse created a one-of-a-kind experience especially with the views and birds around the island. Highly recommend doing both. The service staff were extremely kind and attentive to all needs with a caring spirit of service. The housekeeping staff kept…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-03-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "Amazing",
+    "liked": "Amazing hotel.We loved every minute of our time here.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-03-05",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "Very quiet and isolated, Far from the maddening crowd. Fantastic service, great food.",
     "disliked": "",
     "language": "en"
    }
@@ -32788,6 +32929,53 @@
    }
   ]
  },
+ "raffles-grand-hotel-dangkor": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 481,
+  "quotes": [
+   {
+    "date": "2026-11-18",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "Fantastic- would go again",
+    "liked": "Flawless. Stunning. Amazing staff. Amazing pool. Good food. Good location.",
+    "disliked": "My room was quite small - but I guess that’s my fault for not getting a bigger room hehe. I wish I had but it was still great.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "A Beautiful Hotel, but the Room Experience Fell Short",
+    "liked": "Raffles Siem Reap is undoubtedly a beautiful hotel, with plenty of charm and character. Breakfast was a highlight. The food was great, and the breakfast team was welcoming and attentive.",
+    "disliked": "Raffles Siem Reap is undoubtedly a beautiful hotel, with plenty of charm and character. However, having also stayed at Raffles Phnom Penh, I found the overall experience in Siem Reap noticeably less impressive. By comparison, I felt that almost every aspect of the experience in Phnom Penh was better executed. The biggest disappointment was the condition of the room. When we first entered, we encountered a rather larg…",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-10",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "The Grande Dame of Siem Reap: A Love Letter to Raffles Grand Hotel d’Angkor",
+    "liked": "There are hotels where you merely sleep, and then there are legendary sanctuaries that rewrite the entire fabric of your journey. For years, staying at the Raffles Grand Hotel d’Angkor sat at the absolute top of my travel bucket list. It was a non-negotiable dream, one that ultimately demanded we rearrange our entire itinerary just to cross its historic threshold. Standing before this magnificent Grande Dame, watchin…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-03",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Fantastic Place, great hospitality. Lot‘s of taste and charme. Huge pool and most important exceptional team. Would come back any time",
+    "disliked": "Food and Restaurant are very good but very expensive….by local standards they are not from this world.",
+    "language": "en"
+   }
+  ]
+ },
  "raffles-jakarta": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -35573,6 +35761,53 @@
     "travellerType": "family with children",
     "headline": "",
     "liked": "All the staffs are incredible and extremely helpful. We stayed in Rosewood for 3nights and celebrated CNY in Nagi restaurant. I've communicated with the team several times about the customized menu, thanks for being patient and made the celebration dinner delightful. The location is outstanding and quiet, we just hope that next time when we come back, the weather will be better otherwise it's too cold and windy to ge…",
+    "disliked": "",
+    "language": "en"
+   }
+  ]
+ },
+ "rosewood-munich": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 280,
+  "quotes": [
+   {
+    "date": "2026-11-05",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "All round excellent hotel. Attention to detail, food, facilities and service all at the highest standards of excellence.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-04",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "Good city stay hotel",
+    "liked": "Location is good. Interior of the room is beautiful and comfortable. Spa is nice and cosy. It's very convenient for a city stay.",
+    "disliked": "The staff could be more friendly and helpful. For example help to carry luggage, check in and checkout, breakfast process to get a table and so on... all could be really a bit more friendly and welcoming, specially towards international guests. We had issue every time we had any interaction with the staff. Value for money is also not good. There are better serviced hotels in this area with lower price tag. The view f…",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-26",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "The best hotel I’ve stayed in!",
+    "liked": "Very wow, our room felt less like a hotel and more like staying in the beautiful home of an exceptionally wealthy friend. Everything was gorgeous, thoughtfully considered and of the highest quality. The suite included a separate dressing area, so there was lots space for all our belongings, which meant we weren’t tripping over suitcases or living out of bags. The bed was incredibly comfortable, we had the suite and o…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-24",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "The building and rooms are beautiful. The spa and the pool were also exceptional. Everybody that we interacted with were nice. The hotel is a bit of maze so be prepared to pay attention to the elevators. Highly recommend.",
     "disliked": "",
     "language": "en"
    }
@@ -47647,6 +47882,53 @@
     "headline": "Exceptional",
     "liked": "A timeless Medieval Castle shut away from the world in the natural beauty of the Adelaide Hills. Filled with antiques collected from around the world, the Manor is just perfect - from fine details such as the wooden archway window shutters painted with heraldry to carvings in the stone, wooden balconies, beautifully curated gardens and a huge stone fireplace (with plenty of firewood). There are just too many to menti…",
     "disliked": "Please see above. There isn't a single thing we didn't love. Oh, it was Winter, but that wasn't really Thorngrove's fault. It was perfect.",
+    "language": "en"
+   }
+  ]
+ },
+ "thyme": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 184,
+  "quotes": [
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Friendly, wecolming, cosy, peaceful holiday.",
+    "liked": "Lovely, cosy cottage. Ideal location close to Robin Hoods Bay and Whitby. Dog friendly, lovely welcoming hosts. Would definitely recommend it. We will definitely be returning for a future holiday.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-11",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Brilliant cottage, service and location",
+    "liked": "Great location, parking, space for dogs, log burner, WiFi, cleanliness and considerate touches.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-26",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Cosy and comfortable.",
+    "liked": "This was our 3rd visit to Thyme Cottage. We take a short break here because it suits our needs of a comfortable small room with everything we need to relax with our dog Jack. The hosts Robert and Debby are the best and look after us very well without \"being there\" if you know what I mean. We have a very relaxing break with great walks on beaches and in forests nearby and of course Whitby which there's a great view of…",
+    "disliked": "Nothing we didn't like.",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-13",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "There was nothing not to like. The place is lovely and cosy. Great views.",
+    "disliked": "Nothing",
     "language": "en"
    }
   ]
