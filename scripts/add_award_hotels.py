@@ -390,7 +390,24 @@ def run_editorial(props: dict[str, dict[str, Any]], only: set[str] | None, missi
 
 
 # --------------------------------------------------------------------------- coordinates (OpenStreetMap)
-_CITY_CACHE: dict[str, tuple[float, float] | None] = {}
+_TOWN_FILE = Path(__file__).resolve().parent.parent / "data" / "town-points.json"
+try:  # town centres already looked up on earlier runs (OpenStreetMap allows ~1 lookup a second)
+    _CITY_CACHE: dict[str, tuple[float, float] | None] = {
+        k: (tuple(v) if v else None) for k, v in json.loads(_TOWN_FILE.read_text(encoding="utf-8")).items()
+    }
+except Exception:
+    _CITY_CACHE = {}
+_CITY_NEW = False
+
+
+def _save_towns() -> None:
+    if _CITY_NEW:
+        _TOWN_FILE.write_text(json.dumps({k: v for k, v in sorted(_CITY_CACHE.items()) if v}, indent=0, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+import atexit  # noqa: E402
+
+atexit.register(_save_towns)
 NOMINATIM_UA = {"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; map pins for hotel directory)"}
 
 
@@ -425,7 +442,9 @@ def city_point(city: str, country: str) -> tuple[float, float] | None:
             break
         if pt:
             break
+    global _CITY_NEW
     _CITY_CACHE[q] = pt
+    _CITY_NEW = True
     return pt
 
 
@@ -488,7 +507,7 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
     iso = {t[0]: t[4].lower() for t in list(AWARD_HOTEL_ADDITIONS) + list(MICHELIN_HOTEL_ADDITIONS) + list(CRITIC_HOTEL_ADDITIONS)}
     addr_path = ROOT / "data" / "hotel-addresses.json"
     addresses = json.loads(addr_path.read_text(encoding="utf-8")).get("hotels", {}) if addr_path.exists() else {}
-    rows = sb_all("properties", "id,name,city,country,lat,lng")
+    rows = sb_all("properties", "id,name,city,country,lat,lng,google_place_id")
     missing = [
         r for r in rows
         if (not only or r["id"] in only)
@@ -588,6 +607,24 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
                 res = []
             if res:
                 found = (float(res[0]["lat"]), float(res[0]["lon"]), f"address: {a['address'][:70]}")
+        if not found and r.get("google_place_id") and os.environ.get("GOOGLE_PLACES_API_KEY"):
+            # the hotel's own Google Maps listing (already matched to this hotel by place id); name must still match
+            try:
+                req = urllib.request.Request(
+                    f"https://places.googleapis.com/v1/places/{urllib.parse.quote(r['google_place_id'])}",
+                    headers={"X-Goog-Api-Key": os.environ["GOOGLE_PLACES_API_KEY"],
+                             "X-Goog-FieldMask": "displayName,location", "Accept-Language": "en"})
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    gp = json.loads(resp.read().decode("utf-8"))
+                gname = (gp.get("displayName") or {}).get("text", "")
+                loc = gp.get("location") or {}
+                if loc and name_ok(r["name"], gname):
+                    pt = (float(loc["latitude"]), float(loc["longitude"]))
+                    cp = city_point(r.get("city") or "", r.get("country") or "")
+                    if not cp or km_between(pt, cp) <= 60:
+                        found = (pt[0], pt[1], f"Google Maps listing: {gname}")
+            except Exception as e:  # noqa: BLE001
+                print(f"  google listing lookup failed for {r['id']}: {e}")
         if found:
             patch = {"lat": found[0], "lng": found[1]}
             if a and a.get("city"):
