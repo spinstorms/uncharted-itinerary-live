@@ -24,7 +24,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from add_award_hotels import http_get, sb, sb_all  # noqa: E402
-from complete_hotels import BRANDW, PLACEHOLDER, has_coords, words  # noqa: E402
+from complete_hotels import BRANDW, has_coords, needs_photo, words  # noqa: E402
 
 UA = {"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; hotel directory photo credits)"}
 WP = "https://en.wikipedia.org/w/api.php"
@@ -105,7 +105,7 @@ def main() -> int:
     todo = [
         p for p in props
         if not p.get("visited_by_founder")
-        and (not has_coords(p) or not p.get("hero_image_url") or PLACEHOLDER in str(p.get("hero_image_url")))
+        and (not has_coords(p) or needs_photo(p.get("hero_image_url")))
     ]
     print(f"Wikipedia / Commons: {len(todo)} properties missing a photo or pin")
     photos = pins = 0
@@ -119,7 +119,7 @@ def main() -> int:
             c = pg["coordinates"][0]
             patch.update({"lat": float(c["lat"]), "lng": float(c["lon"])})
             pins += 1
-        if not p.get("hero_image_url") or PLACEHOLDER in str(p.get("hero_image_url")):
+        if needs_photo(p.get("hero_image_url")):
             img = commons_image(pg.get("pageimage", ""))
             if img and img[0]:
                 url, lic, artist, page = img

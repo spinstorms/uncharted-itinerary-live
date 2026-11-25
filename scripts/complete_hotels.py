@@ -34,6 +34,24 @@ from enrich_missing_hotels import COUNTRY_TO_ISO2, strip_accents  # noqa: E402
 from sync_250_hotels import extract_key_facts_from_nuitee, nuitee_get  # noqa: E402
 
 PLACEHOLDER = "placeholders/default-stayodds"
+# hosts that refuse hot-linking; the site build treats these as "no photo"
+BLOCKED_IMG = ("www.fourseasons.com", "www.lungarnocollection.com")
+
+
+def needs_photo(url: Any) -> bool:
+    u = str(url or "")
+    return not u or PLACEHOLDER in u or any(b in u for b in BLOCKED_IMG)
+
+
+def pick_photo(d: dict[str, Any]) -> str:
+    urls = [str(d.get("main_photo") or "")]
+    for im in d.get("hotelImages") or []:
+        if isinstance(im, dict):
+            urls += [str(im.get("urlHd") or ""), str(im.get("url") or "")]
+    for u in urls:
+        if u.startswith("http") and not any(b in u for b in BLOCKED_IMG):
+            return u
+    return ""
 STOP = {
     "the", "hotel", "hotels", "resort", "resorts", "spa", "a", "an", "and", "at", "in", "of", "by", "de", "di", "du",
     "la", "le", "el", "les", "collection", "luxury", "residences", "auberge", "belmond", "dorchester", "firmdale",
@@ -171,7 +189,7 @@ def main() -> int:
             return False
         f = facts.get(p["id"]) or {}
         return (
-            not p.get("hero_image_url") or PLACEHOLDER in str(p.get("hero_image_url"))
+            needs_photo(p.get("hero_image_url"))
             or not has_coords(p) or p["id"] not in guest
             or not (f.get("standout") or "").strip() or not (f.get("watch_out") or "").strip()
         )
@@ -192,11 +210,8 @@ def main() -> int:
         if not d:
             continue
         patch: dict[str, Any] = {}
-        if not p.get("hero_image_url") or PLACEHOLDER in str(p.get("hero_image_url")):
-            photo = str(d.get("main_photo") or "").strip()
-            if not photo:
-                imgs = d.get("hotelImages") or []
-                photo = str((imgs[0] or {}).get("url") or "").strip() if imgs and isinstance(imgs[0], dict) else ""
+        if needs_photo(p.get("hero_image_url")):
+            photo = pick_photo(d)
             if photo:
                 patch.update({"hero_image_url": photo, "image_license_source": "nuitee_connect"})
                 stats["photo"] += 1
@@ -259,7 +274,7 @@ def main() -> int:
         "Coverage now: "
         f"LiteAPI ids {sum(1 for p in after if p.get('nuitee_hotel_id'))}/{len(after)}, "
         f"pins {sum(1 for p in after if has_coords(p))}/{len(after)}, "
-        f"real photos {sum(1 for p in after if p.get('hero_image_url') and PLACEHOLDER not in str(p['hero_image_url']))}/{len(after)}"
+        f"real photos {sum(1 for p in after if not needs_photo(p.get('hero_image_url')))}/{len(after)}"
     )
     return 0
 
