@@ -98,6 +98,7 @@ def _load_json(name: str) -> dict[str, Any]:
 
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 ALTERNATIVES: dict[str, list[dict[str, Any]]] = {}  # better-rated hotels nearby (build_insights.better_alternatives)
+from water_rules import summarise as water_summary  # noqa: E402
 DINING = _load_json("hotel-dining.json")  # restaurants at the hotel, MICHELIN Guide (scripts/michelin_dining.py)
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
@@ -3092,7 +3093,7 @@ def main() -> None:
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],
             "guestQuotes": None if pid in wrong_lite else GUEST_QUOTES.get(pid),
-            "water": None if pid in wrong_lite else (GUEST_QUOTES.get(pid) or {}).get("water"),
+            "water": None if pid in wrong_lite else water_summary((GUEST_QUOTES.get(pid) or {}).get("waterMentions")),
             "dining": [r for r in ((DINING.get(pid) or {}).get("restaurants") or []) if r.get("distinction") != "MICHELIN Guide selected"][:3] or None,
             "communityMentions": COMMUNITY.get(pid) or [],
             "tripadvisor": TRIPADVISOR.get(pid),
