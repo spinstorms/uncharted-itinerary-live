@@ -1013,6 +1013,24 @@
       "source": "commons",
       "license_source": "wikimedia|CC BY-SA 4.0|Alessandra Brunhildmedia|https://commons.wikimedia.org/wiki/File:Sunset_in_the_Amanyara_Resort.jpg",
       "note": "File:Sunset in the Amanyara Resort.jpg"
+    },
+    "amanzoe-greece": {
+      "url": "https://www.aman.com/sites/default/files/2023-08/amanzoe_greece_-_porto_heli_exterior.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/amanzoe",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-tokyo": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/Aman-Tokyo_Wellness_1.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/hotels/aman-tokyo",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "aman-kyoto": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/Aman-Kyoto_Homepage_1.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/aman-kyoto",
+      "note": "hotel's official website (checked by eye)"
     }
   }
 }

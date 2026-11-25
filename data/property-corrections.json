@@ -40,16 +40,10 @@
       "name": "Four Seasons Resort Puerto Rico",
       "brand": "Four Seasons"
     },
-    "aman-kyoto": {
-      "hero_image_url": ""
-    },
     "aman-nai-lert-bangkok": {
       "hero_image_url": ""
     },
     "aman-new-york": {
-      "hero_image_url": ""
-    },
-    "aman-tokyo": {
       "hero_image_url": ""
     },
     "amandari-ubud": {
@@ -59,9 +53,6 @@
       "hero_image_url": ""
     },
     "amanpuri-phuket": {
-      "hero_image_url": ""
-    },
-    "amanzoe-greece": {
       "hero_image_url": ""
     },
     "bulgari-hotel-tokyo": {
