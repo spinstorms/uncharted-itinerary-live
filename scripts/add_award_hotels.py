@@ -401,18 +401,30 @@ def city_point(city: str, country: str) -> tuple[float, float] | None:
         return None
     if q in _CITY_CACHE:
         return _CITY_CACHE[q]
-    code, body = http_get(
-        "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode({"q": q, "format": "jsonv2", "limit": "1", "accept-language": "en"}),
-        headers=NOMINATIM_UA,
-    )
-    time.sleep(1.1)
+    # only accept a real town/city/region result in the hotel's country; vague or ambiguous names give no point
     pt = None
-    try:
-        res = json.loads(body) if code == 200 else []
-        if res:
-            pt = (float(res[0]["lat"]), float(res[0]["lon"]))
-    except Exception:
-        pt = None
+    for extra in ({"featureType": "settlement"}, {}):
+        code, body = http_get(
+            "https://nominatim.openstreetmap.org/search?"
+            + urllib.parse.urlencode({"q": q, "format": "jsonv2", "limit": "3", "accept-language": "en", "addressdetails": "1", **extra}),
+            headers=NOMINATIM_UA,
+        )
+        time.sleep(1.1)
+        try:
+            res = json.loads(body) if code == 200 else []
+        except Exception:
+            res = []
+        want_country = str(country or "").strip().lower()
+        for r0 in res:
+            ctry = str((r0.get("address") or {}).get("country") or "").lower()
+            if want_country and ctry and want_country not in ctry and ctry not in want_country:
+                continue
+            if r0.get("category") in ("natural", "waterway") or r0.get("addresstype") in ("ocean", "sea", "reef", "water"):
+                continue
+            pt = (float(r0["lat"]), float(r0["lon"]))
+            break
+        if pt:
+            break
     _CITY_CACHE[q] = pt
     return pt
 

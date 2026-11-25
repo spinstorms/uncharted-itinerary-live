@@ -220,7 +220,7 @@ def main() -> int:
         if not has_coords(p) and isinstance(loc.get("latitude"), (int, float)) and isinstance(loc.get("longitude"), (int, float)):
             pt = (float(loc["latitude"]), float(loc["longitude"]))
             cp = city_point(p.get("city") or "", p.get("country") or "")
-            if cp and km_between(pt, cp) > 60 and not name_ok(p["name"], str(d.get("name") or "")):
+            if cp and km_between(pt, cp) > 60 and not name_ok(p["name"], str(d.get("name") or "")) and similarity(words(p["name"]), words(str(d.get("name") or ""))) < 0.6:
                 # the LiteAPI record is not this hotel: no pin from it, and no live prices from it either
                 far[p["id"]] = f"far_from_town: LiteAPI hotel '{d.get('name')}' is {km_between(pt, cp):.0f} km from {p.get('city')}"
                 print(f"  wrong LiteAPI record for {p['id']}: {far[p['id']]}")

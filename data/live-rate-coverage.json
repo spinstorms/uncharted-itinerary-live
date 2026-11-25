@@ -102,7 +102,6 @@
   },
   "blockLiveRates": {
     "chateau-du-grand-luce": "id_mismatch: LiteAPI id is 'Chateau du Grand Lucay', 242.7 km away",
-    "chileno-bay-auberge-cabo": "far_from_town: LiteAPI hotel 'Chileno Bay Resort & Residences, Auberge Collection' is 935 km from Los Cabos",
     "hotel-de-la-ville-a-rocco-forte-hotel": "far_from_town: LiteAPI hotel 'Grand Hotel de la Ville' is 212 km from Rome",
     "hotel-du-cap-eden-roc": "id_mismatch: LiteAPI id is 'Grand-Hôtel du Cap-Ferrat, A Four Seasons Hotel', 22.3 km away",
     "hotel-du-couvent-nice": "id_mismatch: LiteAPI id is 'L'hôtel du Couvent', 243.8 km away",

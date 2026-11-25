@@ -321,6 +321,18 @@
    "lat": 17.449930783448064,
    "lng": -101.25022872373403,
    "source": "https://www.the50.com/discovery/Establishments/Mexico/Juluchuca/Playa-Viva.html"
+  },
+  "hotel-de-la-ville-a-rocco-forte-hotel": {
+   "address": "Via Sistina 69, Rome, Italy",
+   "lat": 41.90591,
+   "lng": 12.48372,
+   "source": "https://guide.michelin.com/en/hotels-stays/rome/rocco-forte-hotel-de-la-ville-12402"
+  },
+  "chileno-bay-auberge-cabo": {
+   "address": "Carretera Transpeninsular San José-San Lucas Km 15, Playa Chileno Bay, Los Cabos, Mexico",
+   "lat": 22.947432,
+   "lng": -109.808516,
+   "source": "https://guide.michelin.com/en/hotels-stays/los-cabos/chileno-bay-resort-residences-8951"
   }
  }
 }
