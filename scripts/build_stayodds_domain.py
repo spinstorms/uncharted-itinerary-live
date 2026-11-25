@@ -40,15 +40,27 @@ STAYODDS_GA4_SNIPPET = f"""  <!-- Google tag (gtag.js) — StayOdds.com -->
     gtag('config', '{STAYODDS_GA4_ID}');
   </script>"""
 
-STAYODDS_DRIVE_SNIPPET = """  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+# Travelpayouts project whose Drive script runs on every stayodds.com page (name -> (script code, project id)).
+# Booking.com, Trip.com, Agoda, Expedia, Viator and GetYourGuide are only approved for the "live" project; the
+# "stayodds" project was declined for traffic, so Drive earns nothing from those programs under its own code.
+# To go back to the stayodds project's own code, set TP_DRIVE_PROJECT = "stayodds".
+TP_PROJECTS = {
+    "live": ("NjA0NzQ3", 604747),
+    "stayodds": ("NjA2MTYz", 606163),
+}
+TP_DRIVE_PROJECT = "live"
+
+_DRIVE_TEMPLATE = """  <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
     (function () {
         var script = document.createElement("script");
         script.async = 1;
         script.setAttribute("data-cmp-ab","2");
-        script.src = 'https://emrld.ltd/NjA2MTYz.js?t=606163';
+        script.src = 'https://emrld.ltd/__CODE__.js?t=__ID__';
         document.head.appendChild(script);
     })();
   </script>"""
+_TP_CODE, _TP_ID = TP_PROJECTS[TP_DRIVE_PROJECT]
+STAYODDS_DRIVE_SNIPPET = _DRIVE_TEMPLATE.replace("__CODE__", _TP_CODE).replace("__ID__", str(_TP_ID))
 
 EMRLD_SCRIPT_RE = re.compile(
     r'<script\b[^>]*>(?:(?!</script>)[\s\S])*?emrld\.ltd/(?:(?!</script>)[\s\S])*?</script>',
@@ -116,7 +128,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     if page_kind == "destination":
         html = re.sub(r'href="\.\./([a-z0-9-]+)/"', r'href="/destinations/\1/"', html)
 
-    # 5. Swap Travelpayouts Drive/Emerald script to StayOdds.com project (NjA2MTYz.js?t=606163)
+    # 5. Swap Travelpayouts Drive/Emerald script to the project chosen by TP_DRIVE_PROJECT (the approved "live" one)
     if EMRLD_SCRIPT_RE.search(html):
         html = EMRLD_SCRIPT_RE.sub(STAYODDS_DRIVE_SNIPPET.strip(), html, count=1)
     elif "</head>" in html:
@@ -420,7 +432,7 @@ def main() -> None:
         f"  Hotel SEO pages: {hotel_count} -> /stayodds/<slug>/\n"
         f"  Destination guides: {len(dest_slugs)} -> /destinations/<slug>/\n"
         f"  Sitemap URLs: {len(urls)} -> /sitemap.xml\n"
-        f"  Tracking: GA4 {STAYODDS_GA4_ID} + Travelpayouts Drive NjA2MTYz + AdSense"
+        f"  Tracking: GA4 {STAYODDS_GA4_ID} + Travelpayouts Drive {_TP_CODE} (project {_TP_ID}) + AdSense"
     )
 
 
