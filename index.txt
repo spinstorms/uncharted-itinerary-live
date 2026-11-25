@@ -1,0 +1,2 @@
+https://www.americanexpress.com/en-us/travel/discover/property-results/ab/0 -> HTTP 403, 448 bytes
+https://www.americanexpress.com/en-us/travel/discover/hotel-finder -> HTTP 403, 431 bytes
