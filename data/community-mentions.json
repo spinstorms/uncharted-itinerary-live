@@ -1,6 +1,33 @@
 {
  "note": "Links found by search and checked by hand: forum threads and independent reviews. Titles as published.",
  "hotels": {
+  "aman-nai-lert-bangkok": [
+   {
+    "site": "One Mile at a Time",
+    "title": "Review: Aman Bangkok, Thailand (One Of The World's Best City Hotels)",
+    "url": "https://onemileatatime.com/reviews/aman-bangkok/"
+   },
+   {
+    "site": "AFAR",
+    "title": "Inside Bangkok's Most Anticipated Luxury Hotel Opening of the Year",
+    "url": "https://www.afar.com/hotels/in-depth-review-of-aman-nai-lert-in-bangkok"
+   },
+   {
+    "site": "The National",
+    "title": "Aman Nai Lert Bangkok review",
+    "url": "https://www.thenationalnews.com/travel/2026/10/16/aman-nai-lert-bangkok-review/"
+   },
+   {
+    "site": "Spear's",
+    "title": "Aman Nai Lert hotel review, Bangkok",
+    "url": "https://spearswms.com/luxury/aman-nai-lert-hotel-review-bangkok/"
+   },
+   {
+    "site": "TravelPulse",
+    "title": "The New Aman Nai Lert in Bangkok Connects, But Doesn't Hit it Out of The Park",
+    "url": "https://www.travelpulse.ca/news/hotels-and-resorts/the-new-aman-in-bangkok-nai-lert-connects-but-doesn-t-hit-it-out-of-the-park"
+   }
+  ],
   "aman-tokyo": [
    {
     "site": "FlyerTalk",
@@ -21,6 +48,23 @@
     "site": "NerdWallet",
     "title": "Hotel Review: Aman Tokyo",
     "url": "https://www.nerdwallet.com/travel/learn/aman-tokyo-review"
+   }
+  ],
+  "amangiri-utah": [
+   {
+    "site": "FlyerTalk",
+    "title": "Amangiri Trip Reports (combined threads)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1482798-amangiri-trip-reports-combined-threads-post30850838.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Mini trip report: Amangiri 4-night stay, April 2015",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-mini-trip-report-amangiri-4-night-stay-april-2015-1236"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Amangiri: final thoughts (forum post)",
+    "url": "https://www.flyertalk.com/forum/21053545-post6.html"
    }
   ],
   "atlantis-the-royal": [
@@ -48,6 +92,55 @@
     "site": "Elite Traveler",
     "title": "Atlantis The Royal Review: Still Dubai's Hottest New Opening",
     "url": "https://elitetraveler.com/travel/news/atlantis-the-royal-review"
+   }
+  ],
+  "badrutts-palace": [
+   {
+    "site": "FlyerTalk",
+    "title": "Badrutt's Palace St. Moritz – Trip Reports and Reviews (forum thread)",
+    "url": "https://www.flyertalk.com/forum/12026413-post1.html"
+   },
+   {
+    "site": "Country Life",
+    "title": "Badrutt's Palace Hotel review: the beating heart of St Moritz's jet-set social scene",
+    "url": "https://www.countrylife.co.uk/travel/worlds-finest-destinations/badrutts-palace-hotel-review-the-beating-heart-of-st-moritzs-jet-set-social-scene-has-never-put-a-foot-wrong"
+   },
+   {
+    "site": "Business Traveller",
+    "title": "Hotel review: Badrutt's Palace, St Moritz",
+    "url": "https://www.businesstraveller.com/tried-and-tested/hotel-review-badrutts-palace-st-moritz/"
+   },
+   {
+    "site": "Fodor's",
+    "title": "Fodor's Expert Review: Badrutt's Palace Hotel",
+    "url": "https://www.fodors.com/world/europe/switzerland/graubunden/hotels/reviews/badrutts-palace-hotel-419550"
+   },
+   {
+    "site": "Suitcase",
+    "title": "Badrutt's Palace, St Moritz, Switzerland",
+    "url": "https://suitcasemag.com/articles/badrutts-palace-st-moritz-switzerland"
+   }
+  ],
+  "bulgari-hotel-roma": [
+   {
+    "site": "One Mile at a Time",
+    "title": "Review: Bulgari Hotel Rome, Italy",
+    "url": "https://onemileatatime.com/reviews/bulgari-hotel-rome/"
+   },
+   {
+    "site": "The Week",
+    "title": "Bvlgari Hotel Roma: grandeur and high design in the Eternal City",
+    "url": "https://theweek.com/culture-life/travel/bvlgari-hotel-roma-grandeur-and-high-design-in-the-eternal-city"
+   },
+   {
+    "site": "Luxury Travel Diary",
+    "title": "Review: Bvlgari Hotel Roma",
+    "url": "https://www.luxurytraveldiary.com/2025/11/review-bvlgari-hotel-roma/"
+   },
+   {
+    "site": "Time Out",
+    "title": "Bulgari Hotel Roma",
+    "url": "https://www.timeout.com/rome/hotels/bulgari-hotel-roma"
    }
   ],
   "bulgari-hotel-tokyo": [
@@ -199,6 +292,23 @@
     "url": "https://www.thegentlemansjournal.com/article/claridges-hotel-review/"
    }
   ],
+  "copacabana-palace-belmond-rio": [
+   {
+    "site": "Qantas Travel Insider",
+    "title": "Hotel review: Belmond Copacabana Palace, Rio de Janeiro",
+    "url": "https://qantas.com/travelinsider/en/explore/south-america/brazil/rio-de-janeiro/hotel-review-belmond-copacabana-palace-rio-de-janeiro.html"
+   },
+   {
+    "site": "reisetopia",
+    "title": "Belmond Hotel Copacabana Palace review (German)",
+    "url": "https://reisetopia.de/reviews/belmond-hotel-copacabana-palace/"
+   },
+   {
+    "site": "Smartflyer",
+    "title": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
+    "url": "https://smartflyer.com/review/copacabana-palace-a-belmond-hotel-rio-de-janeiro/"
+   }
+  ],
   "desa-potato-head-bali": [
    {
     "site": "Time Out",
@@ -209,6 +319,28 @@
     "site": "Cathay Pacific",
     "title": "Stay here: Potato Head Studios, Bali review",
     "url": "https://www.cathaypacific.com/cx/en_AU/inspiration/holidays/potato-head-studios-bali.html"
+   }
+  ],
+  "estelle-manor-oxfordshire": [
+   {
+    "site": "Country Life",
+    "title": "Estelle Manor review: the Oxfordshire hotel and private members' club",
+    "url": "https://www.countrylife.co.uk/travel/estelle-manor-review-the-oxfordshire-hotel-and-private-members-club-that-will-appeal-to-honeymooners-and-families-alike-266566"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "Inside Estelle Manor, Oxfordshire's Most Exclusive Hotel",
+    "url": "https://www.countryandtownhouse.com/travel/estelle-manor-review"
+   },
+   {
+    "site": "Wallpaper*",
+    "title": "Estelle Manor is a chic take on the hotel and country club",
+    "url": "https://wallpaper.com/travel/hotels/estelle-manor-hotel-and-country-club-uk"
+   },
+   {
+    "site": "ROADBOOK",
+    "title": "Estelle Manor, the Cotswolds review",
+    "url": "https://roadbook.com/travel/estelle-manor-hotel-review-the-cotswolds/"
    }
   ],
   "four-seasons-astir-palace-athens": [
@@ -297,6 +429,116 @@
     "site": "Wallpaper*",
     "title": "Hôtel de Crillon Paris review",
     "url": "https://www.wallpaper.com/travel/hotels/hotel-de-crillon-paris-review"
+   }
+  ],
+  "hotel-de-paris-monte-carlo": [
+   {
+    "site": "The Week",
+    "title": "Hôtel de Paris Monte-Carlo review: the royal touch",
+    "url": "https://theweek.com/101811/the-royal-touch-at-the-h-tel-de-paris-monte-carlo"
+   },
+   {
+    "site": "Luxury Travel Diary",
+    "title": "Review: Hôtel de Paris Monte-Carlo",
+    "url": "https://www.luxurytraveldiary.com/2025/09/review-hotel-de-paris-monte-carlo/"
+   },
+   {
+    "site": "Global Traveler",
+    "title": "Hôtel de Paris Monte-Carlo review",
+    "url": "https://globaltravelerusa.com/hotel-de-paris-monte-carlo-review"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Hotel de Paris in Monte Carlo – any tips? (forum thread)",
+    "url": "https://www.flyertalk.com/forum/3961681-post3.html"
+   }
+  ],
+  "hotel-du-cap-eden-roc": [
+   {
+    "site": "Country Life",
+    "title": "Hotel du Cap-Eden-Roc review: Is this the world's best, most famous and photographed hotel?",
+    "url": "https://www.countrylife.co.uk/travel/amazing-places-stay-hotel-du-cap-eden-roc-68447"
+   },
+   {
+    "site": "Business Traveller",
+    "title": "Hotel review: Hotel du Cap-Eden-Roc, French Riviera",
+    "url": "https://www.businesstraveller.com/tried-and-tested/hotel-review-hotel-du-cap-eden-roc-french-riviera/"
+   },
+   {
+    "site": "Spear's",
+    "title": "Review: Hotel du Cap-Eden-Roc, Antibes",
+    "url": "https://spearswms.com/wealth/review-hotel-du-cap-eden-roc-antibes/"
+   },
+   {
+    "site": "Tatler Asia",
+    "title": "The Grand Dame of the French Riviera: Hotel du Cap-Eden-Roc",
+    "url": "https://www.tatlerasia.com/lifestyle/travel/hotel-review-hotel-du-cap-eden-roc-on-the-french-riviera"
+   }
+  ],
+  "hotel-du-couvent-nice": [
+   {
+    "site": "Country & Town House",
+    "title": "Praise Be: Nice's Hotel Du Couvent Offers Deep-Rooted, Mindful Hospitality",
+    "url": "https://www.countryandtownhouse.com/travel/hotel-du-couvent-nice-review/"
+   },
+   {
+    "site": "The Week",
+    "title": "Hôtel du Couvent: a tranquil hideaway in the French Riviera",
+    "url": "https://theweek.com/uk/culture-life/travel/hotel-du-couvent-a-tranquil-hideaway-in-the-french-riviera"
+   },
+   {
+    "site": "Gault&Millau",
+    "title": "Hôtel du Couvent",
+    "url": "https://fr.gaultmillau.com/en/hotels/hotel-du-couvent"
+   },
+   {
+    "site": "Smartflyer",
+    "title": "Hôtel du Couvent, A Luxury Collection Hotel",
+    "url": "https://smartflyer.com/review/hotel-du-couvent-a-luxury-collection-hotel/"
+   }
+  ],
+  "hotel-plaza-athenee-paris": [
+   {
+    "site": "FlyerTalk",
+    "title": "Plaza Athénée, Paris (hotel reviews)",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-plaza-athenee-paris-359"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Paris luxury hotels consolidated thread",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/813377-paris-luxury-hotels-consolidated-thread.html"
+   },
+   {
+    "site": "Business Traveller",
+    "title": "Hotel review: Hôtel Plaza Athénée Paris – a palace icon with an Eiffel Tower view",
+    "url": "https://www.businesstraveller.com/tried-tested/hotel-review-hotel-plaza-athenee-paris-a-palace-icon-with-an-eiffel-tower-view/"
+   },
+   {
+    "site": "Country Life",
+    "title": "Hôtel Plaza Athénée review: Where dedicated followers of fashion stay",
+    "url": "https://www.countrylife.co.uk/travel/hotel-plaza-athenee-review-where-dedicated-followers-of-fashion-stay-263840"
+   },
+   {
+    "site": "Hello!",
+    "title": "Plaza Athénée Paris hotel review",
+    "url": "https://www.hellomagazine.com/travel/499482/plaza-athenee-paris-hotel-review"
+   }
+  ],
+  "hotel-sacher-vienna": [
+   {
+    "site": "FlyerTalk",
+    "title": "Hotel Sacher Wien hotel review: Junior Suite",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-hotel-sacher-wien-vienna-4130"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Sacher Vienna vs. other options (forum thread)",
+    "url": "https://www.flyertalk.com/forum/33591172-post1.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Five luxury hotels in Vienna (forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1908219-five-luxury-hotels-vienna-post29730497.html"
    }
   ],
   "jumeirah-marsa-al-arab-dubai": [
@@ -409,6 +651,72 @@
     "url": "https://www.countryandtownhouse.com/travel/mandarin-oriental-qianmen-beijing-review/"
    }
   ],
+  "maroma-belmond-riviera-maya": [
+   {
+    "site": "FlyerTalk",
+    "title": "Belmond Maroma is best on Mexico's Caribbean Riviera (forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1818208-belmond-maroma-best-mexico-s-caribbean-riviera.html"
+   },
+   {
+    "site": "The Luxury Travel Expert",
+    "title": "Review: Maroma, a Belmond Hotel, Riviera Maya",
+    "url": "https://theluxurytravelexpert.com/review-belmond-maroma-riviera-maya"
+   },
+   {
+    "site": "Fathom",
+    "title": "Hotels We Love: Maroma, A Belmond Hotel",
+    "url": "https://fathomaway.com/maroma-belmond-resort-hotel-review-riviera-maya-mexico/"
+   },
+   {
+    "site": "Ciao Bambino",
+    "title": "Belmond Maroma family-friendly review",
+    "url": "https://ciaobambino.com/belmond-maroma-family-friendly-review"
+   }
+  ],
+  "mount-nelson-belmond-cape-town": [
+   {
+    "site": "FlyerTalk",
+    "title": "One&Only Cape Town vs. Belmond Mount Nelson? (forum thread)",
+    "url": "https://www.flyertalk.com/forum/31258215-post1.html"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Belmond Mount Nelson Cape Town review",
+    "url": "https://thepointsguy.com/reviews/belmond-mount-nelson-cape-town"
+   },
+   {
+    "site": "Traveller",
+    "title": "Belmond Mount Nelson Hotel review: A heritage oasis in the heart of town",
+    "url": "https://www.traveller.com.au/belmond-mount-nelson-hotel-review-cape-town-south-africa-a-heritage-oasis-in-the-heart-of-town-h16e69"
+   },
+   {
+    "site": "Smartflyer",
+    "title": "Mount Nelson, A Belmond Hotel, Cape Town",
+    "url": "https://smartflyer.com/review/belmond-mount-nelson-hotel/"
+   }
+  ],
+  "nihi-sumba": [
+   {
+    "site": "Boss Hunting",
+    "title": "NIHI Sumba review",
+    "url": "https://bosshunting.com.au/travel/stay/nihi-sumba-review"
+   },
+   {
+    "site": "Luxury Travel Diary",
+    "title": "Review: NIHI Sumba",
+    "url": "https://www.luxurytraveldiary.com/2025/03/review-nihi-sumba/"
+   },
+   {
+    "site": "Country Life",
+    "title": "Inside the extraordinary hotel that put a remote Indonesian island on the map",
+    "url": "https://countrylife.co.uk/travel/nihi-sumba-review-check-in-to-the-hotel-that-helped-put-a-remote-indonesian-island-firmly-on-the-map-266102"
+   },
+   {
+    "site": "Ciao Bambino",
+    "title": "NIHI Sumba review",
+    "url": "https://ciaobambino.com/nihi-sumba-review"
+   }
+  ],
   "one-and-only-mandarina": [
    {
     "site": "FlyerTalk",
@@ -429,6 +737,23 @@
     "site": "Petit Passeport",
     "title": "Know Before You Go: One&Only Mandarina",
     "url": "https://petitpasseport.squarespace.com/insights/know-before-you-go-review-one-and-only-mandarina"
+   }
+  ],
+  "park-hyatt-kyoto": [
+   {
+    "site": "FlyerTalk",
+    "title": "Park Hyatt Kyoto REVIEW – MASTER THREAD",
+    "url": "https://www.flyertalk.com/forum/hyatt-world-hyatt/1801359-park-hyatt-kyoto-review-master-thread-66.html"
+   },
+   {
+    "site": "One Mile at a Time",
+    "title": "Review: Park Hyatt Kyoto, Japan",
+    "url": "https://onemileatatime.com/park-hyatt-kyoto/"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Park Hyatt Kyoto review",
+    "url": "https://thepointsguy.com/reviews/park-hyatt-kyoto/"
    }
   ],
   "passalacqua-lake-como": [
@@ -456,6 +781,50 @@
     "site": "Fora Travel",
     "title": "Passalacqua Lake Como Hotel: Review of the Iconic Luxury Stay",
     "url": "https://www.foratravel.com/trip-reports/9L8VWN/passalacqua-lake-como-hotel-review-of-the-iconic-luxury-stay-on-lake-como-eva-szoradi"
+   }
+  ],
+  "patina-osaka": [
+   {
+    "site": "One Mile at a Time",
+    "title": "Patina Osaka Review: Beautiful Design, Excellent Dining, And A Highway Noise Problem",
+    "url": "https://onemileatatime.com/reviews/patina-osaka/"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Patina Osaka review",
+    "url": "https://thepointsguy.com/reviews/patina-osaka-review/"
+   },
+   {
+    "site": "Wallpaper*",
+    "title": "Stay at Patina Osaka for a dose of 'transformative luxury'",
+    "url": "https://www.wallpaper.com/travel/hotels/patina-osaka-review"
+   },
+   {
+    "site": "Mr & Mrs Smith",
+    "title": "Patina Osaka",
+    "url": "https://www.mrandmrssmith.com/luxury-hotels/patina-osaka"
+   }
+  ],
+  "portrait-milano": [
+   {
+    "site": "Mr & Mrs Smith",
+    "title": "The review: Portrait Milano",
+    "url": "https://www.mrandmrssmith.com/editorial/travel-guides/the-review-portrait-milano"
+   },
+   {
+    "site": "Fathom",
+    "title": "Checking In and Checking Out: Portrait Milano",
+    "url": "https://fathomaway.com/portrait-milano-hotel-review-milan-italy/"
+   },
+   {
+    "site": "Marie Claire UK",
+    "title": "Portrait Milano hotel review",
+    "url": "https://www.marieclaire.co.uk/life/travel/portrait-milano-hotel-review"
+   },
+   {
+    "site": "The National",
+    "title": "Portrait Milano is a go-to address for the fashion and design worlds",
+    "url": "https://www.thenationalnews.com/weekend/2023/11/10/portrait-milano-is-a-go-to-address-for-the-fashion-and-design-worlds-hotel-insider"
    }
   ],
   "raffles-london-owo": [
@@ -573,6 +942,28 @@
     "url": "https://www.luxurytravelmagazine.com/news-articles/luxury-travel-luxury-hotel-review-the-royal-mansour-marrakech-morocco"
    }
   ],
+  "san-domenico-palace-taormina": [
+   {
+    "site": "The Luxury Travel Expert",
+    "title": "Review: San Domenico Palace, Taormina, a Four Seasons Hotel",
+    "url": "https://theluxurytravelexpert.com/review-san-domenico-palace-four-seasons-taormina"
+   },
+   {
+    "site": "Luxury Travel Diary",
+    "title": "Review: San Domenico Palace, Taormina, A Four Seasons Hotel",
+    "url": "https://www.luxurytraveldiary.com/2025/05/review-san-domenico-palace-taormina-a-four-seasons-hotel/"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "Sicilian Paradise At San Domenico Palace, Taormina",
+    "url": "https://www.countryandtownhouse.com/travel/san-domenico-palace-four-seasons-review/"
+   },
+   {
+    "site": "Fodor's",
+    "title": "Fodor's Expert Review: San Domenico Palace, A Four Seasons Hotel",
+    "url": "https://www.fodors.com/world/europe/italy/sicily/hotels/reviews/san-domenico-palace-47641"
+   }
+  ],
   "san-ysidro-ranch-montecito": [
    {
     "site": "FlyerTalk",
@@ -583,6 +974,94 @@
     "site": "TravelAge West",
     "title": "travel42 Hotel Review: San Ysidro Ranch",
     "url": "https://www.travelagewest.com/Hotels/Santa-Barbara/San-Ysidro-Ranch/Review-p56490215"
+   }
+  ],
+  "the-connaught-london": [
+   {
+    "site": "FlyerTalk",
+    "title": "The Connaught (hotel reviews)",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-the-connaught-266"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "The Connaught (forum thread)",
+    "url": "https://www.flyertalk.com/forum/23473373-post1.html"
+   },
+   {
+    "site": "Business Traveller",
+    "title": "Hotel review: Connaught, London",
+    "url": "https://www.businesstraveller.com/tried-and-tested/hotel-review-connaught-london/"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "What Is It Like To Stay In A Suite At The Connaught London?",
+    "url": "https://www.countryandtownhouse.com/travel/the-connaught-london-hotel-review/"
+   },
+   {
+    "site": "Yolo Journal",
+    "title": "Guest Book: The Connaught, London",
+    "url": "https://www.yolojournal.com/guest-book-the-connaught/"
+   }
+  ],
+  "the-peninsula-hong-kong": [
+   {
+    "site": "FlyerTalk",
+    "title": "The Peninsula in Hong Kong (Luxury Hotels forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/730732-peninsula-hong-kong.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "The Peninsula Hong Kong (hotel reviews)",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-peninsula-hong-kong-1849"
+   },
+   {
+    "site": "Traveller",
+    "title": "The Peninsula hotel, Hong Kong review: Inside one of Asia's most iconic properties",
+    "url": "https://www.traveller.com.au/the-peninsula-hotel-hong-kong-review-inside-one-of-asias-most-iconic-properties-gyx9ec"
+   },
+   {
+    "site": "Head for Points",
+    "title": "Hong Kong hotels – The Peninsula (forum)",
+    "url": "https://www.headforpoints.com/forums/topic/hong-kong-hotels-the-peninsula"
+   }
+  ],
+  "the-peninsula-istanbul": [
+   {
+    "site": "Luxury Travel Diary",
+    "title": "Review: The Peninsula Istanbul",
+    "url": "https://www.luxurytraveldiary.com/2025/05/review-the-peninsula-istanbul/"
+   },
+   {
+    "site": "AFAR",
+    "title": "A Look Inside the Peninsula Istanbul, the City's Most Exciting New Hotel",
+    "url": "https://www.afar.com/hotels/peninsula-istanbul-review"
+   },
+   {
+    "site": "Luxury London",
+    "title": "Peninsula Istanbul: A new luxury hotel with all the hallmarks of a Grande Dame",
+    "url": "https://luxurylondon.co.uk/travel/international/peninsula-istanbul-hotel-review-turkey/"
+   },
+   {
+    "site": "Yolo Journal",
+    "title": "The Peninsula Istanbul",
+    "url": "https://www.yolojournal.com/the-peninsula-istanbul/"
+   }
+  ],
+  "the-taj-mahal-palace-mumbai": [
+   {
+    "site": "FlyerTalk",
+    "title": "Perfect Service – Less than perfect website: Taj M. Palace, Mumbai",
+    "url": "https://www.flyertalk.com/forum/other-hotel-chains/1865731-perfect-service-less-than-perfect-website-taj-m-palace-mumbai.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Best Luxury Hotel in Mumbai (Bombay) (forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/304592-best-luxury-hotel-mumbai-bombay.html"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Hotel review: The Taj Mahal Palace and Tower, Mumbai",
+    "url": "https://thepointsguy.com/reviews/hotel-review-the-taj-mahal-palace-and-tower-mumbai"
    }
   ],
   "the-upper-house-hk": [
