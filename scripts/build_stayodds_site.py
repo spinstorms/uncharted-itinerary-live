@@ -2882,9 +2882,11 @@ def render_static_pages_from_directory(
             hp = ROOT / rel_html
             if hp.exists():
                 txt = hp.read_text(encoding="utf-8")
-                txt = re.sub(r"\b(?:500|678|758)(\+?\s+(?:Luxury|Verified|Mapped|StayOdds|Hotels|Properties|on\s+World\s+Map))", f"{total_props}\\1", txt)
-                txt = re.sub(r"(All\s+)(?:500|678|758)(\s+(?:Hotels|Luxury|Properties|StayOdds|on\s+World\s+Map))", f"\\g<1>{total_props}\\2", txt)
-                txt = re.sub(r"(Global\s+Directory\s*\()(?:464|642|722)(\))", f"\\g<1>{world_props}\\2", txt)
+                from count_sync import sync_counts
+
+                visited_n = sum(1 for r in directory if r.get("tier") in ("first_hand_verified", "short_preview"))
+                txt = sync_counts(txt, total_props, visited_n)
+                txt = re.sub(r"(Global\s+Directory\s*\()\d{3,4}(\))", f"\\g<1>{world_props}\\2", txt)
                 hp.write_text(txt, encoding="utf-8")
 
     # Generate static SEO destination landing pages at <out_dir>/destinations/<slug>/index.html

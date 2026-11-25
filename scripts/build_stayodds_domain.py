@@ -370,11 +370,16 @@ def main() -> None:
     rewrite_js_for_stayodds(DIST / "assets")
 
     # 4. Root comparator (/index.html) + /compare/ alias + /hotels/ + /brands/
+    from count_sync import sync_counts
+
+    total_hotels = len(hotels)
+    visited_hotels = sum(1 for h in hotels if h.get("tier") in ("first_hand_verified", "short_preview"))
+
     def load_template(rel: str) -> str:
         t_path = SRC_TEMPLATES / rel
         if not t_path.is_file():
             t_path = ROOT / rel
-        return t_path.read_text(encoding="utf-8")
+        return sync_counts(t_path.read_text(encoding="utf-8"), total_hotels, visited_hotels)
 
     (DIST / "index.html").write_text(
         rewrite_html_for_stayodds(load_template("compare/index.html"), "root_compare"),
@@ -390,7 +395,7 @@ def main() -> None:
             encoding="utf-8",
         )
 
-    # 5 & 6. Render all 832 hotel SEO pages + 19 destination guides straight from directory JSON into DIST
+    # 5 & 6. Render all hotel SEO pages + 19 destination guides straight from directory JSON into DIST
     hotel_count, dest_slugs = render_static_pages_from_directory(hotels, DIST, write_root_sitemap=False)
     for h in hotels:
         pfile = DIST / "stayodds" / h["id"] / "index.html"
@@ -434,6 +439,10 @@ def main() -> None:
 
     # 8. 404.html + GitHub Pages deploy workflow for spinstorms/stayodds-live
     write_404_page(DIST)
+    for fixed in (DIST / "404.html", DIST / "assets" / "stayodds-share-card.js"):
+        if fixed.exists():
+            fixed.write_text(sync_counts(fixed.read_text(encoding="utf-8"), total_hotels, visited_hotels), encoding="utf-8")
+    print(f"Counts: {total_hotels} hotels, {visited_hotels} first-hand stays written into page text")
     write_pages_workflow(DIST)
 
     print(
