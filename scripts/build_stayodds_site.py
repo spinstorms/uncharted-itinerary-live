@@ -1461,6 +1461,35 @@ def render_seo_page(
             '</div>'
         )
 
+    # Drinking water, as guests report it in their reviews (scripts/fetch_guest_quotes.py)
+    _w = h.get("water") or {}
+    if _w.get("reports"):
+        _free, _paid = int(_w.get("free") or 0), int(_w.get("paid") or 0)
+        if _paid and not _free:
+            _wv, _wcls = "Guests report paying for water", "is-alert"
+        elif _free and not _paid:
+            _wv, _wcls = "Guests report free water", ""
+        else:
+            _wv, _wcls = "Mixed reports on water", ""
+        _rep = _w["reports"][0]
+        _ym = _rep.get("date", "")[:7]
+        _alt = ""
+        if _paid > _free:
+            for _r in (rivals or []):
+                _rw = _r.get("water") or {}
+                if int(_rw.get("free") or 0) > int(_rw.get("paid") or 0):
+                    _alt = f' Guests report free water at <a href="../{esc(_r["id"])}/">{esc(_r["name"])}</a>.'
+                    break
+        _n = _free + _paid
+        trip_tiles.append(
+            f'<div class="detail-trip-tile {_wcls}">'
+            f'<span class="detail-trip-kicker">Drinking water in the room</span>'
+            f'<strong class="detail-trip-val">{_wv}</strong>'
+            f'<span class="detail-trip-sub">{_n} guest report{"s" if _n != 1 else ""} · latest {esc(_ym)}: '
+            f'&ldquo;{esc(_rep.get("text", ""))}&rdquo; ({esc(_rep.get("source", ""))}).{_alt}</span>'
+            f'</div>'
+        )
+
     if verified_room_tip:
         trip_tiles.append(
             f'<div class="detail-trip-tile is-tip">'
@@ -3050,6 +3079,7 @@ def main() -> None:
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],
             "guestQuotes": None if pid in wrong_lite else GUEST_QUOTES.get(pid),
+            "water": None if pid in wrong_lite else (GUEST_QUOTES.get(pid) or {}).get("water"),
             "communityMentions": COMMUNITY.get(pid) or [],
             "tripadvisor": TRIPADVISOR.get(pid),
         }

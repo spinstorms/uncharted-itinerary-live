@@ -36,7 +36,36 @@ def clean(s: Any) -> str:
     return s[:420] + ("…" if len(s) > 420 else "")
 
 
-def quotes_for(hid: str, key: str) -> tuple[list[dict[str, Any]], int | None]:
+# --- Drinking water: what guests report (free or charged), read from the same reviews we already fetch ---------
+WATER_CTX = re.compile(r"\b(bottles? of water|bottled water|water bottles?|drinking water|mineral water|still water|sparkling water|free water|complimentary water|water refill|refill station|water station|bottle of water)\b", re.I)
+WATER_PAID = re.compile(r"(charg|\bpay\b|\bpaid\b|\bpaying\b|\bcost|[$€£]\s?\d|\d\s?(usd|eur|euros?|dollars?|gbp)\b|not (free|complimentary)|(isn'?t|wasn'?t|aren'?t|weren'?t) (free|complimentary)|no (free|complimentary)|had to buy|have to buy|extra (cost|charge)|ripped off|rip.?off)", re.I)
+WATER_FREE = re.compile(r"(\bfree\b|complimentary|provided|plenty of|unlimited|replenish|refill|topped up|every day|daily)", re.I)
+
+
+def water_signals(rows: list[dict[str, Any]]) -> dict[str, Any] | None:
+    reports = []
+    for r in rows:
+        for field in ("pros", "cons", "headline"):
+            text = clean(r.get(field))
+            for sent in re.split(r"(?<=[.!?])\s+", text):
+                if not WATER_CTX.search(sent):
+                    continue
+                verdict = "paid" if WATER_PAID.search(sent) else ("free" if WATER_FREE.search(sent) else None)
+                if not verdict:
+                    continue
+                reports.append({"verdict": verdict, "date": str(r.get("date") or "")[:10],
+                                "source": SOURCE_NAMES.get(str(r.get("source") or "").lower(), "Guest review"),
+                                "text": sent[:240]})
+                break
+    if not reports:
+        return None
+    reports.sort(key=lambda x: x["date"], reverse=True)
+    free = sum(1 for x in reports if x["verdict"] == "free")
+    paid = len(reports) - free
+    return {"free": free, "paid": paid, "latest": reports[0]["date"], "reports": reports[:3]}
+
+
+def quotes_for(hid: str, key: str) -> tuple[list[dict[str, Any]], int | None, dict[str, Any] | None]:
     res = nuitee_get(f"/v3.0/data/reviews?hotelId={urllib.parse.quote(hid)}&limit=200&timeout=20", key) or {}
     rows = res.get("data") or []
     out = []
@@ -66,7 +95,7 @@ def quotes_for(hid: str, key: str) -> tuple[list[dict[str, Any]], int | None]:
     eng = [q for q in uniq if q["language"] == "en"]
     pick = (eng if len(eng) >= 2 else uniq)[:4]
     total = res.get("total") if isinstance(res.get("total"), int) else None
-    return pick, total
+    return pick, total, water_signals(rows)
 
 
 def main() -> int:
@@ -87,19 +116,20 @@ def main() -> int:
     todo_ids = {p["id"] for p in todo}
     result: dict[str, Any] = {
         k: v for k, v in saved.items()
-        if k in todo_ids and datetime.fromisoformat(str(v.get("fetched", "1970-01-01"))).date().toordinal() >= cutoff
+        if k in todo_ids and v.get("waterChecked") and datetime.fromisoformat(str(v.get("fetched", "1970-01-01"))).date().toordinal() >= cutoff
     }
     todo = [p for p in todo if p["id"] not in result]
     print(f"Guest quotes: {len(result)} reused from the saved copy, {len(todo)} to fetch")
 
     def work(p: dict[str, Any]) -> None:
         try:
-            q, total = quotes_for(p["nuitee_hotel_id"], key)
+            q, total, water = quotes_for(p["nuitee_hotel_id"], key)
         except Exception as e:  # noqa: BLE001
             print(f"  error {p['id']}: {e}")
             return
-        if q:
-            result[p["id"]] = {"fetched": today, "provider": "LiteAPI (Nuitée)", "reviewsInFeed": total, "quotes": q}
+        if True:  # save even an empty result so the hotel isn't asked again for 30 days
+            result[p["id"]] = {"fetched": today, "provider": "LiteAPI (Nuitée)", "reviewsInFeed": total, "quotes": q,
+                               "water": water, "waterChecked": True}
 
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(work, todo))
