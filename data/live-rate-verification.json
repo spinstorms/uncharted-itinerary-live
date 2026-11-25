@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-25T13:11:47Z",
+  "checkedAt": "2026-11-25T13:53:15Z",
   "counts": {
-    "verified": 1071,
-    "unchecked": 67,
+    "verified": 1110,
     "conflict": 11,
-    "mismatch": 16
+    "unchecked": 27,
+    "mismatch": 17
   },
   "mismatch": [
     {
@@ -77,6 +77,14 @@
       "liteapiId": "lp6582fc35",
       "liteapiName": "Maçakızı yatch",
       "km": 895.1,
+      "status": "mismatch"
+    },
+    {
+      "id": "the-boatshed-waiheke",
+      "name": "The Boatshed",
+      "liteapiId": "lp657d719a",
+      "liteapiName": "The Boatshed, Luxury Waterfront Accommodation",
+      "km": 112.9,
       "status": "mismatch"
     },
     {
@@ -228,27 +236,11 @@
   ],
   "unchecked": [
     {
-      "id": "one-and-only-reethi-rah",
-      "name": "One&Only Reethi Rah",
-      "liteapiId": "lp4ccbf",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "cap-karoso-sumba",
       "name": "Cap Karoso, Sumba",
       "liteapiId": "lp656dbdb1",
       "liteapiName": "Cap Karoso Sumba - a member of Design Hotels",
       "km": 8.4,
-      "status": "unchecked"
-    },
-    {
-      "id": "four-seasons-jimbaran",
-      "name": "Four Seasons Resort Bali at Jimbaran Bay",
-      "liteapiId": "lp2309c",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -260,25 +252,9 @@
       "status": "unchecked"
     },
     {
-      "id": "raffles-bali",
-      "name": "Raffles Bali",
-      "liteapiId": "lp65562e36",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "bawah-reserve",
-      "name": "Bawah Reserve",
-      "liteapiId": "lp655bc0d6",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "soneva-kiri",
-      "name": "Soneva Kiri",
-      "liteapiId": "lp4cca0",
+      "id": "atlantis-the-royal",
+      "name": "Atlantis The Royal",
+      "liteapiId": "lp6556acf7",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -292,22 +268,6 @@
       "status": "unchecked"
     },
     {
-      "id": "one-and-only-cape-town",
-      "name": "One&Only Cape Town",
-      "liteapiId": "lp4b70d",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "santa-monica-proper",
-      "name": "Santa Monica Proper Hotel",
-      "liteapiId": "lp1c6c54",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "ritz-carlton-maldives-fari",
       "name": "The Ritz-Carlton Maldives, Fari Islands",
       "liteapiId": "lp6556244f",
@@ -316,9 +276,9 @@
       "status": "unchecked"
     },
     {
-      "id": "fairmont-miramar-santa-monica",
-      "name": "Fairmont Miramar Hotel & Bungalows",
-      "liteapiId": "lp19cb7",
+      "id": "halekulani-okinawa",
+      "name": "Halekulani Okinawa",
+      "liteapiId": "lp1ca2bf",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -356,14 +316,6 @@
       "status": "unchecked"
     },
     {
-      "id": "kona-village-rosewood",
-      "name": "Kona Village, A Rosewood Resort",
-      "liteapiId": "lp6558a9a2",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "kuda-villingili-maldives",
       "name": "Kuda Villingili Resort Maldives",
       "liteapiId": "lp65570da1",
@@ -372,89 +324,49 @@
       "status": "unchecked"
     },
     {
-      "id": "grand-velas-riviera-maya",
-      "name": "Grand Velas Riviera Maya",
-      "liteapiId": "lp4b19f",
+      "id": "iberostar-selection-sabila-tenerife",
+      "name": "Iberostar Selection Sábila - Adults Only",
+      "liteapiId": "lp41714",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "halcyon-house-cabarita",
-      "name": "Halcyon House",
-      "liteapiId": "lp65823fa8",
+      "id": "the-lana-dorchester-dubai",
+      "name": "The Lana, Dubai",
+      "liteapiId": "lp656d4622",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "six-senses-kyoto",
-      "name": "Six Senses Kyoto",
-      "liteapiId": "lp656c415d",
+      "id": "mandarin-oriental-lago-di-como",
+      "name": "Mandarin Oriental, Lago di Como",
+      "liteapiId": "lp5587c",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "peninsula-london",
-      "name": "The Peninsula London",
-      "liteapiId": "lp656d2433",
+      "id": "h10-lanzarote-princess",
+      "name": "H10 Lanzarote Princess",
+      "liteapiId": "lp39260",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "gf-victoria-tenerife",
-      "name": "GF Victoria",
-      "liteapiId": "lpbbad7",
+      "id": "radisson-blu-mogan-gran-canaria",
+      "name": "Radisson Blu Resort & Spa, Gran Canaria Mogán",
+      "liteapiId": "lp98fef",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "seaside-palm-beach-gran-canaria",
-      "name": "Seaside Palm Beach",
-      "liteapiId": "lp5bc4f",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "barcelo-playa-blanca-lanzarote",
-      "name": "Barceló Playa Blanca",
-      "liteapiId": "lp656d091e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "iberostar-selection-fuerteventura-palace",
-      "name": "Iberostar Selection Fuerteventura Palace",
-      "liteapiId": "lp65829c5b",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "canaves-oia-epitome",
-      "name": "Canaves Ena & Epitome",
-      "liteapiId": "lpba555",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "sanctuary-cap-cana",
-      "name": "Sanctuary Cap Cana, a Luxury Collection Resort",
-      "liteapiId": "lp4b7ec",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "forestis-dolomites",
-      "name": "Forestis Dolomites",
-      "liteapiId": "lp6556b87d",
+      "id": "oberoi-amarvilas-agra",
+      "name": "The Oberoi Amarvilas, Agra",
+      "liteapiId": "lp2ee34",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -468,65 +380,9 @@
       "status": "unchecked"
     },
     {
-      "id": "beau-rivage-palace",
-      "name": "Beau-Rivage Palace",
-      "liteapiId": "lpcdddc",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "nimb-hotel-copenhagen",
-      "name": "Nimb Hotel",
-      "liteapiId": "lpeed7b",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-cloister-sea-island",
-      "name": "The Cloister at Sea Island",
-      "liteapiId": "lp226b85",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "sebali-nusa-penida",
-      "name": "The Sebali Penida Beach Resort",
-      "liteapiId": "lp657ac0c5",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "josun-palace-seoul",
-      "name": "Josun Palace, a Luxury Collection Hotel, Seoul Gangnam",
-      "liteapiId": "lp6556b4e9",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "nizuc-resort-spa-cancun",
-      "name": "NIZUC Resort & Spa",
-      "liteapiId": "lp6799a",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "hotel-indigo-bintan-lagoi-beach-by",
-      "name": "Hotel Indigo Bintan Lagoi Beach by IHG",
-      "liteapiId": "lp6573c162",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "four-seasons-chiang-mai",
-      "name": "Four Seasons Resort Chiang Mai",
-      "liteapiId": "lp1b9b6",
+      "id": "the-ritz-carlton-melbourne",
+      "name": "The Ritz-Carlton, Melbourne",
+      "liteapiId": "lp6558f4f7",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -535,54 +391,22 @@
       "id": "rosewood-cape-kidnappers",
       "name": "Rosewood Cape Kidnappers",
       "liteapiId": "lp7a168",
-      "liteapiName": "Rosewood Cape Kidnappers",
-      "km": 5.4,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-boatshed-waiheke",
-      "name": "The Boatshed",
-      "liteapiId": "lp657d719a",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "eclipse-at-half-moon-jamaica",
-      "name": "Eclipse at Half Moon",
-      "liteapiId": "lp34ce1",
+      "id": "hyatt-regency-bali",
+      "name": "Hyatt Regency Bali",
+      "liteapiId": "lp3e4e0",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
     },
     {
-      "id": "the-amauris-vienna",
-      "name": "The Amauris Vienna",
-      "liteapiId": "lp21241",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "hotel-cafe-royal",
-      "name": "Hotel Café Royal",
-      "liteapiId": "lp657aa355",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "intercontinental-bali-resort-by-ihg",
-      "name": "InterContinental Bali Resort by IHG",
-      "liteapiId": "lp42c0c",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "mia-resort-nha-trang",
-      "name": "Mia Resort Nha Trang",
-      "liteapiId": "lp6545d",
+      "id": "the-london-nyc",
+      "name": "The London, a Luxury Collection Hotel, New York City",
+      "liteapiId": "lp1ca73",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -596,57 +420,9 @@
       "status": "unchecked"
     },
     {
-      "id": "pink-sands-harbour-island",
-      "name": "Pink Sands Resort",
-      "liteapiId": "lp2a131",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "cobblers-cove-barbados",
-      "name": "Cobblers Cove",
-      "liteapiId": "lp2c481",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "rosewood-bermuda",
-      "name": "Rosewood Bermuda",
-      "liteapiId": "lp4b180",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "chateau-marmont",
-      "name": "Chateau Marmont",
-      "liteapiId": "lp65839738",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "four-seasons-nevis",
-      "name": "Four Seasons Resort Nevis",
-      "liteapiId": "lp1e26a",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "ladera-resort-st-lucia",
-      "name": "Ladera Resort",
-      "liteapiId": "lp2318f",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "beaches-turks-and-caicos",
-      "name": "Beaches Turks & Caicos",
-      "liteapiId": "lp34db8",
+      "id": "carlisle-bay-antigua",
+      "name": "Carlisle Bay Antigua",
+      "liteapiId": "lp35517",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -660,97 +436,9 @@
       "status": "unchecked"
     },
     {
-      "id": "grand-velas-riviera-nayarit",
-      "name": "Grand Velas Riviera Nayarit",
-      "liteapiId": "lp35d77",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "four-seasons-mexico-city",
-      "name": "Four Seasons Hotel Mexico City",
-      "liteapiId": "lp23157",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "explora-rapa-nui",
-      "name": "Explora Rapa Nui",
-      "liteapiId": "lp5bd18",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "gilpin-hotel-and-lake-house",
-      "name": "Gilpin Hotel & Lake House",
-      "liteapiId": "lp536b6",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "villa-cora",
-      "name": "Villa Cora",
-      "liteapiId": "lp38cb5",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-gritti-palace-a-luxury-collection-hotel-venice",
-      "name": "The Gritti Palace, a Luxury Collection Hotel, Venice",
-      "liteapiId": "lp22764",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "explora-atacama",
-      "name": "Explora Atacama",
-      "liteapiId": "lp5bd17",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "juliana-hotel-brussels",
-      "name": "Juliana Hotel Brussels",
-      "liteapiId": "lp65571695",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "four-seasons-hotel-des-bergues-geneva",
-      "name": "Four Seasons Hotel des Bergues Geneva",
-      "liteapiId": "lp717e1",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "landhaus-stricker",
-      "name": "Landhaus Stricker",
-      "liteapiId": "lpaa840",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "le-domaine-du-mas-de-pierre",
-      "name": "Le Domaine du Mas de Pierre",
-      "liteapiId": "lp374fb",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "the-ritz-carlton-berlin",
-      "name": "The Ritz-Carlton, Berlin",
-      "liteapiId": "lp34d9c",
+      "id": "mandarin-oriental-lake-como",
+      "name": "Mandarin Oriental, Lake Como",
+      "liteapiId": "lp5587c",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
