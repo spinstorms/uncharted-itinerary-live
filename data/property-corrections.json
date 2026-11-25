@@ -1,0 +1,17 @@
+{
+  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set.",
+  "properties": {
+    "heights-melasti-bali": {"name": "The Heights Melasti", "city": "Ungasan / Uluwatu, Bali"}
+  },
+  "property_facts": {
+    "heights-melasti-bali": {"standout": "Modern private pool villa value + effortless food delivery"}
+  },
+  "first_hand_reviews": {
+    "heights-melasti-bali": {
+      "verdict": "Sleek modern 2-bedroom private pool villa in Ungasan: more a private villa rental than a hotel, and great value for Uluwatu.",
+      "where_we_differ": "Sleek modern 2-bedroom private pool villa in Ungasan: more a private villa rental than a hotel, and great value for Uluwatu.",
+      "shorts": "from data/hotels.json"
+    },
+    "the-ungasan-bali": {"shorts": "from data/hotels.json"}
+  }
+}

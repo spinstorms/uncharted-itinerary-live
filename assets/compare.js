@@ -1971,7 +1971,7 @@ function renderLeaderboard() {
           (sh) => `
           <a class="short-card" href="https://www.youtube.com/shorts/${encodeURIComponent(sh.id)}" target="_blank" rel="noopener noreferrer" data-yt-id="${escapeHtml(sh.id)}" data-yt-short="1" data-yt-title="${escapeHtml(sh.title)}">
             <div class="short-thumb">
-              <img src="${escapeHtml(resolveThumb(sh.thumb))}" alt="${escapeHtml(sh.hotelName)}" loading="lazy" decoding="async" />
+              <img src="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/oar2.jpg" data-fb1="https://i.ytimg.com/vi/${encodeURIComponent(sh.id)}/hqdefault.jpg" data-fb2="${escapeHtml(resolveThumb(sh.thumb))}" onerror="if(this.dataset.fb1){this.src=this.dataset.fb1;this.dataset.fb1='';this.style.transform='scale(1.16)'}else if(this.dataset.fb2){this.src=this.dataset.fb2;this.dataset.fb2='';this.style.transform='none'}" onload="if(this.naturalWidth&&this.naturalWidth<=120&&this.onerror)this.onerror()" alt="${escapeHtml(sh.title || sh.hotelName)}" loading="lazy" decoding="async" />
               ${ytStaticOverlay("Short")}
             </div>
             <div class="short-info">

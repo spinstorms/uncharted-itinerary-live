@@ -666,6 +666,16 @@
           "id": "rmNVDlVvzQI",
           "title": "Serene Atmosphere at The Ungasan",
           "viewsText": "409 views"
+        },
+        {
+          "id": "KekO58GIaWk",
+          "title": "Sundays Beach Club Bali",
+          "viewsText": "2.3K views"
+        },
+        {
+          "id": "FzBLtBLaIuk",
+          "title": "Sundays Beach Club — High Tides & Good Vibes",
+          "viewsText": "1.9K views"
         }
       ],
       "verifiedGuest": null,
@@ -825,7 +835,7 @@
     },
     {
       "id": "heights-melasti-bali",
-      "name": "The Heights Melasti & Sundays Beach Club",
+      "name": "The Heights Melasti",
       "location": "Ungasan / Uluwatu, Bali",
       "country": "Indonesia",
       "region": "Bali & Indonesia",
@@ -848,8 +858,8 @@
         "value": 5
       },
       "overall": 4.33,
-      "verdict": "Sleek modern 2-bedroom private pool villa paired with a reef-kayaking, sunset fire-dance day at Sundays Beach Club — great value Uluwatu combo.",
-      "standout": "Modern private pool villa value + effortless food delivery and beach club access",
+      "verdict": "Sleek modern 2-bedroom private pool villa in Ungasan: more a private villa rental than a hotel, and great value for Uluwatu.",
+      "standout": "Modern private pool villa value + effortless food delivery",
       "watchOut": "Open-air bathrooms mean you definitely want tropical mosquito repellent packed",
       "bookingUrl": "https://www.booking.com/searchresults.html?ss=The+Heights+Melasti+Ungasan+Bali",
       "bookingLinks": [
@@ -860,18 +870,7 @@
           "priority": 1
         }
       ],
-      "shorts": [
-        {
-          "id": "KekO58GIaWk",
-          "title": "Sundays Beach Club Bali",
-          "viewsText": "2.3K views"
-        },
-        {
-          "id": "FzBLtBLaIuk",
-          "title": "Sundays Beach Club — High Tides & Good Vibes",
-          "viewsText": "1.9K views"
-        }
-      ],
+      "shorts": [],
       "verifiedGuest": null,
       "editorialRatings": [],
       "youtubeReviews": [],

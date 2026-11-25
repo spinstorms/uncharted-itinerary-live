@@ -52,6 +52,9 @@ jobs:
       - name: Tripadvisor ratings into the app's database
         run: python3 scripts/sync_tripadvisor_scores.py
         continue-on-error: true
+      - name: Hand corrections (data/property-corrections.json)
+        run: python3 scripts/apply_corrections.py
+        continue-on-error: true
       - name: Rebuild data
         run: |
           python3 scripts/normalize_regions_and_prices.py --prices-only

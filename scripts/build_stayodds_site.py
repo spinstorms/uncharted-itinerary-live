@@ -1068,20 +1068,32 @@ def render_seo_page(
         + (" — combined by number of reviews" if len(guest_parts) > 1 else "")
         + "</small>"
     ) if guest_parts else ""
-    gr = GUEST_RANKS.get(h.get("id", ""))
+    gr = GUEST_RANKS.get(h.get("id", "")) or {}
     if gr and vg and not o["firstHand"]:
-        pos = 0 if gr["of"] <= 1 else round((gr["rank"] - 1) / (gr["of"] - 1) * 100)
         def _ord(n: int) -> str:
             return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
-        guest_breakdown_html += (
-            f'<div style="margin-top:10px;font-size:13.5px;font-weight:600">Guests rank it '
-            f'<span style="color:#ff5d22">{_ord(gr["rank"])} of {gr["of"]}</span> {esc(gr["group"])} hotels on StayOdds</div>'
-            f'<div style="position:relative;height:8px;border-radius:99px;background:rgba(100,110,130,.18);margin:8px 0 4px" aria-hidden="true">'
-            f'<div style="position:absolute;top:50%;left:{pos}%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;'
-            f'background:#ff5d22;box-shadow:0 0 0 3px #fff"></div></div>'
-            f'<div style="display:flex;justify-content:space-between;font-size:11px;opacity:.7"><span>Top: {esc(gr["top"])} ({gr["topScore"]})</span>'
-            f'<span><a href="/insights/" style="color:inherit">How guests rank hotels</a></span></div>'
-        )
+
+        def _scale(r: dict[str, Any], title: str) -> str:
+            pos = 0 if r["of"] <= 1 else round((r["rank"] - 1) / (r["of"] - 1) * 100)
+            return (
+                f'<div style="margin-top:12px;font-size:13.5px;font-weight:600">{title}</div>'
+                f'<div style="position:relative;height:8px;border-radius:99px;background:rgba(100,110,130,.18);margin:8px 0 4px" aria-hidden="true">'
+                f'<div style="position:absolute;top:50%;left:{pos}%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;'
+                f'background:#ff5d22;box-shadow:0 0 0 3px #fff"></div></div>'
+                f'<div style="display:flex;justify-content:space-between;gap:8px;font-size:11px;opacity:.7"><span>Top: {esc(r["top"])} ({r["topScore"]})</span>'
+                f'<span>Lowest: {r["low"]}</span></div>'
+            )
+
+        a = gr.get("area")
+        if a:
+            guest_breakdown_html += _scale(
+                a, f'Guests rank it <span style="color:#ff5d22">{_ord(a["rank"])} of {a["of"]}</span> {esc(a["group"])} hotels on StayOdds')
+        pr = gr.get("price")
+        if pr:
+            guest_breakdown_html += _scale(
+                pr, f'At a similar price ({esc(pr["group"])} a night): <span style="color:#ff5d22">{_ord(pr["rank"])} of {pr["of"]}</span>')
+        guest_breakdown_html += ('<div style="font-size:11px;opacity:.7;margin-top:6px">Ranked by guest score (20+ reviews). Price level from our latest nightly price check. '
+                                 '<a href="/insights/" style="color:inherit">More guest insights</a></div>')
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
         if o["delta100"] is not None
@@ -2728,6 +2740,20 @@ def main() -> None:
                 "priority": r.get("priority", 1),
             }
         )
+
+    # hand corrections (data/property-corrections.json) win over the database, so a fix shows even before it is written back
+    corr = _load_json("property-corrections.json") or {}
+    visited_src = {h["id"]: h for h in (_load_json("hotels.json") or {}).get("hotels", [])}
+
+    def _corr(table: str, row: dict[str, Any] | None, pid: str) -> dict[str, Any] | None:
+        fields = (corr.get(table) or {}).get(pid)
+        if not fields or row is None:
+            return row
+        return {**row, **{k: (visited_src.get(pid, {}).get(k) if v == "from data/hotels.json" else v) for k, v in fields.items()}}
+
+    props = [_corr("properties", p, p["id"]) for p in props]
+    facts = {k: _corr("property_facts", v, k) for k, v in facts.items()}
+    fh_map = {k: _corr("first_hand_reviews", v, k) for k, v in fh_map.items()}
 
     directory: list[dict[str, Any]] = []
     for p in props:

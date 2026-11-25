@@ -29,8 +29,8 @@
 <div class="gi"><div class="wrap">
 <header>
   <div class="eyebrow">StayOdds insights · updated __DATE__</div>
-  <h1>How guests really rate award-winning hotels</h1>
-  <p>What __NHOTELS__ luxury hotels look like when you put real guest reviews next to the critics and the awards. Every chart uses hotels with a guest score from 20 or more reviews, and every rank is among the hotels on StayOdds.</p>
+  <h1>How guests really rate luxury hotels</h1>
+  <p>What __NHOTELS__ luxury hotels look like when you put real guest reviews next to the critics, the awards, the price and the destination. Every chart uses hotels with a guest score from 20 or more reviews, and every rank is among the hotels on StayOdds.</p>
 </header>
 
 <section class="panel" aria-labelledby="h1a">
@@ -63,6 +63,31 @@
   <p class="sub">Typical guest score by award. Dot = median hotel, bar = middle half.</p>
   <div class="chart" id="tiers"></div>
   <div class="note">__TIER_NOTE__</div>
+</section>
+
+
+<section class="panel" aria-labelledby="h6a">
+  <div class="eyebrow" id="price-chart">Price and value</div>
+  <h2 id="h6a">Does paying more buy happier guests?</h2>
+  <p class="sub">Guest score by price level. Price level comes from our latest nightly price check for each hotel (a sample date, so treat it as a guide). Dot = typical hotel, thick bar = middle half, thin line = best to worst.</p>
+  <div class="chart" id="price"></div>
+  <div class="ideas" id="priceTop" style="margin-top:16px"></div>
+  <div class="note">__PRICE_NOTE__</div>
+</section>
+
+<section class="panel" aria-labelledby="h7a">
+  <div class="eyebrow" id="destinations-chart">Destinations</div>
+  <h2 id="h7a">Where guests are happiest</h2>
+  <p class="sub">Typical guest score of the StayOdds hotels in each destination with 8 or more rated hotels: a town or island, or the whole country where no single place has 8. Hover or tap a row for its top-rated hotel.</p>
+  <div class="chart" id="areas"></div>
+  <div class="note">Every hotel page shows where that hotel ranks among the others in its area, and among hotels at a similar price.</div>
+</section>
+
+<section class="panel" aria-labelledby="h8a">
+  <div class="eyebrow" id="favourites">Guests' favourites</div>
+  <h2 id="h8a">The hotels guests rate highest</h2>
+  <p class="sub">Highest guest score from 500 or more reviews, so a handful of reviews can't put a hotel at the top. Ties are ordered by number of reviews.</p>
+  <ol id="fav" style="margin:0;padding-left:22px;display:grid;gap:8px"></ol>
 </section>
 
 <p class="foot">Sources: StayOdds hotel scorecards (guest reviews from booking sites and Tripadvisor, published critic scores, World's 50 Best Hotels 2026, MICHELIN Guide 2026 Keys, Forbes Travel Guide 2026). Groups and ranks are among hotels on StayOdds only.</p>
@@ -156,6 +181,21 @@ function drawAll(){
     placed.push({x, y});
     el('text',{x,y,'text-anchor':'end','font-size':11.5,'font-weight':600,fill:css('--ink')},svg,p.n);
   });
+  // price levels
+  if (D.price && D.price.length){
+    rangeChart('price', D.price.map((b) => ({label:b.band, n:b.n, median:b.median, q1:b.q1, q3:b.q3, min:b.min, max:b.max,
+      tip:`<b>${esc(b.band)} a night</b><br>Typical guest score ${b.median}/100 · ${b.n} hotels`})),
+      {left:130, min:70, nLabel:'hotels', label:'Guest score by price level'});
+    document.getElementById('priceTop').innerHTML = D.price.map((b) => `<div class="idea"><h3>Top rated, ${esc(b.band)}</h3>` +
+      b.top.map((t) => `<p>${esc(t.name)} · <b>${t.g}</b>/100 <span style="color:var(--muted)">(${t.rc.toLocaleString('en-GB')} reviews)</span></p>`).join('') + '</div>').join('');
+  }
+  if (D.areas && D.areas.length){
+    rangeChart('areas', D.areas.map((a) => ({label:a.area, n:a.n, median:a.median, q1:a.q1, q3:a.q3, min:a.min, max:a.max,
+      tip:`<b>${esc(a.area)}</b><br>Typical guest score ${a.median}/100 · ${a.n} hotels<br>Top rated: ${esc(a.best)}`})),
+      {left:210, min:70, nLabel:'hotels', label:'Guest score by destination'});
+  }
+  document.getElementById('fav').innerHTML = (D.favourites || []).map((f) =>
+    `<li><b>${esc(f.name)}</b> <span style="color:var(--ink2)">· ${esc(f.where)}</span> · <b style="color:var(--accent)">${f.g}</b>/100 <span style="color:var(--muted)">from ${f.rc.toLocaleString('en-GB')} reviews</span></li>`).join('');
 }
 drawAll();
 </script>
