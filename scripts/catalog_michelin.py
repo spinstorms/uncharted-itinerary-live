@@ -102,7 +102,7 @@ MICHELIN_HOTEL_ADDITIONS = [
     ('casa-pestagua', 'Casa Pestagua', 'Cartagena', 'Colombia', 'CO', 'Americas', 'Independent'),
     ('casa-san-agustin', 'Casa San Agustin', 'Cartagena', 'Colombia', 'CO', 'Americas', 'Independent'),
     ('capella-kyoto', 'Capella Kyoto', 'Kyoto', 'Japan', 'JP', 'Asia', 'Capella'),
-    ('capella-lodge', 'Capella Lodge', 'Lord Howe Island', 'Australia', 'AU', 'Australia & Pacific', 'Capella'),
+    ('capella-lodge', 'Capella Lodge', 'Lord Howe Island', 'Australia', 'AU', 'Australia & Pacific', 'Luxury Lodges of Australia'),
     ('capella-shanghai-jian-ye-li', 'Capella Shanghai, Jian Ye Li', 'Shanghai', 'China', 'CN', 'Asia', 'Capella'),
     ('casa-chameleon-las-catalinas', 'Casa Chameleon Las Catalinas', 'Las Catalinas', 'Costa Rica', 'CR', 'Caribbean & Mexico', 'Independent'),
     ('casamolle', 'CasaMolle', 'El Molle', 'Chile', 'CL', 'Americas', 'Independent'),

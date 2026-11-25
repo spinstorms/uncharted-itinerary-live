@@ -116,7 +116,13 @@ def distinctive(name: str) -> set[str]:
 
 
 # --------------------------------------------------------------------------- awards
+BRAND_FIXES = {"capella-lodge": "Luxury Lodges of Australia"}  # not part of Capella Hotels
+
+
 def run_awards(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
+    for pid, brand in BRAND_FIXES.items():
+        if pid in props:
+            sb("PATCH", f"/rest/v1/properties?id=eq.{pid}", {"brand": brand}, {"Prefer": "return=minimal"})
     rows: list[dict[str, Any]] = []
     ranks = {**W50B_2026_MISSING_TAGS, **W50B_2026_NEW}
     for pid, rank in ranks.items():
@@ -302,28 +308,40 @@ def run_editorial(props: dict[str, dict[str, Any]], only: set[str] | None, missi
         targets = targets[:limit]
     print(f"Editorial: checking {len(targets)} hotels on The Luxury Travel Expert")
     rows: list[dict[str, Any]] = []
+    stats = {"searched": 0, "with_candidates": 0, "name_match": 0, "no_score": 0}
     for i, p in enumerate(targets, 1):
         need = distinctive(p["name"])
         if not need:
             continue
-        code, html = http_get(f"{LTE}/?s={urllib.parse.quote(p['name'])}")
-        time.sleep(1.0)
-        if code != 200:
-            continue
         urls = []
-        for u in re.findall(r'href="(https://theluxurytravelexpert\.com/[^"#?]*review-[^"#?]*)"', html):
-            if u not in urls and "/amp" not in u:
-                urls.append(u)
+        code, body = http_get(f"{LTE}/wp-json/wp/v2/posts?per_page=10&_fields=link&search={urllib.parse.quote(p['name'])}")
+        time.sleep(1.0)
+        if code == 200:
+            try:
+                urls = [x["link"] for x in json.loads(body) if "review" in x.get("link", "")]
+            except Exception:
+                urls = []
+        if not urls:
+            code, html = http_get(f"{LTE}/?s={urllib.parse.quote(p['name'])}")
+            time.sleep(1.0)
+            for u in re.findall(r'href="((?:https://theluxurytravelexpert\.com)?/[^"#?]*review-[^"#?]*)"', html):
+                u = u if u.startswith("http") else LTE + u
+                if u not in urls and "/amp" not in u:
+                    urls.append(u)
+        stats["searched"] += 1
+        stats["with_candidates"] += 1 if urls else 0
         for u in urls[:4]:
             slug_words = set(norm_words(u.rstrip("/").rsplit("/", 1)[-1]))
             if len(need & slug_words) < max(1, int(len(need) * 0.75 + 0.5)):
                 continue
+            stats["name_match"] += 1
             c2, page = http_get(u)
             time.sleep(1.0)
             if c2 != 200:
                 continue
             m = re.search(r"Overall experience:[^0-9]{0,60}(\d{1,2}(?:\.\d)?)\s*/\s*10", re.sub(r"<[^>]+>", " ", page))
             if not m:
+                stats["no_score"] += 1
                 continue
             score = float(m.group(1))
             if not 0 < score <= 10:
@@ -347,6 +365,7 @@ def run_editorial(props: dict[str, dict[str, Any]], only: set[str] | None, missi
             break
         if i % 25 == 0:
             print(f"  {i}/{len(targets)} checked, {len(rows)} scored reviews so far", flush=True)
+    print(f"Editorial diagnostics: {stats}")
     print(f"Editorial: upserting {len(rows)} real published scores")
     upsert("editorial_ratings", rows, "property_id,source_name,source_url")
 
