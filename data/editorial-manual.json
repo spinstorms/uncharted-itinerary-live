@@ -1,0 +1,14 @@
+{
+  "_readme": "Critic scores checked by hand against the published page. Only add a row after reading the score on the page itself.",
+  "ratings": [
+    {
+      "property_id": "forestis-dolomites",
+      "source_name": "The Luxury Travel Expert",
+      "source_url": "https://theluxurytravelexpert.com/review-forestis-dolomites",
+      "raw_score": "9.2/10",
+      "normalized_100": 92,
+      "takeaway": "First-hand hotel verdict (9.2/10): Overall experience rated 9.2/10.",
+      "published_at": null
+    }
+  ]
+}

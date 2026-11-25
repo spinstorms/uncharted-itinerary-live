@@ -123,6 +123,16 @@ def run_awards(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
     for pid, brand in BRAND_FIXES.items():
         if pid in props:
             sb("PATCH", f"/rest/v1/properties?id=eq.{pid}", {"brand": brand}, {"Prefer": "return=minimal"})
+    ep = ROOT / "data" / "editorial-manual.json"
+    if ep.exists():
+        manual = [
+            {**r, "verified_at": now_iso()}
+            for r in json.loads(ep.read_text(encoding="utf-8")).get("ratings", [])
+            if r.get("property_id") in props
+        ]
+        if manual:
+            print(f"Editorial (hand-checked): upserting {len(manual)}")
+            upsert("editorial_ratings", manual, "property_id,source_name,source_url")
     rows: list[dict[str, Any]] = []
     ranks = {**W50B_2026_MISSING_TAGS, **W50B_2026_NEW}
     for pid, rank in ranks.items():

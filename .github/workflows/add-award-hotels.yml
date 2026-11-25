@@ -13,6 +13,10 @@ on:
         options:
           - award-and-new
           - all-missing
+      awards_only:
+        description: "Only re-apply award tags and hand-checked scores, then rebuild (fast)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -43,15 +47,18 @@ jobs:
           python-version: "3.12"
 
       - name: Add missing hotels (LiteAPI metadata, photo, guest score)
+        if: ${{ !inputs.awards_only }}
         run: python3 scripts/sync_250_hotels.py --new-only
 
       - name: Fill ids, coordinates and facts for the new hotels
+        if: ${{ !inputs.awards_only }}
         run: python3 scripts/enrich_missing_hotels.py
 
       - name: Tag World's 50 Best ranks and MICHELIN Keys
         run: python3 scripts/add_award_hotels.py awards
 
       - name: Look up real YouTube reviews
+        if: ${{ !inputs.awards_only }}
         run: |
           if [ "${{ inputs.reviews_scope }}" = "all-missing" ]; then
             python3 scripts/add_award_hotels.py youtube --missing
@@ -61,6 +68,7 @@ jobs:
         continue-on-error: true
 
       - name: Look up real critic scores
+        if: ${{ !inputs.awards_only }}
         run: |
           if [ "${{ inputs.reviews_scope }}" = "all-missing" ]; then
             python3 scripts/add_award_hotels.py editorial --missing
