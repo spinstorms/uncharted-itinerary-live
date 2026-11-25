@@ -35,7 +35,11 @@ jobs:
           NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
         run: python3 scripts/optimize_thumbnails.py
       - name: Commit
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          python3 scripts/localize_db_photos.py || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/card-photos assets/brand-logos assets/thumbs
