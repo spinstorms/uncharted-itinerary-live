@@ -1,0 +1,70 @@
+name: Verify LiteAPI hotel ids
+
+# Manual run: checks every stored LiteAPI hotel id against the hotel's real coordinates, hides live pricing for
+# wrong matches, keeps it (and restores it) for verified ones, then rebuilds the data and republishes stayodds.com.
+# Uses the existing repo secrets; nothing needs to be pasted anywhere.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "verify-live-rate-ids"
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify stored LiteAPI ids against hotel coordinates
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+        run: python3 scripts/verify_live_rate_ids.py --write
+
+      - name: Rebuild data with the updated coverage rules
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+        run: |
+          python3 scripts/normalize_regions_and_prices.py --prices-only
+          python3 scripts/build_stayodds_site.py --data-only
+
+      - name: Commit results
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live-rate-coverage.json data/live-rate-verification.json data/price-snapshots.json \
+                  data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: verify LiteAPI hotel ids and refresh live-rate coverage"
+            git pull --rebase -X ours origin main
+            git push origin main
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No changes."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Pushes made with the workflow token do not start other workflows, so publish stayodds.com explicitly.
+      - name: Publish stayodds.com
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-stayodds.yml --ref main
