@@ -57,7 +57,14 @@ def candidates(page: str, base: str) -> list[str]:
 
 def main() -> int:
     out = Path(sys.argv[1]); out.mkdir(parents=True, exist_ok=True)
-    ids = sys.argv[2:]
+    ids, forced = [], {}
+    for a in sys.argv[2:]:
+        if "=" in a:
+            k, u = a.split("=", 1)
+            forced[k] = u
+            ids.append(k)
+        else:
+            ids.append(a)
     key = os.environ.get("GOOGLE_PLACES_API_KEY", "")
     hs = {h["id"]: h for h in json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]}
     index, rows = {}, []
@@ -65,7 +72,7 @@ def main() -> int:
         h = hs.get(pid) or {}
         site, picks = "", []
         try:
-            site = website(h, key)
+            site = forced.get(pid) or website(h, key)
             if site:
                 raw, final = get(site)
                 for u in candidates(raw.decode("utf-8", "ignore"), final):

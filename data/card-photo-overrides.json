@@ -977,6 +977,42 @@
       "source": "official",
       "site": "https://www.janu.com/janu-tokyo/",
       "note": "hotel's official website (checked by eye)"
+    },
+    "guana-island-bvi": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Guana_Island_%2815906918330%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY-SA 2.0|Jean-Marc Astesana from Voisins le Bretonneux, France|https://commons.wikimedia.org/wiki/File:Guana_Island_(15906918330).jpg",
+      "note": "File:Guana Island (15906918330).jpg"
+    },
+    "amankila-bali": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Amankila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY 2.0|Richard Michael Shaw|https://commons.wikimedia.org/wiki/File:Amankila.jpg",
+      "note": "File:Amankila.jpg"
+    },
+    "chateau-richeux-les-maisons-de-bricourt": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Le_chateau_richeux_a_st_meloir_des_ondes_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY 3.0|chisloup|https://commons.wikimedia.org/wiki/File:Le_chateau_richeux_a_st_meloir_des_ondes_-_panoramio.jpg",
+      "note": "File:Le chateau richeux a st meloir des ondes - panoramio.jpg"
+    },
+    "hotel-du-cap-eden-roc": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Gartenfassade_Hotel_Du_Cap.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY-SA 3.0|John Jason Junior|https://commons.wikimedia.org/wiki/File:Gartenfassade_Hotel_Du_Cap.jpg",
+      "note": "File:Gartenfassade Hotel Du Cap.jpg"
+    },
+    "amangiri-utah": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Amangiri_Resort_Canyon_Point_Utah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|Public domain|POET ARCHITECTURE|https://commons.wikimedia.org/wiki/File:Amangiri_Resort_Canyon_Point_Utah.jpg",
+      "note": "File:Amangiri Resort Canyon Point Utah.jpg"
+    },
+    "amanyara-turks-caicos": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sunset_in_the_Amanyara_Resort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY-SA 4.0|Alessandra Brunhildmedia|https://commons.wikimedia.org/wiki/File:Sunset_in_the_Amanyara_Resort.jpg",
+      "note": "File:Sunset in the Amanyara Resort.jpg"
     }
   }
 }

@@ -38,11 +38,11 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  {pid}: failed ({e})")
             continue
-        if "--no-db" not in sys.argv and o.get("source") in ("liteapi", "official"):
+        if "--no-db" not in sys.argv and o.get("source") in ("liteapi", "official", "commons"):
             try:
                 from add_award_hotels import sb
                 sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(pid)}",
-                   {"hero_image_url": o["url"], "image_license_source": "nuitee_connect" if o.get("source") == "liteapi" else "hotel_official_site"}, {"Prefer": "return=minimal"})
+                   {"hero_image_url": o["url"], "image_license_source": o.get("license_source") or ("nuitee_connect" if o.get("source") == "liteapi" else "hotel_official_site")}, {"Prefer": "return=minimal"})
             except Exception as e:  # noqa: BLE001
                 print(f"  {pid}: database not updated ({e})")
     print(f"Card photos: {done} replaced")

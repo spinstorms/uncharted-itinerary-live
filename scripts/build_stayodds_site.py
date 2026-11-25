@@ -120,7 +120,7 @@ def _hotel_partner_links() -> list[tuple[str, str]]:
 
 def _photo_credit(src: Any, thumb: str) -> dict[str, str] | None:
     """Credit line for openly licensed (Wikimedia Commons) photos: 'wikimedia|<license>|<artist>|<file page url>'."""
-    if not isinstance(src, str) or not src.startswith("wikimedia|") or not str(thumb).startswith("http"):
+    if not isinstance(src, str) or not src.startswith("wikimedia|"):
         return None
     parts = (src.split("|") + ["", "", ""])[:4]
     _, lic, artist, page = parts
