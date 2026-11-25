@@ -45,7 +45,12 @@ def main() -> int:
         except Exception:
             return False
 
-    props = [p for p in sb_all("properties", "id,name,google_place_id") if p.get("google_place_id")]
+    corr = json.loads((ROOT / "data" / "property-corrections.json").read_text(encoding="utf-8")).get("properties", {}) \
+        if (ROOT / "data" / "property-corrections.json").exists() else {}
+    wrong = {k for k, v in corr.items() if "google_place_id" in v and not v["google_place_id"]}
+    for k in wrong:
+        store["hotels"].pop(k, None)  # its Google listing was a different place
+    props = [p for p in sb_all("properties", "id,name,google_place_id") if p.get("google_place_id") and p["id"] not in wrong]
     todo = [p for p in props if not fresh((store["hotels"].get(p["id"]) or {}).get("fetched"))]
     print(f"Google ratings: {len(todo)} hotels to check (budget {args.max_calls})")
     stamp = datetime.now(timezone.utc).date().isoformat()

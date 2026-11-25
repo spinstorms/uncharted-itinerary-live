@@ -59,8 +59,10 @@ def _load_json(name: str) -> dict[str, Any]:
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
+_NO_PLACE = {k for k, v in (_load_json("property-corrections.json").get("properties") or {}).items()
+             if "google_place_id" in v and not v["google_place_id"]}  # Google listing was a different place: ignore it
 GOOGLE_RATINGS = {k: v for k, v in _load_json("google-ratings.json").get("hotels", {}).items()
-                  if (v.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS}  # saved Google Maps ratings (fetch_google_ratings.py)
+                  if (v.get("reviewCount") or 0) >= MIN_GUEST_REVIEWS and k not in _NO_PLACE}  # saved Google Maps ratings (fetch_google_ratings.py)
 
 
 def _ta_ok(pid: str, t: dict[str, Any]) -> bool:

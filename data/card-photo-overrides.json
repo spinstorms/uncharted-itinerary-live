@@ -1,0 +1,35 @@
+{
+  "note": "Hand-picked overview photos (the hotel and its setting rather than a room detail). Source photos come from the hotel's own listing via our booking data partner.",
+  "hotels": {
+    "westin-bora-bora": {
+      "url": "https://static.cupid.travel/hotels/596019029.jpg",
+      "source": "liteapi",
+      "note": "overview"
+    },
+    "w-bali-seminyak": {
+      "url": "https://static.cupid.travel/hotels/560390745.jpg",
+      "source": "liteapi",
+      "note": "overview"
+    },
+    "park-hyatt-maldives": {
+      "url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2022/08/25/0212/MLDPH-P0422-Aerial-Exterior-View-Plus-Alpha.jpg/MLDPH-P0422-Aerial-Exterior-View-Plus-Alpha.16x9.jpg",
+      "source": "liteapi",
+      "note": "exterior"
+    },
+    "four-seasons-bangkok": {
+      "url": "https://static.cupid.travel/hotels/434596560.jpg",
+      "source": "liteapi",
+      "note": "pool and riverside buildings"
+    },
+    "sebali-nusa-penida": {
+      "url": "https://static.cupid.travel/hotels/618242205.jpg",
+      "source": "liteapi",
+      "note": "overview"
+    },
+    "the-ungasan-bali": {
+      "url": "https://static.cupid.travel/hotels/607292570.jpg",
+      "source": "liteapi",
+      "note": "recepcion & lobby"
+    }
+  }
+}
