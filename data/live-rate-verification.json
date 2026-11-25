@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-11-25T11:08:44Z",
+  "checkedAt": "2026-11-25T11:57:06Z",
   "counts": {
-    "verified": 1134,
-    "conflict": 10,
-    "unchecked": 13,
-    "mismatch": 7
+    "verified": 1103,
+    "conflict": 11,
+    "unchecked": 35,
+    "mismatch": 16
   },
   "mismatch": [
     {
@@ -32,6 +32,30 @@
       "status": "mismatch"
     },
     {
+      "id": "chateau-du-grand-luce",
+      "name": "Château du Grand-Lucé",
+      "liteapiId": "lp656b5955",
+      "liteapiName": "Chateau du Grand Lucay",
+      "km": 242.7,
+      "status": "mismatch"
+    },
+    {
+      "id": "the-plaza-new-york",
+      "name": "The Plaza",
+      "liteapiId": "lp65563783",
+      "liteapiName": "The Plaza Hotel Pioneer Park",
+      "km": 3061.7,
+      "status": "mismatch"
+    },
+    {
+      "id": "the-johri-jaipur",
+      "name": "The Johri",
+      "liteapiId": "lp65578cf3",
+      "liteapiName": "FabHotel Johri Regency, Malviya Nagar",
+      "km": 439.2,
+      "status": "mismatch"
+    },
+    {
       "id": "hotel-du-couvent-nice",
       "name": "Hôtel du Couvent",
       "liteapiId": "lp655aa5af",
@@ -48,6 +72,14 @@
       "status": "mismatch"
     },
     {
+      "id": "macakizi-bodrum",
+      "name": "Maçakızı",
+      "liteapiId": "lp6582fc35",
+      "liteapiName": "Maçakızı yatch",
+      "km": 895.1,
+      "status": "mismatch"
+    },
+    {
       "id": "the-boatshed-waiheke",
       "name": "The Boatshed",
       "liteapiId": "lp657d719a",
@@ -61,6 +93,46 @@
       "liteapiId": "lp254e5",
       "liteapiName": "Hotel Okura Tokyo Bay",
       "km": 12.7,
+      "status": "mismatch"
+    },
+    {
+      "id": "hotel-du-palais",
+      "name": "Hôtel du Palais",
+      "liteapiId": "lp86c7c",
+      "liteapiName": "Grand Hôtel Du Palais Royal",
+      "km": 668.6,
+      "status": "mismatch"
+    },
+    {
+      "id": "the-battery",
+      "name": "The Battery",
+      "liteapiId": "lpb54fe",
+      "liteapiName": "Omni Hotel at the Battery Atlanta",
+      "km": 3423.2,
+      "status": "mismatch"
+    },
+    {
+      "id": "le-chateau-de-beaulieu",
+      "name": "Le Château de Beaulieu",
+      "liteapiId": "lpf12b5",
+      "liteapiName": "Château de Beaulieu et Magnolia Spa, The Originals Relais",
+      "km": 382.5,
+      "status": "mismatch"
+    },
+    {
+      "id": "hotel-tannenhof",
+      "name": "Hotel Tannenhof",
+      "liteapiId": "lp753d3",
+      "liteapiName": "Alpines Lifestyle Hotel Tannenhof",
+      "km": 221.2,
+      "status": "mismatch"
+    },
+    {
+      "id": "tourists",
+      "name": "TOURISTS",
+      "liteapiId": "lp657327a9",
+      "liteapiName": "NYC Cozy Private Bedroom with Free Parking & Near Subway - Business & Tourists",
+      "km": 214.3,
       "status": "mismatch"
     }
   ],
@@ -144,6 +216,14 @@
       "liteapiName": "Awasi Patagônia",
       "km": 29.8,
       "status": "conflict"
+    },
+    {
+      "id": "the-beaumont-hotel",
+      "name": "The Beaumont Hotel",
+      "liteapiId": "lp87d1a",
+      "liteapiName": "The Beaumont Hotel",
+      "km": 405.7,
+      "status": "conflict"
     }
   ],
   "unchecked": [
@@ -164,11 +244,35 @@
       "status": "unchecked"
     },
     {
+      "id": "anantara-kihavah-maldives",
+      "name": "Anantara Kihavah Maldives Villas",
+      "liteapiId": "lp5236e",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "kudadoo-maldives",
+      "name": "Kudadoo Maldives Private Island",
+      "liteapiId": "lpe5bc6",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
       "id": "six-senses-zighy-bay",
       "name": "Six Senses Zighy Bay",
       "liteapiId": "lp3e868",
       "liteapiName": "Six Senses Zighy Bay",
       "km": 9.1,
+      "status": "unchecked"
+    },
+    {
+      "id": "four-seasons-maui",
+      "name": "Four Seasons Resort Maui at Wailea",
+      "liteapiId": "lp1d817",
+      "liteapiName": "",
+      "km": null,
       "status": "unchecked"
     },
     {
@@ -185,6 +289,14 @@
       "liteapiId": "lp1c5085",
       "liteapiName": "Waldorf Astoria Maldives Ithaafushi",
       "km": 5.5,
+      "status": "unchecked"
+    },
+    {
+      "id": "portrait-milano",
+      "name": "Portrait Milano",
+      "liteapiId": "lp6558521f",
+      "liteapiName": "",
+      "km": null,
       "status": "unchecked"
     },
     {
@@ -220,11 +332,67 @@
       "status": "unchecked"
     },
     {
+      "id": "jardines-de-nivaria-tenerife",
+      "name": "Adrián Hoteles Jardines de Nivaria",
+      "liteapiId": "lp655a8085",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "regent-hong-kong",
+      "name": "Regent Hong Kong",
+      "liteapiId": "lp410f8",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "sandos-papagayo-lanzarote",
+      "name": "Sandos Papagayo",
+      "liteapiId": "lp38479",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "turtle-inn-belize",
+      "name": "Turtle Inn",
+      "liteapiId": "lp274bdc",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "grand-hotel-principe-di-piemonte",
+      "name": "Grand Hotel Principe di Piemonte",
+      "liteapiId": "lp39457",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
       "id": "st-regis-costa-mujeres",
       "name": "The St. Regis Costa Mujeres Resort, Cancun",
       "liteapiId": "lp65891ccc",
       "liteapiName": "The St Regis Costa Mujeres Resort, Cancun",
       "km": 5.0,
+      "status": "unchecked"
+    },
+    {
+      "id": "tierra-patagonia-chile",
+      "name": "Tierra Patagonia",
+      "liteapiId": "lp5fe5d",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "zaborin-niseko",
+      "name": "Zaborin",
+      "liteapiId": "lp90730",
+      "liteapiName": "",
+      "km": null,
       "status": "unchecked"
     },
     {
@@ -236,6 +404,30 @@
       "status": "unchecked"
     },
     {
+      "id": "the-library-samui",
+      "name": "The Library Samui",
+      "liteapiId": "lp52c32",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "kimpton-maa-lai-bangkok",
+      "name": "Kimpton Maa-Lai Bangkok",
+      "liteapiId": "lp344a05",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "casa-san-agustin",
+      "name": "Casa San Agustin",
+      "liteapiId": "lp67427",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
       "id": "rosewood-mandarina",
       "name": "Rosewood Mandarina",
       "liteapiId": "lp6584638d",
@@ -244,11 +436,75 @@
       "status": "unchecked"
     },
     {
+      "id": "kimpton-seafire-grand-cayman",
+      "name": "Kimpton Seafire Resort + Spa",
+      "liteapiId": "lp90dda",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
       "id": "bodyholiday-saint-lucia",
       "name": "BodyHoliday Saint Lucia",
       "liteapiId": "lp6557080d",
       "liteapiName": "BodyHoliday - All inclusive",
       "km": 1.5,
+      "status": "unchecked"
+    },
+    {
+      "id": "st-regis-mexico-city",
+      "name": "The St. Regis Mexico City",
+      "liteapiId": "lp4bab4",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "gaia-riverlodge",
+      "name": "GAÏA Riverlodge",
+      "liteapiId": "lp62b3b",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "the-royal-crescent-hotel-and-spa",
+      "name": "The Royal Crescent Hotel & Spa",
+      "liteapiId": "lp2c75a",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "hotel-sans-souci-wien",
+      "name": "Hotel Sans Souci Wien",
+      "liteapiId": "lp66e00",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "villa-la-massa",
+      "name": "Villa La Massa",
+      "liteapiId": "lp383d5",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "the-sukhothai-bangkok",
+      "name": "The Sukhothai Bangkok",
+      "liteapiId": "lp1f3d5",
+      "liteapiName": "",
+      "km": null,
+      "status": "unchecked"
+    },
+    {
+      "id": "palazzo-versace-macau",
+      "name": "Palazzo Versace Macau",
+      "liteapiId": "lp657f93bc",
+      "liteapiName": "",
+      "km": null,
       "status": "unchecked"
     }
   ]
