@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T19:39:28Z",
+  "updatedAt": "2026-11-25T19:50:26Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 897,
+      "views": 898,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6357,
+      "views": 6362,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -5549,7 +5549,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
-      "views": 430,
+      "views": 437,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
