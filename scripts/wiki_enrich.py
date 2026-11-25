@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from add_award_hotels import http_get, sb, sb_all  # noqa: E402
+from add_award_hotels import city_point, http_get, km_between, sb, sb_all  # noqa: E402
 from complete_hotels import BRANDW, has_coords, needs_photo, words  # noqa: E402
 
 UA = {"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; hotel directory photo credits)"}
@@ -117,8 +117,10 @@ def main() -> int:
         patch: dict[str, Any] = {}
         if not has_coords(p) and pg.get("coordinates"):
             c = pg["coordinates"][0]
-            patch.update({"lat": float(c["lat"]), "lng": float(c["lon"])})
-            pins += 1
+            cp = city_point(p.get("city") or "", p.get("country") or "")
+            if not cp or km_between((float(c["lat"]), float(c["lon"])), cp) <= 60:
+                patch.update({"lat": float(c["lat"]), "lng": float(c["lon"])})
+                pins += 1
         if needs_photo(p.get("hero_image_url")):
             img = commons_image(pg.get("pageimage", ""))
             if img and img[0]:

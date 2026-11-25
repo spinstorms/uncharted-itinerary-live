@@ -390,6 +390,77 @@ def run_editorial(props: dict[str, dict[str, Any]], only: set[str] | None, missi
 
 
 # --------------------------------------------------------------------------- coordinates (OpenStreetMap)
+_CITY_CACHE: dict[str, tuple[float, float] | None] = {}
+NOMINATIM_UA = {"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; map pins for hotel directory)"}
+
+
+def city_point(city: str, country: str) -> tuple[float, float] | None:
+    """Centre of the hotel's stated town/area (OpenStreetMap), used to sanity-check every pin."""
+    q = ", ".join(x for x in (str(city or "").strip(), str(country or "").strip()) if x)
+    if not q:
+        return None
+    if q in _CITY_CACHE:
+        return _CITY_CACHE[q]
+    code, body = http_get(
+        "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode({"q": q, "format": "jsonv2", "limit": "1", "accept-language": "en"}),
+        headers=NOMINATIM_UA,
+    )
+    time.sleep(1.1)
+    pt = None
+    try:
+        res = json.loads(body) if code == 200 else []
+        if res:
+            pt = (float(res[0]["lat"]), float(res[0]["lon"]))
+    except Exception:
+        pt = None
+    _CITY_CACHE[q] = pt
+    return pt
+
+
+def km_between(a: tuple[float, float], b: tuple[float, float]) -> float:
+    import math
+
+    p1, p2 = math.radians(a[0]), math.radians(b[0])
+    dp, dl = math.radians(b[0] - a[0]), math.radians(b[1] - a[1])
+    h = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * 6371.0 * math.asin(min(1.0, math.sqrt(h)))
+
+
+def name_ok(hotel_name: str, candidate_name: str) -> bool:
+    """The words that make this hotel unique (not just its brand) must be in the candidate's name."""
+    from complete_hotels import BRANDW
+
+    need = distinctive(hotel_name)
+    core = need - BRANDW - {"lodge"}
+    got = set(norm_words(candidate_name))
+    target = core or need
+    if not target:
+        return False
+    hit = len(target & got)
+    return hit >= max(1, -(-len(target) * 4 // 5))  # at least 80% of the distinctive words
+
+
+def run_pincheck(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
+    """Clear pins that sit far from the hotel's stated town (they are re-found from a reliable source next)."""
+    addr_path = ROOT / "data" / "hotel-addresses.json"
+    sourced = set(json.loads(addr_path.read_text(encoding="utf-8")).get("hotels", {})) if addr_path.exists() else set()
+    rows = sb_all("properties", "id,name,city,country,lat,lng,visited_by_founder")
+    cleared = checked = 0
+    for r in rows:
+        if only and r["id"] not in only:
+            continue
+        if r["id"] in sourced or not isinstance(r.get("lat"), (int, float)) or not isinstance(r.get("lng"), (int, float)):
+            continue
+        cp = city_point(r.get("city") or "", r.get("country") or "")
+        if not cp:
+            continue
+        checked += 1
+        d = km_between((r["lat"], r["lng"]), cp)
+        if d > 150:
+            print(f"  far pin cleared: {r['id']} ({r['name']}) is {d:.0f} km from {r.get('city')}, {r.get('country')}")
+            sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(r['id'])}", {"lat": None, "lng": None}, {"Prefer": "return=minimal"})
+            cleared += 1
+    print(f"Pin check: {checked} pins compared with their town, {cleared} cleared for re-locating")
 def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
     """Fill missing lat/lng from OpenStreetMap Nominatim (free, 1 request/second).
 
@@ -433,12 +504,16 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
             except Exception:
                 continue
             for res in results:
-                nm = set(norm_words(res.get("name") or res.get("display_name", "").split(",")[0]))
-                if need and len(need & nm) >= max(1, int(len(need) * 0.6 + 0.5)):
-                    if cc and (res.get("address") or {}).get("country_code", "") != cc:
-                        continue
-                    found = (float(res["lat"]), float(res["lon"]), res.get("display_name", "")[:90])
-                    break
+                if not name_ok(r["name"], res.get("name") or res.get("display_name", "").split(",")[0]):
+                    continue
+                if cc and (res.get("address") or {}).get("country_code", "") != cc:
+                    continue
+                pt = (float(res["lat"]), float(res["lon"]))
+                cp = city_point(r.get("city") or "", r.get("country") or "")
+                if cp and km_between(pt, cp) > 60:
+                    continue
+                found = (pt[0], pt[1], res.get("display_name", "")[:90])
+                break
             if found:
                 break
         if not found and r["id"] in addresses:
@@ -468,13 +543,16 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
                     feats = []
                 for f in feats:
                     pp = f.get("properties") or {}
-                    nm = set(norm_words(pp.get("name") or ""))
                     if cc and str(pp.get("countrycode") or "").lower() != cc:
                         continue
-                    if need and len(need & nm) >= max(1, int(len(need) * 0.6 + 0.5)):
-                        lng_, lat_ = f["geometry"]["coordinates"][:2]
-                        found = (float(lat_), float(lng_), f"photon: {pp.get('name')}, {pp.get('city') or ''}")
-                        break
+                    if not name_ok(r["name"], pp.get("name") or ""):
+                        continue
+                    lng_, lat_ = f["geometry"]["coordinates"][:2]
+                    cp = city_point(r.get("city") or "", r.get("country") or "")
+                    if cp and km_between((float(lat_), float(lng_)), cp) > 60:
+                        continue
+                    found = (float(lat_), float(lng_), f"photon: {pp.get('name')}, {pp.get('city') or ''}")
+                    break
         if not found and r["id"] in addresses:
             # street address taken from the hotel's own website (data/hotel-addresses.json), geocoded with OSM
             a = addresses[r["id"]]
@@ -503,7 +581,7 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
 
 
 def main(argv: list[str]) -> int:
-    if not argv or argv[0] not in {"awards", "youtube", "editorial", "coords"}:
+    if not argv or argv[0] not in {"awards", "youtube", "editorial", "coords", "pincheck"}:
         print(__doc__)
         return 2
     cmd = argv[0]
@@ -528,6 +606,8 @@ def main(argv: list[str]) -> int:
         run_awards(props, only)
     elif cmd == "coords":
         run_coords(props, only)
+    elif cmd == "pincheck":
+        run_pincheck(props, only)
     elif cmd == "youtube":
         run_youtube(props, only, missing, limit)
     else:

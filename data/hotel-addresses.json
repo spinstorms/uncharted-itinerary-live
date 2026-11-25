@@ -112,8 +112,10 @@
    "source": "https://guide.michelin.com/en/hotels-stays/yufu1/enowa-13213"
   },
   "kamenoi-besso": {
-   "address": "2633-1 Kawakami, Yufuin-cho, Yufu, Oita, Japan",
-   "source": "https://guide.michelin.com/en/hotels-stays/yufu1/kamenoibesso-13983"
+   "address": "2633-1 Yufuin-cho Kawakami, Yufu-shi, Oita 879-5198, Japan",
+   "lat": 33.26582764,
+   "lng": 131.3674547,
+   "source": "https://www.japan47go.travel/en/detail/ae350354-5ae4-4c7e-8076-ebca079f17a6"
   },
   "family-nature-resort-moar-gut": {
    "address": "Moargasse 22, Grossarl, Austria",
@@ -186,8 +188,10 @@
    "source": "https://guide.michelin.com/en/hotels-stays/courchevel/hotel-le-k2-palace-7726"
   },
   "le-tahaa-pearl-resorts": {
-   "address": "Motu Tautau, 98733 Taha'a, French Polynesia",
-   "source": "https://guide.michelin.com/en/hotels-stays/tahaa/le-tahaa-pearl-resorts-14739"
+   "address": "Motu Tautau, 98733 Patio, Taha'a, French Polynesia",
+   "lat": -16.6086,
+   "lng": -151.5632,
+   "source": "https://www.relaischateaux.com/us/details/le-taha-a/"
   },
   "purs-luxury-boutique-hotel-and-restaurant": {
    "address": "Steinweg 30-32, Andernach, Germany",
@@ -248,8 +252,10 @@
    "source": "https://guide.michelin.com/en/hotels-stays/vulcano/therasia-resort-8826"
   },
   "villa-bokeh": {
-   "address": "San Pedro Panorama, Lote C3, Entrada a Finca San Nicolás, La Antigua, Guatemala",
-   "source": "https://guide.michelin.com/en/hotels-stays/la-antigua/villa-bokeh-14873"
+   "address": "San Pedro Panorama, Lote C3, Entrada a Finca San Nicolás, Sacatepéquez, Guatemala",
+   "lat": 14.542522,
+   "lng": -90.739761,
+   "source": "https://wanderlog.com/place/details/2357888/villa-bokéh-relais--chateaux"
   },
   "villa-eden-the-private-retreat": {
    "address": "Via Winkel 68, Merano, Italy",
@@ -269,8 +275,28 @@
    "source": "https://guide.michelin.com/en/hotels-stays/R%C3%B6hrnbach/wellness-sport-hotel-jagdhof-13953"
   },
   "wharekauhau-country-estate": {
-   "address": "4132 Wharekauhau Road, Palliser Bay, Featherston, New Zealand",
-   "source": "https://guide.michelin.com/en/hotels-stays/wairarapa/wharekauhau-6109"
+   "address": "4132 Wharekauhau Road, RD3, Featherston 5773, New Zealand",
+   "lat": -41.3722,
+   "lng": 175.0701,
+   "source": "https://www.relaischateaux.com/us/details/wharekauhau-country-estate/"
+  },
+  "four-seasons-resort-mallorca-at-formentor": {
+   "address": "Playa de Formentor, Mallorca, Spain",
+   "lat": 39.92565,
+   "lng": 3.14504,
+   "source": "https://guide.michelin.com/en/hotels-stays/majorca/four-seasons-resort-mallorca-at-formentor-125434-14683"
+  },
+  "singita-boulders-lodge": {
+   "address": "Sabi Sand Game Reserve, Hazyview 1242, South Africa",
+   "lat": -24.786236977977765,
+   "lng": 31.42642507410054,
+   "source": "https://www.the50.com/discovery/Establishments/South-Africa/Kruger-National-Park/Singita-Boulders-Lodge.html"
+  },
+  "singita-kwitonda-lodge": {
+   "address": "Nyange Sector, Kinigi, Musanze, Rwanda",
+   "lat": -1.4226063,
+   "lng": 29.6196446,
+   "source": "https://www.the50.com/discovery/Establishments/Rwanda/Musanze/Singita-Kwitonda-Lodge.html"
   }
  }
 }
