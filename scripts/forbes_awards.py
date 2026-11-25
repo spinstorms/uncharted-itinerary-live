@@ -123,6 +123,8 @@ def main(argv: list[str]) -> int:
                      "source_url": e["url"], "verified_at": now_iso()})
         print(f"  {p['id']}: {label} ({e['name']}, {e['dest']})")
     print(f"Forbes: tagging {len(rows)} hotels; {len(unmatched_five)} Five-Star hotels on the list are not in StayOdds")
+    seen_keys: set[tuple[str, str]] = set()
+    rows = [r for r in rows if (r["property_id"], r["label"]) not in seen_keys and not seen_keys.add((r["property_id"], r["label"]))]
     if not dry and rows:
         upsert("official_awards", rows, "property_id,award_body,label")
     return 0
