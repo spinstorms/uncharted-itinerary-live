@@ -762,10 +762,11 @@ LANG_NAMES = {"fr": "French", "de": "German", "es": "Spanish", "it": "Italian", 
 
 def voices_section_html(h: dict[str, Any]) -> str:
     """Real guest comments (dated, sourced, unedited) and links to traveller discussions and reviews. No scores made up."""
-    quotes = h.get("guestQuotes") or {}
+    # read the data files directly too, so a publish-only run picks up newly added links and ratings
+    quotes = h.get("guestQuotes") or GUEST_QUOTES.get(h.get("id", "")) or {}
     qs = quotes.get("quotes") or []
-    mentions = h.get("communityMentions") or []
-    ta = h.get("tripadvisor") or {}
+    mentions = COMMUNITY.get(h.get("id", "")) or h.get("communityMentions") or []
+    ta = h.get("tripadvisor") or TRIPADVISOR.get(h.get("id", "")) or {}
     if not qs and not mentions and not ta.get("rating"):
         return ""
     ta_html = ""
