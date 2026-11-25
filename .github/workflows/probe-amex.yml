@@ -1,0 +1,33 @@
+name: Probe Amex hotel finder pages (read-only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space separated URLs to save"
+        required: false
+        default: "https://www.americanexpress.com/en-us/travel/discover/property-results/ab/0 https://www.americanexpress.com/en-us/travel/discover/hotel-finder"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Save pages to the probe-amex branch
+        env:
+          URLS: ${{ inputs.urls }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir out && cd out
+          i=0
+          for u in $URLS; do
+            i=$((i+1))
+            code=$(curl -sL -o "page$i.html" -w '%{http_code}' -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' -H 'Accept-Language: en-US,en;q=0.9' "$u")
+            echo "$u -> HTTP $code, $(wc -c < page$i.html) bytes" | tee -a index.txt
+          done
+          git init -q && git checkout -q -b probe-amex
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add . && git commit -qm "probe"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" probe-amex
