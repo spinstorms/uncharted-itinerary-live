@@ -788,7 +788,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
             f"{q['score']:g}/10" if isinstance(q.get("score"), (int, float)) else "",
             q.get("travellerType", "").title(),
             q.get("date", ""),
-            f"{'Verified guest' if q.get('source') == 'LiteAPI guest' else q.get('source', '')} review",
+            f"{'Verified booking guest' if q.get('source') in ('LiteAPI guest', 'Verified guest') else q.get('source', '')} review",
             f"written in {LANG_NAMES.get(q.get('language', ''), q.get('language', '').upper())}" if q.get("language") not in ("", "en", None) else "",
         ) if x)
         q_html += (f'<div class="channel-row" style="display:block;"><div style="display:flex;flex-direction:column;gap:4px;">'
@@ -801,7 +801,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
                    f'<strong>{esc(m.get("title") or m["url"])}</strong> &#8599;</a>{"<br>" + quote if quote else ""}'
                    f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')
     left = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Recent Guest Comments</h3><span class="tag">{len(qs)} real review{"" if len(qs) == 1 else "s"}</span></div>
-      <p class="detail-panel-sub">The most recent written reviews in our booking-data feed ({esc(quotes.get("provider", ""))}), shown as written, good or bad. Checked {esc(quotes.get("fetched", ""))}.</p>
+      <p class="detail-panel-sub">The latest written guest reviews, shown as written, good or bad, with where each one comes from. Checked {esc(quotes.get("fetched", ""))}.</p>
       <div class="channel-breakdown-list" style="margin-top:12px;">{q_html}</div></div>''') if qs else ""
     right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions) + (1 if ta_html else 0)} linked</span></div>
       <p class="detail-panel-sub">Ratings on other sites, forum threads, blogs and reviews about this hotel. Short quotes are credited and link to the original.</p>
