@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T08:48:42Z",
+  "updatedAt": "2026-11-25T08:54:27Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 887,
+      "views": 888,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1754,7 +1754,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2897,
+      "views": 2898,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -2137,7 +2137,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4253,
+      "views": 4251,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -2784,7 +2784,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4715,
+      "views": 4714,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
-      "views": 232,
+      "views": 233,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -7285,7 +7285,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 276,
+      "views": 277,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
