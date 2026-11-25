@@ -32,15 +32,21 @@ RANK = {"3 MICHELIN Stars": 0, "2 MICHELIN Stars": 1, "1 MICHELIN Star": 2, "Bib
 def get(url: str) -> str:
     time.sleep(1.0)
     code, page = http_get(url, headers=UA)
+    if code != 200:
+        print(f"  HTTP {code}: {url}")
     return page if code == 200 else ""
 
 
 def hotel_urls() -> list[str]:
     idx = get(f"{BASE}/sitemap.xml")
-    maps = [u for u in re.findall(r"<loc>([^<]+)</loc>", idx) if "/sitemap/hotel/en/" in u]
+    allmaps = [u for u in re.findall(r"<loc>([^<]+)</loc>", idx) if "/sitemap/hotel/" in u]
+    locs = sorted({u.split("/sitemap/hotel/")[1].split("/")[0] for u in allmaps})
+    print(f"Dining: hotel sitemap locales: {locs[:40]}")
+    pick = "en" if "en" in locs else ("gb" if "gb" in locs else (locs[0] if locs else ""))
+    maps = [u for u in allmaps if f"/sitemap/hotel/{pick}/" in u]
     urls = []
     for m in maps:
-        urls += [u for u in re.findall(r"<loc>([^<]+)</loc>", get(m)) if "/en/hotels-stays/" in u]
+        urls += [u for u in re.findall(r"<loc>([^<]+)</loc>", get(m)) if "/hotels-stays/" in u]
     return sorted(set(urls))
 
 
@@ -63,6 +69,9 @@ def main() -> int:
         print("Dining: all hotels checked within 90 days")
         return 0
     urls = hotel_urls()
+    if not urls:
+        print("Dining: could not read the MICHELIN hotel sitemap; nothing saved")
+        return 1
     print(f"Dining: {len(urls)} MICHELIN hotel pages in the sitemap; {len(props)} of our keyed hotels to check")
     cand = [(u, *slug_words(u)) for u in urls]
     done = 0
