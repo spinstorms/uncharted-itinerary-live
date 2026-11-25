@@ -27,6 +27,18 @@
     },
     "four-seasons-yacht-i": {
       "google_place_id": null
+    },
+    "anantara-uluwatu-bali-resort": {
+      "name": "Svanata Uluwatu Bali Resort",
+      "brand": "Independent"
+    },
+    "dreams-lanzarote-playa-dorada": {
+      "name": "Grand Hyatt Lanzarote Playa Dorada Resort",
+      "brand": "Grand Hyatt"
+    },
+    "st-regis-bahia-beach-puerto-rico": {
+      "name": "Four Seasons Resort Puerto Rico",
+      "brand": "Four Seasons"
     }
   },
   "property_facts": {
@@ -60,6 +72,9 @@
   "renamed_sources": {
     "pendry-west-hollywood": "https://www.hotelmanagement.net/conversions/pendry-west-hollywood-rebrands-sun-rose-west-hollywood",
     "rosewood-le-guanahani-st-barth": "https://hospitality-on.com/en/mergers-and-acquisitions/airelles-takes-over-le-guanahani-largest-hotel-saint-barthelemy",
-    "montage-kapalua-bay": "https://onemileatatime.com/news/resort-kapalua-bay-maui-marriott-st-regis"
+    "montage-kapalua-bay": "https://onemileatatime.com/news/resort-kapalua-bay-maui-marriott-st-regis",
+    "anantara-uluwatu-bali-resort": "https://whatsnewindonesia.com/bali/feature/anantara-uluwatu-bali-resort-now-svanata-uluwatu-bali-resort",
+    "dreams-lanzarote-playa-dorada": "https://www.hyatt.com/grand-hyatt/en-US/drepd-grand-hyatt-lanzarote-playa-dorada-resort/reviews",
+    "st-regis-bahia-beach-puerto-rico": "https://www.caribjournal.com/2025/11/25/four-seasons-puerto-rico-open/"
   }
 }
