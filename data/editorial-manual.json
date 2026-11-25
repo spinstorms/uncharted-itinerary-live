@@ -1,14 +1,869 @@
 {
-  "_readme": "Critic scores checked by hand against the published page. Only add a row after reading the score on the page itself.",
-  "ratings": [
-    {
-      "property_id": "forestis-dolomites",
-      "source_name": "The Luxury Travel Expert",
-      "source_url": "https://theluxurytravelexpert.com/review-forestis-dolomites",
-      "raw_score": "9.2/10",
-      "normalized_100": 92,
-      "takeaway": "First-hand hotel verdict (9.2/10): Overall experience rated 9.2/10.",
-      "published_at": null
-    }
-  ]
+ "_readme": "Critic scores copied from the publisher's own page or list (Fat Voyage list at https://fat.voyage/hotels, checked 2026-11-25; The Luxury Travel Expert review pages). Only add a row after reading the score on the source itself.",
+ "ratings": [
+  {
+   "property_id": "forestis-dolomites",
+   "source_name": "The Luxury Travel Expert",
+   "source_url": "https://theluxurytravelexpert.com/review-forestis-dolomites",
+   "raw_score": "9.2/10",
+   "normalized_100": 92,
+   "takeaway": "First-hand hotel verdict (9.2/10): Overall experience rated 9.2/10.",
+   "published_at": null
+  },
+  {
+   "property_id": "aman-i-khas",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/aman-i-khas",
+   "raw_score": "18.5/20",
+   "normalized_100": 92,
+   "takeaway": "Fat Voyage score 18.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "singita-kwitonda-lodge",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/singita-volcanoes",
+   "raw_score": "18.5/20",
+   "normalized_100": 92,
+   "takeaway": "Fat Voyage score 18.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "como-the-halkin",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/como-the-halkin",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-des-bergues-geneva",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-des-bergues",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-resort-mallorca-at-formentor",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-mallorca",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-lake-como",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-lake-como",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-marrakech",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-marrakech",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-paris",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-paris",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "singita-boulders-lodge",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/singita-boulders-lodge",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-oberoi-marrakech",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/oberoi-marrakech",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "villa-san-michele-a-belmond-hotel-florence",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/villa-san-michele-florence",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "amanfayun",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/amanfayun",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "amanjena",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/amanjena",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "como-metropolitan-london",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/como-metropolitan-london",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-london-at-tower-bridge",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-london-tower-bridge",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-new-york-downtown",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-new-york-downtown",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-tokyo-at-marunouchi",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-tokyo-marunouchi",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-resort-marrakech",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-marrakech",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-downtown-dubai",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-downtown-dubai",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "park-hyatt-paris-vendome",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/park-hyatt-paris-vendome",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-peninsula-bangkok",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/the-peninsula-bangkok",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "explora-atacama",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/explora-atacama",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-istanbul-bosphorus",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-istanbul-bosphorus",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "singita-grumeti",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/singita-grumeti",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "singita-sabora",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/singita-sabora",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "six-senses-rome",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/six-senses-rome",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "aman-villas-at-nusa-dua",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/amanusa",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-new-york",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-new-york",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "cap-rocat",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/cap-rocat",
+   "raw_score": "16/20",
+   "normalized_100": 80,
+   "takeaway": "Fat Voyage score 16/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-amsterdam",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-amsterdam",
+   "raw_score": "15.5/20",
+   "normalized_100": 78,
+   "takeaway": "Fat Voyage score 15.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-miami",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-miami",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "amilla-maldives",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/amilla-maldives",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "oberoi-udaivilas",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/oberoi-udaivilas",
+   "raw_score": "18.5/20",
+   "normalized_100": 92,
+   "takeaway": "Fat Voyage score 18.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "royal-champagne-hotel-and-spa",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/royal-champagne",
+   "raw_score": "18.5/20",
+   "normalized_100": 92,
+   "takeaway": "Fat Voyage score 18.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "awasi-patagonia-chile",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/awasi-patagonia",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "ballyfin-demesne",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/ballyfin-demesne",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mount-nelson-belmond-cape-town",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/belmond-mount-nelson",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-cadogan-a-belmond-hotel-london",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/belmond-the-cadogan",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "brenners-park-hotel-and-spa",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/brenners-park-hotel-spa",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "deplar-farm-iceland",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/deplar-farm",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-sultanahmet-istanbul",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-istanbul-sultanahmet",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-osaka",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-osaka",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-lutetia-paris",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-lutetia-paris",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-qianmen-beijing",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-qianmen-beijing",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-hyde-park-london",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-london-hyde-park",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-new-york",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-new-york",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-luang-prabang",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-luang-prabang",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "six-senses-krabey-island",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/six-senses-krabey-island",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "taj-lake-palace-udaipur",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/taj-lake-palace",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-lanesborough",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/oetker-collection-the-lanesborough",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-peninsula-istanbul",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/peninsula-istanbul",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "waldorf-astoria-new-york",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/waldorf-astoria-new-york",
+   "raw_score": "18/20",
+   "normalized_100": 90,
+   "takeaway": "Fat Voyage score 18/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "copacabana-palace-belmond-rio",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/belmond-copacabana-palace",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "bulgari-hotel-roma",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/bulgari-hotel-rome",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "hotel-cheval-blanc-st-tropez",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/cheval-blanc-st-tropez",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-london-at-park-lane",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-london-park-lane",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-cabo-del-sol",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-los-cabos-cabo-del-sol",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-hotel-ritz-lisbon",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-ritz-lisbon",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "la-reserve-paris",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/la-reserve-paris",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-bodrum",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-bodrum",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-costa-navarino",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-costa-navarino",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "raffles-udaipur",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/raffles-udaipur",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-bangkok",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-bangkok",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-castiglion-del-bosco",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-castiglion-del-bosco",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "six-senses-fort-barwara",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/six-senses-fort-barwara",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "six-senses-kyoto",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/six-senses-kyoto",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-chancery-rosewood",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-the-chancery",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "waldorf-astoria-los-cabos-pedregal",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/waldorf-astoria-los-cabos-pedregal",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "waldorf-astoria-osaka",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/waldorf-astoria-osaka",
+   "raw_score": "17.5/20",
+   "normalized_100": 88,
+   "takeaway": "Fat Voyage score 17.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "amanruya-bodrum",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/amanruya",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "capella-kyoto",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/capella-kyoto",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "como-point-yamu",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/como-point-yamu-phuket",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-bosphorus-istanbul",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-bosphorus",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "lapogee-courchevel",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/oetker-collection-lapogee-courchevel",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "le-royal-monceau",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/le-royal-monceau-raffles-paris",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-mayfair-london",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-mayfair-london",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-ritz-madrid",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-madrid-ritz",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-beijing",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-beijing",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-miramar-beach",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-miramar-beach",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "six-senses-fiji",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/six-senses-fiji",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-peninsula-paris",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/peninsula-paris",
+   "raw_score": "17/20",
+   "normalized_100": 85,
+   "takeaway": "Fat Voyage score 17/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "four-seasons-nevis",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/four-seasons-nevis",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-landmark-mandarin-oriental-hong-kong",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/mandarin-oriental-the-landmark-hong-kong",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-schloss-fuschl",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-schloss-fuschl",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-villa-magna-madrid",
+   "source_name": "Fat Voyage",
+   "source_url": "https://fat.voyage/hotels/rosewood-villa-magna",
+   "raw_score": "16.5/20",
+   "normalized_100": 82,
+   "takeaway": "Fat Voyage score 16.5/20 (published on fat.voyage).",
+   "published_at": null
+  },
+  {
+   "property_id": "badrutts-palace",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "il-san-pietro-positano",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "la-reserve-paris",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "las-ventanas-al-paraiso",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "le-meurice",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "mandarin-oriental-bangkok",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "one-and-only-portonovi",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "rosewood-mayakoba",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-peninsula-chicago",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  },
+  {
+   "property_id": "the-peninsula-shanghai",
+   "source_name": "La Liste 2026",
+   "source_url": "https://www.timeout.com/news/these-are-officially-the-worlds-best-hotels-in-2026-according-to-a-prestigious-award-070926",
+   "raw_score": "99.5/100",
+   "normalized_100": 99,
+   "takeaway": "La Liste 2026 hotel ranking: 99.5/100, joint top score worldwide (La Liste aggregates hundreds of guides, publications and guest reviews).",
+   "published_at": null
+  }
+ ]
 }

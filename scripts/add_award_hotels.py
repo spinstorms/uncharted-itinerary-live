@@ -396,9 +396,12 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
     A result is kept only if it is in the hotel's country and its OSM name contains the hotel's distinctive words.
     """
     from catalog_awards import AWARD_HOTEL_ADDITIONS
+    from catalog_critics import CRITIC_HOTEL_ADDITIONS
     from catalog_michelin import MICHELIN_HOTEL_ADDITIONS
 
-    iso = {t[0]: t[4].lower() for t in list(AWARD_HOTEL_ADDITIONS) + list(MICHELIN_HOTEL_ADDITIONS)}
+    iso = {t[0]: t[4].lower() for t in list(AWARD_HOTEL_ADDITIONS) + list(MICHELIN_HOTEL_ADDITIONS) + list(CRITIC_HOTEL_ADDITIONS)}
+    addr_path = ROOT / "data" / "hotel-addresses.json"
+    addresses = json.loads(addr_path.read_text(encoding="utf-8")).get("hotels", {}) if addr_path.exists() else {}
     rows = sb_all("properties", "id,name,city,country,lat,lng")
     missing = [
         r for r in rows
@@ -411,7 +414,10 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
         need = distinctive(r["name"])
         cc = iso.get(r["id"], "")
         found = None
-        for q in (f"{r['name']}, {r.get('city') or ''}", r["name"]):
+        a = addresses.get(r["id"])
+        if a and isinstance(a.get("lat"), (int, float)):
+            found = (float(a["lat"]), float(a["lng"]), f"source page: {a.get('source', '')[:70]}")
+        for q in ((f"{r['name']}, {r.get('city') or ''}", r["name"]) if not found else ()):
             params = {"q": q, "format": "jsonv2", "limit": "5", "addressdetails": "1", "accept-language": "en"}
             if cc:
                 params["countrycodes"] = cc
@@ -435,8 +441,60 @@ def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
                     break
             if found:
                 break
+        if not found and r["id"] in addresses:
+            a2 = addresses[r["id"]]
+            params = {"q": a2["address"], "format": "jsonv2", "limit": "1", "accept-language": "en"}
+            if cc:
+                params["countrycodes"] = cc
+            code, body = http_get("https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(params),
+                                  headers={"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; map pins for hotel directory)"})
+            time.sleep(1.1)
+            try:
+                res = json.loads(body) if code == 200 else []
+            except Exception:
+                res = []
+            if res:
+                found = (float(res[0]["lat"]), float(res[0]["lon"]), f"address: {a2['address'][:70]}")
+        if not found:
+            # Photon (OpenStreetMap data, fuzzier name search)
+            pr = {"q": f"{r['name']} {r.get('city') or ''}".strip(), "limit": "8", "lang": "en"}
+            code, body = http_get("https://photon.komoot.io/api/?" + urllib.parse.urlencode(pr),
+                                  headers={"User-Agent": "StayOddsBot/1.0 (https://stayodds.com)"})
+            time.sleep(1.0)
+            if code == 200:
+                try:
+                    feats = json.loads(body).get("features") or []
+                except Exception:
+                    feats = []
+                for f in feats:
+                    pp = f.get("properties") or {}
+                    nm = set(norm_words(pp.get("name") or ""))
+                    if cc and str(pp.get("countrycode") or "").lower() != cc:
+                        continue
+                    if need and len(need & nm) >= max(1, int(len(need) * 0.6 + 0.5)):
+                        lng_, lat_ = f["geometry"]["coordinates"][:2]
+                        found = (float(lat_), float(lng_), f"photon: {pp.get('name')}, {pp.get('city') or ''}")
+                        break
+        if not found and r["id"] in addresses:
+            # street address taken from the hotel's own website (data/hotel-addresses.json), geocoded with OSM
+            a = addresses[r["id"]]
+            params = {"q": a["address"], "format": "jsonv2", "limit": "1", "accept-language": "en"}
+            if cc:
+                params["countrycodes"] = cc
+            code, body = http_get("https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(params),
+                                  headers={"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; map pins for hotel directory)"})
+            time.sleep(1.1)
+            try:
+                res = json.loads(body) if code == 200 else []
+            except Exception:
+                res = []
+            if res:
+                found = (float(res[0]["lat"]), float(res[0]["lon"]), f"address: {a['address'][:70]}")
         if found:
-            sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(r['id'])}", {"lat": found[0], "lng": found[1]}, {"Prefer": "return=minimal"})
+            patch = {"lat": found[0], "lng": found[1]}
+            if a and a.get("city"):
+                patch["city"] = a["city"]
+            sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(r['id'])}", patch, {"Prefer": "return=minimal"})
             fixed += 1
             print(f"  pin {r['id']}: {found[0]:.4f},{found[1]:.4f} ({found[2]})")
         else:

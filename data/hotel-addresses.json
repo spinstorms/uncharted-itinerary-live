@@ -1,0 +1,276 @@
+{
+ "_readme": "Hotel addresses checked on the MICHELIN Guide hotel page or the hotel's own website. lat/lng only when the source page itself gives them; otherwise the address is geocoded with OpenStreetMap.",
+ "hotels": {
+  "the-telegraph-hotel": {
+   "address": "31 Shota Rustaveli Avenue, Tbilisi, Georgia",
+   "source": "https://guide.michelin.com/en/hotels-stays/tbilisi/the-telegraph-hotel-15130"
+  },
+  "airelles-saint-tropez-chateau-de-la-messardiere": {
+   "address": "2 Route de Tahiti, Saint-Tropez, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/saint-tropez/airelles-saint-tropez-chateau-de-la-messardiere-11423",
+   "lat": 43.25358,
+   "lng": 6.65806
+  },
+  "airelles-venezia-a-virtuoso-preview-property": {
+   "address": "Giudecca 33, 30133 Venezia, Italy",
+   "source": "https://airelles.com/en/destination/venice/informations-pratiques-vnz"
+  },
+  "alpen-wellness-resort-hochfirst": {
+   "address": "Gurglerstraße 123, Obergurgl, Austria",
+   "source": "https://guide.michelin.com/en/hotels-stays/obergurgl/alpen-wellness-resort-hochfirst-13947",
+   "lat": 46.87055,
+   "lng": 11.02708
+  },
+  "aman-le-melezin": {
+   "address": "310 rue de Bellecôte, Courchevel, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/courchevel/aman-le-melezin-7266",
+   "lat": 45.412971,
+   "lng": 6.636229
+  },
+  "aman-rosa-alpina": {
+   "address": "Strada Micura de Rue 20, San Cassiano, Italy",
+   "source": "https://guide.michelin.com/en/hotels-stays/san-cassiano/rosa-alpina-5857",
+   "lat": 46.571785,
+   "lng": 11.93064
+  },
+  "amanyangyun": {
+   "address": "6161 Yuan Jiang Lu, Minhang Qu, Shanghai, China",
+   "source": "https://guide.michelin.com/en/hotels-stays/shanghai/amanyangyun-8554",
+   "lat": 31.037461,
+   "lng": 121.357389
+  },
+  "ambiente-a-landscape-hotel": {
+   "address": "900 W State Route 89A, Sedona, AZ, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/sedona/ambiente-a-landscape-hotel-13985"
+  },
+  "anantara-palais-hansen-vienna-hotel": {
+   "address": "Schottenring 24, Vienna, Austria",
+   "source": "https://guide.michelin.com/en/hotels-stays/vienna/anantara-palais-hansen-vienna-hotel-15401",
+   "lat": 48.2165731475,
+   "lng": 16.3687976969
+  },
+  "bardessono-hotel-and-spa": {
+   "address": "6526 Yount Street, Yountville, CA, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/napa-sonoma-valleys/bardessono-4031",
+   "lat": 38.4027,
+   "lng": -122.361262
+  },
+  "baumaniere-les-baux-de-provence": {
+   "address": "Mas de Baumanière, D27, Les Baux-de-Provence, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/les-baux-de-provence/baumaniere-les-baux-de-provence-7833",
+   "lat": 43.740064,
+   "lng": 4.788683
+  },
+  "bellevue-syrene-1820": {
+   "address": "Piazza della Vittoria 5, Sorrento, Italy",
+   "source": "https://guide.michelin.com/en/hotels-stays/sorrento-2/bellevue-syrene-1820-441",
+   "lat": 40.627515,
+   "lng": 14.371011
+  },
+  "bulgari-hotel-paris": {
+   "address": "30 avenue George V, Paris, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/paris/bulgari-hotel-paris-12626",
+   "lat": 48.86821,
+   "lng": 2.30149
+  },
+  "bulgari-hotel-shanghai": {
+   "address": "Lane 108 North Shanxi Road, Shanghai, China",
+   "source": "https://guide.michelin.com/en/hotels-stays/shanghai/bulgari-hotel-shanghai-12400",
+   "lat": 31.24288,
+   "lng": 121.48044
+  },
+  "capri-palace-jumeirah": {
+   "address": "Via Capodimonte 14, Anacapri, Italy",
+   "source": "https://guide.michelin.com/en/hotels-stays/capri/capri-palace-hotel-spa-6205"
+  },
+  "chiemgauhof-lakeside-retreat": {
+   "address": "Julius-Exter-Promenade 21, Übersee, Germany",
+   "source": "https://guide.michelin.com/en/hotels-stays/%C3%9Cbersee/chiemgauhof-lakeside-retreat-15121",
+   "lat": 47.846874,
+   "lng": 12.476475
+  },
+  "chateau-richeux-les-maisons-de-bricourt": {
+   "address": "Le Buot, Saint-Méloir-des-Ondes, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/saint-meloir-des-ondes/chateau-richeux-les-maisons-de-bricourt-13607",
+   "lat": 48.643751,
+   "lng": -1.870711
+  },
+  "das-achental-resort": {
+   "address": "Mietenkamer Straße 65, Grassau, Germany",
+   "source": "https://guide.michelin.com/en/hotels-stays/Grassau/das-achental-resort-13234",
+   "lat": 47.78591,
+   "lng": 12.4652
+  },
+  "das-kranzbach-hotel-and-wellness-retreat": {
+   "address": "Kranzbach 1, Krün, Germany",
+   "source": "https://guide.michelin.com/en/hotels-stays/kranzbach/das-kranzbach-hotel-wellness-retreat-6329",
+   "lat": 47.47216,
+   "lng": 11.21465
+  },
+  "enowa-yufu": {
+   "address": "544 Kawakami, Yufuin-cho, Yufu, Oita, Japan",
+   "source": "https://guide.michelin.com/en/hotels-stays/yufu1/enowa-13213"
+  },
+  "kamenoi-besso": {
+   "address": "2633-1 Kawakami, Yufuin-cho, Yufu, Oita, Japan",
+   "source": "https://guide.michelin.com/en/hotels-stays/yufu1/kamenoibesso-13983"
+  },
+  "family-nature-resort-moar-gut": {
+   "address": "Moargasse 22, Grossarl, Austria",
+   "source": "https://guide.michelin.com/en/hotels-stays/grossarl/family-nature-resort-moar-gut-13886",
+   "lat": 47.21405,
+   "lng": 13.19369
+  },
+  "hotel-barriere-fouquets-new-york": {
+   "address": "456 Greenwich Street, New York, NY, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/nyc/hotel-barriere-fouquets-new-york-12792",
+   "lat": 40.72362,
+   "lng": -74.00975
+  },
+  "jk-place-capri": {
+   "address": "Via Marina Grande 225, Capri, Italy",
+   "source": "https://guide.michelin.com/en/hotels-stays/capri/jk-place-capri-2071",
+   "lat": 40.557602,
+   "lng": 14.235513
+  },
+  "kanamean-nishitomiya": {
+   "address": "562 Honeyanocho, Nakagyo-ku, Kyoto, Japan",
+   "source": "https://guide.michelin.com/en/hotels-stays/kyoto-prefecture/kanamean-nishitomiya-8768",
+   "lat": 35.0066431,
+   "lng": 135.764765
+  },
+  "lapogee-courchevel": {
+   "address": "5 Rue Emile Allais, Jardin Alpin, Courchevel, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/courchevel/lapogee-9972",
+   "lat": 45.41166,
+   "lng": 6.63267
+  },
+  "la-reserve-ramatuelle-hotel-spa-and-villas": {
+   "address": "736 Chemin des Crêtes, Ramatuelle, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/saint-tropez/la-reserve-ramatuelle-11439",
+   "lat": 43.193093,
+   "lng": 6.648491
+  },
+  "le-domaine-du-mas-de-pierre": {
+   "address": "2320 Route des Serres, Saint-Paul-de-Vence, France",
+   "source": "https://guide.michelin.com/en/hotels-stays/saint-paul-de-vence/le-domaine-du-mas-de-pierre-6024",
+   "lat": 43.68239,
+   "lng": 7.123721
+  },
+  "aktiv-and-wellnesshotel-bergfried": {
+   "address": "Lanersbach 483, 6293 Tux, Austria",
+   "source": "https://www.tirol.at/unterkuenfte/urlaub-buchen/aktiv-wellnesshotel-bergfried"
+  },
+  "como-laucala-island-fiji": {
+   "address": "Laucala Island, Fiji",
+   "lat": -16.75,
+   "lng": -179.68333,
+   "source": "https://en.wikipedia.org/wiki/Laucala (private island; the resort occupies the island)"
+  },
+  "el-silencio-lodge-and-spa": {
+   "address": "Bajos del Toro, 21203 Alajuela, Costa Rica",
+   "lat": 10.2028,
+   "lng": -84.3054,
+   "source": "https://www.relaischateaux.com/us/details/el-silencio-lodge-spa/"
+  },
+  "four-seasons-resort-the-nam-hai-hoi-an": {
+   "address": "Block Ha My Dong B, Dien Ban Dong Ward, Da Nang City, Vietnam",
+   "lat": 15.940699,
+   "lng": 108.306456,
+   "source": "https://fourseasons.com/hoian/getting-here"
+  },
+  "le-k2-palace": {
+   "address": "238 route des Clarines, Courchevel, France",
+   "lat": 45.41484,
+   "lng": 6.635041,
+   "source": "https://guide.michelin.com/en/hotels-stays/courchevel/hotel-le-k2-palace-7726"
+  },
+  "le-tahaa-pearl-resorts": {
+   "address": "Motu Tautau, 98733 Taha'a, French Polynesia",
+   "source": "https://guide.michelin.com/en/hotels-stays/tahaa/le-tahaa-pearl-resorts-14739"
+  },
+  "purs-luxury-boutique-hotel-and-restaurant": {
+   "address": "Steinweg 30-32, Andernach, Germany",
+   "lat": 50.43895,
+   "lng": 7.39735,
+   "source": "https://guide.michelin.com/en/hotels-stays/andernach/purs-10038"
+  },
+  "palazzo-portinari-salviati-residenza-depoca": {
+   "address": "Via del Corso 6, Florence, Italy",
+   "lat": 43.77151,
+   "lng": 11.25739,
+   "source": "https://guide.michelin.com/en/hotels-stays/florence/palazzo-portinari-salviati-residenza-depoca-12716"
+  },
+  "patrick-hellmann-schlosshotel": {
+   "address": "Brahmsstraße 10, Berlin, Germany",
+   "lat": 52.480195,
+   "lng": 13.274392,
+   "source": "https://guide.michelin.com/en/hotels-stays/berlin/patrick-hellmann-schlosshotel-4892"
+  },
+  "rocco-forte-charles-hotel": {
+   "address": "Sophienstraße 28, Munich, Germany",
+   "source": "https://guide.michelin.com/en/hotels-stays/munich/charles-hotel-munich-6327"
+  },
+  "singlethread-farm-inn": {
+   "address": "131 North Street, Healdsburg, CA, USA",
+   "lat": 38.612705,
+   "lng": -122.869768,
+   "source": "https://guide.michelin.com/en/hotels-stays/napa-sonoma-valleys/singlethread-inn-13698"
+  },
+  "spa-and-golf-hotel-weimarer-land": {
+   "address": "Weimarer Straße 60, Blankenhain, Germany",
+   "lat": 50.86775,
+   "lng": 11.33673,
+   "source": "https://guide.michelin.com/en/hotels-stays/blankenhain/spa-golf-hotel-weimarer-land-10109"
+  },
+  "susana-balbo-winemakers-house-and-spa-suites-relais-and-chat": {
+   "address": "Viamonte 5022, Chacras de Coria, Luján de Cuyo, Argentina",
+   "lat": -32.989975,
+   "lng": -68.887397,
+   "source": "https://guide.michelin.com/en/hotels-stays/lujan-de-cuyo/susana-balbo-winemaker-s-house-spa-suites-12958"
+  },
+  "the-carlton-milan-a-rocco-forte-hotel": {
+   "address": "Via Senato 5, 20121 Milan, Italy",
+   "source": "https://www.roccofortehotels.com/media/4pedaxoh/rfh-the-carlton-factsheet-april-2026.pdf"
+  },
+  "the-hornibrook-mansion": {
+   "address": "2120 Louisiana Street, Little Rock, AR, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/little-rock/the-empress-of-little-rock-11765"
+  },
+  "the-resort-at-paws-up": {
+   "address": "40060 Paws Up Road, Greenough, MT, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/greenough/resort-at-paws-up-368"
+  },
+  "therasia-resort-sea-and-spa": {
+   "address": "Località Vulcanello, Vulcano, Italy",
+   "lat": 38.430342,
+   "lng": 14.95647,
+   "source": "https://guide.michelin.com/en/hotels-stays/vulcano/therasia-resort-8826"
+  },
+  "villa-bokeh": {
+   "address": "San Pedro Panorama, Lote C3, Entrada a Finca San Nicolás, La Antigua, Guatemala",
+   "source": "https://guide.michelin.com/en/hotels-stays/la-antigua/villa-bokeh-14873"
+  },
+  "villa-eden-the-private-retreat": {
+   "address": "Via Winkel 68, Merano, Italy",
+   "source": "https://guide.michelin.com/en/hotels-stays/merano/villa-eden-the-private-retreat-11064"
+  },
+  "vitalhotel-alter-meierhof": {
+   "address": "Uferstraße 1, 24960 Glücksburg, Germany",
+   "lat": 54.822931,
+   "lng": 9.5002017,
+   "city": "Glücksburg",
+   "source": "https://guide.michelin.com/en/hotels-stays/heiligendamm/alter-meierhof-9510"
+  },
+  "wellness-and-sport-hotel-jagdhof": {
+   "address": "Putzgartenstraße 2, Röhrnbach, Germany",
+   "lat": 48.73889,
+   "lng": 13.52462,
+   "source": "https://guide.michelin.com/en/hotels-stays/R%C3%B6hrnbach/wellness-sport-hotel-jagdhof-13953"
+  },
+  "wharekauhau-country-estate": {
+   "address": "4132 Wharekauhau Road, Palliser Bay, Featherston, New Zealand",
+   "source": "https://guide.michelin.com/en/hotels-stays/wairarapa/wharekauhau-6109"
+  }
+ }
+}
