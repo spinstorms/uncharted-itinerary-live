@@ -44,7 +44,13 @@ def main() -> int:
     } for pid, t in gdata.items() if pid in props and (t.get("reviewCount") or 0) >= 20]
     if grows:
         upsert("licensed_guest_scores", grows, "property_id,partner_source")
-    print(f"Google -> Supabase: {len(grows)} ratings saved")
+    keep = {r["property_id"] for r in grows}
+    gstale = [r["property_id"] for r in sb_all("licensed_guest_scores", "property_id,partner_source")
+              if r["partner_source"] == "google" and r["property_id"] not in keep]
+    for pid in gstale:  # e.g. a hotel whose Google listing turned out to be a different place
+        sb("DELETE", f"/rest/v1/licensed_guest_scores?property_id=eq.{urllib.parse.quote(pid)}&partner_source=eq.google",
+           None, {"Prefer": "return=minimal"})
+    print(f"Google -> Supabase: {len(grows)} ratings saved, {len(gstale)} removed")
     return 0
 
 

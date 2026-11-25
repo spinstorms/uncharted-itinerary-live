@@ -31,6 +31,14 @@ def main() -> int:
                 print(f"  {table} {pid}: {', '.join(body)}")
             except Exception as e:  # noqa: BLE001
                 print(f"  {table} {pid}: failed ({e})")
+    for row in cfg.get("delete") or []:
+        q = "&".join(f"{k}=eq.{urllib.parse.quote(str(v))}" for k, v in row.items() if k != "table")
+        try:
+            sb("DELETE", f"/rest/v1/{row['table']}?{q}", None, {"Prefer": "return=minimal"})
+            n += 1
+            print(f"  deleted from {row['table']}: {q}")
+        except Exception as e:  # noqa: BLE001
+            print(f"  delete {row['table']} {q}: failed ({e})")
     print(f"Corrections: {n} applied")
     return 0
 

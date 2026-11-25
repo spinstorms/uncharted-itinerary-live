@@ -1,9 +1,31 @@
 {
-  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club). merge: duplicate id -> the id we keep.",
+  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club). merge: duplicate id -> the id we keep. nuitee_hotel_id null = the LiteAPI id we had pointed at a different hotel; delete = rows to remove.",
   "properties": {
     "heights-melasti-bali": {
       "name": "The Heights Melasti",
       "city": "Ungasan / Uluwatu, Bali",
+      "google_place_id": null
+    },
+    "four-seasons-hotel-new-york": {
+      "nuitee_hotel_id": null,
+      "hero_image_url": ""
+    },
+    "splendido-belmond-portofino": {
+      "google_place_id": null
+    },
+    "pendry-west-hollywood": {
+      "name": "The Sun Rose West Hollywood",
+      "brand": "Independent"
+    },
+    "rosewood-le-guanahani-st-barth": {
+      "name": "Airelles Le Guanahani",
+      "brand": "Airelles"
+    },
+    "montage-kapalua-bay": {
+      "name": "The Resort at Kapalua Bay",
+      "brand": "Independent"
+    },
+    "four-seasons-yacht-i": {
       "google_place_id": null
     }
   },
@@ -27,5 +49,17 @@
     "mandarin-oriental-lake-como": "mandarin-oriental-lago-di-como",
     "the-breakers": "the-breakers-palm-beach",
     "jackalope-hotel-mornington-peninsula": "jackalope-hotel-mornington"
+  },
+  "delete": [
+    {
+      "table": "licensed_guest_scores",
+      "property_id": "four-seasons-hotel-new-york",
+      "partner_source": "nuitee_connect"
+    }
+  ],
+  "renamed_sources": {
+    "pendry-west-hollywood": "https://www.hotelmanagement.net/conversions/pendry-west-hollywood-rebrands-sun-rose-west-hollywood",
+    "rosewood-le-guanahani-st-barth": "https://hospitality-on.com/en/mergers-and-acquisitions/airelles-takes-over-le-guanahani-largest-hotel-saint-barthelemy",
+    "montage-kapalua-bay": "https://onemileatatime.com/news/resort-kapalua-bay-maui-marriott-st-regis"
   }
 }

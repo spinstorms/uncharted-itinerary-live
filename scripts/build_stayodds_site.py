@@ -2753,6 +2753,9 @@ def main() -> None:
             return row
         return {**row, **{k: (visited_src.get(pid, {}).get(k) if v == "from data/hotels.json" else v) for k, v in fields.items()}}
 
+    # a LiteAPI id set to null here was another hotel's: drop everything that came from it until a correct id is found
+    wrong_lite = {k for k, v in (corr.get("properties") or {}).items() if "nuitee_hotel_id" in v and not v["nuitee_hotel_id"]}
+    guest_map = {k: v for k, v in guest_map.items() if not (k in wrong_lite and v.get("partner_source") == "nuitee_connect")}
     props = [_corr("properties", p, p["id"]) for p in props]
     facts = {k: _corr("property_facts", v, k) for k, v in facts.items()}
     fh_map = {k: _corr("first_hand_reviews", v, k) for k, v in fh_map.items()}
@@ -2806,7 +2809,7 @@ def main() -> None:
                 if price_snap_path.exists()
                 else {}
             )
-        price_snap = globals()["_price_snaps_loaded"].get(pid)
+        price_snap = None if pid in wrong_lite else globals()["_price_snaps_loaded"].get(pid)
 
         rec = {
             "id": pid,
@@ -2865,7 +2868,7 @@ def main() -> None:
             "editorialRatings": ed_map.get(pid) or [],
             "youtubeReviews": yt_map.get(pid) or [],
             "officialAwards": awards_map.get(pid) or [],
-            "guestQuotes": GUEST_QUOTES.get(pid),
+            "guestQuotes": None if pid in wrong_lite else GUEST_QUOTES.get(pid),
             "communityMentions": COMMUNITY.get(pid) or [],
             "tripadvisor": TRIPADVISOR.get(pid),
         }
