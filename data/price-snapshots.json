@@ -525,14 +525,6 @@
       "sampleCheckin": "2027-01-08",
       "checkedAt": "2026-11-24"
     },
-    "aman-new-york": {
-      "nightlyGbp": 2485,
-      "label": "From £2,485/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
     "one-and-only-the-palm": {
       "nightlyGbp": 1070,
       "label": "From £1,070/nt",
@@ -685,14 +677,6 @@
       "sampleCheckin": "2027-01-08",
       "checkedAt": "2026-11-24"
     },
-    "amandari-ubud": {
-      "nightlyGbp": 50,
-      "label": "From £50/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
     "st-regis-maldives": {
       "nightlyGbp": 5145,
       "label": "From £5,145/nt",
@@ -768,14 +752,6 @@
     "four-seasons-koh-samui": {
       "nightlyGbp": 2080,
       "label": "From £2,080/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
-    "manor-house-castle-combe": {
-      "nightlyGbp": 85,
-      "label": "From £85/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-08",
@@ -2405,14 +2381,6 @@
       "sampleCheckin": "2027-01-08",
       "checkedAt": "2026-11-24"
     },
-    "one-and-only-portonovi": {
-      "nightlyGbp": 230,
-      "label": "From £230/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
     "mandapa-ubud": {
       "nightlyGbp": 1320,
       "label": "From £1,320/nt",
@@ -2424,14 +2392,6 @@
     "st-regis-langkawi": {
       "nightlyGbp": 420,
       "label": "From £420/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
-    "sebali-nusa-penida": {
-      "nightlyGbp": 70,
-      "label": "From £70/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-08",
@@ -2648,14 +2608,6 @@
     "fairmont-udaipur-palace": {
       "nightlyGbp": 390,
       "label": "From £390/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-08",
-      "checkedAt": "2026-11-24"
-    },
-    "the-siam-bangkok": {
-      "nightlyGbp": 50,
-      "label": "From £50/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-08",
@@ -4614,5 +4566,5 @@
       "checkedAt": "2026-11-24"
     }
   },
-  "count": 576
+  "count": 570
 }

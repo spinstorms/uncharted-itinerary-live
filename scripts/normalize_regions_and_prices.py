@@ -318,7 +318,13 @@ def fetch_liteapi_batch(hotel_ids: list[str], checkin: str, checkout: str, api_k
 
 
 def sync_price_snapshots(props: list[dict[str, Any]], nuitee_key: str) -> None:
-    mapped = [(p["id"], str(p["nuitee_hotel_id"]).strip()) for p in props if p.get("nuitee_hotel_id")]
+    # Skip hotels blocked in data/live-rate-coverage.json (official-site-only brands etc.): no point pricing them.
+    from live_rate_policy import blocked_ids
+
+    skip = blocked_ids()
+    mapped = [
+        (p["id"], str(p["nuitee_hotel_id"]).strip()) for p in props if p.get("nuitee_hotel_id") and p["id"] not in skip
+    ]
     id_by_nuitee: dict[str, list[str]] = {}
     for slug, nid in mapped:
         id_by_nuitee.setdefault(nid, []).append(slug)

@@ -14,6 +14,7 @@ StayOdds Missing-Data Completeness Enrichment Pass (Strict Zero-Fake-Data)
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import time
@@ -257,7 +258,27 @@ def nuitee_get(path: str, api_key: str) -> dict[str, Any] | None:
     return None
 
 
-def find_nuitee_hotel_smart(name: str, city: str, iso2: str, api_key: str) -> dict[str, Any] | None:
+MAX_MATCH_KM = 10.0  # a LiteAPI candidate further than this from our stored coordinates is a lookalike
+
+
+def km_between(lat1: Any, lng1: Any, lat2: Any, lng2: Any) -> float | None:
+    """Great-circle distance in km, or None when either point is missing/invalid."""
+    try:
+        la1, lo1, la2, lo2 = (math.radians(float(v)) for v in (lat1, lng1, lat2, lng2))
+    except (TypeError, ValueError):
+        return None
+    a = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    return 6371.0 * 2 * math.asin(math.sqrt(a))
+
+
+def find_nuitee_hotel_smart(
+    name: str,
+    city: str,
+    iso2: str,
+    api_key: str,
+    lat: float | None = None,
+    lng: float | None = None,
+) -> dict[str, Any] | None:
     if not iso2:
         return None
     ascii_name = strip_accents(name).strip()
@@ -287,6 +308,11 @@ def find_nuitee_hotel_smart(name: str, city: str, iso2: str, api_key: str) -> di
             cand_name = str(item.get("name") or "")
             cand_tokens = norm_tokens(cand_name)
             if not cand_tokens:
+                continue
+            # Name alone is not enough for one-word names (e.g. "Amandari" vs a budget hotel elsewhere in the
+            # country), so reject any candidate whose coordinates are far from ours.
+            dist_km = km_between(lat, lng, item.get("latitude"), item.get("longitude"))
+            if dist_km is not None and dist_km > MAX_MATCH_KM:
                 continue
             overlap_t = len(target_tokens & cand_tokens) / max(1, len(target_tokens))
             overlap_c = len(target_tokens & cand_tokens) / max(1, len(cand_tokens))
@@ -367,7 +393,9 @@ def process_prop(
     match = None
     if not nid:
         iso2 = COUNTRY_TO_ISO2.get(strip_accents(str(prop.get("country") or "")).lower().strip(), "")
-        match = find_nuitee_hotel_smart(prop["name"], prop.get("city") or "", iso2, nuitee_key)
+        match = find_nuitee_hotel_smart(
+            prop["name"], prop.get("city") or "", iso2, nuitee_key, prop.get("lat"), prop.get("lng")
+        )
         if match and match.get("id"):
             nid = str(match["id"]).strip()
 

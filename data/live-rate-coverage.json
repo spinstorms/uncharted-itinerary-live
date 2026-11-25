@@ -1,0 +1,39 @@
+{
+  "_readme": [
+    "Controls which StayOdds hotels may show LiteAPI live rates and indicative 'From £X/nt' prices.",
+    "Applied by scripts/live_rate_policy.py (called from build_stayodds_site.py and runnable on its own).",
+    "officialSites: hotels that are not sold through Booking.com/LiteAPI. Their booking link points at the official site and live pricing is switched off.",
+    "blockLiveRates: manual list of {hotel id: reason}. Live rate and indicative price are hidden for these.",
+    "verifiedLiveRates: hotel ids you have confirmed map to the right LiteAPI hotel. They override the automatic rules below.",
+    "Automatic rules: hotels sharing one LiteAPI id, an indicative price under minPlausibleNightlyGbp, or an indicative price under minShareOfStatedPriceFloor of the editorial price range floor."
+  ],
+  "updated": "2026-11-25",
+  "minPlausibleNightlyGbp": 90,
+  "minShareOfStatedPriceFloor": 0.35,
+  "officialSites": {
+    "amandari-ubud": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amandari" },
+    "aman-kyoto": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/aman-kyoto" },
+    "aman-nai-lert-bangkok": { "partner": "Aman.com", "url": "https://www.aman.com/hotels/aman-nai-lert-bangkok" },
+    "aman-new-york": { "partner": "Aman.com", "url": "https://www.aman.com/hotels/aman-new-york" },
+    "aman-tokyo": { "partner": "Aman.com", "url": "https://www.aman.com/hotels/aman-tokyo" },
+    "aman-venice": { "partner": "Aman.com", "url": "https://www.aman.com/hotels/aman-venice" },
+    "amanemu-ise-shima": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanemu" },
+    "amanera-dominican-republic": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanera" },
+    "amangalla-sri-lanka": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amangalla" },
+    "amangani-jackson-hole": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amangani" },
+    "amangiri-utah": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amangiri" },
+    "amanjiwo-java": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanjiwo" },
+    "amankila-bali": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amankila" },
+    "amankora-bhutan": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amankora" },
+    "amankora-paro-bhutan": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amankora" },
+    "amanoi-vietnam": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanoi" },
+    "amanpulo-palawan": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanpulo" },
+    "amanpuri-phuket": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanpuri" },
+    "amanruya-bodrum": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanruya" },
+    "amansara-siem-reap": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amansara" },
+    "amanyara-turks-caicos": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanyara" },
+    "amanzoe-greece": { "partner": "Aman.com", "url": "https://www.aman.com/resorts/amanzoe" }
+  },
+  "blockLiveRates": {},
+  "verifiedLiveRates": []
+}

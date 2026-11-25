@@ -19,11 +19,13 @@ import re
 import sys
 import urllib.parse
 import urllib.request
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from live_rate_policy import apply_live_rate_policy  # noqa: E402
 from stayodds_chrome import (  # noqa: E402
     ICO_ALERT,
     ICO_BED,
@@ -75,6 +77,43 @@ def sb_get_all(sb_url: str, key: str, table: str, select: str = "*") -> list[dic
 
 def esc(val: Any) -> str:
     return html.escape(str(val or ""), quote=True)
+
+
+_FALLBACK_HOTEL_PARTNERS = ("Trip.com", "Agoda", "Expedia", "Hotels.com")
+
+
+def _hotel_partner_links() -> list[tuple[str, str]]:
+    """(label, href) for the hotel booking partners already listed in DETAIL_OTA_STRIP (single source)."""
+    found = {
+        label.strip(): href
+        for href, label in re.findall(r'href="([^"]+)"[^>]*>([^<]*?)\s*&nearr;', DETAIL_OTA_STRIP)
+    }
+    return [(name, found[name]) for name in _FALLBACK_HOTEL_PARTNERS if name in found]
+
+
+def live_rate_unavailable_html(h: dict[str, Any]) -> str:
+    """Message shown when someone asks for live pricing on a hotel we can't price reliably."""
+    name = esc(h.get("name"))
+    site = h.get("officialSite")
+    if site:
+        return (
+            f'<span class="live-rate-note"><strong>Live pricing isn&rsquo;t available</strong> for {name}. '
+            f"Check current rates and availability on the official site: "
+            f'<a href="{esc(site["url"])}" target="_blank" rel="noopener noreferrer">{esc(site["partner"])} &nearr;</a></span>'
+        )
+    links: list[str] = []
+    if h.get("bookingUrl"):
+        links.append(
+            f'<a href="{esc(h["bookingUrl"])}" target="_blank" rel="sponsored noopener noreferrer">Booking.com &nearr;</a>'
+        )
+    links += [
+        f'<a href="{esc(href)}" target="_blank" rel="sponsored noopener noreferrer">{esc(label)} &nearr;</a>'
+        for label, href in _hotel_partner_links()
+    ]
+    return (
+        f'<span class="live-rate-note"><strong>Live pricing isn&rsquo;t available</strong> for {name} right now. '
+        f"Compare current rates on: {' &bull; '.join(links)}</span>"
+    )
 
 
 def fmt_score_num(v: float | int | None) -> str:
@@ -958,6 +997,21 @@ def render_seo_page(
     ta_query = f"{h['name']} {h.get('location') or h.get('country') or ''}".strip()
     tripadvisor_url = f"https://www.tripadvisor.com/Search?q={urllib.parse.quote(ta_query)}&ssrc=h"
 
+    # Live-rate coverage: hotels without a trusted LiteAPI match (or sold via the official site only)
+    # never show a live/indicative price. Clicking "Check Live Rate" explains that and offers alternatives.
+    official_site = h.get("officialSite") or {}
+    live_btn_cls = "btn btn-outline date-rate-check-btn" + ("" if h.get("nuiteeHotelId") else " is-unavailable")
+    primary_book_label = (
+        f"Check Rates on {esc(official_site.get('partner'))}" if official_site else "Check Live Rates on Booking.com"
+    ) + " &nearr;"
+    primary_book_rel = "noopener noreferrer" if official_site else "sponsored noopener noreferrer"
+    date_hint = (
+        f"Official rates are on {esc(official_site.get('partner'))} &mdash; choose your dates there."
+        if official_site
+        else "Select trip dates to pass them straight into Booking.com."
+    )
+    live_unavailable_js = json.dumps(live_rate_unavailable_html(h)).replace("</", "<\\/")
+
     if o["critic100"] is not None:
         critic_kpi_val = f'{o["critic100"]}<span>/100</span>'
         critic_kpi_lbl = (
@@ -1310,7 +1364,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=45" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1413,15 +1467,15 @@ def render_seo_page(
                   <option value="4">4 Adults</option>
                 </select>
               </label>
-              {f'<button type="button" class="btn btn-outline date-rate-check-btn" id="detailLiveRateBtn" data-nuitee-id="{esc(h.get("nuiteeHotelId"))}">Check Live Rate</button>' if h.get("nuiteeHotelId") else ''}
+              <button type="button" class="{live_btn_cls}" id="detailLiveRateBtn" data-nuitee-id="{esc(h.get("nuiteeHotelId") or "")}">Check Live Rate</button>
             </div>
             <div class="date-rate-status" id="detailLiveRateStatus">
-              {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))}) &bull; Select dates to update Booking.com link" if h.get("priceSnapshot") else "Select trip dates to pass them straight into Booking.com."}
+              {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))}) &bull; Select dates to update Booking.com link" if h.get("priceSnapshot") else date_hint}
             </div>
           </div>
 
           <div class="detail-actions">
-            <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="sponsored noopener noreferrer">Check Live Rates on Booking.com &nearr;</a>
+            <a class="btn btn-primary" id="detailPrimaryBookingBtn" data-base-url="{esc(h['bookingUrl'])}" href="{esc(h['bookingUrl'])}" target="_blank" rel="{primary_book_rel}">{primary_book_label}</a>
             {yt_watch_btn(h, "Watch Our " + ("Short" if h.get("coverageType") == "Short Tour" else "Full Review"), "btn btn-outline btn-yt-hero") if review_href else ""}
             <a class="btn btn-outline" href="../../compare/?a={esc(slug)}">Compare Head-to-Head</a>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share StayOdds Card</button>
@@ -1672,7 +1726,12 @@ def render_seo_page(
       const ci = ciEl?.value || "";
       const co = coEl?.value || "";
       const ad = adEl?.value || "2";
-      if (!nid || !ci || !co || co <= ci) {{
+      if (!nid) {{
+        // Not covered by live pricing: say so and point to where rates can be checked.
+        if (rateStatus) rateStatus.innerHTML = {live_unavailable_js};
+        return;
+      }}
+      if (!ci || !co || co <= ci) {{
         if (rateStatus) rateStatus.textContent = "Please select a valid check-in and check-out date.";
         return;
       }}
@@ -2280,7 +2339,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=45" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2599,6 +2658,11 @@ def main() -> None:
 
     directory.sort(key=sort_key)
 
+    # Hide live/indicative prices we can't trust (lookalike LiteAPI matches, duplicate ids, hotels not sold
+    # through Booking.com). Rules live in scripts/live_rate_policy.py + data/live-rate-coverage.json.
+    live_decisions = apply_live_rate_policy(directory)
+    print(f"Live-rate policy: {len(live_decisions)} hotels without live pricing {dict(Counter(live_decisions.values()))}")
+
     # Pre-build Brand & Loyalty Validation Gate (blocks fake/placeholder brand regressions)
     import sys as _sys
 
@@ -2653,6 +2717,10 @@ def main() -> None:
             item["googlePlaceId"] = r["googlePlaceId"]
         if r.get("nuiteeHotelId"):
             item["nuiteeHotelId"] = r["nuiteeHotelId"]
+        if r.get("officialSite"):
+            item["officialSite"] = r["officialSite"]
+        if r.get("liveRateUnavailable"):
+            item["liveRateUnavailable"] = r["liveRateUnavailable"]
         if r.get("priceSnapshot"):
             item["priceSnapshot"] = {
                 "nightlyGbp": r["priceSnapshot"]["nightlyGbp"],
@@ -2789,6 +2857,7 @@ def render_static_pages_from_directory(
     out_dir: Path,
     write_root_sitemap: bool = False,
 ) -> tuple[int, list[str]]:
+    apply_live_rate_policy(directory)  # idempotent; keeps pages safe even if the data files are stale
     visited_hotels = [h for h in directory if h.get("videoId")]
     total_props = len(directory)
     world_props = total_props - len(visited_hotels)

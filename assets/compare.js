@@ -2705,9 +2705,17 @@ async function boot() {
     const comparedIds = [state.idA, state.idB, state.threeWay ? state.idC : null].filter(Boolean);
     const hotelsToCheck = comparedIds.map((id) => state.hotels.find((h) => h.id === id)).filter(Boolean);
     const nuiteeIds = hotelsToCheck.map((h) => h.nuiteeHotelId).filter(Boolean);
+    // Hotels without trusted live pricing: say so by name and point to where rates can be checked.
+    const uncovered = hotelsToCheck.filter((h) => !h.nuiteeHotelId);
+    const uncoveredNames = uncovered.map((h) => h.name).join(", ");
+    const officialAll = uncovered.length > 0 && uncovered.every((h) => h.officialSite);
+    const gapHint = officialAll
+      ? `use Rates ↗ to open the official ${uncovered[0].officialSite.partner} page`
+      : "use Rates ↗ to check Booking.com and partner sites directly";
+    const gapNote = uncovered.length ? ` No live pricing for ${uncoveredNames} — ${gapHint}.` : "";
     if (!nuiteeIds.length) {
       if (liveStatusEl) {
-        liveStatusEl.textContent = "Live rate API isn't mapped for these properties yet — click Rates ↗ to view Booking.com with your dates pre-filled.";
+        liveStatusEl.textContent = `Live pricing isn't available for ${uncoveredNames} — ${gapHint}.`;
       }
       return;
     }
@@ -2726,7 +2734,7 @@ async function boot() {
       renderH2H();
       const foundCnt = Object.keys(res.rates).length;
       if (liveStatusEl) {
-        liveStatusEl.textContent = `Live GBP rates loaded for ${foundCnt} of ${hotelsToCheck.length} compared hotel${hotelsToCheck.length === 1 ? "" : "s"} (${ci} → ${co}).`;
+        liveStatusEl.textContent = `Live GBP rates loaded for ${foundCnt} of ${hotelsToCheck.length} compared hotel${hotelsToCheck.length === 1 ? "" : "s"} (${ci} → ${co}).${gapNote}`;
       }
     } else if (res && res.status === "quota_exceeded") {
       if (liveStatusEl) {
@@ -2734,7 +2742,7 @@ async function boot() {
       }
     } else {
       if (liveStatusEl) {
-        liveStatusEl.textContent = "No live rooms returned for those exact dates — try different dates or click Rates ↗ to check Booking.com directly.";
+        liveStatusEl.textContent = `No live rooms returned for those exact dates — try different dates or click Rates ↗ to check Booking.com directly.${gapNote}`;
       }
     }
   });
@@ -2757,7 +2765,7 @@ async function boot() {
   });
 
   try {
-    const IDX_CACHE_KEY = "stayodds_index_cache_v20261124f";
+    const IDX_CACHE_KEY = "stayodds_index_cache_v20261125a";
     const IDX_TTL_MS = 6 * 60 * 60 * 1000;
     let payload = null;
     try {
@@ -2770,7 +2778,7 @@ async function boot() {
       }
     } catch (_) {}
     if (!payload) {
-      const res = await fetch(`../data/stayodds-index.json?v=20261124f`);
+      const res = await fetch(`../data/stayodds-index.json?v=20261125a`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       payload = await res.json();
       try {
