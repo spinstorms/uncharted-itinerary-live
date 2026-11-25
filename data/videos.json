@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T16:21:52Z",
+  "updatedAt": "2026-11-25T16:54:59Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 892,
+      "views": 896,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -805,7 +805,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 472,
+      "views": 473,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6355,
+      "views": 6357,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
-      "views": 113,
+      "views": 150,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -5549,7 +5549,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
-      "views": 384,
+      "views": 386,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
