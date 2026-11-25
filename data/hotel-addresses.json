@@ -297,6 +297,30 @@
    "lat": -1.4226063,
    "lng": 29.6196446,
    "source": "https://www.the50.com/discovery/Establishments/Rwanda/Musanze/Singita-Kwitonda-Lodge.html"
+  },
+  "canyon-ranch-lenox": {
+   "address": "165 Kemble Street, Lenox, MA 01240, USA",
+   "source": "https://guide.michelin.com/en/hotels-stays/berkshires/canyon-ranch-lenox-5827"
+  },
+  "amangani-jackson-hole": {
+   "address": "1535 North East Butte Road, Jackson, WY 83001, USA",
+   "source": "https://guide.michelin.com/jp/en/hotels-stays/jackson-hole/amangani-242"
+  },
+  "aman-i-khas": {
+   "address": "Sherpur-Khiljipur, Ranthambhore Road, Sawai Madhopur, Rajasthan 322001, India",
+   "source": "https://www.aman.com/system/files/2026-10/Aman-i-Khas-Factsheet.pdf"
+  },
+  "londolozi-game-reserve": {
+   "address": "Londolozi Game Reserve, Sparta Farms, Skukuza, Sabi Sand 1350, South Africa",
+   "lat": -24.796509008129334,
+   "lng": 31.49832167579589,
+   "source": "https://www.the50.com/discovery/Establishments/South-Africa/Sabi-Sand/Londolozi.html"
+  },
+  "playa-viva": {
+   "address": "Carretera Zihuatanejo-Acapulco, Playa Icacos, Juluchuca, Guerrero 40834, Mexico",
+   "lat": 17.449930783448064,
+   "lng": -101.25022872373403,
+   "source": "https://www.the50.com/discovery/Establishments/Mexico/Juluchuca/Playa-Viva.html"
   }
  }
 }
