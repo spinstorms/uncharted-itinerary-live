@@ -750,6 +750,12 @@ def pick_destination_matchups(
     return pairs, trio
 
 
+LANG_NAMES = {"fr": "French", "de": "German", "es": "Spanish", "it": "Italian", "nl": "Dutch", "pt": "Portuguese", "ja": "Japanese",
+              "zh": "Chinese", "ko": "Korean", "ru": "Russian", "ar": "Arabic", "he": "Hebrew", "pl": "Polish", "sv": "Swedish",
+              "da": "Danish", "no": "Norwegian", "fi": "Finnish", "tr": "Turkish", "th": "Thai", "id": "Indonesian", "cs": "Czech",
+              "el": "Greek", "hu": "Hungarian", "ro": "Romanian", "uk": "Ukrainian", "vi": "Vietnamese"}
+
+
 def voices_section_html(h: dict[str, Any]) -> str:
     """Real guest comments (dated, sourced, unedited) and links to traveller discussions and reviews. No scores made up."""
     quotes = h.get("guestQuotes") or {}
@@ -783,6 +789,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
             q.get("travellerType", "").title(),
             q.get("date", ""),
             f"{q.get('source', '')} review",
+            f"written in {LANG_NAMES.get(q.get('language', ''), q.get('language', '').upper())}" if q.get("language") not in ("", "en", None) else "",
         ) if x)
         q_html += (f'<div class="channel-row" style="display:block;"><div style="display:flex;flex-direction:column;gap:4px;">'
                    f'{"".join(parts)}</div><small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')

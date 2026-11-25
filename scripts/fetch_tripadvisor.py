@@ -6,7 +6,8 @@ already carries the full location record (traveler_ratings, rankings, awards, co
 A result is only accepted when the name matches (same strict rule as map pins) AND it is within 3 km of our pin
 (or, with no pin, in the same country). Nothing is estimated: unmatched hotels are simply left without Tripadvisor data.
 
-  --max-calls N   stop after N API calls (default 900, inside the 1,000 free calls a month)
+  --max-calls N   stop after about N locations have been returned (Tripadvisor bills per location: $0.015 each for
+                  the first 1,000 a month, so the default 900 caps a run at about $13.50)
   --refresh-days  re-check a hotel only after this many days (default 180)
 Order: World's 50 Best and MICHELIN Key hotels first, then hotels without a guest score, then the rest.
 Switch off everywhere by setting "enabled": false in data/tripadvisor-settings.json.
@@ -131,11 +132,12 @@ def main() -> int:
         if calls >= args.max_calls:
             break
         iso = (COUNTRY_TO_ISO2.get(p.get("country") or "") or "").upper()
-        params = [("query", p["name"]), ("category", "HOTEL"), ("size", "10"), ("version", "1")]
+        params = [("query", p["name"]), ("category", "HOTEL"), ("size", "3"), ("version", "1")]
         if iso:
             params.append(("country_code", iso))
         code, res = ta_get("/locations/search", params, key)
-        calls += 1
+        # billing is per location returned, so count every location in the response against the budget
+        calls += max(1, len(res.get("data") or [])) if isinstance(res, dict) else 1
         if code in (401, 403):
             print(f"Tripadvisor: API refused the key ({code}): {res}")
             break

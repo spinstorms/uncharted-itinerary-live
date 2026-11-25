@@ -36,11 +36,6 @@ def clean(s: Any) -> str:
     return s[:420] + ("…" if len(s) > 420 else "")
 
 
-def latin_share(s: str) -> float:
-    letters = [c for c in s if c.isalpha()]
-    return sum(1 for c in letters if c.isascii()) / len(letters) if letters else 0.0
-
-
 def quotes_for(hid: str, key: str) -> tuple[list[dict[str, Any]], int | None]:
     res = nuitee_get(f"/v3.0/data/reviews?hotelId={urllib.parse.quote(hid)}&limit=200&timeout=20", key) or {}
     rows = res.get("data") or []
@@ -58,13 +53,18 @@ def quotes_for(hid: str, key: str) -> tuple[list[dict[str, Any]], int | None]:
             "headline": head,
             "liked": pros,
             "disliked": cons,
-            "english": latin_share(pros + cons + head) > 0.9,
+            "language": str(r.get("language") or "").lower()[:2],
         })
     out.sort(key=lambda q: q["date"], reverse=True)
-    eng = [q for q in out if q["english"]]
-    pick = (eng or out)[:4]
-    for q in pick:
-        q.pop("english", None)
+    seen, uniq = set(), []
+    for q in out:  # the feed sometimes holds the same review twice (e.g. once per booking channel)
+        sig = (q["date"], q["liked"][:60].lower(), q["disliked"][:60].lower(), q["headline"][:40].lower())
+        if sig in seen:
+            continue
+        seen.add(sig)
+        uniq.append(q)
+    eng = [q for q in uniq if q["language"] == "en"]
+    pick = (eng if len(eng) >= 2 else uniq)[:4]
     total = res.get("total") if isinstance(res.get("total"), int) else None
     return pick, total
 
