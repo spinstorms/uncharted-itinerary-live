@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-25T09:31:12Z",
+  "checkedAt": "2026-11-25T09:44:35Z",
   "counts": {
-    "verified": 1081,
+    "verified": 1087,
     "conflict": 10,
-    "unchecked": 20,
+    "unchecked": 15,
     "mismatch": 7
   },
   "mismatch": [
@@ -172,22 +172,6 @@
       "status": "unchecked"
     },
     {
-      "id": "the-brando",
-      "name": "The Brando",
-      "liteapiId": "lp776e2",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "1-hotel-west-hollywood",
-      "name": "1 Hotel West Hollywood",
-      "liteapiId": "lp92726",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
       "id": "w-algarve",
       "name": "W Algarve",
       "liteapiId": "lp655cadce",
@@ -244,25 +228,9 @@
       "status": "unchecked"
     },
     {
-      "id": "de-leurope-amsterdam",
-      "name": "De L’Europe Amsterdam",
-      "liteapiId": "lp1ab22",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "collegio-alla-querce-florence",
-      "name": "Collegio alla Querce, Auberge Resorts Collection",
-      "liteapiId": "lp657b4b4e",
-      "liteapiName": "",
-      "km": null,
-      "status": "unchecked"
-    },
-    {
-      "id": "sage-lodge",
-      "name": "Sage Lodge",
-      "liteapiId": "lpd79f3",
+      "id": "delaire-graff-estate",
+      "name": "Delaire Graff Estate",
+      "liteapiId": "lp620be",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
@@ -273,14 +241,6 @@
       "liteapiId": "lp7a168",
       "liteapiName": "Rosewood Cape Kidnappers",
       "km": 5.4,
-      "status": "unchecked"
-    },
-    {
-      "id": "botanic-sanctuary-antwerp",
-      "name": "Botanic Sanctuary Antwerp",
-      "liteapiId": "lp65548d4d",
-      "liteapiName": "",
-      "km": null,
       "status": "unchecked"
     },
     {
@@ -300,9 +260,9 @@
       "status": "unchecked"
     },
     {
-      "id": "le-couvent-des-minimes-un-hotel-and-spa-loccitane-en-provenc",
-      "name": "Le Couvent des Minimes, Un Hôtel & Spa L'Occitane en Provence",
-      "liteapiId": "lp406fb",
+      "id": "four-seasons-hotel-baku",
+      "name": "Four Seasons Hotel Baku",
+      "liteapiId": "lp62377",
       "liteapiName": "",
       "km": null,
       "status": "unchecked"
