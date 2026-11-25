@@ -9,7 +9,7 @@ import {
   isFirstHandVerified,
   isScoreUnverified,
   isVisitedProperty,
-} from "./stayodds-engine.js?v=13";
+} from "./stayodds-engine.js?v=14";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
 import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {

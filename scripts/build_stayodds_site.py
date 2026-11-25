@@ -163,6 +163,20 @@ def is_score_unverified(e: dict[str, Any]) -> bool:
     return "unable to verify" in txt or "unverified" in txt
 
 
+def evidence_label(review_count: Any, has_guest: bool, critics: int) -> str:
+    """'4,438 reviews + 2 critics' - what a StayOdds score is based on."""
+    parts = []
+    if has_guest:
+        try:
+            rc = int(review_count or 0)
+        except (TypeError, ValueError):
+            rc = 0
+        parts.append(f"{rc:,} review{'' if rc == 1 else 's'}" if rc > 0 else "guest reviews")
+    if critics:
+        parts.append(f"{critics} critic{'' if critics == 1 else 's'}")
+    return " + ".join(parts) if parts else "no scores yet"
+
+
 def _round_half_up(x: float) -> int:
     """Same rounding as the site's JavaScript (Math.round): 92.5 -> 93, so page and live scores always match."""
     import math
@@ -234,10 +248,11 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
     score_track = "verified" if (first_hand and ours100 is not None) else "market"
     if score_track == "verified":
         score_track_label = "Uncharted Verified"
-    elif market_src_cnt >= 2:
-        score_track_label = f"StayOdds • {market_src_cnt} Sources"
-    elif market_src_cnt == 1:
-        score_track_label = "StayOdds • 1 Source"
+    elif market_src_cnt >= 1:
+        # show what the score rests on: number of guest reviews and published critics
+        score_track_label = "StayOdds • " + evidence_label(
+            guest_rc if guest100 is not None else None, guest100 is not None, len(critic_scores) if critic100 is not None else 0
+        )
     else:
         score_track_label = "StayOdds"
     founder_vs_market_delta = (ours100 - market_odds) if (first_hand and ours100 is not None and market_odds is not None) else None

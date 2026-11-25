@@ -385,13 +385,20 @@ export function computeStayOdds(hotel) {
 
   // LAYER 2: Two-Track Headline Score ("Uncharted Verified" vs "StayOdds")
   const scoreTrack = firstHand && ours100 != null ? "verified" : "market";
+  // show what the score rests on: number of guest reviews and published critics
+  const evidenceParts = [];
+  if (guest100 != null) {
+    const rc = verifiedGuest && typeof verifiedGuest.reviewCount === "number" ? verifiedGuest.reviewCount : 0;
+    evidenceParts.push(rc > 0 ? `${rc.toLocaleString("en-GB")} review${rc === 1 ? "" : "s"}` : "guest reviews");
+  }
+  if (critic100 != null && scoredEditorial.length) {
+    evidenceParts.push(`${scoredEditorial.length} critic${scoredEditorial.length === 1 ? "" : "s"}`);
+  }
   const scoreTrackLabel =
     scoreTrack === "verified"
       ? "Uncharted Verified"
-      : marketSourceCount >= 2
-      ? `StayOdds • ${marketSourceCount} Sources`
-      : marketSourceCount === 1
-      ? "StayOdds • 1 Source"
+      : marketSourceCount >= 1
+      ? `StayOdds • ${evidenceParts.join(" + ")}`
       : "StayOdds";
 
   let weights = { firstHand: 0, market: 0, critics: 0, guests: 0 };
