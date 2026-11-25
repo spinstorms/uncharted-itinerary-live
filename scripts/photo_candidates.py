@@ -41,6 +41,29 @@ def main() -> int:
     hs = {h["id"]: h for h in json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]}
     lk, gk = os.environ.get("NUITEE_API_KEY", ""), os.environ.get("GOOGLE_PLACES_API_KEY", "")
     index: dict[str, list] = {}
+    if "--current" in sys.argv:  # review sheets of every hotel whose card photo is a remote URL
+        from PIL import ImageDraw
+        rem = [h for h in hs.values() if str(h.get("thumbnail") or "").startswith("http")]
+        out.mkdir(parents=True, exist_ok=True)
+        W, H, cols, per = 170, 96, 10, 80
+        order = []
+        for sidx in range(0, len(rem), per):
+            chunk = rem[sidx:sidx + per]
+            rows = (len(chunk) + cols - 1) // cols
+            sheet = Image.new("RGB", (cols * W, rows * (H + 12)), "white")
+            dr = ImageDraw.Draw(sheet)
+            for i, h in enumerate(chunk):
+                n = sidx + i
+                order.append([n, h["id"]])
+                try:
+                    im = Image.open(io.BytesIO(get(h["thumbnail"], {"User-Agent": "Mozilla/5.0"}))).convert("RGB").resize((W - 4, H))
+                    sheet.paste(im, ((i % cols) * W, (i // cols) * (H + 12)))
+                except Exception:  # noqa: BLE001
+                    pass
+                dr.text(((i % cols) * W + 2, (i // cols) * (H + 12) + H), str(n), fill="black")
+            sheet.save(out / f"cur-{sidx // per:02d}.jpg", quality=60)
+        (out / "index.json").write_text(json.dumps(order), encoding="utf-8")
+        return 0
     if "--best" in sys.argv:  # top 3 overview-looking LiteAPI photos per hotel, as review sheets
         from PIL import ImageDraw
         GOOD = ("aerial", "exterior", "building", "facade", "view from property", "beach", "property grounds", "garden",
