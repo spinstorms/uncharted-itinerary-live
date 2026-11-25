@@ -46,6 +46,9 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = "https://uncharteditinerary.com"
 
 
+
+MIN_GUEST_REVIEWS = 20  # a guest score needs at least this many verified reviews to be shown
+
 def load_env_local() -> None:
     env_path = ROOT / ".env.local"
     if not env_path.exists():
@@ -2482,6 +2485,9 @@ def main() -> None:
     fh_map = {r["property_id"]: r for r in sb_get_all(sb_url, sb_key, "first_hand_reviews")}
     guest_map: dict[str, dict[str, Any]] = {}
     for r in sb_get_all(sb_url, sb_key, "licensed_guest_scores"):
+        n = r.get("review_count")
+        if (n is not None and int(n) < MIN_GUEST_REVIEWS) or (n is None and r.get("partner_source") == "nuitee_connect"):
+            continue  # too few reviews to be a reliable guest score: leave it off
         guest_map[r["property_id"]] = r
 
     awards_map: dict[str, list[dict[str, Any]]] = {}

@@ -83,6 +83,9 @@ jobs:
         run: python3 scripts/add_award_hotels.py youtube --missing
         continue-on-error: true
 
+      - name: Remove guest scores based on fewer than 20 reviews
+        run: python3 scripts/add_award_hotels.py guestcheck
+
       - name: Verify LiteAPI ids against hotel locations
         run: python3 scripts/verify_live_rate_ids.py --write
 

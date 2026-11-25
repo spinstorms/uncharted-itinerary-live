@@ -622,8 +622,20 @@ def michelin_page_coords(url: str) -> tuple[float, float] | None:
     return None
 
 
+def guestcheck() -> None:
+    """Remove LiteAPI guest scores based on fewer than 20 reviews (one 10/10 review is not a 100% guest score)."""
+    rows = sb_all("licensed_guest_scores", "property_id,partner_source,review_count,rating")
+    bad = [r for r in rows if r.get("partner_source") == "nuitee_connect"
+           and (r.get("review_count") is None or int(r["review_count"]) < 20)]
+    for r in bad:
+        sb("DELETE", f"/rest/v1/licensed_guest_scores?property_id=eq.{urllib.parse.quote(r['property_id'])}"
+                     f"&partner_source=eq.nuitee_connect", None, {"Prefer": "return=minimal"})
+        print(f"  removed thin guest score: {r['property_id']} ({r.get('rating')} from {r.get('review_count')} reviews)")
+    print(f"Guest scores: removed {len(bad)} based on fewer than 20 reviews")
+
+
 def main(argv: list[str]) -> int:
-    if not argv or argv[0] not in {"awards", "youtube", "editorial", "coords", "pincheck"}:
+    if not argv or argv[0] not in {"awards", "youtube", "editorial", "coords", "pincheck", "guestcheck"}:
         print(__doc__)
         return 2
     cmd = argv[0]
@@ -650,6 +662,8 @@ def main(argv: list[str]) -> int:
         run_coords(props, only)
     elif cmd == "pincheck":
         run_pincheck(props, only)
+    elif cmd == "guestcheck":
+        guestcheck()
     elif cmd == "youtube":
         run_youtube(props, only, missing, limit)
     else:
