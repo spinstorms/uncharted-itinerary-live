@@ -1,0 +1,31 @@
+name: Probe brand logo files on Wikimedia Commons (read-only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      brands:
+        description: "Brand names, separated by |"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Save candidates to the probe-logos branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANDS: ${{ inputs.brands }}
+        run: |
+          IFS='|' read -ra B <<< "$BRANDS"
+          python3 scripts/logo_candidates.py /tmp/out "${B[@]}"
+          cd /tmp/out && git init -q && git checkout -q -b probe-logos
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          git add . && git commit -qm "logo candidates"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" probe-logos
