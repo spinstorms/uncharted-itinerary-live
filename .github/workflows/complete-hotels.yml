@@ -1,0 +1,95 @@
+name: Complete hotel data and publish
+
+# One manual run that brings every hotel to the same standard and publishes stayodds.com:
+# LiteAPI ids (live pricing), photos, map pins, guest scores, guest-review facts, Google place ids, award tags,
+# verified YouTube reviews, LiteAPI id verification, price snapshots, rebuild, commit, publish.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: "complete-hotels"
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+  SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+  NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+  GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add any catalogue hotels not yet in the database
+        run: python3 scripts/sync_250_hotels.py --new-only
+
+      - name: Map pins from OpenStreetMap (first pass)
+        run: python3 scripts/add_award_hotels.py coords
+        continue-on-error: true
+
+      - name: LiteAPI ids, photos, pins, guest scores and facts
+        run: python3 scripts/complete_hotels.py
+
+      - name: Map pins from OpenStreetMap (second pass)
+        run: python3 scripts/add_award_hotels.py coords
+        continue-on-error: true
+
+      - name: LiteAPI fill for anything matched in the second pass
+        run: python3 scripts/complete_hotels.py
+        continue-on-error: true
+
+      - name: Remaining facts and ids (existing enrichment)
+        run: python3 scripts/enrich_missing_hotels.py
+        continue-on-error: true
+
+      - name: Google place ids (free ids-only lookup)
+        run: python3 scripts/resolve_google_place_ids_and_coords.py
+        continue-on-error: true
+
+      - name: Award tags and hand-checked critic scores
+        run: python3 scripts/add_award_hotels.py awards
+
+      - name: Verified YouTube reviews for every hotel that has none
+        run: python3 scripts/add_award_hotels.py youtube --missing
+        continue-on-error: true
+
+      - name: Verify LiteAPI ids against hotel locations
+        run: python3 scripts/verify_live_rate_ids.py --write
+
+      - name: Rebuild data
+        run: |
+          python3 scripts/normalize_regions_and_prices.py --prices-only
+          python3 scripts/build_stayodds_site.py --data-only
+
+      - name: Commit results
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "pushed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m "chore: complete hotel data (pricing ids, photos, pins, scores, videos)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X ours origin main && git push origin main && { echo "pushed=true" >> "$GITHUB_OUTPUT"; exit 0; }
+            sleep $((i * 10))
+          done
+          exit 1
+
+      - name: Publish stayodds.com
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-stayodds.yml --ref main

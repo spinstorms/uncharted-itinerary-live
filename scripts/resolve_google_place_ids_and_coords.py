@@ -88,6 +88,17 @@ def sb_get(sb_url: str, key: str, path: str) -> Any:
         return json.loads(resp.read().decode("utf-8"))
 
 
+def sb_get_all(sb_url: str, key: str, path: str) -> list[Any]:
+    out: list[Any] = []
+    off = 0
+    while True:
+        chunk = sb_get(sb_url, key, f"{path}&limit=1000&offset={off}") or []
+        out += chunk
+        if len(chunk) < 1000:
+            return out
+        off += 1000
+
+
 def sb_patch(sb_url: str, key: str, pid: str, patch: dict[str, Any]) -> None:
     req = urllib.request.Request(
         f"{sb_url.rstrip('/')}/rest/v1/properties?id=eq.{urllib.parse.quote(pid)}",
@@ -136,7 +147,7 @@ def main() -> None:
     sb_secret = os.environ["SUPABASE_SECRET_KEY"]
     api_key = os.environ["GOOGLE_PLACES_API_KEY"]
 
-    props = sb_get(sb_url, sb_secret, "/rest/v1/properties?select=id,name,city,country,lat,lng,google_place_id&limit=1000")
+    props = sb_get_all(sb_url, sb_secret, "/rest/v1/properties?select=id,name,city,country,lat,lng,google_place_id")
     print(f"Loaded {len(props)} properties from Supabase")
 
     # 1. Backfill missing lat/lng coordinates
@@ -164,7 +175,7 @@ def main() -> None:
             resolved += 1
 
     # Verify final totals
-    after = sb_get(sb_url, sb_secret, "/rest/v1/properties?select=id,lat,lng,google_place_id&limit=1000")
+    after = sb_get_all(sb_url, sb_secret, "/rest/v1/properties?select=id,lat,lng,google_place_id")
     total_coords = sum(1 for p in after if isinstance(p.get("lat"), (int, float)) and isinstance(p.get("lng"), (int, float)) and (p["lat"] != 0 or p["lng"] != 0))
     total_gpid = sum(1 for p in after if p.get("google_place_id"))
     print(f"DONE! Newly resolved Place IDs: {resolved}")
