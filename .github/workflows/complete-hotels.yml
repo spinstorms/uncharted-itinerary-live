@@ -5,6 +5,11 @@ name: Complete hotel data and publish
 # verified YouTube reviews, LiteAPI id verification, price snapshots, rebuild, commit, publish.
 on:
   workflow_dispatch:
+    inputs:
+      quick:
+        description: "Skip the slow steps (new catalogue hotels, enrichment, Google ids, YouTube search)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,6 +39,7 @@ jobs:
           python-version: "3.12"
 
       - name: Add any catalogue hotels not yet in the database
+        if: ${{ !inputs.quick }}
         run: python3 scripts/sync_250_hotels.py --new-only
 
       - name: Map pins from OpenStreetMap (first pass)
@@ -42,6 +48,10 @@ jobs:
 
       - name: LiteAPI ids, photos, pins, guest scores and facts
         run: python3 scripts/complete_hotels.py
+
+      - name: Photos and pins from Wikipedia / Wikimedia Commons (open licences, credited)
+        run: python3 scripts/wiki_enrich.py
+        continue-on-error: true
 
       - name: Map pins from OpenStreetMap (second pass)
         run: python3 scripts/add_award_hotels.py coords
@@ -52,10 +62,12 @@ jobs:
         continue-on-error: true
 
       - name: Remaining facts and ids (existing enrichment)
+        if: ${{ !inputs.quick }}
         run: python3 scripts/enrich_missing_hotels.py
         continue-on-error: true
 
       - name: Google place ids (free ids-only lookup)
+        if: ${{ !inputs.quick }}
         run: python3 scripts/resolve_google_place_ids_and_coords.py
         continue-on-error: true
 
@@ -63,6 +75,7 @@ jobs:
         run: python3 scripts/add_award_hotels.py awards
 
       - name: Verified YouTube reviews for every hotel that has none
+        if: ${{ !inputs.quick }}
         run: python3 scripts/add_award_hotels.py youtube --missing
         continue-on-error: true
 

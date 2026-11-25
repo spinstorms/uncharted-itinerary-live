@@ -91,6 +91,16 @@ def _hotel_partner_links() -> list[tuple[str, str]]:
     return [(name, found[name]) for name in _FALLBACK_HOTEL_PARTNERS if name in found]
 
 
+def _photo_credit(src: Any, thumb: str) -> dict[str, str] | None:
+    """Credit line for openly licensed (Wikimedia Commons) photos: 'wikimedia|<license>|<artist>|<file page url>'."""
+    if not isinstance(src, str) or not src.startswith("wikimedia|") or not str(thumb).startswith("http"):
+        return None
+    parts = (src.split("|") + ["", "", ""])[:4]
+    _, lic, artist, page = parts
+    text = f"Photo: {artist.strip() or 'Wikimedia Commons'}" + (f", {lic.strip()}" if lic.strip() else "") + " via Wikimedia Commons"
+    return {"text": text, "url": page.strip()}
+
+
 def live_rate_unavailable_html(h: dict[str, Any]) -> str:
     """Message shown when someone asks for live pricing on a hotel we can't price reliably."""
     name = esc(h.get("name"))
@@ -1404,6 +1414,7 @@ def render_seo_page(
             <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
             {yt_overlay(h, inline=True)}
           </div>
+          {(f'<p class="photo-credit" style="font-size:11.5px;color:var(--ink-muted,#76736c);margin:6px 2px 0;"><a href="{esc(h["photoCredit"]["url"])}" target="_blank" rel="noopener" style="color:inherit;">{esc(h["photoCredit"]["text"])}</a></p>') if h.get("photoCredit") else ""}
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
             <span class="tag {tag_class}" id="heroStatusBadge">{esc(o['statusBadge'])}</span>
@@ -2589,6 +2600,7 @@ def main() -> None:
             "googlePlaceId": p.get("google_place_id"),
             "nuiteeHotelId": p.get("nuitee_hotel_id"),
             "thumbnail": resolved_thumb,
+            "photoCredit": _photo_credit(p.get("image_license_source"), resolved_thumb),
             "videoId": fh.get("youtube_video_id", "") if fh else "",
             "inLiveFeed": bool(fh.get("in_live_feed")) if fh else False,
             "reviewedDate": fh.get("reviewed_date") if fh else None,
