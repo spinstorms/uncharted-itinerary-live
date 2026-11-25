@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from add_award_hotels import sb, sb_all, upsert  # noqa: E402
+from add_award_hotels import city_point, km_between, name_ok, sb, sb_all, upsert  # noqa: E402
 from enrich_missing_hotels import COUNTRY_TO_ISO2, strip_accents  # noqa: E402
 from sync_250_hotels import extract_key_facts_from_nuitee, nuitee_get  # noqa: E402
 
@@ -205,6 +205,7 @@ def main() -> int:
         details = list(ex.map(detail, fill))
 
     stats = {"photo": 0, "pin": 0, "guest": 0, "facts": 0}
+    far: dict[str, str] = {}
     guest_rows, fact_rows = [], []
     for p, d in details:
         if not d:
@@ -217,8 +218,15 @@ def main() -> int:
                 stats["photo"] += 1
         loc = d.get("location") or {}
         if not has_coords(p) and isinstance(loc.get("latitude"), (int, float)) and isinstance(loc.get("longitude"), (int, float)):
-            patch.update({"lat": float(loc["latitude"]), "lng": float(loc["longitude"])})
-            stats["pin"] += 1
+            pt = (float(loc["latitude"]), float(loc["longitude"]))
+            cp = city_point(p.get("city") or "", p.get("country") or "")
+            if cp and km_between(pt, cp) > 60 and not name_ok(p["name"], str(d.get("name") or "")):
+                # the LiteAPI record is not this hotel: no pin from it, and no live prices from it either
+                far[p["id"]] = f"far_from_town: LiteAPI hotel '{d.get('name')}' is {km_between(pt, cp):.0f} km from {p.get('city')}"
+                print(f"  wrong LiteAPI record for {p['id']}: {far[p['id']]}")
+            else:
+                patch.update({"lat": pt[0], "lng": pt[1]})
+                stats["pin"] += 1
         if patch:
             patch["updated_at"] = now_iso()
             sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(p['id'])}", patch, {"Prefer": "return=minimal"})
@@ -268,6 +276,15 @@ def main() -> int:
         for rows in by_shape.values():
             upsert("property_facts", rows, "property_id")
     print(f"Filled: {stats}")
+    if far:
+        pol_path = Path(__file__).resolve().parent.parent / "data" / "live-rate-coverage.json"
+        pol = json.loads(pol_path.read_text(encoding="utf-8"))
+        pol.setdefault("blockLiveRates", {}).update(far)
+        for k in far:
+            if k in (pol.get("verifiedLiveRates") or []):
+                pol["verifiedLiveRates"].remove(k)
+        pol_path.write_text(json.dumps(pol, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"Blocked live pricing for {len(far)} LiteAPI records that are not the listed hotel")
 
     after = sb_all("properties", "id,lat,lng,nuitee_hotel_id,hero_image_url")
     print(
