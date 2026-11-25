@@ -41,6 +41,10 @@ def walk(o):
     elif isinstance(o, list):
         for v in o: walk(v)
 walk(pubs)
+for extra in ("https://api.partnerize.com/user", "https://api.partnerize.com/user/account", "https://api.partnerize.com/user/publisher?limit=100&offset=0", "https://api.partnerize.com/v3/partner/publishers", "https://api.partnerize.com/user/brand"):
+    st2, d2 = get(extra)
+    print("probe", extra.split(".com")[1], st2, json.dumps(shape(d2))[:700])
+    walk(d2)
 ids = sorted(set(ids))
 print("publisher ids:", ids)
 out = {"publishers": []}
