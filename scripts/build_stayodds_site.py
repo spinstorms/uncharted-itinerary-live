@@ -857,7 +857,7 @@ def voices_section_html(h: dict[str, Any]) -> str:
                    f'<strong>{esc(m.get("title") or m["url"])}</strong> &#8599;</a>{"<br>" + quote if quote else ""}'
                    f'<small class="detail-panel-sub" style="display:block;margin-top:6px;">{esc(meta)}</small></div>')
     left = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Recent Guest Comments</h3><span class="tag">{len(qs)} real review{"" if len(qs) == 1 else "s"}</span></div>
-      <p class="detail-panel-sub">The most recent reviews written by guests who stayed here, shown word for word, whether positive or negative. Each one shows the guest's score, their type of trip, the date and the site it was posted on. Last updated {esc(nice_date(quotes.get("fetched", "")))}.</p>
+      <p class="detail-panel-sub">The most recent reviews written by guests who stayed here, shown word for word, whether positive or negative. Each one shows the guest's score, their type of trip, the date and the source of the review. Last updated {esc(nice_date(quotes.get("fetched", "")))}.</p>
       <div class="channel-breakdown-list" style="margin-top:12px;">{q_html}</div></div>''') if qs else ""
     right = (f'''<div class="detail-panel"><div class="detail-panel-head"><h3>Travellers &amp; Reviewers Elsewhere</h3><span class="tag">{len(mentions) + (1 if ta_html else 0)} linked</span></div>
       <p class="detail-panel-sub">This hotel's rating on Tripadvisor, plus forum discussions and independent reviews by travel writers. Each link opens the original page.</p>
