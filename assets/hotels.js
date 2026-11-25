@@ -228,7 +228,7 @@ function initCommonUi() {
 
   const menuBtn = qs("#mobileMenuBtn");
   const mobileNav = qs("#mobileNav");
-  if (menuBtn && mobileNav) {
+  if (menuBtn && mobileNav && !menuBtn.dataset.menuBound) {
     menuBtn.addEventListener("click", () => {
       const open = mobileNav.classList.toggle("open");
       menuBtn.setAttribute("aria-expanded", String(open));
@@ -279,6 +279,8 @@ function getScopedHotels() {
   if (state.scope === "global") return state.hotels.filter((h) => !isVisitedProperty(h));
   if (state.scope === "michelin") return state.hotels.filter(hasMichelinKey);
   if (state.scope === "w50") return state.hotels.filter(hasW50Best);
+  const mk = /^michelin([123])$/.exec(state.scope || "");
+  if (mk) return state.hotels.filter((h) => getMichelinKeyCount(h) === Number(mk[1]));
   return state.hotels;
 }
 
@@ -437,6 +439,13 @@ function renderScopeTabs() {
     { id: "michelin", label: `2026 MICHELIN Keys (${michelinCnt})` },
     { id: "w50", label: `World's 50 Best (${w50Cnt})` },
   ];
+  for (const n of [3, 2, 1]) {
+    const id = `michelin${n}`;
+    if (state.scope === id) {
+      const cnt = state.hotels.filter((h) => getMichelinKeyCount(h) === n).length;
+      tabs.push({ id, label: `${n} MICHELIN Key${n > 1 ? "s" : ""} (${cnt})` });
+    }
+  }
 
   container.innerHTML = tabs
     .map(
@@ -1165,7 +1174,8 @@ function applyMapPrompt(raw) {
   state.scope = "all";
   state.profileFilter = "all";
   const f = p.feature || "all";
-  if (f.startsWith("michelin")) state.scope = "michelin";
+  if (/^michelin[123]$/.test(f)) state.scope = f;
+  else if (f.startsWith("michelin")) state.scope = "michelin";
   else if (f.startsWith("50best")) state.scope = "w50";
   else if (f === "video") state.scope = "visited";
   else if (["adults", "family", "preferred", "points"].includes(f)) state.profileFilter = f;
@@ -1202,7 +1212,7 @@ async function boot() {
   const hasExplicitUrlFilter = Boolean(
     params.get("region") || params.get("scope") || params.get("style") || params.get("month")
   );
-  if (["all", "visited", "global", "michelin", "w50"].includes(params.get("scope"))) {
+  if (["all", "visited", "global", "michelin", "w50", "michelin3", "michelin2", "michelin1"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
 
@@ -1401,7 +1411,7 @@ async function boot() {
       const saved = readSavedMapState();
       if (saved) {
         suppressMapSave = true;
-        if (["all", "visited", "global", "michelin", "w50"].includes(saved.scope)) state.scope = saved.scope;
+        if (["all", "visited", "global", "michelin", "w50", "michelin3", "michelin2", "michelin1"].includes(saved.scope)) state.scope = saved.scope;
         const matchedSavedRegion = matchRegionParam(saved.region, getScopedHotels());
         if (matchedSavedRegion) state.region = matchedSavedRegion;
         if (typeof saved.brand === "string" && saved.brand) {

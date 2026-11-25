@@ -86,6 +86,9 @@ def header(p: str, active: str = "") -> str:
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
 {mob}    </nav>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+{mob}    </nav>
+    <script>(function(){{var b=document.getElementById("mobileMenuBtn"),n=document.getElementById("mobileNav");if(!b||!n||b.dataset.menuBound)return;b.dataset.menuBound="1";b.addEventListener("click",function(){{var o=n.classList.toggle("open");b.setAttribute("aria-expanded",String(o));}});}})();</script>
   </header>
 '''
 

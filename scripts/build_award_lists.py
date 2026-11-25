@@ -52,7 +52,44 @@ LISTS = [
         "source_name": "MICHELIN Guide",
         "official_total": 657,
     },
+    {
+        "slug": "michelin-1-key-2026",
+        "title": "2026 MICHELIN 1 Key Hotels on StayOdds — Ranked by Guest Score",
+        "h1": "2026 MICHELIN Guide: 1 Key",
+        "sub": "One-Key hotels in the StayOdds directory, ordered by verified guest score, then name.",
+        "short": "MICHELIN 1 Key 2026",
+        "source": MICHELIN_URL,
+        "source_name": "MICHELIN Guide",
+        "official_total": 2020,
+    },
 ]
+MAP_SCOPE = {
+    "worlds-50-best-hotels-2026": "w50",
+    "michelin-3-keys-2026": "michelin3",
+    "michelin-2-keys-2026": "michelin2",
+    "michelin-1-key-2026": "michelin1",
+}
+MICHELIN_ABOUT = (
+    "<h2>What is a MICHELIN Key?</h2>"
+    "<p>The Key is the MICHELIN Guide's distinction for hotels, its equivalent of the Star for restaurants. "
+    "Keys are awarded by MICHELIN inspectors after anonymous stays or visits, and recognise a unique hospitality concept, "
+    "distinctive character, a warm welcome and a very high level of service.</p>"
+    "<ul><li><strong>One Key</strong>: &ldquo;a very special stay&rdquo;</li>"
+    "<li><strong>Two Keys</strong>: &ldquo;an exceptional stay&rdquo;</li>"
+    "<li><strong>Three Keys</strong>: &ldquo;an extraordinary stay&rdquo;</li></ul>"
+    "<p>The 2026 selection has 155 Three-Key, 657 Two-Key and 2,020 One-Key hotels worldwide. "
+    'Sources: <a href="https://guide.michelin.com/us/en/article/travel/one-two-three-michelin-keys-hotels-have-own-distinction-michelin-guide" target="_blank" rel="noopener">MICHELIN Guide: what the Keys mean</a>, '
+    f'<a href="{MICHELIN_URL}" target="_blank" rel="noopener">MICHELIN Guide 2026 selection</a>.</p>'
+)
+W50_ABOUT = (
+    "<h2>How the World&rsquo;s 50 Best Hotels is ranked</h2>"
+    "<p>The list is voted by The World&rsquo;s 50 Best Hotels Academy: travel experts in 13 regions, each panel split "
+    "equally between travel journalists, hoteliers and seasoned luxury travellers, with a 50/50 gender balance. "
+    "Each member votes for seven hotels in order of preference, must have stayed at every hotel they vote for in the last "
+    "three years and upload proof of the stay, and cannot vote for hotels they own or have a financial interest in. "
+    "Voting is confidential and independently adjudicated by Deloitte. Ranks 51&ndash;100 are published as the extended list.</p>"
+    '<p>Source: <a href="https://www.the50.com/hotels/best-in-the-world/how-the-voting-works.html" target="_blank" rel="noopener">The World&rsquo;s 50 Best Hotels: how the voting works</a>.</p>'
+)
 
 
 def esc(s: Any) -> str:
@@ -95,7 +132,7 @@ def select(lst: dict[str, Any], hotels: list[dict[str, Any]]) -> list[dict[str, 
     if slug.startswith("worlds"):
         rows = [(w50_rank(h), h) for h in hotels]
         return [h for r, h in sorted((r for r in rows if r[0] is not None), key=lambda r: r[0])]
-    want = 3 if "3-keys" in slug else 2
+    want = 3 if "3-keys" in slug else 2 if "2-keys" in slug else 1
     rows = [h for h in hotels if michelin_keys(h) == want]
     return sorted(rows, key=lambda h: (-(guest100(h) or -1), h["name"].lower()))
 
@@ -135,6 +172,13 @@ PAGE_CSS = """
 .al-score{text-align:right;font-size:12px;color:var(--muted,#5b6472);white-space:nowrap}
 .al-score strong{display:block;font-size:20px;color:inherit}
 .al-missing{margin-top:22px;font-size:13.5px}
+.al-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.al-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;background:#ff5d22;color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+.al-btn:hover{background:#e44b12}
+.al-btn.ghost{background:transparent;color:inherit;border:1px solid rgba(100,110,130,.4)}
+.al-about{margin:30px 0 0;padding:18px 20px;border-radius:14px;background:rgba(100,110,130,.08);font-size:14.5px;line-height:1.6}
+.al-about h2{font-size:19px;margin:0 0 8px}.al-about h2+p{margin-top:0}.al-about ul{margin:6px 0 10px 18px;padding:0}
+.al-about + .al-about{margin-top:14px}
 @media (max-width:560px){.al-row{grid-template-columns:40px 1fr}.al-score{grid-column:2;text-align:left}}
 </style>
 """
@@ -182,6 +226,11 @@ def render(lst: dict[str, Any], hotels: list[dict[str, Any]], head: str, foot: s
             f"{present} two-Key hotels are listed so far out of {total} in the 2026 selection. "
             "We are adding the rest in stages; one-Key hotels are not part of this list."
         )
+    elif total == 2020:
+        note = (
+            f"{present} one-Key hotels from the StayOdds directory. The full 2026 selection has {total:,} one-Key hotels; "
+            "this list shows the ones we already cover."
+        )
     else:
         note = f"{present} of {total} three-Key hotels are listed."
     tabs = "".join(
@@ -215,7 +264,10 @@ def render(lst: dict[str, Any], hotels: list[dict[str, Any]], head: str, foot: s
         f'<p class="al-sub">{esc(lst["sub"])}</p>'
         f'<p class="al-note">{esc(note)} Source: <a href="{esc(lst["source"])}" target="_blank" rel="noopener">{esc(lst["source_name"])}</a>. '
         "Guest scores are verified licensed guest ratings; nothing on this page is estimated.</p>"
-        f'<nav class="al-tabs" aria-label="Award lists">{tabs}</nav><ol class="al-list">{"".join(items)}</ol></div></main>'
+        f'<nav class="al-tabs" aria-label="Award lists">{tabs}</nav>'
+        f'<div class="al-actions"><a class="al-btn" href="/hotels/?scope={MAP_SCOPE[lst["slug"]]}">View these hotels on the map &rarr;</a></div>'
+        f'<ol class="al-list">{"".join(items)}</ol>'
+        f'<section class="al-about">{W50_ABOUT if is_rank else MICHELIN_ABOUT}</section></div></main>'
     )
     return head.replace("</head>", PAGE_CSS + ld + "\n</head>", 1) + body + foot + "</body>\n</html>\n"
 
@@ -239,7 +291,10 @@ def write_award_lists(dist: Path, hotels: list[dict[str, Any]], template: str) -
     idx = dist / "lists"
     cards = "".join(
         f'<li class="al-row"><div class="al-rank">★</div><div><a class="al-name" href="/lists/{x["slug"]}/">{esc(x["h1"])}</a>'
-        f'<div class="al-meta">{esc(x["sub"])}</div></div><div class="al-score"><strong>{len(select(x, hotels))}</strong>hotels</div></li>'
+        f'<div class="al-meta">{esc(x["sub"])}</div>'
+        f'<div class="al-badges"><a class="al-badge" href="/lists/{x["slug"]}/">See the list</a>'
+        f'<a class="al-badge" href="/hotels/?scope={MAP_SCOPE[x["slug"]]}">Show on map</a></div></div>'
+        f'<div class="al-score"><strong>{len(select(x, hotels))}</strong>hotels</div></li>'
         for x in LISTS
     )
     h2 = re.sub(r"<title>.*?</title>", "<title>Hotel Award Lists | StayOdds</title>", head, flags=re.S)
@@ -248,7 +303,8 @@ def write_award_lists(dist: Path, hotels: list[dict[str, Any]], template: str) -
         h2.replace("</head>", PAGE_CSS + "</head>", 1)
         + '<main><div class="al-wrap"><div class="al-eyebrow">Award lists</div><h1>Hotel award lists</h1>'
         '<p class="al-sub">The World\'s 50 Best Hotels and the MICHELIN Keys, ordered and linked to full StayOdds scorecards.</p>'
-        f'<ol class="al-list">{cards}</ol></div></main>' + foot + "</body>\n</html>\n"
+        f'<ol class="al-list">{cards}</ol><section class="al-about">{MICHELIN_ABOUT}</section>'
+        f'<section class="al-about">{W50_ABOUT}</section></div></main>' + foot + "</body>\n</html>\n"
     )
     (idx / "index.html").write_text(page, encoding="utf-8")
     return ["/lists/"] + paths

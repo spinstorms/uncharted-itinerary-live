@@ -355,7 +355,7 @@ function initCommonUi() {
 
   const menuBtn = qs("#mobileMenuBtn");
   const mobileNav = qs("#mobileNav");
-  if (menuBtn && mobileNav) {
+  if (menuBtn && mobileNav && !menuBtn.dataset.menuBound) {
     menuBtn.addEventListener("click", () => {
       const open = mobileNav.classList.toggle("open");
       menuBtn.setAttribute("aria-expanded", String(open));
