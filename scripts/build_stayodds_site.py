@@ -2899,6 +2899,20 @@ def main() -> None:
         _sys.path.insert(0, scripts_dir)
     from audit_brands_and_loyalty import audit_hotels, format_audit_summary
 
+    # duplicates (same hotel twice in the database): fold the duplicate's awards, critic scores and videos into the
+    # record we keep, then drop it. The dropped page redirects to the kept one (build_stayodds_domain.write_redirects).
+    merges = (corr.get("merge") or {})
+    if merges:
+        by_id = {h["id"]: h for h in directory}
+        for dup, keep in merges.items():
+            a, b = by_id.get(dup), by_id.get(keep)
+            if not a or not b:
+                continue
+            for field, key in (("officialAwards", "label"), ("editorialRatings", "sourceName"), ("youtubeReviews", "videoId")):
+                have = {str(x.get(key)) for x in b.get(field) or []}
+                b[field] = (b.get(field) or []) + [x for x in a.get(field) or [] if str(x.get(key)) not in have]
+        directory = [h for h in directory if h["id"] not in merges]
+
     brand_errors, brand_warnings = audit_hotels(directory)
     print(format_audit_summary(directory, brand_errors, brand_warnings))
     if brand_errors:

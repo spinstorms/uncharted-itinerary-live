@@ -41,6 +41,26 @@ def main() -> int:
     hs = {h["id"]: h for h in json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]}
     lk, gk = os.environ.get("NUITEE_API_KEY", ""), os.environ.get("GOOGLE_PLACES_API_KEY", "")
     index: dict[str, list] = {}
+    if "--names" in sys.argv:  # just print what each stored id points at
+        for pid in ids:
+            h = hs.get(pid) or {}
+            ln = gn = ""
+            try:
+                if h.get("nuiteeHotelId"):
+                    d = json.loads(get(f"https://api.liteapi.travel/v3.0/data/hotel?hotelId={urllib.parse.quote(h['nuiteeHotelId'])}",
+                                       {"X-API-Key": lk, "Accept": "application/json"}))["data"]
+                    ln = f"{d.get('name')} | {d.get('address')} | {d.get('city')}"
+                if h.get("googlePlaceId"):
+                    d = json.loads(get(f"https://places.googleapis.com/v1/places/{urllib.parse.quote(h['googlePlaceId'])}",
+                                       {"X-Goog-Api-Key": gk, "X-Goog-FieldMask": "displayName,formattedAddress"}))
+                    gn = f"{(d.get('displayName') or {}).get('text')} | {d.get('formattedAddress')}"
+            except Exception as e:  # noqa: BLE001
+                ln += f" error {e}"
+            print(f"NAMES {pid} [{h.get('name')}] liteapi={h.get('nuiteeHotelId')}: {ln} || google: {gn}")
+            index[pid] = [{"liteapi": ln, "google": gn}]
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.json").write_text(json.dumps(index, indent=1, ensure_ascii=False), encoding="utf-8")
+        return 0
     for pid in ids:
         h = hs.get(pid) or {}
         cands: list[dict] = []

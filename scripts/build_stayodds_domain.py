@@ -416,6 +416,22 @@ def main() -> None:
     from build_stayodds_site import compute_stayodds_py
 
     list_paths += write_insights(DIST, hotels, load_template("hotels/index.html"), compute_stayodds_py)
+    # merged duplicates: their old page URL forwards to the hotel we kept
+    try:
+        merges = json.loads((ROOT / "data" / "property-corrections.json").read_text(encoding="utf-8")).get("merge") or {}
+    except Exception:
+        merges = {}
+    for dup, keep in merges.items():
+        d = DIST / "stayodds" / dup
+        if (d / "index.html").exists():
+            continue
+        d.mkdir(parents=True, exist_ok=True)
+        url = f"{STAYODDS_URL}/stayodds/{keep}/"
+        (d / "index.html").write_text(
+            f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>'
+            f'<link rel="canonical" href="{url}"><meta http-equiv="refresh" content="0; url={url}">'
+            f'<meta name="robots" content="noindex"></head><body><a href="{url}">This hotel has moved here</a></body></html>\n',
+            encoding="utf-8")
     for lp in list_paths:
         lfile = DIST / lp.strip("/") / "index.html"
         lfile.write_text(rewrite_html_for_stayodds(lfile.read_text(encoding="utf-8"), "destination"), encoding="utf-8")

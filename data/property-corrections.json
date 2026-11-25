@@ -1,5 +1,5 @@
 {
-  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club).",
+  "note": "Hand corrections applied to the database on every data run. Keys are Supabase table -> property id -> fields to set. google_place_id null = the Google listing we had matched was a different place (e.g. Sundays Beach Club). merge: duplicate id -> the id we keep.",
   "properties": {
     "heights-melasti-bali": {
       "name": "The Heights Melasti",
@@ -21,5 +21,11 @@
     "the-ungasan-bali": {
       "shorts": "from data/hotels.json"
     }
+  },
+  "merge": {
+    "the-dorchester-dorchester-collection": "the-dorchester-london",
+    "mandarin-oriental-lake-como": "mandarin-oriental-lago-di-como",
+    "the-breakers": "the-breakers-palm-beach",
+    "jackalope-hotel-mornington-peninsula": "jackalope-hotel-mornington"
   }
 }
