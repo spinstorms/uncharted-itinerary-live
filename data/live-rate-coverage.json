@@ -102,7 +102,6 @@
   },
   "blockLiveRates": {
     "chateau-du-grand-luce": "id_mismatch: LiteAPI id is 'Chateau du Grand Lucay', 242.7 km away",
-    "hotel-de-la-ville-a-rocco-forte-hotel": "id_mismatch: LiteAPI id is 'Grand Hotel de la Ville', 212.9 km away",
     "hotel-du-cap-eden-roc": "id_mismatch: LiteAPI id is 'Grand-Hôtel du Cap-Ferrat, A Four Seasons Hotel', 22.3 km away",
     "hotel-du-couvent-nice": "id_mismatch: LiteAPI id is 'L'hôtel du Couvent', 243.8 km away",
     "hotel-du-palais": "id_mismatch: LiteAPI id is 'Grand Hôtel Du Palais Royal', 668.6 km away",
@@ -116,8 +115,7 @@
     "the-johri-jaipur": "id_mismatch: LiteAPI id is 'FabHotel Johri Regency, Malviya Nagar', 439.2 km away",
     "the-mark-new-york": "id_mismatch: LiteAPI id is 'Adam's Mark Hotel & Conference Center', 1755.5 km away",
     "the-okura-tokyo": "id_mismatch: LiteAPI id is 'Hotel Okura Tokyo Bay', 12.7 km away",
-    "the-plaza-new-york": "id_mismatch: LiteAPI id is 'The Plaza Hotel Pioneer Park', 3061.7 km away",
-    "tourists": "id_mismatch: LiteAPI id is 'NYC Cozy Private Bedroom with Free Parking & Near Subway - Business & Tourists', 214.3 km away"
+    "the-plaza-new-york": "id_mismatch: LiteAPI id is 'The Plaza Hotel Pioneer Park', 3061.7 km away"
   },
   "verifiedLiveRates": [
     "1-hotel-hanalei-bay-kauai",
@@ -546,6 +544,7 @@
     "hotel-cipriani-venice",
     "hotel-das-cataratas-belmond",
     "hotel-de-crillon-paris",
+    "hotel-de-la-ville-a-rocco-forte-hotel",
     "hotel-de-paris-monte-carlo",
     "hotel-de-russie-rome",
     "hotel-emma",
@@ -591,6 +590,7 @@
     "il-borro",
     "il-san-pietro-positano",
     "il-sereno",
+    "impression-isla-mujeres-by-secrets",
     "iniala-beach-house",
     "intercontinental-bali-resort-by-ihg",
     "intercontinental-maldives",
@@ -1180,6 +1180,7 @@
     "top-hotel-hochgurgl",
     "torre-del-marques-hotel-spa-and-winery",
     "tortuga-bay-puntacana",
+    "tourists",
     "trisara-phuket",
     "turtle-inn-belize",
     "twa-hotel",

@@ -5230,53 +5230,6 @@
    }
   ]
  },
- "bulgari-hotel-london": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 338,
-  "quotes": [
-   {
-    "date": "2026-10-30",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "",
-    "liked": "Very close to haroods and beautiful comfortable plaza",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-18",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "extended group",
-    "headline": "Absolutely amazing stay with family",
-    "liked": "Service, facilities was excellent",
-    "disliked": "N/a",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-16",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "Good stay, but inexperienced staff kept it from being a great stay.",
-    "liked": "Location, room comfort (bed,shower,soundproof) and breakfast were all excellent",
-    "disliked": "The only place this property fell shorten on was service. While everyone was very friendly, the majority of the staff was largely inexperienced and not accustomed to working in this class of hotel. I believe this property is operated by Marriott, they could do much better in their hiring practices.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-30",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Exceptional in every way, easily one of the best luxury hotels I have ever stayed in.",
-    "liked": "One of the best hotels I have ever stayed in, and I have visited many highly rated luxury hotels around the world. The Bvlgari Hotel London genuinely stands out. The level of service is exceptional and every member of staff goes above and beyond to make you feel welcome and looked after. Nothing ever feels like too much trouble. The attention to detail, professionalism and warmth of the team are on another level. A t…",
-    "disliked": "Honestly, there was very little to fault. The whole experience exceeded our expectations.",
-    "language": "en"
-   }
-  ]
- },
  "bulgari-hotel-milano": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -20066,53 +20019,6 @@
    }
   ]
  },
- "hotel-sans-souci-wien": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 2229,
-  "quotes": [
-   {
-    "date": "2026-11-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "amazing, magical and definite 5 star",
-    "liked": "Absolutely fabulous",
-    "disliked": "no faults",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-07",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "solo traveller",
-    "headline": "",
-    "liked": "Great staff . Very comfortable rooms . A very good gym and breakfast was just right",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with children",
-    "headline": "",
-    "liked": "every things; excellent breakfast; excellent location; excellent restaurant",
-    "disliked": "The air conditioning doesn´t working very well; very cold Bathroom with a huge window, bathroom vey cold in the morning and evening; without a blckcurtain - very cold",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-13",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "I would stay here again. The hotel is lovely",
-    "liked": "The hotel staff were lovely as was our room. Love the location for a more quiet less hectic area not far from the chaos of town and sites. They provided us with a lovely boxed snack for our very early 4:00 a.m. checkout to the airport.",
-    "disliked": "Had dinner our last night in their restaurant. I would say it was good but not great. My son ordered the fish but it was a tiny portion.",
-    "language": "en"
-   }
-  ]
- },
  "hotel-schloss-seefels": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -21382,6 +21288,53 @@
    }
   ]
  },
+ "impression-isla-mujeres-by-secrets": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 283,
+  "quotes": [
+   {
+    "date": "2026-09-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Sheer luxury",
+    "liked": "Everything",
+    "disliked": "A lot of stairs is only downside",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-01",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "We had an enjoyable vacation.",
+    "liked": "The food at Sake was very good. The butlers did a very good job of accommodating our requests. The room was very comfortable, and the view was exceptional.",
+    "disliked": "The food at the Mexican restaurant was not good. My wife ordered the lobster tail at Wildfire. The menu said 355 pesos, but we were charged 710. The waiter said, \" My bad, I should have told you.\" The lobster tail was 2 oz, and the cost is 355 pesos/oz. This was not clear. Nevertheless, I paid the 710 pesos. Additionally, I was disappointed that the beach area was so small.",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-04",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Extraordinary property. Stay there for our 11th year anniversary. It was mind blowing. Highly recommend.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-25",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "The staff were amazing and very accommodating.",
+    "disliked": "There was nothing I didn’t like about the property.",
+    "language": "en"
+   }
+  ]
+ },
  "iniala-beach-house": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -22176,53 +22129,6 @@
     "travellerType": "couple",
     "headline": "Impeccable",
     "liked": "The treatment you get in this hotel is just unbeliavable, it is epic. The lobby staff, reception, cleaning staff, boxing coach Ki, Spa treatments, it is impeccable.",
-    "disliked": "",
-    "language": "en"
-   }
-  ]
- },
- "juliana-hotel-brussels": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 1167,
-  "quotes": [
-   {
-    "date": "2026-11-11",
-    "source": "Verified booking guest",
-    "score": 4.0,
-    "travellerType": "couple",
-    "headline": "What could have been good, wasn’t in the end",
-    "liked": "Location and decor",
-    "disliked": "Too much to say",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "Recently completed 5 star hotel; should be in Michelin restaurant, central location on quiet square",
-    "liked": "location on quiet square, yet walking distance to major sites. completed 2021 as tasteful combination of 3 18th century town houses. Restaurant should be in Michelin guide. staff as good as it gets. a 5 star hotel worth the stay. Pool.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-21",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Lovely hotel; delightful staff",
-    "liked": "A truly lovely room with a great view. We had a wonderful stay.",
-    "disliked": "Nothing.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-21",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "solo traveller",
-    "headline": "Perfectly acceptable for a one night stay!",
-    "liked": "",
     "disliked": "",
     "language": "en"
    }
@@ -24689,53 +24595,6 @@
    }
   ]
  },
- "le-bora-bora": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 559,
-  "quotes": [
-   {
-    "date": "2026-11-16",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with children",
-    "headline": "",
-    "liked": "Exceptional cleaningness. Rooms were cleaned twice a day. Friendly personnel, cozy atmosphere.",
-    "disliked": "Very few activities, few animations. Breakfasts were same every day, no variety. Restaurants are pricey for what they offer.",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "Paradise found at Le Bora Bora",
-    "liked": "Beautiful location, beautiful garden bungalow with private pool Absolute privacy and very peaceful",
-    "disliked": "The only thing I would have liked would have been a little more variety in the dinner choices at the restaurant downstairs near the pool area but there were other restaurants we could have gone to for variety",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-15",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "couple",
-    "headline": "Excellent relaxing stay in a unique hotel in Bora Bora",
-    "liked": "The beautiful, luxurious and surprising gardens makes this hotel unique. So peaceful during the days and nights. We experienced before bungalows over the water at an other hotel. We were in one of the garden bungalow and loved it, beautiful, very private, own plunge pool. In my opinion, the best bungalows at this specific hotel! All staff very nice especially at the beach (except at the boutiques)",
-    "disliked": "no hand rail at the pool to get in and out of the water. not safe",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Luxurious getaway",
-    "liked": "We loved our stay at Le Bora Bora. The first entry into our overwater villa just blew our minds. Everything was clean and beautifully arranged and house keeping made sure that we could enjoy it like that every day.",
-    "disliked": "Sometimes the service was a little bit slower, especially in the restaurants. And one thing that also appeared in some older reviews which we don't understand is why the water bottle cannot be prefilled by the house keeping staff - the bottle is empty and we have to walk to the water filling station ourselves.",
-    "language": "en"
-   }
-  ]
- },
  "le-bristol-paris": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -26875,53 +26734,6 @@
    }
   ]
  },
- "mandarin-oriental-milan": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 267,
-  "quotes": [
-   {
-    "date": "2026-10-18",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "Breakfast is exceptional and the staff there are exceptional always exceeding our expectations.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "A league above a 5 star hotel!",
-    "liked": "Truly one of the most exceptional hotel experiences we have ever had! This was our first time staying at a Mandarin Oriental property and it exceeded all our expectations, so much so that it has created a benchmark for what a 5 star hotel should be for us. We came to Milan to celebrate my wifes birthday, and the staff were extremely accommodating with helping arrange a little surprise in the room. The attention to de…",
-    "disliked": "Nothing, for the first time ever i can truly say nothing. It was all perfect! I just wish we had more time to stay here!",
-    "language": "en"
-   },
-   {
-    "date": "2026-07-21",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "I will come back to the hotel again with my family.",
-    "liked": "The hospitality and the clean mess and the fantastic design of the rooms",
-    "disliked": "Nothing … if you can improve something that is the breakfast, especially the selection of food",
-    "language": "en"
-   },
-   {
-    "date": "2026-07-14",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "We had the most amazing stay. Very short but very sweet!!",
-    "liked": "The calm. The wonderful courtyard garden. And the staff really made it: they were exceptional. Going above and beyond.",
-    "disliked": "Loved every second.",
-    "language": "en"
-   }
-  ]
- },
  "mandarin-oriental-munich": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -28580,6 +28392,53 @@
     "headline": "",
     "liked": "Spa was great",
     "disliked": "The music being pumped everywhere was so bad! Please please turn it down a bit and play something more classy",
+    "language": "en"
+   }
+  ]
+ },
+ "mount-nelson-belmond-cape-town": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 834,
+  "quotes": [
+   {
+    "date": "2026-10-31",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "A unique stay in an historical hotel.",
+    "liked": "The atmosphere is unique, created by the friendly and attentive staff together with the magnificent building that is the Mount Nelson.",
+    "disliked": "The layout and interior is fantastic.",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-29",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Amazing tea!",
+    "liked": "Such a stunning day. Amazing atmosphere and food. Thuli looked well after us and even chose all the tea for us. It was excellent.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-29",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Perfect",
+    "liked": "The atmosphere was amazing and our waitress Zona was very attentive and polite & sung happy birthday to my Mother 💚🤗",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-29",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "High tea at Mount Nelson",
+    "liked": "What a wonderful experience! The staff were lovely, friendly, and created such a happy and welcoming environment. Our host, Thuli, was absolutely fantastic, so knowledgeable, helpful, and full of great suggestions. She truly went above and beyond to make our experience special. Thank you, Thuli! You made our visit extra special, and we really appreciate it.",
+    "disliked": "",
     "language": "en"
    }
   ]
@@ -42353,6 +42212,53 @@
    }
   ]
  },
+ "the-burman-hotel": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 7,
+  "quotes": [
+   {
+    "date": "2025-09-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "Great hotel, fantastic staff.",
+    "liked": "Elegant hotel in a great location in the old town. Room not huge but large enough and very comfortable with every possible amenity. Great breakfast. Fantastic staff - very helpful and friendly. Great attention to detail. I would highly recommend this hotel.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-09-13",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "When we go back to Tallin we definitely will stay in this beautiful hotel again. Very happy. As it was only new there were a couple of hiccups but all was fabulous.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-08-29",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "Perfect stay in every way",
+    "liked": "I can’t praise this hotel enough! It’s all in the details. Next level breakfast and the bakery brings a nice touch. Will only stay here from now on when in Tallinn, 10/10. The spa is very peaceful and great massages.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-07-28",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "The hotel is outstanding, refine and elegant. The rooms are comfortable and the staff is knowledgeable and helpful. Breakfast was over and above my expectations. The only thing they need to improve is in make is sustainable, there is many plastic waste when it come to shampoo and soap. Also my room didn’t have a full length mirror.",
+    "disliked": "",
+    "language": "en"
+   }
+  ]
+ },
  "the-cadogan-a-belmond-hotel-london": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -50962,6 +50868,33 @@
     "liked": "A paradise in the jungle with a beautiful beach to yourself! The best experience around PV! We are definitely going back!",
     "disliked": "There are a lot of stairs!",
     "language": "en"
+   }
+  ]
+ },
+ "xitan-hotel-beijing": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 4,
+  "quotes": [
+   {
+    "date": "2026-06-29",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Luxury and peace in the Beijing mountains",
+    "liked": "It’s a wonderful retreat in Beijing mountains. Peaceful luxury secluded in a resort with beautiful rooms and all you can wish for. Wonderful pool, restaurants and gym. Service is very personalised and just perfectly",
+    "disliked": "Nothing not to like. May be the à la carte choice in both restaurants could be extended.",
+    "language": "en"
+   },
+   {
+    "date": "2026-06-28",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Удивительное место посреди природы — хотим вернуться!",
+    "liked": "Xitan Hotel — это место, в которое влюбляешься с первого взгляда. Он расположен недалеко от Пекина, но, оказавшись здесь, ты будто попадаешь в другой мир — мир гор, зелени, чистого воздуха и абсолютной тишины. Это идеальный баланс между уединением и комфортом. Дизайн отеля заслуживает отдельного внимания: номера выполнены с большим вкусом, всё продумано до мелочей, и при этом чувствуется связь с природой — через пано…",
+    "disliked": "-",
+    "language": "ru"
    }
   ]
  },
