@@ -1031,6 +1031,24 @@
       "source": "official",
       "site": "https://www.aman.com/resorts/aman-kyoto",
       "note": "hotel's official website (checked by eye)"
+    },
+    "amanpuri-phuket": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanpuri.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/amanpuri",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "amandari-ubud": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amandari.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/amandari",
+      "note": "hotel's official website (checked by eye)"
+    },
+    "amanoi-vietnam": {
+      "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanoi.jpg",
+      "source": "official",
+      "site": "https://www.aman.com/resorts/amanoi",
+      "note": "hotel's official website (checked by eye)"
     }
   }
 }
