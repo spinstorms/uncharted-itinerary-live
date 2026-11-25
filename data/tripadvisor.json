@@ -4730,6 +4730,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "impression-isla-mujeres-by-secrets": {
+   "locationId": 25347353,
+   "name": "Impression Isla Mujeres By Secrets",
+   "rating": 4.8,
+   "reviewCount": 1957,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g150810-d25347353-Reviews-Impression_Isla_Mujeres_By_Secrets-Isla_Mujeres_Quintana_Roo.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-25"
+  },
   "iniala-beach-house": {
    "locationId": 7198263,
    "name": "Iniala Beach House",
@@ -11259,6 +11270,7 @@
   "four-seasons-peninsula-papagayo": "2026-11-25",
   "four-seasons-whistler": "2026-11-25",
   "four-seasons-yacht-i": "2026-11-25",
+  "french-coco-martinique": "2026-11-25",
   "gaia-riverlodge": "2026-11-25",
   "gajoen": "2026-11-25",
   "gf-fanabe-tenerife": "2026-11-25",
@@ -11391,6 +11403,7 @@
   "spa-and-golf-hotel-weimarer-land": "2026-11-25",
   "spring-hotel-bitacora-tenerife": "2026-11-25",
   "st-regis-aspen": "2026-11-25",
+  "st-regis-bahia-beach-puerto-rico": "2026-11-25",
   "st-regis-costa-mujeres": "2026-11-25",
   "st-regis-maldives": "2026-11-25",
   "st-regis-red-sea": "2026-11-25",

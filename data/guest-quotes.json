@@ -19220,6 +19220,53 @@
    }
   ]
  },
+ "hotel-de-la-ville-a-rocco-forte-hotel": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 1157,
+  "quotes": [
+   {
+    "date": "2026-10-30",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "Having been in Positano for 5 days coming to this hotel and Sorrento was a delight. The rooms were great and we were only minutes away from the main attractions and areas. The hotel itself in the property is beautiful and having breakfast in their Courtyard was fantastic along with the selections. Their hotel tucked in between a few buildings was also a wonderful break from the 25,000 step days in Positano.",
+    "disliked": "It took about 10 to 15 minutes to walk to the center of town where all the action was but other than that it was beautifully located across the street from a wonderful lemon restaurant",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-29",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Loved our stay and would love to visit again in the future.",
+    "liked": "Location, it was comfortable with a nice big room and comfy bed. Staff were very friendly and helpful, good breakfast.",
+    "disliked": "That I couldn't use the pools as pools not heated, and rooftop bars weren't open later.Soa treatments were a little expensive.",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-28",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "BEYOND WONDERFUL AND HAD AN AMAZING STAY!",
+    "liked": "Our stay was only a few weeks again so my mind is very fresh. Not that I would forget it. This Hotel was beyound our expectations. The staff was amazing and kind. The restaurant was so good breakfast was amazing. We enjoyed everymoment of our stay. I want to mention the staff in the restaurant are so helpful and they did a great job. The SPA was just what we needed. We did a couples message and Teresa and Arienna (so…",
+    "disliked": "0",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-26",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "A great base of operations in Sorrento!",
+    "liked": "The staff, the room, and the location were great. The breakfast buffet was excellent.",
+    "disliked": "The dinner service at the restaurant didn’t disclose daily specials unless you asked. And the dinner specials were excellent!",
+    "language": "en"
+   }
+  ]
+ },
  "hotel-de-paris-monte-carlo": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -48117,6 +48164,53 @@
     "headline": "A fabulous, unforgettable hotel in a stunning location, only minor details from a 10/10",
     "liked": "An unbelievable hotel, everything is thought of down to the tiniest details. The staff are incredibly kind and nothing is too much, the food is also very good generally. The beach is obviously beautiful and we found our room super comfortable and well appointed.",
     "disliked": "A couple of small details that annoyed us given the price - staff who come into your room without knocking being one! Not ok. Also miscommunication between teams, for example we arrived late and told our ambassador we were going to have room service and go to bed. About 2 hours later someone came at 21.30 offering a turn down service and woke me up! Small things, just a bit annoying.",
+    "language": "en"
+   }
+  ]
+ },
+ "tourists": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 31,
+  "quotes": [
+   {
+    "date": "2026-11-06",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "Super cozy property with a lot of great details to enjoy!",
+    "liked": "It was a great stay. We loved the designated radio channel. The room had all the essentials needed.",
+    "disliked": "The room was a little humid and stuffy on our first night so we didn’t sleep well. We slept much better on our second night because it had cooled down a little more and it was a little less humid.",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-25",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "We loved this hotel, more than we even expected! The ambience was incredible and so cozy in the fall weather!",
+    "liked": "We loved the overall vibe and how the property felt staying there. We were a little surprised at first how close to the road it was, but then once we went into the check in lounge area and then our room, we felt so encompassed by the quiet and nature. It was a beautiful place to stop and stay along our trip from Maine down to NYC. The room was so comfortable, the heater was so quiet and the lounge area was warm and c…",
+    "disliked": "The overall vibe, the food, the comfort and coziness for the fall weather. Beautifully done in every way for that inviting, modern but nature inspired respite.",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-17",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "solo traveller",
+    "headline": "Cool place. Double check your invoice. They overcharged me $250 for one night pet fee!",
+    "liked": "High cool factor.",
+    "disliked": "Overcharged me $250 for one night with a pet. It was supposed to be $45 for the pet. Wow! That’s an overcharge!!",
+    "language": "en"
+   },
+   {
+    "date": "2026-05-23",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "",
+    "liked": "Great vibe, great concept, amazing use of the space with attention to detail, we loved it!",
+    "disliked": "",
     "language": "en"
    }
   ]

@@ -1,0 +1,7805 @@
+{
+ "hotels": {
+  "1-hotel-hanalei-bay-kauai": {
+   "rating": 4.6,
+   "reviewCount": 1695,
+   "name": "1 Hotel Hanalei Bay",
+   "fetched": "2026-11-25"
+  },
+  "1-hotel-west-hollywood": {
+   "rating": 4.3,
+   "reviewCount": 1325,
+   "name": "1 Hotel West Hollywood",
+   "fetched": "2026-11-25"
+  },
+  "137-pillars-house": {
+   "rating": 4.7,
+   "reviewCount": 519,
+   "name": "137 Pillars House Chiang Mai",
+   "fetched": "2026-11-25"
+  },
+  "45-park-lane-dorchester-collection": {
+   "rating": 4.6,
+   "reviewCount": 839,
+   "name": "45 Park Lane",
+   "fetched": "2026-11-25"
+  },
+  "abadia-retuerta-ledomaine": {
+   "rating": 4.7,
+   "reviewCount": 955,
+   "name": "Abadía Retuerta LeDomaine",
+   "fetched": "2026-11-25"
+  },
+  "adare-manor-ireland": {
+   "rating": 4.9,
+   "reviewCount": 2584,
+   "name": "Adare Manor",
+   "fetched": "2026-11-25"
+  },
+  "adler-sicilia": {
+   "rating": 4.8,
+   "reviewCount": 632,
+   "name": "ADLER Sicilia",
+   "fetched": "2026-11-25"
+  },
+  "airelles-chateau-de-versailles": {
+   "rating": 4.6,
+   "reviewCount": 439,
+   "name": "Airelles Château de Versailles, Le Grand Contrôle",
+   "fetched": "2026-11-25"
+  },
+  "airelles-courchevel": {
+   "rating": 4.4,
+   "reviewCount": 388,
+   "name": "Les Airelles",
+   "fetched": "2026-11-25"
+  },
+  "airelles-saint-tropez-chateau-de-la-messardiere": {
+   "rating": 4.7,
+   "reviewCount": 893,
+   "name": "Airelles Saint-Tropez, Château de la Messardière",
+   "fetched": "2026-11-25"
+  },
+  "airelles-venezia-a-virtuoso-preview-property": {
+   "rating": 4.5,
+   "reviewCount": 76,
+   "name": "Airelles Palladio Venice",
+   "fetched": "2026-11-25"
+  },
+  "aktiv-and-wellnesshotel-bergfried": {
+   "rating": 4.8,
+   "reviewCount": 586,
+   "name": "Hotel Bergfried",
+   "fetched": "2026-11-25"
+  },
+  "al-bustan-palace-a-ritz-carlton": {
+   "rating": 4.7,
+   "reviewCount": 3986,
+   "name": "Al Bustan Palace, a Ritz-Carlton Hotel",
+   "fetched": "2026-11-25"
+  },
+  "al-maha-dubai": {
+   "rating": 4.7,
+   "reviewCount": 1470,
+   "name": "Al Maha, a Luxury Collection Desert Resort & Spa, Dubai",
+   "fetched": "2026-11-25"
+  },
+  "al-moudira-hotel": {
+   "rating": 4.6,
+   "reviewCount": 461,
+   "name": "Al Moudira Hotel",
+   "fetched": "2026-11-25"
+  },
+  "alila-fort-bishangarh": {
+   "rating": 4.5,
+   "reviewCount": 2178,
+   "name": "Alila Fort Bishangarh",
+   "fetched": "2026-11-25"
+  },
+  "alila-hinu-bay": {
+   "rating": 4.6,
+   "reviewCount": 519,
+   "name": "Alila Hinu Bay",
+   "fetched": "2026-11-25"
+  },
+  "alila-jabal-akhdar": {
+   "rating": 4.6,
+   "reviewCount": 1929,
+   "name": "Alila Jabal Akhdar",
+   "fetched": "2026-11-25"
+  },
+  "alila-kothaifaru-maldives": {
+   "rating": 4.7,
+   "reviewCount": 223,
+   "name": "Alila Kothaifaru Maldives",
+   "fetched": "2026-11-25"
+  },
+  "alila-mayakoba": {
+   "rating": 4.7,
+   "reviewCount": 1354,
+   "name": "Alila Mayakoba",
+   "fetched": "2026-11-25"
+  },
+  "alila-seminyak": {
+   "rating": 4.6,
+   "reviewCount": 4034,
+   "name": "Alila Seminyak",
+   "fetched": "2026-11-25"
+  },
+  "alila-ubud": {
+   "rating": 4.6,
+   "reviewCount": 1598,
+   "name": "Alila Ubud",
+   "fetched": "2026-11-25"
+  },
+  "alila-ventana-big-sur": {
+   "rating": 4.6,
+   "reviewCount": 1019,
+   "name": "Alila Ventana Big Sur",
+   "fetched": "2026-11-25"
+  },
+  "alila-villas-uluwatu": {
+   "rating": 4.7,
+   "reviewCount": 2327,
+   "name": "Alila Villas Uluwatu",
+   "fetched": "2026-11-25"
+  },
+  "almanac-barcelona": {
+   "rating": 4.6,
+   "reviewCount": 1009,
+   "name": "Almanac Barcelona",
+   "fetched": "2026-11-25"
+  },
+  "alpen-wellness-resort-hochfirst": {
+   "rating": 4.7,
+   "reviewCount": 183,
+   "name": "Alpen-Wellness Resort Hochfirst",
+   "fetched": "2026-11-25"
+  },
+  "alpine-falls-ranch": {
+   "rating": 5.0,
+   "reviewCount": 33,
+   "name": "Alpine Falls Ranch",
+   "fetched": "2026-11-25"
+  },
+  "althoff-seehotel-uberfahrt": {
+   "rating": 4.7,
+   "reviewCount": 2044,
+   "name": "Althoff Seehotel Überfahrt",
+   "fetched": "2026-11-25"
+  },
+  "alua-atlantico-golf-tenerife": {
+   "rating": 4.2,
+   "reviewCount": 5092,
+   "name": "Alua Atlántico Golf Resort",
+   "fetched": "2026-11-25"
+  },
+  "alvear-icon-hotel": {
+   "rating": 4.7,
+   "reviewCount": 6750,
+   "name": "Alvear Icon Hotel",
+   "fetched": "2026-11-25"
+  },
+  "alvear-palace-hotel": {
+   "rating": 4.7,
+   "reviewCount": 8414,
+   "name": "Alvear Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "aman-i-khas": {
+   "rating": 4.7,
+   "reviewCount": 1432,
+   "name": "Aman-i-khas",
+   "fetched": "2026-11-25"
+  },
+  "aman-kyoto": {
+   "rating": 4.3,
+   "reviewCount": 455,
+   "name": "Aman Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "aman-le-melezin": {
+   "rating": 4.5,
+   "reviewCount": 98,
+   "name": "Aman Le Mélézin",
+   "fetched": "2026-11-25"
+  },
+  "aman-nai-lert-bangkok": {
+   "rating": 4.4,
+   "reviewCount": 238,
+   "name": "Aman Nai Lert Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "aman-new-york": {
+   "rating": 4.3,
+   "reviewCount": 374,
+   "name": "Aman New York",
+   "fetched": "2026-11-25"
+  },
+  "aman-rosa-alpina": {
+   "rating": 4.5,
+   "reviewCount": 317,
+   "name": "Aman Rosa Alpina",
+   "fetched": "2026-11-25"
+  },
+  "aman-tokyo": {
+   "rating": 4.4,
+   "reviewCount": 2017,
+   "name": "Aman Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "aman-venice": {
+   "rating": 4.8,
+   "reviewCount": 868,
+   "name": "Aman Venice",
+   "fetched": "2026-11-25"
+  },
+  "aman-villas-at-nusa-dua": {
+   "rating": 4.6,
+   "reviewCount": 230,
+   "name": "Aman Villas at Nusa Dua",
+   "fetched": "2026-11-25"
+  },
+  "amanbagh": {
+   "rating": 4.6,
+   "reviewCount": 1095,
+   "name": "Amanbagh",
+   "fetched": "2026-11-25"
+  },
+  "amandari-ubud": {
+   "rating": 4.6,
+   "reviewCount": 542,
+   "name": "Amandari",
+   "fetched": "2026-11-25"
+  },
+  "amanemu-ise-shima": {
+   "rating": 4.5,
+   "reviewCount": 470,
+   "name": "Amanemu",
+   "fetched": "2026-11-25"
+  },
+  "amanera-dominican-republic": {
+   "rating": 4.7,
+   "reviewCount": 400,
+   "name": "Amanera",
+   "fetched": "2026-11-25"
+  },
+  "amanfayun": {
+   "rating": 4.3,
+   "reviewCount": 59,
+   "name": "Amanfayun",
+   "fetched": "2026-11-25"
+  },
+  "amangalla-sri-lanka": {
+   "rating": 4.5,
+   "reviewCount": 961,
+   "name": "Amangalla",
+   "fetched": "2026-11-25"
+  },
+  "amangani-jackson-hole": {
+   "rating": 4.4,
+   "reviewCount": 256,
+   "name": "Amangani",
+   "fetched": "2026-11-25"
+  },
+  "amangiri-utah": {
+   "rating": 4.5,
+   "reviewCount": 542,
+   "name": "Amangiri",
+   "fetched": "2026-11-25"
+  },
+  "amanjena": {
+   "rating": 4.6,
+   "reviewCount": 581,
+   "name": "Amanjena",
+   "fetched": "2026-11-25"
+  },
+  "amanjiwo-java": {
+   "rating": 4.7,
+   "reviewCount": 1573,
+   "name": "Amanjiwo",
+   "fetched": "2026-11-25"
+  },
+  "amankila-bali": {
+   "rating": 4.7,
+   "reviewCount": 795,
+   "name": "Amankila, Manggis, Karangasem",
+   "fetched": "2026-11-25"
+  },
+  "amankora-bhutan": {
+   "rating": 4.7,
+   "reviewCount": 94,
+   "name": "Amankora Thimphu",
+   "fetched": "2026-11-25"
+  },
+  "amankora-paro-bhutan": {
+   "rating": 4.5,
+   "reviewCount": 80,
+   "name": "Amankora Paro",
+   "fetched": "2026-11-25"
+  },
+  "amanoi-vietnam": {
+   "rating": 4.8,
+   "reviewCount": 577,
+   "name": "Amanoi",
+   "fetched": "2026-11-25"
+  },
+  "amanpulo-palawan": {
+   "rating": 4.6,
+   "reviewCount": 504,
+   "name": "Amanpulo",
+   "fetched": "2026-11-25"
+  },
+  "amanpuri-phuket": {
+   "rating": 4.7,
+   "reviewCount": 689,
+   "name": "Amanpuri",
+   "fetched": "2026-11-25"
+  },
+  "amanruya-bodrum": {
+   "rating": 4.7,
+   "reviewCount": 338,
+   "name": "Amanruya",
+   "fetched": "2026-11-25"
+  },
+  "amansara-siem-reap": {
+   "rating": 4.7,
+   "reviewCount": 126,
+   "name": "Amansara",
+   "fetched": "2026-11-25"
+  },
+  "amanyangyun": {
+   "rating": 4.5,
+   "reviewCount": 67,
+   "name": "Amanyangyun",
+   "fetched": "2026-11-25"
+  },
+  "amanyara-turks-caicos": {
+   "rating": 4.5,
+   "reviewCount": 330,
+   "name": "Amanyara",
+   "fetched": "2026-11-25"
+  },
+  "amanzoe-greece": {
+   "rating": 4.7,
+   "reviewCount": 611,
+   "name": "Amanzoe",
+   "fetched": "2026-11-25"
+  },
+  "ambergris-cay-turks-caicos": {
+   "rating": 4.8,
+   "reviewCount": 17,
+   "name": "Big Ambergris Cay",
+   "fetched": "2026-11-25"
+  },
+  "ambiente-a-landscape-hotel": {
+   "rating": 4.8,
+   "reviewCount": 342,
+   "name": "Ambiente Sedona - A Landscape Hotel",
+   "fetched": "2026-11-25"
+  },
+  "amiana-resort-nha-trang": {
+   "rating": 4.7,
+   "reviewCount": 8300,
+   "name": "Amiana Resort Nha Trang",
+   "fetched": "2026-11-25"
+  },
+  "amilla-maldives": {
+   "rating": 4.7,
+   "reviewCount": 449,
+   "name": "Amilla Maldives",
+   "fetched": "2026-11-25"
+  },
+  "an-lam-retreats-ninh-van-bay": {
+   "rating": 4.6,
+   "reviewCount": 487,
+   "name": "An Lam Retreats Ninh Van Bay",
+   "fetched": "2026-11-25"
+  },
+  "ana-intercontinental-beppu": {
+   "rating": 4.3,
+   "reviewCount": 1167,
+   "name": "ANA InterContinental Beppu Resort & Spa by IHG",
+   "fetched": "2026-11-25"
+  },
+  "ana-mandara-cam-ranh": {
+   "rating": 4.6,
+   "reviewCount": 2126,
+   "name": "Ana Mandara Cam Ranh",
+   "fetched": "2026-11-25"
+  },
+  "anantara-bophut-koh-samui-resort": {
+   "rating": 4.7,
+   "reviewCount": 1621,
+   "name": "Anantara Bophut Koh Samui Resort",
+   "fetched": "2026-11-25"
+  },
+  "anantara-golden-triangle-elephant-camp-and-resort": {
+   "rating": 4.8,
+   "reviewCount": 599,
+   "name": "Anantara Golden Triangle Elephant Camp & Resort",
+   "fetched": "2026-11-25"
+  },
+  "anantara-kihavah-maldives": {
+   "rating": 4.9,
+   "reviewCount": 707,
+   "name": "Anantara Kihavah Maldives Villas",
+   "fetched": "2026-11-25"
+  },
+  "anantara-palais-hansen-vienna-hotel": {
+   "rating": 4.6,
+   "reviewCount": 2070,
+   "name": "Anantara Palais Hansen Vienna Hotel",
+   "fetched": "2026-11-25"
+  },
+  "anantara-stanley-and-livingstone-victoria-falls-hotel": {
+   "rating": 4.6,
+   "reviewCount": 238,
+   "name": "Anantara Stanley & Livingstone Victoria Falls Hotel",
+   "fetched": "2026-11-25"
+  },
+  "anantara-ubud-bali-resort": {
+   "rating": 4.7,
+   "reviewCount": 420,
+   "name": "Anantara Ubud Bali Resort",
+   "fetched": "2026-11-25"
+  },
+  "anantara-uluwatu-bali-resort": {
+   "rating": 4.2,
+   "reviewCount": 30,
+   "name": "Svanata Uluwatu Bali Resort",
+   "fetched": "2026-11-25"
+  },
+  "andaz-bali-by-hyatt": {
+   "rating": 4.6,
+   "reviewCount": 1725,
+   "name": "Andaz Bali, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-capital-gate-abu-dhabi-by": {
+   "rating": 4.5,
+   "reviewCount": 3313,
+   "name": "Andaz Capital Gate, Abu Dhabi, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-delhi-by-hyatt": {
+   "rating": 4.5,
+   "reviewCount": 12498,
+   "name": "Andaz Delhi, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-maui-wailea": {
+   "rating": 4.5,
+   "reviewCount": 2484,
+   "name": "Andaz Maui at Wailea Resort, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-one-bangkok-by-hyatt": {
+   "rating": 4.8,
+   "reviewCount": 278,
+   "name": "Andaz One Bangkok, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-pattaya-jomtien-beach-by-hyatt": {
+   "rating": 4.6,
+   "reviewCount": 1065,
+   "name": "Andaz Pattaya Jomtien Beach, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-peninsula-papagayo": {
+   "rating": 4.7,
+   "reviewCount": 1377,
+   "name": "Andaz Peninsula Papagayo Resort, Costa Rica, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andaz-seoul-gangnam-by-hyatt": {
+   "rating": 4.4,
+   "reviewCount": 1877,
+   "name": "Andaz Seoul Gangnam, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "andbeyond-mnemba-island": {
+   "rating": 4.6,
+   "reviewCount": 158,
+   "name": "andBeyond Mnemba Island",
+   "fetched": "2026-11-25"
+  },
+  "andbeyond-sossusvlei-namibia": {
+   "rating": 4.8,
+   "reviewCount": 148,
+   "name": "andBeyond Sossusvlei Desert Lodge",
+   "fetched": "2026-11-25"
+  },
+  "angama-mara-kenya": {
+   "rating": 4.7,
+   "reviewCount": 347,
+   "name": "Angama Mara",
+   "fetched": "2026-11-25"
+  },
+  "annandale-coastal-farm": {
+   "rating": 4.9,
+   "reviewCount": 27,
+   "name": "Annandale Villas",
+   "fetched": "2026-11-25"
+  },
+  "anse-chastanet-resort": {
+   "rating": 4.6,
+   "reviewCount": 380,
+   "name": "Anse Chastanet",
+   "fetched": "2026-11-25"
+  },
+  "argos-in-cappadocia": {
+   "rating": 4.8,
+   "reviewCount": 1386,
+   "name": "Argos in Cappadocia",
+   "fetched": "2026-11-25"
+  },
+  "aristi-mountain-resort": {
+   "rating": 4.7,
+   "reviewCount": 1185,
+   "name": "Aristi Mountain Resort Hotel",
+   "fetched": "2026-11-25"
+  },
+  "aristide-hotel": {
+   "rating": 4.9,
+   "reviewCount": 190,
+   "name": "Aristide Hotel, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "arlo-midtown-building-skydb": {
+   "rating": 4.4,
+   "reviewCount": 2101,
+   "name": "Arlo Midtown",
+   "fetched": "2026-11-25"
+  },
+  "armani-hotel-dubai": {
+   "rating": 4.6,
+   "reviewCount": 4154,
+   "name": "Armani Hotel Dubai",
+   "fetched": "2026-11-25"
+  },
+  "arrecife-gran-hotel-lanzarote": {
+   "rating": 4.6,
+   "reviewCount": 9229,
+   "name": "Arrecife Gran Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "asaba-ryokan-izu": {
+   "rating": 4.5,
+   "reviewCount": 378,
+   "name": "Asaba Ryokan",
+   "fetched": "2026-11-25"
+  },
+  "ashford-castle": {
+   "rating": 4.7,
+   "reviewCount": 4255,
+   "name": "Ashford Castle",
+   "fetched": "2026-11-25"
+  },
+  "atelier-playa-mujeres": {
+   "rating": 4.8,
+   "reviewCount": 9561,
+   "name": "Atelier Playa Mujeres",
+   "fetched": "2026-11-25"
+  },
+  "atlantis-the-royal": {
+   "rating": 4.7,
+   "reviewCount": 7988,
+   "name": "Atlantis The Royal",
+   "fetched": "2026-11-25"
+  },
+  "atrio-caceres": {
+   "rating": 4.7,
+   "reviewCount": 2162,
+   "name": "Atrio Cáceres",
+   "fetched": "2026-11-25"
+  },
+  "auberge-du-soleil-napa": {
+   "rating": 4.7,
+   "reviewCount": 1848,
+   "name": "Auberge du Soleil",
+   "fetched": "2026-11-25"
+  },
+  "auberge-saint-antoine": {
+   "rating": 4.8,
+   "reviewCount": 1128,
+   "name": "Auberge Saint-Antoine Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "aulani-disney-resort-hawaii": {
+   "rating": 4.6,
+   "reviewCount": 14246,
+   "name": "Aulani, A Disney Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "awasi-atacama-chile": {
+   "rating": 4.7,
+   "reviewCount": 140,
+   "name": "Awasi Atacama",
+   "fetched": "2026-11-25"
+  },
+  "awasi-iguazu": {
+   "rating": 4.9,
+   "reviewCount": 144,
+   "name": "Awasi Iguazú",
+   "fetched": "2026-11-25"
+  },
+  "awasi-mendoza": {
+   "rating": 4.7,
+   "reviewCount": 794,
+   "name": "Awasi Mendoza",
+   "fetched": "2026-11-25"
+  },
+  "awasi-patagonia-chile": {
+   "rating": 4.7,
+   "reviewCount": 97,
+   "name": "Awasi Patagonia",
+   "fetched": "2026-11-25"
+  },
+  "awasi-santa-catarina": {
+   "rating": 4.7,
+   "reviewCount": 1279,
+   "name": "Awasi Santa Catarina",
+   "fetched": "2026-11-25"
+  },
+  "azumi-setoda": {
+   "rating": 4.6,
+   "reviewCount": 140,
+   "name": "Azumi Setoda",
+   "fetched": "2026-11-25"
+  },
+  "babylonstoren-winelands": {
+   "rating": 4.5,
+   "reviewCount": 2315,
+   "name": "Babylonstoren",
+   "fetched": "2026-11-25"
+  },
+  "badrutts-palace": {
+   "rating": 4.7,
+   "reviewCount": 1375,
+   "name": "Badrutt's Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "bahia-del-duque-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 2006,
+   "name": "Gran Hotel Bahía del Duque Resort",
+   "fetched": "2026-11-25"
+  },
+  "ballyfin-demesne": {
+   "rating": 4.8,
+   "reviewCount": 328,
+   "name": "Ballyfin Demesne",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-alula": {
+   "rating": 4.7,
+   "reviewCount": 1706,
+   "name": "Banyan Tree AlUla",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-krabi": {
+   "rating": 4.8,
+   "reviewCount": 1233,
+   "name": "Banyan Tree Krabi",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-kuala-lumpur": {
+   "rating": 4.7,
+   "reviewCount": 3035,
+   "name": "Banyan Tree Kuala Lumpur",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-lang-co": {
+   "rating": 5.0,
+   "reviewCount": 6476,
+   "name": "Banyan Tree Lang Co Vietnam",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-macau": {
+   "rating": 4.7,
+   "reviewCount": 433,
+   "name": "Banyan Tree Macau",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-mayakoba": {
+   "rating": 4.7,
+   "reviewCount": 1543,
+   "name": "Banyan Tree Mayakoba",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-phuket": {
+   "rating": 4.8,
+   "reviewCount": 4771,
+   "name": "Banyan Tree Phuket",
+   "fetched": "2026-11-25"
+  },
+  "banyan-tree-samui": {
+   "rating": 4.9,
+   "reviewCount": 1882,
+   "name": "Banyan Tree Samui",
+   "fetched": "2026-11-25"
+  },
+  "baoase-luxury-resort-curacao": {
+   "rating": 4.6,
+   "reviewCount": 762,
+   "name": "Baoase Curaçao",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-corralejo-bay-fuerteventura": {
+   "rating": 4.6,
+   "reviewCount": 2257,
+   "name": "Barceló Corralejo Bay - Adults Only",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-fuerteventura-mar": {
+   "rating": 4.4,
+   "reviewCount": 6317,
+   "name": "Barceló Fuerteventura Mar",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-playa-blanca-lanzarote": {
+   "rating": 4.3,
+   "reviewCount": 1533,
+   "name": "Barceló Playa Blanca",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-santiago-tenerife": {
+   "rating": 4.4,
+   "reviewCount": 5555,
+   "name": "Barceló Santiago - Adults Only",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-teguise-beach-lanzarote": {
+   "rating": 4.5,
+   "reviewCount": 4275,
+   "name": "Barceló Teguise Beach Adults Only",
+   "fetched": "2026-11-25"
+  },
+  "barcelo-tenerife": {
+   "rating": 4.5,
+   "reviewCount": 4743,
+   "name": "Barceló Tenerife",
+   "fetched": "2026-11-25"
+  },
+  "bardessono-hotel-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 560,
+   "name": "Bardessono Hotel and Spa",
+   "fetched": "2026-11-25"
+  },
+  "bask-gili-meno": {
+   "rating": 4.8,
+   "reviewCount": 2017,
+   "name": "BASK Gili Meno",
+   "fetched": "2026-11-25"
+  },
+  "baumaniere-les-baux-de-provence": {
+   "rating": 4.5,
+   "reviewCount": 711,
+   "name": "Baumanière, Hôtel-Spa 5 étoiles-Relais & Chateaux-2 Restaurants",
+   "fetched": "2026-11-25"
+  },
+  "baur-au-lac": {
+   "rating": 4.6,
+   "reviewCount": 1959,
+   "name": "Baur au Lac",
+   "fetched": "2026-11-25"
+  },
+  "bawah-reserve": {
+   "rating": 4.8,
+   "reviewCount": 219,
+   "name": "Bawah Reserve",
+   "fetched": "2026-11-25"
+  },
+  "beaches-turks-and-caicos": {
+   "rating": 4.4,
+   "reviewCount": 5250,
+   "name": "Beaches Turks and Caicos",
+   "fetched": "2026-11-25"
+  },
+  "beau-rivage-palace": {
+   "rating": 4.7,
+   "reviewCount": 3574,
+   "name": "Beau-Rivage Palace",
+   "fetched": "2026-11-25"
+  },
+  "beaverbrook-surrey": {
+   "rating": 4.5,
+   "reviewCount": 667,
+   "name": "Beaverbrook",
+   "fetched": "2026-11-25"
+  },
+  "bellevue-hotel-and-spa": {
+   "rating": 4.8,
+   "reviewCount": 628,
+   "name": "Bellevue Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "bellevue-syrene-1820": {
+   "rating": 4.8,
+   "reviewCount": 1392,
+   "name": "Hotel Bellevue Syrene",
+   "fetched": "2026-11-25"
+  },
+  "belmond-caruso-amalfi": {
+   "rating": 4.8,
+   "reviewCount": 716,
+   "name": "Caruso, A Belmond Hotel, Amalfi Coast",
+   "fetched": "2026-11-25"
+  },
+  "belmond-sanctuary-lodge-machu-picchu": {
+   "rating": 4.6,
+   "reviewCount": 1056,
+   "name": "Sanctuary Lodge, A Belmond Hotel, Machu Picchu",
+   "fetched": "2026-11-25"
+  },
+  "benesse-house-naoshima": {
+   "rating": 4.6,
+   "reviewCount": 141,
+   "name": "Benesse House Oval",
+   "fetched": "2026-11-25"
+  },
+  "bernardus-lodge-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 959,
+   "name": "Bernardus Lodge & Spa",
+   "fetched": "2026-11-25"
+  },
+  "beverly-hills-hotel": {
+   "rating": 4.6,
+   "reviewCount": 1297,
+   "name": "The Beverly Hills Hotel",
+   "fetched": "2026-11-25"
+  },
+  "beverly-wilshire-four-seasons": {
+   "rating": 4.7,
+   "reviewCount": 3489,
+   "name": "Beverly Wilshire, Beverly Hills, A Four Seasons Hotel",
+   "fetched": "2026-11-25"
+  },
+  "blackberry-farm-tennessee": {
+   "rating": 4.7,
+   "reviewCount": 566,
+   "name": "Blackberry Farm",
+   "fetched": "2026-11-25"
+  },
+  "blackberry-mountain-tennessee": {
+   "rating": 4.8,
+   "reviewCount": 78,
+   "name": "Blackberry Mountain",
+   "fetched": "2026-11-25"
+  },
+  "blanket-bay-glenorchy": {
+   "rating": 4.8,
+   "reviewCount": 99,
+   "name": "Blanket Bay",
+   "fetched": "2026-11-25"
+  },
+  "boardwalk-boutique-hotel-aruba": {
+   "rating": 4.9,
+   "reviewCount": 800,
+   "name": "Boardwalk Boutique Hotel Aruba",
+   "fetched": "2026-11-25"
+  },
+  "bodyholiday-saint-lucia": {
+   "rating": 4.7,
+   "reviewCount": 506,
+   "name": "BodyHoliday Saint Lucia",
+   "fetched": "2026-11-25"
+  },
+  "bohemia-suites-and-spa-gran-canaria": {
+   "rating": 4.7,
+   "reviewCount": 1436,
+   "name": "Bohemia Suites & Spa",
+   "fetched": "2026-11-25"
+  },
+  "borgo-egnazia-puglia": {
+   "rating": 4.7,
+   "reviewCount": 2951,
+   "name": "Borgo Egnazia",
+   "fetched": "2026-11-25"
+  },
+  "borgo-san-felice-resort": {
+   "rating": 4.8,
+   "reviewCount": 676,
+   "name": "Borgo San Felice Resort Relais & Chateaux",
+   "fetched": "2026-11-25"
+  },
+  "borgo-santandrea-amalfi": {
+   "rating": 4.9,
+   "reviewCount": 390,
+   "name": "Borgo Santandrea",
+   "fetched": "2026-11-25"
+  },
+  "borgo-santo-pietro": {
+   "rating": 4.5,
+   "reviewCount": 223,
+   "name": "Borgo Santo Pietro",
+   "fetched": "2026-11-25"
+  },
+  "botanic-sanctuary-antwerp": {
+   "rating": 4.3,
+   "reviewCount": 584,
+   "name": "Botanic Sanctuary Antwerp",
+   "fetched": "2026-11-25"
+  },
+  "bowie-house-auberge-collection": {
+   "rating": 4.7,
+   "reviewCount": 444,
+   "name": "Bowie House, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "breidenbacher-hof-dusseldorf": {
+   "rating": 4.7,
+   "reviewCount": 1803,
+   "name": "Breidenbacher Hof Düsseldorf",
+   "fetched": "2026-11-25"
+  },
+  "brenners-park-hotel-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 1332,
+   "name": "Brenners Park-Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "britannia-hotel-trondheim": {
+   "rating": 4.7,
+   "reviewCount": 2155,
+   "name": "Britannia Hotel",
+   "fetched": "2026-11-25"
+  },
+  "browns-hotel-a-rocco-forte-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1680,
+   "name": "Brown's Hotel, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "buahan-a-banyan-tree-escape": {
+   "rating": 4.9,
+   "reviewCount": 465,
+   "name": "Buahan, a Banyan Tree Escape",
+   "fetched": "2026-11-25"
+  },
+  "bucuti-tara-beach-resort-aruba": {
+   "rating": 4.8,
+   "reviewCount": 940,
+   "name": "Bucuti & Tara Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "budersand-hotel": {
+   "rating": 4.8,
+   "reviewCount": 490,
+   "name": "BUDERSAND Hotel - Golf & Spa - Sylt",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-beijing": {
+   "rating": 4.4,
+   "reviewCount": 116,
+   "name": "BVLGARI HOTEL, Beijing",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-london": {
+   "rating": 4.7,
+   "reviewCount": 1414,
+   "name": "Bvlgari Hotel London",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-milano": {
+   "rating": 4.6,
+   "reviewCount": 1840,
+   "name": "Bulgari Hotel Milano",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-paris": {
+   "rating": 4.7,
+   "reviewCount": 575,
+   "name": "Bvlgari Hôtel Paris",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-roma": {
+   "rating": 4.7,
+   "reviewCount": 961,
+   "name": "Bvlgari Hotel Roma",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-hotel-tokyo": {
+   "rating": 4.5,
+   "reviewCount": 540,
+   "name": "Bvlgari Hotel Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-resort-bali": {
+   "rating": 4.7,
+   "reviewCount": 1992,
+   "name": "Bvlgari Resort Bali",
+   "fetched": "2026-11-25"
+  },
+  "bulgari-resort-dubai": {
+   "rating": 4.6,
+   "reviewCount": 4003,
+   "name": "Bvlgari Resort Dubai",
+   "fetched": "2026-11-25"
+  },
+  "bulow-palais": {
+   "rating": 4.8,
+   "reviewCount": 1021,
+   "name": "Relais & Châteaux Hotel Bülow Palais",
+   "fetched": "2026-11-25"
+  },
+  "burgenstock-hotel-switzerland": {
+   "rating": 4.6,
+   "reviewCount": 5025,
+   "name": "Bürgenstock Resort Lake Lucerne",
+   "fetched": "2026-11-25"
+  },
+  "burj-al-arab": {
+   "rating": 4.7,
+   "reviewCount": 30692,
+   "name": "Jumeirah Burj Al Arab",
+   "fetched": "2026-11-25"
+  },
+  "calabash-hotel": {
+   "rating": 4.8,
+   "reviewCount": 355,
+   "name": "Calabash Hotel",
+   "fetched": "2026-11-25"
+  },
+  "caldera-house": {
+   "rating": 4.6,
+   "reviewCount": 79,
+   "name": "Caldera House",
+   "fetched": "2026-11-25"
+  },
+  "cali-mykonos": {
+   "rating": 4.8,
+   "reviewCount": 200,
+   "name": "Cali Mykonos",
+   "fetched": "2026-11-25"
+  },
+  "canaves-oia-epitome": {
+   "rating": 4.9,
+   "reviewCount": 417,
+   "name": "Canaves Epitome",
+   "fetched": "2026-11-25"
+  },
+  "cannua-lodge": {
+   "rating": 4.8,
+   "reviewCount": 391,
+   "name": "Cannúa Lodge Hotel - Marinilla Antioquia",
+   "fetched": "2026-11-25"
+  },
+  "canopy-by-hilton-paris-eiffel-tower": {
+   "rating": 4.4,
+   "reviewCount": 846,
+   "name": "Canopy by Hilton Paris Eiffel Tower",
+   "fetched": "2026-11-25"
+  },
+  "canyon-ranch-lenox": {
+   "rating": 4.4,
+   "reviewCount": 301,
+   "name": "Canyon Ranch Lenox",
+   "fetched": "2026-11-25"
+  },
+  "canyon-ranch-tucson": {
+   "rating": 4.4,
+   "reviewCount": 410,
+   "name": "Canyon Ranch Tucson",
+   "fetched": "2026-11-25"
+  },
+  "cap-juluca-anguilla": {
+   "rating": 4.9,
+   "reviewCount": 649,
+   "name": "Cap Juluca, A Belmond Hotel, Anguilla",
+   "fetched": "2026-11-25"
+  },
+  "cap-karoso-sumba": {
+   "rating": 4.7,
+   "reviewCount": 368,
+   "name": "Cap Karoso",
+   "fetched": "2026-11-25"
+  },
+  "cap-maison-st-lucia": {
+   "rating": 4.8,
+   "reviewCount": 188,
+   "name": "Cap Maison Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "cap-rocat": {
+   "rating": 4.7,
+   "reviewCount": 1328,
+   "name": "Cap Rocat",
+   "fetched": "2026-11-25"
+  },
+  "cape-weligama-sri-lanka": {
+   "rating": 4.7,
+   "reviewCount": 787,
+   "name": "Cape Weligama - Relais & Chateaux",
+   "fetched": "2026-11-25"
+  },
+  "capella-bangkok": {
+   "rating": 4.8,
+   "reviewCount": 2558,
+   "name": "Capella Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "capella-hanoi": {
+   "rating": 4.8,
+   "reviewCount": 1501,
+   "name": "Capella Hanoi",
+   "fetched": "2026-11-25"
+  },
+  "capella-kyoto": {
+   "rating": 4.5,
+   "reviewCount": 96,
+   "name": "Capella Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "capella-lodge": {
+   "rating": 4.7,
+   "reviewCount": 57,
+   "name": "Capella Lodge, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "capella-shanghai-jian-ye-li": {
+   "rating": 4.8,
+   "reviewCount": 66,
+   "name": "Shanghai Jianyeli Capella Hotel",
+   "fetched": "2026-11-25"
+  },
+  "capella-singapore": {
+   "rating": 4.7,
+   "reviewCount": 2847,
+   "name": "Capella Singapore",
+   "fetched": "2026-11-25"
+  },
+  "capella-sydney": {
+   "rating": 4.7,
+   "reviewCount": 732,
+   "name": "Capella Sydney",
+   "fetched": "2026-11-25"
+  },
+  "capella-ubud": {
+   "rating": 4.8,
+   "reviewCount": 834,
+   "name": "Capella Ubud, Bali",
+   "fetched": "2026-11-25"
+  },
+  "capri-palace-jumeirah": {
+   "rating": 4.7,
+   "reviewCount": 441,
+   "name": "Jumeirah Capri Palace",
+   "fetched": "2026-11-25"
+  },
+  "carlisle-bay-antigua": {
+   "rating": 4.5,
+   "reviewCount": 436,
+   "name": "Carlisle Bay",
+   "fetched": "2026-11-25"
+  },
+  "carlton-cannes-regent": {
+   "rating": 4.6,
+   "reviewCount": 5817,
+   "name": "Regent Carlton Cannes",
+   "fetched": "2026-11-25"
+  },
+  "casa-chameleon-las-catalinas": {
+   "rating": 4.6,
+   "reviewCount": 412,
+   "name": "Casa Chameleon at Las Catalinas",
+   "fetched": "2026-11-25"
+  },
+  "casa-cipriani-new-york": {
+   "rating": 4.6,
+   "reviewCount": 338,
+   "name": "Casa Cipriani New York",
+   "fetched": "2026-11-25"
+  },
+  "casa-de-campo-resort-villas": {
+   "rating": 4.7,
+   "reviewCount": 13243,
+   "name": "Casa de Campo Resort and Villas",
+   "fetched": "2026-11-25"
+  },
+  "casa-de-sierra-nevada-a-belmond-hotel": {
+   "rating": 4.7,
+   "reviewCount": 460,
+   "name": "Casa de Sierra Nevada, A Belmond Hotel, San Miguel de Allende",
+   "fetched": "2026-11-25"
+  },
+  "casa-maria-luigia-modena": {
+   "rating": 4.8,
+   "reviewCount": 334,
+   "name": "Casa Maria Luigia",
+   "fetched": "2026-11-25"
+  },
+  "casa-pestagua": {
+   "rating": 4.7,
+   "reviewCount": 558,
+   "name": "Casa Pestagua",
+   "fetched": "2026-11-25"
+  },
+  "casa-polanco-mexico-city": {
+   "rating": 4.8,
+   "reviewCount": 570,
+   "name": "Casa Polanco",
+   "fetched": "2026-11-25"
+  },
+  "casa-san-agustin": {
+   "rating": 4.8,
+   "reviewCount": 631,
+   "name": "Casa San Agustín",
+   "fetched": "2026-11-25"
+  },
+  "casamolle": {
+   "rating": 4.6,
+   "reviewCount": 344,
+   "name": "CasaMolle Hotel",
+   "fetched": "2026-11-25"
+  },
+  "cashel-palace": {
+   "rating": 4.7,
+   "reviewCount": 745,
+   "name": "Cashel Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "castara-retreats-tobago": {
+   "rating": 4.5,
+   "reviewCount": 217,
+   "name": "Castara Retreats",
+   "fetched": "2026-11-25"
+  },
+  "castel-fragsburg": {
+   "rating": 4.7,
+   "reviewCount": 316,
+   "name": "Castel Fragsburg",
+   "fetched": "2026-11-25"
+  },
+  "castelbrac": {
+   "rating": 4.7,
+   "reviewCount": 803,
+   "name": "Castelbrac Hôtel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "castello-di-casole-a-belmond-hotel-tuscany": {
+   "rating": 4.8,
+   "reviewCount": 525,
+   "name": "Castello di Casole, A Belmond Hotel, Tuscany",
+   "fetched": "2026-11-25"
+  },
+  "castello-di-reschio-umbria": {
+   "rating": 4.7,
+   "reviewCount": 530,
+   "name": "Reschio Hotel",
+   "fetched": "2026-11-25"
+  },
+  "cataloochee-ranch": {
+   "rating": 4.7,
+   "reviewCount": 321,
+   "name": "Cataloochee Ranch",
+   "fetched": "2026-11-25"
+  },
+  "cavallo-point-lodge": {
+   "rating": 4.6,
+   "reviewCount": 1318,
+   "name": "Cavallo Point Lodge",
+   "fetched": "2026-11-25"
+  },
+  "cayo-espanto-belize": {
+   "rating": 4.8,
+   "reviewCount": 58,
+   "name": "Cayo Espanto",
+   "fetched": "2026-11-25"
+  },
+  "ceylon-tea-trails": {
+   "rating": 4.8,
+   "reviewCount": 112,
+   "name": "Ceylon Tea Trails - Castlereagh Bungalow",
+   "fetched": "2026-11-25"
+  },
+  "chable-maroma": {
+   "rating": 4.5,
+   "reviewCount": 380,
+   "name": "Chablé Maroma",
+   "fetched": "2026-11-25"
+  },
+  "chable-yucatan": {
+   "rating": 4.8,
+   "reviewCount": 848,
+   "name": "Chablé Yucatán",
+   "fetched": "2026-11-25"
+  },
+  "chateau-de-la-chevre-dor": {
+   "rating": 4.7,
+   "reviewCount": 1978,
+   "name": "Hôtel Château de La Chèvre d’Or",
+   "fetched": "2026-11-25"
+  },
+  "chateau-de-la-gaude": {
+   "rating": 4.7,
+   "reviewCount": 1044,
+   "name": "Château de la Gaude",
+   "fetched": "2026-11-25"
+  },
+  "chateau-de-montcaud": {
+   "rating": 4.7,
+   "reviewCount": 452,
+   "name": "Château De Montcaud",
+   "fetched": "2026-11-25"
+  },
+  "chateau-du-grand-luce": {
+   "rating": 4.5,
+   "reviewCount": 232,
+   "name": "Hotel Château du Grand-Lucé",
+   "fetched": "2026-11-25"
+  },
+  "chateau-eza": {
+   "rating": 4.6,
+   "reviewCount": 1685,
+   "name": "Château Eza",
+   "fetched": "2026-11-25"
+  },
+  "chateau-lafaurie-peyraguey-hotel-and-restaurant-lalique": {
+   "rating": 4.8,
+   "reviewCount": 416,
+   "name": "CHÂTEAU LAFAURIE PEYRAGUEY HOTEL & RESTAURANT",
+   "fetched": "2026-11-25"
+  },
+  "chateau-marmont": {
+   "rating": 4.4,
+   "reviewCount": 1421,
+   "name": "Chateau Marmont",
+   "fetched": "2026-11-25"
+  },
+  "chateau-richeux-les-maisons-de-bricourt": {
+   "rating": 4.7,
+   "reviewCount": 308,
+   "name": "Château Richeux - Les Maisons de Bricourt",
+   "fetched": "2026-11-25"
+  },
+  "cheval-blanc-courchevel": {
+   "rating": 4.7,
+   "reviewCount": 140,
+   "name": "Cheval Blanc Courchevel",
+   "fetched": "2026-11-25"
+  },
+  "cheval-blanc-paris": {
+   "rating": 4.5,
+   "reviewCount": 974,
+   "name": "Cheval Blanc Paris",
+   "fetched": "2026-11-25"
+  },
+  "cheval-blanc-randheli": {
+   "rating": 4.7,
+   "reviewCount": 166,
+   "name": "Cheval Blanc Randheli",
+   "fetched": "2026-11-25"
+  },
+  "cheval-blanc-seychelles": {
+   "rating": 4.1,
+   "reviewCount": 110,
+   "name": "Cheval Blanc Seychelles",
+   "fetched": "2026-11-25"
+  },
+  "cheval-blanc-st-barth": {
+   "rating": 4.7,
+   "reviewCount": 287,
+   "name": "Cheval Blanc St-Barth",
+   "fetched": "2026-11-25"
+  },
+  "chewton-glen-hotel": {
+   "rating": 4.6,
+   "reviewCount": 1906,
+   "name": "Chewton Glen Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "chiemgauhof-lakeside-retreat": {
+   "rating": 4.3,
+   "reviewCount": 616,
+   "name": "Chiemgauhof - Lakeside Retreat",
+   "fetched": "2026-11-25"
+  },
+  "chileno-bay-auberge-cabo": {
+   "rating": 4.8,
+   "reviewCount": 1739,
+   "name": "Chileno Bay Resort & Residences, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "ciel-dubai-marina": {
+   "rating": 4.7,
+   "reviewCount": 1259,
+   "name": "Ciel Dubai Marina, Vignette Collection by IHG",
+   "fetched": "2026-11-25"
+  },
+  "ciragan-palace-kempinski": {
+   "rating": 4.7,
+   "reviewCount": 15285,
+   "name": "Ciragan Palace Kempinski",
+   "fetched": "2026-11-25"
+  },
+  "citizenm-tower-of-london": {
+   "rating": 4.5,
+   "reviewCount": 5216,
+   "name": "citizenM Tower of London",
+   "fetched": "2026-11-25"
+  },
+  "city-of-dreams-morpheus": {
+   "rating": 4.7,
+   "reviewCount": 331,
+   "name": "Morpheus",
+   "fetched": "2026-11-25"
+  },
+  "civilian-hotel-new-york": {
+   "rating": 4.4,
+   "reviewCount": 1508,
+   "name": "CIVILIAN Hotel",
+   "fetched": "2026-11-25"
+  },
+  "claridges-london": {
+   "rating": 4.7,
+   "reviewCount": 4266,
+   "name": "Claridge's",
+   "fetched": "2026-11-25"
+  },
+  "clayoquot-wilderness-lodge": {
+   "rating": 4.8,
+   "reviewCount": 79,
+   "name": "Clayoquot Wilderness Lodge, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "cliveden-house": {
+   "rating": 4.6,
+   "reviewCount": 4121,
+   "name": "Cliveden House",
+   "fetched": "2026-11-25"
+  },
+  "cobblers-cove-barbados": {
+   "rating": 4.4,
+   "reviewCount": 304,
+   "name": "Cobblers Cove Hotel",
+   "fetched": "2026-11-25"
+  },
+  "cobergher-hotel": {
+   "rating": 4.9,
+   "reviewCount": 154,
+   "name": "Cobergher Hotel",
+   "fetched": "2026-11-25"
+  },
+  "cocana-gili-t": {
+   "rating": 4.8,
+   "reviewCount": 1324,
+   "name": "Cocana Resorts Gili Trawangan",
+   "fetched": "2026-11-25"
+  },
+  "cocos-hotel-antigua": {
+   "rating": 4.9,
+   "reviewCount": 1962,
+   "name": "COCOS Hotel (Antigua)",
+   "fetched": "2026-11-25"
+  },
+  "collegio-alla-querce-florence": {
+   "rating": 4.9,
+   "reviewCount": 200,
+   "name": "Collegio alla Querce, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "colon-guanahani-tenerife": {
+   "rating": 4.7,
+   "reviewCount": 979,
+   "name": "Hotel Colon Guanahani",
+   "fetched": "2026-11-25"
+  },
+  "commodore-perry-estate-auberge-collection": {
+   "rating": 4.5,
+   "reviewCount": 394,
+   "name": "Commodore Perry Estate, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "como-cocoa-island": {
+   "rating": 4.7,
+   "reviewCount": 298,
+   "name": "COMO Cocoa Island",
+   "fetched": "2026-11-25"
+  },
+  "como-laucala-island-fiji": {
+   "rating": 4.7,
+   "reviewCount": 68,
+   "name": "Laucala Island",
+   "fetched": "2026-11-25"
+  },
+  "como-maalifushi": {
+   "rating": 4.7,
+   "reviewCount": 58,
+   "name": "Maalefushi",
+   "fetched": "2026-11-25"
+  },
+  "como-metropolitan-london": {
+   "rating": 4.6,
+   "reviewCount": 1374,
+   "name": "COMO Metropolitan London",
+   "fetched": "2026-11-25"
+  },
+  "como-parrot-cay": {
+   "rating": 4.5,
+   "reviewCount": 188,
+   "name": "COMO Parrot Cay",
+   "fetched": "2026-11-25"
+  },
+  "como-point-yamu": {
+   "rating": 4.8,
+   "reviewCount": 1519,
+   "name": "COMO Point Yamu",
+   "fetched": "2026-11-25"
+  },
+  "como-shambhala-estate": {
+   "rating": 4.8,
+   "reviewCount": 398,
+   "name": "COMO Shambhala Estate",
+   "fetched": "2026-11-25"
+  },
+  "como-the-halkin": {
+   "rating": 4.7,
+   "reviewCount": 460,
+   "name": "COMO The Halkin, London",
+   "fetched": "2026-11-25"
+  },
+  "como-the-treasury-perth": {
+   "rating": 4.7,
+   "reviewCount": 628,
+   "name": "COMO The Treasury",
+   "fetched": "2026-11-25"
+  },
+  "como-uma-canggu": {
+   "rating": 4.6,
+   "reviewCount": 1704,
+   "name": "COMO Canggu",
+   "fetched": "2026-11-25"
+  },
+  "como-uma-ubud": {
+   "rating": 4.8,
+   "reviewCount": 1028,
+   "name": "COMO Uma Ubud",
+   "fetched": "2026-11-25"
+  },
+  "conrad-bali": {
+   "rating": 4.7,
+   "reviewCount": 7052,
+   "name": "Conrad Bali",
+   "fetched": "2026-11-25"
+  },
+  "conrad-bora-bora-nui": {
+   "rating": 4.6,
+   "reviewCount": 1112,
+   "name": "Conrad Bora Bora Nui",
+   "fetched": "2026-11-25"
+  },
+  "conrad-maldives-rangali": {
+   "rating": 4.8,
+   "reviewCount": 1271,
+   "name": "Conrad Maldives Rangali Island",
+   "fetched": "2026-11-25"
+  },
+  "conrad-punta-de-mita": {
+   "rating": 4.5,
+   "reviewCount": 1068,
+   "name": "Conrad Punta de Mita",
+   "fetched": "2026-11-25"
+  },
+  "conrad-tulum-riviera-maya": {
+   "rating": 4.5,
+   "reviewCount": 1112,
+   "name": "Conrad Tulum Riviera Maya, an All-Inclusive Resort",
+   "fetched": "2026-11-25"
+  },
+  "copacabana-palace-belmond-rio": {
+   "rating": 4.8,
+   "reviewCount": 42076,
+   "name": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
+   "fetched": "2026-11-25"
+  },
+  "coquillade-provence": {
+   "rating": 4.6,
+   "reviewCount": 604,
+   "name": "Coquillade Provence",
+   "fetched": "2026-11-25"
+  },
+  "coral-reef-club-barbados": {
+   "rating": 4.6,
+   "reviewCount": 270,
+   "name": "Coral Reef Club",
+   "fetched": "2026-11-25"
+  },
+  "cordial-mogan-playa-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 4804,
+   "name": "Hotel Cordial Mogán Playa",
+   "fetched": "2026-11-25"
+  },
+  "cordis-auckland": {
+   "rating": 4.5,
+   "reviewCount": 5031,
+   "name": "Cordis, Auckland",
+   "fetched": "2026-11-25"
+  },
+  "corinthia-grand-hotel-astoria-brussels": {
+   "rating": 4.6,
+   "reviewCount": 327,
+   "name": "Corinthia Grand Hotel Astoria Brussels",
+   "fetched": "2026-11-25"
+  },
+  "corinthia-hotel-london": {
+   "rating": 4.7,
+   "reviewCount": 3809,
+   "name": "Corinthia London",
+   "fetched": "2026-11-25"
+  },
+  "corte-della-maesta": {
+   "rating": 4.8,
+   "reviewCount": 48,
+   "name": "COURT OF MAJESTY '- ANCIENT RESIDENCE",
+   "fetched": "2026-11-25"
+  },
+  "cosme-paros": {
+   "rating": 4.4,
+   "reviewCount": 124,
+   "name": "Cosme, a Luxury Collection Resort, Paros",
+   "fetched": "2026-11-25"
+  },
+  "courtyard-seminyak": {
+   "rating": 4.6,
+   "reviewCount": 4012,
+   "name": "Courtyard by Marriott Bali Seminyak Resort",
+   "fetched": "2026-11-25"
+  },
+  "coworth-park-dorchester-collection": {
+   "rating": 4.7,
+   "reviewCount": 1241,
+   "name": "Coworth Park",
+   "fetched": "2026-11-25"
+  },
+  "cromlix-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1022,
+   "name": "Cromlix",
+   "fetched": "2026-11-25"
+  },
+  "crosby-street-hotel": {
+   "rating": 4.6,
+   "reviewCount": 924,
+   "name": "Crosby Street Hotel",
+   "fetched": "2026-11-25"
+  },
+  "crown-towers-sydney": {
+   "rating": 4.1,
+   "reviewCount": 1087,
+   "name": "Crown Towers Sydney",
+   "fetched": "2026-11-25"
+  },
+  "crowne-plaza-changi-airport": {
+   "rating": 4.5,
+   "reviewCount": 5490,
+   "name": "Crowne Plaza Changi Airport by IHG",
+   "fetched": "2026-11-25"
+  },
+  "curtain-bluff-antigua": {
+   "rating": 4.6,
+   "reviewCount": 243,
+   "name": "Curtain Bluff",
+   "fetched": "2026-11-25"
+  },
+  "das-achental-resort": {
+   "rating": 4.4,
+   "reviewCount": 444,
+   "name": "Resort Das Achental",
+   "fetched": "2026-11-25"
+  },
+  "das-edelweiss": {
+   "rating": 4.8,
+   "reviewCount": 1764,
+   "name": "DAS EDELWEISS Salzburg Mountain Resort",
+   "fetched": "2026-11-25"
+  },
+  "das-kranzbach-hotel-and-wellness-retreat": {
+   "rating": 4.8,
+   "reviewCount": 1144,
+   "name": "Das Kranzbach",
+   "fetched": "2026-11-25"
+  },
+  "de-leurope-amsterdam": {
+   "rating": 4.6,
+   "reviewCount": 2203,
+   "name": "De L'Europe",
+   "fetched": "2026-11-25"
+  },
+  "delaire-graff-estate": {
+   "rating": 4.6,
+   "reviewCount": 1473,
+   "name": "Delaire Graff Estate",
+   "fetched": "2026-11-25"
+  },
+  "delamore-lodge": {
+   "rating": 4.8,
+   "reviewCount": 154,
+   "name": "Delamore Lodge",
+   "fetched": "2026-11-25"
+  },
+  "deplar-farm-iceland": {
+   "rating": 4.7,
+   "reviewCount": 63,
+   "name": "Eleven Deplar Farm",
+   "fetched": "2026-11-25"
+  },
+  "der-birkenhof-spa-and-genuss-resort": {
+   "rating": 4.6,
+   "reviewCount": 1431,
+   "name": "Der Birkenhof Spa & Genuss Resort",
+   "fetched": "2026-11-25"
+  },
+  "der-oschberghof": {
+   "rating": 4.8,
+   "reviewCount": 1960,
+   "name": "Severin*s Resort & Spa Öschberghof",
+   "fetched": "2026-11-25"
+  },
+  "desa-potato-head-bali": {
+   "rating": 4.7,
+   "reviewCount": 9300,
+   "name": "Desa Potato Head Bali",
+   "fetched": "2026-11-25"
+  },
+  "desert-rock-resort": {
+   "rating": 4.8,
+   "reviewCount": 86,
+   "name": "Desert Rock Resort",
+   "fetched": "2026-11-25"
+  },
+  "domaine-des-etangs": {
+   "rating": 4.8,
+   "reviewCount": 530,
+   "name": "Domaine des Etangs, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "domaine-le-mouflon-dor": {
+   "rating": 4.6,
+   "reviewCount": 157,
+   "name": "Domaine Le Mouflon D'Or",
+   "fetched": "2026-11-25"
+  },
+  "domaine-les-crayeres": {
+   "rating": 4.7,
+   "reviewCount": 725,
+   "name": "Domaine Les Crayères",
+   "fetched": "2026-11-25"
+  },
+  "domes-noruz-chania-autograph-collection": {
+   "rating": 4.7,
+   "reviewCount": 890,
+   "name": "Domes Noruz Chania, Autograph Collection",
+   "fetched": "2026-11-25"
+  },
+  "domes-zeen-chania-a-luxury-collection": {
+   "rating": 4.6,
+   "reviewCount": 705,
+   "name": "Domes Zeen Chania, a Luxury Collection Resort, Crete",
+   "fetched": "2026-11-25"
+  },
+  "dorado-beach-ritz-carlton-reserve": {
+   "rating": 4.7,
+   "reviewCount": 931,
+   "name": "Dorado Beach, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "dreams-lanzarote-playa-dorada": {
+   "rating": 4.4,
+   "reviewCount": 5316,
+   "name": "Grand Hyatt Lanzarote Playa Dorada",
+   "fetched": "2026-11-25"
+  },
+  "dusit-thani-bangkok": {
+   "rating": 4.8,
+   "reviewCount": 1611,
+   "name": "Dusit Thani Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "dusit-thani-krabi-beach-resort": {
+   "rating": 4.7,
+   "reviewCount": 5098,
+   "name": "Dusit Thani Krabi Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "eala-my-lakeside-dream": {
+   "rating": 4.7,
+   "reviewCount": 720,
+   "name": "EALA - My lakeside dream",
+   "fetched": "2026-11-25"
+  },
+  "eclipse-at-half-moon-jamaica": {
+   "rating": 4.5,
+   "reviewCount": 2438,
+   "name": "Half Moon",
+   "fetched": "2026-11-25"
+  },
+  "eden-roc-cap-cana": {
+   "rating": 4.4,
+   "reviewCount": 490,
+   "name": "Eden Roc Cap Cana",
+   "fetched": "2026-11-25"
+  },
+  "eden-rock-st-barths": {
+   "rating": 4.6,
+   "reviewCount": 415,
+   "name": "Eden Rock - St Barths",
+   "fetched": "2026-11-25"
+  },
+  "eichardts-private-hotel": {
+   "rating": 4.6,
+   "reviewCount": 118,
+   "name": "Eichardt's Private Hotel",
+   "fetched": "2026-11-25"
+  },
+  "el-silencio-lodge-and-spa": {
+   "rating": 4.8,
+   "reviewCount": 578,
+   "name": "El Silencio Lodge & Spa",
+   "fetched": "2026-11-25"
+  },
+  "elba-lanzarote-royal-village": {
+   "rating": 4.6,
+   "reviewCount": 7687,
+   "name": "Elba Lanzarote Royal Village Resort",
+   "fetched": "2026-11-25"
+  },
+  "elba-palace-golf-fuerteventura": {
+   "rating": 4.7,
+   "reviewCount": 945,
+   "name": "Elba Palace Golf Boutique Hotel",
+   "fetched": "2026-11-25"
+  },
+  "element-by-westin-ubud": {
+   "rating": 4.6,
+   "reviewCount": 2255,
+   "name": "Element by Marriott Bali Ubud",
+   "fetched": "2026-11-25"
+  },
+  "eliamos-villas-hotel-and-spa": {
+   "rating": 4.9,
+   "reviewCount": 48,
+   "name": "Eliamos Villas Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "ellerman-house-cape-town": {
+   "rating": 4.8,
+   "reviewCount": 483,
+   "name": "Ellerman House",
+   "fetched": "2026-11-25"
+  },
+  "emiliano-rio-an-slh-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1922,
+   "name": "Emiliano Rio, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "emirates-palace-abu-dhabi": {
+   "rating": 4.8,
+   "reviewCount": 32637,
+   "name": "Emirates Palace Mandarin Oriental",
+   "fetched": "2026-11-25"
+  },
+  "enowa-yufu": {
+   "rating": 4.6,
+   "reviewCount": 102,
+   "name": "ENOWA YUFUIN",
+   "fetched": "2026-11-25"
+  },
+  "eolo-patagonias-spirit": {
+   "rating": 4.8,
+   "reviewCount": 173,
+   "name": "EOLO - Patagonia´s Spirit",
+   "fetched": "2026-11-25"
+  },
+  "equinox-hotel-new-york": {
+   "rating": 4.4,
+   "reviewCount": 771,
+   "name": "Equinox Hotel New York",
+   "fetched": "2026-11-25"
+  },
+  "esencia-riviera-maya": {
+   "rating": 4.7,
+   "reviewCount": 453,
+   "name": "Hotel Esencia",
+   "fetched": "2026-11-25"
+  },
+  "esperanza-auberge-cabo": {
+   "rating": 4.8,
+   "reviewCount": 1306,
+   "name": "Esperanza, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "estancia-cristina": {
+   "rating": 4.9,
+   "reviewCount": 20,
+   "name": "Estancia Cristina (Commercial Offices)",
+   "fetched": "2026-11-25"
+  },
+  "estelle-manor-oxfordshire": {
+   "rating": 4.3,
+   "reviewCount": 603,
+   "name": "Estelle Manor",
+   "fetched": "2026-11-25"
+  },
+  "etereo-auberge-riviera-maya": {
+   "rating": 4.8,
+   "reviewCount": 348,
+   "name": "Etéreo Kanai, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "ett-hem-stockholm": {
+   "rating": 4.8,
+   "reviewCount": 473,
+   "name": "Ett Hem",
+   "fetched": "2026-11-25"
+  },
+  "excellence-el-carmen": {
+   "rating": 4.9,
+   "reviewCount": 21828,
+   "name": "Excellence El Carmen",
+   "fetched": "2026-11-25"
+  },
+  "excellence-oyster-bay": {
+   "rating": 4.9,
+   "reviewCount": 17549,
+   "name": "Excellence Oyster Bay",
+   "fetched": "2026-11-25"
+  },
+  "excelsior-hotel-gallia-a-luxury-collection": {
+   "rating": 4.7,
+   "reviewCount": 3005,
+   "name": "Excelsior Hotel Gallia, a Luxury Collection Hotel, Milan",
+   "fetched": "2026-11-25"
+  },
+  "explora-atacama": {
+   "rating": 4.6,
+   "reviewCount": 351,
+   "name": "Explora Atacama",
+   "fetched": "2026-11-25"
+  },
+  "explora-rapa-nui": {
+   "rating": 4.6,
+   "reviewCount": 168,
+   "name": "Explora Rapa Nui",
+   "fetched": "2026-11-25"
+  },
+  "explora-torres-del-paine": {
+   "rating": 4.6,
+   "reviewCount": 312,
+   "name": "Explora Patagonia Torres del Paine",
+   "fetched": "2026-11-25"
+  },
+  "faena-hotel-miami-beach": {
+   "rating": 4.6,
+   "reviewCount": 3122,
+   "name": "Faena Miami Beach",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-banff-springs": {
+   "rating": 4.7,
+   "reviewCount": 17831,
+   "name": "Fairmont Banff Springs",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-chateau-lake-louise": {
+   "rating": 4.6,
+   "reviewCount": 24827,
+   "name": "Fairmont Chateau Lake Louise",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-chateau-whistler": {
+   "rating": 4.7,
+   "reviewCount": 6426,
+   "name": "Fairmont Chateau Whistler",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-golden-prague": {
+   "rating": 4.8,
+   "reviewCount": 926,
+   "name": "Fairmont Golden Prague",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-hotel-vier-jahreszeiten": {
+   "rating": 4.7,
+   "reviewCount": 2610,
+   "name": "Fairmont Hotel Vier Jahreszeiten",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-jaipur": {
+   "rating": 4.8,
+   "reviewCount": 19022,
+   "name": "Fairmont Jaipur",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-mayakoba": {
+   "rating": 4.7,
+   "reviewCount": 4110,
+   "name": "Fairmont Mayakoba",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-miramar-santa-monica": {
+   "rating": 4.3,
+   "reviewCount": 2152,
+   "name": "Fairmont Miramar Hotel & Bungalows",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-monte-carlo": {
+   "rating": 4.5,
+   "reviewCount": 5247,
+   "name": "Fairmont Monte Carlo",
+   "fetched": "2026-11-25"
+  },
+  "fairmont-udaipur-palace": {
+   "rating": 4.8,
+   "reviewCount": 2246,
+   "name": "Fairmont Udaipur Palace",
+   "fetched": "2026-11-25"
+  },
+  "falkensteiner-schlosshotel-velden": {
+   "rating": 4.6,
+   "reviewCount": 2745,
+   "name": "Falkensteiner Schlosshotel Velden",
+   "fetched": "2026-11-25"
+  },
+  "family-nature-resort-moar-gut": {
+   "rating": 4.7,
+   "reviewCount": 477,
+   "name": "Familien Natur Resort Moar Gut",
+   "fetched": "2026-11-25"
+  },
+  "fiji-marriott-resort-momi-bay": {
+   "rating": 4.5,
+   "reviewCount": 2629,
+   "name": "Fiji Marriott Resort Momi Bay",
+   "fetched": "2026-11-25"
+  },
+  "finolhu-baa-atoll": {
+   "rating": 4.8,
+   "reviewCount": 651,
+   "name": "Finolhu, a Seaside Collection Resort",
+   "fetched": "2026-11-25"
+  },
+  "fogo-island-inn-canada": {
+   "rating": 4.5,
+   "reviewCount": 294,
+   "name": "Fogo Island Inn",
+   "fetched": "2026-11-25"
+  },
+  "fontainebleau-las-vegas": {
+   "rating": 4.4,
+   "reviewCount": 10924,
+   "name": "Fontainebleau Las Vegas",
+   "fetched": "2026-11-25"
+  },
+  "forestis-dolomites": {
+   "rating": 4.8,
+   "reviewCount": 865,
+   "name": "Forestis Dolomites",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-anguilla": {
+   "rating": 4.7,
+   "reviewCount": 680,
+   "name": "Four Seasons Resort and Residences Anguilla",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-astir-palace-athens": {
+   "rating": 4.8,
+   "reviewCount": 3628,
+   "name": "Four Seasons Astir Palace Hotel Athens",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-bangkok": {
+   "rating": 4.8,
+   "reviewCount": 3799,
+   "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-bora-bora": {
+   "rating": 4.7,
+   "reviewCount": 925,
+   "name": "Four Seasons Resort Bora Bora",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-bosphorus-istanbul": {
+   "rating": 4.6,
+   "reviewCount": 8857,
+   "name": "Four Seasons Hotel Istanbul At The Bosphorus",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-cabo-del-sol": {
+   "rating": 4.8,
+   "reviewCount": 168,
+   "name": "Four Seasons Resort Cabo Del Sol",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-cairo-nile-plaza": {
+   "rating": 4.7,
+   "reviewCount": 18837,
+   "name": "Four Seasons Hotel Cairo at Nile Plaza",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-chiang-mai": {
+   "rating": 4.7,
+   "reviewCount": 1383,
+   "name": "Four Seasons Resort Chiang Mai",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-costa-palmas": {
+   "rating": 4.8,
+   "reviewCount": 689,
+   "name": "Four Seasons Resort East Cape at Costa Palmas",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-desroches-island": {
+   "rating": 4.7,
+   "reviewCount": 220,
+   "name": "Four Seasons Resort Seychelles at Desroches Island",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-dubai-jumeirah": {
+   "rating": 4.7,
+   "reviewCount": 9735,
+   "name": "Four Seasons Resort Dubai at Jumeirah Beach",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-firenze": {
+   "rating": 4.8,
+   "reviewCount": 2843,
+   "name": "Four Seasons Hotel Firenze",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-george-v-paris": {
+   "rating": 4.8,
+   "reviewCount": 7431,
+   "name": "Four Seasons Hotel George V, Paris",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hong-kong": {
+   "rating": 4.6,
+   "reviewCount": 3770,
+   "name": "Four Seasons Hotel Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-bahrain-bay": {
+   "rating": 4.7,
+   "reviewCount": 10525,
+   "name": "Four Seasons Hotel Bahrain Bay",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-baku": {
+   "rating": 4.8,
+   "reviewCount": 2390,
+   "name": "Four Seasons Hotel Baku",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-buenos-aires": {
+   "rating": 4.7,
+   "reviewCount": 9154,
+   "name": "Four Seasons Hotel Buenos Aires",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-casa-medina-bogota": {
+   "rating": 4.7,
+   "reviewCount": 2096,
+   "name": "Four Seasons Hotel Casa Medina Bogota",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-des-bergues-geneva": {
+   "rating": 4.7,
+   "reviewCount": 3024,
+   "name": "Four Seasons Hotel des Bergues Geneva",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-gresham-palace-budapest": {
+   "rating": 4.8,
+   "reviewCount": 4443,
+   "name": "Four Seasons Hotel Gresham Palace Budapest",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-hangzhou-at-west-lake": {
+   "rating": 4.7,
+   "reviewCount": 140,
+   "name": "Four Seasons Hotel Hangzhou At West Lake",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-jakarta": {
+   "rating": 4.8,
+   "reviewCount": 13893,
+   "name": "Four Seasons Hotel Jakarta",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-las-vegas": {
+   "rating": 4.7,
+   "reviewCount": 2644,
+   "name": "Four Seasons Hotel Las Vegas",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-london-at-park-lane": {
+   "rating": 4.7,
+   "reviewCount": 1980,
+   "name": "Four Seasons Hotel London at Park Lane",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-london-at-tower-bridge": {
+   "rating": 4.7,
+   "reviewCount": 1745,
+   "name": "Four Seasons Hotel London at Tower Bridge",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-madrid": {
+   "rating": 4.6,
+   "reviewCount": 3946,
+   "name": "Four Seasons Hotel Madrid",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-miami": {
+   "rating": 4.7,
+   "reviewCount": 2847,
+   "name": "Four Seasons Hotel Miami",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-milano": {
+   "rating": 4.7,
+   "reviewCount": 2540,
+   "name": "Four Seasons Hotel Milano",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-minneapolis": {
+   "rating": 4.5,
+   "reviewCount": 500,
+   "name": "Four Seasons Hotel Minneapolis",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-montreal": {
+   "rating": 4.6,
+   "reviewCount": 1270,
+   "name": "Four Seasons Hotel Montreal",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-nashville": {
+   "rating": 4.6,
+   "reviewCount": 416,
+   "name": "Four Seasons Hotel Nashville",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-new-york": {
+   "rating": 4.6,
+   "reviewCount": 1225,
+   "name": "Four Seasons Hotel New York",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-new-york-downtown": {
+   "rating": 4.7,
+   "reviewCount": 1332,
+   "name": "Four Seasons Hotel New York Downtown",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-osaka": {
+   "rating": 4.5,
+   "reviewCount": 685,
+   "name": "Four Seasons Hotel Osaka",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-philadelphia-at-comcast-center": {
+   "rating": 4.7,
+   "reviewCount": 1225,
+   "name": "Four Seasons Hotel Philadelphia at Comcast Center",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-ritz-lisbon": {
+   "rating": 4.7,
+   "reviewCount": 3624,
+   "name": "Four Seasons Ritz",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-san-francisco-at-embarcadero": {
+   "rating": 4.7,
+   "reviewCount": 487,
+   "name": "Four Seasons Hotel San Francisco at Embarcadero",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-tokyo-at-marunouchi": {
+   "rating": 4.3,
+   "reviewCount": 927,
+   "name": "Four Seasons Hotel Tokyo At Marunouchi",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hotel-toronto": {
+   "rating": 4.7,
+   "reviewCount": 3776,
+   "name": "Four Seasons Hotel Toronto",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-hualalai": {
+   "rating": 4.7,
+   "reviewCount": 1709,
+   "name": "Four Seasons Resort Hualalai",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-jimbaran": {
+   "rating": 4.8,
+   "reviewCount": 2829,
+   "name": "Four Seasons Resort Bali At Jimbaran Bay",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-koh-samui": {
+   "rating": 4.8,
+   "reviewCount": 1052,
+   "name": "Four Seasons Resort Koh Samui",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-kuda-huraa": {
+   "rating": 4.8,
+   "reviewCount": 631,
+   "name": "Four Seasons Resort Maldives at Kuda Huraa",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-kyoto": {
+   "rating": 4.4,
+   "reviewCount": 1898,
+   "name": "Four Seasons Hotel Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-lanai": {
+   "rating": 4.8,
+   "reviewCount": 697,
+   "name": "Four Seasons Resort Lanai",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-landaa-giraavaru": {
+   "rating": 4.8,
+   "reviewCount": 405,
+   "name": "Four Seasons Resort Maldives at Landaa Giraavaru",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-langkawi": {
+   "rating": 4.5,
+   "reviewCount": 1136,
+   "name": "Four Seasons Resort Langkawi, Malaysia",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-los-angeles-beverly-hills": {
+   "rating": 4.6,
+   "reviewCount": 2451,
+   "name": "Four Seasons Hotel Los Angeles At Beverly Hills",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-maui": {
+   "rating": 4.7,
+   "reviewCount": 2761,
+   "name": "Four Seasons Resort Maui at Wailea",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-mauritius-anahita": {
+   "rating": 4.6,
+   "reviewCount": 1264,
+   "name": "Four Seasons Resort Mauritius at Anahita",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-megeve": {
+   "rating": 4.6,
+   "reviewCount": 527,
+   "name": "Four Seasons Resort Megève",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-mexico-city": {
+   "rating": 4.7,
+   "reviewCount": 11326,
+   "name": "Four Seasons Hotel Mexico City",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-nevis": {
+   "rating": 4.6,
+   "reviewCount": 643,
+   "name": "Four Seasons Resort Nevis",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-peninsula-papagayo": {
+   "rating": 4.7,
+   "reviewCount": 1782,
+   "name": "Four Seasons Peninsula Papagayo, Costa Rica",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-punta-mita": {
+   "rating": 4.8,
+   "reviewCount": 3771,
+   "name": "Four Seasons Resort Punta Mita",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-resort-mallorca-at-formentor": {
+   "rating": 4.4,
+   "reviewCount": 910,
+   "name": "Four Seasons Resort Mallorca at Formentor",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-resort-marrakech": {
+   "rating": 4.6,
+   "reviewCount": 2274,
+   "name": "Four Seasons Resort Marrakech",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-resort-sharm-el-sheikh": {
+   "rating": 4.7,
+   "reviewCount": 3322,
+   "name": "Four Seasons Resort Sharm El Sheikh",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-resort-the-nam-hai-hoi-an": {
+   "rating": 4.7,
+   "reviewCount": 1161,
+   "name": "Four Seasons Resort The Nam Hai, Hoi An",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-sayan": {
+   "rating": 4.8,
+   "reviewCount": 1780,
+   "name": "Four Seasons Resort Bali At Sayan",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-seoul": {
+   "rating": 4.6,
+   "reviewCount": 7458,
+   "name": "Four Seasons Hotel Seoul",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-serengeti": {
+   "rating": 4.7,
+   "reviewCount": 761,
+   "name": "Four Seasons Safari Lodge Serengeti",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-seychelles": {
+   "rating": 4.6,
+   "reviewCount": 1048,
+   "name": "Four Seasons Resort Seychelles",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-singapore": {
+   "rating": 4.6,
+   "reviewCount": 3353,
+   "name": "Four Seasons Hotel Singapore",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-sultanahmet-istanbul": {
+   "rating": 4.6,
+   "reviewCount": 2855,
+   "name": "Four Seasons Hotel Istanbul At Sultanahmet",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-surfside-miami": {
+   "rating": 4.8,
+   "reviewCount": 1472,
+   "name": "Four Seasons Hotel at The Surf Club, Surfside, Florida",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-tamarindo": {
+   "rating": 4.8,
+   "reviewCount": 495,
+   "name": "Four Seasons Resort Tamarindo",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-tented-camp-golden-triangle": {
+   "rating": 4.8,
+   "reviewCount": 280,
+   "name": "Four Seasons Tented Camp Golden Triangle, Thailand",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-tokyo-otemachi": {
+   "rating": 4.5,
+   "reviewCount": 1159,
+   "name": "Four Seasons Hotel Tokyo at Otemachi",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-whistler": {
+   "rating": 4.7,
+   "reviewCount": 2201,
+   "name": "Four Seasons Resort Whistler",
+   "fetched": "2026-11-25"
+  },
+  "four-seasons-yacht-i": {
+   "rating": 4.9,
+   "reviewCount": 68,
+   "name": "Signature Sailing Charter: Cruises on the French Riviera, Sardinia & Corsica and the Balearic Islands",
+   "fetched": "2026-11-25"
+  },
+  "french-coco-martinique": {
+   "rating": 4.6,
+   "reviewCount": 336,
+   "name": "French Coco Hotel",
+   "fetched": "2026-11-25"
+  },
+  "fufu-hakone": {
+   "rating": 4.4,
+   "reviewCount": 592,
+   "name": "Fufu Hakone",
+   "fetched": "2026-11-25"
+  },
+  "fufu-kawaguchiko": {
+   "rating": 4.5,
+   "reviewCount": 805,
+   "name": "FuFu Kawaguchiko",
+   "fetched": "2026-11-25"
+  },
+  "fufu-nikko": {
+   "rating": 4.7,
+   "reviewCount": 471,
+   "name": "Fufu Nikko",
+   "fetched": "2026-11-25"
+  },
+  "gaia-riverlodge": {
+   "rating": 4.9,
+   "reviewCount": 368,
+   "name": "Gaia Riverlodge, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "gajoen": {
+   "rating": 4.3,
+   "reviewCount": 217,
+   "name": "Wasure-no-sato Gajoen",
+   "fetched": "2026-11-25"
+  },
+  "galley-bay-resort-antigua": {
+   "rating": 4.7,
+   "reviewCount": 487,
+   "name": "Galley Bay Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "gangtey-lodge": {
+   "rating": 4.8,
+   "reviewCount": 112,
+   "name": "Gangtey Lodge Bhutan",
+   "fetched": "2026-11-25"
+  },
+  "garrya-tongsai-bay-samui": {
+   "rating": 4.8,
+   "reviewCount": 1072,
+   "name": "Garrya Tongsai Bay Samui",
+   "fetched": "2026-11-25"
+  },
+  "gf-fanabe-tenerife": {
+   "rating": 4.4,
+   "reviewCount": 6143,
+   "name": "GF FAÑABÉ",
+   "fetched": "2026-11-25"
+  },
+  "gf-gran-costa-adeje-tenerife": {
+   "rating": 4.5,
+   "reviewCount": 3841,
+   "name": "GF Gran Costa Adeje Hotel",
+   "fetched": "2026-11-25"
+  },
+  "gf-victoria-tenerife": {
+   "rating": 4.7,
+   "reviewCount": 2256,
+   "name": "GF VICTORIA",
+   "fetched": "2026-11-25"
+  },
+  "gidleigh-park": {
+   "rating": 4.8,
+   "reviewCount": 534,
+   "name": "Gidleigh Park",
+   "fetched": "2026-11-25"
+  },
+  "gili-lankanfushi-maldives": {
+   "rating": 4.8,
+   "reviewCount": 362,
+   "name": "Gili Lankanfushi Maldives",
+   "fetched": "2026-11-25"
+  },
+  "gilpin-hotel-and-lake-house": {
+   "rating": 4.7,
+   "reviewCount": 1283,
+   "name": "Gilpin Hotel & Lake House",
+   "fetched": "2026-11-25"
+  },
+  "giraffe-manor-kenya": {
+   "rating": 4.6,
+   "reviewCount": 1168,
+   "name": "Giraffe Manor",
+   "fetched": "2026-11-25"
+  },
+  "gleneagles-scotland": {
+   "rating": 4.7,
+   "reviewCount": 3460,
+   "name": "The Gleneagles Hotel",
+   "fetched": "2026-11-25"
+  },
+  "gleneagles-townhouse": {
+   "rating": 4.5,
+   "reviewCount": 414,
+   "name": "Gleneagles Townhouse",
+   "fetched": "2026-11-25"
+  },
+  "gloria-palace-amadores-gran-canaria": {
+   "rating": 4.5,
+   "reviewCount": 5751,
+   "name": "Gloria Palace Amadores Thalasso & Hotel",
+   "fetched": "2026-11-25"
+  },
+  "gloria-palace-royal-gran-canaria": {
+   "rating": 4.5,
+   "reviewCount": 2885,
+   "name": "Gloria Palace Royal Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "goda-hakone-gora-kadan": {
+   "rating": 4.5,
+   "reviewCount": 1173,
+   "name": "Gōra Kadan",
+   "fetched": "2026-11-25"
+  },
+  "goldeneye-jamaica": {
+   "rating": 4.4,
+   "reviewCount": 331,
+   "name": "GoldenEye",
+   "fetched": "2026-11-25"
+  },
+  "goldwynn-resort-bahamas": {
+   "rating": 4.5,
+   "reviewCount": 958,
+   "name": "Goldwynn Resort & Residences",
+   "fetched": "2026-11-25"
+  },
+  "gora-kadan-fuji": {
+   "rating": 4.7,
+   "reviewCount": 130,
+   "name": "Gora Kadan Fuji",
+   "fetched": "2026-11-25"
+  },
+  "gorgeous-george-hotel": {
+   "rating": 4.5,
+   "reviewCount": 612,
+   "name": "Gorgeous George Hotel",
+   "fetched": "2026-11-25"
+  },
+  "grace-bay-club-turks-caicos": {
+   "rating": 4.6,
+   "reviewCount": 505,
+   "name": "Grace Bay Club",
+   "fetched": "2026-11-25"
+  },
+  "grace-hotel-santorini": {
+   "rating": 4.7,
+   "reviewCount": 259,
+   "name": "Grace Hotel, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "gran-hotel-manzana-kempinski-havana": {
+   "rating": 4.3,
+   "reviewCount": 820,
+   "name": "Gran Hotel Manzana Kempinski La Habana",
+   "fetched": "2026-11-25"
+  },
+  "gran-melia-palacio-de-isora-tenerife": {
+   "rating": 4.4,
+   "reviewCount": 5912,
+   "name": "Gran Meliá Palacio de Isora",
+   "fetched": "2026-11-25"
+  },
+  "grand-fiesta-americana-coral-beach-cancun": {
+   "rating": 4.5,
+   "reviewCount": 6648,
+   "name": "Grand Fiesta Americana Coral Beach Cancún All Inclusive Spa & Resort",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-a-villa-feltrinelli": {
+   "rating": 4.7,
+   "reviewCount": 336,
+   "name": "Grand Hotel a Villa Feltrinelli",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-du-cap-ferrat": {
+   "rating": 4.7,
+   "reviewCount": 1408,
+   "name": "Grand-Hotel du Cap-Ferrat, A Four Seasons Hotel",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-et-de-milan": {
+   "rating": 4.7,
+   "reviewCount": 1150,
+   "name": "Grand Hotel et de Milan",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-principe-di-piemonte": {
+   "rating": 4.6,
+   "reviewCount": 2729,
+   "name": "Grand Hotel Principe di Piemonte",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-stockholm": {
+   "rating": 4.6,
+   "reviewCount": 4387,
+   "name": "Grand Hôtel",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-timeo-a-belmond-hotel-taormina": {
+   "rating": 4.7,
+   "reviewCount": 1084,
+   "name": "Grand Hotel Timeo, A Belmond Hotel, Taormina",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-tremezzo-como": {
+   "rating": 4.7,
+   "reviewCount": 2022,
+   "name": "Grand Hotel Tremezzo",
+   "fetched": "2026-11-25"
+  },
+  "grand-hotel-victoria": {
+   "rating": 4.6,
+   "reviewCount": 697,
+   "name": "Grand Hotel Victoria",
+   "fetched": "2026-11-25"
+  },
+  "grand-lisboa-palace-macau": {
+   "rating": 4.5,
+   "reviewCount": 3072,
+   "name": "Grand Lisboa Palace Resort Macau",
+   "fetched": "2026-11-25"
+  },
+  "grand-resort-bad-ragaz": {
+   "rating": 4.7,
+   "reviewCount": 838,
+   "name": "Grand Resort Bad Ragaz",
+   "fetched": "2026-11-25"
+  },
+  "grand-tirolia-kitzbuhel": {
+   "rating": 4.4,
+   "reviewCount": 984,
+   "name": "Grand Tirolia Kitzbühel - Ein Mitglied der Hommage Luxury Hotels Collection",
+   "fetched": "2026-11-25"
+  },
+  "grand-velas-boutique-los-cabos": {
+   "rating": 4.7,
+   "reviewCount": 118,
+   "name": "Grand Velas Boutique Los Cabos",
+   "fetched": "2026-11-25"
+  },
+  "grand-velas-los-cabos": {
+   "rating": 4.8,
+   "reviewCount": 3219,
+   "name": "Grand Velas",
+   "fetched": "2026-11-25"
+  },
+  "grand-velas-riviera-maya": {
+   "rating": 4.8,
+   "reviewCount": 4212,
+   "name": "Grand Velas Riviera Maya",
+   "fetched": "2026-11-25"
+  },
+  "grand-velas-riviera-nayarit": {
+   "rating": 4.7,
+   "reviewCount": 3694,
+   "name": "Grand Velas Riviera Nayarit",
+   "fetched": "2026-11-25"
+  },
+  "grantley-hall": {
+   "rating": 4.8,
+   "reviewCount": 836,
+   "name": "Grantley Hall",
+   "fetched": "2026-11-25"
+  },
+  "gravetye-manor": {
+   "rating": 4.8,
+   "reviewCount": 951,
+   "name": "Gravetye Manor",
+   "fetched": "2026-11-25"
+  },
+  "gstaad-palace": {
+   "rating": 4.7,
+   "reviewCount": 1129,
+   "name": "Gstaad Palace",
+   "fetched": "2026-11-25"
+  },
+  "guana-island-bvi": {
+   "rating": 4.3,
+   "reviewCount": 60,
+   "name": "Guana Island",
+   "fetched": "2026-11-25"
+  },
+  "gut-steinbach-hotel-chalets-spa": {
+   "rating": 4.6,
+   "reviewCount": 949,
+   "name": "Relais & Châteaux Gut Steinbach Hotel Chalets Spa",
+   "fetched": "2026-11-25"
+  },
+  "h10-atlantic-sunset-tenerife": {
+   "rating": 4.7,
+   "reviewCount": 5660,
+   "name": "H10 Atlantic Sunset Horizons Collection",
+   "fetched": "2026-11-25"
+  },
+  "h10-costa-adeje-palace-tenerife": {
+   "rating": 4.4,
+   "reviewCount": 8131,
+   "name": "H10 Costa Adeje Palace",
+   "fetched": "2026-11-25"
+  },
+  "h10-lanzarote-princess": {
+   "rating": 4.5,
+   "reviewCount": 7644,
+   "name": "H10 Lanzarote Princess",
+   "fetched": "2026-11-25"
+  },
+  "h10-ocean-suites-fuerteventura": {
+   "rating": 4.5,
+   "reviewCount": 2233,
+   "name": "H10 Ocean Suites",
+   "fetched": "2026-11-25"
+  },
+  "h10-playa-meloneras-palace-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 6562,
+   "name": "H10 Playa Meloneras Horizons Collection",
+   "fetched": "2026-11-25"
+  },
+  "h10-rubicon-palace-lanzarote": {
+   "rating": 4.7,
+   "reviewCount": 18981,
+   "name": "H10 Rubicón Horizons Collection",
+   "fetched": "2026-11-25"
+  },
+  "h10-timanfaya-palace-lanzarote": {
+   "rating": 4.6,
+   "reviewCount": 2963,
+   "name": "H10 Timanfaya Palace",
+   "fetched": "2026-11-25"
+  },
+  "hacienda-altagracia-auberge": {
+   "rating": 4.9,
+   "reviewCount": 831,
+   "name": "Hacienda AltaGracia, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "halcyon-house-cabarita": {
+   "rating": 4.4,
+   "reviewCount": 343,
+   "name": "Halcyon House",
+   "fetched": "2026-11-25"
+  },
+  "halekulani": {
+   "rating": 4.7,
+   "reviewCount": 4357,
+   "name": "Halekulani Hotel",
+   "fetched": "2026-11-25"
+  },
+  "halekulani-okinawa": {
+   "rating": 4.6,
+   "reviewCount": 2964,
+   "name": "Halekulani Okinawa",
+   "fetched": "2026-11-25"
+  },
+  "ham-yard-hotel-firmdale-hotels": {
+   "rating": 4.6,
+   "reviewCount": 3469,
+   "name": "Ham Yard Hotel",
+   "fetched": "2026-11-25"
+  },
+  "hambleton-hall": {
+   "rating": 4.8,
+   "reviewCount": 572,
+   "name": "Hambleton Hall",
+   "fetched": "2026-11-25"
+  },
+  "hammock-cove-antigua": {
+   "rating": 4.8,
+   "reviewCount": 221,
+   "name": "Hammock Cove Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "hampton-manor": {
+   "rating": 4.8,
+   "reviewCount": 742,
+   "name": "Hampton Manor",
+   "fetched": "2026-11-25"
+  },
+  "harbour-village-beach-club-bonaire": {
+   "rating": 4.6,
+   "reviewCount": 189,
+   "name": "Harbour Village Beach Club",
+   "fetched": "2026-11-25"
+  },
+  "haymarket-hotel-firmdale-hotels": {
+   "rating": 4.7,
+   "reviewCount": 762,
+   "name": "Haymarket Hotel",
+   "fetched": "2026-11-25"
+  },
+  "heckfield-place": {
+   "rating": 4.7,
+   "reviewCount": 456,
+   "name": "Heckfield Place",
+   "fetched": "2026-11-25"
+  },
+  "heritage-le-telfair-golf-and-wellness": {
+   "rating": 4.6,
+   "reviewCount": 2616,
+   "name": "Heritage Le Telfair Golf & Wellness Resort",
+   "fetched": "2026-11-25"
+  },
+  "hermitage-bay-antigua": {
+   "rating": 4.7,
+   "reviewCount": 72,
+   "name": "Hermitage Bay Beach",
+   "fetched": "2026-11-25"
+  },
+  "higashiyama-niseko-village-ritz-carlton-reserve": {
+   "rating": 4.1,
+   "reviewCount": 347,
+   "name": "Higashiyama Niseko Village, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "hiliwatu-ubud": {
+   "rating": 4.7,
+   "reviewCount": 143,
+   "name": "Hiliwatu, Bali Ubud, a Tribute Portfolio Resort",
+   "fetched": "2026-11-25"
+  },
+  "hilton-dubai-palm-jumeirah": {
+   "rating": 4.9,
+   "reviewCount": 24213,
+   "name": "Hilton Dubai Palm Jumeirah",
+   "fetched": "2026-11-25"
+  },
+  "hipotels-natura-palace-lanzarote": {
+   "rating": 4.6,
+   "reviewCount": 1870,
+   "name": "Hipotels Natura Palace",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-fuji": {
+   "rating": 4.4,
+   "reviewCount": 1119,
+   "name": "HOSHINOYA Fuji",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-karuizawa": {
+   "rating": 4.2,
+   "reviewCount": 1063,
+   "name": "Hoshinoya Karuizawa",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-kyoto": {
+   "rating": 4.3,
+   "reviewCount": 735,
+   "name": "HOSHINOYA Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-okinawa": {
+   "rating": 4.4,
+   "reviewCount": 1021,
+   "name": "HOSHINOYA Okinawa",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-taketomi-island": {
+   "rating": 4.4,
+   "reviewCount": 734,
+   "name": "HOSHINOYA Taketomi Island",
+   "fetched": "2026-11-25"
+  },
+  "hoshinoya-tokyo": {
+   "rating": 4.4,
+   "reviewCount": 1173,
+   "name": "HOSHINOYA Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "hotel-almhof-schneider": {
+   "rating": 4.8,
+   "reviewCount": 116,
+   "name": "Hotel Almhof Schneider",
+   "fetched": "2026-11-25"
+  },
+  "hotel-and-spa-du-castellet": {
+   "rating": 4.6,
+   "reviewCount": 516,
+   "name": "Hotel & Spa Du Castellet",
+   "fetched": "2026-11-25"
+  },
+  "hotel-bareiss": {
+   "rating": 4.9,
+   "reviewCount": 1262,
+   "name": "Hotel Bareiss",
+   "fetched": "2026-11-25"
+  },
+  "hotel-barriere-fouquets-new-york": {
+   "rating": 4.5,
+   "reviewCount": 232,
+   "name": "Fouquet's New York",
+   "fetched": "2026-11-25"
+  },
+  "hotel-bel-air-la": {
+   "rating": 4.7,
+   "reviewCount": 2565,
+   "name": "Hotel Bel-Air",
+   "fetched": "2026-11-25"
+  },
+  "hotel-belleclaire-new-york": {
+   "rating": 4.1,
+   "reviewCount": 1927,
+   "name": "Hotel Belleclaire",
+   "fetched": "2026-11-25"
+  },
+  "hotel-cafe-royal": {
+   "rating": 4.6,
+   "reviewCount": 2220,
+   "name": "Hotel Café Royal",
+   "fetched": "2026-11-25"
+  },
+  "hotel-casa-del-mar-santa-monica": {
+   "rating": 4.6,
+   "reviewCount": 1719,
+   "name": "Hotel Casa del Mar",
+   "fetched": "2026-11-25"
+  },
+  "hotel-cheval-blanc-st-tropez": {
+   "rating": 4.6,
+   "reviewCount": 497,
+   "name": "Cheval Blanc St-Tropez",
+   "fetched": "2026-11-25"
+  },
+  "hotel-cipriani-venice": {
+   "rating": 4.7,
+   "reviewCount": 692,
+   "name": "Hotel Cipriani, A Belmond Hotel, Venice",
+   "fetched": "2026-11-25"
+  },
+  "hotel-dangleterre-copenhagen": {
+   "rating": 4.7,
+   "reviewCount": 1979,
+   "name": "Hotel D'Angleterre",
+   "fetched": "2026-11-25"
+  },
+  "hotel-das-cataratas-belmond": {
+   "rating": 4.9,
+   "reviewCount": 3705,
+   "name": "Hotel das Cataratas, A Belmond Hotel, Iguassu Falls",
+   "fetched": "2026-11-25"
+  },
+  "hotel-de-crillon-paris": {
+   "rating": 4.7,
+   "reviewCount": 3610,
+   "name": "Hôtel de Crillon, A Rosewood Hotel",
+   "fetched": "2026-11-25"
+  },
+  "hotel-de-la-ville-a-rocco-forte-hotel": {
+   "rating": 4.8,
+   "reviewCount": 776,
+   "name": "Hotel de la Ville, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "hotel-de-paris-monte-carlo": {
+   "rating": 4.7,
+   "reviewCount": 2246,
+   "name": "Hotel de Paris Monte-Carlo",
+   "fetched": "2026-11-25"
+  },
+  "hotel-de-russie-rome": {
+   "rating": 4.6,
+   "reviewCount": 1934,
+   "name": "Hotel de Russie, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "hotel-du-cap-eden-roc": {
+   "rating": 4.6,
+   "reviewCount": 1216,
+   "name": "Hotel du Cap-Eden-Roc, Oetker Hotels",
+   "fetched": "2026-11-25"
+  },
+  "hotel-du-couvent-nice": {
+   "rating": 4.4,
+   "reviewCount": 679,
+   "name": "Hôtel du Couvent, a Luxury Collection Hotel, Nice, France",
+   "fetched": "2026-11-25"
+  },
+  "hotel-du-palais": {
+   "rating": 4.6,
+   "reviewCount": 2113,
+   "name": "Hôtel du Palais Biarritz - The Unbound Collection by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "hotel-emma": {
+   "rating": 4.8,
+   "reviewCount": 3448,
+   "name": "Hotel Emma",
+   "fetched": "2026-11-25"
+  },
+  "hotel-fariones-lanzarote": {
+   "rating": 4.7,
+   "reviewCount": 1407,
+   "name": "Hotel Fariones",
+   "fetched": "2026-11-25"
+  },
+  "hotel-grande-bretagne-athens": {
+   "rating": 4.8,
+   "reviewCount": 6867,
+   "name": "Hotel Grande Bretagne",
+   "fetched": "2026-11-25"
+  },
+  "hotel-hacienda-de-abajo-la-palma": {
+   "rating": 4.7,
+   "reviewCount": 733,
+   "name": "Hotel Hacienda de Abajo",
+   "fetched": "2026-11-25"
+  },
+  "hotel-il-pellicano-tuscany": {
+   "rating": 4.6,
+   "reviewCount": 510,
+   "name": "Hotel Il Pellicano",
+   "fetched": "2026-11-25"
+  },
+  "hotel-imperial": {
+   "rating": 4.7,
+   "reviewCount": 1930,
+   "name": "Hotel Imperial, a Luxury Collection Hotel, Vienna",
+   "fetched": "2026-11-25"
+  },
+  "hotel-indigo-bintan-lagoi-beach-by": {
+   "rating": 4.8,
+   "reviewCount": 333,
+   "name": "Hotel Indigo Bintan Lagoi Beach by IHG",
+   "fetched": "2026-11-25"
+  },
+  "hotel-lava-beach-lanzarote": {
+   "rating": 4.8,
+   "reviewCount": 1256,
+   "name": "Hotel Lava Beach",
+   "fetched": "2026-11-25"
+  },
+  "hotel-les-trois-rois": {
+   "rating": 4.7,
+   "reviewCount": 1953,
+   "name": "Grand Hotel Les Trois Rois",
+   "fetched": "2026-11-25"
+  },
+  "hotel-lily-of-the-valley": {
+   "rating": 4.6,
+   "reviewCount": 865,
+   "name": "Hôtel Lily of the Valley",
+   "fetched": "2026-11-25"
+  },
+  "hotel-louis-c-jacob": {
+   "rating": 4.3,
+   "reviewCount": 1125,
+   "name": "Louis C. Jacob, Hamburg, Autograph Collection",
+   "fetched": "2026-11-25"
+  },
+  "hotel-metropole-monte-carlo": {
+   "rating": 4.6,
+   "reviewCount": 1259,
+   "name": "Hotel Metropole, Monte Carlo",
+   "fetched": "2026-11-25"
+  },
+  "hotel-plaza-athenee-paris": {
+   "rating": 4.6,
+   "reviewCount": 2924,
+   "name": "Hôtel Plaza Athénée",
+   "fetched": "2026-11-25"
+  },
+  "hotel-proverbs-taipei": {
+   "rating": 4.4,
+   "reviewCount": 672,
+   "name": "HOTEL PROVERBS TAIPEI",
+   "fetched": "2026-11-25"
+  },
+  "hotel-sacher-vienna": {
+   "rating": 4.5,
+   "reviewCount": 14342,
+   "name": "Hotel Sacher Vienna",
+   "fetched": "2026-11-25"
+  },
+  "hotel-sans-souci-wien": {
+   "rating": 4.8,
+   "reviewCount": 1272,
+   "name": "Hotel Sans Souci Wien",
+   "fetched": "2026-11-25"
+  },
+  "hotel-suite-villa-maria-tenerife": {
+   "rating": 4.8,
+   "reviewCount": 943,
+   "name": "Hotel Suite Villa María",
+   "fetched": "2026-11-25"
+  },
+  "hotel-tannenhof": {
+   "rating": 4.9,
+   "reviewCount": 61,
+   "name": "Hotel Tannenhof",
+   "fetched": "2026-11-25"
+  },
+  "hotel-traube-tonbach": {
+   "rating": 4.8,
+   "reviewCount": 1249,
+   "name": "Hotel Traube Tonbach - Familie Finkbeiner GmbH & Co KG",
+   "fetched": "2026-11-25"
+  },
+  "hotel-unique": {
+   "rating": 4.8,
+   "reviewCount": 19027,
+   "name": "Hotel Unique",
+   "fetched": "2026-11-25"
+  },
+  "hotel-villa-dubrovnik": {
+   "rating": 4.8,
+   "reviewCount": 362,
+   "name": "Villa Dubrovnik d.d.",
+   "fetched": "2026-11-25"
+  },
+  "hotel-wailea-maui": {
+   "rating": 4.8,
+   "reviewCount": 980,
+   "name": "Hotel Wailea Maui",
+   "fetched": "2026-11-25"
+  },
+  "hotel-xcaret-arte": {
+   "rating": 4.5,
+   "reviewCount": 6490,
+   "name": "Hotel Xcaret Arte",
+   "fetched": "2026-11-25"
+  },
+  "huka-lodge-taupo": {
+   "rating": 4.7,
+   "reviewCount": 229,
+   "name": "Huka Lodge, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "huttenhof-wellnesshotel-and-luxus-bergchalets": {
+   "rating": 4.6,
+   "reviewCount": 1012,
+   "name": "Hüttenhof - Wellnesshotel & Luxus-Chalets - Bayerischer Wald",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-centric-ginza-tokyo": {
+   "rating": 4.5,
+   "reviewCount": 1395,
+   "name": "Hyatt Centric Ginza Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-centric-milan-centrale": {
+   "rating": 4.3,
+   "reviewCount": 2007,
+   "name": "Hyatt Centric Milan Centrale",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-centric-times-square-new-york": {
+   "rating": 4.4,
+   "reviewCount": 3579,
+   "name": "Hyatt Centric Times Square New York",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-regency-bali": {
+   "rating": 4.7,
+   "reviewCount": 3688,
+   "name": "Hyatt Regency Bali",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-regency-bangkok-sukhumvit": {
+   "rating": 4.6,
+   "reviewCount": 3596,
+   "name": "Hyatt Regency Bangkok Sukhumvit",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-regency-kathmandu": {
+   "rating": 4.5,
+   "reviewCount": 5584,
+   "name": "Hyatt Regency Kathmandu",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-zilara-cancun-google-hoteles": {
+   "rating": 4.6,
+   "reviewCount": 4068,
+   "name": "Hyatt Zilara Cancun",
+   "fetched": "2026-11-25"
+  },
+  "hyatt-zilara-cap-cana": {
+   "rating": 4.7,
+   "reviewCount": 2143,
+   "name": "Hyatt Zilara Cap Cana",
+   "fetched": "2026-11-25"
+  },
+  "i-borghi-delleremo": {
+   "rating": 4.9,
+   "reviewCount": 234,
+   "name": "I Borghi dell'Eremo",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-grand-el-mirador-tenerife": {
+   "rating": 4.8,
+   "reviewCount": 1167,
+   "name": "JOIA El Mirador by Iberostar",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-playa-gaviotas-park-fuerteventura": {
+   "rating": 4.6,
+   "reviewCount": 1521,
+   "name": "Iberostar Waves Gaviotas Park",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-selection-anthelia-tenerife": {
+   "rating": 4.8,
+   "reviewCount": 5032,
+   "name": "Iberostar Selection Anthelia",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-selection-fuerteventura-palace": {
+   "rating": 4.8,
+   "reviewCount": 6529,
+   "name": "Iberostar Selection Fuerteventura Palace",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-selection-lanzarote-park": {
+   "rating": 4.8,
+   "reviewCount": 7245,
+   "name": "Iberostar Selection Lanzarote Park",
+   "fetched": "2026-11-25"
+  },
+  "iberostar-selection-sabila-tenerife": {
+   "rating": 4.8,
+   "reviewCount": 5559,
+   "name": "Hotel Iberostar Sábila",
+   "fetched": "2026-11-25"
+  },
+  "il-borro": {
+   "rating": 4.6,
+   "reviewCount": 1109,
+   "name": "Il Borro",
+   "fetched": "2026-11-25"
+  },
+  "il-san-pietro-positano": {
+   "rating": 4.9,
+   "reviewCount": 2485,
+   "name": "Il San Pietro di Positano",
+   "fetched": "2026-11-25"
+  },
+  "il-sereno": {
+   "rating": 4.6,
+   "reviewCount": 622,
+   "name": "il Sereno Hotel",
+   "fetched": "2026-11-25"
+  },
+  "impression-isla-mujeres-by-secrets": {
+   "rating": 4.4,
+   "reviewCount": 465,
+   "name": "Impression Isla Mujeres",
+   "fetched": "2026-11-25"
+  },
+  "impression-moxche-by-secrets": {
+   "rating": 4.3,
+   "reviewCount": 413,
+   "name": "Impression Moxché by Secrets",
+   "fetched": "2026-11-25"
+  },
+  "iniala-beach-house": {
+   "rating": 4.7,
+   "reviewCount": 100,
+   "name": "Iniala Beach House",
+   "fetched": "2026-11-25"
+  },
+  "intercontinental-bali-resort-by-ihg": {
+   "rating": 4.7,
+   "reviewCount": 4947,
+   "name": "InterContinental Bali Resort by IHG",
+   "fetched": "2026-11-25"
+  },
+  "intercontinental-maldives": {
+   "rating": 4.9,
+   "reviewCount": 480,
+   "name": "InterContinental Maldives Maamunagau Resort by IHG",
+   "fetched": "2026-11-25"
+  },
+  "intercontinental-new-york-times-square": {
+   "rating": 4.3,
+   "reviewCount": 5367,
+   "name": "InterContinental New York Times Square by IHG",
+   "fetched": "2026-11-25"
+  },
+  "intercontinental-phu-quoc": {
+   "rating": 4.8,
+   "reviewCount": 9118,
+   "name": "InterContinental Phu Quoc Long Beach Resort by IHG",
+   "fetched": "2026-11-25"
+  },
+  "intercontinental-phuket-resort": {
+   "rating": 4.8,
+   "reviewCount": 3841,
+   "name": "InterContinental Phuket Resort by IHG",
+   "fetched": "2026-11-25"
+  },
+  "ishara-masai-mara": {
+   "rating": 4.9,
+   "reviewCount": 135,
+   "name": "Ishara Mara",
+   "fetched": "2026-11-25"
+  },
+  "islas-secas-panama": {
+   "rating": 4.7,
+   "reviewCount": 35,
+   "name": "Islas Secas",
+   "fetched": "2026-11-25"
+  },
+  "itc-grand-chola-a-luxury-collection": {
+   "rating": 4.7,
+   "reviewCount": 43122,
+   "name": "ITC Grand Chola, a Luxury Collection Hotel, Chennai",
+   "fetched": "2026-11-25"
+  },
+  "j-hotel-shanghai-tower": {
+   "rating": 4.5,
+   "reviewCount": 133,
+   "name": "J Hotel, Shanghai Tower",
+   "fetched": "2026-11-25"
+  },
+  "jackalope-hotel-mornington": {
+   "rating": 4.5,
+   "reviewCount": 544,
+   "name": "Jackalope Hotel Mornington Peninsula",
+   "fetched": "2026-11-25"
+  },
+  "jackalope-hotel-mornington-peninsula": {
+   "rating": 4.5,
+   "reviewCount": 544,
+   "name": "Jackalope Hotel Mornington Peninsula",
+   "fetched": "2026-11-25"
+  },
+  "jade-mountain-st-lucia": {
+   "rating": 4.7,
+   "reviewCount": 589,
+   "name": "Jade Mountain Resort",
+   "fetched": "2026-11-25"
+  },
+  "janu-tokyo": {
+   "rating": 4.1,
+   "reviewCount": 321,
+   "name": "Janu Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "jardines-de-nivaria-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 1305,
+   "name": "Jardines de Nivaria",
+   "fetched": "2026-11-25"
+  },
+  "jimbaran-puri-a-belmond-hotel-bali": {
+   "rating": 4.7,
+   "reviewCount": 1226,
+   "name": "Jimbaran Puri, A Belmond Hotel, Bali",
+   "fetched": "2026-11-25"
+  },
+  "jk-place-capri": {
+   "rating": 4.7,
+   "reviewCount": 180,
+   "name": "J.K. Place Capri",
+   "fetched": "2026-11-25"
+  },
+  "jk-place-paris": {
+   "rating": 4.7,
+   "reviewCount": 156,
+   "name": "J.K. Place Paris",
+   "fetched": "2026-11-25"
+  },
+  "joali-being-maldives": {
+   "rating": 4.7,
+   "reviewCount": 85,
+   "name": "JOALI BEING",
+   "fetched": "2026-11-25"
+  },
+  "joali-maldives": {
+   "rating": 4.6,
+   "reviewCount": 207,
+   "name": "JOALI Maldives",
+   "fetched": "2026-11-25"
+  },
+  "josun-palace-seoul": {
+   "rating": 4.6,
+   "reviewCount": 1510,
+   "name": "Josun Palace, A Luxury Collection Hotel, Seoul Gangnam",
+   "fetched": "2026-11-25"
+  },
+  "juliana-hotel-brussels": {
+   "rating": 4.5,
+   "reviewCount": 439,
+   "name": "Juliana Hotel Brussels, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "jumana-bali-ungasan": {
+   "rating": 4.6,
+   "reviewCount": 1274,
+   "name": "Jumeirah Bali",
+   "fetched": "2026-11-25"
+  },
+  "jumby-bay-island-antigua": {
+   "rating": 4.7,
+   "reviewCount": 255,
+   "name": "Jumby Bay Island, Oetker Hotels",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-al-naseem": {
+   "rating": 4.7,
+   "reviewCount": 8488,
+   "name": "Jumeirah Al Naseem",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-al-qasr-dubai": {
+   "rating": 4.7,
+   "reviewCount": 10407,
+   "name": "Jumeirah Al Qasr",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-beach-hotel-dubai": {
+   "rating": 4.6,
+   "reviewCount": 15993,
+   "name": "Jumeirah Beach Hotel",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-dar-al-masyaf": {
+   "rating": 4.6,
+   "reviewCount": 1245,
+   "name": "Jumeirah Dar Al Masyaf",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-marsa-al-arab-dubai": {
+   "rating": 4.3,
+   "reviewCount": 1395,
+   "name": "Jumeirah Marsa Al Arab",
+   "fetched": "2026-11-25"
+  },
+  "jumeirah-muscat-bay": {
+   "rating": 4.7,
+   "reviewCount": 2166,
+   "name": "Jumeirah Muscat Bay",
+   "fetched": "2026-11-25"
+  },
+  "jusandi": {
+   "rating": 4.3,
+   "reviewCount": 78,
+   "name": "Jusandi",
+   "fetched": "2026-11-25"
+  },
+  "jw-marriott-essex-house-new-york": {
+   "rating": 4.4,
+   "reviewCount": 2538,
+   "name": "JW Marriott Essex House New York",
+   "fetched": "2026-11-25"
+  },
+  "jw-marriott-hotel-and-suites-saigon": {
+   "rating": 4.3,
+   "reviewCount": 129,
+   "name": "JW Marriott Hotel & Suites Saigon, The Apartments",
+   "fetched": "2026-11-25"
+  },
+  "jw-marriott-mauritius": {
+   "rating": 4.6,
+   "reviewCount": 1916,
+   "name": "The St. Regis Le Morne Resort, Mauritius",
+   "fetched": "2026-11-25"
+  },
+  "jw-marriott-phu-quoc": {
+   "rating": 4.7,
+   "reviewCount": 3580,
+   "name": "JW Marriott Phu Quoc Emerald Bay Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "kalesma-mykonos": {
+   "rating": 4.8,
+   "reviewCount": 330,
+   "name": "Kalesma Mykonos",
+   "fetched": "2026-11-25"
+  },
+  "kamalame-cay-bahamas": {
+   "rating": 4.6,
+   "reviewCount": 31,
+   "name": "Kamalame Cay",
+   "fetched": "2026-11-25"
+  },
+  "kamenoi-besso": {
+   "rating": 4.6,
+   "reviewCount": 463,
+   "name": "Kamenoi Besso",
+   "fetched": "2026-11-25"
+  },
+  "kanamean-nishitomiya": {
+   "rating": 4.7,
+   "reviewCount": 99,
+   "name": "Kanamean Nishitomiya",
+   "fetched": "2026-11-25"
+  },
+  "kasbah-tamadot-morocco": {
+   "rating": 4.7,
+   "reviewCount": 572,
+   "name": "Kasbah Tamadot",
+   "fetched": "2026-11-25"
+  },
+  "keemala-phuket": {
+   "rating": 4.6,
+   "reviewCount": 1488,
+   "name": "Keemala",
+   "fetched": "2026-11-25"
+  },
+  "kempinski-hotel-berchtesgaden": {
+   "rating": 4.7,
+   "reviewCount": 2851,
+   "name": "Kempinski Hotel Berchtesgaden",
+   "fetched": "2026-11-25"
+  },
+  "kempinski-hotel-taschenbergpalais": {
+   "rating": 4.6,
+   "reviewCount": 2660,
+   "name": "Hotel Taschenbergpalais Kempinski Dresden",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-de-witt-hotel": {
+   "rating": 4.6,
+   "reviewCount": 2973,
+   "name": "Kimpton De Witt Hotel",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-era-midtown-new-york": {
+   "rating": 4.2,
+   "reviewCount": 374,
+   "name": "Kimpton Era Midtown New York",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-kitalay-samui": {
+   "rating": 4.7,
+   "reviewCount": 1340,
+   "name": "Kimpton Kitalay Samui",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-maa-lai-bangkok": {
+   "rating": 4.9,
+   "reviewCount": 8024,
+   "name": "Kimpton Maa-Lai Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-margot-sydney": {
+   "rating": 4.4,
+   "reviewCount": 762,
+   "name": "Kimpton Margot Sydney",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-naluria-kuala-lumpur-by-ihg": {
+   "rating": 4.6,
+   "reviewCount": 319,
+   "name": "Kimpton Naluria Kuala Lumpur by IHG",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-seafire-grand-cayman": {
+   "rating": 4.8,
+   "reviewCount": 1536,
+   "name": "Kimpton Seafire Resort + Spa",
+   "fetched": "2026-11-25"
+  },
+  "kimpton-theta-new-york": {
+   "rating": 4.0,
+   "reviewCount": 1021,
+   "name": "Kimpton Theta New York - Times Square by IHG",
+   "fetched": "2026-11-25"
+  },
+  "kin-house-wiltshire": {
+   "rating": 4.8,
+   "reviewCount": 108,
+   "name": "Kin House",
+   "fetched": "2026-11-25"
+  },
+  "kinsterna-hotel": {
+   "rating": 5.0,
+   "reviewCount": 7,
+   "name": "Kisterna",
+   "fetched": "2026-11-25"
+  },
+  "kokomo-private-island-fiji": {
+   "rating": 4.6,
+   "reviewCount": 131,
+   "name": "Kokomo Private Island Resort",
+   "fetched": "2026-11-25"
+  },
+  "kona-village-rosewood": {
+   "rating": 4.6,
+   "reviewCount": 351,
+   "name": "Kona Village, A Rosewood Resort",
+   "fetched": "2026-11-25"
+  },
+  "kuda-villingili-maldives": {
+   "rating": 4.6,
+   "reviewCount": 268,
+   "name": "Kuda Villingili Resort Maldives",
+   "fetched": "2026-11-25"
+  },
+  "kudadoo-maldives": {
+   "rating": 4.8,
+   "reviewCount": 134,
+   "name": "Kudadoo Maldives Private Island",
+   "fetched": "2026-11-25"
+  },
+  "kulm-hotel-st-moritz": {
+   "rating": 4.7,
+   "reviewCount": 935,
+   "name": "Kulm Hotel St. Moritz",
+   "fetched": "2026-11-25"
+  },
+  "la-bastide-de-gordes": {
+   "rating": 4.6,
+   "reviewCount": 1002,
+   "name": "Airelles La Bastide, Gordes",
+   "fetched": "2026-11-25"
+  },
+  "la-casa-de-la-playa-xcaret": {
+   "rating": 4.6,
+   "reviewCount": 476,
+   "name": "La Casa de la Playa by Xcaret",
+   "fetched": "2026-11-25"
+  },
+  "la-casa-que-canta-zihuatanejo": {
+   "rating": 4.7,
+   "reviewCount": 355,
+   "name": "La Casa Que Canta, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "la-cheneaudiere": {
+   "rating": 4.5,
+   "reviewCount": 2384,
+   "name": "CHENEAUDIÈRE - Hôtel Spa - Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "la-ferme-saint-simeon": {
+   "rating": 4.3,
+   "reviewCount": 534,
+   "name": "La Ferme Saint Siméon Hôtel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "la-fiermontina-palazzo-bozzi-corso": {
+   "rating": 4.9,
+   "reviewCount": 165,
+   "name": "La Fiermontina | Palazzo Bozzi Corso",
+   "fetched": "2026-11-25"
+  },
+  "la-maison": {
+   "rating": 4.8,
+   "reviewCount": 865,
+   "name": "LA MAISON hotel Saarlouis",
+   "fetched": "2026-11-25"
+  },
+  "la-mamounia-marrakech": {
+   "rating": 4.5,
+   "reviewCount": 9668,
+   "name": "La Mamounia",
+   "fetched": "2026-11-25"
+  },
+  "la-minervetta": {
+   "rating": 4.9,
+   "reviewCount": 289,
+   "name": "Maison la Minervetta",
+   "fetched": "2026-11-25"
+  },
+  "la-palma-princess": {
+   "rating": 4.2,
+   "reviewCount": 5161,
+   "name": "La Palma Princess",
+   "fetched": "2026-11-25"
+  },
+  "la-reserve-de-beaulieu": {
+   "rating": 4.6,
+   "reviewCount": 607,
+   "name": "La Réserve de Beaulieu",
+   "fetched": "2026-11-25"
+  },
+  "la-reserve-paris": {
+   "rating": 4.8,
+   "reviewCount": 1302,
+   "name": "La Réserve",
+   "fetched": "2026-11-25"
+  },
+  "la-reserve-ramatuelle-hotel-spa-and-villas": {
+   "rating": 4.6,
+   "reviewCount": 427,
+   "name": "La Réserve Ramatuelle",
+   "fetched": "2026-11-25"
+  },
+  "la-residencia-mallorca": {
+   "rating": 4.6,
+   "reviewCount": 908,
+   "name": "La Residencia, A Belmond Hotel, Mallorca",
+   "fetched": "2026-11-25"
+  },
+  "la-samanna-belmond-st-martin": {
+   "rating": 4.7,
+   "reviewCount": 533,
+   "name": "La Samanna, A Belmond Hotel, St Martin",
+   "fetched": "2026-11-25"
+  },
+  "la-toubana-guadeloupe": {
+   "rating": 4.4,
+   "reviewCount": 1669,
+   "name": "LA TOUBANA HÔTEL & SPA",
+   "fetched": "2026-11-25"
+  },
+  "ladera-resort-st-lucia": {
+   "rating": 4.6,
+   "reviewCount": 764,
+   "name": "Ladera Resort",
+   "fetched": "2026-11-25"
+  },
+  "lalya-ninh-van-bay": {
+   "rating": 4.7,
+   "reviewCount": 483,
+   "name": "L'Alya Ninh Van Bay",
+   "fetched": "2026-11-25"
+  },
+  "landhaus-stricker": {
+   "rating": 4.9,
+   "reviewCount": 286,
+   "name": "Relais & Châteaux Landhaus Stricker",
+   "fetched": "2026-11-25"
+  },
+  "landmar-costa-los-gigantes-tenerife": {
+   "rating": 4.5,
+   "reviewCount": 9013,
+   "name": "Hotel Landmar Costa Los Gigantes Family Resort",
+   "fetched": "2026-11-25"
+  },
+  "landmar-playa-la-arena-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 7664,
+   "name": "Landmar Playa La Arena Oceanfront Hotel",
+   "fetched": "2026-11-25"
+  },
+  "lapogee-courchevel": {
+   "rating": 4.7,
+   "reviewCount": 126,
+   "name": "L’Apogée Courchevel",
+   "fetched": "2026-11-25"
+  },
+  "las-alamandas": {
+   "rating": 4.7,
+   "reviewCount": 122,
+   "name": "Las Alamandas",
+   "fetched": "2026-11-25"
+  },
+  "las-casitas-a-belmond-hotel": {
+   "rating": 4.8,
+   "reviewCount": 289,
+   "name": "Las Casitas, A Belmond Hotel, Colca Canyon",
+   "fetched": "2026-11-25"
+  },
+  "las-ventanas-al-paraiso": {
+   "rating": 4.8,
+   "reviewCount": 1470,
+   "name": "Las Ventanas al Paraiso, A Rosewood Resort",
+   "fetched": "2026-11-25"
+  },
+  "le-barthelemy-st-barth": {
+   "rating": 4.8,
+   "reviewCount": 234,
+   "name": "Le Barthélemy Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "le-bora-bora": {
+   "rating": 4.7,
+   "reviewCount": 1507,
+   "name": "Le Bora Bora by Pearl Resorts",
+   "fetched": "2026-11-25"
+  },
+  "le-bristol-paris": {
+   "rating": 4.7,
+   "reviewCount": 3278,
+   "name": "Le Bristol Paris, Oetker Hotels",
+   "fetched": "2026-11-25"
+  },
+  "le-couvent-des-minimes-un-hotel-and-spa-loccitane-en-provenc": {
+   "rating": 4.5,
+   "reviewCount": 876,
+   "name": "Le Couvent des Minimes",
+   "fetched": "2026-11-25"
+  },
+  "le-domaine-du-mas-de-pierre": {
+   "rating": 4.7,
+   "reviewCount": 1061,
+   "name": "Domaine du Mas de Pierre Hôtel Resort & Spa, Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "le-k2-chogori": {
+   "rating": 4.7,
+   "reviewCount": 54,
+   "name": "Hôtel Le K2 Chogori",
+   "fetched": "2026-11-25"
+  },
+  "le-k2-palace": {
+   "rating": 4.7,
+   "reviewCount": 218,
+   "name": "Hotel Le K2 Palace",
+   "fetched": "2026-11-25"
+  },
+  "le-meridien-maldives": {
+   "rating": 4.7,
+   "reviewCount": 470,
+   "name": "Le Méridien Maldives Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "le-meurice": {
+   "rating": 4.5,
+   "reviewCount": 2144,
+   "name": "Le Meurice",
+   "fetched": "2026-11-25"
+  },
+  "le-negresco": {
+   "rating": 4.6,
+   "reviewCount": 6778,
+   "name": "Le Negresco",
+   "fetched": "2026-11-25"
+  },
+  "le-royal-monceau": {
+   "rating": 4.6,
+   "reviewCount": 2618,
+   "name": "Le Royal Monceau - Raffles Paris",
+   "fetched": "2026-11-25"
+  },
+  "le-sirenuse-positano": {
+   "rating": 4.6,
+   "reviewCount": 980,
+   "name": "Le Sirenuse",
+   "fetched": "2026-11-25"
+  },
+  "le-tahaa-pearl-resorts": {
+   "rating": 4.8,
+   "reviewCount": 756,
+   "name": "Le Taha'a by Pearl Resorts",
+   "fetched": "2026-11-25"
+  },
+  "lefay-resort-and-spa-dolomiti": {
+   "rating": 4.7,
+   "reviewCount": 1197,
+   "name": "Lefay Dolomiti",
+   "fetched": "2026-11-25"
+  },
+  "lermitage-beverly-hills": {
+   "rating": 4.6,
+   "reviewCount": 659,
+   "name": "L'Ermitage Beverly Hills",
+   "fetched": "2026-11-25"
+  },
+  "les-pres-deugenie": {
+   "rating": 4.7,
+   "reviewCount": 1842,
+   "name": "Les Prés d'Eugénie - Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "les-roches-blanches": {
+   "rating": 4.1,
+   "reviewCount": 612,
+   "name": "Hôtel Les Roches Blanches",
+   "fetched": "2026-11-25"
+  },
+  "les-sources-de-caudalie": {
+   "rating": 4.7,
+   "reviewCount": 1810,
+   "name": "Les Sources de Caudalie",
+   "fetched": "2026-11-25"
+  },
+  "les-sources-de-cheverny": {
+   "rating": 4.5,
+   "reviewCount": 444,
+   "name": "Les Sources de Cheverny",
+   "fetched": "2026-11-25"
+  },
+  "les-sources-de-vougeot": {
+   "rating": 4.8,
+   "reviewCount": 101,
+   "name": "Les Sources de Vougeot",
+   "fetched": "2026-11-25"
+  },
+  "lime-wood-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1218,
+   "name": "Lime Wood Hotel",
+   "fetched": "2026-11-25"
+  },
+  "little-nell-aspen": {
+   "rating": 4.7,
+   "reviewCount": 636,
+   "name": "The Little Nell",
+   "fetched": "2026-11-25"
+  },
+  "little-palm-island-florida-keys": {
+   "rating": 4.6,
+   "reviewCount": 478,
+   "name": "Little Palm Island",
+   "fetched": "2026-11-25"
+  },
+  "lizard-island-resort": {
+   "rating": 4.7,
+   "reviewCount": 153,
+   "name": "Lizard Island",
+   "fetched": "2026-11-25"
+  },
+  "londolozi-game-reserve": {
+   "rating": 4.9,
+   "reviewCount": 242,
+   "name": "Londolozi Game Reserve",
+   "fetched": "2026-11-25"
+  },
+  "longitude-131-uluru": {
+   "rating": 4.8,
+   "reviewCount": 229,
+   "name": "Longitude 131, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "lopesan-baobab-resort-gran-canaria": {
+   "rating": 4.5,
+   "reviewCount": 8832,
+   "name": "Lopesan Baobab Resort",
+   "fetched": "2026-11-25"
+  },
+  "lopesan-costa-meloneras-gran-canaria": {
+   "rating": 4.5,
+   "reviewCount": 14166,
+   "name": "Lopesan Costa Meloneras, Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "lopesan-villa-del-conde-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 6460,
+   "name": "Lopesan Villa del Conde Resort & Thalasso",
+   "fetched": "2026-11-25"
+  },
+  "los-poblanos-historic-inn-and-organic-farm": {
+   "rating": 4.7,
+   "reviewCount": 1771,
+   "name": "Los Poblanos Historic Inn & Organic Farm",
+   "fetched": "2026-11-25"
+  },
+  "lovango-resort-and-beach-club": {
+   "rating": 4.6,
+   "reviewCount": 378,
+   "name": "Lovango Resort & Beach Club, St. John",
+   "fetched": "2026-11-25"
+  },
+  "lucknam-park-hotel-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 812,
+   "name": "Lucknam Park, Emblems Collection",
+   "fetched": "2026-11-25"
+  },
+  "luisenhohe": {
+   "rating": 4.6,
+   "reviewCount": 514,
+   "name": "Luisenhöhe - Gesundheitsresort Schwarzwald",
+   "fetched": "2026-11-25"
+  },
+  "lux-grand-gaube": {
+   "rating": 4.6,
+   "reviewCount": 3651,
+   "name": "LUX Grand Gaube",
+   "fetched": "2026-11-25"
+  },
+  "lux-marijani-zanzibar": {
+   "rating": 4.7,
+   "reviewCount": 581,
+   "name": "LUX Marijani, Zanzibar",
+   "fetched": "2026-11-25"
+  },
+  "lympstone-manor": {
+   "rating": 4.7,
+   "reviewCount": 778,
+   "name": "Lympstone Manor Hotel, Restaurant and Vineyard, Devon",
+   "fetched": "2026-11-25"
+  },
+  "macakizi-bodrum": {
+   "rating": 4.3,
+   "reviewCount": 1260,
+   "name": "MACAKIZI BODRUM",
+   "fetched": "2026-11-25"
+  },
+  "maia-resort-quy-nhon": {
+   "rating": 4.8,
+   "reviewCount": 1393,
+   "name": "The Ocean Resort by Fusion Quy Nhon",
+   "fetched": "2026-11-25"
+  },
+  "majestic-hotel-and-spa-barcelona": {
+   "rating": 4.7,
+   "reviewCount": 6421,
+   "name": "Majestic Hotel & Spa Barcelona",
+   "fetched": "2026-11-25"
+  },
+  "malliouhana-anguilla": {
+   "rating": 4.7,
+   "reviewCount": 245,
+   "name": "Malliouhana",
+   "fetched": "2026-11-25"
+  },
+  "mandapa-ubud": {
+   "rating": 4.7,
+   "reviewCount": 1987,
+   "name": "Mandapa, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-bangkok": {
+   "rating": 4.7,
+   "reviewCount": 6908,
+   "name": "Mandarin Oriental, Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-bodrum": {
+   "rating": 4.7,
+   "reviewCount": 2936,
+   "name": "Mandarin Oriental, Bodrum",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-canouan": {
+   "rating": 4.7,
+   "reviewCount": 220,
+   "name": "Mandarin Oriental, Canouan",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-costa-navarino": {
+   "rating": 4.8,
+   "reviewCount": 343,
+   "name": "Mandarin Oriental, Costa Navarino",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-doha": {
+   "rating": 4.7,
+   "reviewCount": 3547,
+   "name": "Mandarin Oriental, Doha",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-downtown-dubai": {
+   "rating": 4.7,
+   "reviewCount": 418,
+   "name": "Mandarin Oriental Downtown, Dubai",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-hong-kong": {
+   "rating": 4.6,
+   "reviewCount": 5286,
+   "name": "Mandarin Oriental, Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-hyde-park-london": {
+   "rating": 4.7,
+   "reviewCount": 2800,
+   "name": "Mandarin Oriental Hyde Park, London",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-istanbul-bosphorus": {
+   "rating": 4.7,
+   "reviewCount": 4663,
+   "name": "Mandarin Oriental Bosphorus, Istanbul",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-jumeira-dubai": {
+   "rating": 4.7,
+   "reviewCount": 5401,
+   "name": "Mandarin Oriental Jumeira, Dubai",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-kuala-lumpur": {
+   "rating": 4.6,
+   "reviewCount": 9391,
+   "name": "Mandarin Oriental, Kuala Lumpur",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-lago-di-como": {
+   "rating": 4.6,
+   "reviewCount": 1650,
+   "name": "Mandarin Oriental, Lago di Como",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-lake-como": {
+   "rating": 4.6,
+   "reviewCount": 1650,
+   "name": "Mandarin Oriental, Lago di Como",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-lutetia-paris": {
+   "rating": 4.6,
+   "reviewCount": 2556,
+   "name": "Mandarin Oriental Lutetia, Paris",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-marrakech": {
+   "rating": 4.6,
+   "reviewCount": 871,
+   "name": "Mandarin Oriental, Marrakech",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-mayfair-london": {
+   "rating": 4.6,
+   "reviewCount": 394,
+   "name": "Mandarin Oriental Mayfair, London",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-milan": {
+   "rating": 4.7,
+   "reviewCount": 2137,
+   "name": "Mandarin Oriental, Milan",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-munich": {
+   "rating": 4.6,
+   "reviewCount": 1674,
+   "name": "Mandarin Oriental, Munich",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-new-york": {
+   "rating": 4.6,
+   "reviewCount": 1895,
+   "name": "Mandarin Oriental, New York",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-paris": {
+   "rating": 4.7,
+   "reviewCount": 2824,
+   "name": "Mandarin Oriental, Paris",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-qianmen-beijing": {
+   "rating": 4.7,
+   "reviewCount": 37,
+   "name": "Mandarin Oriental Qianmen, Beijing",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-ritz-madrid": {
+   "rating": 4.7,
+   "reviewCount": 4511,
+   "name": "Mandarin Oriental Ritz, Madrid",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-shenzhen": {
+   "rating": 4.8,
+   "reviewCount": 89,
+   "name": "Mandarin Oriental Shenzhen",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-singapore": {
+   "rating": 4.6,
+   "reviewCount": 7530,
+   "name": "Mandarin Oriental, Singapore",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-tokyo": {
+   "rating": 4.5,
+   "reviewCount": 4841,
+   "name": "Mandarin Oriental, Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-vienna": {
+   "rating": 4.4,
+   "reviewCount": 238,
+   "name": "Mandarin Oriental, Vienna",
+   "fetched": "2026-11-25"
+  },
+  "mango-bay-resort": {
+   "rating": 4.5,
+   "reviewCount": 2089,
+   "name": "Mango Bay Resort",
+   "fetched": "2026-11-25"
+  },
+  "mango-house-seychelles": {
+   "rating": 4.7,
+   "reviewCount": 659,
+   "name": "Mango House Seychelles, LXR Hotels & Resorts",
+   "fetched": "2026-11-25"
+  },
+  "manoir-hovey": {
+   "rating": 4.7,
+   "reviewCount": 1346,
+   "name": "Manoir Hovey",
+   "fetched": "2026-11-25"
+  },
+  "manor-house-castle-combe": {
+   "rating": 4.7,
+   "reviewCount": 1388,
+   "name": "The Manor House",
+   "fetched": "2026-11-25"
+  },
+  "marbella-club-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1856,
+   "name": "Marbella Club Hotel.",
+   "fetched": "2026-11-25"
+  },
+  "marina-bay-sands": {
+   "rating": 4.7,
+   "reviewCount": 65474,
+   "name": "Marina Bay Sands Singapore",
+   "fetched": "2026-11-25"
+  },
+  "maroma-belmond-riviera-maya": {
+   "rating": 4.7,
+   "reviewCount": 748,
+   "name": "Maroma, A Belmond Hotel, Riviera Maya",
+   "fetched": "2026-11-25"
+  },
+  "marriott-mena-house-cairo": {
+   "rating": 4.6,
+   "reviewCount": 14478,
+   "name": "Marriott Mena House, Cairo",
+   "fetched": "2026-11-25"
+  },
+  "mashpi-lodge": {
+   "rating": 4.8,
+   "reviewCount": 743,
+   "name": "Mashpi Lodge",
+   "fetched": "2026-11-25"
+  },
+  "masseria-torre-maizza-a-rocco-forte-hotel": {
+   "rating": 4.7,
+   "reviewCount": 454,
+   "name": "Masseria Torre Maizza",
+   "fetched": "2026-11-25"
+  },
+  "matild-palace-a-luxury-collection-hotel": {
+   "rating": 4.8,
+   "reviewCount": 1227,
+   "name": "Matild Palace, a Luxury Collection Hotel, Budapest",
+   "fetched": "2026-11-25"
+  },
+  "mauna-kea-beach-hotel-hawaii": {
+   "rating": 4.6,
+   "reviewCount": 1699,
+   "name": "Mauna Kea Beach Hotel, Autograph Collection",
+   "fetched": "2026-11-25"
+  },
+  "mauna-lani-auberge-hawaii": {
+   "rating": 4.7,
+   "reviewCount": 1816,
+   "name": "Mauna Lani, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "maybourne-beverly-hills": {
+   "rating": 4.7,
+   "reviewCount": 2290,
+   "name": "The Maybourne Beverly Hills",
+   "fetched": "2026-11-25"
+  },
+  "meadowood-napa-valley": {
+   "rating": 4.7,
+   "reviewCount": 516,
+   "name": "Meadowood Napa Valley",
+   "fetched": "2026-11-25"
+  },
+  "melia-fuerteventura": {
+   "rating": 4.4,
+   "reviewCount": 390,
+   "name": "Paradisus by Meliá Fuerteventura",
+   "fetched": "2026-11-25"
+  },
+  "melia-jardines-del-teide-tenerife": {
+   "rating": 4.4,
+   "reviewCount": 3712,
+   "name": "Meliá Jardines del Teide - Adults only",
+   "fetched": "2026-11-25"
+  },
+  "mia-resort-nha-trang": {
+   "rating": 4.7,
+   "reviewCount": 2758,
+   "name": "Mia Resort Nha Trang",
+   "fetched": "2026-11-25"
+  },
+  "milaidhoo-maldives": {
+   "rating": 4.8,
+   "reviewCount": 269,
+   "name": "Milaidhoo Maldives",
+   "fetched": "2026-11-25"
+  },
+  "milliken-creek-inn": {
+   "rating": 4.8,
+   "reviewCount": 175,
+   "name": "Milliken Creek Inn",
+   "fetched": "2026-11-25"
+  },
+  "monasterio-belmond-cusco": {
+   "rating": 4.8,
+   "reviewCount": 1445,
+   "name": "Monasterio, A Belmond Hotel, Cusco",
+   "fetched": "2026-11-25"
+  },
+  "monastero-santa-rosa-amalfi": {
+   "rating": 4.8,
+   "reviewCount": 555,
+   "name": "Monastero Santa Rosa Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "montage-deer-valley": {
+   "rating": 4.7,
+   "reviewCount": 1751,
+   "name": "Montage Deer Valley",
+   "fetched": "2026-11-25"
+  },
+  "montage-healdsburg": {
+   "rating": 4.6,
+   "reviewCount": 527,
+   "name": "Montage Healdsburg",
+   "fetched": "2026-11-25"
+  },
+  "montage-kapalua-bay": {
+   "rating": 4.7,
+   "reviewCount": 1016,
+   "name": "The Resort at Kapalua Bay, Maui",
+   "fetched": "2026-11-25"
+  },
+  "montage-laguna-beach": {
+   "rating": 4.7,
+   "reviewCount": 6094,
+   "name": "Montage Laguna Beach",
+   "fetched": "2026-11-25"
+  },
+  "montage-los-cabos": {
+   "rating": 4.8,
+   "reviewCount": 1511,
+   "name": "Montage Los Cabos",
+   "fetched": "2026-11-25"
+  },
+  "montage-palmetto-bluff": {
+   "rating": 4.7,
+   "reviewCount": 1094,
+   "name": "Montage Palmetto Bluff",
+   "fetched": "2026-11-25"
+  },
+  "monteverdi-tuscany": {
+   "rating": 4.7,
+   "reviewCount": 328,
+   "name": "Monteverdi Tuscany",
+   "fetched": "2026-11-25"
+  },
+  "moor-hall": {
+   "rating": 4.8,
+   "reviewCount": 898,
+   "name": "Moor Hall Restaurant with Rooms",
+   "fetched": "2026-11-25"
+  },
+  "mount-nelson-belmond-cape-town": {
+   "rating": 4.7,
+   "reviewCount": 3462,
+   "name": "Mount Nelson, A Belmond Hotel, Cape Town",
+   "fetched": "2026-11-25"
+  },
+  "museum-hotel-cappadocia": {
+   "rating": 4.5,
+   "reviewCount": 1473,
+   "name": "Museum Hotel",
+   "fetched": "2026-11-25"
+  },
+  "napasai-samui-residence": {
+   "rating": 4.8,
+   "reviewCount": 694,
+   "name": "Napasai Samui Residence",
+   "fetched": "2026-11-25"
+  },
+  "naturhotel-waldklause": {
+   "rating": 4.9,
+   "reviewCount": 1054,
+   "name": "Naturhotel Waldklause",
+   "fetched": "2026-11-25"
+  },
+  "nautilus-maldives": {
+   "rating": 4.7,
+   "reviewCount": 86,
+   "name": "The Nautilus Maldives",
+   "fetched": "2026-11-25"
+  },
+  "naviva-four-seasons-punta-mita": {
+   "rating": 4.8,
+   "reviewCount": 74,
+   "name": "Naviva, A Four Seasons Resort, Punta Mita, Mexico",
+   "fetched": "2026-11-25"
+  },
+  "nayara-alto-atacama": {
+   "rating": 4.6,
+   "reviewCount": 394,
+   "name": "Nayara Alto Atacama",
+   "fetched": "2026-11-25"
+  },
+  "nayara-bocas-del-toro": {
+   "rating": 4.9,
+   "reviewCount": 169,
+   "name": "Nayara Bocas del Toro",
+   "fetched": "2026-11-25"
+  },
+  "nayara-gardens": {
+   "rating": 4.9,
+   "reviewCount": 1113,
+   "name": "Nayara Gardens",
+   "fetched": "2026-11-25"
+  },
+  "nayara-springs": {
+   "rating": 4.9,
+   "reviewCount": 641,
+   "name": "Nayara Springs",
+   "fetched": "2026-11-25"
+  },
+  "nayara-tented-camp-costa-rica": {
+   "rating": 4.9,
+   "reviewCount": 597,
+   "name": "Nayara Tented Camp",
+   "fetched": "2026-11-25"
+  },
+  "nekajui-ritz-carlton-reserve-costa-rica": {
+   "rating": 4.7,
+   "reviewCount": 156,
+   "name": "Nekajui Peninsula Papagayo, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "nihi-sumba": {
+   "rating": 4.6,
+   "reviewCount": 912,
+   "name": "NIHI Sumba",
+   "fetched": "2026-11-25"
+  },
+  "nimb-hotel-copenhagen": {
+   "rating": 4.7,
+   "reviewCount": 1417,
+   "name": "Nimb Hotel, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "nine-orchard": {
+   "rating": 4.7,
+   "reviewCount": 235,
+   "name": "Nine Orchard",
+   "fetched": "2026-11-25"
+  },
+  "nishimuraya-honkan-kinosaki": {
+   "rating": 4.6,
+   "reviewCount": 754,
+   "name": "Nishimuraya Honkan",
+   "fetched": "2026-11-25"
+  },
+  "nizuc-resort-spa-cancun": {
+   "rating": 4.6,
+   "reviewCount": 2745,
+   "name": "NIZUC Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "nobu-ryokan-malibu": {
+   "rating": 4.6,
+   "reviewCount": 59,
+   "name": "Nobu Ryokan Malibu",
+   "fetched": "2026-11-25"
+  },
+  "nolinski": {
+   "rating": 4.5,
+   "reviewCount": 533,
+   "name": "Nolinski Paris - Evok Collection",
+   "fetched": "2026-11-25"
+  },
+  "nolinski-venezia": {
+   "rating": 4.8,
+   "reviewCount": 206,
+   "name": "Nolinski Venezia - Evok Collection",
+   "fetched": "2026-11-25"
+  },
+  "north-block": {
+   "rating": 4.8,
+   "reviewCount": 304,
+   "name": "North Block Hotel",
+   "fetched": "2026-11-25"
+  },
+  "north-island-seychelles": {
+   "rating": 4.2,
+   "reviewCount": 64,
+   "name": "North Island Seychelles",
+   "fetched": "2026-11-25"
+  },
+  "nujuma-ritz-carlton-reserve": {
+   "rating": 4.6,
+   "reviewCount": 352,
+   "name": "Nujuma, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "o2-beach-club-barbados": {
+   "rating": 4.5,
+   "reviewCount": 701,
+   "name": "O2 Beach Club & Spa",
+   "fetched": "2026-11-25"
+  },
+  "oberoi-amarvilas-agra": {
+   "rating": 4.7,
+   "reviewCount": 5159,
+   "name": "The Oberoi Amarvilas, Agra",
+   "fetched": "2026-11-25"
+  },
+  "oberoi-beach-resort-sahl-hasheesh": {
+   "rating": 4.8,
+   "reviewCount": 1577,
+   "name": "The Oberoi, Sahl Hasheesh",
+   "fetched": "2026-11-25"
+  },
+  "oberoi-udaivilas": {
+   "rating": 4.8,
+   "reviewCount": 7581,
+   "name": "The Oberoi Udaivilas, Udaipur",
+   "fetched": "2026-11-25"
+  },
+  "oil-nut-bay-bvi": {
+   "rating": 4.6,
+   "reviewCount": 162,
+   "name": "Oil Nut Bay",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-aesthesis-athens": {
+   "rating": 4.6,
+   "reviewCount": 1197,
+   "name": "One&Only Aesthesis",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-cape-town": {
+   "rating": 4.7,
+   "reviewCount": 3624,
+   "name": "One&Only Cape Town",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-gorillas-nest-rwanda": {
+   "rating": 4.6,
+   "reviewCount": 212,
+   "name": "One&Only Gorilla's Nest",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-kea-island": {
+   "rating": 3.6,
+   "reviewCount": 269,
+   "name": "One&Only Kéa Island",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-le-saint-geran": {
+   "rating": 4.7,
+   "reviewCount": 1623,
+   "name": "One&Only Le Saint Géran",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-mandarina": {
+   "rating": 4.6,
+   "reviewCount": 1295,
+   "name": "One&Only Mandarina",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-moonlight-basin": {
+   "rating": 4.1,
+   "reviewCount": 105,
+   "name": "One&Only Moonlight Basin",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-nyungwe-house": {
+   "rating": 4.7,
+   "reviewCount": 158,
+   "name": "Nyungwe Tea Forest, A Rare Finds Resort",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-one-zaabeel": {
+   "rating": 4.7,
+   "reviewCount": 3876,
+   "name": "One&Only One Za'abeel",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-palmilla": {
+   "rating": 4.8,
+   "reviewCount": 1092,
+   "name": "One&Only Palmilla",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-portonovi": {
+   "rating": 4.8,
+   "reviewCount": 993,
+   "name": "One&Only Portonovi",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-reethi-rah": {
+   "rating": 4.7,
+   "reviewCount": 382,
+   "name": "One&Only Reethi Rah",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-royal-mirage": {
+   "rating": 4.8,
+   "reviewCount": 4855,
+   "name": "One&Only Royal Mirage",
+   "fetched": "2026-11-25"
+  },
+  "one-and-only-the-palm": {
+   "rating": 4.7,
+   "reviewCount": 3283,
+   "name": "One&Only The Palm",
+   "fetched": "2026-11-25"
+  },
+  "onyado-chikurintei": {
+   "rating": 4.8,
+   "reviewCount": 238,
+   "name": "Onyado Chikurintei",
+   "fetched": "2026-11-25"
+  },
+  "orient-express-la-minerva-rome": {
+   "rating": 4.6,
+   "reviewCount": 627,
+   "name": "Orient Express La Minerva",
+   "fetched": "2026-11-25"
+  },
+  "otahuna-lodge-christchurch": {
+   "rating": 5.0,
+   "reviewCount": 82,
+   "name": "Otahuna Lodge",
+   "fetched": "2026-11-25"
+  },
+  "pacuare-lodge": {
+   "rating": 4.8,
+   "reviewCount": 231,
+   "name": "Pacuare Lodge by Böëna",
+   "fetched": "2026-11-25"
+  },
+  "palace-hotel-tokyo": {
+   "rating": 4.5,
+   "reviewCount": 6473,
+   "name": "Palace Hotel Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "palacio-nazarenas-cusco": {
+   "rating": 4.8,
+   "reviewCount": 380,
+   "name": "Palacio Nazarenas, A Belmond Hotel, Cusco",
+   "fetched": "2026-11-25"
+  },
+  "palazzo-portinari-salviati-residenza-depoca": {
+   "rating": 4.8,
+   "reviewCount": 245,
+   "name": "Palazzo Portinari Salviati",
+   "fetched": "2026-11-25"
+  },
+  "palazzo-talia": {
+   "rating": 4.5,
+   "reviewCount": 186,
+   "name": "Palazzo Talìa",
+   "fetched": "2026-11-25"
+  },
+  "palazzo-versace-macau": {
+   "rating": 4.7,
+   "reviewCount": 56,
+   "name": "Palazzo Versace Macau",
+   "fetched": "2026-11-25"
+  },
+  "palm-heights-grand-cayman": {
+   "rating": 4.8,
+   "reviewCount": 316,
+   "name": "Palm Heights",
+   "fetched": "2026-11-25"
+  },
+  "palmaia-house-of-aia": {
+   "rating": 4.7,
+   "reviewCount": 907,
+   "name": "Palmaïa - The House of AïA",
+   "fetched": "2026-11-25"
+  },
+  "paradisus-gran-canaria": {
+   "rating": 4.7,
+   "reviewCount": 1975,
+   "name": "Paradisus Gran Canaria",
+   "fetched": "2026-11-25"
+  },
+  "paradisus-salinas-lanzarote": {
+   "rating": 4.5,
+   "reviewCount": 3547,
+   "name": "Paradisus Salinas Lanzarote - Adults only",
+   "fetched": "2026-11-25"
+  },
+  "parador-de-la-gomera": {
+   "rating": 4.5,
+   "reviewCount": 1705,
+   "name": "Parador de La Gomera",
+   "fetched": "2026-11-25"
+  },
+  "park-hotel-kenmare": {
+   "rating": 4.6,
+   "reviewCount": 521,
+   "name": "Park Hotel Kenmare",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-auckland": {
+   "rating": 4.6,
+   "reviewCount": 1283,
+   "name": "Park Hyatt Auckland",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-bangkok": {
+   "rating": 4.6,
+   "reviewCount": 2862,
+   "name": "Park Hyatt Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-dubai": {
+   "rating": 4.7,
+   "reviewCount": 4561,
+   "name": "Park Hyatt Dubai",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-jakarta": {
+   "rating": 4.7,
+   "reviewCount": 3045,
+   "name": "Park Hyatt Jakarta",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-kuala-lumpur": {
+   "rating": 4.4,
+   "reviewCount": 490,
+   "name": "Park Hyatt Kuala Lumpur",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-kyoto": {
+   "rating": 4.6,
+   "reviewCount": 746,
+   "name": "Park Hyatt Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-maldives": {
+   "rating": 4.8,
+   "reviewCount": 497,
+   "name": "Park Hyatt Maldives Hadahaa",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-melbourne": {
+   "rating": 4.6,
+   "reviewCount": 2645,
+   "name": "Park Hyatt Melbourne",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-paris-vendome": {
+   "rating": 4.6,
+   "reviewCount": 1748,
+   "name": "Park Hyatt Paris-Vendôme",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-saigon": {
+   "rating": 4.5,
+   "reviewCount": 4627,
+   "name": "Park Hyatt Saigon",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-seoul": {
+   "rating": 4.4,
+   "reviewCount": 1988,
+   "name": "Park Hyatt Seoul",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-siem-reap": {
+   "rating": 4.7,
+   "reviewCount": 943,
+   "name": "Park Hyatt Siem Reap",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-st-kitts": {
+   "rating": 4.6,
+   "reviewCount": 583,
+   "name": "Park Hyatt St. Kitts Christophe Harbour",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-sydney": {
+   "rating": 4.6,
+   "reviewCount": 2503,
+   "name": "Park Hyatt Sydney",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-tokyo": {
+   "rating": 4.5,
+   "reviewCount": 4642,
+   "name": "Park Hyatt Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-vienna": {
+   "rating": 4.7,
+   "reviewCount": 2924,
+   "name": "Park Hyatt Vienna",
+   "fetched": "2026-11-25"
+  },
+  "park-hyatt-zanzibar": {
+   "rating": 4.6,
+   "reviewCount": 1692,
+   "name": "Park Hyatt Zanzibar",
+   "fetched": "2026-11-25"
+  },
+  "parkhotel-egerner-hofe": {
+   "rating": 4.6,
+   "reviewCount": 572,
+   "name": "Egerner Höfe Hotel",
+   "fetched": "2026-11-25"
+  },
+  "passalacqua-lake-como": {
+   "rating": 4.6,
+   "reviewCount": 485,
+   "name": "Passalacqua",
+   "fetched": "2026-11-25"
+  },
+  "patina-maldives": {
+   "rating": 4.8,
+   "reviewCount": 306,
+   "name": "Patina Maldives, Fari Islands",
+   "fetched": "2026-11-25"
+  },
+  "patina-osaka": {
+   "rating": 4.8,
+   "reviewCount": 655,
+   "name": "Patina Osaka",
+   "fetched": "2026-11-25"
+  },
+  "patrick-hellmann-schlosshotel": {
+   "rating": 4.3,
+   "reviewCount": 1155,
+   "name": "Schlosshotel Berlin",
+   "fetched": "2026-11-25"
+  },
+  "pendry-manhattan-west": {
+   "rating": 4.7,
+   "reviewCount": 265,
+   "name": "Pendry Manhattan West",
+   "fetched": "2026-11-25"
+  },
+  "pendry-west-hollywood": {
+   "rating": 4.5,
+   "reviewCount": 555,
+   "name": "The Sun Rose West Hollywood",
+   "fetched": "2026-11-25"
+  },
+  "penha-longa-resort": {
+   "rating": 4.7,
+   "reviewCount": 3732,
+   "name": "Penha Longa Resort",
+   "fetched": "2026-11-25"
+  },
+  "peninsula-beverly-hills": {
+   "rating": 4.7,
+   "reviewCount": 1395,
+   "name": "The Peninsula Beverly Hills",
+   "fetched": "2026-11-25"
+  },
+  "peninsula-london": {
+   "rating": 4.6,
+   "reviewCount": 1076,
+   "name": "The Peninsula London",
+   "fetched": "2026-11-25"
+  },
+  "peninsula-tokyo": {
+   "rating": 4.4,
+   "reviewCount": 4422,
+   "name": "The Peninsula Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "petit-st-vincent-resort": {
+   "rating": 4.0,
+   "reviewCount": 73,
+   "name": "Petit St Vincent Resort",
+   "fetched": "2026-11-25"
+  },
+  "phulay-bay-krabi": {
+   "rating": 4.8,
+   "reviewCount": 974,
+   "name": "Phulay Bay, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "pikaia-lodge-galapagos": {
+   "rating": 4.8,
+   "reviewCount": 132,
+   "name": "Pikaia Lodge",
+   "fetched": "2026-11-25"
+  },
+  "pimalai-resort-and-spa": {
+   "rating": 4.8,
+   "reviewCount": 1743,
+   "name": "Pimalai Resort and Spa",
+   "fetched": "2026-11-25"
+  },
+  "pine-cay-turks-caicos": {
+   "rating": 4.8,
+   "reviewCount": 18,
+   "name": "Pine Cay, Turks and Caicos",
+   "fetched": "2026-11-25"
+  },
+  "pink-sands-harbour-island": {
+   "rating": 4.3,
+   "reviewCount": 166,
+   "name": "Pink Sands Resort",
+   "fetched": "2026-11-25"
+  },
+  "playa-viva": {
+   "rating": 4.9,
+   "reviewCount": 292,
+   "name": "Playa Viva",
+   "fetched": "2026-11-25"
+  },
+  "portrait-milano": {
+   "rating": 4.7,
+   "reviewCount": 931,
+   "name": "Portrait Milano Hotel - Lungarno Collection",
+   "fetched": "2026-11-25"
+  },
+  "post-ranch-inn": {
+   "rating": 4.6,
+   "reviewCount": 497,
+   "name": "Post Ranch Inn",
+   "fetched": "2026-11-25"
+  },
+  "pretty-beach-house": {
+   "rating": 4.9,
+   "reviewCount": 55,
+   "name": "Pretty Beach House",
+   "fetched": "2026-11-25"
+  },
+  "princesa-yaiza-lanzarote": {
+   "rating": 4.7,
+   "reviewCount": 2754,
+   "name": "Princesa Yaiza Suite Hotel Resort",
+   "fetched": "2026-11-25"
+  },
+  "purs-luxury-boutique-hotel-and-restaurant": {
+   "rating": 4.8,
+   "reviewCount": 166,
+   "name": "PURS Luxury Boutique Hotel",
+   "fetched": "2026-11-25"
+  },
+  "qasr-al-sarab-anantara": {
+   "rating": 4.7,
+   "reviewCount": 3394,
+   "name": "Qasr Al Sarab Desert Resort by Anantara",
+   "fetched": "2026-11-25"
+  },
+  "qualia-hamilton-island": {
+   "rating": 4.6,
+   "reviewCount": 499,
+   "name": "qualia",
+   "fetched": "2026-11-25"
+  },
+  "raas-devigarh": {
+   "rating": 4.6,
+   "reviewCount": 2847,
+   "name": "RAAS Devigarh",
+   "fetched": "2026-11-25"
+  },
+  "raas-jodhpur": {
+   "rating": 4.6,
+   "reviewCount": 3181,
+   "name": "RAAS Jodhpur",
+   "fetched": "2026-11-25"
+  },
+  "rachamankha": {
+   "rating": 4.7,
+   "reviewCount": 449,
+   "name": "Rachamankha Boutique Hotel",
+   "fetched": "2026-11-25"
+  },
+  "radisson-blu-maldives": {
+   "rating": 4.6,
+   "reviewCount": 1377,
+   "name": "Radisson Blu Resort, Maldives",
+   "fetched": "2026-11-25"
+  },
+  "radisson-blu-mogan-gran-canaria": {
+   "rating": 4.5,
+   "reviewCount": 3987,
+   "name": "Radisson Blu Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "radisson-blu-resort-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 2003,
+   "name": "Radisson Blu Resort, Gran Canaria",
+   "fetched": "2026-11-25"
+  },
+  "raffles-al-areen-palace-bahrain": {
+   "rating": 4.8,
+   "reviewCount": 1613,
+   "name": "Raffles Al Areen Palace Bahrain",
+   "fetched": "2026-11-25"
+  },
+  "raffles-bali": {
+   "rating": 4.9,
+   "reviewCount": 729,
+   "name": "Raffles Bali",
+   "fetched": "2026-11-25"
+  },
+  "raffles-boston": {
+   "rating": 4.4,
+   "reviewCount": 431,
+   "name": "Raffles Boston",
+   "fetched": "2026-11-25"
+  },
+  "raffles-doha": {
+   "rating": 4.6,
+   "reviewCount": 2051,
+   "name": "Raffles Doha",
+   "fetched": "2026-11-25"
+  },
+  "raffles-grand-hotel-dangkor": {
+   "rating": 4.7,
+   "reviewCount": 800,
+   "name": "Raffles Grand Hotel d'Angkor Siem Reap",
+   "fetched": "2026-11-25"
+  },
+  "raffles-jakarta": {
+   "rating": 4.8,
+   "reviewCount": 12126,
+   "name": "Raffles Jakarta",
+   "fetched": "2026-11-25"
+  },
+  "raffles-london-owo": {
+   "rating": 4.7,
+   "reviewCount": 1112,
+   "name": "Raffles London at The OWO",
+   "fetched": "2026-11-25"
+  },
+  "raffles-maldives-meradhoo": {
+   "rating": 4.6,
+   "reviewCount": 168,
+   "name": "Raffles Maldives Meradhoo",
+   "fetched": "2026-11-25"
+  },
+  "raffles-seychelles": {
+   "rating": 4.6,
+   "reviewCount": 969,
+   "name": "Raffles Seychelles",
+   "fetched": "2026-11-25"
+  },
+  "raffles-singapore": {
+   "rating": 4.6,
+   "reviewCount": 6855,
+   "name": "Raffles Singapore",
+   "fetched": "2026-11-25"
+  },
+  "raffles-the-palm-dubai": {
+   "rating": 4.6,
+   "reviewCount": 3419,
+   "name": "Raffles The Palm Dubai",
+   "fetched": "2026-11-25"
+  },
+  "raffles-udaipur": {
+   "rating": 4.8,
+   "reviewCount": 4139,
+   "name": "Raffles Udaipur",
+   "fetched": "2026-11-25"
+  },
+  "rambagh-palace-jaipur": {
+   "rating": 4.7,
+   "reviewCount": 9092,
+   "name": "Rambagh Palace, Jaipur",
+   "fetched": "2026-11-25"
+  },
+  "rancho-pacifico": {
+   "rating": 4.9,
+   "reviewCount": 205,
+   "name": "Rancho Pacifico",
+   "fetched": "2026-11-25"
+  },
+  "rancho-valencia-san-diego": {
+   "rating": 4.8,
+   "reviewCount": 780,
+   "name": "Rancho Valencia Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "rayavadee-krabi": {
+   "rating": 4.6,
+   "reviewCount": 1795,
+   "name": "Rayavadee Resort",
+   "fetched": "2026-11-25"
+  },
+  "refugia-chiloe": {
+   "rating": 4.7,
+   "reviewCount": 149,
+   "name": "Refugia Chiloé",
+   "fetched": "2026-11-25"
+  },
+  "regent-bali-canggu": {
+   "rating": 4.7,
+   "reviewCount": 603,
+   "name": "Regent Bali Canggu",
+   "fetched": "2026-11-25"
+  },
+  "regent-hong-kong": {
+   "rating": 4.5,
+   "reviewCount": 4419,
+   "name": "Regent Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "regent-phu-quoc": {
+   "rating": 4.9,
+   "reviewCount": 1732,
+   "name": "Regent Phu Quoc",
+   "fetched": "2026-11-25"
+  },
+  "regent-santa-monica-beach": {
+   "rating": 4.7,
+   "reviewCount": 211,
+   "name": "Regent Santa Monica Beach",
+   "fetched": "2026-11-25"
+  },
+  "regent-taipei": {
+   "rating": 4.6,
+   "reviewCount": 27989,
+   "name": "Regent Taipei",
+   "fetched": "2026-11-25"
+  },
+  "rio-perdido": {
+   "rating": 4.8,
+   "reviewCount": 840,
+   "name": "Rio Perdido, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "rissai-valley-a-ritz-carlton-reserve": {
+   "rating": 4.7,
+   "reviewCount": 67,
+   "name": "Rissai Valley, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-abama-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 4420,
+   "name": "The Ritz-Carlton Tenerife, Abama",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-aruba": {
+   "rating": 4.6,
+   "reviewCount": 2359,
+   "name": "The Ritz-Carlton, Aruba",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-bali": {
+   "rating": 4.6,
+   "reviewCount": 4611,
+   "name": "The Ritz-Carlton, Bali",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-grand-cayman": {
+   "rating": 4.7,
+   "reviewCount": 1499,
+   "name": "The Ritz-Carlton, Grand Cayman",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-hong-kong": {
+   "rating": 4.6,
+   "reviewCount": 2979,
+   "name": "The Ritz-Carlton, Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-kyoto": {
+   "rating": 4.6,
+   "reviewCount": 2565,
+   "name": "The Ritz-Carlton, Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-langkawi": {
+   "rating": 4.6,
+   "reviewCount": 1320,
+   "name": "The Ritz-Carlton, Langkawi",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-maldives-fari": {
+   "rating": 4.8,
+   "reviewCount": 390,
+   "name": "The Ritz-Carlton Maldives, Fari Islands",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-masai-mara": {
+   "rating": 4.6,
+   "reviewCount": 61,
+   "name": "The Ritz-Carlton, Masai Mara Safari Camp",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-mexico-city": {
+   "rating": 4.7,
+   "reviewCount": 2273,
+   "name": "The Ritz-Carlton, Mexico City",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-nikko": {
+   "rating": 4.4,
+   "reviewCount": 1327,
+   "name": "The Ritz-Carlton, Nikko",
+   "fetched": "2026-11-25"
+  },
+  "ritz-carlton-st-thomas": {
+   "rating": 4.2,
+   "reviewCount": 1195,
+   "name": "The Ritz-Carlton, St. Thomas",
+   "fetched": "2026-11-25"
+  },
+  "ritz-paris": {
+   "rating": 4.6,
+   "reviewCount": 4691,
+   "name": "Ritz Paris",
+   "fetched": "2026-11-25"
+  },
+  "riu-arecas-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 4682,
+   "name": "Hotel Riu Arecas",
+   "fetched": "2026-11-25"
+  },
+  "riu-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 8582,
+   "name": "Hotel Riu Gran Canaria",
+   "fetched": "2026-11-25"
+  },
+  "riu-palace-jandia-fuerteventura": {
+   "rating": 4.5,
+   "reviewCount": 1425,
+   "name": "Hotel Riu Palace Jandia",
+   "fetched": "2026-11-25"
+  },
+  "riu-palace-maspalomas-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 4544,
+   "name": "Hotel Riu Palace Maspalomas",
+   "fetched": "2026-11-25"
+  },
+  "riu-palace-meloneras-gran-canaria": {
+   "rating": 4.7,
+   "reviewCount": 4092,
+   "name": "Hotel Riu Palace Meloneras",
+   "fetched": "2026-11-25"
+  },
+  "riu-palace-tres-islas-fuerteventura": {
+   "rating": 4.4,
+   "reviewCount": 3429,
+   "name": "Hotel Riu Palace Tres Islas",
+   "fetched": "2026-11-25"
+  },
+  "riu-paraiso-lanzarote": {
+   "rating": 4.5,
+   "reviewCount": 6790,
+   "name": "Hotel Riu Paraiso Lanzarote",
+   "fetched": "2026-11-25"
+  },
+  "riviera-maya-edition-kanai": {
+   "rating": 4.5,
+   "reviewCount": 324,
+   "name": "The Riviera Maya EDITION at Kanai",
+   "fetched": "2026-11-25"
+  },
+  "roca-nivaria-gh-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 2454,
+   "name": "Roca Nivaria Gran Hotel",
+   "fetched": "2026-11-25"
+  },
+  "rocco-forte-charles-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1697,
+   "name": "The Charles Hotel",
+   "fetched": "2026-11-25"
+  },
+  "rock-house-turks-caicos": {
+   "rating": 4.5,
+   "reviewCount": 342,
+   "name": "Rock House",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-amsterdam": {
+   "rating": 4.3,
+   "reviewCount": 248,
+   "name": "Rosewood Amsterdam",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-baha-mar": {
+   "rating": 4.6,
+   "reviewCount": 1002,
+   "name": "Rosewood Baha Mar",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-bangkok": {
+   "rating": 4.6,
+   "reviewCount": 1272,
+   "name": "Rosewood Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-beijing": {
+   "rating": 4.6,
+   "reviewCount": 135,
+   "name": "Rosewood Beijing",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-bermuda": {
+   "rating": 4.6,
+   "reviewCount": 473,
+   "name": "Rosewood Bermuda",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-cape-kidnappers": {
+   "rating": 4.7,
+   "reviewCount": 131,
+   "name": "Rosewood Cape Kidnappers",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-castiglion-del-bosco": {
+   "rating": 4.7,
+   "reviewCount": 631,
+   "name": "Castiglion del Bosco, A Rosewood Hotel",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-courchevel-le-jardin-alpin": {
+   "rating": 4.8,
+   "reviewCount": 40,
+   "name": "Rosewood Courchevel Le Jardin Alpin",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-guangzhou": {
+   "rating": 4.4,
+   "reviewCount": 184,
+   "name": "Rosewood Guangzhou",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-hong-kong": {
+   "rating": 4.5,
+   "reviewCount": 3066,
+   "name": "Rosewood Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-hotel-georgia": {
+   "rating": 4.6,
+   "reviewCount": 2648,
+   "name": "Rosewood Hotel Georgia",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-kauri-cliffs": {
+   "rating": 4.6,
+   "reviewCount": 134,
+   "name": "Rosewood Kauri Cliffs",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-le-guanahani-st-barth": {
+   "rating": 4.8,
+   "reviewCount": 351,
+   "name": "Airelles Le Guanahani, Saint-Barthélemy",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-little-dix-bay": {
+   "rating": 4.8,
+   "reviewCount": 326,
+   "name": "Rosewood Little Dix Bay",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-london": {
+   "rating": 4.7,
+   "reviewCount": 3703,
+   "name": "Rosewood London",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-luang-prabang": {
+   "rating": 4.7,
+   "reviewCount": 239,
+   "name": "Rosewood Luang Prabang",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-mandarina": {
+   "rating": 4.6,
+   "reviewCount": 125,
+   "name": "Rosewood Mandarina",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-matakauri-queenstown": {
+   "rating": 4.6,
+   "reviewCount": 125,
+   "name": "Rosewood Matakauri",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-mayakoba": {
+   "rating": 4.8,
+   "reviewCount": 1746,
+   "name": "Rosewood Mayakoba",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-miramar-beach": {
+   "rating": 4.7,
+   "reviewCount": 1240,
+   "name": "Rosewood Miramar Beach",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-miyakojima": {
+   "rating": 4.4,
+   "reviewCount": 129,
+   "name": "Rosewood Miyakojima",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-munich": {
+   "rating": 4.4,
+   "reviewCount": 513,
+   "name": "Rosewood Munich",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-phnom-penh": {
+   "rating": 4.7,
+   "reviewCount": 1360,
+   "name": "Rosewood Phnom Penh",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-phuket": {
+   "rating": 4.7,
+   "reviewCount": 742,
+   "name": "Rosewood Phuket",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-san-miguel-de-allende": {
+   "rating": 4.7,
+   "reviewCount": 4485,
+   "name": "Rosewood San Miguel de Allende",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-sao-paulo": {
+   "rating": 4.7,
+   "reviewCount": 2940,
+   "name": "Rosewood São Paulo",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-schloss-fuschl": {
+   "rating": 4.6,
+   "reviewCount": 1502,
+   "name": "Rosewood Schloss Fuschl",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-vienna": {
+   "rating": 4.6,
+   "reviewCount": 544,
+   "name": "Rosewood Vienna",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-villa-magna-madrid": {
+   "rating": 4.5,
+   "reviewCount": 3084,
+   "name": "Rosewood Villa Magna",
+   "fetched": "2026-11-25"
+  },
+  "rosewood-washington-dc": {
+   "rating": 4.5,
+   "reviewCount": 259,
+   "name": "Rosewood Washington, D.C.",
+   "fetched": "2026-11-25"
+  },
+  "round-hill-jamaica": {
+   "rating": 4.6,
+   "reviewCount": 723,
+   "name": "Round Hill Hotel and Villas",
+   "fetched": "2026-11-25"
+  },
+  "royal-champagne-hotel-and-spa": {
+   "rating": 4.6,
+   "reviewCount": 1537,
+   "name": "Royal Champagne Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "royal-hideaway-corales-suites-tenerife": {
+   "rating": 4.9,
+   "reviewCount": 854,
+   "name": "Royal Hideaway Corales Suites",
+   "fetched": "2026-11-25"
+  },
+  "royal-malewane-south-africa": {
+   "rating": 4.8,
+   "reviewCount": 127,
+   "name": "Malewane Lodge at Royal Malewane",
+   "fetched": "2026-11-25"
+  },
+  "royal-mansour-marrakech": {
+   "rating": 4.6,
+   "reviewCount": 2475,
+   "name": "Royal Mansour Marrakech",
+   "fetched": "2026-11-25"
+  },
+  "royal-palm-beachcomber-mauritius": {
+   "rating": 4.7,
+   "reviewCount": 551,
+   "name": "Royal Palm Beachcomber Luxury",
+   "fetched": "2026-11-25"
+  },
+  "saffire-freycinet-tasmania": {
+   "rating": 4.8,
+   "reviewCount": 288,
+   "name": "Saffire Freycinet",
+   "fetched": "2026-11-25"
+  },
+  "sage-lodge": {
+   "rating": 4.7,
+   "reviewCount": 696,
+   "name": "Sage Lodge",
+   "fetched": "2026-11-25"
+  },
+  "saii-koh-samui-villas-adult-only": {
+   "rating": 4.7,
+   "reviewCount": 937,
+   "name": "SAii Koh Samui Villas - Adult only 12 plus",
+   "fetched": "2026-11-25"
+  },
+  "saint-james-paris": {
+   "rating": 4.7,
+   "reviewCount": 1475,
+   "name": "Saint James Paris",
+   "fetched": "2026-11-25"
+  },
+  "sala-phuket-mai-khao-beach-resort": {
+   "rating": 4.7,
+   "reviewCount": 2206,
+   "name": "SALA Phuket Mai Khao Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "sala-samui-chaweng-beach-resort": {
+   "rating": 4.7,
+   "reviewCount": 2532,
+   "name": "SALA Samui Chaweng Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "salobre-hotel-resort-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 2435,
+   "name": "Salobre Hotel Resort & Serenity",
+   "fetched": "2026-11-25"
+  },
+  "saltmoore": {
+   "rating": 4.4,
+   "reviewCount": 1373,
+   "name": "Saltmoore",
+   "fetched": "2026-11-25"
+  },
+  "samujana-villas": {
+   "rating": 4.7,
+   "reviewCount": 229,
+   "name": "Samujana Villas",
+   "fetched": "2026-11-25"
+  },
+  "san-domenico-palace-taormina": {
+   "rating": 4.6,
+   "reviewCount": 884,
+   "name": "San Domenico Palace, Taormina, A Four Seasons Hotel",
+   "fetched": "2026-11-25"
+  },
+  "san-ysidro-ranch-montecito": {
+   "rating": 4.6,
+   "reviewCount": 448,
+   "name": "San Ysidro Ranch",
+   "fetched": "2026-11-25"
+  },
+  "sanctuary-cap-cana": {
+   "rating": 4.5,
+   "reviewCount": 3046,
+   "name": "Sanctuary Cap Cana",
+   "fetched": "2026-11-25"
+  },
+  "sandals-dunns-river": {
+   "rating": 4.8,
+   "reviewCount": 1939,
+   "name": "Sandals Jamaica Dunn's River",
+   "fetched": "2026-11-25"
+  },
+  "sandals-grande-st-lucian": {
+   "rating": 4.5,
+   "reviewCount": 3458,
+   "name": "Sandals St. Lucia Grand Bay",
+   "fetched": "2026-11-25"
+  },
+  "sandals-grenada": {
+   "rating": 4.6,
+   "reviewCount": 1988,
+   "name": "Sandals Grenada",
+   "fetched": "2026-11-25"
+  },
+  "sandals-royal-curacao": {
+   "rating": 4.7,
+   "reviewCount": 4275,
+   "name": "Sandals Curaçao",
+   "fetched": "2026-11-25"
+  },
+  "sandals-saint-vincent": {
+   "rating": 4.5,
+   "reviewCount": 620,
+   "name": "Sandals St. Vincent",
+   "fetched": "2026-11-25"
+  },
+  "sandos-papagayo-lanzarote": {
+   "rating": 4.4,
+   "reviewCount": 4744,
+   "name": "Sandos Papagayo",
+   "fetched": "2026-11-25"
+  },
+  "sandy-lane-barbados": {
+   "rating": 4.6,
+   "reviewCount": 775,
+   "name": "Sandy Lane Hotel",
+   "fetched": "2026-11-25"
+  },
+  "sankara-hotel-yakushima": {
+   "rating": 4.8,
+   "reviewCount": 414,
+   "name": "SANKARA Hotel & Spa Yakushima",
+   "fetched": "2026-11-25"
+  },
+  "santa-catalina-royal-hideaway-gran-canaria": {
+   "rating": 4.7,
+   "reviewCount": 2594,
+   "name": "Santa Catalina, a Royal Hideaway Hotel",
+   "fetched": "2026-11-25"
+  },
+  "santa-caterina": {
+   "rating": 4.7,
+   "reviewCount": 861,
+   "name": "Santa Caterina Hotel",
+   "fetched": "2026-11-25"
+  },
+  "santa-marina-mykonos": {
+   "rating": 4.5,
+   "reviewCount": 537,
+   "name": "Santa Marina, a Luxury Collection Resort, Mykonos",
+   "fetched": "2026-11-25"
+  },
+  "santa-monica-proper": {
+   "rating": 4.4,
+   "reviewCount": 1085,
+   "name": "Santa Monica Proper Hotel",
+   "fetched": "2026-11-25"
+  },
+  "schloss-elmau-luxury-spa-retreat-and-cultural-hideaway": {
+   "rating": 4.8,
+   "reviewCount": 1386,
+   "name": "Schloss Elmau",
+   "fetched": "2026-11-25"
+  },
+  "schloss-monchstein": {
+   "rating": 4.8,
+   "reviewCount": 622,
+   "name": "Hotel Schloss Mönchstein",
+   "fetched": "2026-11-25"
+  },
+  "schlosshotel-fiss": {
+   "rating": 4.8,
+   "reviewCount": 559,
+   "name": "Schlosshotel Fiss",
+   "fetched": "2026-11-25"
+  },
+  "seaside-grand-hotel-residencia-gran-canaria": {
+   "rating": 4.8,
+   "reviewCount": 320,
+   "name": "Seaside Grand Hotel Residencia",
+   "fetched": "2026-11-25"
+  },
+  "seaside-palm-beach-gran-canaria": {
+   "rating": 4.6,
+   "reviewCount": 1069,
+   "name": "Seaside Palm Beach",
+   "fetched": "2026-11-25"
+  },
+  "sebali-nusa-penida": {
+   "rating": 4.5,
+   "reviewCount": 248,
+   "name": "The Sebali Penida Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "secret-bay-dominica": {
+   "rating": 4.7,
+   "reviewCount": 132,
+   "name": "Secret Bay",
+   "fetched": "2026-11-25"
+  },
+  "secrets-cap-cana": {
+   "rating": 4.5,
+   "reviewCount": 513,
+   "name": "Secrets Cap Cana Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "secrets-la-romana-resort-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 9294,
+   "name": "Secrets La Romana Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "secrets-lanzarote-resort-and-spa": {
+   "rating": 4.5,
+   "reviewCount": 3807,
+   "name": "Secrets Lanzarote Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "secrets-playa-blanca-costa-mujeres": {
+   "rating": 4.6,
+   "reviewCount": 1169,
+   "name": "Secrets Playa Blanca Costa Mujeres",
+   "fetched": "2026-11-25"
+  },
+  "seesteg-norderney": {
+   "rating": 4.7,
+   "reviewCount": 281,
+   "name": "Relais & Châteaux Hotel Seesteg",
+   "fetched": "2026-11-25"
+  },
+  "sekitei": {
+   "rating": 4.4,
+   "reviewCount": 475,
+   "name": "Sekitei",
+   "fetched": "2026-11-25"
+  },
+  "sensei-lanai-four-seasons": {
+   "rating": 4.7,
+   "reviewCount": 309,
+   "name": "Sensei Lanai, A Four Seasons Resort",
+   "fetched": "2026-11-25"
+  },
+  "sequoia-lodge": {
+   "rating": 4.7,
+   "reviewCount": 93,
+   "name": "Sequoia Lodge - Exclusive Adults Luxury Retreat",
+   "fetched": "2026-11-25"
+  },
+  "setai-miami-beach": {
+   "rating": 4.5,
+   "reviewCount": 1938,
+   "name": "The Setai, Miami Beach",
+   "fetched": "2026-11-25"
+  },
+  "severins-resort-and-spa": {
+   "rating": 4.9,
+   "reviewCount": 772,
+   "name": "Severins Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "severins-the-alpine-retreat": {
+   "rating": 4.6,
+   "reviewCount": 59,
+   "name": "Severin's – The Alpine Retreat",
+   "fetched": "2026-11-25"
+  },
+  "shamwari-private-game-reserve": {
+   "rating": 4.8,
+   "reviewCount": 736,
+   "name": "Shamwari Private Game Reserve in the Eastern Cape",
+   "fetched": "2026-11-25"
+  },
+  "shangri-la-le-touessrok-mauritius": {
+   "rating": 4.6,
+   "reviewCount": 2669,
+   "name": "Shangri-La Le Touessrok, Mauritius",
+   "fetched": "2026-11-25"
+  },
+  "sheen-falls-lodge": {
+   "rating": 4.7,
+   "reviewCount": 797,
+   "name": "Sheen Falls Lodge",
+   "fetched": "2026-11-25"
+  },
+  "sheraton-fuerteventura": {
+   "rating": 4.6,
+   "reviewCount": 3298,
+   "name": "Sheraton Fuerteventura Beach, Golf & Spa Resort",
+   "fetched": "2026-11-25"
+  },
+  "shinta-mani-angkor-and-bensley-collection": {
+   "rating": 4.8,
+   "reviewCount": 853,
+   "name": "Shinta Mani Angkor",
+   "fetched": "2026-11-25"
+  },
+  "shinta-mani-wild": {
+   "rating": 5.0,
+   "reviewCount": 95,
+   "name": "Shinta Mani Wild",
+   "fetched": "2026-11-25"
+  },
+  "shutters-on-the-beach-santa-monica": {
+   "rating": 4.5,
+   "reviewCount": 2551,
+   "name": "Shutters on the Beach",
+   "fetched": "2026-11-25"
+  },
+  "signiel-seoul": {
+   "rating": 4.6,
+   "reviewCount": 3334,
+   "name": "SIGNIEL SEOUL",
+   "fetched": "2026-11-25"
+  },
+  "silky-oaks-lodge-daintree": {
+   "rating": 4.7,
+   "reviewCount": 384,
+   "name": "Silky Oaks Lodge, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "silversands-grenada": {
+   "rating": 4.5,
+   "reviewCount": 492,
+   "name": "Silversands Grand Anse",
+   "fetched": "2026-11-25"
+  },
+  "sindhorn-kempinski-hotel-bangkok": {
+   "rating": 4.8,
+   "reviewCount": 2860,
+   "name": "Sindhorn Kempinski Hotel Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "singita-boulders-lodge": {
+   "rating": 4.8,
+   "reviewCount": 96,
+   "name": "Singita Boulders",
+   "fetched": "2026-11-25"
+  },
+  "singita-grumeti": {
+   "rating": 4.8,
+   "reviewCount": 22,
+   "name": "Singita Serengeti House",
+   "fetched": "2026-11-25"
+  },
+  "singita-kruger": {
+   "rating": 4.8,
+   "reviewCount": 83,
+   "name": "Singita Lebombo",
+   "fetched": "2026-11-25"
+  },
+  "singita-kwitonda-lodge": {
+   "rating": 4.7,
+   "reviewCount": 81,
+   "name": "Singita Kwitonda & Kataza House",
+   "fetched": "2026-11-25"
+  },
+  "singita-sabora": {
+   "rating": 4.9,
+   "reviewCount": 55,
+   "name": "Singita Sabora",
+   "fetched": "2026-11-25"
+  },
+  "singlethread-farm-inn": {
+   "rating": 4.6,
+   "reviewCount": 778,
+   "name": "SingleThread Farm - Restaurant - Inn",
+   "fetched": "2026-11-25"
+  },
+  "siro-one-zaabeel-dubai": {
+   "rating": 4.8,
+   "reviewCount": 1914,
+   "name": "SIRO One Za'abeel",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-douro-valley": {
+   "rating": 4.9,
+   "reviewCount": 1886,
+   "name": "Six Senses Douro Valley",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-fiji": {
+   "rating": 4.4,
+   "reviewCount": 283,
+   "name": "Six Senses Fiji",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-fort-barwara": {
+   "rating": 4.7,
+   "reviewCount": 2839,
+   "name": "Six Senses Fort Barwara",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-ibiza": {
+   "rating": 4.3,
+   "reviewCount": 878,
+   "name": "Six Senses Ibiza",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-kanuhura": {
+   "rating": 4.7,
+   "reviewCount": 331,
+   "name": "Six Senses Kanuhura",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-kaplankaya": {
+   "rating": 4.6,
+   "reviewCount": 1083,
+   "name": "Six Senses Kaplankaya",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-krabey-island": {
+   "rating": 4.7,
+   "reviewCount": 196,
+   "name": "Six Senses Krabey Island",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-kyoto": {
+   "rating": 4.6,
+   "reviewCount": 317,
+   "name": "Six Senses Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-laamu": {
+   "rating": 4.9,
+   "reviewCount": 988,
+   "name": "Six Senses Laamu",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-ninh-van-bay": {
+   "rating": 4.7,
+   "reviewCount": 1141,
+   "name": "Six Senses Ninh Van Bay",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-rome": {
+   "rating": 4.6,
+   "reviewCount": 513,
+   "name": "Six Senses Rome",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-samui": {
+   "rating": 4.7,
+   "reviewCount": 1101,
+   "name": "Six Senses Samui",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-uluwatu": {
+   "rating": 4.5,
+   "reviewCount": 2327,
+   "name": "Six Senses Uluwatu, Bali",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-yao-noi": {
+   "rating": 4.8,
+   "reviewCount": 818,
+   "name": "Six Senses Yao Noi Resort",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-zighy-bay": {
+   "rating": 4.6,
+   "reviewCount": 859,
+   "name": "Six Senses Zighy Bay",
+   "fetched": "2026-11-25"
+  },
+  "six-senses-zil-pasyon": {
+   "rating": 4.3,
+   "reviewCount": 341,
+   "name": "Six Senses Zil Pasyon",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-bali-nusa-dua": {
+   "rating": 4.6,
+   "reviewCount": 10667,
+   "name": "Sofitel Bali Nusa Dua Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-frankfurt-opera": {
+   "rating": 4.6,
+   "reviewCount": 1563,
+   "name": "Sofitel Frankfurt Opera",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-legend-casco-viejo-panama": {
+   "rating": 4.8,
+   "reviewCount": 1262,
+   "name": "Sofitel Legend Casco Viejo - Panama City",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-legend-metropole-hanoi": {
+   "rating": 4.7,
+   "reviewCount": 6339,
+   "name": "Sofitel Legend Metropole Hanoi",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-legend-old-cataract-aswan": {
+   "rating": 4.9,
+   "reviewCount": 9975,
+   "name": "Old Cataract, Aswan",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-legend-santa-clara-cartagena": {
+   "rating": 4.9,
+   "reviewCount": 5287,
+   "name": "Sofitel Legend Santa Clara Cartagena",
+   "fetched": "2026-11-25"
+  },
+  "sofitel-winter-palace-luxor": {
+   "rating": 4.8,
+   "reviewCount": 6162,
+   "name": "Winter Palace Luxor",
+   "fetched": "2026-11-25"
+  },
+  "solage-auberge-collection": {
+   "rating": 4.7,
+   "reviewCount": 1207,
+   "name": "Solage, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "solring-hof": {
+   "rating": 4.8,
+   "reviewCount": 332,
+   "name": "SÖL’RING HOF",
+   "fetched": "2026-11-25"
+  },
+  "son-bunyola-mallorca": {
+   "rating": 4.7,
+   "reviewCount": 169,
+   "name": "Son Bunyola Hotel & Villas",
+   "fetched": "2026-11-25"
+  },
+  "soneva-fushi": {
+   "rating": 4.8,
+   "reviewCount": 347,
+   "name": "The Soneva Fushi",
+   "fetched": "2026-11-25"
+  },
+  "soneva-jani": {
+   "rating": 4.6,
+   "reviewCount": 420,
+   "name": "Soneva Jani",
+   "fetched": "2026-11-25"
+  },
+  "soneva-kiri": {
+   "rating": 4.6,
+   "reviewCount": 38,
+   "name": "Soneva Kiri",
+   "fetched": "2026-11-25"
+  },
+  "soneva-secret-maldives": {
+   "rating": 4.7,
+   "reviewCount": 23,
+   "name": "Soneva Secret",
+   "fetched": "2026-11-25"
+  },
+  "song-saa-private-island": {
+   "rating": 4.6,
+   "reviewCount": 246,
+   "name": "Song Saa Private Island",
+   "fetched": "2026-11-25"
+  },
+  "sonnenalp-resort": {
+   "rating": 4.8,
+   "reviewCount": 1078,
+   "name": "Sonnenalp Resort",
+   "fetched": "2026-11-25"
+  },
+  "soori-bali": {
+   "rating": 4.7,
+   "reviewCount": 579,
+   "name": "Soori Bali",
+   "fetched": "2026-11-25"
+  },
+  "sowaka-kyoto": {
+   "rating": 4.7,
+   "reviewCount": 323,
+   "name": "Luxury hotel SOWAKA",
+   "fetched": "2026-11-25"
+  },
+  "spa-and-golf-hotel-weimarer-land": {
+   "rating": 4.7,
+   "reviewCount": 1416,
+   "name": "Spa & GolfResort Weimarer Land",
+   "fetched": "2026-11-25"
+  },
+  "spice-island-beach-resort-grenada": {
+   "rating": 4.7,
+   "reviewCount": 363,
+   "name": "Spice Island Beach Resort",
+   "fetched": "2026-11-25"
+  },
+  "spicers-peak-lodge": {
+   "rating": 4.9,
+   "reviewCount": 333,
+   "name": "Spicers Peak Lodge",
+   "fetched": "2026-11-25"
+  },
+  "spicers-sangoma-retreat": {
+   "rating": 4.8,
+   "reviewCount": 260,
+   "name": "Spicers Sangoma Retreat",
+   "fetched": "2026-11-25"
+  },
+  "splendido-belmond-portofino": {
+   "rating": 4.6,
+   "reviewCount": 577,
+   "name": "Splendido Mare, A Belmond Hotel, Portofino",
+   "fetched": "2026-11-25"
+  },
+  "splendido-mare-a-belmond-hotel-portofino": {
+   "rating": 4.6,
+   "reviewCount": 577,
+   "name": "Splendido Mare, A Belmond Hotel, Portofino",
+   "fetched": "2026-11-25"
+  },
+  "spring-hotel-bitacora-tenerife": {
+   "rating": 4.6,
+   "reviewCount": 4083,
+   "name": "Hotel Bitácora | Spring Hotels",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-aspen": {
+   "rating": 4.4,
+   "reviewCount": 917,
+   "name": "The St. Regis Aspen Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-bahia-beach-puerto-rico": {
+   "rating": 4.7,
+   "reviewCount": 157,
+   "name": "Bahia Beach Resort & Golf Club",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-bali": {
+   "rating": 4.8,
+   "reviewCount": 2835,
+   "name": "The St. Regis Bali Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-bora-bora": {
+   "rating": 4.8,
+   "reviewCount": 888,
+   "name": "The St. Regis Bora Bora Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-cap-cana": {
+   "rating": 4.3,
+   "reviewCount": 294,
+   "name": "The St. Regis Cap Cana Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-costa-mujeres": {
+   "rating": 4.9,
+   "reviewCount": 80,
+   "name": "The St. Regis Costa Mujeres Resort, Cancun",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-kanai-riviera-maya": {
+   "rating": 4.7,
+   "reviewCount": 385,
+   "name": "The St. Regis Kanai Resort, Riviera Maya",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-langkawi": {
+   "rating": 4.7,
+   "reviewCount": 1502,
+   "name": "The St. Regis Langkawi",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-maldives": {
+   "rating": 4.8,
+   "reviewCount": 658,
+   "name": "The St. Regis Maldives Vommuli Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-mexico-city": {
+   "rating": 4.7,
+   "reviewCount": 8597,
+   "name": "The St. Regis",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-punta-mita": {
+   "rating": 4.7,
+   "reviewCount": 793,
+   "name": "The St. Regis Punta Mita Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-red-sea": {
+   "rating": 4.2,
+   "reviewCount": 668,
+   "name": "The St. Regis Red Sea Resort",
+   "fetched": "2026-11-25"
+  },
+  "st-regis-saadiyat-island": {
+   "rating": 4.7,
+   "reviewCount": 4707,
+   "name": "The St. Regis Saadiyat Island Resort, Abu Dhabi",
+   "fetched": "2026-11-25"
+  },
+  "steigenberger-icon-europaischer-hof-baden-baden": {
+   "rating": 4.5,
+   "reviewCount": 302,
+   "name": "Steigenberger Icon Europäischer Hof",
+   "fetched": "2026-11-25"
+  },
+  "stillpoint-lodge": {
+   "rating": 4.8,
+   "reviewCount": 32,
+   "name": "Stillpoint Lodge",
+   "fetched": "2026-11-25"
+  },
+  "storfjord-hotel-norway": {
+   "rating": 4.8,
+   "reviewCount": 518,
+   "name": "Storfjord Hotel",
+   "fetched": "2026-11-25"
+  },
+  "sublime-comporta-portugal": {
+   "rating": 4.5,
+   "reviewCount": 888,
+   "name": "Sublime Comporta",
+   "fetched": "2026-11-25"
+  },
+  "sugar-beach-st-lucia": {
+   "rating": 4.6,
+   "reviewCount": 1606,
+   "name": "Sugar Beach, A Viceroy Resort",
+   "fetched": "2026-11-25"
+  },
+  "suiran-kyoto": {
+   "rating": 4.4,
+   "reviewCount": 747,
+   "name": "Suiran, a Luxury Collection Hotel, Kyoto",
+   "fetched": "2026-11-25"
+  },
+  "sujan-jawai-india": {
+   "rating": 4.7,
+   "reviewCount": 711,
+   "name": "SUJÁN JAWAI Camp",
+   "fetched": "2026-11-25"
+  },
+  "sunscape-cancun-resort-and-spa": {
+   "rating": 4.4,
+   "reviewCount": 8435,
+   "name": "Sunscape Cancun Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "sunset-tower-hotel-la": {
+   "rating": 4.6,
+   "reviewCount": 757,
+   "name": "Sunset Tower Hotel",
+   "fetched": "2026-11-25"
+  },
+  "susana-balbo-winemakers-house-and-spa-suites-relais-and-chat": {
+   "rating": 4.7,
+   "reviewCount": 195,
+   "name": "Susana Balbo Winemaker's House & Spa Suites – Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "susurros-del-corazon-auberge": {
+   "rating": 4.8,
+   "reviewCount": 232,
+   "name": "Susurros del Corazón, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "taaktana-labuan-bajo": {
+   "rating": 4.7,
+   "reviewCount": 322,
+   "name": "TA’AKTANA, a Luxury Collection Resort & Spa, Labuan Bajo",
+   "fetched": "2026-11-25"
+  },
+  "tainaron-blue-retreat": {
+   "rating": 4.8,
+   "reviewCount": 150,
+   "name": "Tainaron Blue Retreat",
+   "fetched": "2026-11-25"
+  },
+  "taj-cape-town-south-africa": {
+   "rating": 4.6,
+   "reviewCount": 4143,
+   "name": "Taj Cape Town, South Africa",
+   "fetched": "2026-11-25"
+  },
+  "taj-falaknuma-palace-hyderabad": {
+   "rating": 4.6,
+   "reviewCount": 13763,
+   "name": "Taj Falaknuma Palace, Hyderabad",
+   "fetched": "2026-11-25"
+  },
+  "taj-fateh-prakash-palace": {
+   "rating": 4.6,
+   "reviewCount": 2903,
+   "name": "Taj Fateh Prakash Palace",
+   "fetched": "2026-11-25"
+  },
+  "taj-lake-palace-udaipur": {
+   "rating": 4.8,
+   "reviewCount": 7800,
+   "name": "Taj Lake Palace, Udaipur",
+   "fetched": "2026-11-25"
+  },
+  "taj-lalit-bagh-udaipur": {
+   "rating": 4.5,
+   "reviewCount": 237,
+   "name": "Taj Lalit Bagh, Udaipur",
+   "fetched": "2026-11-25"
+  },
+  "telegraphenamt": {
+   "rating": 4.5,
+   "reviewCount": 511,
+   "name": "Hotel Telegraphenamt",
+   "fetched": "2026-11-25"
+  },
+  "terra-dominicata": {
+   "rating": 4.8,
+   "reviewCount": 967,
+   "name": "Terra Dominicata - Hotel & Winery",
+   "fetched": "2026-11-25"
+  },
+  "the-alpina-gstaad": {
+   "rating": 4.7,
+   "reviewCount": 604,
+   "name": "The Alpina Gstaad",
+   "fetched": "2026-11-25"
+  },
+  "the-amauris-vienna": {
+   "rating": 4.9,
+   "reviewCount": 263,
+   "name": "The Amauris Vienna - Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "the-apurva-kempinski-bali": {
+   "rating": 4.8,
+   "reviewCount": 17284,
+   "name": "The Apurva Kempinski Bali",
+   "fetched": "2026-11-25"
+  },
+  "the-balmoral": {
+   "rating": 4.7,
+   "reviewCount": 3374,
+   "name": "The Balmoral, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-barcelona-edition": {
+   "rating": 4.4,
+   "reviewCount": 781,
+   "name": "The Barcelona EDITION",
+   "fetched": "2026-11-25"
+  },
+  "the-battery": {
+   "rating": 4.6,
+   "reviewCount": 702,
+   "name": "The Battery",
+   "fetched": "2026-11-25"
+  },
+  "the-beaumont-hotel": {
+   "rating": 4.7,
+   "reviewCount": 831,
+   "name": "The Beaumont Mayfair",
+   "fetched": "2026-11-25"
+  },
+  "the-berkeley-london": {
+   "rating": 4.6,
+   "reviewCount": 2049,
+   "name": "The Berkeley",
+   "fetched": "2026-11-25"
+  },
+  "the-bernic-hotel-new-york-city": {
+   "rating": 4.2,
+   "reviewCount": 890,
+   "name": "The Bernic Hotel New York City, Tapestry Collection by Hilton",
+   "fetched": "2026-11-25"
+  },
+  "the-boatshed-waiheke": {
+   "rating": 4.9,
+   "reviewCount": 105,
+   "name": "The Boatshed Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-bodrum-edition": {
+   "rating": 4.4,
+   "reviewCount": 1058,
+   "name": "The Bodrum EDITION",
+   "fetched": "2026-11-25"
+  },
+  "the-brando": {
+   "rating": 4.7,
+   "reviewCount": 271,
+   "name": "The Brando",
+   "fetched": "2026-11-25"
+  },
+  "the-breakers": {
+   "rating": 4.8,
+   "reviewCount": 6584,
+   "name": "The Breakers Palm Beach",
+   "fetched": "2026-11-25"
+  },
+  "the-breakers-palm-beach": {
+   "rating": 4.8,
+   "reviewCount": 6584,
+   "name": "The Breakers Palm Beach",
+   "fetched": "2026-11-25"
+  },
+  "the-burman-hotel": {
+   "rating": 4.8,
+   "reviewCount": 61,
+   "name": "The Burman Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-cadogan-a-belmond-hotel-london": {
+   "rating": 4.7,
+   "reviewCount": 450,
+   "name": "The Cadogan, A Belmond Hotel, London",
+   "fetched": "2026-11-25"
+  },
+  "the-calile-hotel-brisbane": {
+   "rating": 4.5,
+   "reviewCount": 1386,
+   "name": "The Calile Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-cape-cabo": {
+   "rating": 4.7,
+   "reviewCount": 1820,
+   "name": "The Cape, a Thompson Hotel, by Hyatt",
+   "fetched": "2026-11-25"
+  },
+  "the-capitol-hotel-tokyu": {
+   "rating": 4.5,
+   "reviewCount": 3174,
+   "name": "The Capitol Hotel Tokyu",
+   "fetched": "2026-11-25"
+  },
+  "the-carlton-milan-a-rocco-forte-hotel": {
+   "rating": 4.8,
+   "reviewCount": 87,
+   "name": "The Carlton, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-carlyle-new-york": {
+   "rating": 4.5,
+   "reviewCount": 1263,
+   "name": "The Carlyle, A Rosewood Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-caves-jamaica": {
+   "rating": 4.7,
+   "reviewCount": 305,
+   "name": "The Caves Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-chancery-rosewood": {
+   "rating": 4.1,
+   "reviewCount": 482,
+   "name": "The Chancery Rosewood",
+   "fetched": "2026-11-25"
+  },
+  "the-chanler-at-cliff-walk": {
+   "rating": 4.6,
+   "reviewCount": 527,
+   "name": "The Chanler at Cliff Walk",
+   "fetched": "2026-11-25"
+  },
+  "the-chedi-andermatt": {
+   "rating": 4.6,
+   "reviewCount": 2835,
+   "name": "The Chedi Andermatt",
+   "fetched": "2026-11-25"
+  },
+  "the-chedi-muscat": {
+   "rating": 4.6,
+   "reviewCount": 3642,
+   "name": "The Chedi Muscat",
+   "fetched": "2026-11-25"
+  },
+  "the-connaught-london": {
+   "rating": 4.7,
+   "reviewCount": 2495,
+   "name": "The Connaught",
+   "fetched": "2026-11-25"
+  },
+  "the-cosmopolitan-las-vegas": {
+   "rating": 4.6,
+   "reviewCount": 79272,
+   "name": "The Cosmopolitan of Las Vegas",
+   "fetched": "2026-11-25"
+  },
+  "the-datai-langkawi": {
+   "rating": 4.7,
+   "reviewCount": 1193,
+   "name": "The Datai Langkawi",
+   "fetched": "2026-11-25"
+  },
+  "the-dolder-grand-zurich": {
+   "rating": 4.7,
+   "reviewCount": 4215,
+   "name": "The Dolder Grand",
+   "fetched": "2026-11-25"
+  },
+  "the-dolli-at-acropolis": {
+   "rating": 4.6,
+   "reviewCount": 594,
+   "name": "THE DOLLI® at Acropolis, A Hotel to Live®",
+   "fetched": "2026-11-25"
+  },
+  "the-dorchester-dorchester-collection": {
+   "rating": 4.6,
+   "reviewCount": 4629,
+   "name": "The Dorchester",
+   "fetched": "2026-11-25"
+  },
+  "the-dorchester-london": {
+   "rating": 4.6,
+   "reviewCount": 4629,
+   "name": "The Dorchester",
+   "fetched": "2026-11-25"
+  },
+  "the-edge-bali": {
+   "rating": 4.7,
+   "reviewCount": 2153,
+   "name": "The edge",
+   "fetched": "2026-11-25"
+  },
+  "the-emory-london": {
+   "rating": 4.7,
+   "reviewCount": 148,
+   "name": "The Emory",
+   "fetched": "2026-11-25"
+  },
+  "the-fife-arms": {
+   "rating": 4.5,
+   "reviewCount": 1327,
+   "name": "The Fife Arms",
+   "fetched": "2026-11-25"
+  },
+  "the-fifth-avenue-hotel-new-york": {
+   "rating": 4.6,
+   "reviewCount": 298,
+   "name": "The Fifth Avenue Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-fontenay": {
+   "rating": 4.6,
+   "reviewCount": 1230,
+   "name": "The Fontenay",
+   "fetched": "2026-11-25"
+  },
+  "the-fullerton-bay-singapore": {
+   "rating": 4.6,
+   "reviewCount": 4317,
+   "name": "The Fullerton Bay Hotel Singapore",
+   "fetched": "2026-11-25"
+  },
+  "the-greenwich-hotel-new-york": {
+   "rating": 4.6,
+   "reviewCount": 442,
+   "name": "The Greenwich Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-gritti-palace-a-luxury-collection-hotel-venice": {
+   "rating": 4.6,
+   "reviewCount": 1397,
+   "name": "The Gritti Palace, a Luxury Collection Hotel, Venice",
+   "fetched": "2026-11-25"
+  },
+  "the-hay-adams-hotel": {
+   "rating": 4.6,
+   "reviewCount": 1472,
+   "name": "The Hay-Adams",
+   "fetched": "2026-11-25"
+  },
+  "the-hazelton-hotel": {
+   "rating": 4.7,
+   "reviewCount": 862,
+   "name": "The Hazelton Hotel Toronto",
+   "fetched": "2026-11-25"
+  },
+  "the-hermitage-hotel": {
+   "rating": 4.7,
+   "reviewCount": 1473,
+   "name": "The Hermitage Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-hiramatsu-karuizawa-miyota": {
+   "rating": 4.5,
+   "reviewCount": 315,
+   "name": "THE HIRAMATSU KARUIZAWA MIYOTA",
+   "fetched": "2026-11-25"
+  },
+  "the-hornibrook-mansion": {
+   "rating": 4.8,
+   "reviewCount": 225,
+   "name": "The Empress of Little Rock",
+   "fetched": "2026-11-25"
+  },
+  "the-inn-at-little-washington": {
+   "rating": 4.7,
+   "reviewCount": 1229,
+   "name": "The Inn at Little Washington",
+   "fetched": "2026-11-25"
+  },
+  "the-ivy-hotel": {
+   "rating": 4.8,
+   "reviewCount": 357,
+   "name": "The Ivy Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-jefferson": {
+   "rating": 4.7,
+   "reviewCount": 807,
+   "name": "The Jefferson, D.C.",
+   "fetched": "2026-11-25"
+  },
+  "the-johri-jaipur": {
+   "rating": 4.4,
+   "reviewCount": 944,
+   "name": "The Johri Jaipur",
+   "fetched": "2026-11-25"
+  },
+  "the-karl-lagerfeld": {
+   "rating": 4.6,
+   "reviewCount": 154,
+   "name": "THE KARL LAGERFELD",
+   "fetched": "2026-11-25"
+  },
+  "the-kumaon": {
+   "rating": 4.7,
+   "reviewCount": 1287,
+   "name": "The Kumaon",
+   "fetched": "2026-11-25"
+  },
+  "the-lana-dorchester-dubai": {
+   "rating": 4.4,
+   "reviewCount": 1327,
+   "name": "The Lana - Dorchester Collection",
+   "fetched": "2026-11-25"
+  },
+  "the-landmark-mandarin-oriental-hong-kong": {
+   "rating": 4.5,
+   "reviewCount": 770,
+   "name": "Mandarin Oriental The Landmark, Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "the-lanesborough": {
+   "rating": 4.7,
+   "reviewCount": 1823,
+   "name": "The Lanesborough, Oetker Hotels",
+   "fetched": "2026-11-25"
+  },
+  "the-langham-boston": {
+   "rating": 4.6,
+   "reviewCount": 1978,
+   "name": "The Langham, Boston",
+   "fetched": "2026-11-25"
+  },
+  "the-langham-chicago": {
+   "rating": 4.7,
+   "reviewCount": 2670,
+   "name": "The Langham, Chicago",
+   "fetched": "2026-11-25"
+  },
+  "the-langham-jakarta": {
+   "rating": 4.8,
+   "reviewCount": 7119,
+   "name": "The Langham, Jakarta",
+   "fetched": "2026-11-25"
+  },
+  "the-langham-london": {
+   "rating": 4.7,
+   "reviewCount": 4344,
+   "name": "The Langham, London",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-hyderabad": {
+   "rating": 4.4,
+   "reviewCount": 1034,
+   "name": "The Leela Hyderabad",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-palace-bengaluru-garden-citys": {
+   "rating": 4.6,
+   "reviewCount": 37417,
+   "name": "The Leela Palace Bengaluru - Garden City's Only Modern Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-palace-chennai-seaside-modern": {
+   "rating": 4.6,
+   "reviewCount": 16472,
+   "name": "The Leela Palace Chennai - Seaside Modern Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-palace-jaipur": {
+   "rating": 4.6,
+   "reviewCount": 4671,
+   "name": "The Leela Palace Jaipur",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-palace-new-delhi-the": {
+   "rating": 4.6,
+   "reviewCount": 15368,
+   "name": "The Leela Palace New Delhi - The Capital's Only Modern Palace Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-leela-palace-udaipur-udaipurs-only": {
+   "rating": 4.6,
+   "reviewCount": 3437,
+   "name": "The Leela Palace Udaipur : Udaipur's Only Modern Palace Hotel By Lake Pichola",
+   "fetched": "2026-11-25"
+  },
+  "the-legian-seminyak": {
+   "rating": 4.7,
+   "reviewCount": 1760,
+   "name": "The Legian Seminyak, Bali",
+   "fetched": "2026-11-25"
+  },
+  "the-library-samui": {
+   "rating": 4.5,
+   "reviewCount": 947,
+   "name": "The Library Samui",
+   "fetched": "2026-11-25"
+  },
+  "the-lindis-ahuriri": {
+   "rating": 4.9,
+   "reviewCount": 98,
+   "name": "The Lindis Lodge",
+   "fetched": "2026-11-25"
+  },
+  "the-lodge-at-blue-sky-auberge-resorts-collection": {
+   "rating": 4.8,
+   "reviewCount": 274,
+   "name": "The Lodge at Blue Sky, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "the-lodge-at-primland-auberge-collection": {
+   "rating": 4.7,
+   "reviewCount": 648,
+   "name": "The Lodge at Primland, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "the-london-nyc": {
+   "rating": 4.0,
+   "reviewCount": 505,
+   "name": "The London, a Luxury Collection Hotel, New York City",
+   "fetched": "2026-11-25"
+  },
+  "the-loren-pink-beach-bermuda": {
+   "rating": 4.5,
+   "reviewCount": 473,
+   "name": "The Loren at Pink Beach",
+   "fetched": "2026-11-25"
+  },
+  "the-louise-barossa": {
+   "rating": 4.8,
+   "reviewCount": 194,
+   "name": "The Louise, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "the-loutrel": {
+   "rating": 4.9,
+   "reviewCount": 392,
+   "name": "The Loutrel",
+   "fetched": "2026-11-25"
+  },
+  "the-lowell": {
+   "rating": 4.6,
+   "reviewCount": 394,
+   "name": "The Lowell Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-madrona": {
+   "rating": 4.7,
+   "reviewCount": 404,
+   "name": "The Madrona",
+   "fetched": "2026-11-25"
+  },
+  "the-mark-new-york": {
+   "rating": 4.5,
+   "reviewCount": 956,
+   "name": "The Mark Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-marquesa-hotel": {
+   "rating": 4.8,
+   "reviewCount": 371,
+   "name": "Marquesa Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-maybourne-riviera": {
+   "rating": 4.6,
+   "reviewCount": 1293,
+   "name": "The Maybourne Riviera",
+   "fetched": "2026-11-25"
+  },
+  "the-merrion": {
+   "rating": 4.7,
+   "reviewCount": 2012,
+   "name": "The Merrion Hotel Dublin",
+   "fetched": "2026-11-25"
+  },
+  "the-mitsui-kyoto": {
+   "rating": 4.6,
+   "reviewCount": 1170,
+   "name": "HOTEL THE MITSUI KYOTO, a Luxury Collection Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "the-naka-island-a-luxury-collection": {
+   "rating": 4.7,
+   "reviewCount": 1032,
+   "name": "The Naka Island, a Luxury Collection Resort & Spa, Phuket",
+   "fetched": "2026-11-25"
+  },
+  "the-newbury-boston": {
+   "rating": 4.2,
+   "reviewCount": 501,
+   "name": "The Newbury Boston",
+   "fetched": "2026-11-25"
+  },
+  "the-newt-in-somerset": {
+   "rating": 4.5,
+   "reviewCount": 1301,
+   "name": "The Newt in Somerset",
+   "fetched": "2026-11-25"
+  },
+  "the-oberoi-beach-resort-bali": {
+   "rating": 4.7,
+   "reviewCount": 900,
+   "name": "The Oberoi, Bali",
+   "fetched": "2026-11-25"
+  },
+  "the-oberoi-beach-resort-lombok": {
+   "rating": 4.7,
+   "reviewCount": 571,
+   "name": "The Oberoi, Lombok",
+   "fetched": "2026-11-25"
+  },
+  "the-oberoi-bengaluru": {
+   "rating": 4.7,
+   "reviewCount": 10141,
+   "name": "The Oberoi, Bengaluru",
+   "fetched": "2026-11-25"
+  },
+  "the-oberoi-marrakech": {
+   "rating": 4.8,
+   "reviewCount": 849,
+   "name": "The Oberoi, Marrakech",
+   "fetched": "2026-11-25"
+  },
+  "the-oberoi-mumbai": {
+   "rating": 4.7,
+   "reviewCount": 11669,
+   "name": "The Oberoi, Mumbai",
+   "fetched": "2026-11-25"
+  },
+  "the-ocean-club-bahamas": {
+   "rating": 4.6,
+   "reviewCount": 937,
+   "name": "The Ocean Club, A Four Seasons Resort, Bahamas",
+   "fetched": "2026-11-25"
+  },
+  "the-okura-prestige-bangkok": {
+   "rating": 4.7,
+   "reviewCount": 4468,
+   "name": "The Okura Prestige Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "the-okura-tokyo": {
+   "rating": 4.4,
+   "reviewCount": 5863,
+   "name": "The Okura Tokyo",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-bangkok": {
+   "rating": 4.7,
+   "reviewCount": 5062,
+   "name": "The Peninsula Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-chicago": {
+   "rating": 4.7,
+   "reviewCount": 2877,
+   "name": "The Peninsula Chicago",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-hong-kong": {
+   "rating": 4.6,
+   "reviewCount": 7711,
+   "name": "The Peninsula Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-istanbul": {
+   "rating": 4.5,
+   "reviewCount": 1631,
+   "name": "The Peninsula Istanbul",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-new-york": {
+   "rating": 4.5,
+   "reviewCount": 1832,
+   "name": "The Peninsula New York",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-paris": {
+   "rating": 4.7,
+   "reviewCount": 4130,
+   "name": "The Peninsula Paris",
+   "fetched": "2026-11-25"
+  },
+  "the-peninsula-shanghai": {
+   "rating": 4.6,
+   "reviewCount": 231,
+   "name": "The Peninsula Shanghai",
+   "fetched": "2026-11-25"
+  },
+  "the-plaza-new-york": {
+   "rating": 4.5,
+   "reviewCount": 6761,
+   "name": "The Plaza",
+   "fetched": "2026-11-25"
+  },
+  "the-pod-singapore": {
+   "rating": 4.3,
+   "reviewCount": 1294,
+   "name": "The Pod Boutique Capsule Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-remote-resort": {
+   "rating": 4.9,
+   "reviewCount": 109,
+   "name": "The Remote Resort on Fiji Islands",
+   "fetched": "2026-11-25"
+  },
+  "the-resort-at-paws-up": {
+   "rating": 4.5,
+   "reviewCount": 297,
+   "name": "Paws Up Montana",
+   "fetched": "2026-11-25"
+  },
+  "the-retreat-blue-lagoon-iceland": {
+   "rating": 4.6,
+   "reviewCount": 654,
+   "name": "The Retreat at Blue Lagoon Iceland",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-bangkok": {
+   "rating": 4.7,
+   "reviewCount": 809,
+   "name": "The Ritz-Carlton, Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-berlin": {
+   "rating": 4.6,
+   "reviewCount": 3342,
+   "name": "The Ritz-Carlton, Berlin",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-dove-mountain": {
+   "rating": 4.6,
+   "reviewCount": 1643,
+   "name": "The Ritz-Carlton, Dove Mountain",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-fukuoka": {
+   "rating": 4.5,
+   "reviewCount": 1240,
+   "name": "The Ritz-Carlton, Fukuoka",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-koh-samui": {
+   "rating": 4.4,
+   "reviewCount": 1238,
+   "name": "The Ritz-Carlton, Koh Samui",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-melbourne": {
+   "rating": 4.5,
+   "reviewCount": 1029,
+   "name": "The Ritz-Carlton, Melbourne",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-carlton-new-york-nomad": {
+   "rating": 4.4,
+   "reviewCount": 681,
+   "name": "The Ritz-Carlton New York, NoMad",
+   "fetched": "2026-11-25"
+  },
+  "the-ritz-london": {
+   "rating": 4.6,
+   "reviewCount": 7981,
+   "name": "The Ritz London",
+   "fetched": "2026-11-25"
+  },
+  "the-royal-crescent-hotel-and-spa": {
+   "rating": 4.6,
+   "reviewCount": 776,
+   "name": "The Royal Crescent Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "the-ruma-hotel-and-residences": {
+   "rating": 4.6,
+   "reviewCount": 2628,
+   "name": "The Ruma Hotel and Residences",
+   "fetched": "2026-11-25"
+  },
+  "the-samling-hotel": {
+   "rating": 4.7,
+   "reviewCount": 306,
+   "name": "The Samling Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-sanchaya": {
+   "rating": 4.8,
+   "reviewCount": 470,
+   "name": "The Sanchaya - The Leading Hotels of The World",
+   "fetched": "2026-11-25"
+  },
+  "the-sarojin": {
+   "rating": 4.8,
+   "reviewCount": 739,
+   "name": "The Sarojin",
+   "fetched": "2026-11-25"
+  },
+  "the-savoy-london": {
+   "rating": 4.7,
+   "reviewCount": 11174,
+   "name": "The Savoy",
+   "fetched": "2026-11-25"
+  },
+  "the-shilla-seoul": {
+   "rating": 4.6,
+   "reviewCount": 7633,
+   "name": "THE SHILLA Seoul",
+   "fetched": "2026-11-25"
+  },
+  "the-shinmonzen-kyoto": {
+   "rating": 4.8,
+   "reviewCount": 75,
+   "name": "The Shinmonzen",
+   "fetched": "2026-11-25"
+  },
+  "the-silo-hotel-cape-town": {
+   "rating": 4.7,
+   "reviewCount": 2001,
+   "name": "The Silo Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-singapore-edition": {
+   "rating": 4.4,
+   "reviewCount": 503,
+   "name": "The Singapore EDITION",
+   "fetched": "2026-11-25"
+  },
+  "the-singular-patagonia": {
+   "rating": 4.7,
+   "reviewCount": 1141,
+   "name": "The Singular Patagonia, Puerto Bories Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-sira-lombok": {
+   "rating": 4.8,
+   "reviewCount": 296,
+   "name": "The Sira, a Luxury Collection Resort and Spa, Lombok",
+   "fetched": "2026-11-25"
+  },
+  "the-slate-phuket": {
+   "rating": 4.7,
+   "reviewCount": 2232,
+   "name": "The Slate Phuket",
+   "fetched": "2026-11-25"
+  },
+  "the-st-regis-cairo": {
+   "rating": 4.7,
+   "reviewCount": 5641,
+   "name": "The St. Regis Cairo",
+   "fetched": "2026-11-25"
+  },
+  "the-st-regis-downtown-dubai": {
+   "rating": 4.6,
+   "reviewCount": 3991,
+   "name": "The St. Regis Downtown Dubai",
+   "fetched": "2026-11-25"
+  },
+  "the-st-regis-new-york": {
+   "rating": 4.5,
+   "reviewCount": 1916,
+   "name": "The St. Regis New York",
+   "fetched": "2026-11-25"
+  },
+  "the-st-regis-rome": {
+   "rating": 4.7,
+   "reviewCount": 2104,
+   "name": "The St. Regis Rome",
+   "fetched": "2026-11-25"
+  },
+  "the-stanley-hotel-estes-park": {
+   "rating": 4.4,
+   "reviewCount": 18021,
+   "name": "The Stanley Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-stavrand": {
+   "rating": 4.7,
+   "reviewCount": 83,
+   "name": "The Stavrand Russian River Valley",
+   "fetched": "2026-11-25"
+  },
+  "the-sukhothai-bangkok": {
+   "rating": 4.6,
+   "reviewCount": 2760,
+   "name": "The Sukhothai Bangkok Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-surrey-a-corinthia-hotel": {
+   "rating": 4.4,
+   "reviewCount": 400,
+   "name": "The Surrey, A Corinthia Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-swag": {
+   "rating": 4.8,
+   "reviewCount": 279,
+   "name": "The Swag",
+   "fetched": "2026-11-25"
+  },
+  "the-taj-mahal-palace-mumbai": {
+   "rating": 4.7,
+   "reviewCount": 34356,
+   "name": "The Taj Mahal Palace, Mumbai",
+   "fetched": "2026-11-25"
+  },
+  "the-telegraph-hotel": {
+   "rating": 4.7,
+   "reviewCount": 933,
+   "name": "The Telegraph Hotel - The Leading Hotels of the World",
+   "fetched": "2026-11-25"
+  },
+  "the-times-square-edition-new-york": {
+   "rating": 4.4,
+   "reviewCount": 1839,
+   "name": "The Times Square EDITION",
+   "fetched": "2026-11-25"
+  },
+  "the-tokyo-edition-toranomon": {
+   "rating": 4.2,
+   "reviewCount": 1191,
+   "name": "The Tokyo EDITION, Toranomon",
+   "fetched": "2026-11-25"
+  },
+  "the-twenty-two": {
+   "rating": 4.5,
+   "reviewCount": 330,
+   "name": "The Twenty Two London",
+   "fetched": "2026-11-25"
+  },
+  "the-ungasan-bali": {
+   "rating": 4.7,
+   "reviewCount": 1378,
+   "name": "The Ungasan Clifftop Resort",
+   "fetched": "2026-11-25"
+  },
+  "the-upper-house-hk": {
+   "rating": 4.6,
+   "reviewCount": 907,
+   "name": "Upper House Hong Kong",
+   "fetched": "2026-11-25"
+  },
+  "the-vines-resort-mendoza": {
+   "rating": 4.7,
+   "reviewCount": 899,
+   "name": "The Vines Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "the-vineta": {
+   "rating": 4.6,
+   "reviewCount": 56,
+   "name": "The Vineta Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-westin-langkawi-resort-and-spa": {
+   "rating": 4.5,
+   "reviewCount": 3106,
+   "name": "The Westin Langkawi Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "the-whitby-hotel": {
+   "rating": 4.6,
+   "reviewCount": 612,
+   "name": "The Whitby Hotel",
+   "fetched": "2026-11-25"
+  },
+  "the-woodward": {
+   "rating": 4.7,
+   "reviewCount": 266,
+   "name": "The Woodward, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "therasia-resort-sea-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 592,
+   "name": "Therasia Resort",
+   "fetched": "2026-11-25"
+  },
+  "thorngrove-manor": {
+   "rating": 4.8,
+   "reviewCount": 51,
+   "name": "Thorngrove Manor House",
+   "fetched": "2026-11-25"
+  },
+  "thyme": {
+   "rating": 4.6,
+   "reviewCount": 367,
+   "name": "Thyme – Hotel, Restaurant, Spa",
+   "fetched": "2026-11-25"
+  },
+  "tierra-atacama-hotel-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 267,
+   "name": "Tierra Atacama, Beckons",
+   "fetched": "2026-11-25"
+  },
+  "tierra-patagonia-chile": {
+   "rating": 4.8,
+   "reviewCount": 279,
+   "name": "Tierra Patagonia",
+   "fetched": "2026-11-25"
+  },
+  "tivoli-la-caleta-tenerife": {
+   "rating": 4.7,
+   "reviewCount": 2086,
+   "name": "Tivoli La Caleta Tenerife Resort",
+   "fetched": "2026-11-25"
+  },
+  "top-hotel-hochgurgl": {
+   "rating": 4.4,
+   "reviewCount": 330,
+   "name": "TOP Hotel Hochgurgl",
+   "fetched": "2026-11-25"
+  },
+  "torre-del-marques-hotel-spa-and-winery": {
+   "rating": 4.7,
+   "reviewCount": 607,
+   "name": "Torre del Marqués Hotel Spa & Winery, an SLH Hotel",
+   "fetched": "2026-11-25"
+  },
+  "tortuga-bay-puntacana": {
+   "rating": 4.8,
+   "reviewCount": 480,
+   "name": "Tortuga Bay Hotel at Puntacana Resort",
+   "fetched": "2026-11-25"
+  },
+  "tourists": {
+   "rating": 4.7,
+   "reviewCount": 317,
+   "name": "TOURISTS",
+   "fetched": "2026-11-25"
+  },
+  "triple-creek-ranch": {
+   "rating": 4.9,
+   "reviewCount": 153,
+   "name": "Triple Creek Ranch | Relais & Châteaux",
+   "fetched": "2026-11-25"
+  },
+  "trisara-phuket": {
+   "rating": 4.7,
+   "reviewCount": 656,
+   "name": "Trisara",
+   "fetched": "2026-11-25"
+  },
+  "troisgros": {
+   "rating": 4.8,
+   "reviewCount": 1284,
+   "name": "Restaurant Troisgros Le Bois sans feuilles",
+   "fetched": "2026-11-25"
+  },
+  "turtle-inn-belize": {
+   "rating": 4.7,
+   "reviewCount": 383,
+   "name": "Turtle Inn - A Coppola Hideaway",
+   "fetched": "2026-11-25"
+  },
+  "twa-hotel": {
+   "rating": 4.2,
+   "reviewCount": 10476,
+   "name": "TWA Hotel",
+   "fetched": "2026-11-25"
+  },
+  "twin-farms-vermont": {
+   "rating": 4.7,
+   "reviewCount": 111,
+   "name": "Twin Farms",
+   "fetched": "2026-11-25"
+  },
+  "umaid-bhawan-palace-jodhpur": {
+   "rating": 4.5,
+   "reviewCount": 30865,
+   "name": "Umaid Bhawan Palace, Jodhpur",
+   "fetched": "2026-11-25"
+  },
+  "vakkaru-maldives": {
+   "rating": 4.8,
+   "reviewCount": 213,
+   "name": "Vakkaru Maldives",
+   "fetched": "2026-11-25"
+  },
+  "vana-belle-a-luxury-collection-resort": {
+   "rating": 4.8,
+   "reviewCount": 1024,
+   "name": "Vana Belle, a Luxury Collection Resort, Koh Samui",
+   "fetched": "2026-11-25"
+  },
+  "velaa-private-island": {
+   "rating": 4.8,
+   "reviewCount": 241,
+   "name": "Velaa Private Island Maldives",
+   "fetched": "2026-11-25"
+  },
+  "vetera-matera": {
+   "rating": 4.8,
+   "reviewCount": 106,
+   "name": "Vetera Matera",
+   "fetched": "2026-11-25"
+  },
+  "viceroy-los-cabos": {
+   "rating": 4.6,
+   "reviewCount": 1829,
+   "name": "Viceroy Los Cabos",
+   "fetched": "2026-11-25"
+  },
+  "viceroy-riviera-maya": {
+   "rating": 4.6,
+   "reviewCount": 931,
+   "name": "Viceroy Riviera Maya, a Luxury Villa Resort",
+   "fetched": "2026-11-25"
+  },
+  "vik-chile": {
+   "rating": 4.6,
+   "reviewCount": 596,
+   "name": "Vik Chile Retreats",
+   "fetched": "2026-11-25"
+  },
+  "vila-vita-parc": {
+   "rating": 4.8,
+   "reviewCount": 3010,
+   "name": "Vila Vita Parc",
+   "fetched": "2026-11-25"
+  },
+  "villa-bokeh": {
+   "rating": 4.5,
+   "reviewCount": 532,
+   "name": "Villa Bokéh - Relais & Chateaux",
+   "fetched": "2026-11-25"
+  },
+  "villa-contessa": {
+   "rating": 4.9,
+   "reviewCount": 698,
+   "name": "Villa Contessa - Luxury Spa Hotels",
+   "fetched": "2026-11-25"
+  },
+  "villa-cora": {
+   "rating": 4.7,
+   "reviewCount": 870,
+   "name": "Villa Cora",
+   "fetched": "2026-11-25"
+  },
+  "villa-deste-como": {
+   "rating": 4.7,
+   "reviewCount": 3372,
+   "name": "Villa d'Este",
+   "fetched": "2026-11-25"
+  },
+  "villa-eden-the-private-retreat": {
+   "rating": 4.7,
+   "reviewCount": 69,
+   "name": "VILLA EDEN - The Private Retreat",
+   "fetched": "2026-11-25"
+  },
+  "villa-igiea-a-rocco-forte-hotel": {
+   "rating": 4.6,
+   "reviewCount": 1819,
+   "name": "Villa Igiea, a Rocco Forte hotel",
+   "fetched": "2026-11-25"
+  },
+  "villa-la-coste": {
+   "rating": 4.7,
+   "reviewCount": 547,
+   "name": "Villa La Coste",
+   "fetched": "2026-11-25"
+  },
+  "villa-la-massa": {
+   "rating": 4.8,
+   "reviewCount": 636,
+   "name": "Villa la Massa",
+   "fetched": "2026-11-25"
+  },
+  "villa-nai-33": {
+   "rating": 4.8,
+   "reviewCount": 86,
+   "name": "Villa Nai 3.3",
+   "fetched": "2026-11-25"
+  },
+  "villa-san-michele-a-belmond-hotel-florence": {
+   "rating": 4.7,
+   "reviewCount": 580,
+   "name": "Villa San Michele, A Belmond Hotel, Florence",
+   "fetched": "2026-11-25"
+  },
+  "villa-santandrea-a-belmond-hotel": {
+   "rating": 4.6,
+   "reviewCount": 470,
+   "name": "Villa Sant'Andrea, A Belmond Hotel, Taormina Mare",
+   "fetched": "2026-11-25"
+  },
+  "villeroy": {
+   "rating": 4.8,
+   "reviewCount": 116,
+   "name": "Maison Villeroy",
+   "fetched": "2026-11-25"
+  },
+  "vincci-seleccion-la-plantacion-del-sur-tenerife": {
+   "rating": 4.7,
+   "reviewCount": 2611,
+   "name": "Hotel Vincci Selección La Plantación del Sur",
+   "fetched": "2026-11-25"
+  },
+  "vitalhotel-alter-meierhof": {
+   "rating": 4.6,
+   "reviewCount": 1010,
+   "name": "Alter Meierhof",
+   "fetched": "2026-11-25"
+  },
+  "w-algarve": {
+   "rating": 4.5,
+   "reviewCount": 923,
+   "name": "W Algarve",
+   "fetched": "2026-11-25"
+  },
+  "w-bali-seminyak": {
+   "rating": 4.6,
+   "reviewCount": 6625,
+   "name": "W Bali - Seminyak",
+   "fetched": "2026-11-25"
+  },
+  "w-koh-samui": {
+   "rating": 4.6,
+   "reviewCount": 1360,
+   "name": "W Koh Samui",
+   "fetched": "2026-11-25"
+  },
+  "w-maldives": {
+   "rating": 4.8,
+   "reviewCount": 726,
+   "name": "W Maldives",
+   "fetched": "2026-11-25"
+  },
+  "w-new-york-times-square": {
+   "rating": 4.2,
+   "reviewCount": 3786,
+   "name": "W New York - Times Square",
+   "fetched": "2026-11-25"
+  },
+  "w-osaka": {
+   "rating": 4.3,
+   "reviewCount": 2135,
+   "name": "W Osaka",
+   "fetched": "2026-11-25"
+  },
+  "w-punta-cana-all-inclusive": {
+   "rating": 4.2,
+   "reviewCount": 382,
+   "name": "W Punta Cana, Adult All-Inclusive",
+   "fetched": "2026-11-25"
+  },
+  "w-sardinia": {
+   "rating": 4.4,
+   "reviewCount": 95,
+   "name": "W Sardinia - Poltu Quatu",
+   "fetched": "2026-11-25"
+  },
+  "w-sydney": {
+   "rating": 4.0,
+   "reviewCount": 2069,
+   "name": "W Sydney",
+   "fetched": "2026-11-25"
+  },
+  "wakax-hacienda": {
+   "rating": 4.8,
+   "reviewCount": 207,
+   "name": "Hacienda Wakax",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-amsterdam": {
+   "rating": 4.8,
+   "reviewCount": 1615,
+   "name": "Waldorf Astoria Amsterdam",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-bangkok": {
+   "rating": 4.7,
+   "reviewCount": 2965,
+   "name": "Waldorf Astoria Bangkok",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-berlin": {
+   "rating": 4.5,
+   "reviewCount": 3480,
+   "name": "Waldorf Astoria Berlin",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-beverly-hills": {
+   "rating": 4.6,
+   "reviewCount": 2033,
+   "name": "Waldorf Astoria Beverly Hills",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-chicago": {
+   "rating": 4.7,
+   "reviewCount": 2270,
+   "name": "Waldorf Astoria Chicago",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-difc-dubai": {
+   "rating": 4.8,
+   "reviewCount": 2911,
+   "name": "Waldorf Astoria Dubai International Financial Centre",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-doha-lusail": {
+   "rating": 4.8,
+   "reviewCount": 8194,
+   "name": "Waldorf Astoria Doha Lusail",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-las-vegas": {
+   "rating": 4.5,
+   "reviewCount": 3215,
+   "name": "Waldorf Astoria Las Vegas",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-los-cabos-pedregal": {
+   "rating": 4.8,
+   "reviewCount": 2053,
+   "name": "Waldorf Astoria Los Cabos Pedregal",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-maldives": {
+   "rating": 4.7,
+   "reviewCount": 646,
+   "name": "Waldorf Astoria Maldives Ithaafushi",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-new-york": {
+   "rating": 4.4,
+   "reviewCount": 2169,
+   "name": "Waldorf Astoria New York",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-osaka": {
+   "rating": 4.5,
+   "reviewCount": 783,
+   "name": "Waldorf Astoria Osaka",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-riviera-maya": {
+   "rating": 4.5,
+   "reviewCount": 729,
+   "name": "Waldorf Astoria Riviera Maya, an All-Inclusive Experience",
+   "fetched": "2026-11-25"
+  },
+  "waldorf-astoria-seychelles-platte": {
+   "rating": 4.9,
+   "reviewCount": 187,
+   "name": "Waldorf Astoria Seychelles Platte Island",
+   "fetched": "2026-11-25"
+  },
+  "wallingford-homestead": {
+   "rating": 5.0,
+   "reviewCount": 116,
+   "name": "Wallingford Homestead",
+   "fetched": "2026-11-25"
+  },
+  "warren-street-hotel": {
+   "rating": 4.7,
+   "reviewCount": 88,
+   "name": "Warren Street Hotel",
+   "fetched": "2026-11-25"
+  },
+  "washington-school-house-hotel": {
+   "rating": 4.9,
+   "reviewCount": 127,
+   "name": "Washington School House Hotel",
+   "fetched": "2026-11-25"
+  },
+  "weissenhaus-private-nature-luxury-resort": {
+   "rating": 4.8,
+   "reviewCount": 588,
+   "name": "WEISSENHAUS Private Nature Luxury Resort",
+   "fetched": "2026-11-25"
+  },
+  "wellness-and-sport-hotel-jagdhof": {
+   "rating": 4.7,
+   "reviewCount": 1482,
+   "name": "5-Sterne Wellness- & Sporthotel Jagdhof",
+   "fetched": "2026-11-25"
+  },
+  "westin-bora-bora": {
+   "rating": 4.6,
+   "reviewCount": 354,
+   "name": "The Westin Bora Bora Resort & Spa",
+   "fetched": "2026-11-25"
+  },
+  "wharekauhau-country-estate": {
+   "rating": 4.8,
+   "reviewCount": 116,
+   "name": "Wharekauhau Country Estate",
+   "fetched": "2026-11-25"
+  },
+  "whatley-manor-hotel-and-spa": {
+   "rating": 4.7,
+   "reviewCount": 658,
+   "name": "Whatley Manor Hotel & Spa",
+   "fetched": "2026-11-25"
+  },
+  "wickaninnish-inn-tofino": {
+   "rating": 4.5,
+   "reviewCount": 1092,
+   "name": "Wickaninnish Inn",
+   "fetched": "2026-11-25"
+  },
+  "wild-coast-tented-lodge": {
+   "rating": 4.7,
+   "reviewCount": 705,
+   "name": "Wild Coast Tented Lodge - Relais & Chateaux",
+   "fetched": "2026-11-25"
+  },
+  "wilderness-mombo-botswana": {
+   "rating": 4.6,
+   "reviewCount": 28,
+   "name": "Wilderness Mombo",
+   "fetched": "2026-11-25"
+  },
+  "wildflower-farms-auberge-collection": {
+   "rating": 4.6,
+   "reviewCount": 321,
+   "name": "Wildflower Farms, Auberge Collection",
+   "fetched": "2026-11-25"
+  },
+  "wynn-las-vegas": {
+   "rating": 4.7,
+   "reviewCount": 66517,
+   "name": "Wynn Las Vegas",
+   "fetched": "2026-11-25"
+  },
+  "wynn-palace-macau": {
+   "rating": 4.6,
+   "reviewCount": 9285,
+   "name": "Wynn Palace",
+   "fetched": "2026-11-25"
+  },
+  "xigera-safari-lodge-botswana": {
+   "rating": 4.8,
+   "reviewCount": 18,
+   "name": "Xigera Safari Lodge",
+   "fetched": "2026-11-25"
+  },
+  "xinalani": {
+   "rating": 4.6,
+   "reviewCount": 249,
+   "name": "Xinalani Retreat",
+   "fetched": "2026-11-25"
+  },
+  "xitan-hotel-beijing": {
+   "rating": 4.8,
+   "reviewCount": 4,
+   "name": "Xitan Hotel Beijing",
+   "fetched": "2026-11-25"
+  },
+  "zaborin-niseko": {
+   "rating": 4.5,
+   "reviewCount": 296,
+   "name": "Zaborin Ryokan",
+   "fetched": "2026-11-25"
+  },
+  "zadun-ritz-carlton-reserve": {
+   "rating": 4.7,
+   "reviewCount": 545,
+   "name": "Zadun Los Cabos, a Ritz-Carlton Reserve",
+   "fetched": "2026-11-25"
+  },
+  "zannier-bai-san-ho": {
+   "rating": 4.7,
+   "reviewCount": 620,
+   "name": "Zannier Bãi San Hô",
+   "fetched": "2026-11-25"
+  },
+  "zannier-phum-baitang": {
+   "rating": 4.9,
+   "reviewCount": 741,
+   "name": "Zannier Phum Baitang",
+   "fetched": "2026-11-25"
+  },
+  "zannier-sonop": {
+   "rating": 4.7,
+   "reviewCount": 105,
+   "name": "Zannier Sonop",
+   "fetched": "2026-11-25"
+  },
+  "zaya-nurai-island": {
+   "rating": 4.3,
+   "reviewCount": 952,
+   "name": "Nurai Island",
+   "fetched": "2026-11-25"
+  },
+  "zemi-beach-house-anguilla": {
+   "rating": 4.6,
+   "reviewCount": 440,
+   "name": "Zemi Beach House, LXR Hotels & Resorts",
+   "fetched": "2026-11-25"
+  },
+  "zoetry-agua-punta-cana": {
+   "rating": 4.6,
+   "reviewCount": 1526,
+   "name": "Zoëtry Agua Punta Cana",
+   "fetched": "2026-11-25"
+  },
+  "zoetry-casa-del-mar-los-cabos": {
+   "rating": 4.5,
+   "reviewCount": 1044,
+   "name": "Zoëtry Casa del Mar Los Cabos",
+   "fetched": "2026-11-25"
+  }
+ },
+ "updated": "2026-11-25"
+}
