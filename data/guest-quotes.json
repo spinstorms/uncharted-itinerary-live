@@ -9098,6 +9098,53 @@
    }
   ]
  },
+ "copacabana-palace-belmond-rio": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 1818,
+  "quotes": [
+   {
+    "date": "2026-11-16",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Excellent choice and much better following its refurb",
+    "liked": "They’ve done a great job at upping their game over last 2-3 years. Great new gym, much more stylish pool furniture, new bar area by the pool and outstanding breakfast",
+    "disliked": "Copacabana is not the best location",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-01",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "Stunning",
+    "liked": "Beautiful staff so attentive and the food was fabulous",
+    "disliked": "Noisy neighbours at 3.00 am guest above us stomping around shouting etc. had to call reception they dealt with it but disturbed our sleep but you can’t blame the hotel for a guest behaviour",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-07",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Luxury and Comfort at its best .",
+    "liked": "A real luxury experience . Steeped in history and culture . The only place to stay and be in Copacabana . Lots of amazing things . I can’t wait to return .",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-03",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "Definitely the Landmark. All is great!",
+    "disliked": "Nothing.",
+    "language": "en"
+   }
+  ]
+ },
  "coquillade-provence": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -41738,6 +41785,53 @@
     "headline": "",
     "liked": "We asked for backyard room which was very quiet. The room was very clean and there was room service twice a day. The breakfast was delicious. The spa! Definitely I recommend to try this relaxing pool. We asked for firmer pillows and even late at night they bring us different pillows until we found what we were comfortable with, the way they take care of our requests was quite appealing to me! It was my birthday durin…",
     "disliked": "",
+    "language": "en"
+   }
+  ]
+ },
+ "the-apurva-kempinski-bali": {
+  "fetched": "2026-11-25",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 3348,
+  "quotes": [
+   {
+    "date": "2026-11-21",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Probably the best hotel experience in Bali",
+    "liked": "It has been an exceptional experience overall. Would definitely return.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-21",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "best resort",
+    "liked": "this is by far the best resort we have ever stayed at, I will definitely be going back. What an amazing experience :)",
+    "disliked": "nothing, everything was amazing.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Incredible property, only wish we had more time to explore it, but we will definitely be back.",
+    "liked": "The moment we arrived at the lobby of the hotel, we were stunned by the grandeur and scale of the architecture. The location was stunning and the staff was so friendly. The restaurant and breakfast buffet were amazing, the Koral restaurant was soo intriguing especially for our son. And we loved the comfort of the room itself.",
+    "disliked": "We wish our stay was longer. We had no complaints about the property.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-13",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Best",
+    "liked": "Our stay at The Apurva Kempinski Bali was one of the highlights of our honeymoon. We loved the beautiful ocean views, and the warmth of the staff made our time there feel special. From check-in to checkout, the team took such good care of us. Thank you for making our honeymoon so memorable. We’d love to come back for an anniversary! 🤍",
+    "disliked": "None",
     "language": "en"
    }
   ]
