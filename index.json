@@ -1,0 +1,107 @@
+{
+ "amanpuri-phuket": {
+  "site": "https://www.aman.com/resorts/amanpuri",
+  "photos": [
+   {
+    "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanpuri.jpg",
+    "w": 2000
+   }
+  ]
+ },
+ "amandari-ubud": {
+  "site": "https://www.aman.com/resorts/amandari",
+  "photos": [
+   {
+    "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amandari.jpg",
+    "w": 2000
+   }
+  ]
+ },
+ "amanoi-vietnam": {
+  "site": "https://www.aman.com/resorts/amanoi",
+  "photos": [
+   {
+    "url": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amanoi.jpg",
+    "w": 2000
+   }
+  ]
+ },
+ "aman-new-york": {
+  "site": "https://www.aman.com/hotels/aman-new-york",
+  "photos": [
+   {
+    "url": "https://www.aman.com/sites/default/files/2022-08/Correct_Aman%20New%20York_Landscape.jpg",
+    "w": 2880
+   }
+  ]
+ },
+ "aman-nai-lert-bangkok": {
+  "site": "https://www.aman.com/hotels/aman-nai-lert-bangkok",
+  "photos": []
+ },
+ "amankila-bali": {
+  "site": "https://www.aman.com/resorts/amankila",
+  "photos": [
+   {
+    "url": "https://www.aman.com/sites/default/files/2022-07/Amankila_Exterior_Landscape.jpg",
+    "w": 8000
+   }
+  ]
+ },
+ "mandarin-oriental-milan": {
+  "site": "https://www.mandarinoriental.com/en/milan/la-scala",
+  "photos": [
+   {
+    "url": "https://media.ffycdn.net/eu/mandarin-oriental-hotel-group/njc1o5FjVVczFSkuM9M8.jpg",
+    "w": 2500
+   }
+  ]
+ },
+ "jk-place-capri": {
+  "site": "https://www.jkcapri.com/en/",
+  "photos": [
+   {
+    "url": "https://www.jkplaces.com/jkcapri/wp-content/themes/startup_pro/images/michelin/2026/michelin-2026.png",
+    "w": 1404
+   }
+  ]
+ },
+ "lime-wood-hotel": {
+  "site": "https://www.limewoodhotel.co.uk/",
+  "photos": []
+ },
+ "canyon-ranch-tucson": {
+  "site": "https://www.canyonranch.com/tucson/",
+  "photos": []
+ },
+ "canyon-ranch-lenox": {
+  "site": "https://www.canyonranch.com/lenox/",
+  "photos": []
+ },
+ "singlethread-farm-inn": {
+  "site": "https://singlethreadfarms.com/inn/",
+  "photos": []
+ },
+ "the-carlton-milan-a-rocco-forte-hotel": {
+  "site": "https://www.roccofortehotels.com/hotels-and-resorts/the-carlton-milan/",
+  "photos": []
+ },
+ "villa-la-coste": {
+  "site": "https://villalacoste.com/en/",
+  "photos": [
+   {
+    "url": "https://www.villalacoste.com/bundles/apiciuswebsite/images/watermark.png",
+    "w": 1560
+   }
+  ]
+ },
+ "rosewood-courchevel-le-jardin-alpin": {
+  "site": "https://www.rosewoodhotels.com/en/courchevel",
+  "photos": [
+   {
+    "url": "https://images.rosewoodhotels.com/is/image/rwhg/Courchevel_Landscape_Rosewood",
+    "w": 3279
+   }
+  ]
+ }
+}
