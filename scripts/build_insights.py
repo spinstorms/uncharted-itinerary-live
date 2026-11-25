@@ -93,17 +93,23 @@ def guest_ranks(hotels: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
         band = _price_band(h)
         if band:
             groups[("price", band)].append(row)
-    ranked = {k: _rank_rows(v, k[-1]) for k, v in groups.items() if len(v) >= AREA_MIN or k[0] == "region"}
+            if h.get("region"):
+                groups[("pricereg", h["region"], band)].append(row)
+    ranked = {k: _rank_rows(v, k[-1]) for k, v in groups.items() if len(v) >= AREA_MIN or k[0] in ("region", "price")}
     out: dict[str, dict[str, Any]] = {}
     for h, g, rc in scored:
         hid = h["id"]
         for key in (("city", _country(h), _city(h)), ("country", _country(h)), ("region", h.get("region") or "")):
             if key in ranked and hid in ranked[key] and key[-1]:
-                out[hid] = {"area": ranked[key][hid]}
+                out[hid] = {"area": {**ranked[key][hid], "key": "|".join(key)}}
                 break
         band = _price_band(h)
-        if band and ("price", band) in ranked and hid in out:
-            out[hid]["price"] = {**ranked[("price", band)][hid], "group": band}
+        if band and hid in out:
+            rk = ("pricereg", h.get("region") or "", band)
+            if rk in ranked:  # same price level in the same part of the world, else worldwide
+                out[hid]["price"] = {**ranked[rk][hid], "group": band, "where": h.get("region") or ""}
+            elif ("price", band) in ranked:
+                out[hid]["price"] = {**ranked[("price", band)][hid], "group": band, "where": ""}
     return out
 
 
@@ -275,3 +281,35 @@ def write_insights(dist: Path, hotels: list[dict[str, Any]], template: str, comp
         encoding="utf-8",
     )
     return ["/insights/"]
+
+
+def better_alternatives(hotels: list[dict[str, Any]], limit: int = 3) -> dict[str, list[dict[str, Any]]]:
+    """Up to `limit` hotels guests rate at least 2 points higher, in the same area used for the rank scale, at the same
+    price level or cheaper (when both prices are known). Guest scores need 20+ reviews."""
+    ranks = guest_ranks(hotels)
+    scored = {h["id"]: (h, *_guest(h)) for h in hotels}
+    scored = {k: v for k, v in scored.items() if v[1] is not None}
+    band_order = {label: i for i, (_, _, label) in enumerate(PRICE_BANDS)}
+    by_group: dict[str, list] = defaultdict(list)
+    for hid, r in ranks.items():
+        by_group[r["area"]["key"]].append(hid)
+    out: dict[str, list[dict[str, Any]]] = {}
+    for hid, r in ranks.items():
+        h, g, rc = scored[hid]
+        key = r["area"]["key"]
+        my_band = _price_band(h)
+        alts = []
+        for oid in by_group[key]:
+            if oid == hid:
+                continue
+            o, og, orc = scored[oid]
+            if og < g + 2:
+                continue
+            ob = _price_band(o)
+            if my_band and ob and band_order[ob] > band_order[my_band]:
+                continue
+            alts.append({"id": oid, "name": o["name"], "g": og, "rc": orc, "band": ob or "", "where": _city(o) or _country(o)})
+        alts.sort(key=lambda a: (-a["g"], -a["rc"], a["name"]))
+        if alts:
+            out[hid] = alts[:limit]
+    return out

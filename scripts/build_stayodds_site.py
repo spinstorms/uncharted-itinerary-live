@@ -57,6 +57,7 @@ def _load_json(name: str) -> dict[str, Any]:
 
 
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
+ALTERNATIVES: dict[str, list[dict[str, Any]]] = {}  # better-rated hotels nearby (build_insights.better_alternatives)
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
 _NO_PLACE = {k for k, v in (_load_json("property-corrections.json").get("properties") or {}).items()
@@ -1071,7 +1072,8 @@ def render_seo_page(
         + "</small>"
     ) if guest_parts else ""
     gr = GUEST_RANKS.get(h.get("id", "")) or {}
-    if gr and vg and not o["firstHand"]:
+    rank_html = ""
+    if gr and vg:
         def _ord(n: int) -> str:
             return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
@@ -1088,14 +1090,33 @@ def render_seo_page(
 
         a = gr.get("area")
         if a:
-            guest_breakdown_html += _scale(
+            rank_html += _scale(
                 a, f'Guests rank it <span style="color:#ff5d22">{_ord(a["rank"])} of {a["of"]}</span> {esc(a["group"])} hotels on StayOdds')
         pr = gr.get("price")
         if pr:
-            guest_breakdown_html += _scale(
-                pr, f'At a similar price ({esc(pr["group"])} a night): <span style="color:#ff5d22">{_ord(pr["rank"])} of {pr["of"]}</span>')
-        guest_breakdown_html += ('<div style="font-size:11px;opacity:.7;margin-top:6px">Ranked by guest score (20+ reviews). Price level from our latest nightly price check. '
+            rank_html += _scale(
+                pr, f'Against hotels at a similar price ({esc(pr["group"])} a night{(" in " + esc(pr["where"])) if pr.get("where") else ", worldwide"}): <span style="color:#ff5d22">{_ord(pr["rank"])} of {pr["of"]}</span>')
+        rank_html += ('<div style="font-size:11px;opacity:.7;margin-top:6px">Ranked by guest score (20+ reviews). Price level from our latest nightly price check. '
                                  '<a href="/insights/" style="color:inherit">More guest insights</a></div>')
+        alts = ALTERNATIVES.get(h.get("id", "")) or []
+        if alts:
+            rank_html += (
+                '<div style="margin-top:14px;padding:12px 14px;border:1px solid rgba(100,110,130,.22);border-radius:12px">'
+                '<div style="font-size:13.5px;font-weight:700;margin-bottom:6px">Guests rate these higher nearby'
+                + (' (same price level or less)' if gr.get("price") else '') + '</div>'
+                + "".join(
+                    f'<div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:4px 0">'
+                    f'<a href="../../stayodds/{esc(a["id"])}/" style="font-weight:600">{esc(a["name"])}</a>'
+                    f'<span style="white-space:nowrap;opacity:.85"><b style="color:#ff5d22">{a["g"]}</b>/100 · {a["rc"]:,} reviews'
+                    + (f' · {esc(a["band"])}' if a["band"] else '') + '</span></div>'
+                    for a in alts
+                )
+                + f'<div style="font-size:11px;opacity:.7;margin-top:4px">Guest scores 2+ points higher than this hotel\'s {(vg or {}).get("normalized100", "")}, in the same area. '
+                f'<a href="../../compare/?a={esc(h.get("id", ""))}&amp;b={esc(alts[0]["id"])}" style="color:inherit">Compare with {esc(alts[0]["name"])} &rarr;</a></div></div>'
+            )
+        elif gr.get("area", {}).get("rank") == 1:
+            rank_html += (f'<div style="margin-top:12px;font-size:13px;font-weight:600">Guests\' top-rated hotel in '
+                                     f'{esc(gr["area"]["group"])} on StayOdds.</div>')
     delta_badge = (
         f"{'+' if o['delta100'] > 0 else ''}{o['delta100']} pts"
         if o["delta100"] is not None
@@ -1738,6 +1759,14 @@ def render_seo_page(
           {f'<p class="opinion-gap-narrative"><strong>What We Liked &amp; Where Our Take Differs:</strong> {esc(h.get("whereWeDiffer") or h.get("verdict"))}</p>' if o['firstHand'] and (h.get('whereWeDiffer') or h.get('verdict')) else ''}
         </div>
       </section>
+
+      {f'''<section class="detail-section" id="guest-rank">
+        <div class="key-facts-panel">
+          <h2 class="section-title" style="font-size:20px;margin:0 0 4px">How Guests Rank It</h2>
+          <p class="section-subtitle" style="margin:0">Where this hotel's guest score sits against other StayOdds hotels nearby, and against hotels charging a similar price: are guests getting what they pay for? Left is the best-rated hotel, right the lowest.</p>
+          {rank_html}
+        </div>
+      </section>''' if rank_html else ''}
 
       <!-- Structured Middle Key Facts Panel (Strictly Verified Specs) -->
       <section class="detail-section" id="key-facts">
@@ -3108,10 +3137,12 @@ def render_static_pages_from_directory(
     world_props = total_props - len(visited_hotels)
     price_medians = compute_price_medians(directory)
     odds_map = {h["id"]: compute_stayodds_py(h) for h in directory}
-    from build_insights import guest_ranks
+    from build_insights import better_alternatives, guest_ranks
 
     GUEST_RANKS.clear()
     GUEST_RANKS.update(guest_ranks(directory))
+    ALTERNATIVES.clear()
+    ALTERNATIVES.update(better_alternatives(directory))
 
     stayodds_dir = out_dir / "stayodds"
     stayodds_dir.mkdir(parents=True, exist_ok=True)
