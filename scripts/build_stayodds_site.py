@@ -1310,7 +1310,7 @@ def render_seo_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=44" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=45" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1586,7 +1586,7 @@ def render_seo_page(
   </footer>
 
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
-  <script src="../../assets/stayodds-video.js?v=1" defer></script>
+  <script src="../../assets/stayodds-video.js?v=2" defer></script>
   <script type="module">
     const pageRegion = {json.dumps(h['region'])};
     const qsParams = new URLSearchParams(window.location.search);
@@ -2280,7 +2280,7 @@ def render_destination_page(
   <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
-  <link rel="stylesheet" href="../../assets/styles.min.css?v=44" />
+  <link rel="stylesheet" href="../../assets/styles.min.css?v=45" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2396,7 +2396,7 @@ def render_destination_page(
   </footer>
 
   <script src="../../assets/stayodds-feedback.js?v=4" defer></script>
-  <script src="../../assets/stayodds-video.js?v=1" defer></script>
+  <script src="../../assets/stayodds-video.js?v=2" defer></script>
 </body>
 </html>
 """

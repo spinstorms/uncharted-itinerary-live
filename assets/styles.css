@@ -8333,3 +8333,83 @@ html.yt-modal-open { overflow: hidden; }
 .yt-stage { position: relative; display: block; }
 .yt-stage img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-md); display: block; }
 .yt-stage .yt-badge { left: 12px; bottom: 12px; }
+
+/* ---- In-page video panel (opens underneath the main content) ---- */
+.yt-panel[hidden] { display: none; }
+.yt-panel {
+  padding: 28px 0 40px;
+  background: #071323;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  scroll-margin-top: 72px;
+}
+.yt-panel-inner {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  background: #0b192c;
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+.yt-panel.is-short .yt-panel-inner { width: min(400px, 100%, calc(72vh * 0.5625)); }
+.yt-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 12px 18px;
+}
+.yt-panel-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.yt-panel-title {
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.yt-panel-close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.yt-panel-close:hover,
+.yt-panel-close:focus-visible { background: rgba(255, 255, 255, 0.26); }
+.yt-panel-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.yt-panel.is-short .yt-panel-stage { aspect-ratio: 9 / 16; }
+.yt-panel-stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-panel-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 18px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.yt-panel-foot a { color: #ffb08f; }
+.yt-panel-foot a:hover { color: #ffffff; text-decoration: underline; }
+@media (max-width: 640px) {
+  .yt-panel { padding: 16px 0 28px; }
+  .yt-panel-inner { border-radius: var(--radius-md); }
+  .yt-panel-head { padding: 10px 10px 10px 14px; }
+  .yt-panel-foot { padding: 10px 14px 12px; }
+}
+
+/* Larger play button (small short-form thumbnails keep their own 46px size above) */
+.yt-play { width: 70px; height: 70px; padding: 0 0 0 4px; }
+.yt-play svg { width: 30px; height: 30px; }
+
+/* Dark StayOdds mobile menu: high-contrast light text */
+.site-header.stayodds-site-header .mobile-nav a {
+  color: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+.site-header.stayodds-site-header .mobile-nav a:hover,
+.site-header.stayodds-site-header .mobile-nav a:focus-visible { color: #ffffff; }
