@@ -28,6 +28,28 @@
     "url": "https://www.travelpulse.ca/news/hotels-and-resorts/the-new-aman-in-bangkok-nai-lert-connects-but-doesn-t-hit-it-out-of-the-park"
    }
   ],
+  "aman-new-york": [
+   {
+    "site": "One Mile at a Time",
+    "title": "I Stayed At Aman New York: Does The Hotel Live Up The Hype (And Price)?",
+    "url": "https://onemileatatime.com/insights/aman-new-york-hotel/"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Aman New York review",
+    "url": "https://thepointsguy.com/reviews/aman-new-york"
+   },
+   {
+    "site": "The Luxury Travel Expert",
+    "title": "Review: Aman New York",
+    "url": "https://theluxurytravelexpert.com/review-aman-new-york"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Amanresorts Thread 2023/2024",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/2105984-amanresorts-thread-2023-2024-a-2.html"
+   }
+  ],
   "aman-tokyo": [
    {
     "site": "FlyerTalk",
@@ -165,6 +187,55 @@
     "url": "https://theweek.com/90638/the-red-carpet-treatment-the-beverly-hills-hotel-review"
    }
   ],
+  "borgo-egnazia-puglia": [
+   {
+    "site": "Spear's",
+    "title": "Review: Borgo Egnazia, Puglia",
+    "url": "https://spearswms.com/wealth/review-borgo-egnazia-puglia/"
+   },
+   {
+    "site": "Fathom",
+    "title": "Checking In and Checking Out: Borgo Egnazia",
+    "url": "https://fathomaway.com/review-borgo-egnazia-puglia-italy/"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "A Dreamy Italian Stay At Borgo Egnazia",
+    "url": "https://www.countryandtownhouse.com/travel/borgo-egnazia-review/"
+   },
+   {
+    "site": "JancisRobinson.com",
+    "title": "Borgo Egnazia shines in Puglia",
+    "url": "https://www.jancisrobinson.com/articles/borgo-egnazia-shines-in-puglia"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Hotels near Savelletri/Fasano in Puglia? (forum thread)",
+    "url": "https://www.flyertalk.com/forum/35148209-post2.html"
+   }
+  ],
+  "borgo-santandrea-amalfi": [
+   {
+    "site": "Country & Town House",
+    "title": "Living The Amalfi Dream: Borgo Santandrea – Hotel Review",
+    "url": "https://www.countryandtownhouse.com/?p=303582"
+   },
+   {
+    "site": "A Hotel Life",
+    "title": "Borgo Santandrea",
+    "url": "https://www.ahotellife.com/hotels/borgo-santandrea"
+   },
+   {
+    "site": "Fora Travel",
+    "title": "Bliss of Borgo Santandrea: Our Favorite Amalfi Coast Hotel",
+    "url": "https://www.foratravel.com/trip-reports/R6F43L/bliss-of-borgo-santandrea-our-favorite-amalfi-coast-hotel-melissa-zimmerman"
+   },
+   {
+    "site": "Mr & Mrs Smith",
+    "title": "Borgo Santandrea",
+    "url": "https://www.mrandmrssmith.com/luxury-hotels/borgo-santandrea"
+   }
+  ],
   "bulgari-hotel-roma": [
    {
     "site": "One Mile at a Time",
@@ -236,6 +307,45 @@
     "url": "https://www.cathaypacific.com/cx/en_AU/inspiration/holidays/capella-bangkok-review.html"
    }
   ],
+  "capella-hanoi": [
+   {
+    "site": "Cathay Pacific",
+    "title": "Stay here: Capella Hanoi review",
+    "url": "https://www.cathaypacific.com/cx/en_GB/inspiration/holidays/stay-here-capella-hanoi-review.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Vietnam after Covid, 2022 on (forum thread)",
+    "url": "https://www.flyertalk.com/forum/34319280-post9.html"
+   },
+   {
+    "site": "Smartflyer",
+    "title": "Capella Hanoi",
+    "url": "https://smartflyer.com/review/capella-hanoi/"
+   }
+  ],
+  "capella-singapore": [
+   {
+    "site": "The Luxury Travel Expert",
+    "title": "Review: Capella Singapore (Best Luxury Hotel in Singapore)",
+    "url": "https://theluxurytravelexpert.com/review-capella-singapore-hotel"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Best luxury hotel in Singapore (current thread)",
+    "url": "https://www.flyertalk.com/forum/35750764-post25.html"
+   },
+   {
+    "site": "Cathay Pacific",
+    "title": "Stay here: Capella Singapore review",
+    "url": "https://www.cathaypacific.com/cx/en_MY/inspiration/holidays/stay-here-capella-singapore-hotel-review.html"
+   },
+   {
+    "site": "Smartflyer",
+    "title": "Capella Singapore",
+    "url": "https://smartflyer.com/review/capella-singapore/"
+   }
+  ],
   "capella-sydney": [
    {
     "site": "FlyerTalk",
@@ -258,11 +368,50 @@
     "url": "https://qantas.com/travelinsider/en/explore/australia/new-south-wales/sydney/capella-sydney-hotel-review.html"
    }
   ],
+  "carlton-cannes-regent": [
+   {
+    "site": "Head for Points",
+    "title": "Review: Carlton Cannes, A Regent Hotel",
+    "url": "https://www.headforpoints.com/2023/09/22/review-carlton-cannes-hotel"
+   },
+   {
+    "site": "The Week",
+    "title": "Carlton Cannes, a Regent Hotel review: grande dame gets an epic makeover",
+    "url": "https://theweek.com/arts-life/travel/961288/carlton-cannes-hotel-review"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "Carlton Cannes, A Regent Hotel Review: The Grand Dame Of La Croisette",
+    "url": "https://www.countryandtownhouse.com/travel/carlton-cannes-review/"
+   }
+  ],
   "casa-maria-luigia-modena": [
    {
     "site": "South China Morning Post",
     "title": "We review Casa Maria Luigia, from the world's best chef Massimo Bottura",
     "url": "https://www.scmp.com/magazines/style/leisure/article/3025086/we-review-casa-maria-luigia-worlds-best-chef-massimo"
+   }
+  ],
+  "castello-di-reschio-umbria": [
+   {
+    "site": "Suitcase",
+    "title": "Review: Hotel Castello di Reschio, Umbria, Italy",
+    "url": "https://suitcasemag.com/articles/review-hotel-castello-di-reschio-umbria-italy/"
+   },
+   {
+    "site": "Boss Hunting",
+    "title": "Hotel Castello di Reschio Is Peak Bucolic Luxury In Umbria",
+    "url": "https://bosshunting.com.au/travel/stay/hotel-castello-di-reschio-umbria-italy"
+   },
+   {
+    "site": "Qantas Travel Insider",
+    "title": "Reschio estate, Umbria accommodation review",
+    "url": "https://qantas.com/travelinsider/en/explore/europe/italy/reschio-estate-umbria-tuscany-accommodation-review.html"
+   },
+   {
+    "site": "From the Poolside",
+    "title": "Discovering the enchanting Castello di Reschio – my honest review",
+    "url": "https://fromthepoolside.substack.com/p/discovering-the-enchanting-reschio"
    }
   ],
   "chable-yucatan": [
@@ -492,6 +641,28 @@
     "url": "https://www.timeout.com/florence/hotels/four-seasons-hotel-firenze"
    }
   ],
+  "four-seasons-hong-kong": [
+   {
+    "site": "FlyerTalk",
+    "title": "Four Seasons Hong Kong (including restaurant reservation discussion)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1967781-four-seasons-hong-kong-including-restaurant-reservation-discussion-post31057220.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Trip report: Four Seasons Hong Kong",
+    "url": "https://www.flyertalk.com/forum/24431063-post1.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Four Seasons Hong Kong (hotel reviews)",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-four-seasons-hong-kong-628"
+   },
+   {
+    "site": "Cathay Pacific",
+    "title": "Stay here: Four Seasons Hotel Hong Kong review",
+    "url": "https://www.cathaypacific.com/cx/en_DK/inspiration/holidays/stay-here-four-seasons-hotel-hong-kong.html"
+   }
+  ],
   "four-seasons-tamarindo": [
    {
     "site": "FlyerTalk",
@@ -519,6 +690,55 @@
     "url": "https://robbreport.hk/posts/what-its-like-to-stay-at-four-seasons-resort-tamarindo-a-secluded-nature-reserve-overlooking-the-pacific-coastline"
    }
   ],
+  "gleneagles-scotland": [
+   {
+    "site": "Head for Points",
+    "title": "Gleneagles review",
+    "url": "https://www.headforpoints.com/2019/04/19/gleneagles-review"
+   },
+   {
+    "site": "Country Life",
+    "title": "The Gleneagles Hotel review: Heaven in the Highlands",
+    "url": "https://countrylife.co.uk/travel/weekends-away/gleneagles-hotel-review-162701"
+   },
+   {
+    "site": "Spear's",
+    "title": "Review: Gleneagles Hotel, Scotland",
+    "url": "https://spearswms.com/wealth/review-gleneagles-hotel-scotland/"
+   },
+   {
+    "site": "Turning Left For Less",
+    "title": "Gleneagles Hotel, Scotland review",
+    "url": "https://www.turningleftforless.com/gleneagles-hotel-scotland-review"
+   },
+   {
+    "site": "Time Out",
+    "title": "Gleneagles",
+    "url": "https://www.timeout.com/uk/hotels/gleneagles"
+   }
+  ],
+  "hoshinoya-tokyo": [
+   {
+    "site": "The Points Guy",
+    "title": "Hoshinoya Tokyo review",
+    "url": "https://thepointsguy.com/reviews/hoshinoya-tokyo-review"
+   },
+   {
+    "site": "Executive Traveller",
+    "title": "Review: Hoshinoya Tokyo",
+    "url": "https://executivetraveller.com/hoshinoya-tokyo"
+   },
+   {
+    "site": "Traveller",
+    "title": "Hoshinoya Tokyo hotel review: a traditional Japanese inn reinvented for city living",
+    "url": "https://www.traveller.com.au/hoshinoya-tokyo-japan-hotel-review-a-traditional-japanese-inn-reinvented-for-city-living-h1jw2e"
+   },
+   {
+    "site": "Global Traveler",
+    "title": "Hoshinoya Tokyo review",
+    "url": "https://globaltravelerusa.com/hoshinoya-tokyo-review"
+   }
+  ],
   "hotel-bel-air-la": [
    {
     "site": "FlyerTalk",
@@ -539,6 +759,23 @@
     "site": "The Week",
     "title": "A starry home from home: Hotel Bel-Air review",
     "url": "https://theweek.com/90639/a-starry-home-from-home-hotel-bel-air-review"
+   }
+  ],
+  "hotel-das-cataratas-belmond": [
+   {
+    "site": "FlyerTalk",
+    "title": "Where to stay at Iguazu (Argentina/Brazil border) (forum thread)",
+    "url": "https://www.flyertalk.com/forum/23624608-post13.html"
+   },
+   {
+    "site": "Traveller",
+    "title": "Belmond Hotel das Cataratas, Iguazu Falls, Brazil review",
+    "url": "https://www.traveller.com.au/belmond-hotel-das-cataratas-iguazu-falls-brazil-review-gj6c3f"
+   },
+   {
+    "site": "reisetopia",
+    "title": "Belmond Hotel das Cataratas review (German)",
+    "url": "https://reisetopia.de/reviews/belmond-hotel-das-cataratas-2/"
    }
   ],
   "hotel-de-crillon-paris": [
@@ -676,6 +913,23 @@
     "site": "FlyerTalk",
     "title": "Five luxury hotels in Vienna (forum thread)",
     "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1908219-five-luxury-hotels-vienna-post29730497.html"
+   }
+  ],
+  "huka-lodge-taupo": [
+   {
+    "site": "FlyerTalk",
+    "title": "New Zealand luxury hotels – North Island (forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1972971-new-zealand-luxury-hotels-north-island.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "New Zealand Luxury Properties (forum thread)",
+    "url": "https://www.flyertalk.com/forum/25382844-post18.html"
+   },
+   {
+    "site": "Mr & Mrs Smith",
+    "title": "Huka Lodge",
+    "url": "https://www.mrandmrssmith.com/luxury-hotels/huka-lodge"
    }
   ],
   "il-san-pietro-positano": [
@@ -830,6 +1084,28 @@
     "site": "Time Out",
     "title": "Le Bristol Paris",
     "url": "https://www.timeout.com/paris/en/hotels/le-bristol-paris"
+   }
+  ],
+  "macakizi-bodrum": [
+   {
+    "site": "The Week",
+    "title": "Maçakızı Hotel Bodrum review: a retreat for the glitterati on Turkey's riviera",
+    "url": "https://theweek.com/arts-life/travel/958367/macakizi-hotel-bodrum-review-turkey"
+   },
+   {
+    "site": "Country & Town House",
+    "title": "Review: Maçakızı – Bodrum, Turkey",
+    "url": "https://www.countryandtownhouse.com/travel/review-macakizi-bodrum-turkey"
+   },
+   {
+    "site": "Spear's",
+    "title": "Maçakızı, Bodrum hotel review",
+    "url": "https://spearswms.com/luxury/macakizi-bodrum-hotel-review-turkey-five-star/"
+   },
+   {
+    "site": "Time Out",
+    "title": "Maçakızı",
+    "url": "https://www.timeout.com/istanbul/hotels/macakizi"
    }
   ],
   "mandapa-ubud": [
@@ -1006,6 +1282,33 @@
     "site": "Ciao Bambino",
     "title": "NIHI Sumba review",
     "url": "https://ciaobambino.com/nihi-sumba-review"
+   }
+  ],
+  "oberoi-udaivilas": [
+   {
+    "site": "AFAR",
+    "title": "A Review of One of Rajasthan's Most Famous Retreats",
+    "url": "https://www.afar.com/hotels/oberoi-udaivilas-review"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Aman India Journey + Oberoi Udaivilas, Amarvilas and Taj Umaid Bhawan Palace (trip report)",
+    "url": "https://www.flyertalk.com/forum/20010070-post1.html"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Rajasthan: Amarvilas, Rajvilas, Amanbagh, Aman-i-Khas, Udaivilas (trip report)",
+    "url": "https://www.flyertalk.com/forum/18231906-post1.html"
+   },
+   {
+    "site": "Luxury Launches",
+    "title": "The Oberoi Udaivilas review",
+    "url": "https://luxurylaunches.com/review/the-oberoi-udaivilas-review.php"
+   },
+   {
+    "site": "Travel+Style",
+    "title": "The Oberoi Udaivilas, Udaipur hotel review",
+    "url": "https://www.travelplusstyle.com/hotels/the-oberoi-udaivilas-udaipur-hotel-review-travelplusstyle"
    }
   ],
   "one-and-only-mandarina": [
@@ -1494,6 +1797,33 @@
     "url": "https://www.hotelsabovepar.com/travel-guides/splendido-belmond-portofino-hotel-review"
    }
   ],
+  "the-calile-hotel-brisbane": [
+   {
+    "site": "Traveller",
+    "title": "The Calile, Brisbane, review: a fabulous pool and award-winning Greek fare",
+    "url": "https://www.traveller.com.au/the-calile-brisbane-review-enjoy-a-fabulous-pool-and-awardwinning-greek-fare-h1byr6"
+   },
+   {
+    "site": "Gourmet Traveller",
+    "title": "The Calile, Brisbane hotel review",
+    "url": "https://www.gourmettraveller.com.au/hotel-review/the-calile-brisbane/"
+   },
+   {
+    "site": "Wallpaper*",
+    "title": "The Calile Hotel is an urban resort reframing Brisbane",
+    "url": "https://www.wallpaper.com/travel/hotels/the-calile-hotel-brisbane-australia-review"
+   },
+   {
+    "site": "Australian Traveller",
+    "title": "Hotel review: The Calile, Brisbane",
+    "url": "https://australiantraveller.com/qld/brisbane/hotel-review-the-calile-brisbane"
+   },
+   {
+    "site": "Qantas Travel Insider",
+    "title": "The Calile Hotel review",
+    "url": "https://qantas.com/travelinsider/en/explore/australia/queensland/brisbane/the-calile-hotel-review.html"
+   }
+  ],
   "the-connaught-london": [
    {
     "site": "FlyerTalk",
@@ -1519,6 +1849,96 @@
     "site": "Yolo Journal",
     "title": "Guest Book: The Connaught, London",
     "url": "https://www.yolojournal.com/guest-book-the-connaught/"
+   }
+  ],
+  "the-fifth-avenue-hotel-new-york": [
+   {
+    "site": "Elite Traveler",
+    "title": "The Fifth Avenue Hotel Review: Inside the Martin Brudnizki Project",
+    "url": "https://elitetraveler.com/travel/news/the-fifth-avenue-hotel-nyc-review"
+   },
+   {
+    "site": "Marie Claire UK",
+    "title": "The Fifth Avenue Hotel, New York review",
+    "url": "https://www.marieclaire.co.uk/life/travel/the-fifth-avenue-hotel-new-york-review"
+   },
+   {
+    "site": "Robb Report Hong Kong",
+    "title": "The Fifth Avenue Hotel, New York review",
+    "url": "https://robbreport.hk/posts/the-fifth-avenue-hotel-new-york-review"
+   },
+   {
+    "site": "The Zoe Report",
+    "title": "Room Key: The Fifth Avenue Hotel",
+    "url": "https://www.thezoereport.com/living/the-fifth-avenue-hotel-review"
+   }
+  ],
+  "the-greenwich-hotel-new-york": [
+   {
+    "site": "FlyerTalk",
+    "title": "Greenwich Hotel NYC (Luxury Hotels forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1495608-greenwich-hotel-nyc.html"
+   },
+   {
+    "site": "Fodor's",
+    "title": "Fodor's Expert Review: The Greenwich Hotel",
+    "url": "https://www.fodors.com/world/north-america/usa/new-york/new-york-city/hotels/reviews/the-greenwich-hotel-459127"
+   },
+   {
+    "site": "The Good Hotel Guide",
+    "title": "Greenwich Hotel review",
+    "url": "https://goodhotelguide.com/review/greenwich-hotel"
+   },
+   {
+    "site": "Frommer's",
+    "title": "The Greenwich Hotel",
+    "url": "https://www.frommers.com/destinations/new-york-city/hotels/the-greenwich-hotel"
+   },
+   {
+    "site": "Yolo Journal",
+    "title": "The Greenwich Hotel, New York City",
+    "url": "https://www.yolojournal.com/the-greenwich-hotel/"
+   }
+  ],
+  "the-johri-jaipur": [
+   {
+    "site": "Time Out",
+    "title": "The Johri",
+    "url": "https://www.timeout.com/india/hotels/the-johri"
+   },
+   {
+    "site": "Tatler Asia",
+    "title": "The Johri, Jaipur",
+    "url": "https://www.tatlerasia.com/places/the-johri-jaipur"
+   }
+  ],
+  "the-maybourne-riviera": [
+   {
+    "site": "Smartflyer",
+    "title": "The Maybourne Riviera",
+    "url": "https://smartflyer.com/review/the-maybourne-riviera/"
+   },
+   {
+    "site": "Near Far",
+    "title": "The Maybourne Riviera review: the hotel bringing back the Riviera's golden age",
+    "url": "https://nearfarmag.com/?p=24424"
+   }
+  ],
+  "the-mitsui-kyoto": [
+   {
+    "site": "Hungry Huy",
+    "title": "HOTEL THE MITSUI KYOTO review",
+    "url": "https://www.hungryhuy.com/hotel-the-mitsui-kyoto-review/"
+   },
+   {
+    "site": "Hotels Above Par",
+    "title": "Hotel The Mitsui Kyoto hotel review",
+    "url": "https://hotelsabovepar.com/hotel-the-mitsui-kyoto-hotel-review"
+   },
+   {
+    "site": "Time Out",
+    "title": "HOTEL THE MITSUI KYOTO",
+    "url": "https://www.timeout.com/japan/hotels/hotel-the-mitsui"
    }
   ],
   "the-okura-tokyo": [
@@ -1587,6 +2007,28 @@
     "url": "https://www.yolojournal.com/the-peninsula-istanbul/"
    }
   ],
+  "the-peninsula-shanghai": [
+   {
+    "site": "FlyerTalk",
+    "title": "The Peninsula Shanghai (hotel reviews)",
+    "url": "https://www.flyertalk.com/hotel-reviews/r-the-peninsula-shanghai-318"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Shanghai Luxury Hotels (forum thread)",
+    "url": "https://www.flyertalk.com/forum/luxury-hotels-travel/1698925-shanghai-luxury-hotels-3.html"
+   },
+   {
+    "site": "Head for Points",
+    "title": "Review: The Peninsula Shanghai hotel",
+    "url": "https://www.headforpoints.com/2020/07/14/review-the-peninsula-shanghai-hotel"
+   },
+   {
+    "site": "The Luxury Travel Expert",
+    "title": "Hotel review: The Peninsula Shanghai",
+    "url": "https://theluxurytravelexpert.com/the-peninsula-shanghai-china"
+   }
+  ],
   "the-taj-mahal-palace-mumbai": [
    {
     "site": "FlyerTalk",
@@ -1629,6 +2071,62 @@
     "site": "Boss Hunting",
     "title": "Upper House Hong Kong review",
     "url": "https://www.bosshunting.com.au/travel/stay/upper-house-hong-kong-review"
+   }
+  ],
+  "villa-treville-positano": [
+   {
+    "site": "Country & Town House",
+    "title": "Fairytale Romance: Villa TreVille, Amalfi Coast – Hotel Review",
+    "url": "https://www.countryandtownhouse.com/travel/villa-treville-amalfi-coast"
+   },
+   {
+    "site": "Spear's",
+    "title": "TreVille Positano review: the former home of Franco Zeffirelli that still feels alive",
+    "url": "https://spearswms.com/luxury/treville-positano-review-the-former-home-of-franco-zeffirelli-that-still-feels-alive/"
+   },
+   {
+    "site": "Boat International",
+    "title": "Beyond the berth: Villa Treville",
+    "url": "https://www.boatinternational.com/destinations/beyond-the-berth-villa-treville"
+   },
+   {
+    "site": "Hotels Above Par",
+    "title": "Villa Treville, Amalfi Coast review",
+    "url": "https://hotelsabovepar.com/villa-treville-amalfi-coast-review"
+   }
+  ],
+  "waldorf-astoria-osaka": [
+   {
+    "site": "One Mile at a Time",
+    "title": "Waldorf Astoria Osaka review",
+    "url": "https://onemileatatime.com/reviews/waldorf-astoria-osaka/"
+   },
+   {
+    "site": "The Points Guy",
+    "title": "Waldorf Astoria Osaka review",
+    "url": "https://thepointsguy.com/reviews/waldorf-astoria-osaka-review/"
+   },
+   {
+    "site": "The MileLion",
+    "title": "Waldorf Astoria Osaka Review: Jazz Age Glamour, Osaka Style",
+    "url": "https://milelion.com/2026/05/30/waldorf-astoria-osaka-review-jazz-age-glamour-osaka-style/"
+   },
+   {
+    "site": "Prince of Travel",
+    "title": "Waldorf Astoria Osaka review",
+    "url": "https://princeoftravel.com/reviews/waldorf-astoria-osaka/"
+   },
+   {
+    "site": "FlyerTalk",
+    "title": "Waldorf Astoria Osaka {JPN} (forum thread)",
+    "url": "https://www.flyertalk.com/forum/37133728-post70.html"
+   }
+  ],
+  "wynn-palace-macau": [
+   {
+    "site": "The Beat Asia",
+    "title": "The Beat Stays: Wynn Palace, Macau",
+    "url": "https://thebeat.asia/nomads/explore/the-beat-stays-wynn-palace-macaus-essence-reimagined-for-las-vegas-twin"
    }
   ]
  }
