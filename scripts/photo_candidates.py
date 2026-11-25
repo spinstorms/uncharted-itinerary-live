@@ -37,7 +37,7 @@ def small(raw: bytes) -> bytes:
 
 def main() -> int:
     out = Path(sys.argv[1])
-    ids = sys.argv[2:]
+    ids = [a for a in sys.argv[2:] if not a.startswith("--")]
     hs = {h["id"]: h for h in json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]}
     lk, gk = os.environ.get("NUITEE_API_KEY", ""), os.environ.get("GOOGLE_PLACES_API_KEY", "")
     index: dict[str, list] = {}
@@ -64,6 +64,12 @@ def main() -> int:
                                   "url": f"https://places.googleapis.com/v1/{ph['name']}/media?maxWidthPx=1600"})
             except Exception as e:  # noqa: BLE001
                 print(pid, "google", e)
+        if h.get("videoId"):  # our own review video: its cover and YouTube's three automatic frames
+            v = h["videoId"]
+            for nm in ("maxresdefault", "maxres1", "maxres2", "maxres3", "hq1", "hq2", "hq3"):
+                cands.append({"source": "youtube", "caption": nm, "url": f"https://i.ytimg.com/vi/{v}/{nm}.jpg"})
+        if "--no-google" in sys.argv:
+            cands = [c for c in cands if c["source"] != "google"]
         (out / pid).mkdir(parents=True, exist_ok=True)
         kept = []
         for n, c in enumerate(cands):
