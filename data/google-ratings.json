@@ -2502,12 +2502,6 @@
    "name": "Four Seasons Resort Whistler",
    "fetched": "2026-11-25"
   },
-  "four-seasons-yacht-i": {
-   "rating": 4.9,
-   "reviewCount": 68,
-   "name": "Signature Sailing Charter: Cruises on the French Riviera, Sardinia & Corsica and the Balearic Islands",
-   "fetched": "2026-11-25"
-  },
   "french-coco-martinique": {
    "rating": 4.6,
    "reviewCount": 336,
@@ -6172,12 +6166,6 @@
    "rating": 4.8,
    "reviewCount": 260,
    "name": "Spicers Sangoma Retreat",
-   "fetched": "2026-11-25"
-  },
-  "splendido-belmond-portofino": {
-   "rating": 4.6,
-   "reviewCount": 577,
-   "name": "Splendido Mare, A Belmond Hotel, Portofino",
    "fetched": "2026-11-25"
   },
   "splendido-mare-a-belmond-hotel-portofino": {
