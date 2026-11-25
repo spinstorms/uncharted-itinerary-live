@@ -389,8 +389,63 @@ def run_editorial(props: dict[str, dict[str, Any]], only: set[str] | None, missi
     upsert("editorial_ratings", rows, "property_id,source_name,source_url")
 
 
+# --------------------------------------------------------------------------- coordinates (OpenStreetMap)
+def run_coords(props: dict[str, dict[str, Any]], only: set[str] | None) -> None:
+    """Fill missing lat/lng from OpenStreetMap Nominatim (free, 1 request/second).
+
+    A result is kept only if it is in the hotel's country and its OSM name contains the hotel's distinctive words.
+    """
+    from catalog_awards import AWARD_HOTEL_ADDITIONS
+    from catalog_michelin import MICHELIN_HOTEL_ADDITIONS
+
+    iso = {t[0]: t[4].lower() for t in list(AWARD_HOTEL_ADDITIONS) + list(MICHELIN_HOTEL_ADDITIONS)}
+    rows = sb_all("properties", "id,name,city,country,lat,lng")
+    missing = [
+        r for r in rows
+        if (not only or r["id"] in only)
+        and not (isinstance(r.get("lat"), (int, float)) and isinstance(r.get("lng"), (int, float)) and (r["lat"] or r["lng"]))
+    ]
+    print(f"Coordinates: {len(missing)} hotels without a map pin")
+    fixed = 0
+    for r in missing:
+        need = distinctive(r["name"])
+        cc = iso.get(r["id"], "")
+        found = None
+        for q in (f"{r['name']}, {r.get('city') or ''}", r["name"]):
+            params = {"q": q, "format": "jsonv2", "limit": "5", "addressdetails": "1", "accept-language": "en"}
+            if cc:
+                params["countrycodes"] = cc
+            code, body = http_get(
+                "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(params),
+                headers={"User-Agent": "StayOddsBot/1.0 (https://stayodds.com; map pins for hotel directory)"},
+            )
+            time.sleep(1.1)
+            if code != 200:
+                continue
+            try:
+                results = json.loads(body)
+            except Exception:
+                continue
+            for res in results:
+                nm = set(norm_words(res.get("name") or res.get("display_name", "").split(",")[0]))
+                if need and len(need & nm) >= max(1, int(len(need) * 0.6 + 0.5)):
+                    if cc and (res.get("address") or {}).get("country_code", "") != cc:
+                        continue
+                    found = (float(res["lat"]), float(res["lon"]), res.get("display_name", "")[:90])
+                    break
+            if found:
+                break
+        if found:
+            sb("PATCH", f"/rest/v1/properties?id=eq.{urllib.parse.quote(r['id'])}", {"lat": found[0], "lng": found[1]}, {"Prefer": "return=minimal"})
+            fixed += 1
+            print(f"  pin {r['id']}: {found[0]:.4f},{found[1]:.4f} ({found[2]})")
+        else:
+            print(f"  no confident match: {r['id']} ({r['name']})")
+    print(f"Coordinates: added {fixed} map pins")
+
+
 def main(argv: list[str]) -> int:
-    if not argv or argv[0] not in {"awards", "youtube", "editorial"}:
+    if not argv or argv[0] not in {"awards", "youtube", "editorial", "coords"}:
         print(__doc__)
         return 2
     cmd = argv[0]
@@ -413,6 +468,8 @@ def main(argv: list[str]) -> int:
     print(f"{len(props)} properties in Supabase")
     if cmd == "awards":
         run_awards(props, only)
+    elif cmd == "coords":
+        run_coords(props, only)
     elif cmd == "youtube":
         run_youtube(props, only, missing, limit)
     else:

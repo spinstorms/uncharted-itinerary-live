@@ -54,6 +54,10 @@ jobs:
         if: ${{ !inputs.awards_only }}
         run: python3 scripts/enrich_missing_hotels.py
 
+      - name: Add missing map pins (OpenStreetMap)
+        run: python3 scripts/add_award_hotels.py coords
+        continue-on-error: true
+
       - name: Tag World's 50 Best ranks and MICHELIN Keys
         run: python3 scripts/add_award_hotels.py awards
 
