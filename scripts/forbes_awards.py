@@ -60,8 +60,6 @@ def place_ok(p: dict[str, Any], dest: str) -> bool:
     country = str(p.get("country") or "").lower()
     if country and country in d:
         return True
-    if country in US and ("united states" in d or "," in d and not re.search(r"canada|mexico|china|kingdom|france|italy|japan", d)):
-        return True  # US destinations are headed "City, State"
     return bool(set(norm_words(p.get("city") or "")) & set(norm_words(dest)))
 
 
@@ -97,6 +95,12 @@ def main(argv: list[str]) -> int:
         if r["award_body"] == "Forbes Travel Guide":
             have.setdefault(r["property_id"], set()).add(r["label"])
     rows, unmatched_five = [], []
+    # a hotel matched by more than one Forbes entry (e.g. two wings of one resort) is ambiguous: skip it
+    claims: dict[str, int] = {}
+    for e in entries:
+        for p in props:
+            if same_hotel(p["name"], e["name"], p.get("city") or "", p.get("country") or "") and place_ok(p, e["dest"]):
+                claims[p["id"]] = claims.get(p["id"], 0) + 1
     for e in entries:
         hits = [p for p in props if same_hotel(p["name"], e["name"], p.get("city") or "", p.get("country") or "") and place_ok(p, e["dest"])]
         if len(hits) != 1:
@@ -106,6 +110,9 @@ def main(argv: list[str]) -> int:
                 print(f"  ambiguous, skipped: {e['name']} -> {[h['id'] for h in hits]}")
             continue
         p = hits[0]
+        if claims.get(p["id"], 0) > 1:
+            print(f"  ambiguous, skipped: {p['id']} matches {claims[p['id']]} Forbes entries")
+            continue
         label = f"Forbes {e['rating']}"
         cur = have.get(p["id"], set())
         if cur and label not in cur:
