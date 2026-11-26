@@ -1213,10 +1213,70 @@
       "note": "File:57th St Park Av td 13 - Four Seasons.jpg (entrance on 57th St)"
     },
     "the-carlton-milan-a-rocco-forte-hotel": {
-      "url": "https://www.roccofortehotels.com/media/5aundags/crop-banner-rfh-the-carlton-junior-family-suite-1.jpg",
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1675235.jpg",
       "source": "official",
-      "site": "https://www.roccofortehotels.com/hotels-and-resorts/the-carlton-milan/",
-      "note": "official site: suite (no exterior shot published) (checked by eye)"
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): facade (checked by eye)"
+    },
+    "aman-nai-lert-bangkok": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1467622.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): exterior (checked by eye)"
+    },
+    "aman-new-york": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1350227.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): facade (checked by eye)"
+    },
+    "bulgari-hotel-tokyo": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1361826.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): terrace and skyline (checked by eye)"
+    },
+    "cheval-blanc-courchevel": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1440226.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): hotel in snow (checked by eye)"
+    },
+    "cheval-blanc-randheli": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1462502.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): aerial of villas (checked by eye)"
+    },
+    "giraffe-manor-kenya": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1463369.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): manor and gardens (checked by eye)"
+    },
+    "mandarin-oriental-qianmen-beijing": {
+      "url": "https://static.prod.r53.tablethotels.com/media/hotels/slideshow_images_staged/large/1483759.jpg",
+      "source": "official",
+      "site": "https://guide.michelin.com/",
+      "note": "MICHELIN Guide listing (hotel-supplied): courtyard (checked by eye)"
+    },
+    "eden-rock-st-barths": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eden_Rock_Hotel%2C_St_Jean_Beach%2C_St_Barths%2C_Oct_2014_%2815096862114%29.jpg/1280px-Eden_Rock_Hotel%2C_St_Jean_Beach%2C_St_Barths%2C_Oct_2014_%2815096862114%29.jpg",
+      "source": "commons",
+      "license_source": "wikimedia|CC BY-SA 2.0|alljengi from Edinburgh|https://commons.wikimedia.org/wiki/File:Eden_Rock_Hotel,_St_Jean_Beach,_St_Barths,_Oct_2014_(15096862114).jpg",
+      "note": "Eden Rock on its rock across St Jean Beach"
+    },
+    "cheval-blanc-st-barth": {
+      "url": "https://isthewaterfree.com/photos/cheval-blanc-st-barth-isle-de-france.webp",
+      "source": "official",
+      "site": "https://isthewaterfree.com/",
+      "note": "hotel photo via isthewaterfree.com (beach) (checked by eye)"
+    },
+    "four-seasons-anguilla": {
+      "url": "https://photos.isthewaterfree.com/g/H00002-2.webp",
+      "source": "official",
+      "site": "https://isthewaterfree.com/",
+      "note": "hotel photo via isthewaterfree.com (aerial of the bay) (checked by eye)"
     }
   }
 }
