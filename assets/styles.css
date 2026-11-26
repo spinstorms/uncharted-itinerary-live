@@ -8418,3 +8418,16 @@ html.yt-modal-open { overflow: hidden; }
 .date-rate-check-btn.is-unavailable { opacity: 0.72; }
 .live-rate-note strong { color: #b45309; }
 .live-rate-note a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- StayOdds header: keep the nav on one line without overlap (Nov 2026, 7 links + pill) ---- */
+@media (min-width: 1px) {
+  .site-header.stayodds-site-header .stayodds-clean-nav { gap: 2px; }
+  .site-header.stayodds-site-header .stayodds-clean-nav a { padding: 7px 9px; gap: 5px; font-size: 13px; }
+}
+@media (max-width: 1380px) {
+  .site-header.stayodds-site-header .stayodds-clean-nav a .so-ico { display: none; }
+}
+@media (max-width: 1260px) {
+  .site-header.stayodds-site-header .stayodds-clean-nav a.nav-uncharted-pill { display: none; }
+  .site-header.stayodds-site-header .stayodds-brand-by { display: none; }
+}
