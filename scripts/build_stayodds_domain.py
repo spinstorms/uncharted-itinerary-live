@@ -192,6 +192,16 @@ def rewrite_js_for_stayodds(assets_dir: Path) -> None:
     hot = hot.replace('`../data/stayodds-index.json', '`/data/stayodds-index.json')
     hot_path.write_text(hot, encoding="utf-8")
 
+    # Data version: the browser's saved copy of the hotel index (and its ?v= URL) changes whenever the data does,
+    # so visitors get new hotels/filters straight away but nothing is re-downloaded while the data is unchanged.
+    import hashlib
+    _idx = ROOT / "data" / "stayodds-index.json"
+    _ver = hashlib.sha1(_idx.read_bytes()).hexdigest()[:10] if _idx.exists() else "20261125a"
+    for _js in ("hotels.js", "compare.js", "brands.js"):
+        _p = assets_dir / _js
+        if _p.exists():
+            _p.write_text(_p.read_text(encoding="utf-8").replace("20261125a", _ver), encoding="utf-8")
+
     # 3. brands.js
     br_path = assets_dir / "brands.js"
     br = br_path.read_text(encoding="utf-8")
