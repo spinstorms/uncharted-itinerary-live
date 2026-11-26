@@ -15,7 +15,8 @@
     },
     "pendry-west-hollywood": {
       "name": "The Sun Rose West Hollywood",
-      "brand": "Independent"
+      "brand": "Independent",
+      "nuitee_hotel_id": null
     },
     "rosewood-le-guanahani-st-barth": {
       "name": "Airelles Le Guanahani",
@@ -23,7 +24,8 @@
     },
     "montage-kapalua-bay": {
       "name": "The Resort at Kapalua Bay",
-      "brand": "Independent"
+      "brand": "Independent",
+      "nuitee_hotel_id": null
     },
     "four-seasons-yacht-i": {
       "google_place_id": null
@@ -77,6 +79,48 @@
       "nuitee_hotel_id": null
     },
     "carlton-hotel-st-moritz": {
+      "nuitee_hotel_id": null
+    },
+    "w-algarve": {
+      "nuitee_hotel_id": null
+    },
+    "otahuna-lodge-christchurch": {
+      "nuitee_hotel_id": null
+    },
+    "the-shinmonzen-kyoto": {
+      "nuitee_hotel_id": null
+    },
+    "ashford-castle": {
+      "nuitee_hotel_id": null
+    },
+    "blackberry-farm-tennessee": {
+      "nuitee_hotel_id": null
+    },
+    "thyme": {
+      "nuitee_hotel_id": null
+    },
+    "bahia-del-duque-tenerife": {
+      "nuitee_hotel_id": null
+    },
+    "halekulani": {
+      "nuitee_hotel_id": null
+    },
+    "taj-cape-town-south-africa": {
+      "nuitee_hotel_id": null
+    },
+    "sandy-lane-barbados": {
+      "nuitee_hotel_id": null
+    },
+    "airelles-courchevel": {
+      "nuitee_hotel_id": null
+    },
+    "moor-hall": {
+      "nuitee_hotel_id": null
+    },
+    "melia-fuerteventura": {
+      "nuitee_hotel_id": null
+    },
+    "the-siam-bangkok": {
       "nuitee_hotel_id": null
     }
   },
