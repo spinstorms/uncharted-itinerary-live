@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from build_award_lists import PAGE_CSS, _shell
+from build_award_lists import PAGE_CSS, _shell, michelin_keys, w50_rank
 
 SITE = "https://stayodds.com"
 
@@ -28,6 +28,29 @@ def _g(h: dict[str, Any]) -> tuple[int | None, int]:
     return (int(g) if g is not None else None), int(lic.get("reviewCount") or 0)
 
 
+def _stars(h: dict[str, Any]) -> int:
+    best = 0
+    for d in h.get("dining") or []:
+        m = re.match(r"([123]) MICHELIN Star", d.get("distinction") or "")
+        if m:
+            best = max(best, int(m.group(1)))
+    return best
+
+
+def _tags(h: dict[str, Any]) -> list[str]:
+    g, rc = _g(h)
+    t = []
+    if (g or 0) >= 93 and rc >= 300:
+        t.append("top")
+    if w50_rank(h):
+        t.append("w50")
+    if michelin_keys(h):
+        t.append("keys")
+    if _stars(h):
+        t.append("stars")
+    return t
+
+
 def _row(h: dict[str, Any]) -> str:
     g, rc = _g(h)
     price = (h.get("priceSnapshot") or {}).get("nightlyGbp")
@@ -36,12 +59,17 @@ def _row(h: dict[str, Any]) -> str:
     badges = []
     if h.get("visitedByUs"):
         badges.append('<span class="al-badge hd-film">&#9654; We filmed it</span>')
-    for a in (h.get("officialAwards") or [])[:1]:
-        badges.append(f'<span class="al-badge">{esc(a.get("label"))}</span>')
+    w, k, st = w50_rank(h), michelin_keys(h), _stars(h)
+    if w:
+        badges.append(f'<span class="al-badge">No. {w} World\'s 50 Best</span>')
+    if k:
+        badges.append(f'<span class="al-badge">{k} MICHELIN Key{"s" if k > 1 else ""}</span>')
+    if st:
+        badges.append(f'<span class="al-badge">{st}-star restaurant</span>')
     score = f"<strong>{g}</strong>guest score" if g is not None else "<strong>—</strong>no guest score yet"
     from_txt = f'<span class="hd-from">from £{int(price):,}/nt</span>' if price else ""
     return (
-        f'<li class="hd-row" data-region="{esc(h.get("region"))}">{img}'
+        f'<li class="hd-row" data-region="{esc(h.get("region"))}" data-tags="{" ".join(_tags(h))}">{img}'
         f'<div><a class="al-name" href="/stayodds/{esc(h["id"])}/">{esc(h["name"])}</a>'
         f'<div class="al-meta">{esc(h.get("location"))}, {esc(h.get("country"))}</div>'
         f'<div class="al-badges">{"".join(badges)}</div></div>'
@@ -56,6 +84,10 @@ CSS = """
 .hd-q{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:#fff;border:1px solid #D1D5DB;border-radius:12px;padding:9px 14px;cursor:pointer;font:inherit;color:#0F172A;min-height:44px}
 .hd-q b{font-size:14px}.hd-q span{font-size:12px;color:#64748B}
 .hd-q[aria-pressed="true"]{background:#16A34A;border-color:#16A34A;color:#fff}.hd-q[aria-pressed="true"] span{color:#DCFCE7}
+.hd-filters{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;margin:0 0 10px}
+.hd-filters button{flex:none;font:inherit;font-size:13.5px;font-weight:700;padding:9px 14px;border-radius:999px;border:1px solid #FDBA74;background:#FFF7ED;color:#9A3412;cursor:pointer;min-height:40px}
+.hd-filters button[aria-pressed="true"]{background:#FF5D22;border-color:#FF5D22;color:#fff}
+.hd-more{display:block;margin:16px auto 0;font:inherit;font-weight:700;padding:10px 18px;border-radius:999px;border:1px solid rgba(100,110,130,.4);background:transparent;color:inherit;cursor:pointer}
 .hd-regions{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
 .hd-regions button{font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid rgba(100,110,130,.35);background:transparent;color:inherit;cursor:pointer}
 .hd-regions button[aria-pressed="true"]{background:#0b2540;color:#fff;border-color:#0b2540}
@@ -106,10 +138,25 @@ JS = r"""
     b.innerHTML="<b>"+q.label+"</b><span>"+sd(q.range[0])+" – "+sd(q.range[1])+"</span>";
     b.addEventListener("click",()=>{cur=q.key;apply();});wrap.appendChild(b);});
   apply();
-  const rw=document.getElementById("hdRegions");
-  rw.addEventListener("click",(e)=>{const b=e.target.closest("button");if(!b)return;
-    rw.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
-    const r=b.dataset.region;document.querySelectorAll(".hd-row").forEach(li=>{li.hidden=!!r&&li.dataset.region!==r;});});
+  const rw=document.getElementById("hdRegions"),fw=document.getElementById("hdFilters"),moreBtn=document.getElementById("hdMoreBtn");
+  const TITLES={top:"Guests' top rated",w50:"World's 50 Best hotels",keys:"MICHELIN Key hotels",stars:"Hotels with a Michelin-star restaurant","":"All hotels"};
+  let f="top",reg="",limit=40;
+  function filter(){
+    document.querySelectorAll("#hdFilmed,#hdMore").forEach(sec=>{
+      let shown=0,match=0;const paged=sec.id==="hdMore";
+      sec.querySelectorAll(".hd-row").forEach(li=>{
+        const ok=(!f||(" "+li.dataset.tags+" ").includes(" "+f+" "))&&(!reg||li.dataset.region===reg);
+        if(ok)match++;const vis=ok&&(!paged||match<=limit);li.hidden=!vis;if(vis)shown++;});
+      sec.hidden=match===0;sec.querySelector(".hd-n").textContent=match;
+      if(paged){moreBtn.hidden=match<=limit;moreBtn.textContent="Show more ("+(match-limit)+" more)";}
+    });
+    document.getElementById("hdMoreTitle").textContent=TITLES[f];
+  }
+  function press(wrap,b){wrap.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));}
+  fw.addEventListener("click",(e)=>{const b=e.target.closest("button");if(!b)return;press(fw,b);f=b.dataset.f;limit=40;filter();});
+  rw.addEventListener("click",(e)=>{const b=e.target.closest("button");if(!b)return;press(rw,b);reg=b.dataset.region;limit=40;filter();});
+  moreBtn.addEventListener("click",()=>{limit+=40;filter();});
+  filter();
 })();
 </script>
 """
@@ -121,9 +168,9 @@ def write_holidays(dist: Path, hotels: list[dict[str, Any]], template: str) -> l
     live = [h for h in hotels if (h.get("propertyStatus") or "open") not in ("closed", "Closed")]
     filmed = sorted([h for h in live if h.get("visitedByUs")], key=lambda h: (-(_g(h)[0] or 0), h["name"].lower()))
     fav = sorted(
-        [h for h in live if not h.get("visitedByUs") and (_g(h)[0] or 0) >= 93 and _g(h)[1] >= 300],
-        key=lambda h: (-(_g(h)[0] or 0), -_g(h)[1]),
-    )[:80]
+        [h for h in live if not h.get("visitedByUs") and _tags(h)],
+        key=lambda h: (-(_g(h)[0] or 0), -_g(h)[1], h["name"].lower()),
+    )
     regions = sorted({h.get("region") for h in filmed + fav if h.get("region")})
     reg_btns = '<button type="button" data-region="" aria-pressed="true">All</button>' + "".join(
         f'<button type="button" data-region="{esc(r)}" aria-pressed="false">{esc(r)}</button>' for r in regions
@@ -145,11 +192,18 @@ def write_holidays(dist: Path, hotels: list[dict[str, Any]], template: str) -> l
         "and the live price for them is checked for you.</p>"
         '<div class="hd-quick" id="hdQuick" role="group" aria-label="Holiday dates"></div>'
         '<p class="hd-picked" id="hdPicked"></p>'
+        '<div class="hd-filters" id="hdFilters" role="group" aria-label="Show">'
+        '<button type="button" data-f="top" aria-pressed="true">&#9733; Guests\' top rated</button>'
+        '<button type="button" data-f="w50" aria-pressed="false">World\'s 50 Best</button>'
+        '<button type="button" data-f="keys" aria-pressed="false">MICHELIN Keys</button>'
+        '<button type="button" data-f="stars" aria-pressed="false">Michelin-star dining</button>'
+        '<button type="button" data-f="" aria-pressed="false">All</button></div>'
         f'<div class="hd-regions" id="hdRegions" role="group" aria-label="Region">{reg_btns}</div>'
-        f"<h2>Stays we've filmed</h2><p>{len(filmed)} hotels we checked into ourselves, best guest score first.</p>"
-        f'<ol class="hd-list">{"".join(_row(h) for h in filmed)}</ol>'
-        f"<h2>Guests' favourites</h2><p>Hotels guests score 93 or more out of 100, from 300+ verified reviews.</p>"
+        "<section id=\"hdFilmed\"><h2>Stays we've filmed</h2><p><span class=\"hd-n\"></span> hotels we checked into ourselves, best guest score first.</p>"
+        f'<ol class="hd-list">{"".join(_row(h) for h in filmed)}</ol></section>'
+        '<section id="hdMore"><h2 id="hdMoreTitle">Guests\' favourites</h2><p><span class="hd-n"></span> hotels, best guest score first.</p>'
         f'<ol class="hd-list">{"".join(_row(h) for h in fav)}</ol>'
+        '<button type="button" class="hd-more" id="hdMoreBtn" hidden>Show more hotels</button></section>'
         '<p class="al-note" style="margin-top:22px">Guest scores are verified licensed guest ratings. '
         "“From” prices are indicative (middle of three sample dates); your holiday dates usually cost more, "
         "so the live price on each hotel page is the one to go by.</p>"
