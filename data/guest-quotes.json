@@ -7187,35 +7187,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "carlton-hotel-st-moritz": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 6,
-  "quotes": [
-   {
-    "date": "2026-03-25",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Very comfortable",
-    "liked": "Everything!!! The location, the host, the place, the coziness",
-    "disliked": "I said I like everything",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-22",
-    "source": "Verified booking guest",
-    "score": 6.0,
-    "travellerType": "extended group",
-    "headline": "A Clean modern facilty",
-    "liked": "The town, the Berina Express way train ride, the assistance of the manager once we realized we had a problem with the keys access",
-    "disliked": "1. no keys left in the safe location for us, but addressed after short time by the manager. 2. the walk up and down hills, from the station with our suitcases till we found the location (note would be fine if you owned a car. but I must say the Manager was very kind and offered us a lift downtown once we settled in. The walk down hill in the morning wasn't so bad but going up, a problem for us older persons.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "casa-chameleon-las-catalinas": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -7892,14 +7863,6 @@
     "text": "3- While water bottles are available everywhere at the property, in the room, at the parking, in the lobby …"
    }
   ],
-  "waterChecked": 2
- },
- "cataloochee-ranch": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 0,
-  "quotes": [],
-  "waterMentions": [],
   "waterChecked": 2
  },
  "cavallo-point-lodge": {
@@ -17204,14 +17167,6 @@
     "language": "en"
    }
   ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "gangtey-lodge": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 0,
-  "quotes": [],
   "waterMentions": [],
   "waterChecked": 2
  },
