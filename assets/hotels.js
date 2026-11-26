@@ -36,7 +36,9 @@ function getOdds(h) {
 
 const state = {
   hotels: [],
-  scope: "all", // "all" | "visited" | "global" | "michelin" | "w50"
+  scope: "all", // "all" | "visited" | "global" (legacy: "michelin" | "w50" | "dining" | "michelin1-3")
+  awards: [], // multi-select award filters: "keys" | "stars" | "w50" | "forbes5"
+  awardMatch: "all", // "all" = hotel must have every selected award, "any" = at least one
   region: "All",
   brand: "All",
   style: "all",
@@ -67,6 +69,8 @@ function saveMapState() {
     const zoom = state.map ? state.map.getZoom() : null;
     const payload = {
       scope: state.scope,
+      awards: state.awards,
+      awardMatch: state.awardMatch,
       region: state.region,
       brand: state.brand,
       style: state.style,
@@ -142,6 +146,10 @@ function syncUrlParams() {
     else url.searchParams.delete("region");
     if (state.scope && state.scope !== "all") url.searchParams.set("scope", state.scope);
     else url.searchParams.delete("scope");
+    if (state.awards.length) url.searchParams.set("awards", state.awards.join(","));
+    else url.searchParams.delete("awards");
+    if (state.awards.length > 1 && state.awardMatch === "any") url.searchParams.set("match", "any");
+    else url.searchParams.delete("match");
     if (state.style && state.style !== "all") url.searchParams.set("style", state.style);
     else url.searchParams.delete("style");
     window.history.replaceState({}, "", url.toString());
@@ -278,7 +286,32 @@ function initMap() {
   state.markersLayer = L.layerGroup().addTo(map);
 }
 
+const AWARD_FILTERS = [
+  { id: "keys", label: "MICHELIN Keys", test: (h) => hasMichelinKey(h) },
+  { id: "stars", label: "MICHELIN-starred restaurant", test: (h) => hasStarRestaurant(h) },
+  { id: "w50", label: "World's 50 Best", test: (h) => hasW50Best(h) },
+  { id: "forbes5", label: "Forbes Five-Star", test: (h) => getForbesRank(h) === 5 },
+];
+
+function applyAwardFilters(list) {
+  const sel = AWARD_FILTERS.filter((f) => state.awards.includes(f.id));
+  if (!sel.length) return list;
+  return state.awardMatch === "any" ? list.filter((h) => sel.some((f) => f.test(h))) : list.filter((h) => sel.every((f) => f.test(h)));
+}
+
+function migrateLegacyScope() {
+  const legacy = { michelin: "keys", w50: "w50", dining: "stars" };
+  if (legacy[state.scope]) {
+    if (!state.awards.includes(legacy[state.scope])) state.awards = [...state.awards, legacy[state.scope]];
+    state.scope = "all";
+  }
+}
+
 function getScopedHotels() {
+  return applyAwardFilters(getScopeBaseHotels());
+}
+
+function getScopeBaseHotels() {
   if (state.scope === "visited") return state.hotels.filter(isVisitedProperty);
   if (state.scope === "global") return state.hotels.filter((h) => !isVisitedProperty(h));
   if (state.scope === "michelin") return state.hotels.filter(hasMichelinKey);
@@ -434,17 +467,12 @@ function renderScopeTabs() {
   if (!container) return;
   const visitedCnt = state.hotels.filter(isVisitedProperty).length;
   const globalCnt = state.hotels.length - visitedCnt;
-  const michelinCnt = state.hotels.filter(hasMichelinKey).length;
-  const w50Cnt = state.hotels.filter(hasW50Best).length;
-  const diningCnt = state.hotels.filter(hasStarRestaurant).length;
 
   const tabs = [
     { id: "all", label: `All Luxury Hotels (${state.hotels.length})` },
     { id: "visited", label: `My First-Hand Stays (${visitedCnt})` },
     { id: "global", label: `Global Directory (${globalCnt})` },
-    { id: "michelin", label: `2026 MICHELIN Keys (${michelinCnt})` },
-    { id: "w50", label: `World's 50 Best (${w50Cnt})` },
-    ...(diningCnt ? [{ id: "dining", label: `MICHELIN-starred restaurant (${diningCnt})` }] : []),
+
   ];
   for (const n of [3, 2, 1]) {
     const id = `michelin${n}`;
@@ -454,14 +482,62 @@ function renderScopeTabs() {
     }
   }
 
-  container.innerHTML = tabs
-    .map(
-      (t) =>
-        `<button class="scope-pill ${state.scope === t.id ? "active" : ""}" data-scope="${t.id}" type="button">${escapeHtml(
-          t.label
-        )}</button>`
-    )
-    .join("");
+  const base = getScopeBaseHotels();
+  const awardChips = AWARD_FILTERS.map((f) => {
+    const on = state.awards.includes(f.id);
+    const cnt = base.filter(f.test).length;
+    return cnt || on
+      ? `<button class="scope-pill award-pill ${on ? "active" : ""}" data-award="${f.id}" type="button" aria-pressed="${on}">${on ? "&#10003; " : ""}${escapeHtml(f.label)} (${cnt})</button>`
+      : "";
+  }).join("");
+  const matchCnt = applyAwardFilters(base).length;
+  const matchToggle = state.awards.length > 1
+    ? `<span class="award-match">Show hotels with
+        <button type="button" class="award-match-btn ${state.awardMatch === "all" ? "active" : ""}" data-match="all" aria-pressed="${state.awardMatch === "all"}">all of these</button>
+        <button type="button" class="award-match-btn ${state.awardMatch === "any" ? "active" : ""}" data-match="any" aria-pressed="${state.awardMatch === "any"}">any of these</button>
+        · ${matchCnt} hotel${matchCnt === 1 ? "" : "s"}</span>`
+    : "";
+  container.innerHTML =
+    tabs
+      .map(
+        (t) =>
+          `<button class="scope-pill ${state.scope === t.id ? "active" : ""}" data-scope="${t.id}" type="button">${escapeHtml(
+            t.label
+          )}</button>`
+      )
+      .join("") +
+    `<div class="award-row"><span class="award-row-label">Awards (pick one or more):</span>${awardChips}${
+      state.awards.length ? `<button type="button" class="award-clear" data-award-clear="1">Clear</button>` : ""
+    }${matchToggle}</div>`;
+
+  const afterFilterChange = () => {
+    const scoped = getScopedHotels();
+    if (state.region !== "All" && !scoped.some((h) => h.region === state.region)) state.region = "All";
+    state.visibleLimit = PAGE_SIZE;
+    syncUrlParams();
+    renderScopeTabs();
+    renderRegionPills();
+    renderStylePills();
+    renderAll(true);
+  };
+  container.querySelectorAll("[data-award]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.award;
+      state.awards = state.awards.includes(id) ? state.awards.filter((a) => a !== id) : [...state.awards, id];
+      if (typeof window.trackEvent === "function") window.trackEvent("use_filter", "filter", `awards:${state.awards.join("+")}`);
+      afterFilterChange();
+    });
+  });
+  container.querySelectorAll("[data-match]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.awardMatch = btn.dataset.match === "any" ? "any" : "all";
+      afterFilterChange();
+    });
+  });
+  container.querySelector("[data-award-clear]")?.addEventListener("click", () => {
+    state.awards = [];
+    afterFilterChange();
+  });
 
   container.querySelectorAll("[data-scope]").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -682,7 +758,7 @@ function renderMapMarkers(hotels, fitBounds = true) {
   }
 
   if (fitBounds && bounds.length) {
-    if (state.region === "All" && state.scope === "all" && !state.search && state.brand === "All") {
+    if (state.region === "All" && state.scope === "all" && !state.awards.length && !state.search && state.brand === "All") {
       state.map.setView([20.0, 20.0], 2, { animate: false });
     } else if (bounds.length === 1) {
       state.map.setView(bounds[0], 11, { animate: true });
@@ -1176,11 +1252,12 @@ function applyMapPrompt(raw) {
   state.month = p.month || 0;
   state.coverage = "All";
   state.scope = "all";
+  state.awards = [];
   state.profileFilter = "all";
   const f = p.feature || "all";
   if (/^michelin[123]$/.test(f)) state.scope = f;
-  else if (f.startsWith("michelin")) state.scope = "michelin";
-  else if (f.startsWith("50best")) state.scope = "w50";
+  else if (f.startsWith("michelin")) state.awards = ["keys"];
+  else if (f.startsWith("50best")) state.awards = ["w50"];
   else if (f === "video") state.scope = "visited";
   else if (["adults", "family", "preferred", "points"].includes(f)) state.profileFilter = f;
   state.visibleLimit = PAGE_SIZE;
@@ -1214,16 +1291,21 @@ async function boot() {
 
   const params = new URLSearchParams(window.location.search);
   const hasExplicitUrlFilter = Boolean(
-    params.get("region") || params.get("scope") || params.get("style") || params.get("month")
+    params.get("region") || params.get("scope") || params.get("awards") || params.get("style") || params.get("month")
   );
-  if (["all", "visited", "global", "michelin", "w50", "michelin3", "michelin2", "michelin1"].includes(params.get("scope"))) {
+  if (["all", "visited", "global", "michelin", "w50", "dining", "michelin3", "michelin2", "michelin1"].includes(params.get("scope"))) {
     state.scope = params.get("scope");
   }
+  if (params.get("awards")) state.awards = params.get("awards").split(",").filter((a) => AWARD_FILTERS.some((f) => f.id === a));
+  if (params.get("match") === "any") state.awardMatch = "any";
+  migrateLegacyScope();
 
   qs("#resetMapViewBtn")?.addEventListener("click", () => {
     clearSavedMapState();
     suppressMapSave = true;
     state.scope = "all";
+    state.awards = [];
+    state.awardMatch = "all";
     state.region = "All";
     state.brand = "All";
     state.coverage = "All";
@@ -1415,7 +1497,10 @@ async function boot() {
       const saved = readSavedMapState();
       if (saved) {
         suppressMapSave = true;
-        if (["all", "visited", "global", "michelin", "w50", "michelin3", "michelin2", "michelin1"].includes(saved.scope)) state.scope = saved.scope;
+        if (["all", "visited", "global", "michelin", "w50", "dining", "michelin3", "michelin2", "michelin1"].includes(saved.scope)) state.scope = saved.scope;
+        if (Array.isArray(saved.awards)) state.awards = saved.awards.filter((a) => AWARD_FILTERS.some((f) => f.id === a));
+        if (saved.awardMatch === "any") state.awardMatch = "any";
+        migrateLegacyScope();
         const matchedSavedRegion = matchRegionParam(saved.region, getScopedHotels());
         if (matchedSavedRegion) state.region = matchedSavedRegion;
         if (typeof saved.brand === "string" && saved.brand) {

@@ -60,6 +60,18 @@
         document.head.appendChild(script);
     })();
   </script>
+  <style>
+    .scope-tabs-row{flex-wrap:wrap}
+    .award-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;width:100%;margin-top:6px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12)}
+    .award-row-label{font-size:12px;font-weight:700;letter-spacing:.04em;color:#CBD5E1;margin-right:4px}
+    .award-pill{border:1px solid rgba(255,255,255,.28)!important;background:rgba(255,255,255,.06)!important;color:#E2E8F0!important;padding:7px 14px!important}
+    .award-pill:hover{border-color:#FF8A5B!important;color:#fff!important}
+    .award-pill.active{background:#FF5D22!important;border-color:#FF5D22!important;color:#fff!important;box-shadow:0 4px 12px rgba(255,93,34,.3)!important}
+    .award-clear{border:0;background:none;color:#FF8A5B;font-weight:700;font-size:13px;cursor:pointer;padding:7px 8px;min-height:36px}
+    .award-match{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:#CBD5E1;width:100%;margin-top:2px}
+    .award-match-btn{border:1px solid rgba(255,255,255,.3);background:transparent;color:#E2E8F0;border-radius:99px;padding:5px 12px;font-size:12.5px;font-weight:600;cursor:pointer;min-height:32px}
+    .award-match-btn.active{background:#fff;color:#0F172A;border-color:#fff}
+  </style>
 </head>
 <body class="stayodds-warm-canvas">
   <header class="site-header stayodds-site-header">
@@ -364,6 +376,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="../assets/stayodds-feedback.js?v=4" defer></script>
   <script src="../assets/stayodds-video.js?v=2" defer></script>
-  <script type="module" src="../assets/hotels.js?v=43"></script>
+  <script type="module" src="../assets/hotels.js?v=44"></script>
 </body>
 </html>
