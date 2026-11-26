@@ -90,7 +90,51 @@
   <ol id="fav" style="margin:0;padding-left:22px;display:grid;gap:8px"></ol>
 </section>
 
-<p class="foot">Sources: StayOdds hotel scorecards (guest reviews from booking sites and Tripadvisor, published critic scores, World's 50 Best Hotels 2026, MICHELIN Guide 2026 Keys, Forbes Travel Guide 2026). Groups and ranks are among hotels on StayOdds only.</p>
+<section class="panel" aria-labelledby="h9a">
+  <div class="eyebrow" id="next-door">Next-door rivals</div>
+  <h2 id="h9a">Same street, very different stays</h2>
+  <p class="sub">Hotels within 2 km of each other where guests disagree the most (both with 200+ reviews). Location isn't everything.</p>
+  <div class="ideas" id="rivals"></div>
+</section>
+
+<section class="panel" aria-labelledby="h10a">
+  <div class="eyebrow" id="our-stays">Our stays vs guests</div>
+  <h2 id="h10a">Where we and other guests disagree most</h2>
+  <p class="sub">Our filmed-stay score next to the guest score for the hotels we've stayed in. Below zero: guests liked it more than we did.</p>
+  <div id="ours" style="display:grid;gap:8px"></div>
+</section>
+
+<section class="panel" aria-labelledby="h11a">
+  <div class="eyebrow" id="telegraph">The critics</div>
+  <h2 id="h11a">The Telegraph vs guests</h2>
+  <p class="sub" id="telSub"></p>
+  <div class="ideas" id="tel"></div>
+</section>
+
+<section class="panel" aria-labelledby="h12a">
+  <div class="eyebrow" id="dining">Dining</div>
+  <h2 id="h12a">Does a MICHELIN-starred restaurant mean happier guests?</h2>
+  <p class="sub">Guest scores at hotels with a starred restaurant on site, next to MICHELIN Key hotels without one and every hotel on StayOdds.</p>
+  <div class="ideas" id="diningCards"></div>
+  <p class="note" id="diningNote"></p>
+</section>
+
+<section class="panel" aria-labelledby="h13a">
+  <div class="eyebrow" id="water">Is the water free?</div>
+  <h2 id="h13a">Which brands give you free bottled water</h2>
+  <p class="sub">Share of each brand's hotels where bottled water in the room is free (brands with 8+ checked hotels). Policy data from <a href="https://isthewaterfree.com/" target="_blank" rel="noopener">isthewaterfree.com</a>.</p>
+  <div id="waterBars" style="display:grid;gap:7px"></div>
+  <div class="note"><b>Where guests pay or are rationed:</b> <span id="waterCharged"></span></div>
+</section>
+
+<section class="panel" aria-labelledby="h14a">
+  <div class="eyebrow" id="value">Best value</div>
+  <h2 id="h14a">Guest scores of 95+ for the lowest prices</h2>
+  <p class="sub">Hotels guests rate 95 or higher (300+ reviews), cheapest first, from our latest nightly price check. Prices change, so check your dates.</p>
+  <ol id="valueList" style="margin:0;padding-left:22px;display:grid;gap:8px"></ol>
+</section>
+
+<p class="foot">Sources: StayOdds hotel scorecards (guest reviews from booking sites and Tripadvisor, published critic scores, World's 50 Best Hotels 2026, MICHELIN Guide 2026 Keys, Forbes Travel Guide 2026, The Telegraph and water policies via isthewaterfree.com, restaurant distinctions from the MICHELIN Guide). Groups and ranks are among hotels on StayOdds only.</p>
 </div>
 </div><div class="tip gi-tip" id="tip" hidden></div>
 <script>
@@ -198,6 +242,38 @@ function drawAll(){
   }
   document.getElementById('fav').innerHTML = (D.favourites || []).map((f) =>
     `<li><a href="${hotelUrl(f.id)}" style="color:var(--ink);font-weight:700">${esc(f.name)}</a> <span style="color:var(--ink2)">· ${esc(f.where)}</span> · <b style="color:var(--accent)">${f.g}</b>/100 <span style="color:var(--muted)">from ${f.rc.toLocaleString('en-GB')} reviews</span></li>`).join('');
+
+  // --- more insights ---
+  const link = (h) => `<a href="${hotelUrl(h.id)}" style="color:var(--ink);font-weight:700">${esc(h.name)}</a>`;
+  const gbp = (n) => '£' + Number(n).toLocaleString('en-GB');
+  document.getElementById('rivals').innerHTML = (D.rivals || []).map((r) =>
+    `<div class="idea"><span class="tag">${esc(r.where)} · ${r.km} km apart</span><h3>${r.gap} points apart</h3>
+     <p>${link(r.hi)} <b style="color:var(--accent)">${r.hi.g}</b> from ${r.hi.rc.toLocaleString('en-GB')} reviews<br>${link(r.lo)} <b>${r.lo.g}</b> from ${r.lo.rc.toLocaleString('en-GB')} reviews</p></div>`).join('');
+  document.getElementById('ours').innerHTML = (D.ours || []).map((o) => {
+    const w = Math.min(100, Math.abs(o.gap) * 3);
+    const neg = o.gap < 0;
+    return `<div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 54px;gap:10px;align-items:center;font-size:14px">
+      <span>${link(o)}<br><span style="color:var(--muted);font-size:12px">Us ${o.ours} · Guests ${o.g}</span></span>
+      <span style="display:flex;justify-content:${neg ? 'flex-end' : 'flex-start'};${neg ? 'border-right' : 'border-left'}:2px solid var(--line)"><i style="display:block;height:10px;width:${w}%;border-radius:99px;background:${neg ? 'var(--ink2)' : 'var(--accent)'}"></i></span>
+      <b style="text-align:right">${o.gap > 0 ? '+' : ''}${o.gap}</b></div>`;
+  }).join('');
+  document.getElementById('telSub').textContent = `${D.telN} hotels have a published Telegraph review score. These are the ones where the critic and ${'guests'} disagree most.`;
+  const telCard = (t, over) => `<div class="idea"><span class="tag">${over ? 'Telegraph rates it higher' : 'Guests rate it higher'}</span><h3>${link(t)}</h3><p>Telegraph <b>${t.t}</b> · Guests <b style="color:var(--accent)">${t.g}</b> from ${t.rc.toLocaleString('en-GB')} reviews</p></div>`;
+  document.getElementById('tel').innerHTML = (D.telOver || []).slice(0, 3).map((t) => telCard(t, true)).join('') + (D.telUnder || []).slice(0, 3).map((t) => telCard(t, false)).join('');
+  if (D.dining) {
+    const c = (label, x) => `<div class="mod"><div class="lbl">${label}</div><div class="big">${x.median}</div><div class="lbl">typical guest score · ${x.n} hotels · middle half ${x.q1}–${x.q3}</div></div>`;
+    document.getElementById('diningCards').innerHTML = c('Starred restaurant on site', D.dining.starred) + c('MICHELIN Key, no starred restaurant', D.dining.keyedNoStar) + c('All StayOdds hotels', D.dining.all);
+    const diff = D.dining.starred.median - D.dining.keyedNoStar.median;
+    document.getElementById('diningNote').innerHTML = diff === 0 ? '<b>No difference.</b> A starred restaurant doesn\'t lift the overall guest score: guests judge the whole stay, not just dinner.'
+      : `<b>${diff > 0 ? 'A small lift' : 'Slightly lower'}:</b> hotels with a starred restaurant score ${Math.abs(diff)} point${Math.abs(diff) === 1 ? '' : 's'} ${diff > 0 ? 'higher' : 'lower'} with guests than other MICHELIN Key hotels.`;
+  } else document.getElementById('dining').closest('section').hidden = true;
+  document.getElementById('waterBars').innerHTML = (D.water || []).map((w) =>
+    `<div style="display:grid;grid-template-columns:150px minmax(0,1fr) 92px;gap:10px;align-items:center;font-size:13.5px">
+      <b>${esc(w.brand)}</b><span style="background:var(--track);border-radius:99px;height:12px;overflow:hidden"><i style="display:block;height:100%;width:${w.pct}%;background:${w.pct >= 90 ? '#16A34A' : w.pct >= 70 ? '#F59E0B' : '#DC2626'};border-radius:99px"></i></span>
+      <span style="text-align:right">${w.pct}% <span style="color:var(--muted)">of ${w.n}</span></span></div>`).join('');
+  document.getElementById('waterCharged').innerHTML = (D.waterCharged || []).map((w) => `${link(w)} <span style="color:var(--muted)">(${esc(w.status.toLowerCase())})</span>`).join(' · ') || 'none found';
+  document.getElementById('valueList').innerHTML = (D.value || []).map((v) =>
+    `<li>${link(v)} <span style="color:var(--ink2)">· ${esc(v.where)}</span> · <b style="color:var(--accent)">${v.g}</b>/100 · from <b>${gbp(v.gbp)}</b>/night <span style="color:var(--muted)">(${v.rc.toLocaleString('en-GB')} reviews)</span></li>`).join('');
 }
 drawAll();
 </script>

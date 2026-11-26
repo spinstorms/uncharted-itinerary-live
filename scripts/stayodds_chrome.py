@@ -51,6 +51,7 @@ def header(p: str, active: str = "") -> str:
         + a("compare", f"{p}compare/?mode=compare", "Compare", "compare")
         + a("map", f"{p}hotels/", "World Map", "mapPin")
         + a("brands", f"{p}brands/", "Brands", "award")
+        + f'        <a href="{p}insights/"{' class="active"' if active == "insights" else ""}>\n          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>\n          Insights\n        </a>\n'
         + f'        <a href="{p}" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>\n'
     )
     mob = (
@@ -58,6 +59,7 @@ def header(p: str, active: str = "") -> str:
         + m("compare", f"{p}compare/?mode=compare", "Compare VS &amp; Directory")
         + m("map", f"{p}hotels/", "Interactive World Map")
         + m("brands", f"{p}brands/", "Brand Leaderboard")
+        + m("insights", f"{p}insights/", "Guest Insights")
         + f'      <a href="{p}links/">Travel Deals &amp; Codes</a>\n      <a href="{p}">Uncharted Videos &nearr;</a>\n'
         + f'      <a href="{p}about/">About</a>\n      <a href="{p}faq/">FAQ</a>\n      <a href="{p}contact/">Contact</a>\n'
     )

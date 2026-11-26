@@ -230,8 +230,89 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
     # guests' favourites: highest guest score, from 500+ reviews so a small sample can't top the list
     fav = sorted((r for r in guests if r["rc"] >= 500), key=lambda r: (-r["g"], -r["rc"]))[:15]
     favourites = [{"id": r["h"]["id"], "name": r["h"]["name"], "where": _city(r["h"]) or _country(r["h"]), "g": r["g"], "rc": r["rc"]} for r in fav]
+    # --- more insights (Nov 2026) ---------------------------------------------------------------------------------
+    import math
+
+    def _hid(r):
+        return {"id": r["h"]["id"], "name": r["h"]["name"], "g": r["g"], "rc": r["rc"]}
+
+    # 1. our filmed stays vs guests: where we and guests disagree most
+    ours = []
+    for r in guests:
+        o = compute(r["h"])
+        if o.get("firstHand") and o.get("ours100") is not None:
+            ours.append({**_hid(r), "ours": int(o["ours100"]), "gap": int(o["ours100"]) - int(r["g"])})
+    ours.sort(key=lambda x: -abs(x["gap"]))
+
+    # 2. next-door rivals: hotels within 2 km whose guest scores differ the most (both 200+ reviews)
+    pts = [r for r in guests if r["rc"] >= 200 and r["h"].get("lat") is not None and r["h"].get("lng") is not None]
+    pairs = []
+    for i, a in enumerate(pts):
+        la, lo = math.radians(float(a["h"]["lat"])), math.radians(float(a["h"]["lng"]))
+        for b in pts[i + 1:]:
+            lb, lob = math.radians(float(b["h"]["lat"])), math.radians(float(b["h"]["lng"]))
+            d = 6371 * 2 * math.asin(math.sqrt(math.sin((lb - la) / 2) ** 2 + math.cos(la) * math.cos(lb) * math.sin((lob - lo) / 2) ** 2))
+            if d <= 2 and abs(a["g"] - b["g"]) >= 6:
+                hi, lo_ = (a, b) if a["g"] >= b["g"] else (b, a)
+                pairs.append({"km": round(d, 1), "where": _city(hi["h"]) or _country(hi["h"]), "hi": _hid(hi), "lo": _hid(lo_),
+                              "gap": hi["g"] - lo_["g"]})
+    pairs.sort(key=lambda x: (-x["gap"], x["km"]))
+    seen, rivals = set(), []
+    for pr in pairs:
+        k = (pr["hi"]["id"], pr["lo"]["id"])
+        if pr["hi"]["id"] in seen or pr["lo"]["id"] in seen:
+            continue
+        seen.update(k)
+        rivals.append(pr)
+        if len(rivals) >= 8:
+            break
+
+    # 3. does a MICHELIN-starred restaurant on site mean happier guests?
+    starred = [r["g"] for r in guests if any("MICHELIN Star" in (d.get("distinction") or "") for d in (r["h"].get("dining") or []))]
+    keyed_no_star = [r["g"] for r in guests if any("MICHELIN Key" in a for a in r["awards"])
+                     and not any("MICHELIN Star" in (d.get("distinction") or "") for d in (r["h"].get("dining") or []))]
+    dining = None
+    if len(starred) >= 8 and len(keyed_no_star) >= 8:
+        dining = {"starred": _spread(starred), "keyedNoStar": _spread(keyed_no_star), "all": _spread([r["g"] for r in guests])}
+
+    # 4. free water by brand (isthewaterfree.com policy), brands with 8+ checked hotels
+    wb: dict[str, list] = defaultdict(list)
+    for r in rows:
+        st_ = ((r["h"].get("itwf") or {}).get("status") or "")
+        if st_ and r["brand"] not in NOT_A_BRAND:
+            wb[r["brand"]].append(st_)
+    water = []
+    for b, sts in wb.items():
+        if len(sts) < 8:
+            continue
+        free = sum(1 for x in sts if x == "Free bottled water")
+        water.append({"brand": b, "n": len(sts), "free": free, "pct": round(free / len(sts) * 100)})
+    water.sort(key=lambda x: (-x["pct"], -x["n"]))
+    water_charged = [{"id": r["h"]["id"], "name": r["h"]["name"], "status": r["h"]["itwf"]["status"], "summary": r["h"]["itwf"].get("summary", "")}
+                     for r in rows if (r["h"].get("itwf") or {}).get("status") in ("Water isn't free", "Free, but rationed")][:12]
+
+    # 5. The Telegraph vs guests: biggest disagreements
+    tel = []
+    for r in guests:
+        for e in r["h"].get("editorialRatings") or []:
+            if "telegraph" in str(e.get("sourceName") or "").lower() and e.get("normalized100") is not None:
+                tel.append({**_hid(r), "t": int(e["normalized100"]), "gap": int(e["normalized100"]) - int(r["g"])})
+                break
+    tel_over = sorted([x for x in tel if x["gap"] > 0], key=lambda x: -x["gap"])[:5]
+    tel_under = sorted([x for x in tel if x["gap"] < 0], key=lambda x: x["gap"])[:5]
+
+    # 6. best value: guest score 95+ (300+ reviews) at the lowest nightly price
+    val = []
+    for r in guests:
+        gbp = int((r["h"].get("priceSnapshot") or {}).get("nightlyGbp") or 0)
+        if gbp >= 150 and r["g"] >= 95 and r["rc"] >= 300:
+            val.append({**_hid(r), "gbp": gbp, "where": _city(r["h"]) or _country(r["h"])})
+    val.sort(key=lambda x: (x["gbp"], -x["g"]))
+
     return {"disappoint": low[:6], "brands": brands, "tiers": tier_stats, "scatter": scatter, "n": len(guests),
-            "price": price, "areas": areas, "favourites": favourites}
+            "price": price, "areas": areas, "favourites": favourites,
+            "ours": ours[:10], "rivals": rivals, "dining": dining, "water": water, "waterCharged": water_charged,
+            "telOver": tel_over, "telUnder": tel_under, "telN": len(tel), "value": val[:10]}
 
 
 def write_insights(dist: Path, hotels: list[dict[str, Any]], template: str, compute) -> list[str]:
@@ -261,7 +342,8 @@ def write_insights(dist: Path, hotels: list[dict[str, Any]], template: str, comp
         price_note = (f"Typical guest score {'rises' if pr[-1]['median'] > pr[0]['median'] else 'goes'} from {pr[0]['median']:g} ({pr[0]['band']}) to {pr[-1]['median']:g} ({pr[-1]['band']}), "
                       "but every price level has hotels guests rate 98 or more, so a higher price is no guarantee.") if all(b["max"] >= 98 for b in pr) else (
                       f"Typical guest score: {pr[0]['median']:g} at {pr[0]['band']}, {pr[-1]['median']:g} at {pr[-1]['band']}.")
-    data = {k: d[k] for k in ("disappoint", "brands", "tiers", "scatter", "price", "areas", "favourites")}
+    data = {k: d[k] for k in ("disappoint", "brands", "tiers", "scatter", "price", "areas", "favourites", "ours", "rivals",
+                              "dining", "water", "waterCharged", "telOver", "telUnder", "telN", "value")}
     page = (page.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
             .replace("__DATE__", datetime.now(timezone.utc).strftime("%-d %B %Y"))
             .replace("__NHOTELS__", f"{d['n']:,}")

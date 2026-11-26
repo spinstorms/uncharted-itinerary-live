@@ -107,6 +107,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = re.sub(r'href=["\'](?:\.\./)+compare/["\']', 'href="/"', html)
     html = re.sub(r'href=["\'](?:\.\./)+hotels/', 'href="/hotels/', html)
     html = re.sub(r'href=["\'](?:\.\./)+brands/', 'href="/brands/', html)
+    html = re.sub(r'href=["\'](?:\.\./)+insights/', 'href="/insights/', html)
     html = re.sub(r'href=["\'](?:\.\./)+stayodds/', 'href="/stayodds/', html)
     html = re.sub(r'href=["\'](?:\.\./)+destinations/', 'href="/destinations/', html)
     html = re.sub(r'href=["\'](?:\.\./)+lists/', 'href="/lists/', html)
