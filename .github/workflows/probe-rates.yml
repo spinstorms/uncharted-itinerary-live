@@ -1,0 +1,13 @@
+name: Probe LiteAPI rates (read-only)
+on:
+  workflow_dispatch:
+    inputs:
+      ids: { description: "LiteAPI hotel ids, space separated", required: true }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u scripts/probe_rates.py ${{ inputs.ids }}
+        env:
+          NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
