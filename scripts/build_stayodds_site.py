@@ -1471,7 +1471,7 @@ def render_seo_page(
             '<span class="detail-trip-kicker">Dine at the hotel</span>'
             f'<strong class="detail-trip-val">{esc(_d[0]["name"])}: {esc(_d[0]["distinction"])}</strong>'
             '<span class="detail-trip-sub">' + " · ".join(f'<a href="{esc(r["url"])}" target="_blank" rel="noopener noreferrer">{esc(r["name"])}</a> ({esc(r["distinction"])})' for r in _d)
-            + '. Source: MICHELIN Guide.</span></div>'
+            + ('. Source: MICHELIN Guide, via isthewaterfree.com.' if 'isthewaterfree' in _d[0].get("url", "") else '. Source: MICHELIN Guide.') + '</span></div>'
         )
 
     # Drinking water: isthewaterfree.com's checked policy first, else what guests say in our reviews feed
