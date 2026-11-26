@@ -1793,6 +1793,7 @@ def render_seo_page(
           <section class="so2-dates" aria-label="Choose your dates">
             <div class="so2-dates-head"><strong>When are you going?</strong><span id="soDatesPicked"></span></div>
             <div class="so2-quick" id="soQuickDates" role="group" aria-label="Quick dates"></div>
+            <a class="so2-hol-link" href="../../holidays/">See our top hotels for Christmas &amp; holidays &rarr;</a>
             <div class="date-rate-bar" id="detailDateRateBar">
               <div class="date-rate-inputs">
                 <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>

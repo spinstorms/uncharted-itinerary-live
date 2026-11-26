@@ -108,6 +108,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = re.sub(r'href=["\'](?:\.\./)+hotels/', 'href="/hotels/', html)
     html = re.sub(r'href=["\'](?:\.\./)+brands/', 'href="/brands/', html)
     html = re.sub(r'href=["\'](?:\.\./)+insights/', 'href="/insights/', html)
+    html = re.sub(r'href=["\'](?:\.\./)+holidays/', 'href="/holidays/', html)
     html = re.sub(r'href=["\'](?:\.\./)+stayodds/', 'href="/stayodds/', html)
     html = re.sub(r'href=["\'](?:\.\./)+destinations/', 'href="/destinations/', html)
     html = re.sub(r'href=["\'](?:\.\./)+lists/', 'href="/lists/', html)
@@ -427,6 +428,9 @@ def main() -> None:
     from build_stayodds_site import compute_stayodds_py
 
     list_paths += write_insights(DIST, hotels, load_template("hotels/index.html"), compute_stayodds_py)
+    from build_holidays import write_holidays
+
+    list_paths += write_holidays(DIST, hotels, load_template("hotels/index.html"))
     # merged duplicates: their old page URL forwards to the hotel we kept
     try:
         merges = json.loads((ROOT / "data" / "property-corrections.json").read_text(encoding="utf-8")).get("merge") or {}

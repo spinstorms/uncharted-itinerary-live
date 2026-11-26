@@ -52,6 +52,7 @@ def header(p: str, active: str = "") -> str:
         + a("map", f"{p}hotels/", "World Map", "mapPin")
         + a("brands", f"{p}brands/", "Brands", "award")
         + f'        <a href="{p}insights/"{' class="active"' if active == "insights" else ""}>\n          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>\n          Insights\n        </a>\n'
+        + f'        <a href="{p}holidays/"{' class="active"' if active == "holidays" else ""}>\n          <svg class="so-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>\n          Holidays\n        </a>\n'
         + f'        <a href="{p}" class="nav-uncharted-pill">Uncharted Videos &nearr;</a>\n'
     )
     mob = (
@@ -60,6 +61,7 @@ def header(p: str, active: str = "") -> str:
         + m("map", f"{p}hotels/", "Interactive World Map")
         + m("brands", f"{p}brands/", "Brand Leaderboard")
         + m("insights", f"{p}insights/", "Guest Insights")
+        + m("holidays", f"{p}holidays/", "Christmas &amp; Holiday Dates")
         + f'      <a href="{p}links/">Travel Deals &amp; Codes</a>\n      <a href="{p}">Uncharted Videos &nearr;</a>\n'
         + f'      <a href="{p}about/">About</a>\n      <a href="{p}faq/">FAQ</a>\n      <a href="{p}contact/">Contact</a>\n'
     )
