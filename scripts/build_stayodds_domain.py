@@ -373,6 +373,9 @@ def main() -> None:
             break
 
     # 2. Copy assets/ and required data/ JSONs
+    from brand_logo_map import write_browser_map
+
+    write_browser_map()
     shutil.copytree(ROOT / "assets", DIST / "assets")
     (DIST / "data").mkdir(parents=True, exist_ok=True)
     for jf in ("stayodds-index.json", "stayodds-directory.json", "stayodds-visited.json", "price-snapshots.json"):

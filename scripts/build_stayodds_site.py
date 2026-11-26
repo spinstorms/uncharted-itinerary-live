@@ -12,6 +12,7 @@ StayOdds Static SEO & Directory Builder (250+ Verified Luxury Hotels from Supaba
 
 from __future__ import annotations
 
+from brand_logo_map import logo_for_hotel
 import html
 import json
 import os
@@ -1911,7 +1912,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
-  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=4" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=5" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1965,6 +1966,7 @@ def render_seo_page(
             {f"<span>&bull;</span><span><strong>{esc((h.get('priceSnapshot') or {}).get('label') or h.get('priceRange'))}</strong></span>" if ((h.get('priceSnapshot') or {}).get('label') or h.get('priceRange')) else ""}
           </div>
           {f'<div class="meta-line" style="margin-top:8px;gap:6px;">{hero_awards_html}</div>' if hero_awards_html else ''}
+          {(lambda lg: f'<img class="so2-brand-logo" src="../..{esc(lg[0])}" alt="{esc(lg[1])}" title="{esc(lg[1])}" />' if lg else '')(logo_for_hotel(h.get("brand")))}
           <h1 class="detail-title">{esc(h['name'])}</h1>
 
           {so_hero_html}

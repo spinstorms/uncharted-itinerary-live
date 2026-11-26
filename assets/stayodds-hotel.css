@@ -90,3 +90,5 @@
 .so2-near-row.is-me .so2-near-bar i{background:#FF5D22}
 .so2-near-meta{font-size:11.5px;color:#64748B}
 .so2-score + .so2-gap + .so2-actions ~ .so2-highlights,.so2-highlights{margin-top:14px}
+
+.so2-brand-logo{display:block;max-height:34px;max-width:150px;width:auto;margin:10px 0 2px;object-fit:contain}

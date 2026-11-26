@@ -253,6 +253,7 @@ function renderBrandsTable() {
             return `
               <tr>
                 <td>
+                  ${state.logos && state.logos[b.brand] ? `<img class="brand-logo" src="..${state.logos[b.brand]}" alt="" loading="lazy" />` : ""}
                   <strong>#${idx + 1} ${escapeHtml(b.brand)}</strong>
                   <div class="table-sub">${b.parentGroup ? `Part of ${escapeHtml(b.parentGroup)} &bull; ` : b.isGroup ? `Parent Group &bull; ` : ""}${b.scoredCount} scored of ${b.count} tracked</div>
                 </td>
@@ -470,6 +471,10 @@ async function boot() {
     }
 
     state.hotels = payload.hotels || [];
+    try {
+      const lr = await fetch("../assets/brand-logos/map.json?v=20261126");
+      if (lr.ok) state.logos = await lr.json();
+    } catch (_) {}
     state.brands = computeBrandStats(state.hotels);
     const statEl = qs("#brandsSummaryStat");
     if (statEl) {

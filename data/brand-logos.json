@@ -134,6 +134,991 @@
       "source": "https://logos.fandom.com/wiki/Andaz_Resorts",
       "manual": true,
       "note": "Logo via Logopedia"
+    },
+    "Accor": {
+      "file": "assets/brand-logos/accor.png",
+      "source": "https://en.wikipedia.org/wiki/Accor",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Alila": {
+      "file": "assets/brand-logos/alila.png",
+      "source": "https://en.wikipedia.org/wiki/Alila_Hotels_and_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Autograph Collection": {
+      "file": "assets/brand-logos/autograph-collection.png",
+      "source": "https://en.wikipedia.org/wiki/Autograph_Collection",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Barrière": {
+      "file": "assets/brand-logos/barri-re.png",
+      "source": "https://en.wikipedia.org/wiki/Groupe_Lucien_Barri%C3%A8re",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Bulgari Hotels": {
+      "file": "assets/brand-logos/bulgari-hotels.png",
+      "source": "https://en.wikipedia.org/wiki/Bulgari",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Canopy by Hilton": {
+      "file": "assets/brand-logos/canopy-by-hilton.png",
+      "source": "https://en.wikipedia.org/wiki/Canopy_by_Hilton",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Conrad": {
+      "file": "assets/brand-logos/conrad.png",
+      "source": "https://en.wikipedia.org/wiki/Conrad_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Courtyard by Marriott": {
+      "file": "assets/brand-logos/courtyard-by-marriott.png",
+      "source": "https://en.wikipedia.org/wiki/Courtyard_by_Marriott",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Crowne Plaza": {
+      "file": "assets/brand-logos/crowne-plaza.png",
+      "source": "https://en.wikipedia.org/wiki/Crowne_Plaza",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Delaware North": {
+      "file": "assets/brand-logos/delaware-north.png",
+      "source": "https://en.wikipedia.org/wiki/Delaware_North",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Dorchester Collection": {
+      "file": "assets/brand-logos/dorchester-collection.png",
+      "source": "https://en.wikipedia.org/wiki/Dorchester_Collection",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Fullerton": {
+      "file": "assets/brand-logos/fullerton.png",
+      "source": "https://en.wikipedia.org/wiki/The_Fullerton_Hotel_Singapore",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Gran Meliá": {
+      "file": "assets/brand-logos/gran-meli.png",
+      "source": "https://en.wikipedia.org/wiki/Meli%C3%A1_Hotels_International",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "H10 Hotels": {
+      "file": "assets/brand-logos/h10-hotels.png",
+      "source": "https://en.wikipedia.org/wiki/H10_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Hilton Honors": {
+      "file": "assets/brand-logos/hilton-honors.png",
+      "source": "https://en.wikipedia.org/wiki/Hilton_Worldwide",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "HOSHINOYA": {
+      "file": "assets/brand-logos/hoshinoya.png",
+      "source": "https://en.wikipedia.org/wiki/Hoshino_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Hyatt All-Inclusive": {
+      "file": "assets/brand-logos/hyatt-all-inclusive.png",
+      "source": "https://en.wikipedia.org/wiki/Hyatt",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Hyatt Centric": {
+      "file": "assets/brand-logos/hyatt-centric.png",
+      "source": "https://en.wikipedia.org/wiki/Hyatt",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Hyatt Regency": {
+      "file": "assets/brand-logos/hyatt-regency.png",
+      "source": "https://en.wikipedia.org/wiki/Hyatt",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "IHG One Rewards": {
+      "file": "assets/brand-logos/ihg-one-rewards.png",
+      "source": "https://en.wikipedia.org/wiki/IHG_Hotels_%26_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Iberostar": {
+      "file": "assets/brand-logos/iberostar.png",
+      "source": "https://en.wikipedia.org/wiki/Iberostar_Group",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "InterContinental": {
+      "file": "assets/brand-logos/intercontinental.png",
+      "source": "https://en.wikipedia.org/wiki/InterContinental",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "JW Marriott": {
+      "file": "assets/brand-logos/jw-marriott.png",
+      "source": "https://en.wikipedia.org/wiki/JW_Marriott_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Kempinski": {
+      "file": "assets/brand-logos/kempinski.png",
+      "source": "https://en.wikipedia.org/wiki/Kempinski",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Kimpton": {
+      "file": "assets/brand-logos/kimpton.png",
+      "source": "https://en.wikipedia.org/wiki/Kimpton_Hotels_%26_Restaurants",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "LVMH Hospitality": {
+      "file": "assets/brand-logos/lvmh-hospitality.png",
+      "source": "https://en.wikipedia.org/wiki/LVMH",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Le Méridien": {
+      "file": "assets/brand-logos/le-meridien.png",
+      "source": "https://en.wikipedia.org/wiki/Le_M%C3%A9ridien",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Lotte": {
+      "file": "assets/brand-logos/lotte.png",
+      "source": "https://en.wikipedia.org/wiki/Lotte_Hotels_%26_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Marriott Bonvoy": {
+      "file": "assets/brand-logos/marriott-bonvoy.png",
+      "source": "https://en.wikipedia.org/wiki/Marriott_International",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Maybourne": {
+      "file": "assets/brand-logos/maybourne.png",
+      "source": "https://en.wikipedia.org/wiki/Maybourne",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Meliá": {
+      "file": "assets/brand-logos/meli.png",
+      "source": "https://en.wikipedia.org/wiki/Meli%C3%A1_Hotels_International",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Montage": {
+      "file": "assets/brand-logos/montage.png",
+      "source": "https://en.wikipedia.org/wiki/Montage_Hotels_%26_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Okura": {
+      "file": "assets/brand-logos/okura.png",
+      "source": "https://en.wikipedia.org/wiki/Okura_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Orient Express": {
+      "file": "assets/brand-logos/orient-express.png",
+      "source": "https://en.wikipedia.org/wiki/Orient_Express_(Accor)",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Paradisus by Meliá": {
+      "file": "assets/brand-logos/paradisus-by-meli.png",
+      "source": "https://en.wikipedia.org/wiki/Meli%C3%A1_Hotels_International",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Paradores": {
+      "file": "assets/brand-logos/paradores.png",
+      "source": "https://en.wikipedia.org/wiki/Paradores",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Pendry": {
+      "file": "assets/brand-logos/pendry.png",
+      "source": "https://en.wikipedia.org/wiki/Pendry_Hotels_and_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Potato Head": {
+      "file": "assets/brand-logos/potato-head.png",
+      "source": "https://en.wikipedia.org/wiki/Desa_Potato_Head_Bali",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "RIU Hotels": {
+      "file": "assets/brand-logos/riu-hotels.png",
+      "source": "https://en.wikipedia.org/wiki/RIU_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Radisson": {
+      "file": "assets/brand-logos/radisson.png",
+      "source": "https://en.wikipedia.org/wiki/Radisson_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Radisson Blu": {
+      "file": "assets/brand-logos/radisson-blu.png",
+      "source": "https://en.wikipedia.org/wiki/Radisson_Blu",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Relais & Châteaux": {
+      "file": "assets/brand-logos/relais-and-chateaux.png",
+      "source": "https://en.wikipedia.org/wiki/Relais_%26_Ch%C3%A2teaux",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Ritz-Carlton Reserve": {
+      "file": "assets/brand-logos/ritz-carlton-reserve.png",
+      "source": "https://en.wikipedia.org/wiki/The_Ritz-Carlton_Hotel_Company",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Rocco Forte": {
+      "file": "assets/brand-logos/rocco-forte.png",
+      "source": "https://en.wikipedia.org/wiki/Rocco_Forte_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Sandals / Beaches": {
+      "file": "assets/brand-logos/sandals-beaches.png",
+      "source": "https://en.wikipedia.org/wiki/Sandals_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Sands Luxury": {
+      "file": "assets/brand-logos/sands-luxury.png",
+      "source": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Shangri-La": {
+      "file": "assets/brand-logos/shangri-la.png",
+      "source": "https://en.wikipedia.org/wiki/Shangri-La_Hotels_and_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Sheraton": {
+      "file": "assets/brand-logos/sheraton.png",
+      "source": "https://en.wikipedia.org/wiki/Sheraton_Hotels_and_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Sofitel": {
+      "file": "assets/brand-logos/sofitel.png",
+      "source": "https://en.wikipedia.org/wiki/Sofitel",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Taj Hotels": {
+      "file": "assets/brand-logos/taj-hotels.png",
+      "source": "https://en.wikipedia.org/wiki/Taj_Hotels",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Leading Hotels of the World": {
+      "file": "assets/brand-logos/leading-hotels-of-the-world.png",
+      "source": "https://en.wikipedia.org/wiki/The_Leading_Hotels_of_the_World",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "The Leela": {
+      "file": "assets/brand-logos/the-leela.png",
+      "source": "https://en.wikipedia.org/wiki/The_Leela",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Vik": {
+      "file": "assets/brand-logos/vik.png",
+      "source": "https://en.wikipedia.org/wiki/Vi%C3%B1a_Vik",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Virgin Limited Edition": {
+      "file": "assets/brand-logos/virgin-limited-edition.png",
+      "source": "https://en.wikipedia.org/wiki/Virgin_Limited_Edition",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Westin": {
+      "file": "assets/brand-logos/westin.png",
+      "source": "https://en.wikipedia.org/wiki/Westin_Hotels_%26_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "World of Hyatt": {
+      "file": "assets/brand-logos/world-of-hyatt.png",
+      "source": "https://en.wikipedia.org/wiki/Hyatt",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Wynn Resorts": {
+      "file": "assets/brand-logos/wynn-resorts.png",
+      "source": "https://en.wikipedia.org/wiki/Wynn_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Canyon Ranch": {
+      "file": "assets/brand-logos/canyon-ranch.png",
+      "source": "https://logos.fandom.com/wiki/Canyon%20Ranch",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Design Hotels": {
+      "file": "assets/brand-logos/design-hotels.png",
+      "source": "https://logos.fandom.com/wiki/Design%20Hotels",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "EDITION": {
+      "file": "assets/brand-logos/edition.png",
+      "source": "https://logos.fandom.com/wiki/Edition%20Hotels",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Element by Westin": {
+      "file": "assets/brand-logos/element-by-westin.png",
+      "source": "https://logos.fandom.com/wiki/Element%20by%20Westin",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Equinox Hotels": {
+      "file": "assets/brand-logos/equinox-hotels.png",
+      "source": "https://logos.fandom.com/wiki/Equinox%20Hotels",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Hotel Indigo": {
+      "file": "assets/brand-logos/hotel-indigo.png",
+      "source": "https://logos.fandom.com/wiki/Hotel%20Indigo",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "LXR Hotels & Resorts": {
+      "file": "assets/brand-logos/lxr-hotels-and-resorts.png",
+      "source": "https://logos.fandom.com/wiki/LXR%20Hotels%20%26%20Resorts",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Oberoi": {
+      "file": "assets/brand-logos/oberoi.png",
+      "source": "https://logos.fandom.com/wiki/Oberoi%20Hotels%20and%20Resorts",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Regent": {
+      "file": "assets/brand-logos/regent.png",
+      "source": "https://logos.fandom.com/wiki/Regent%20Hotels%20%26%20Resorts",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Tapestry Collection by Hilton": {
+      "file": "assets/brand-logos/tapestry-collection-by-hilton.png",
+      "source": "https://logos.fandom.com/wiki/Tapestry%20Collection%20by%20Hilton",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Tribute Portfolio": {
+      "file": "assets/brand-logos/tribute-portfolio.png",
+      "source": "https://logos.fandom.com/wiki/Tribute%20Portfolio",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Awasi": {
+      "file": "assets/brand-logos/awasi.png",
+      "source": "https://www.google.com/search?q=Awasi+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Barceló": {
+      "file": "assets/brand-logos/barcel.png",
+      "source": "https://www.google.com/search?q=Barceló+Hotel+Group+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Capella": {
+      "file": "assets/brand-logos/capella.png",
+      "source": "https://www.google.com/search?q=Capella+Hotels+and+Resorts+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Corinthia": {
+      "file": "assets/brand-logos/corinthia.png",
+      "source": "https://www.google.com/search?q=Corinthia+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Excellence Collection": {
+      "file": "assets/brand-logos/excellence-collection.png",
+      "source": "https://www.google.com/search?q=Excellence+Collection+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Explora": {
+      "file": "assets/brand-logos/explora.png",
+      "source": "https://www.google.com/search?q=Explora+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "GF Hoteles": {
+      "file": "assets/brand-logos/gf-hoteles.png",
+      "source": "https://www.google.com/search?q=GF+Hoteles+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "JK Place": {
+      "file": "assets/brand-logos/jk-place.png",
+      "source": "https://www.google.com/search?q=JK+Place+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "JOALI": {
+      "file": "assets/brand-logos/joali.png",
+      "source": "https://www.google.com/search?q=JOALI+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Lopesan": {
+      "file": "assets/brand-logos/lopesan.png",
+      "source": "https://www.google.com/search?q=Lopesan+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Nayara": {
+      "file": "assets/brand-logos/nayara.png",
+      "source": "https://www.google.com/search?q=Nayara+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Preferred Hotels": {
+      "file": "assets/brand-logos/preferred-hotels.png",
+      "source": "https://www.google.com/search?q=Preferred+Hotels+&+Resorts+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Secrets Resorts": {
+      "file": "assets/brand-logos/secrets-resorts.png",
+      "source": "https://www.google.com/search?q=Secrets+Resorts+&+Spas+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Singita": {
+      "file": "assets/brand-logos/singita.png",
+      "source": "https://www.bing.com/images/search?q=Singita%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Soneva": {
+      "file": "assets/brand-logos/soneva.png",
+      "source": "https://www.google.com/search?q=Soneva+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Viceroy": {
+      "file": "assets/brand-logos/viceroy.png",
+      "source": "https://www.google.com/search?q=Viceroy+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Zannier": {
+      "file": "assets/brand-logos/zannier.png",
+      "source": "https://www.google.com/search?q=Zannier+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "The Ritz-Carlton": {
+      "file": "assets/brand-logos/ritz-carlton.png",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Rsz_trc-primary-logo_blk3-memblue.jpg/500px-Rsz_trc-primary-logo_blk3-memblue.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Rsz_trc-primary-logo_blk3-memblue.jpg",
+      "licence": "CC BY-SA 4.0"
+    },
+    "Auberge Resorts": {
+      "file": "assets/brand-logos/auberge-resorts-collection.png",
+      "source": "https://auberge.com/",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "COMO Hotels": {
+      "file": "assets/brand-logos/como.png",
+      "source": "https://en.wikipedia.org/wiki/File:COMO_Hotels_and_Resorts_logo.svg",
+      "manual": true,
+      "note": "Logo as used on Wikipedia"
+    },
+    "Nayara Resorts": {
+      "file": "assets/brand-logos/nayara.png",
+      "source": "https://www.google.com/search?q=Nayara+logo&udm=2",
+      "manual": true,
+      "note": "Logo via Google Images"
+    },
+    "Wynn": {
+      "file": "assets/brand-logos/wynn-resorts.png",
+      "source": "https://en.wikipedia.org/wiki/Wynn_Resorts",
+      "manual": true,
+      "note": "Logo via Wikipedia"
+    },
+    "Dusit Thani": {
+      "file": "assets/brand-logos/dusit-thani.png",
+      "source": "https://www.bing.com/images/search?q=Dusit%20Thani%20hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Airelles": {
+      "file": "assets/brand-logos/airelles.png",
+      "source": "https://www.bing.com/images/search?q=Airelles%20Collection%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "&Beyond": {
+      "file": "assets/brand-logos/andbeyond.png",
+      "source": "https://www.bing.com/images/search?q=andBeyond%20safari%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "1 Hotels": {
+      "file": "assets/brand-logos/1-hotels.png",
+      "source": "https://www.bing.com/images/search?q=1%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "ATELIER de Hoteles": {
+      "file": "assets/brand-logos/atelier-de-hoteles.png",
+      "source": "https://www.bing.com/images/search?q=ATELIER%20de%20Hoteles%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Adrián Hoteles": {
+      "file": "assets/brand-logos/adri-n-hoteles.png",
+      "source": "https://www.bing.com/images/search?q=Adri%C3%A1n%20Hoteles%20Tenerife%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Alua Hotels": {
+      "file": "assets/brand-logos/alua-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Alua%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Anantara": {
+      "file": "assets/brand-logos/anantara.png",
+      "source": "https://www.bing.com/images/search?q=Anantara%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Armani": {
+      "file": "assets/brand-logos/armani.png",
+      "source": "https://www.bing.com/images/search?q=Armani%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Baillie Lodges": {
+      "file": "assets/brand-logos/baillie-lodges.png",
+      "source": "https://www.bing.com/images/search?q=Baillie%20Lodges%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Be Cordial": {
+      "file": "assets/brand-logos/be-cordial.png",
+      "source": "https://www.bing.com/images/search?q=Be%20Cordial%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Bürgenstock": {
+      "file": "assets/brand-logos/burgenstock.png",
+      "source": "https://www.bing.com/images/search?q=B%C3%BCrgenstock%20Resort%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Chablé Hotels": {
+      "file": "assets/brand-logos/chable-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Chabl%C3%A9%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Cheval Blanc": {
+      "file": "assets/brand-logos/cheval-blanc.png",
+      "source": "https://www.bing.com/images/search?q=Cheval%20Blanc%20LVMH%20hotel%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Cipriani": {
+      "file": "assets/brand-logos/cipriani.png",
+      "source": "https://www.bing.com/images/search?q=Hotel%20Cipriani%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Disney Resorts": {
+      "file": "assets/brand-logos/disney-resorts.png",
+      "source": "https://www.bing.com/images/search?q=Disney%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Dreams Resorts": {
+      "file": "assets/brand-logos/dreams-resorts.png",
+      "source": "https://www.bing.com/images/search?q=Dreams%20Resorts%20Spas%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Elba Hotels": {
+      "file": "assets/brand-logos/elba-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Elba%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Elite Island Resorts": {
+      "file": "assets/brand-logos/elite-island-resorts.png",
+      "source": "https://www.bing.com/images/search?q=Elite%20Island%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Evok": {
+      "file": "assets/brand-logos/evok.png",
+      "source": "https://www.bing.com/images/search?q=Evok%20hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Family Coppola Hideaways": {
+      "file": "assets/brand-logos/family-coppola-hideaways.png",
+      "source": "https://www.bing.com/images/search?q=Family%20Coppola%20Hideaways%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Gloria Thalasso": {
+      "file": "assets/brand-logos/gloria-thalasso.png",
+      "source": "https://www.bing.com/images/search?q=Gloria%20Thalasso%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Grupo Xcaret": {
+      "file": "assets/brand-logos/grupo-xcaret.png",
+      "source": "https://www.bing.com/images/search?q=Hotel%20Xcaret%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Halekulani": {
+      "file": "assets/brand-logos/halekulani.png",
+      "source": "https://www.bing.com/images/search?q=Halekulani%20hotel%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Hipotels": {
+      "file": "assets/brand-logos/hipotels.png",
+      "source": "https://www.bing.com/images/search?q=Hipotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Ishara": {
+      "file": "assets/brand-logos/ishara.png",
+      "source": "https://www.bing.com/images/search?q=Ishara%20Maldives%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Island Outpost": {
+      "file": "assets/brand-logos/island-outpost.png",
+      "source": "https://www.bing.com/images/search?q=Island%20Outpost%20Jamaica%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "La Réserve": {
+      "file": "assets/brand-logos/la-reserve.png",
+      "source": "https://www.bing.com/images/search?q=La%20R%C3%A9serve%20hotels%20Michel%20Reybier%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Langham": {
+      "file": "assets/brand-logos/langham.png",
+      "source": "https://www.bing.com/images/search?q=The%20Langham%20Hotels%20and%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Lungarno Collection": {
+      "file": "assets/brand-logos/lungarno-collection.png",
+      "source": "https://www.bing.com/images/search?q=Lungarno%20Collection%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Luxury Lodges of Australia": {
+      "file": "assets/brand-logos/luxury-lodges-of-australia.png",
+      "source": "https://www.bing.com/images/search?q=Luxury%20Lodges%20of%20Australia%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Monte-Carlo SBM": {
+      "file": "assets/brand-logos/monte-carlo-sbm.png",
+      "source": "https://www.bing.com/images/search?q=Monte-Carlo%20Societe%20des%20Bains%20de%20Mer%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Noble House Hotels": {
+      "file": "assets/brand-logos/noble-house-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Noble%20House%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Nobu Hotels": {
+      "file": "assets/brand-logos/nobu-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Nobu%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Oetker Collection": {
+      "file": "assets/brand-logos/oetker-collection.png",
+      "source": "https://www.bing.com/images/search?q=Oetker%20Collection%20hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Patina": {
+      "file": "assets/brand-logos/patina.png",
+      "source": "https://www.bing.com/images/search?q=Patina%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Pellicano Hotels": {
+      "file": "assets/brand-logos/pellicano-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Pellicano%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Princess Hotels": {
+      "file": "assets/brand-logos/princess-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Princess%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "RAAS": {
+      "file": "assets/brand-logos/raas.png",
+      "source": "https://www.bing.com/images/search?q=RAAS%20Hotels%20Jodhpur%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Red Carnation Hotels": {
+      "file": "assets/brand-logos/red-carnation-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Red%20Carnation%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "SIRO (Kerzner)": {
+      "file": "assets/brand-logos/siro-kerzner.png",
+      "source": "https://www.bing.com/images/search?q=SIRO%20hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "SJM": {
+      "file": "assets/brand-logos/sjm.png",
+      "source": "https://www.bing.com/images/search?q=SJM%20Resorts%20Macau%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Sandos": {
+      "file": "assets/brand-logos/sandos.png",
+      "source": "https://www.bing.com/images/search?q=Sandos%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Sea Island": {
+      "file": "assets/brand-logos/sea-island.png",
+      "source": "https://www.bing.com/images/search?q=Sea%20Island%20resort%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Shamwari": {
+      "file": "assets/brand-logos/shamwari.png",
+      "source": "https://www.bing.com/images/search?q=Shamwari%20Game%20Reserve%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Small Luxury Hotels": {
+      "file": "assets/brand-logos/small-luxury-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Small%20Luxury%20Hotels%20of%20the%20World%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Spring Hotels": {
+      "file": "assets/brand-logos/spring-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Spring%20Hotels%20Tenerife%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Steigenberger": {
+      "file": "assets/brand-logos/steigenberger.png",
+      "source": "https://www.bing.com/images/search?q=Steigenberger%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Swire / House Collective": {
+      "file": "assets/brand-logos/swire-house-collective.png",
+      "source": "https://www.bing.com/images/search?q=The%20House%20Collective%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "The Royal Portfolio": {
+      "file": "assets/brand-logos/the-royal-portfolio.png",
+      "source": "https://www.bing.com/images/search?q=The%20Royal%20Portfolio%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "The Shilla": {
+      "file": "assets/brand-logos/the-shilla.png",
+      "source": "https://www.bing.com/images/search?q=The%20Shilla%20hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Thompson Hotels": {
+      "file": "assets/brand-logos/thompson-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Thompson%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Tierra": {
+      "file": "assets/brand-logos/tierra.png",
+      "source": "https://www.bing.com/images/search?q=Tierra%20Hotels%20Chile%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Tivoli": {
+      "file": "assets/brand-logos/tivoli.png",
+      "source": "https://www.bing.com/images/search?q=Tivoli%20Hotels%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Vincci Hoteles": {
+      "file": "assets/brand-logos/vincci-hoteles.png",
+      "source": "https://www.bing.com/images/search?q=Vincci%20Hoteles%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Zoëtry": {
+      "file": "assets/brand-logos/zoetry.png",
+      "source": "https://www.bing.com/images/search?q=Zoetry%20Wellness%20Spa%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "The Langham": {
+      "file": "assets/brand-logos/langham.png",
+      "source": "https://www.bing.com/images/search?q=The%20Langham%20Hotels%20and%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Hoteles Xcaret": {
+      "file": "assets/brand-logos/grupo-xcaret.png",
+      "source": "https://www.bing.com/images/search?q=Hotel%20Xcaret%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Ennismore / Private Club": {
+      "file": "assets/brand-logos/ennismore-private-club.png",
+      "source": "https://www.bing.com/images/search?q=Ennismore%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Exclusive Collection": {
+      "file": "assets/brand-logos/exclusive-collection.png",
+      "source": "https://www.bing.com/images/search?q=Exclusive%20Collection%20hotels%20Kent%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Firmdale": {
+      "file": "assets/brand-logos/firmdale.png",
+      "source": "https://www.bing.com/images/search?q=Firmdale%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Fontainebleau": {
+      "file": "assets/brand-logos/fontainebleau.png",
+      "source": "https://www.bing.com/images/search?q=Fontainebleau%20Miami%20Beach%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Fufu": {
+      "file": "assets/brand-logos/fufu.png",
+      "source": "https://www.bing.com/images/search?q=%E3%81%B5%E3%81%B5%20%E6%97%85%E9%A4%A8%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Grace Bay Resorts": {
+      "file": "assets/brand-logos/grace-bay-resorts.png",
+      "source": "https://www.bing.com/images/search?q=Grace%20Bay%20Resorts%20Turks%20Caicos%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Historic Hotels": {
+      "file": "assets/brand-logos/historic-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Historic%20Hotels%20of%20America%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Kerzner / Atlantis": {
+      "file": "assets/brand-logos/kerzner-atlantis.png",
+      "source": "https://www.bing.com/images/search?q=Atlantis%20The%20Palm%20Dubai%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Landmar Hotels": {
+      "file": "assets/brand-logos/landmar-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Landmar%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Ocean Hotels Barbados": {
+      "file": "assets/brand-logos/ocean-hotels-barbados.png",
+      "source": "https://www.bing.com/images/search?q=Ocean%20Hotels%20Barbados%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Proper Hotels": {
+      "file": "assets/brand-logos/proper-hotels.png",
+      "source": "https://www.bing.com/images/search?q=Proper%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Royal Hideaway": {
+      "file": "assets/brand-logos/royal-hideaway.png",
+      "source": "https://www.bing.com/images/search?q=Royal%20Hideaway%20Luxury%20Hotels%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Seaside Collection": {
+      "file": "assets/brand-logos/seaside-collection.png",
+      "source": "https://www.bing.com/images/search?q=Seaside%20Collection%20Gran%20Canaria%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "The Safari Collection": {
+      "file": "assets/brand-logos/the-safari-collection.png",
+      "source": "https://www.bing.com/images/search?q=The%20Safari%20Collection%20Kenya%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Velas Resorts": {
+      "file": "assets/brand-logos/velas-resorts.png",
+      "source": "https://www.bing.com/images/search?q=Grand%20Velas%20Resorts%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
+    },
+    "Vignette Collection": {
+      "file": "assets/brand-logos/vignette-collection.png",
+      "source": "https://www.bing.com/images/search?q=Vignette%20Collection%20IHG%20logo",
+      "manual": true,
+      "note": "Logo via Bing Images"
     }
   }
 }
