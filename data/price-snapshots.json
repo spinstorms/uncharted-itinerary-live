@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-26T00:56:19.834945+00:00",
+  "updatedAt": "2026-11-26T01:16:02.693618+00:00",
   "currency": "GBP",
   "benchmarkWindow": "2027-01-10 to 2027-01-12",
   "totalMapped": 1144,
-  "totalPriced": 886,
+  "totalPriced": 884,
   "prices": {
     "little-nell-aspen": {
       "nightlyGbp": 1810,
@@ -176,6 +176,246 @@
     "capella-ubud": {
       "nightlyGbp": 895,
       "label": "From £895/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-cape-town": {
+      "nightlyGbp": 1005,
+      "label": "From £1,005/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "conrad-maldives-rangali": {
+      "nightlyGbp": 1020,
+      "label": "From £1,020/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "regent-bali-canggu": {
+      "nightlyGbp": 370,
+      "label": "From £370/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-beverly-hills": {
+      "nightlyGbp": 800,
+      "label": "From £800/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-maldives": {
+      "nightlyGbp": 2995,
+      "label": "From £2,995/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "1-hotel-west-hollywood": {
+      "nightlyGbp": 480,
+      "label": "From £480/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "halekulani-okinawa": {
+      "nightlyGbp": 335,
+      "label": "From £335/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-ritz-carlton-fukuoka": {
+      "nightlyGbp": 730,
+      "label": "From £730/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "le-meridien-maldives": {
+      "nightlyGbp": 590,
+      "label": "From £590/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "w-bali-seminyak": {
+      "nightlyGbp": 235,
+      "label": "From £235/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-de-russie-rome": {
+      "nightlyGbp": 1330,
+      "label": "From £1,330/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gili-lankanfushi-maldives": {
+      "nightlyGbp": 1720,
+      "label": "From £1,720/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-kuda-huraa": {
+      "nightlyGbp": 1190,
+      "label": "From £1,190/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-douro-valley": {
+      "nightlyGbp": 575,
+      "label": "From £575/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "shutters-on-the-beach-santa-monica": {
+      "nightlyGbp": 615,
+      "label": "From £615/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "beverly-wilshire-four-seasons": {
+      "nightlyGbp": 650,
+      "label": "From £650/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "maybourne-beverly-hills": {
+      "nightlyGbp": 815,
+      "label": "From £815/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "la-mamounia-marrakech": {
+      "nightlyGbp": 485,
+      "label": "From £485/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gstaad-palace": {
+      "nightlyGbp": 1785,
+      "label": "From £1,785/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "portrait-milano": {
+      "nightlyGbp": 1155,
+      "label": "From £1,155/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-bora-bora": {
+      "nightlyGbp": 1210,
+      "label": "From £1,210/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sowaka-kyoto": {
+      "nightlyGbp": 765,
+      "label": "From £765/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-landaa-giraavaru": {
+      "nightlyGbp": 2185,
+      "label": "From £2,185/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-maldives-fari": {
+      "nightlyGbp": 2360,
+      "label": "From £2,360/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "marbella-club-hotel": {
+      "nightlyGbp": 340,
+      "label": "From £340/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-kanuhura": {
+      "nightlyGbp": 1595,
+      "label": "From £1,595/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "peninsula-beverly-hills": {
+      "nightlyGbp": 825,
+      "label": "From £825/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "st-regis-aspen": {
+      "nightlyGbp": 1625,
+      "label": "From £1,625/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "kulm-hotel-st-moritz": {
+      "nightlyGbp": 1330,
+      "label": "From £1,330/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "w-maldives": {
+      "nightlyGbp": 1945,
+      "label": "From £1,945/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -629,486 +869,6 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "one-and-only-cape-town": {
-      "nightlyGbp": 1005,
-      "label": "From £1,005/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "conrad-maldives-rangali": {
-      "nightlyGbp": 1020,
-      "label": "From £1,020/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "regent-bali-canggu": {
-      "nightlyGbp": 370,
-      "label": "From £370/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-beverly-hills": {
-      "nightlyGbp": 800,
-      "label": "From £800/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-maldives": {
-      "nightlyGbp": 2995,
-      "label": "From £2,995/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "1-hotel-west-hollywood": {
-      "nightlyGbp": 480,
-      "label": "From £480/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "halekulani-okinawa": {
-      "nightlyGbp": 335,
-      "label": "From £335/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-ritz-carlton-fukuoka": {
-      "nightlyGbp": 730,
-      "label": "From £730/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "le-meridien-maldives": {
-      "nightlyGbp": 590,
-      "label": "From £590/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "w-bali-seminyak": {
-      "nightlyGbp": 235,
-      "label": "From £235/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-de-russie-rome": {
-      "nightlyGbp": 1330,
-      "label": "From £1,330/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gili-lankanfushi-maldives": {
-      "nightlyGbp": 1720,
-      "label": "From £1,720/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-kuda-huraa": {
-      "nightlyGbp": 1190,
-      "label": "From £1,190/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-douro-valley": {
-      "nightlyGbp": 575,
-      "label": "From £575/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "shutters-on-the-beach-santa-monica": {
-      "nightlyGbp": 615,
-      "label": "From £615/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "beverly-wilshire-four-seasons": {
-      "nightlyGbp": 650,
-      "label": "From £650/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "maybourne-beverly-hills": {
-      "nightlyGbp": 815,
-      "label": "From £815/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "la-mamounia-marrakech": {
-      "nightlyGbp": 485,
-      "label": "From £485/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gstaad-palace": {
-      "nightlyGbp": 1785,
-      "label": "From £1,785/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "portrait-milano": {
-      "nightlyGbp": 1155,
-      "label": "From £1,155/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-bora-bora": {
-      "nightlyGbp": 1210,
-      "label": "From £1,210/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sowaka-kyoto": {
-      "nightlyGbp": 765,
-      "label": "From £765/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-landaa-giraavaru": {
-      "nightlyGbp": 2185,
-      "label": "From £2,185/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ritz-carlton-maldives-fari": {
-      "nightlyGbp": 2360,
-      "label": "From £2,360/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "marbella-club-hotel": {
-      "nightlyGbp": 340,
-      "label": "From £340/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-kanuhura": {
-      "nightlyGbp": 1595,
-      "label": "From £1,595/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "peninsula-beverly-hills": {
-      "nightlyGbp": 825,
-      "label": "From £825/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "st-regis-aspen": {
-      "nightlyGbp": 1625,
-      "label": "From £1,625/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "kulm-hotel-st-moritz": {
-      "nightlyGbp": 1330,
-      "label": "From £1,330/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "w-maldives": {
-      "nightlyGbp": 1945,
-      "label": "From £1,945/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-sacher-vienna": {
-      "nightlyGbp": 365,
-      "label": "From £365/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "qasr-al-sarab-anantara": {
-      "nightlyGbp": 445,
-      "label": "From £445/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "banyan-tree-mayakoba": {
-      "nightlyGbp": 705,
-      "label": "From £705/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-los-angeles-beverly-hills": {
-      "nightlyGbp": 640,
-      "label": "From £640/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "faena-hotel-miami-beach": {
-      "nightlyGbp": 875,
-      "label": "From £875/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jimbaran-puri-a-belmond-hotel-bali": {
-      "nightlyGbp": 205,
-      "label": "From £205/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-laamu": {
-      "nightlyGbp": 1285,
-      "label": "From £1,285/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-george-v-paris": {
-      "nightlyGbp": 2120,
-      "label": "From £2,120/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-de-crillon-paris": {
-      "nightlyGbp": 1315,
-      "label": "From £1,315/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "nolinski": {
-      "nightlyGbp": 450,
-      "label": "From £450/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "raffles-the-palm-dubai": {
-      "nightlyGbp": 385,
-      "label": "From £385/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jumeirah-al-qasr-dubai": {
-      "nightlyGbp": 810,
-      "label": "From £810/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jumana-bali-ungasan": {
-      "nightlyGbp": 445,
-      "label": "From £445/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "chable-maroma": {
-      "nightlyGbp": 905,
-      "label": "From £905/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "park-hyatt-bangkok": {
-      "nightlyGbp": 275,
-      "label": "From £275/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "manoir-hovey": {
-      "nightlyGbp": 325,
-      "label": "From £325/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "st-regis-bora-bora": {
-      "nightlyGbp": 700,
-      "label": "From £700/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sunset-tower-hotel-la": {
-      "nightlyGbp": 550,
-      "label": "From £550/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "one-and-only-nyungwe-house": {
-      "nightlyGbp": 1400,
-      "label": "From £1,400/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-tented-camp-golden-triangle": {
-      "nightlyGbp": 2820,
-      "label": "From £2,820/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "meadowood-napa-valley": {
-      "nightlyGbp": 640,
-      "label": "From £640/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-surfside-miami": {
-      "nightlyGbp": 1570,
-      "label": "From £1,570/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "badrutts-palace": {
-      "nightlyGbp": 2745,
-      "label": "From £2,745/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jackalope-hotel-mornington": {
-      "nightlyGbp": 465,
-      "label": "From £465/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jackalope-hotel-mornington-peninsula": {
-      "nightlyGbp": 465,
-      "label": "From £465/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mashpi-lodge": {
-      "nightlyGbp": 1005,
-      "label": "From £1,005/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "milaidhoo-maldives": {
-      "nightlyGbp": 1950,
-      "label": "From £1,950/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-louise-barossa": {
-      "nightlyGbp": 670,
-      "label": "From £670/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "pacuare-lodge": {
-      "nightlyGbp": 675,
-      "label": "From £675/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jade-mountain-st-lucia": {
-      "nightlyGbp": 3005,
-      "label": "From £3,005/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
     "intercontinental-maldives": {
       "nightlyGbp": 1260,
       "label": "From £1,260/nt",
@@ -1309,711 +1069,15 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "gran-melia-palacio-de-isora-tenerife": {
-      "nightlyGbp": 185,
-      "label": "From £185/nt",
+    "round-hill-jamaica": {
+      "nightlyGbp": 1075,
+      "label": "From £1,075/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "tivoli-la-caleta-tenerife": {
-      "nightlyGbp": 285,
-      "label": "From £285/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "one-and-only-one-zaabeel": {
-      "nightlyGbp": 570,
-      "label": "From £570/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandarin-oriental-jumeira-dubai": {
-      "nightlyGbp": 655,
-      "label": "From £655/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "one-and-only-royal-mirage": {
-      "nightlyGbp": 455,
-      "label": "From £455/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-savoy-london": {
-      "nightlyGbp": 560,
-      "label": "From £560/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "park-hyatt-tokyo": {
-      "nightlyGbp": 1370,
-      "label": "From £1,370/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-difc-dubai": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "crown-towers-sydney": {
-      "nightlyGbp": 225,
-      "label": "From £225/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jumeirah-dar-al-masyaf": {
-      "nightlyGbp": 965,
-      "label": "From £965/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bulgari-resort-bali": {
-      "nightlyGbp": 1215,
-      "label": "From £1,215/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-legian-seminyak": {
-      "nightlyGbp": 425,
-      "label": "From £425/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "suiran-kyoto": {
-      "nightlyGbp": 455,
-      "label": "From £455/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandarin-oriental-tokyo": {
-      "nightlyGbp": 695,
-      "label": "From £695/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "w-sydney": {
-      "nightlyGbp": 235,
-      "label": "From £235/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-selection-anthelia-tenerife": {
-      "nightlyGbp": 305,
-      "label": "From £305/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-selection-sabila-tenerife": {
-      "nightlyGbp": 250,
-      "label": "From £250/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "park-hyatt-dubai": {
-      "nightlyGbp": 1000,
-      "label": "From £1,000/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "spicers-peak-lodge": {
-      "nightlyGbp": 710,
-      "label": "From £710/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-bel-air-la": {
-      "nightlyGbp": 810,
-      "label": "From £810/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-lana-dorchester-dubai": {
-      "nightlyGbp": 485,
-      "label": "From £485/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "st-regis-saadiyat-island": {
-      "nightlyGbp": 415,
-      "label": "From £415/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ritz-carlton-abama-tenerife": {
-      "nightlyGbp": 345,
-      "label": "From £345/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "soori-bali": {
-      "nightlyGbp": 640,
-      "label": "From £640/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-berkeley-london": {
-      "nightlyGbp": 685,
-      "label": "From £685/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-dubai-jumeirah": {
-      "nightlyGbp": 720,
-      "label": "From £720/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bahia-del-duque-tenerife": {
-      "nightlyGbp": 355,
-      "label": "From £355/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-grand-el-mirador-tenerife": {
-      "nightlyGbp": 535,
-      "label": "From £535/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "vincci-seleccion-la-plantacion-del-sur-tenerife": {
-      "nightlyGbp": 280,
-      "label": "From £280/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "chable-yucatan": {
-      "nightlyGbp": 940,
-      "label": "From £940/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jardines-de-nivaria-tenerife": {
-      "nightlyGbp": 340,
-      "label": "From £340/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gf-gran-costa-adeje-tenerife": {
-      "nightlyGbp": 265,
-      "label": "From £265/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ritz-carlton-kyoto": {
-      "nightlyGbp": 945,
-      "label": "From £945/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "landmar-playa-la-arena-tenerife": {
-      "nightlyGbp": 225,
-      "label": "From £225/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-kyoto": {
-      "nightlyGbp": 1500,
-      "label": "From £1,500/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "le-bristol-paris": {
-      "nightlyGbp": 1650,
-      "label": "From £1,650/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "rosewood-london": {
-      "nightlyGbp": 480,
-      "label": "From £480/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-tokyo-edition-toranomon": {
-      "nightlyGbp": 730,
-      "label": "From £730/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "palace-hotel-tokyo": {
-      "nightlyGbp": 625,
-      "label": "From £625/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "spring-hotel-bitacora-tenerife": {
-      "nightlyGbp": 200,
-      "label": "From £200/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "burgenstock-hotel-switzerland": {
-      "nightlyGbp": 885,
-      "label": "From £885/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-plaza-athenee-paris": {
-      "nightlyGbp": 1350,
-      "label": "From £1,350/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-atlantic-sunset-tenerife": {
-      "nightlyGbp": 225,
-      "label": "From £225/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-zil-pasyon": {
-      "nightlyGbp": 1325,
-      "label": "From £1,325/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-dorchester-london": {
-      "nightlyGbp": 750,
-      "label": "From £750/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-dorchester-dorchester-collection": {
-      "nightlyGbp": 750,
-      "label": "From £750/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "peninsula-london": {
-      "nightlyGbp": 890,
-      "label": "From £890/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-tokyo-otemachi": {
-      "nightlyGbp": 1060,
-      "label": "From £1,060/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "landmar-costa-los-gigantes-tenerife": {
-      "nightlyGbp": 155,
-      "label": "From £155/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-seychelles": {
-      "nightlyGbp": 2520,
-      "label": "From £2,520/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-firenze": {
-      "nightlyGbp": 775,
-      "label": "From £775/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "raffles-seychelles": {
-      "nightlyGbp": 685,
-      "label": "From £685/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "montage-los-cabos": {
-      "nightlyGbp": 1140,
-      "label": "From £1,140/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sugar-beach-st-lucia": {
-      "nightlyGbp": 1465,
-      "label": "From £1,465/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-emory-london": {
-      "nightlyGbp": 850,
-      "label": "From £850/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jumby-bay-island-antigua": {
-      "nightlyGbp": 3435,
-      "label": "From £3,435/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-tenerife": {
-      "nightlyGbp": 215,
-      "label": "From £215/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "andaz-peninsula-papagayo": {
-      "nightlyGbp": 725,
-      "label": "From £725/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "eden-roc-cap-cana": {
-      "nightlyGbp": 1560,
-      "label": "From £1,560/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "park-hyatt-vienna": {
-      "nightlyGbp": 475,
-      "label": "From £475/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-corralejo-bay-fuerteventura": {
-      "nightlyGbp": 165,
-      "label": "From £165/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-teguise-beach-lanzarote": {
-      "nightlyGbp": 175,
-      "label": "From £175/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hacienda-altagracia-auberge": {
-      "nightlyGbp": 2010,
-      "label": "From £2,010/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ciragan-palace-kempinski": {
-      "nightlyGbp": 305,
-      "label": "From £305/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "spice-island-beach-resort-grenada": {
-      "nightlyGbp": 780,
-      "label": "From £780/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "parador-de-la-gomera": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "dreams-lanzarote-playa-dorada": {
-      "nightlyGbp": 195,
-      "label": "From £195/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-grande-bretagne-athens": {
-      "nightlyGbp": 285,
-      "label": "From £285/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-hacienda-de-abajo-la-palma": {
-      "nightlyGbp": 185,
-      "label": "From £185/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-rubicon-palace-lanzarote": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "naturhotel-waldklause": {
-      "nightlyGbp": 425,
-      "label": "From £425/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ritz-carlton-langkawi": {
-      "nightlyGbp": 550,
-      "label": "From £550/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-sultanahmet-istanbul": {
-      "nightlyGbp": 530,
-      "label": "From £530/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "roca-nivaria-gh-tenerife": {
-      "nightlyGbp": 275,
-      "label": "From £275/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-playa-meloneras-palace-gran-canaria": {
-      "nightlyGbp": 315,
-      "label": "From £315/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-playa-gaviotas-park-fuerteventura": {
-      "nightlyGbp": 205,
-      "label": "From £205/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-ocean-suites-fuerteventura": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "silversands-grenada": {
-      "nightlyGbp": 935,
-      "label": "From £935/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "la-toubana-guadeloupe": {
-      "nightlyGbp": 525,
-      "label": "From £525/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-peninsula-papagayo": {
-      "nightlyGbp": 1765,
-      "label": "From £1,765/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "melia-fuerteventura": {
-      "nightlyGbp": 120,
-      "label": "From £120/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-fuerteventura-mar": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "santa-catalina-royal-hideaway-gran-canaria": {
-      "nightlyGbp": 200,
-      "label": "From £200/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-santiago-tenerife": {
-      "nightlyGbp": 195,
-      "label": "From £195/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-los-cabos-pedregal": {
-      "nightlyGbp": 1655,
-      "label": "From £1,655/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "lopesan-villa-del-conde-gran-canaria": {
-      "nightlyGbp": 255,
-      "label": "From £255/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "arrecife-gran-hotel-lanzarote": {
-      "nightlyGbp": 155,
-      "label": "From £155/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sandos-papagayo-lanzarote": {
-      "nightlyGbp": 255,
-      "label": "From £255/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "cordial-mogan-playa-gran-canaria": {
+    "althoff-seehotel-uberfahrt": {
       "nightlyGbp": 335,
       "label": "From £335/nt",
       "currency": "GBP",
@@ -2021,135 +1085,7 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "radisson-blu-mogan-gran-canaria": {
-      "nightlyGbp": 210,
-      "label": "From £210/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-sanchaya": {
-      "nightlyGbp": 430,
-      "label": "From £430/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "radisson-blu-resort-gran-canaria": {
-      "nightlyGbp": 300,
-      "label": "From £300/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bulgari-resort-dubai": {
-      "nightlyGbp": 1305,
-      "label": "From £1,305/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-lanzarote-princess": {
-      "nightlyGbp": 135,
-      "label": "From £135/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "riu-gran-canaria": {
-      "nightlyGbp": 295,
-      "label": "From £295/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "lopesan-costa-meloneras-gran-canaria": {
-      "nightlyGbp": 290,
-      "label": "From £290/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "lopesan-baobab-resort-gran-canaria": {
-      "nightlyGbp": 250,
-      "label": "From £250/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "seaside-grand-hotel-residencia-gran-canaria": {
-      "nightlyGbp": 670,
-      "label": "From £670/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "seaside-palm-beach-gran-canaria": {
-      "nightlyGbp": 345,
-      "label": "From £345/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "salobre-hotel-resort-gran-canaria": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "barcelo-playa-blanca-lanzarote": {
-      "nightlyGbp": 200,
-      "label": "From £200/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "riu-palace-jandia-fuerteventura": {
-      "nightlyGbp": 265,
-      "label": "From £265/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "melia-jardines-del-teide-tenerife": {
-      "nightlyGbp": 240,
-      "label": "From £240/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "regent-hong-kong": {
-      "nightlyGbp": 300,
-      "label": "From £300/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-singapore-edition": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "princesa-yaiza-lanzarote": {
+    "the-peninsula-shanghai": {
       "nightlyGbp": 330,
       "label": "From £330/nt",
       "currency": "GBP",
@@ -2157,15 +1093,23 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "mandarin-oriental-kuala-lumpur": {
-      "nightlyGbp": 140,
-      "label": "From £140/nt",
+    "city-of-dreams-morpheus": {
+      "nightlyGbp": 200,
+      "label": "From £200/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "hotel-lava-beach-lanzarote": {
+    "fairmont-hotel-vier-jahreszeiten": {
+      "nightlyGbp": 205,
+      "label": "From £205/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "andaz-seoul-gangnam-by-hyatt": {
       "nightlyGbp": 225,
       "label": "From £225/nt",
       "currency": "GBP",
@@ -2173,7 +1117,71 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "mandarin-oriental-singapore": {
+    "de-leurope-amsterdam": {
+      "nightlyGbp": 450,
+      "label": "From £450/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-osaka": {
+      "nightlyGbp": 425,
+      "label": "From £425/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "st-regis-costa-mujeres": {
+      "nightlyGbp": 530,
+      "label": "From £530/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "baur-au-lac": {
+      "nightlyGbp": 985,
+      "label": "From £985/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "wynn-palace-macau": {
+      "nightlyGbp": 215,
+      "label": "From £215/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jw-marriott-hotel-and-suites-saigon": {
+      "nightlyGbp": 230,
+      "label": "From £230/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-les-trois-rois": {
+      "nightlyGbp": 480,
+      "label": "From £480/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "orient-express-la-minerva-rome": {
+      "nightlyGbp": 710,
+      "label": "From £710/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "beau-rivage-palace": {
       "nightlyGbp": 355,
       "label": "From £355/nt",
       "currency": "GBP",
@@ -2181,409 +1189,49 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "ana-mandara-cam-ranh": {
-      "nightlyGbp": 105,
-      "label": "From £105/nt",
+    "desert-rock-resort": {
+      "nightlyGbp": 1280,
+      "label": "From £1,280/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "mandarin-oriental-hong-kong": {
-      "nightlyGbp": 520,
-      "label": "From £520/nt",
+    "las-casitas-a-belmond-hotel": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "pendry-west-hollywood": {
-      "nightlyGbp": 475,
-      "label": "From £475/nt",
+    "casa-cipriani-new-york": {
+      "nightlyGbp": 730,
+      "label": "From £730/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-st-regis-new-york": {
-      "nightlyGbp": 635,
-      "label": "From £635/nt",
+    "the-fifth-avenue-hotel-new-york": {
+      "nightlyGbp": 415,
+      "label": "From £415/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-carlyle-new-york": {
-      "nightlyGbp": 870,
-      "label": "From £870/nt",
+    "cocos-hotel-antigua": {
+      "nightlyGbp": 770,
+      "label": "From £770/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-ritz-carlton-bangkok": {
-      "nightlyGbp": 370,
-      "label": "From £370/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gf-fanabe-tenerife": {
-      "nightlyGbp": 155,
-      "label": "From £155/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-selection-lanzarote-park": {
-      "nightlyGbp": 220,
-      "label": "From £220/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-dolder-grand-zurich": {
-      "nightlyGbp": 515,
-      "label": "From £515/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-astir-palace-athens": {
-      "nightlyGbp": 460,
-      "label": "From £460/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-peninsula-hong-kong": {
-      "nightlyGbp": 355,
-      "label": "From £355/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-peninsula-new-york": {
-      "nightlyGbp": 680,
-      "label": "From £680/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "h10-costa-adeje-palace-tenerife": {
-      "nightlyGbp": 240,
-      "label": "From £240/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gf-victoria-tenerife": {
-      "nightlyGbp": 280,
-      "label": "From £280/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-taj-mahal-palace-mumbai": {
-      "nightlyGbp": 395,
-      "label": "From £395/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-singapore": {
-      "nightlyGbp": 315,
-      "label": "From £315/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hong-kong": {
-      "nightlyGbp": 455,
-      "label": "From £455/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "las-ventanas-al-paraiso": {
-      "nightlyGbp": 970,
-      "label": "From £970/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "rosewood-mayakoba": {
-      "nightlyGbp": 1125,
-      "label": "From £1,125/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "rosewood-little-dix-bay": {
-      "nightlyGbp": 1520,
-      "label": "From £1,520/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-fariones-lanzarote": {
-      "nightlyGbp": 1180,
-      "label": "From £1,180/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "eichardts-private-hotel": {
-      "nightlyGbp": 2170,
-      "label": "From £2,170/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-fort-barwara": {
-      "nightlyGbp": 690,
-      "label": "From £690/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "rosewood-beijing": {
-      "nightlyGbp": 295,
-      "label": "From £295/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "carlton-cannes-regent": {
-      "nightlyGbp": 240,
-      "label": "From £240/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sofitel-legend-casco-viejo-panama": {
-      "nightlyGbp": 340,
-      "label": "From £340/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hyatt-zilara-cap-cana": {
-      "nightlyGbp": 745,
-      "label": "From £745/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "an-lam-retreats-ninh-van-bay": {
-      "nightlyGbp": 180,
-      "label": "From £180/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "chateau-eza": {
-      "nightlyGbp": 225,
-      "label": "From £225/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-oberoi-mumbai": {
-      "nightlyGbp": 260,
-      "label": "From £260/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "w-punta-cana-all-inclusive": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-okura-prestige-bangkok": {
-      "nightlyGbp": 160,
-      "label": "From £160/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "raffles-al-areen-palace-bahrain": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sanctuary-cap-cana": {
-      "nightlyGbp": 595,
-      "label": "From £595/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "oberoi-amarvilas-agra": {
-      "nightlyGbp": 870,
-      "label": "From £870/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "lizard-island-resort": {
-      "nightlyGbp": 1820,
-      "label": "From £1,820/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "st-regis-bahia-beach-puerto-rico": {
-      "nightlyGbp": 1130,
-      "label": "From £1,130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "north-block": {
-      "nightlyGbp": 245,
-      "label": "From £245/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "secrets-lanzarote-resort-and-spa": {
-      "nightlyGbp": 180,
-      "label": "From £180/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-retreat-blue-lagoon-iceland": {
-      "nightlyGbp": 1335,
-      "label": "From £1,335/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "la-reserve-paris": {
-      "nightlyGbp": 1525,
-      "label": "From £1,525/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "palacio-nazarenas-cusco": {
-      "nightlyGbp": 765,
-      "label": "From £765/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "forestis-dolomites": {
-      "nightlyGbp": 875,
-      "label": "From £875/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "patina-osaka": {
-      "nightlyGbp": 385,
-      "label": "From £385/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "capella-hanoi": {
-      "nightlyGbp": 745,
-      "label": "From £745/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "desa-potato-head-bali": {
-      "nightlyGbp": 175,
-      "label": "From £175/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sensei-lanai-four-seasons": {
-      "nightlyGbp": 890,
-      "label": "From £890/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "refugia-chiloe": {
-      "nightlyGbp": 800,
-      "label": "From £800/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "taj-lake-palace-udaipur": {
-      "nightlyGbp": 830,
-      "label": "From £830/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "cape-weligama-sri-lanka": {
-      "nightlyGbp": 920,
-      "label": "From £920/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "nayara-bocas-del-toro": {
-      "nightlyGbp": 1055,
-      "label": "From £1,055/nt",
+    "mandarin-oriental-shenzhen": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -2765,63 +1413,103 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "round-hill-jamaica": {
-      "nightlyGbp": 1075,
-      "label": "From £1,075/nt",
+    "andaz-peninsula-papagayo": {
+      "nightlyGbp": 725,
+      "label": "From £725/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "althoff-seehotel-uberfahrt": {
-      "nightlyGbp": 335,
-      "label": "From £335/nt",
+    "eden-roc-cap-cana": {
+      "nightlyGbp": 1560,
+      "label": "From £1,560/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-peninsula-shanghai": {
-      "nightlyGbp": 330,
-      "label": "From £330/nt",
+    "park-hyatt-vienna": {
+      "nightlyGbp": 475,
+      "label": "From £475/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "city-of-dreams-morpheus": {
-      "nightlyGbp": 200,
-      "label": "From £200/nt",
+    "barcelo-corralejo-bay-fuerteventura": {
+      "nightlyGbp": 165,
+      "label": "From £165/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "fairmont-hotel-vier-jahreszeiten": {
-      "nightlyGbp": 205,
-      "label": "From £205/nt",
+    "hacienda-altagracia-auberge": {
+      "nightlyGbp": 2010,
+      "label": "From £2,010/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "andaz-seoul-gangnam-by-hyatt": {
-      "nightlyGbp": 225,
-      "label": "From £225/nt",
+    "ciragan-palace-kempinski": {
+      "nightlyGbp": 305,
+      "label": "From £305/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "de-leurope-amsterdam": {
-      "nightlyGbp": 450,
-      "label": "From £450/nt",
+    "spice-island-beach-resort-grenada": {
+      "nightlyGbp": 780,
+      "label": "From £780/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "waldorf-astoria-osaka": {
+    "parador-de-la-gomera": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "dreams-lanzarote-playa-dorada": {
+      "nightlyGbp": 195,
+      "label": "From £195/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-grande-bretagne-athens": {
+      "nightlyGbp": 285,
+      "label": "From £285/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-hacienda-de-abajo-la-palma": {
+      "nightlyGbp": 185,
+      "label": "From £185/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "h10-rubicon-palace-lanzarote": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "naturhotel-waldklause": {
       "nightlyGbp": 425,
       "label": "From £425/nt",
       "currency": "GBP",
@@ -2829,7 +1517,7 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "st-regis-costa-mujeres": {
+    "four-seasons-sultanahmet-istanbul": {
       "nightlyGbp": 530,
       "label": "From £530/nt",
       "currency": "GBP",
@@ -2837,263 +1525,7 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "baur-au-lac": {
-      "nightlyGbp": 985,
-      "label": "From £985/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "wynn-palace-macau": {
-      "nightlyGbp": 215,
-      "label": "From £215/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "jw-marriott-hotel-and-suites-saigon": {
-      "nightlyGbp": 230,
-      "label": "From £230/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hotel-les-trois-rois": {
-      "nightlyGbp": 480,
-      "label": "From £480/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "orient-express-la-minerva-rome": {
-      "nightlyGbp": 710,
-      "label": "From £710/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "beau-rivage-palace": {
-      "nightlyGbp": 355,
-      "label": "From £355/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "desert-rock-resort": {
-      "nightlyGbp": 1280,
-      "label": "From £1,280/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "las-casitas-a-belmond-hotel": {
-      "nightlyGbp": 400,
-      "label": "From £400/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "casa-cipriani-new-york": {
-      "nightlyGbp": 730,
-      "label": "From £730/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-fifth-avenue-hotel-new-york": {
-      "nightlyGbp": 415,
-      "label": "From £415/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "cocos-hotel-antigua": {
-      "nightlyGbp": 770,
-      "label": "From £770/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandarin-oriental-shenzhen": {
-      "nightlyGbp": 400,
-      "label": "From £400/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "kimpton-kitalay-samui": {
-      "nightlyGbp": 320,
-      "label": "From £320/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "fairmont-chateau-lake-louise": {
-      "nightlyGbp": 295,
-      "label": "From £295/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sofitel-legend-santa-clara-cartagena": {
-      "nightlyGbp": 375,
-      "label": "From £375/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandapa-ubud": {
-      "nightlyGbp": 1025,
-      "label": "From £1,025/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-calile-hotel-brisbane": {
-      "nightlyGbp": 315,
-      "label": "From £315/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-fullerton-bay-singapore": {
-      "nightlyGbp": 405,
-      "label": "From £405/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sebali-nusa-penida": {
-      "nightlyGbp": 70,
-      "label": "From £70/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-oberoi-beach-resort-bali": {
-      "nightlyGbp": 210,
-      "label": "From £210/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-desroches-island": {
-      "nightlyGbp": 1100,
-      "label": "From £1,100/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hotel-ritz-lisbon": {
-      "nightlyGbp": 645,
-      "label": "From £645/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-mauritius-anahita": {
-      "nightlyGbp": 1310,
-      "label": "From £1,310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "villa-nai-33": {
-      "nightlyGbp": 540,
-      "label": "From £540/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-whitby-hotel": {
-      "nightlyGbp": 785,
-      "label": "From £785/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "belmond-sanctuary-lodge-machu-picchu": {
-      "nightlyGbp": 1460,
-      "label": "From £1,460/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "vila-vita-parc": {
-      "nightlyGbp": 220,
-      "label": "From £220/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "aktiv-and-wellnesshotel-bergfried": {
-      "nightlyGbp": 540,
-      "label": "From £540/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sage-lodge": {
-      "nightlyGbp": 280,
-      "label": "From £280/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "villeroy": {
-      "nightlyGbp": 1100,
-      "label": "From £1,100/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-woodward": {
-      "nightlyGbp": 1885,
-      "label": "From £1,885/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "josun-palace-seoul": {
-      "nightlyGbp": 370,
-      "label": "From £370/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "kasbah-tamadot-morocco": {
+    "ritz-carlton-langkawi": {
       "nightlyGbp": 550,
       "label": "From £550/nt",
       "currency": "GBP",
@@ -3101,39 +1533,103 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "goldwynn-resort-bahamas": {
-      "nightlyGbp": 360,
-      "label": "From £360/nt",
+    "roca-nivaria-gh-tenerife": {
+      "nightlyGbp": 275,
+      "label": "From £275/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "zannier-sonop": {
-      "nightlyGbp": 555,
-      "label": "From £555/nt",
+    "h10-playa-meloneras-palace-gran-canaria": {
+      "nightlyGbp": 315,
+      "label": "From £315/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "rissai-valley-a-ritz-carlton-reserve": {
-      "nightlyGbp": 975,
-      "label": "From £975/nt",
+    "iberostar-selection-fuerteventura-palace": {
+      "nightlyGbp": 265,
+      "label": "From £265/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "one-and-only-aesthesis-athens": {
-      "nightlyGbp": 375,
-      "label": "From £375/nt",
+    "iberostar-playa-gaviotas-park-fuerteventura": {
+      "nightlyGbp": 205,
+      "label": "From £205/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "crowne-plaza-changi-airport": {
+    "h10-ocean-suites-fuerteventura": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "silversands-grenada": {
+      "nightlyGbp": 935,
+      "label": "From £935/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "la-toubana-guadeloupe": {
+      "nightlyGbp": 525,
+      "label": "From £525/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-peninsula-papagayo": {
+      "nightlyGbp": 1765,
+      "label": "From £1,765/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "st-regis-bahia-beach-puerto-rico": {
+      "nightlyGbp": 1130,
+      "label": "From £1,130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "rosewood-beijing": {
+      "nightlyGbp": 295,
+      "label": "From £295/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "carlton-cannes-regent": {
+      "nightlyGbp": 240,
+      "label": "From £240/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sofitel-legend-casco-viejo-panama": {
+      "nightlyGbp": 335,
+      "label": "From £335/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "barcelo-teguise-beach-lanzarote": {
       "nightlyGbp": 175,
       "label": "From £175/nt",
       "currency": "GBP",
@@ -3141,87 +1637,15 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "one-and-only-le-saint-geran": {
-      "nightlyGbp": 1005,
-      "label": "From £1,005/nt",
+    "hyatt-zilara-cap-cana": {
+      "nightlyGbp": 745,
+      "label": "From £745/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "como-parrot-cay": {
-      "nightlyGbp": 1570,
-      "label": "From £1,570/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "nizuc-resort-spa-cancun": {
-      "nightlyGbp": 500,
-      "label": "From £500/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mango-house-seychelles": {
-      "nightlyGbp": 445,
-      "label": "From £445/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hyatt-regency-bangkok-sukhumvit": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-bangkok": {
-      "nightlyGbp": 250,
-      "label": "From £250/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "waldorf-astoria-seychelles-platte": {
-      "nightlyGbp": 985,
-      "label": "From £985/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sindhorn-kempinski-hotel-bangkok": {
-      "nightlyGbp": 220,
-      "label": "From £220/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "regent-taipei": {
-      "nightlyGbp": 150,
-      "label": "From £150/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "dusit-thani-krabi-beach-resort": {
-      "nightlyGbp": 365,
-      "label": "From £365/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "anantara-uluwatu-bali-resort": {
+    "an-lam-retreats-ninh-van-bay": {
       "nightlyGbp": 180,
       "label": "From £180/nt",
       "currency": "GBP",
@@ -3229,23 +1653,7 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "itc-grand-chola-a-luxury-collection": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "fairmont-udaipur-palace": {
-      "nightlyGbp": 405,
-      "label": "From £405/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-westin-langkawi-resort-and-spa": {
+    "chateau-eza": {
       "nightlyGbp": 225,
       "label": "From £225/nt",
       "currency": "GBP",
@@ -3253,97 +1661,177 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-ritz-carlton-koh-samui": {
-      "nightlyGbp": 365,
-      "label": "From £365/nt",
+    "the-oberoi-mumbai": {
+      "nightlyGbp": 260,
+      "label": "From £260/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-shilla-seoul": {
-      "nightlyGbp": 235,
-      "label": "From £235/nt",
+    "w-punta-cana-all-inclusive": {
+      "nightlyGbp": 310,
+      "label": "From £310/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "banyan-tree-krabi": {
-      "nightlyGbp": 740,
-      "label": "From £740/nt",
+    "the-okura-prestige-bangkok": {
+      "nightlyGbp": 160,
+      "label": "From £160/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "banyan-tree-phuket": {
-      "nightlyGbp": 955,
-      "label": "From £955/nt",
+    "raffles-al-areen-palace-bahrain": {
+      "nightlyGbp": 310,
+      "label": "From £310/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "royal-palm-beachcomber-mauritius": {
-      "nightlyGbp": 2265,
-      "label": "From £2,265/nt",
+    "sanctuary-cap-cana": {
+      "nightlyGbp": 470,
+      "label": "From £470/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "mandarin-oriental-canouan": {
-      "nightlyGbp": 1420,
-      "label": "From £1,420/nt",
+    "oberoi-amarvilas-agra": {
+      "nightlyGbp": 855,
+      "label": "From £855/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-silo-hotel-cape-town": {
-      "nightlyGbp": 1880,
-      "label": "From £1,880/nt",
+    "lizard-island-resort": {
+      "nightlyGbp": 1830,
+      "label": "From £1,830/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "six-senses-samui": {
-      "nightlyGbp": 1240,
-      "label": "From £1,240/nt",
+    "north-block": {
+      "nightlyGbp": 240,
+      "label": "From £240/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "four-seasons-whistler": {
-      "nightlyGbp": 540,
-      "label": "From £540/nt",
+    "secrets-lanzarote-resort-and-spa": {
+      "nightlyGbp": 180,
+      "label": "From £180/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "nine-orchard": {
-      "nightlyGbp": 500,
-      "label": "From £500/nt",
+    "the-retreat-blue-lagoon-iceland": {
+      "nightlyGbp": 1335,
+      "label": "From £1,335/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "rambagh-palace-jaipur": {
-      "nightlyGbp": 1010,
-      "label": "From £1,010/nt",
+    "la-reserve-paris": {
+      "nightlyGbp": 1525,
+      "label": "From £1,525/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "taj-fateh-prakash-palace": {
-      "nightlyGbp": 400,
-      "label": "From £400/nt",
+    "palacio-nazarenas-cusco": {
+      "nightlyGbp": 760,
+      "label": "From £760/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "forestis-dolomites": {
+      "nightlyGbp": 875,
+      "label": "From £875/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "capella-hanoi": {
+      "nightlyGbp": 745,
+      "label": "From £745/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "desa-potato-head-bali": {
+      "nightlyGbp": 175,
+      "label": "From £175/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "patina-osaka": {
+      "nightlyGbp": 385,
+      "label": "From £385/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sensei-lanai-four-seasons": {
+      "nightlyGbp": 890,
+      "label": "From £890/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "cape-weligama-sri-lanka": {
+      "nightlyGbp": 920,
+      "label": "From £920/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "nayara-bocas-del-toro": {
+      "nightlyGbp": 1050,
+      "label": "From £1,050/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-greenwich-hotel-new-york": {
+      "nightlyGbp": 1105,
+      "label": "From £1,105/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "refugia-chiloe": {
+      "nightlyGbp": 800,
+      "label": "From £800/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "taj-lake-palace-udaipur": {
+      "nightlyGbp": 830,
+      "label": "From £830/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -3597,151 +2085,95 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "wynn-las-vegas": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
+    "kimpton-kitalay-samui": {
+      "nightlyGbp": 320,
+      "label": "From £320/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "anantara-stanley-and-livingstone-victoria-falls-hotel": {
-      "nightlyGbp": 850,
-      "label": "From £850/nt",
+    "fairmont-chateau-lake-louise": {
+      "nightlyGbp": 295,
+      "label": "From £295/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "siro-one-zaabeel-dubai": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
+    "sofitel-legend-santa-clara-cartagena": {
+      "nightlyGbp": 375,
+      "label": "From £375/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "rosewood-kauri-cliffs": {
-      "nightlyGbp": 2725,
-      "label": "From £2,725/nt",
+    "mandapa-ubud": {
+      "nightlyGbp": 1025,
+      "label": "From £1,025/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-stanley-hotel-estes-park": {
-      "nightlyGbp": 140,
-      "label": "From £140/nt",
+    "the-calile-hotel-brisbane": {
+      "nightlyGbp": 315,
+      "label": "From £315/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "hotel-wailea-maui": {
-      "nightlyGbp": 855,
-      "label": "From £855/nt",
+    "the-fullerton-bay-singapore": {
+      "nightlyGbp": 405,
+      "label": "From £405/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "andaz-delhi-by-hyatt": {
-      "nightlyGbp": 130,
-      "label": "From £130/nt",
+    "sebali-nusa-penida": {
+      "nightlyGbp": 70,
+      "label": "From £70/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "park-hyatt-jakarta": {
-      "nightlyGbp": 155,
-      "label": "From £155/nt",
+    "the-oberoi-beach-resort-bali": {
+      "nightlyGbp": 210,
+      "label": "From £210/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "park-hyatt-melbourne": {
-      "nightlyGbp": 140,
-      "label": "From £140/nt",
+    "the-whitby-hotel": {
+      "nightlyGbp": 785,
+      "label": "From £785/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "hyatt-regency-bali": {
-      "nightlyGbp": 165,
-      "label": "From £165/nt",
+    "belmond-sanctuary-lodge-machu-picchu": {
+      "nightlyGbp": 1460,
+      "label": "From £1,460/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "four-seasons-hotel-jakarta": {
-      "nightlyGbp": 165,
-      "label": "From £165/nt",
+    "villa-nai-33": {
+      "nightlyGbp": 540,
+      "label": "From £540/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "anantara-ubud-bali-resort": {
-      "nightlyGbp": 175,
-      "label": "From £175/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-library-samui": {
-      "nightlyGbp": 300,
-      "label": "From £300/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-times-square-edition-new-york": {
-      "nightlyGbp": 370,
-      "label": "From £370/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "dusit-thani-bangkok": {
-      "nightlyGbp": 285,
-      "label": "From £285/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "taj-falaknuma-palace-hyderabad": {
-      "nightlyGbp": 455,
-      "label": "From £455/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-langham-jakarta": {
-      "nightlyGbp": 145,
-      "label": "From £145/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-leela-palace-new-delhi-the": {
-      "nightlyGbp": 310,
-      "label": "From £310/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ritz-carlton-bali": {
+    "vila-vita-parc": {
       "nightlyGbp": 220,
       "label": "From £220/nt",
       "currency": "GBP",
@@ -3749,65 +2181,89 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "ritz-carlton-hong-kong": {
-      "nightlyGbp": 365,
-      "label": "From £365/nt",
+    "aktiv-and-wellnesshotel-bergfried": {
+      "nightlyGbp": 540,
+      "label": "From £540/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-ruma-hotel-and-residences": {
-      "nightlyGbp": 120,
-      "label": "From £120/nt",
+    "sage-lodge": {
+      "nightlyGbp": 280,
+      "label": "From £280/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "the-oberoi-beach-resort-lombok": {
-      "nightlyGbp": 145,
-      "label": "From £145/nt",
+    "villeroy": {
+      "nightlyGbp": 1100,
+      "label": "From £1,100/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "lalya-ninh-van-bay": {
-      "nightlyGbp": 235,
-      "label": "From £235/nt",
+    "the-woodward": {
+      "nightlyGbp": 1885,
+      "label": "From £1,885/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "sala-phuket-mai-khao-beach-resort": {
-      "nightlyGbp": 455,
-      "label": "From £455/nt",
+    "josun-palace-seoul": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "bardessono-hotel-and-spa": {
-      "nightlyGbp": 515,
-      "label": "From £515/nt",
+    "kasbah-tamadot-morocco": {
+      "nightlyGbp": 550,
+      "label": "From £550/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "nekajui-ritz-carlton-reserve-costa-rica": {
-      "nightlyGbp": 4910,
-      "label": "From £4,910/nt",
+    "four-seasons-hotel-ritz-lisbon": {
+      "nightlyGbp": 645,
+      "label": "From £645/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "sala-samui-chaweng-beach-resort": {
-      "nightlyGbp": 410,
-      "label": "From £410/nt",
+    "goldwynn-resort-bahamas": {
+      "nightlyGbp": 360,
+      "label": "From £360/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "zannier-sonop": {
+      "nightlyGbp": 555,
+      "label": "From £555/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-desroches-island": {
+      "nightlyGbp": 1150,
+      "label": "From £1,150/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "rissai-valley-a-ritz-carlton-reserve": {
+      "nightlyGbp": 975,
+      "label": "From £975/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -4272,6 +2728,230 @@
     "rosewood-miyakojima": {
       "nightlyGbp": 805,
       "label": "From £805/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-aesthesis-athens": {
+      "nightlyGbp": 375,
+      "label": "From £375/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "crowne-plaza-changi-airport": {
+      "nightlyGbp": 185,
+      "label": "From £185/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-le-saint-geran": {
+      "nightlyGbp": 1005,
+      "label": "From £1,005/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "como-parrot-cay": {
+      "nightlyGbp": 1570,
+      "label": "From £1,570/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "nizuc-resort-spa-cancun": {
+      "nightlyGbp": 500,
+      "label": "From £500/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hyatt-regency-bangkok-sukhumvit": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-bangkok": {
+      "nightlyGbp": 250,
+      "label": "From £250/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mango-house-seychelles": {
+      "nightlyGbp": 445,
+      "label": "From £445/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-seychelles-platte": {
+      "nightlyGbp": 985,
+      "label": "From £985/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sindhorn-kempinski-hotel-bangkok": {
+      "nightlyGbp": 220,
+      "label": "From £220/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "regent-taipei": {
+      "nightlyGbp": 145,
+      "label": "From £145/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "dusit-thani-krabi-beach-resort": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "anantara-uluwatu-bali-resort": {
+      "nightlyGbp": 180,
+      "label": "From £180/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "itc-grand-chola-a-luxury-collection": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "fairmont-udaipur-palace": {
+      "nightlyGbp": 405,
+      "label": "From £405/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-westin-langkawi-resort-and-spa": {
+      "nightlyGbp": 225,
+      "label": "From £225/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-ritz-carlton-koh-samui": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-shilla-seoul": {
+      "nightlyGbp": 235,
+      "label": "From £235/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "banyan-tree-krabi": {
+      "nightlyGbp": 740,
+      "label": "From £740/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "banyan-tree-phuket": {
+      "nightlyGbp": 955,
+      "label": "From £955/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-whistler": {
+      "nightlyGbp": 540,
+      "label": "From £540/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "royal-palm-beachcomber-mauritius": {
+      "nightlyGbp": 2265,
+      "label": "From £2,265/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-canouan": {
+      "nightlyGbp": 1420,
+      "label": "From £1,420/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-silo-hotel-cape-town": {
+      "nightlyGbp": 1880,
+      "label": "From £1,880/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-samui": {
+      "nightlyGbp": 1240,
+      "label": "From £1,240/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "nine-orchard": {
+      "nightlyGbp": 500,
+      "label": "From £500/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "rambagh-palace-jaipur": {
+      "nightlyGbp": 1010,
+      "label": "From £1,010/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "taj-fateh-prakash-palace": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -5797,6 +4477,230 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
+    "wynn-las-vegas": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "anantara-stanley-and-livingstone-victoria-falls-hotel": {
+      "nightlyGbp": 850,
+      "label": "From £850/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "siro-one-zaabeel-dubai": {
+      "nightlyGbp": 310,
+      "label": "From £310/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "rosewood-kauri-cliffs": {
+      "nightlyGbp": 2725,
+      "label": "From £2,725/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-wailea-maui": {
+      "nightlyGbp": 855,
+      "label": "From £855/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-times-square-edition-new-york": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-stanley-hotel-estes-park": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-melbourne": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-hotel-jakarta": {
+      "nightlyGbp": 165,
+      "label": "From £165/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-jakarta": {
+      "nightlyGbp": 155,
+      "label": "From £155/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-leela-palace-new-delhi-the": {
+      "nightlyGbp": 310,
+      "label": "From £310/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "andaz-delhi-by-hyatt": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "dusit-thani-bangkok": {
+      "nightlyGbp": 280,
+      "label": "From £280/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-bali": {
+      "nightlyGbp": 220,
+      "label": "From £220/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "nekajui-ritz-carlton-reserve-costa-rica": {
+      "nightlyGbp": 2340,
+      "label": "From £2,340/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-library-samui": {
+      "nightlyGbp": 290,
+      "label": "From £290/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "lalya-ninh-van-bay": {
+      "nightlyGbp": 225,
+      "label": "From £225/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-oberoi-beach-resort-lombok": {
+      "nightlyGbp": 145,
+      "label": "From £145/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hyatt-regency-bali": {
+      "nightlyGbp": 155,
+      "label": "From £155/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-langham-jakarta": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-hong-kong": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-ruma-hotel-and-residences": {
+      "nightlyGbp": 120,
+      "label": "From £120/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "anantara-ubud-bali-resort": {
+      "nightlyGbp": 175,
+      "label": "From £175/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bardessono-hotel-and-spa": {
+      "nightlyGbp": 515,
+      "label": "From £515/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-leela-hyderabad": {
+      "nightlyGbp": 265,
+      "label": "From £265/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "taj-falaknuma-palace-hyderabad": {
+      "nightlyGbp": 455,
+      "label": "From £455/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sala-phuket-mai-khao-beach-resort": {
+      "nightlyGbp": 375,
+      "label": "From £375/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sala-samui-chaweng-beach-resort": {
+      "nightlyGbp": 410,
+      "label": "From £410/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
     "warren-street-hotel": {
       "nightlyGbp": 625,
       "label": "From £625/nt",
@@ -6293,430 +5197,6 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "kimpton-naluria-kuala-lumpur-by-ihg": {
-      "nightlyGbp": 90,
-      "label": "From £90/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "ana-intercontinental-beppu": {
-      "nightlyGbp": 350,
-      "label": "From £350/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "fairmont-miramar-santa-monica": {
-      "nightlyGbp": 250,
-      "label": "From £250/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "impression-isla-mujeres-by-secrets": {
-      "nightlyGbp": 950,
-      "label": "From £950/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-capitol-hotel-tokyu": {
-      "nightlyGbp": 405,
-      "label": "From £405/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-peninsula-bangkok": {
-      "nightlyGbp": 270,
-      "label": "From £270/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bulgari-hotel-milano": {
-      "nightlyGbp": 1065,
-      "label": "From £1,065/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "anantara-bophut-koh-samui-resort": {
-      "nightlyGbp": 390,
-      "label": "From £390/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bulgari-hotel-shanghai": {
-      "nightlyGbp": 710,
-      "label": "From £710/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandarin-oriental-downtown-dubai": {
-      "nightlyGbp": 510,
-      "label": "From £510/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "al-maha-dubai": {
-      "nightlyGbp": 955,
-      "label": "From £955/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "mandarin-oriental-bangkok": {
-      "nightlyGbp": 430,
-      "label": "From £430/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hotel-new-york-downtown": {
-      "nightlyGbp": 675,
-      "label": "From £675/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hotel-miami": {
-      "nightlyGbp": 625,
-      "label": "From £625/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "bellevue-hotel-and-spa": {
-      "nightlyGbp": 265,
-      "label": "From £265/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "six-senses-kyoto": {
-      "nightlyGbp": 540,
-      "label": "From £540/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "steigenberger-icon-europaischer-hof-baden-baden": {
-      "nightlyGbp": 135,
-      "label": "From £135/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-resort-marrakech": {
-      "nightlyGbp": 375,
-      "label": "From £375/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "spicers-sangoma-retreat": {
-      "nightlyGbp": 780,
-      "label": "From £780/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "telegraphenamt": {
-      "nightlyGbp": 200,
-      "label": "From £200/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-burman-hotel": {
-      "nightlyGbp": 245,
-      "label": "From £245/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hotel-minneapolis": {
-      "nightlyGbp": 405,
-      "label": "From £405/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "gleneagles-townhouse": {
-      "nightlyGbp": 400,
-      "label": "From £400/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "137-pillars-house": {
-      "nightlyGbp": 805,
-      "label": "From £805/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "sofitel-legend-old-cataract-aswan": {
-      "nightlyGbp": 765,
-      "label": "From £765/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "nolinski-venezia": {
-      "nightlyGbp": 425,
-      "label": "From £425/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "westin-bora-bora": {
-      "nightlyGbp": 615,
-      "label": "From £615/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-st-regis-rome": {
-      "nightlyGbp": 720,
-      "label": "From £720/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "anantara-golden-triangle-elephant-camp-and-resort": {
-      "nightlyGbp": 1435,
-      "label": "From £1,435/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-bosphorus-istanbul": {
-      "nightlyGbp": 515,
-      "label": "From £515/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "villa-igiea-a-rocco-forte-hotel": {
-      "nightlyGbp": 320,
-      "label": "From £320/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "esencia-riviera-maya": {
-      "nightlyGbp": 1450,
-      "label": "From £1,450/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-merrion": {
-      "nightlyGbp": 305,
-      "label": "From £305/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "the-alpina-gstaad": {
-      "nightlyGbp": 2360,
-      "label": "From £2,360/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "argos-in-cappadocia": {
-      "nightlyGbp": 315,
-      "label": "From £315/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "curtain-bluff-antigua": {
-      "nightlyGbp": 2375,
-      "label": "From £2,375/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "rachamankha": {
-      "nightlyGbp": 205,
-      "label": "From £205/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "cashel-palace": {
-      "nightlyGbp": 325,
-      "label": "From £325/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hambleton-hall": {
-      "nightlyGbp": 405,
-      "label": "From £405/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "one-and-only-gorillas-nest-rwanda": {
-      "nightlyGbp": 4030,
-      "label": "From £4,030/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "domaine-les-crayeres": {
-      "nightlyGbp": 665,
-      "label": "From £665/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "royal-champagne-hotel-and-spa": {
-      "nightlyGbp": 710,
-      "label": "From £710/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "babylonstoren-winelands": {
-      "nightlyGbp": 1025,
-      "label": "From £1,025/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "les-sources-de-caudalie": {
-      "nightlyGbp": 250,
-      "label": "From £250/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "iberostar-selection-fuerteventura-palace": {
-      "nightlyGbp": 240,
-      "label": "From £240/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "grand-hotel-principe-di-piemonte": {
-      "nightlyGbp": 445,
-      "label": "From £445/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "keemala-phuket": {
-      "nightlyGbp": 525,
-      "label": "From £525/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "azumi-setoda": {
-      "nightlyGbp": 375,
-      "label": "From £375/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "fufu-hakone": {
-      "nightlyGbp": 770,
-      "label": "From £770/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "joali-maldives": {
-      "nightlyGbp": 3150,
-      "label": "From £3,150/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "hoshinoya-tokyo": {
-      "nightlyGbp": 535,
-      "label": "From £535/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "goda-hakone-gora-kadan": {
-      "nightlyGbp": 1020,
-      "label": "From £1,020/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "les-sources-de-vougeot": {
-      "nightlyGbp": 270,
-      "label": "From £270/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
     "one-and-only-reethi-rah": {
       "nightlyGbp": 2780,
       "label": "From £2,780/nt",
@@ -6797,6 +5277,1030 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
+    "hotel-sacher-vienna": {
+      "nightlyGbp": 435,
+      "label": "From £435/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "banyan-tree-mayakoba": {
+      "nightlyGbp": 725,
+      "label": "From £725/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "faena-hotel-miami-beach": {
+      "nightlyGbp": 775,
+      "label": "From £775/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jimbaran-puri-a-belmond-hotel-bali": {
+      "nightlyGbp": 210,
+      "label": "From £210/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "azumi-setoda": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-george-v-paris": {
+      "nightlyGbp": 1660,
+      "label": "From £1,660/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-de-crillon-paris": {
+      "nightlyGbp": 1170,
+      "label": "From £1,170/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "nolinski": {
+      "nightlyGbp": 420,
+      "label": "From £420/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "raffles-the-palm-dubai": {
+      "nightlyGbp": 290,
+      "label": "From £290/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jumeirah-al-qasr-dubai": {
+      "nightlyGbp": 750,
+      "label": "From £750/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jumana-bali-ungasan": {
+      "nightlyGbp": 500,
+      "label": "From £500/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "chable-maroma": {
+      "nightlyGbp": 910,
+      "label": "From £910/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "manoir-hovey": {
+      "nightlyGbp": 320,
+      "label": "From £320/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-los-angeles-beverly-hills": {
+      "nightlyGbp": 585,
+      "label": "From £585/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "halcyon-house-cabarita": {
+      "nightlyGbp": 335,
+      "label": "From £335/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "keemala-phuket": {
+      "nightlyGbp": 510,
+      "label": "From £510/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-nyungwe-house": {
+      "nightlyGbp": 1405,
+      "label": "From £1,405/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "joali-maldives": {
+      "nightlyGbp": 3150,
+      "label": "From £3,150/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "fufu-hakone": {
+      "nightlyGbp": 770,
+      "label": "From £770/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "badrutts-palace": {
+      "nightlyGbp": 1870,
+      "label": "From £1,870/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jackalope-hotel-mornington": {
+      "nightlyGbp": 300,
+      "label": "From £300/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jackalope-hotel-mornington-peninsula": {
+      "nightlyGbp": 300,
+      "label": "From £300/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mashpi-lodge": {
+      "nightlyGbp": 1155,
+      "label": "From £1,155/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "milaidhoo-maldives": {
+      "nightlyGbp": 1795,
+      "label": "From £1,795/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-louise-barossa": {
+      "nightlyGbp": 870,
+      "label": "From £870/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "pacuare-lodge": {
+      "nightlyGbp": 675,
+      "label": "From £675/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "les-sources-de-vougeot": {
+      "nightlyGbp": 270,
+      "label": "From £270/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jade-mountain-st-lucia": {
+      "nightlyGbp": 1845,
+      "label": "From £1,845/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gran-melia-palacio-de-isora-tenerife": {
+      "nightlyGbp": 215,
+      "label": "From £215/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "qasr-al-sarab-anantara": {
+      "nightlyGbp": 500,
+      "label": "From £500/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-one-zaabeel": {
+      "nightlyGbp": 360,
+      "label": "From £360/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-jumeira-dubai": {
+      "nightlyGbp": 655,
+      "label": "From £655/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-royal-mirage": {
+      "nightlyGbp": 460,
+      "label": "From £460/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-difc-dubai": {
+      "nightlyGbp": 280,
+      "label": "From £280/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-bangkok": {
+      "nightlyGbp": 345,
+      "label": "From £345/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "crown-towers-sydney": {
+      "nightlyGbp": 285,
+      "label": "From £285/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jumeirah-dar-al-masyaf": {
+      "nightlyGbp": 880,
+      "label": "From £880/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bulgari-resort-bali": {
+      "nightlyGbp": 1485,
+      "label": "From £1,485/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-legian-seminyak": {
+      "nightlyGbp": 350,
+      "label": "From £350/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "w-sydney": {
+      "nightlyGbp": 390,
+      "label": "From £390/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "st-regis-bora-bora": {
+      "nightlyGbp": 900,
+      "label": "From £900/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "iberostar-selection-sabila-tenerife": {
+      "nightlyGbp": 240,
+      "label": "From £240/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "iberostar-selection-anthelia-tenerife": {
+      "nightlyGbp": 305,
+      "label": "From £305/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-dubai": {
+      "nightlyGbp": 995,
+      "label": "From £995/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "colon-guanahani-tenerife": {
+      "nightlyGbp": 275,
+      "label": "From £275/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "spicers-peak-lodge": {
+      "nightlyGbp": 730,
+      "label": "From £730/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-bel-air-la": {
+      "nightlyGbp": 1030,
+      "label": "From £1,030/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-lana-dorchester-dubai": {
+      "nightlyGbp": 350,
+      "label": "From £350/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "st-regis-saadiyat-island": {
+      "nightlyGbp": 385,
+      "label": "From £385/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-abama-tenerife": {
+      "nightlyGbp": 295,
+      "label": "From £295/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "soori-bali": {
+      "nightlyGbp": 640,
+      "label": "From £640/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-laamu": {
+      "nightlyGbp": 1280,
+      "label": "From £1,280/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-dubai-jumeirah": {
+      "nightlyGbp": 830,
+      "label": "From £830/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "meadowood-napa-valley": {
+      "nightlyGbp": 635,
+      "label": "From £635/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-surfside-miami": {
+      "nightlyGbp": 1735,
+      "label": "From £1,735/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-berkeley-london": {
+      "nightlyGbp": 680,
+      "label": "From £680/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "goda-hakone-gora-kadan": {
+      "nightlyGbp": 1020,
+      "label": "From £1,020/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "vincci-seleccion-la-plantacion-del-sur-tenerife": {
+      "nightlyGbp": 355,
+      "label": "From £355/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "melia-jardines-del-teide-tenerife": {
+      "nightlyGbp": 220,
+      "label": "From £220/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "las-ventanas-al-paraiso": {
+      "nightlyGbp": 1220,
+      "label": "From £1,220/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "regent-hong-kong": {
+      "nightlyGbp": 525,
+      "label": "From £525/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-singapore-edition": {
+      "nightlyGbp": 360,
+      "label": "From £360/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "jardines-de-nivaria-tenerife": {
+      "nightlyGbp": 325,
+      "label": "From £325/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-kuala-lumpur": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-singapore": {
+      "nightlyGbp": 470,
+      "label": "From £470/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ana-mandara-cam-ranh": {
+      "nightlyGbp": 140,
+      "label": "From £140/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-dolder-grand-zurich": {
+      "nightlyGbp": 515,
+      "label": "From £515/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "landmar-playa-la-arena-tenerife": {
+      "nightlyGbp": 205,
+      "label": "From £205/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-hong-kong": {
+      "nightlyGbp": 520,
+      "label": "From £520/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "pendry-west-hollywood": {
+      "nightlyGbp": 815,
+      "label": "From £815/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-st-regis-new-york": {
+      "nightlyGbp": 665,
+      "label": "From £665/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gf-fanabe-tenerife": {
+      "nightlyGbp": 160,
+      "label": "From £160/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-ritz-carlton-bangkok": {
+      "nightlyGbp": 405,
+      "label": "From £405/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-fort-barwara": {
+      "nightlyGbp": 775,
+      "label": "From £775/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "spring-hotel-bitacora-tenerife": {
+      "nightlyGbp": 200,
+      "label": "From £200/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-astir-palace-athens": {
+      "nightlyGbp": 495,
+      "label": "From £495/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-taj-mahal-palace-mumbai": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "burgenstock-hotel-switzerland": {
+      "nightlyGbp": 790,
+      "label": "From £790/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "iberostar-selection-lanzarote-park": {
+      "nightlyGbp": 260,
+      "label": "From £260/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "h10-costa-adeje-palace-tenerife": {
+      "nightlyGbp": 265,
+      "label": "From £265/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-peninsula-new-york": {
+      "nightlyGbp": 905,
+      "label": "From £905/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-hong-kong": {
+      "nightlyGbp": 510,
+      "label": "From £510/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-singapore": {
+      "nightlyGbp": 405,
+      "label": "From £405/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-peninsula-hong-kong": {
+      "nightlyGbp": 505,
+      "label": "From £505/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "tivoli-la-caleta-tenerife": {
+      "nightlyGbp": 330,
+      "label": "From £330/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "rosewood-london": {
+      "nightlyGbp": 515,
+      "label": "From £515/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-kyoto": {
+      "nightlyGbp": 1070,
+      "label": "From £1,070/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "suiran-kyoto": {
+      "nightlyGbp": 465,
+      "label": "From £465/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-kyoto": {
+      "nightlyGbp": 955,
+      "label": "From £955/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-firenze": {
+      "nightlyGbp": 770,
+      "label": "From £770/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "palace-hotel-tokyo": {
+      "nightlyGbp": 490,
+      "label": "From £490/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-tokyo-otemachi": {
+      "nightlyGbp": 660,
+      "label": "From £660/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-tokyo": {
+      "nightlyGbp": 585,
+      "label": "From £585/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "raffles-seychelles": {
+      "nightlyGbp": 845,
+      "label": "From £845/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-zil-pasyon": {
+      "nightlyGbp": 1305,
+      "label": "From £1,305/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "chable-yucatan": {
+      "nightlyGbp": 940,
+      "label": "From £940/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-tokyo": {
+      "nightlyGbp": 670,
+      "label": "From £670/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-savoy-london": {
+      "nightlyGbp": 575,
+      "label": "From £575/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gf-gran-costa-adeje-tenerife": {
+      "nightlyGbp": 250,
+      "label": "From £250/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "barcelo-tenerife": {
+      "nightlyGbp": 210,
+      "label": "From £210/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hoshinoya-tokyo": {
+      "nightlyGbp": 565,
+      "label": "From £565/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "le-bristol-paris": {
+      "nightlyGbp": 1465,
+      "label": "From £1,465/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-tokyo-edition-toranomon": {
+      "nightlyGbp": 610,
+      "label": "From £610/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-seychelles": {
+      "nightlyGbp": 1770,
+      "label": "From £1,770/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "peninsula-london": {
+      "nightlyGbp": 810,
+      "label": "From £810/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "landmar-costa-los-gigantes-tenerife": {
+      "nightlyGbp": 210,
+      "label": "From £210/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-paris": {
+      "nightlyGbp": 1860,
+      "label": "From £1,860/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "montage-los-cabos": {
+      "nightlyGbp": 1020,
+      "label": "From £1,020/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-plaza-athenee-paris": {
+      "nightlyGbp": 1460,
+      "label": "From £1,460/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "h10-atlantic-sunset-tenerife": {
+      "nightlyGbp": 250,
+      "label": "From £250/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-emory-london": {
+      "nightlyGbp": 895,
+      "label": "From £895/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "sugar-beach-st-lucia": {
+      "nightlyGbp": 2530,
+      "label": "From £2,530/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-mauritius-anahita": {
+      "nightlyGbp": 935,
+      "label": "From £935/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "one-and-only-gorillas-nest-rwanda": {
+      "nightlyGbp": 3905,
+      "label": "From £3,905/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "zaborin-niseko": {
+      "nightlyGbp": 3415,
+      "label": "From £3,415/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "les-sources-de-caudalie": {
+      "nightlyGbp": 250,
+      "label": "From £250/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "babylonstoren-winelands": {
+      "nightlyGbp": 1025,
+      "label": "From £1,025/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "domaine-les-crayeres": {
+      "nightlyGbp": 665,
+      "label": "From £665/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "royal-champagne-hotel-and-spa": {
+      "nightlyGbp": 710,
+      "label": "From £710/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "melia-fuerteventura": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "barcelo-fuerteventura-mar": {
+      "nightlyGbp": 145,
+      "label": "From £145/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "santa-catalina-royal-hideaway-gran-canaria": {
+      "nightlyGbp": 175,
+      "label": "From £175/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "goldeneye-jamaica": {
+      "nightlyGbp": 685,
+      "label": "From £685/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "riu-palace-jandia-fuerteventura": {
+      "nightlyGbp": 260,
+      "label": "From £260/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "grand-hotel-principe-di-piemonte": {
+      "nightlyGbp": 445,
+      "label": "From £445/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "otahuna-lodge-christchurch": {
+      "nightlyGbp": 90,
+      "label": "From £90/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "riu-gran-canaria": {
+      "nightlyGbp": 305,
+      "label": "From £305/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hyatt-seoul": {
+      "nightlyGbp": 300,
+      "label": "From £300/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
     "hyatt-regency-kathmandu": {
       "nightlyGbp": 310,
       "label": "From £310/nt",
@@ -6824,14 +6328,6 @@
     "jusandi": {
       "nightlyGbp": 540,
       "label": "From £540/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "zaborin-niseko": {
-      "nightlyGbp": 3415,
-      "label": "From £3,415/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -6869,6 +6365,14 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
+    "casa-san-agustin": {
+      "nightlyGbp": 460,
+      "label": "From £460/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
     "huka-lodge-taupo": {
       "nightlyGbp": 2810,
       "label": "From £2,810/nt",
@@ -6877,25 +6381,169 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "ritz-carlton-grand-cayman": {
-      "nightlyGbp": 1825,
-      "label": "From £1,825/nt",
+    "rosewood-mayakoba": {
+      "nightlyGbp": 1215,
+      "label": "From £1,215/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "park-hyatt-seoul": {
-      "nightlyGbp": 280,
-      "label": "From £280/nt",
+    "rosewood-little-dix-bay": {
+      "nightlyGbp": 1365,
+      "label": "From £1,365/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "castelbrac": {
+    "the-carlyle-new-york": {
+      "nightlyGbp": 945,
+      "label": "From £945/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "barcelo-santiago-tenerife": {
+      "nightlyGbp": 195,
+      "label": "From £195/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "waldorf-astoria-los-cabos-pedregal": {
+      "nightlyGbp": 1890,
+      "label": "From £1,890/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "lopesan-villa-del-conde-gran-canaria": {
+      "nightlyGbp": 255,
+      "label": "From £255/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "lopesan-baobab-resort-gran-canaria": {
+      "nightlyGbp": 255,
+      "label": "From £255/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "cordial-mogan-playa-gran-canaria": {
+      "nightlyGbp": 285,
+      "label": "From £285/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "radisson-blu-mogan-gran-canaria": {
+      "nightlyGbp": 265,
+      "label": "From £265/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-sanchaya": {
+      "nightlyGbp": 420,
+      "label": "From £420/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hotel-lava-beach-lanzarote": {
+      "nightlyGbp": 205,
+      "label": "From £205/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "radisson-blu-resort-gran-canaria": {
+      "nightlyGbp": 450,
+      "label": "From £450/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bulgari-resort-dubai": {
+      "nightlyGbp": 1130,
+      "label": "From £1,130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "arrecife-gran-hotel-lanzarote": {
+      "nightlyGbp": 130,
+      "label": "From £130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "h10-lanzarote-princess": {
       "nightlyGbp": 160,
       "label": "From £160/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "lopesan-costa-meloneras-gran-canaria": {
+      "nightlyGbp": 270,
+      "label": "From £270/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "elba-lanzarote-royal-village": {
+      "nightlyGbp": 150,
+      "label": "From £150/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "barcelo-playa-blanca-lanzarote": {
+      "nightlyGbp": 200,
+      "label": "From £200/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "salobre-hotel-resort-gran-canaria": {
+      "nightlyGbp": 290,
+      "label": "From £290/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "seaside-palm-beach-gran-canaria": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gf-victoria-tenerife": {
+      "nightlyGbp": 635,
+      "label": "From £635/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -6909,14 +6557,6 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "st-regis-punta-mita": {
-      "nightlyGbp": 970,
-      "label": "From £970/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
     "cavallo-point-lodge": {
       "nightlyGbp": 325,
       "label": "From £325/nt",
@@ -6925,33 +6565,17 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "la-samanna-belmond-st-martin": {
-      "nightlyGbp": 1970,
-      "label": "From £1,970/nt",
+    "cap-juluca-anguilla": {
+      "nightlyGbp": 2640,
+      "label": "From £2,640/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "grace-bay-club-turks-caicos": {
-      "nightlyGbp": 2105,
-      "label": "From £2,105/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "twa-hotel": {
-      "nightlyGbp": 210,
-      "label": "From £210/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "casa-san-agustin": {
-      "nightlyGbp": 460,
-      "label": "From £460/nt",
+    "castelbrac": {
+      "nightlyGbp": 160,
+      "label": "From £160/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -6965,9 +6589,113 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "cap-juluca-anguilla": {
-      "nightlyGbp": 2550,
-      "label": "From £2,550/nt",
+    "la-samanna-belmond-st-martin": {
+      "nightlyGbp": 1995,
+      "label": "From £1,995/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ritz-carlton-grand-cayman": {
+      "nightlyGbp": 1825,
+      "label": "From £1,825/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-landmark-mandarin-oriental-hong-kong": {
+      "nightlyGbp": 595,
+      "label": "From £595/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-madrona": {
+      "nightlyGbp": 260,
+      "label": "From £260/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "pretty-beach-house": {
+      "nightlyGbp": 1130,
+      "label": "From £1,130/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-chanler-at-cliff-walk": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-lodge-at-blue-sky-auberge-resorts-collection": {
+      "nightlyGbp": 1325,
+      "label": "From £1,325/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "villa-contessa": {
+      "nightlyGbp": 260,
+      "label": "From £260/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "huttenhof-wellnesshotel-and-luxus-bergchalets": {
+      "nightlyGbp": 385,
+      "label": "From £385/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "park-hotel-kenmare": {
+      "nightlyGbp": 420,
+      "label": "From £420/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "wellness-and-sport-hotel-jagdhof": {
+      "nightlyGbp": 580,
+      "label": "From £580/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-stavrand": {
+      "nightlyGbp": 270,
+      "label": "From £270/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "hampton-manor": {
+      "nightlyGbp": 265,
+      "label": "From £265/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gangtey-lodge": {
+      "nightlyGbp": 655,
+      "label": "From £655/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -6997,22 +6725,6 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "montage-deer-valley": {
-      "nightlyGbp": 1970,
-      "label": "From £1,970/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
-    "four-seasons-hotel-san-francisco-at-embarcadero": {
-      "nightlyGbp": 530,
-      "label": "From £530/nt",
-      "currency": "GBP",
-      "source": "LiteAPI Indicative Snapshot",
-      "sampleCheckin": "2027-01-10",
-      "checkedAt": "2026-11-26"
-    },
     "falkensteiner-schlosshotel-velden": {
       "nightlyGbp": 275,
       "label": "From £275/nt",
@@ -7029,6 +6741,70 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
+    "four-seasons-hotel-san-francisco-at-embarcadero": {
+      "nightlyGbp": 530,
+      "label": "From £530/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "montage-deer-valley": {
+      "nightlyGbp": 1970,
+      "label": "From £1,970/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "137-pillars-house": {
+      "nightlyGbp": 675,
+      "label": "From £675/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "anantara-golden-triangle-elephant-camp-and-resort": {
+      "nightlyGbp": 1380,
+      "label": "From £1,380/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "kimpton-naluria-kuala-lumpur-by-ihg": {
+      "nightlyGbp": 105,
+      "label": "From £105/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-downtown-dubai": {
+      "nightlyGbp": 435,
+      "label": "From £435/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "mandarin-oriental-bangkok": {
+      "nightlyGbp": 455,
+      "label": "From £455/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "impression-isla-mujeres-by-secrets": {
+      "nightlyGbp": 1150,
+      "label": "From £1,150/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
     "park-hyatt-paris-vendome": {
       "nightlyGbp": 925,
       "label": "From £925/nt",
@@ -7037,9 +6813,169 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
+    "the-peninsula-bangkok": {
+      "nightlyGbp": 330,
+      "label": "From £330/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
     "the-sarojin": {
-      "nightlyGbp": 590,
-      "label": "From £590/nt",
+      "nightlyGbp": 575,
+      "label": "From £575/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "al-maha-dubai": {
+      "nightlyGbp": 1375,
+      "label": "From £1,375/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "six-senses-kyoto": {
+      "nightlyGbp": 475,
+      "label": "From £475/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-resort-marrakech": {
+      "nightlyGbp": 495,
+      "label": "From £495/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-hotel-miami": {
+      "nightlyGbp": 835,
+      "label": "From £835/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-hotel-new-york-downtown": {
+      "nightlyGbp": 910,
+      "label": "From £910/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "fairmont-miramar-santa-monica": {
+      "nightlyGbp": 445,
+      "label": "From £445/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "steigenberger-icon-europaischer-hof-baden-baden": {
+      "nightlyGbp": 145,
+      "label": "From £145/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "telegraphenamt": {
+      "nightlyGbp": 225,
+      "label": "From £225/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bowie-house-auberge-collection": {
+      "nightlyGbp": 365,
+      "label": "From £365/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "chewton-glen-hotel": {
+      "nightlyGbp": 455,
+      "label": "From £455/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "ana-intercontinental-beppu": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "wakax-hacienda": {
+      "nightlyGbp": 360,
+      "label": "From £360/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-capitol-hotel-tokyu": {
+      "nightlyGbp": 380,
+      "label": "From £380/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "gleneagles-townhouse": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bulgari-hotel-milano": {
+      "nightlyGbp": 1070,
+      "label": "From £1,070/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bulgari-hotel-shanghai": {
+      "nightlyGbp": 715,
+      "label": "From £715/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "westin-bora-bora": {
+      "nightlyGbp": 775,
+      "label": "From £775/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-st-regis-rome": {
+      "nightlyGbp": 1275,
+      "label": "From £1,275/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "anantara-bophut-koh-samui-resort": {
+      "nightlyGbp": 400,
+      "label": "From £400/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -7053,9 +6989,41 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "park-hotel-kenmare": {
-      "nightlyGbp": 420,
-      "label": "From £420/nt",
+    "nolinski-venezia": {
+      "nightlyGbp": 460,
+      "label": "From £460/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "the-merrion": {
+      "nightlyGbp": 320,
+      "label": "From £320/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "argos-in-cappadocia": {
+      "nightlyGbp": 315,
+      "label": "From £315/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "bellevue-hotel-and-spa": {
+      "nightlyGbp": 710,
+      "label": "From £710/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "villa-igiea-a-rocco-forte-hotel": {
+      "nightlyGbp": 335,
+      "label": "From £335/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
@@ -7069,25 +7037,41 @@
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "delamore-lodge": {
-      "nightlyGbp": 1030,
-      "label": "From £1,030/nt",
+    "curtain-bluff-antigua": {
+      "nightlyGbp": 1955,
+      "label": "From £1,955/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "gora-kadan-fuji": {
-      "nightlyGbp": 1080,
-      "label": "From £1,080/nt",
+    "cashel-palace": {
+      "nightlyGbp": 285,
+      "label": "From £285/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
       "checkedAt": "2026-11-26"
     },
-    "bowie-house-auberge-collection": {
-      "nightlyGbp": 350,
-      "label": "From £350/nt",
+    "four-seasons-bosphorus-istanbul": {
+      "nightlyGbp": 515,
+      "label": "From £515/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "esencia-riviera-maya": {
+      "nightlyGbp": 1175,
+      "label": "From £1,175/nt",
+      "currency": "GBP",
+      "source": "LiteAPI Indicative Snapshot",
+      "sampleCheckin": "2027-01-10",
+      "checkedAt": "2026-11-26"
+    },
+    "four-seasons-hotel-minneapolis": {
+      "nightlyGbp": 405,
+      "label": "From £405/nt",
       "currency": "GBP",
       "source": "LiteAPI Indicative Snapshot",
       "sampleCheckin": "2027-01-10",
