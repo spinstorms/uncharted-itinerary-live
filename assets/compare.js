@@ -11,6 +11,7 @@ import {
   isVisitedProperty,
 } from "./stayodds-engine.js?v=14";
 import { TRAVEL_STYLES, matchesTravelStyle } from "./stayodds-categories.js?v=3";
+import { renderCompareInsights } from "./stayodds-compare-insights.js?v=1";
 import { svgIcon, ytOverlay, ytWatchBtn, ytStaticOverlay } from "./stayodds-icons.js?v=2";
 import {
   MONTH_LABELS,
@@ -844,7 +845,22 @@ function renderH2H() {
   }
   out.innerHTML = compared.map((h) => renderH2HCard(h, compared)).join("");
   const pickEl = qs("#h2hPick");
-  if (pickEl) pickEl.innerHTML = renderPickBox(compared);
+  if (pickEl) {
+    pickEl.innerHTML =
+      renderPickBox(compared) +
+      `<div data-h2h-gen-out></div>
+       <button type="button" data-h2h-gen style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:0 0 18px;padding:13px 16px;border:0;border-radius:14px;background:#0b1b2e;color:#fff;font-weight:800;font-size:15px;cursor:pointer;">✨ Generate insights for these ${compared.length} hotels</button>`;
+    const outEl = pickEl.querySelector("[data-h2h-gen-out]");
+    const btn = pickEl.querySelector("[data-h2h-gen]");
+    btn?.addEventListener("click", () => {
+      outEl.innerHTML = renderCompareInsights(compared);
+      btn.style.display = "none";
+      outEl.querySelector("[data-h2h-insights-close]")?.addEventListener("click", () => {
+        outEl.innerHTML = "";
+        btn.style.display = "flex";
+      });
+    });
+  }
   window.stayOddsShortlist?.syncButtons?.();
 }
 
