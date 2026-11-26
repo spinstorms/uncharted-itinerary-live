@@ -1,5 +1,5 @@
 {
-  "note": "Brand logos from Wikimedia Commons (file page linked for licence) or the brand's own website (page linked). Shown at small size beside the brand's name to identify it.",
+  "note": "Brand logos from Wikimedia Commons, Wikipedia, Logopedia or the brand's own website (source linked). Shown at small size beside the brand's name to identify it.",
   "brands": {
     "Banyan Tree": {
       "file": "assets/brand-logos/banyan-tree.png",
@@ -116,6 +116,24 @@
       "source": "https://upload.wikimedia.org/wikipedia/commons/b/b5/W_Hotels_Logo.svg",
       "commons": "https://commons.wikimedia.org/wiki/File:W_Hotels_Logo.svg",
       "licence": "Public domain"
+    },
+    "COMO": {
+      "file": "assets/brand-logos/como.png",
+      "source": "https://en.wikipedia.org/wiki/File:COMO_Hotels_and_Resorts_logo.svg",
+      "manual": true,
+      "note": "Logo as used on Wikipedia"
+    },
+    "Park Hyatt": {
+      "file": "assets/brand-logos/park-hyatt.png",
+      "source": "https://logos.fandom.com/wiki/Park_Hyatt",
+      "manual": true,
+      "note": "Logo via Logopedia"
+    },
+    "Andaz": {
+      "file": "assets/brand-logos/andaz.png",
+      "source": "https://logos.fandom.com/wiki/Andaz_Resorts",
+      "manual": true,
+      "note": "Logo via Logopedia"
     }
   }
 }
