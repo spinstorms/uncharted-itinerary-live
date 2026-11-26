@@ -1714,7 +1714,9 @@ def render_seo_page(
             so_verdict = f"{so_band}, and guests like it even more than we did."
         else:
             so_verdict = f"{so_band}: we rated it higher than guests do."
-        so_sub = f"Built from our filmed stay ({o['weights']['firstHand']}%)" + (f" and {so_n_reviews:,} guest reviews ({100 - o['weights']['firstHand']}%)." if so_n_reviews else ".")
+        so_sub = f"Built from our filmed stay ({o['weights']['firstHand']}%)" + (
+            (f" and {so_n_reviews:,} guest reviews" + (f" plus {len(scored_ed)} critic{'s' if len(scored_ed) != 1 else ''}" if o["critic100"] is not None else "")
+             + f" ({100 - o['weights']['firstHand']}%).") if so_n_reviews else ".")
         so_gap_title, so_left_lbl, so_right_lbl = "Our score vs guests", "Us", ("Guests" if o["critic100"] is None else "Guests & critics")
     elif so_left is not None and so_right is not None:
         if abs(so_d) <= 5:
