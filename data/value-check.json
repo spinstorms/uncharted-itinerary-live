@@ -11,13 +11,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 158,
-     "room": "DOUBLE COMFORT"
+     "nightlyGbp": 177,
+     "room": "Comfort Twin/Double"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 70,
-     "room": "Deluxe Double Room"
+     "nightlyGbp": 86,
+     "room": "Deluxe Double Room - Palais"
     },
     {
      "checkin": "2027-03-26",
@@ -64,8 +64,8 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 147,
-     "room": "Deluxe Double Room, 1 Queen Bed, Non Smoking"
+     "nightlyGbp": 169,
+     "room": "Deluxe"
     },
     {
      "checkin": "2027-03-26",
@@ -83,8 +83,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 192,
-     "room": "Raffles, Room, 1 King Bed"
+     "nightlyGbp": 197,
+     "room": "Raffles Twin Room NS"
     },
     {
      "checkin": "2027-01-25",
@@ -117,8 +117,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 253,
-     "room": "Twin Garden View One-Bedroom"
+     "nightlyGbp": 146,
+     "room": "1-Bedroom Garden View Unit with 2 Single Beds"
     }
    ]
   },
@@ -131,8 +131,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 304,
-     "room": "Deluxe Twin Room (Skyline)"
+     "nightlyGbp": 291,
+     "room": "Deluxe King"
     },
     {
      "checkin": "2027-01-25",
@@ -151,7 +151,7 @@
    "liteapiName": "Park Hyatt Jakarta",
    "g": 95,
    "rc": 4113,
-   "nightlyGbp": 155,
+   "nightlyGbp": 154,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -160,37 +160,13 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 155,
-     "room": "1 King Bed"
+     "nightlyGbp": 154,
+     "room": "Room, 1 King Bed, View"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 174,
-     "room": "King Room"
-    }
-   ]
-  },
-  "four-seasons-hotel-jakarta": {
-   "name": "Four Seasons Hotel Jakarta",
-   "liteapiName": "Four Seasons Hotel Jakarta",
-   "g": 96,
-   "rc": 14405,
-   "nightlyGbp": 162,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 273,
-     "room": "Executive Suite, 1 King Bed"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 162,
-     "room": "Executive Suite With Two Queen Beds"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 149,
-     "room": "Executive Suite With Two Queen Beds"
+     "nightlyGbp": 156,
+     "room": "Standard Room, 1 King Bed"
     }
    ]
   },
@@ -199,7 +175,7 @@
    "liteapiName": "The Oberoi Bengaluru",
    "g": 96,
    "rc": 17882,
-   "nightlyGbp": 164,
+   "nightlyGbp": 160,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -213,8 +189,32 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 164,
+     "nightlyGbp": 160,
      "room": "Deluxe Room with Private Balcony"
+    }
+   ]
+  },
+  "four-seasons-hotel-jakarta": {
+   "name": "Four Seasons Hotel Jakarta",
+   "liteapiName": "Four Seasons Hotel Jakarta",
+   "g": 96,
+   "rc": 14405,
+   "nightlyGbp": 162,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 308,
+     "room": "Executive Suite king bed"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 162,
+     "room": "Executive Suite With Two Queen Beds"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 149,
+     "room": "Executive Suite With Two Queen Beds"
     }
    ]
   },
@@ -223,7 +223,7 @@
    "liteapiName": "The Okura Prestige Bangkok",
    "g": 95,
    "rc": 13075,
-   "nightlyGbp": 166,
+   "nightlyGbp": 165,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -237,8 +237,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 166,
-     "room": "Deluxe Room King"
+     "nightlyGbp": 165,
+     "room": "Deluxe Twin Room"
     }
    ]
   },
@@ -247,46 +247,22 @@
    "liteapiName": "Auberge Saint-Antoine",
    "g": 96,
    "rc": 5106,
-   "nightlyGbp": 167,
+   "nightlyGbp": 168,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 370,
-     "room": "Comfort Room, 1 King Bed"
+     "nightlyGbp": 505,
+     "room": "Comfort King Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 167,
-     "room": "Room - Comfort 1 Queen"
+     "nightlyGbp": 168,
+     "room": "Comfort Queen Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 167,
-     "room": "Room - Comfort 1 Queen"
-    }
-   ]
-  },
-  "bask-gili-meno": {
-   "name": "BASK Gili Meno",
-   "liteapiName": "BASK GILI MENO",
-   "g": 96,
-   "rc": 2152,
-   "nightlyGbp": 179,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 194,
-     "room": "Studio Plunge Pool"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 129,
-     "room": "Standard Studio"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 179,
-     "room": "Standard Studio"
+     "nightlyGbp": 168,
+     "room": "Comfort Queen Room"
     }
    ]
   },
@@ -299,8 +275,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 322,
-     "room": "PREMIUM ROOM"
+     "nightlyGbp": 320,
+     "room": "1 Bedroom Residence"
     },
     {
      "checkin": "2027-01-25",
@@ -309,8 +285,27 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 140,
-     "room": "1 Bedroom Residence"
+     "nightlyGbp": 147,
+     "room": "APARTMENT 1 Bedroom Residence"
+    }
+   ]
+  },
+  "bask-gili-meno": {
+   "name": "BASK Gili Meno",
+   "liteapiName": "BASK GILI MENO",
+   "g": 96,
+   "rc": 2152,
+   "nightlyGbp": 184,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 194,
+     "room": "Studio Plunge Pool"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 175,
+     "room": "Studio Plunge Pool"
     }
    ]
   },
@@ -323,7 +318,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 402,
+     "nightlyGbp": 399,
      "room": "Terrace Room"
     },
     {
@@ -371,13 +366,37 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 184,
+     "nightlyGbp": 192,
      "room": "Premier Room"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 202,
      "room": "Forest View Room"
+    }
+   ]
+  },
+  "mandarin-oriental-doha": {
+   "name": "Mandarin Oriental, Doha",
+   "liteapiName": "Mandarin Oriental, Doha",
+   "g": 95,
+   "rc": 6165,
+   "nightlyGbp": 202,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 202,
+     "room": "SUPERIOR, KING BED"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 649,
+     "room": "SUPERIOR, KING BED"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 199,
+     "room": "Superior Room, 1 King Bed"
     }
    ]
   },
@@ -401,7 +420,7 @@
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 202,
-     "room": "Banyan Retreat King"
+     "room": "Banyan Retreat Twin"
     }
    ]
   },
@@ -424,60 +443,12 @@
     }
    ]
   },
-  "sindhorn-kempinski-hotel-bangkok": {
-   "name": "Sindhorn Kempinski Hotel Bangkok",
-   "liteapiName": "Sindhorn Kempinski Hotel Bangkok",
-   "g": 96,
-   "rc": 5711,
-   "nightlyGbp": 218,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 353,
-     "room": "Grand Deluxe Twin Room with Balcony"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 217,
-     "room": "Grand Deluxe King Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 218,
-     "room": "Grand Deluxe Twin Room with Balcony"
-    }
-   ]
-  },
-  "mandarin-oriental-doha": {
-   "name": "Mandarin Oriental, Doha",
-   "liteapiName": "Mandarin Oriental, Doha",
-   "g": 95,
-   "rc": 6165,
-   "nightlyGbp": 225,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 202,
-     "room": "SUPERIOR, KING BED"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 713,
-     "room": "Superior Room King"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 225,
-     "room": "Superior King Room"
-    }
-   ]
-  },
   "rosewood-phnom-penh": {
    "name": "Rosewood Phnom Penh",
    "liteapiName": "Rosewood Phnom Penh",
    "g": 95,
    "rc": 1903,
-   "nightlyGbp": 226,
+   "nightlyGbp": 214,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -491,8 +462,32 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 327,
-     "room": "Executive Room"
+     "nightlyGbp": 209,
+     "room": "Executive King Room"
+    }
+   ]
+  },
+  "sindhorn-kempinski-hotel-bangkok": {
+   "name": "Sindhorn Kempinski Hotel Bangkok",
+   "liteapiName": "Sindhorn Kempinski Hotel Bangkok",
+   "g": 96,
+   "rc": 5711,
+   "nightlyGbp": 218,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 353,
+     "room": "Grand Deluxe King Room with Balcony"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 217,
+     "room": "Grand Deluxe King Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 218,
+     "room": "Grand Deluxe Twin Room with Balcony"
     }
    ]
   },
@@ -544,12 +539,60 @@
     }
    ]
   },
+  "one-and-only-portonovi": {
+   "name": "One&Only Portonovi",
+   "liteapiName": "One&Only Portonovi",
+   "g": 95,
+   "rc": 1791,
+   "nightlyGbp": 239,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 232,
+     "room": "Portonovi Room"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 239,
+     "room": "Portonovi Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 349,
+     "room": "Portonovi Room"
+    }
+   ]
+  },
+  "vila-vita-parc": {
+   "name": "Vila Vita Parc",
+   "liteapiName": "Vila Vita Parc",
+   "g": 96,
+   "rc": 7359,
+   "nightlyGbp": 243,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 243,
+     "room": "Deluxe Room With Garden View"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 215,
+     "room": "Deluxe Room With Garden View"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 311,
+     "room": "Studio Apartment"
+    }
+   ]
+  },
   "waldorf-astoria-doha-lusail": {
    "name": "Waldorf Astoria Doha Lusail",
    "liteapiName": "Waldorf Astoria Doha Lusail",
    "g": 95,
    "rc": 11867,
-   "nightlyGbp": 235,
+   "nightlyGbp": 247,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -559,69 +602,36 @@
     {
      "checkin": "2027-01-25",
      "nightlyGbp": 223,
-     "room": "King Accessible Deluxe Room"
-    }
-   ]
-  },
-  "cobergher-hotel": {
-   "name": "Cobergher Hotel",
-   "liteapiName": "Cobergher Hotel",
-   "g": 98,
-   "rc": 415,
-   "nightlyGbp": 237,
-   "dates": [
+     "room": "King Deluxe Room"
+    },
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 259,
+     "checkin": "2027-03-26",
+     "nightlyGbp": 270,
      "room": "Deluxe Room, 1 King Bed"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 215,
-     "room": "Superior Room"
     }
    ]
   },
-  "gidleigh-park": {
-   "name": "Gidleigh Park",
-   "liteapiName": "Gidleigh Park",
-   "g": 96,
-   "rc": 2420,
-   "nightlyGbp": 248,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 177,
-     "room": "Classic Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 320,
-     "room": "Classic Room"
-    }
-   ]
-  },
-  "one-and-only-portonovi": {
-   "name": "One&Only Portonovi",
-   "liteapiName": "One&Only Portonovi",
+  "sofitel-legend-metropole-hanoi": {
+   "name": "Sofitel Legend Metropole Hanoi",
+   "liteapiName": "Sofitel Legend Metropole Hanoi",
    "g": 95,
-   "rc": 1791,
-   "nightlyGbp": 253,
+   "rc": 16607,
+   "nightlyGbp": 254,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 232,
-     "room": "Portonovi Room"
+     "nightlyGbp": 413,
+     "room": "Opera Wing, Premium Room, Queen Bed"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 253,
-     "room": "Portonovi Room"
+     "nightlyGbp": 247,
+     "room": "Opera Wing Premium 2 Single"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 423,
-     "room": "Bayview Room"
+     "nightlyGbp": 254,
+     "room": "Opera Wing Premium 2 Single"
     }
    ]
   },
@@ -634,13 +644,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 390,
-     "room": "Room, 1 King Bed, City View (City View)"
+     "nightlyGbp": 416,
+     "room": "Matild Room King Bed, Guest room, 1 King, City view"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 248,
-     "room": "Deluxe Room, 2 Twin Beds, City View (2 Twin Beds)"
+     "nightlyGbp": 253,
+     "room": "Deluxe Room Twin Beds, Deluxe Guest room, 2 Twin, City view"
     },
     {
      "checkin": "2027-03-26",
@@ -673,54 +683,6 @@
     }
    ]
   },
-  "fairmont-golden-prague": {
-   "name": "Fairmont Golden Prague",
-   "liteapiName": "Fairmont Golden Prague",
-   "g": 96,
-   "rc": 1068,
-   "nightlyGbp": 261,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 456,
-     "room": "Fairmont River View 1 King - Overlooking the River, Floors 2-6, 24sm, 258sf"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 153,
-     "room": "Fairmont 2 Twin - Floors 2-6, 24sm, 258sf"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 261,
-     "room": "Fairmont 2 Twin - Floors 2-6, 24sm, 258sf"
-    }
-   ]
-  },
-  "the-oberoi-mumbai": {
-   "name": "The Oberoi, Mumbai",
-   "liteapiName": "The Oberoi Mumbai",
-   "g": 95,
-   "rc": 19228,
-   "nightlyGbp": 263,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 260,
-     "room": "Luxury Rooms"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 263,
-     "room": "Luxury Rooms"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 276,
-     "room": "Luxury Rooms Twin Bed"
-    }
-   ]
-  },
   "intercontinental-phu-quoc": {
    "name": "InterContinental Phu Quoc Long Beach Resort by IHG",
    "liteapiName": "InterContinental Phu Quoc Long Beach Resort by IHG",
@@ -731,7 +693,7 @@
     {
      "checkin": "2027-01-25",
      "nightlyGbp": 312,
-     "room": "2 Single Classic"
+     "room": "1 Bedroom Residence"
     },
     {
      "checkin": "2027-03-26",
@@ -740,75 +702,27 @@
     }
    ]
   },
-  "the-amauris-vienna": {
-   "name": "The Amauris Vienna",
-   "liteapiName": "The Amauris Vienna - Relais & Châteaux",
+  "waldorf-astoria-difc-dubai": {
+   "name": "Waldorf Astoria Dubai International Financial Centre",
+   "liteapiName": "Waldorf Astoria Dubai International Financial Centre",
    "g": 96,
-   "rc": 1683,
-   "nightlyGbp": 270,
+   "rc": 6061,
+   "nightlyGbp": 268,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 730,
-     "room": "Superior Room"
+     "nightlyGbp": 248,
+     "room": "King Deluxe Room City View"
     },
     {
      "checkin": "2027-01-25",
+     "nightlyGbp": 356,
+     "room": "King Deluxe Room City View"
+    },
+    {
+     "checkin": "2027-03-26",
      "nightlyGbp": 268,
-     "room": "CLASSIC ROOM"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 270,
-     "room": "Classic Room"
-    }
-   ]
-  },
-  "vila-vita-parc": {
-   "name": "Vila Vita Parc",
-   "liteapiName": "Vila Vita Parc",
-   "g": 96,
-   "rc": 7359,
-   "nightlyGbp": 270,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 270,
-     "room": "Deluxe Room With Garden View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 218,
-     "room": "Studio (Outside Resort)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 296,
-     "room": "Studio (Outside Resort)"
-    }
-   ]
-  },
-  "sofitel-legend-metropole-hanoi": {
-   "name": "Sofitel Legend Metropole Hanoi",
-   "liteapiName": "Sofitel Legend Metropole Hanoi",
-   "g": 95,
-   "rc": 16607,
-   "nightlyGbp": 270,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 414,
-     "room": "Opera Wing, Premium Room, Queen Bed"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 247,
-     "room": "Opera Wing Premium 2 Single"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 270,
-     "room": "Aile Opéra, Chambre Premium, Lits Jumeaux"
+     "room": "KING DELUXE ROOM CITY VIEW,COMP WIFI/ESPRESSO/TEA KETTLE/55 INCH HDTV,49 SQM/6-PIECE BATH/IRON/MINIBAR/SAFE/WORK DE,"
     }
    ]
   },
@@ -817,7 +731,7 @@
    "liteapiName": "L'Alya Ninh Van Bay",
    "g": 95,
    "rc": 1919,
-   "nightlyGbp": 274,
+   "nightlyGbp": 268,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -831,56 +745,80 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 274,
-     "room": "HILL ROCK VILLA 2 ADULTS"
+     "nightlyGbp": 268,
+     "room": "Hill Rock Pool Villa - 2 Adults"
     }
    ]
   },
-  "waldorf-astoria-difc-dubai": {
-   "name": "Waldorf Astoria Dubai International Financial Centre",
-   "liteapiName": "Waldorf Astoria Dubai International Financial Centre",
+  "the-oberoi-mumbai": {
+   "name": "The Oberoi, Mumbai",
+   "liteapiName": "The Oberoi Mumbai",
+   "g": 95,
+   "rc": 19228,
+   "nightlyGbp": 269,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 269,
+     "room": "Luxury Room"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 273,
+     "room": "Luxury Rooms"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 247,
+     "room": "Luxury Rooms"
+    }
+   ]
+  },
+  "the-amauris-vienna": {
+   "name": "The Amauris Vienna",
+   "liteapiName": "The Amauris Vienna - Relais & Châteaux",
    "g": 96,
-   "rc": 6061,
+   "rc": 1683,
+   "nightlyGbp": 270,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 763,
+     "room": "TWIN SUPERIOR"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 268,
+     "room": "CLASSIC ROOM"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 270,
+     "room": "Classic Room"
+    }
+   ]
+  },
+  "fairmont-golden-prague": {
+   "name": "Fairmont Golden Prague",
+   "liteapiName": "Fairmont Golden Prague",
+   "g": 96,
+   "rc": 1068,
    "nightlyGbp": 275,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 250,
-     "room": "KING DELUXE ROOM CITY VIEW,COMP WIFI/ESPRESSO/TEA KETTLE/55 INCH HDTV,49 SQM/6-PIECE BATH/IRON/MINIBAR/SAFE/WORK DE,"
+     "nightlyGbp": 471,
+     "room": "Fairmont River View 2 Singles - 24Sm, 258Sf"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 367,
-     "room": "King Deluxe Room City View"
+     "nightlyGbp": 164,
+     "room": "Fairmont King - 24sm, 258sf"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 275,
-     "room": "King Deluxe Room City View"
-    }
-   ]
-  },
-  "banyan-tree-lang-co": {
-   "name": "Banyan Tree Lăng Cô",
-   "liteapiName": "Banyan Tree Lang Co",
-   "g": 100,
-   "rc": 7109,
-   "nightlyGbp": 278,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 344,
-     "room": "Lagoon Pool Villa - King"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 278,
-     "room": "Lagoon Pool Villa - Twin"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 269,
-     "room": "Lagoon Pool Villa - Twin"
+     "room": "Fairmont 2 Singles - 24sm, 258sf"
     }
    ]
   },
@@ -893,8 +831,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 385,
-     "room": "KING CORNER ROOM WITH BALCONY,COMP WIFI/ESPRESSO/TEA KETTLE/HDTV/USB PORT,56 SQM/LARGE CORNER WINDOWS/SAFE/MINIBAR,"
+     "nightlyGbp": 386,
+     "room": "King Corner Room With Balcony"
     },
     {
      "checkin": "2027-01-25",
@@ -922,8 +860,8 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 156,
-     "room": "Deluxe Twin"
+     "nightlyGbp": 133,
+     "room": "Twin Deluxe"
     },
     {
      "checkin": "2027-03-26",
@@ -999,32 +937,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 331,
-     "room": "Double room - Bed and breakfast - Deluxe one bed"
-    }
-   ]
-  },
-  "hotel-grande-bretagne-athens": {
-   "name": "Hotel Grande Bretagne, a Luxury Collection Hotel, Athens",
-   "liteapiName": "Hotel Grande Bretagne, a Luxury Collection Hotel, Athens",
-   "g": 95,
-   "rc": 12702,
-   "nightlyGbp": 307,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 335,
-     "room": "Classic, Guest room, 2 Twin, Courtyard view"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 307,
-     "room": "Classic, Guest room, 1 King, Courtyard view"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 280,
-     "room": "Classic, Guest room, 1 King, Courtyard view"
+     "nightlyGbp": 323,
+     "room": "Deluxe Room - Twin Beds"
     }
    ]
   },
@@ -1052,22 +966,118 @@
     }
    ]
   },
+  "zannier-bai-san-ho": {
+   "name": "Zannier Hotels Bãi San Hô",
+   "liteapiName": "Zannier Bai San Hô",
+   "g": 95,
+   "rc": 1129,
+   "nightlyGbp": 318,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 454,
+     "room": "Greenfield Terrace Villa"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 262,
+     "room": "Greenfield Terrace Villa"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 318,
+     "room": "Greenfield Terrace Villa"
+    }
+   ]
+  },
+  "hotel-grande-bretagne-athens": {
+   "name": "Hotel Grande Bretagne, a Luxury Collection Hotel, Athens",
+   "liteapiName": "Hotel Grande Bretagne, a Luxury Collection Hotel, Athens",
+   "g": 95,
+   "rc": 12702,
+   "nightlyGbp": 319,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 335,
+     "room": "Classic, Guest room, 1 King, Courtyard view"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 319,
+     "room": "Classic, Guest room, 1 King, Courtyard view,1 King Bed"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 280,
+     "room": "Classic, Guest room, 1 King, Courtyard view"
+    }
+   ]
+  },
   "iberostar-selection-sabila-tenerife": {
    "name": "Iberostar Selection Sábila - Adults Only",
    "liteapiName": "Iberostar Selection Sábila - Adults Only",
    "g": 95,
    "rc": 7647,
-   "nightlyGbp": 322,
+   "nightlyGbp": 323,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 390,
+     "nightlyGbp": 385,
      "room": "Double Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 254,
-     "room": "Double Room, Partial Sea View"
+     "nightlyGbp": 261,
+     "room": "Double Side Sea View (2 Adults)"
+    }
+   ]
+  },
+  "banyan-tree-lang-co": {
+   "name": "Banyan Tree Lăng Cô",
+   "liteapiName": "Banyan Tree Lang Co",
+   "g": 100,
+   "rc": 7109,
+   "nightlyGbp": 332,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 344,
+     "room": "Lagoon Pool Villa - King"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 269,
+     "room": "Lagoon Pool Villa – King"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 332,
+     "room": "Lagoon Pool Villa - Twin"
+    }
+   ]
+  },
+  "the-hazelton-hotel": {
+   "name": "The Hazelton Hotel",
+   "liteapiName": "The Hazelton Hotel",
+   "g": 97,
+   "rc": 3080,
+   "nightlyGbp": 332,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 332,
+     "room": "DELUXE, KING BED"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 347,
+     "room": "Deluxe Room, 1 King Bed"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 326,
+     "room": "Deluxe Room, 1 King Bed"
     }
    ]
   },
@@ -1090,7 +1100,7 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 340,
+     "nightlyGbp": 337,
      "room": "SIRO Plus - City View"
     }
    ]
@@ -1104,61 +1114,18 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 436,
+     "nightlyGbp": 433,
      "room": "Standard Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 338,
+     "nightlyGbp": 314,
      "room": "Standard Room"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 341,
      "room": "Standard Room"
-    }
-   ]
-  },
-  "the-hazelton-hotel": {
-   "name": "The Hazelton Hotel",
-   "liteapiName": "The Hazelton Hotel",
-   "g": 97,
-   "rc": 3080,
-   "nightlyGbp": 342,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 332,
-     "room": "DELUXE, KING BED"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 352,
-     "room": "Double room - Accommodation Only - Deluxe one bed"
-    }
-   ]
-  },
-  "north-block": {
-   "name": "North Block",
-   "liteapiName": "North Block Hotel",
-   "g": 96,
-   "rc": 1458,
-   "nightlyGbp": 345,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 345,
-     "room": "Deluxe Room, 1 Queen Bed, Courtyard View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 257,
-     "room": "DOUBLE DELUXE WITH VIEWS"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 558,
-     "room": "Deluxe Room, 1 Queen Bed, Courtyard View"
     }
    ]
   },
@@ -1167,137 +1134,46 @@
    "liteapiName": "COMO The Halkin",
    "g": 98,
    "rc": 1898,
-   "nightlyGbp": 365,
+   "nightlyGbp": 367,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 550,
+     "nightlyGbp": 554,
      "room": "City Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 341,
+     "nightlyGbp": 344,
      "room": "City Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 365,
+     "nightlyGbp": 367,
      "room": "City Room"
     }
    ]
   },
-  "wakax-hacienda": {
-   "name": "Wakax Hacienda",
-   "liteapiName": "Wakax Hacienda - Cenote &amp; Boutique Hotel - Small Luxury Hotels of the World",
-   "g": 99,
-   "rc": 736,
-   "nightlyGbp": 366,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 752,
-     "room": "Standard Room, 1 King Bed"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 366,
-     "room": "Standard Room, 2 Double Beds"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 364,
-     "room": "Standard Room, 2 Double Beds"
-    }
-   ]
-  },
-  "heritage-le-telfair-golf-and-wellness": {
-   "name": "Heritage Le Telfair Golf & Wellness Resort",
-   "liteapiName": "Heritage Le Telfair Golf & Wellness Resort",
+  "como-point-yamu": {
+   "name": "COMO Point Yamu",
+   "liteapiName": "COMO Point Yamu, Phuket",
    "g": 95,
-   "rc": 8934,
-   "nightlyGbp": 371,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 329,
-     "room": "Deluxe Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 414,
-     "room": "Deluxe Suite"
-    }
-   ]
-  },
-  "j-hotel-shanghai-tower": {
-   "name": "J Hotel, Shanghai Tower",
-   "liteapiName": "J Hotel, Shanghai Tower",
-   "g": 100,
-   "rc": 2986,
-   "nightlyGbp": 372,
+   "rc": 3424,
+   "nightlyGbp": 379,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 392,
-     "room": "Skyline King"
+     "nightlyGbp": 504,
+     "room": "Bay Twin Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 341,
-     "room": "Skyline King"
+     "nightlyGbp": 379,
+     "room": "Phang Nga Pool Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 372,
-     "room": "Skyline King"
-    }
-   ]
-  },
-  "zannier-bai-san-ho": {
-   "name": "Zannier Hotels Bãi San Hô",
-   "liteapiName": "Zannier Bai San Hô",
-   "g": 95,
-   "rc": 1129,
-   "nightlyGbp": 376,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 454,
-     "room": "Greenfield Terrace Villa"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 239,
-     "room": "Greenfield Terrace Villa"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 376,
-     "room": "Greenfield Terrace Villa"
-    }
-   ]
-  },
-  "como-the-treasury-perth": {
-   "name": "COMO The Treasury",
-   "liteapiName": "COMO The Treasury",
-   "g": 95,
-   "rc": 1717,
-   "nightlyGbp": 378,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 539,
-     "room": "Room (Heritage)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 378,
-     "room": "Room (Heritage)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 355,
-     "room": "City Room"
+     "nightlyGbp": 165,
+     "room": "Bay Room"
     }
    ]
   },
@@ -1310,7 +1186,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 662,
+     "nightlyGbp": 651,
      "room": "Studio Suite"
     },
     {
@@ -1325,6 +1201,54 @@
     }
    ]
   },
+  "jumeirah-muscat-bay": {
+   "name": "Jumeirah Muscat Bay",
+   "liteapiName": "Jumeirah Muscat Bay Oman",
+   "g": 95,
+   "rc": 3242,
+   "nightlyGbp": 380,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 644,
+     "room": "Room, Deluxe, Sea view, Balcony"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 261,
+     "room": "RESORT, DELUXE"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 380,
+     "room": "RESORT, DELUXE"
+    }
+   ]
+  },
+  "como-the-treasury-perth": {
+   "name": "COMO The Treasury",
+   "liteapiName": "COMO The Treasury",
+   "g": 95,
+   "rc": 1717,
+   "nightlyGbp": 383,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 570,
+     "room": "DOUBLE KING SIZE BED"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 372,
+     "room": "Heritage Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 383,
+     "room": "City Room"
+    }
+   ]
+  },
   "regent-bali-canggu": {
    "name": "Regent Bali Canggu",
    "liteapiName": "Regent Bali Canggu",
@@ -1334,85 +1258,85 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 453,
-     "room": "ONE BEDROOM SUITE"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 386,
+     "nightlyGbp": 484,
      "room": "Studio Suite"
     },
     {
-     "checkin": "2027-03-26",
+     "checkin": "2027-01-25",
      "nightlyGbp": 358,
      "room": "STUDIO SUITE"
-    }
-   ]
-  },
-  "weissenhaus-private-nature-luxury-resort": {
-   "name": "Weissenhaus Private Nature Luxury Resort",
-   "liteapiName": "Weissenhaus Private Nature Luxury Resort",
-   "g": 96,
-   "rc": 1199,
-   "nightlyGbp": 386,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 437,
-     "room": "Superior Room"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 336,
-     "room": "Superior Room"
-    }
-   ]
-  },
-  "jumeirah-muscat-bay": {
-   "name": "Jumeirah Muscat Bay",
-   "liteapiName": "Jumeirah Muscat Bay Oman",
-   "g": 95,
-   "rc": 3242,
-   "nightlyGbp": 386,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 644,
-     "room": "Room, Deluxe, Sea view, Balcony"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 269,
-     "room": "Room, Deluxe"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 386,
-     "room": "Room, Deluxe"
+     "room": "Studio Suite"
     }
    ]
   },
-  "the-jefferson": {
-   "name": "The Jefferson",
-   "liteapiName": "The Jefferson, Washington, DC",
-   "g": 96,
-   "rc": 2653,
-   "nightlyGbp": 388,
+  "j-hotel-shanghai-tower": {
+   "name": "J Hotel, Shanghai Tower",
+   "liteapiName": "J Hotel, Shanghai Tower",
+   "g": 100,
+   "rc": 2986,
+   "nightlyGbp": 390,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 353,
-     "room": "Classic Room, 1 Queen Bed"
+     "nightlyGbp": 412,
+     "room": "Skyline King Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 388,
-     "room": "Classic Room, 1 Queen Bed"
+     "nightlyGbp": 369,
+     "room": "Skyline King Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 528,
-     "room": "Classic Room, 1 Queen Bed"
+     "nightlyGbp": 390,
+     "room": "Skyline King Room"
+    }
+   ]
+  },
+  "sofitel-legend-santa-clara-cartagena": {
+   "name": "Sofitel Legend Santa Clara Cartagena",
+   "liteapiName": "Sofitel Legend Santa Clara Cartagena",
+   "g": 96,
+   "rc": 10285,
+   "nightlyGbp": 390,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 658,
+     "room": "Superior Room,  2 Twin Beds , Terrace, Garden V iew"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 370,
+     "room": "CLASSIC ROOM, 1 King-Size Bed, Interior View"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 390,
+     "room": "CLASSIC ROOM, 1 King-Size Bed, Interior View"
+    }
+   ]
+  },
+  "villa-cora": {
+   "name": "Villa Cora",
+   "liteapiName": "Villa Cora",
+   "g": 95,
+   "rc": 2834,
+   "nightlyGbp": 390,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 379,
+     "room": "Classic Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 401,
+     "room": "Classic Room"
     }
    ]
   },
@@ -1425,12 +1349,12 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 876,
-     "room": "Beach Villa"
+     "nightlyGbp": 917,
+     "room": "Beach Villa, 1 Bedroom Villa, 1 King, Beach front access"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 281,
+     "nightlyGbp": 280,
      "room": "Lagoon Villa"
     },
     {
@@ -1440,75 +1364,22 @@
     }
    ]
   },
-  "como-point-yamu": {
-   "name": "COMO Point Yamu",
-   "liteapiName": "COMO Point Yamu, Phuket",
+  "intercontinental-phuket-resort": {
+   "name": "InterContinental Phuket Resort",
+   "liteapiName": "InterContinental Phuket Resort by IHG",
    "g": 95,
-   "rc": 3424,
-   "nightlyGbp": 396,
+   "rc": 8235,
+   "nightlyGbp": 409,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 479,
-     "room": "Bay Room Twin"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 396,
-     "room": "Phang Nga Pool Suite"
+     "nightlyGbp": 478,
+     "room": "1 King Classic Pool View"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 165,
-     "room": "Bay Room"
-    }
-   ]
-  },
-  "the-ungasan-bali": {
-   "name": "The Ungasan Clifftop Resort",
-   "liteapiName": "The Ungasan Clifftop Resort",
-   "g": 95,
-   "rc": 2180,
-   "nightlyGbp": 397,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 552,
-     "room": "Garden View Suite - Airport Transfer Included"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 394,
-     "room": "Garden View Suite - Airport Transfer Included"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 397,
-     "room": "Garden View Suite - Airport Transfer Included"
-    }
-   ]
-  },
-  "sofitel-legend-santa-clara-cartagena": {
-   "name": "Sofitel Legend Santa Clara Cartagena",
-   "liteapiName": "Sofitel Legend Santa Clara Cartagena",
-   "g": 96,
-   "rc": 10285,
-   "nightlyGbp": 404,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 577,
-     "room": "Superior Twin Room, 2 Twin Beds, Balcony, Garden View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 344,
-     "room": "CLASSIC ROOM, 1 King-Size Bed, Interior View"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 404,
-     "room": "Classic Room, 1 King Bed (Interior view)"
+     "nightlyGbp": 341,
+     "room": "1 King Classic"
     }
    ]
   },
@@ -1531,46 +1402,46 @@
     }
    ]
   },
-  "ritz-carlton-hong-kong": {
-   "name": "The Ritz-Carlton, Hong Kong",
-   "liteapiName": "The Ritz-Carlton, Hong Kong",
-   "g": 97,
-   "rc": 15226,
-   "nightlyGbp": 417,
+  "heritage-le-telfair-golf-and-wellness": {
+   "name": "Heritage Le Telfair Golf & Wellness Resort",
+   "liteapiName": "Heritage Le Telfair Golf & Wellness Resort",
+   "g": 95,
+   "rc": 8934,
+   "nightlyGbp": 418,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 417,
-     "room": "Deluxe Twin Room"
+     "nightlyGbp": 4363,
+     "room": "JUNIOR SUITE WITH VIEWS"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 392,
-     "room": "Deluxe Room, 1 King, City View"
+     "nightlyGbp": 341,
+     "room": "Deluxe Suite Double"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 557,
-     "room": "Deluxe Guest room, 1 King, City view"
+     "nightlyGbp": 418,
+     "room": "Deluxe Suite."
     }
    ]
   },
-  "intercontinental-phuket-resort": {
-   "name": "InterContinental Phuket Resort",
-   "liteapiName": "InterContinental Phuket Resort by IHG",
-   "g": 95,
-   "rc": 8235,
+  "weissenhaus-private-nature-luxury-resort": {
+   "name": "Weissenhaus Private Nature Luxury Resort",
+   "liteapiName": "Weissenhaus Private Nature Luxury Resort",
+   "g": 96,
+   "rc": 1199,
    "nightlyGbp": 421,
    "dates": [
     {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 478,
-     "room": "2 Single Classic Pool View"
+     "checkin": "2026-12-26",
+     "nightlyGbp": 474,
+     "room": "Standard Double Room"
     },
     {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 364,
-     "room": "2 Single Classic Pool View"
+     "checkin": "2027-01-25",
+     "nightlyGbp": 368,
+     "room": "Standard Double Room"
     }
    ]
   },
@@ -1593,7 +1464,7 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 508,
+     "nightlyGbp": 469,
      "room": "Harper"
     }
    ]
@@ -1636,46 +1507,27 @@
     }
    ]
   },
-  "the-loutrel": {
-   "name": "The Loutrel",
-   "liteapiName": "The Loutrel",
+  "wakax-hacienda": {
+   "name": "Wakax Hacienda",
+   "liteapiName": "Wakax Hacienda - Cenote &amp; Boutique Hotel - Small Luxury Hotels of the World",
    "g": 99,
-   "rc": 1769,
-   "nightlyGbp": 439,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 439,
-     "room": "Traditional Room, 1 King Bed (Traditional)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 235,
-     "room": "Traditional Room, 1 King Bed (Traditional)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 585,
-     "room": "Traditional Room, 1 King Bed (Traditional)"
-    }
-   ]
-  },
-  "la-minervetta": {
-   "name": "La Minervetta",
-   "liteapiName": "Maison La Minervetta",
-   "g": 98,
-   "rc": 1896,
+   "rc": 736,
    "nightlyGbp": 442,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 473,
-     "room": "Classic Double Room, Sea View"
+     "nightlyGbp": 1002,
+     "room": "Standard King"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 389,
+     "room": "DOUBLE KING SIZE BED"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 412,
-     "room": "Classic Double Room, Sea View"
+     "nightlyGbp": 442,
+     "room": "Standard King"
     }
    ]
   },
@@ -1688,13 +1540,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 641,
-     "room": "Gresham Room, 2 Twin Beds"
+     "nightlyGbp": 684,
+     "room": "Gresham King Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 378,
-     "room": "Superior King"
+     "nightlyGbp": 433,
+     "room": "Superior Room with Two Twin beds"
     },
     {
      "checkin": "2027-03-26",
@@ -1703,51 +1555,27 @@
     }
    ]
   },
-  "the-langham-chicago": {
-   "name": "The Langham, Chicago",
-   "liteapiName": "The Langham Chicago",
+  "jw-marriott-phu-quoc": {
+   "name": "JW Marriott Phu Quoc Emerald Bay Resort & Spa",
+   "liteapiName": "JW Marriott Phu Quoc Emerald Bay Resort & Spa",
    "g": 95,
-   "rc": 7502,
-   "nightlyGbp": 450,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 450,
-     "room": "Deluxe Room, 1 King Bed (Accessible)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 656,
-     "room": "Deluxe Double Room (Accessible)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 440,
-     "room": "Deluxe Room"
-    }
-   ]
-  },
-  "four-seasons-astir-palace-athens": {
-   "name": "Four Seasons Astir Palace Hotel Athens",
-   "liteapiName": "Four Seasons Astir Palace Hotel Athens",
-   "g": 95,
-   "rc": 5443,
+   "rc": 6037,
    "nightlyGbp": 451,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 397,
-     "room": "Room, 1 King Bed, Sea View (Nafsika)"
+     "nightlyGbp": 821,
+     "room": "Emerald Bay, Guest room, 2 Double, Balcony"
     },
     {
      "checkin": "2027-01-25",
      "nightlyGbp": 451,
-     "room": "Room, 1 King Bed, Sea View (Nafsika)"
+     "room": "Emerald Bay, Guest room, 1 King, Balcony"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 732,
-     "room": "Room, 1 King Bed, Sea View (Nafsika)"
+     "nightlyGbp": 348,
+     "room": "Room STANDARD"
     }
    ]
   },
@@ -1760,8 +1588,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 459,
-     "room": "Deluxe View King Room"
+     "nightlyGbp": 615,
+     "room": "Club Skyline View King Room"
     },
     {
      "checkin": "2027-01-25",
@@ -1775,60 +1603,70 @@
     }
    ]
   },
-  "villa-cora": {
-   "name": "Villa Cora",
-   "liteapiName": "Villa Cora",
+  "mandarin-oriental-bangkok": {
+   "name": "Mandarin Oriental, Bangkok",
+   "liteapiName": "Mandarin Oriental, Bangkok",
    "g": 95,
-   "rc": 2834,
+   "rc": 13707,
    "nightlyGbp": 454,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 389,
-     "room": "Classic Room Garden View"
+     "nightlyGbp": 766,
+     "room": "PREMIER, DELUXE, KING BED"
     },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 520,
-     "room": "Classic Room Garden View"
-    }
-   ]
-  },
-  "regent-phu-quoc": {
-   "name": "Regent Phu Quoc",
-   "liteapiName": "Regent Phu Quoc",
-   "g": 98,
-   "rc": 2959,
-   "nightlyGbp": 459,
-   "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 549,
-     "room": "Resort View Suite"
+     "nightlyGbp": 454,
+     "room": "Deluxe Premier Room Twin"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 370,
-     "room": "Resort View Suite"
+     "nightlyGbp": 427,
+     "room": "Deluxe Premier Room King"
     }
    ]
   },
-  "sala-samui-chaweng-beach-resort": {
-   "name": "SALA Samui Chaweng Beach Resort",
-   "liteapiName": "SALA Samui Chaweng Beach Resort",
-   "g": 95,
-   "rc": 3971,
-   "nightlyGbp": 459,
+  "north-block": {
+   "name": "North Block",
+   "liteapiName": "North Block Hotel",
+   "g": 96,
+   "rc": 1458,
+   "nightlyGbp": 457,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 510,
-     "room": "Garden Deluxe Balcony"
+     "nightlyGbp": 457,
+     "room": "Deluxe, Queen, Courtyard View, Balcony"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 408,
-     "room": "Garden Deluxe Balcony"
+     "nightlyGbp": 318,
+     "room": "DELUXE, QUEEN BED, COURTYARD VIEW, BALCONY"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 558,
+     "room": "Deluxe Room, 1 Queen Bed, Courtyard View"
+    }
+   ]
+  },
+  "monasterio-belmond-cusco": {
+   "name": "Monasterio, A Belmond Hotel, Cusco",
+   "liteapiName": "Monasterio, A Belmond Hotel, Cusco",
+   "g": 96,
+   "rc": 5547,
+   "nightlyGbp": 458,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 363,
+     "room": "Superior Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 554,
+     "room": "Superior Room with Oxygen"
     }
    ]
   },
@@ -1841,13 +1679,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 380,
-     "room": "Deluxe Room, 1 King Bed (Old City View)"
+     "nightlyGbp": 447,
+     "room": "Deluxe Old City View Room King Bed"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 467,
-     "room": "Deluxe Room, 1 King Bed (Old City View)"
+     "nightlyGbp": 706,
+     "room": "Deluxe Double room with sea view (full double bed) (king size bed)"
     },
     {
      "checkin": "2027-03-26",
@@ -1856,46 +1694,46 @@
     }
    ]
   },
-  "the-merrion": {
-   "name": "The Merrion",
-   "liteapiName": "The Merrion Hotel",
-   "g": 96,
-   "rc": 8446,
+  "regent-phu-quoc": {
+   "name": "Regent Phu Quoc",
+   "liteapiName": "Regent Phu Quoc",
+   "g": 98,
+   "rc": 2959,
+   "nightlyGbp": 465,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 549,
+     "room": "Resort View Suite"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 382,
+     "room": "Resort View Suite"
+    }
+   ]
+  },
+  "the-langham-chicago": {
+   "name": "The Langham, Chicago",
+   "liteapiName": "The Langham Chicago",
+   "g": 95,
+   "rc": 7502,
    "nightlyGbp": 466,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 468,
-     "room": "Standard Room, 1 Queen Bed"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 465,
-     "room": "Standard Room, 1 Queen Bed"
-    }
-   ]
-  },
-  "vana-belle-a-luxury-collection-resort": {
-   "name": "Vana Belle, a Luxury Collection Resort, Koh Samui",
-   "liteapiName": "Vana Belle, A Luxury Collection Resort, Koh Samui",
-   "g": 98,
-   "rc": 5506,
-   "nightlyGbp": 468,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 841,
-     "room": "Suite, 1 Bedroom, Private Pool (Jungle Suite, 2 Queen Beds)"
+     "nightlyGbp": 466,
+     "room": "Deluxe Room, 1 King Bed"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 468,
-     "room": "Suite, 1 Bedroom, Private Pool (Jungle Suite, 1 King Bed)"
+     "nightlyGbp": 805,
+     "room": "Deluxe Room Disabled adapted"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 457,
-     "room": "Jungle Pool Suite, 1 Bedroom Suite, 2 Queen, Private pool"
+     "nightlyGbp": 389,
+     "room": "Deluxe Double Room"
     }
    ]
   },
@@ -1904,41 +1742,22 @@
    "liteapiName": "City of Dreams - Morpheus",
    "g": 100,
    "rc": 5333,
-   "nightlyGbp": 469,
+   "nightlyGbp": 471,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 508,
+     "nightlyGbp": 511,
      "room": "Morpheus Premier King Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 248,
+     "nightlyGbp": 242,
      "room": "Morpheus Premier King Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 469,
+     "nightlyGbp": 471,
      "room": "Morpheus Premier King Room"
-    }
-   ]
-  },
-  "monasterio-belmond-cusco": {
-   "name": "Monasterio, A Belmond Hotel, Cusco",
-   "liteapiName": "Monasterio, A Belmond Hotel, Cusco",
-   "g": 96,
-   "rc": 5547,
-   "nightlyGbp": 470,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 363,
-     "room": "Superior Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 577,
-     "room": "Superior Room with Oxygen"
     }
    ]
   },
@@ -1966,27 +1785,27 @@
     }
    ]
   },
-  "st-regis-bali": {
-   "name": "The St. Regis Bali Resort",
-   "liteapiName": "The St. Regis Bali Resort",
-   "g": 96,
-   "rc": 6101,
+  "vana-belle-a-luxury-collection-resort": {
+   "name": "Vana Belle, a Luxury Collection Resort, Koh Samui",
+   "liteapiName": "Vana Belle, A Luxury Collection Resort, Koh Samui",
+   "g": 98,
+   "rc": 5506,
    "nightlyGbp": 473,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 624,
-     "room": "St Regis, Suite, 1 King Bed, Garden View"
+     "nightlyGbp": 852,
+     "room": "Jungle Pool Suite, 1 Bedroom Suite, 2 Queen, Private pool"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 456,
-     "room": "St Regis, Suite, 1 King Bed, Garden View"
+     "nightlyGbp": 473,
+     "room": "Jungle Pool Suite, 1 Bedroom Suite, 1 King, Private Pool"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 473,
-     "room": "St Regis, Suite, 1 King Bed, Garden View"
+     "nightlyGbp": 459,
+     "room": "Jungle Pool Suite, 1 Bedroom Suite, 2 Queen, Private Pool"
     }
    ]
   },
@@ -2014,22 +1833,84 @@
     }
    ]
   },
+  "st-regis-bali": {
+   "name": "The St. Regis Bali Resort",
+   "liteapiName": "The St. Regis Bali Resort",
+   "g": 96,
+   "rc": 6101,
+   "nightlyGbp": 475,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 629,
+     "room": "St Regis Suite, Suite, 1 King, Garden view"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 459,
+     "room": "One Bedroom St Regis Suite Garden View Two Double"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 475,
+     "room": "St Regis Suite, 1 Bedroom Suite, 2 Double, Garden View"
+    }
+   ]
+  },
   "zannier-phum-baitang": {
    "name": "Zannier Phum Baitang",
    "liteapiName": "Zannier Phum Baitang",
    "g": 98,
    "rc": 1911,
-   "nightlyGbp": 482,
+   "nightlyGbp": 483,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 467,
-     "room": "Terrace Villa"
+     "nightlyGbp": 470,
+     "room": "Terrace Villa "
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 497,
      "room": "Terrace Villa "
+    }
+   ]
+  },
+  "the-merrion": {
+   "name": "The Merrion",
+   "liteapiName": "The Merrion Hotel",
+   "g": 96,
+   "rc": 8446,
+   "nightlyGbp": 487,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 487,
+     "room": "Double Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 487,
+     "room": "Double Room"
+    }
+   ]
+  },
+  "qasr-al-sarab-anantara": {
+   "name": "Qasr Al Sarab Desert Resort by Anantara",
+   "liteapiName": "Qasr Al Sarab Desert Resort by Anantara",
+   "g": 95,
+   "rc": 10657,
+   "nightlyGbp": 490,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 536,
+     "room": "Deluxe Room (Gardenview)"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 445,
+     "room": "Deluxe Room (Balcony)"
     }
    ]
   },
@@ -2042,7 +1923,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1051,
+     "nightlyGbp": 1071,
      "room": "Superior Room"
     },
     {
@@ -2052,8 +1933,32 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 432,
+     "nightlyGbp": 404,
      "room": "Superior Room"
+    }
+   ]
+  },
+  "the-st-regis-cairo": {
+   "name": "The St. Regis Cairo",
+   "liteapiName": "The St. Regis Cairo",
+   "g": 95,
+   "rc": 9775,
+   "nightlyGbp": 523,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 982,
+     "room": "Deluxe Room, 1 King Bed, View"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 419,
+     "room": "SUPERIOR, KING BED, WITH VIEW"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 523,
+     "room": "Superior Room, 1 King Bed (View)"
     }
    ]
   },
@@ -2062,22 +1967,46 @@
    "liteapiName": "Ett Hem",
    "g": 96,
    "rc": 981,
-   "nightlyGbp": 510,
+   "nightlyGbp": 527,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1819,
-     "room": "Suite, 1 King Bed, City View"
+     "nightlyGbp": 1937,
+     "room": "Suite with City View"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 510,
-     "room": "Standard Room, 1 Queen Bed, Garden View"
+     "nightlyGbp": 527,
+     "room": "Double Room"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 498,
      "room": "Standard Room, 1 Queen Bed, Garden View"
+    }
+   ]
+  },
+  "capella-sydney": {
+   "name": "Capella Sydney",
+   "liteapiName": "Capella Sydney",
+   "g": 95,
+   "rc": 1856,
+   "nightlyGbp": 527,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 565,
+     "room": "Deluxe Room - Accessible King"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 413,
+     "room": "Deluxe Room - Twin"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 527,
+     "room": "Deluxe Room - Accessible King"
     }
    ]
   },
@@ -2101,7 +2030,7 @@
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 531,
-     "room": "Room with 2 single beds, Deluxe, Garden view, Terrace"
+     "room": "Arabian Court Deluxe King Room"
     }
    ]
   },
@@ -2114,61 +2043,18 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 641,
-     "room": "Villa (Lawan Thai)"
+     "nightlyGbp": 679,
+     "room": "Thai Lawan Villa"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 399,
-     "room": "Villa (Lawan Thai)"
+     "nightlyGbp": 428,
+     "room": "Thai Lawan Villa"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 537,
      "room": "Lawan One-Bedroom Villa"
-    }
-   ]
-  },
-  "bowie-house-auberge-collection": {
-   "name": "Bowie House, Auberge Collection",
-   "liteapiName": "Bowie House, Auberge Collection",
-   "g": 96,
-   "rc": 892,
-   "nightlyGbp": 539,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 452,
-     "room": "Bowie King"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 539,
-     "room": "Room, 1 King Bed, Mobility Accessible (Boulevard)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 544,
-     "room": "Bowie King"
-    }
-   ]
-  },
-  "four-seasons-bangkok": {
-   "name": "Four Seasons Hotel Bangkok at Chao Phraya River",
-   "liteapiName": "Four Seasons Hotel Bangkok at Chao Phraya River",
-   "g": 96,
-   "rc": 5074,
-   "nightlyGbp": 542,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 560,
-     "room": "Deluxe Room, 1 King Bed (Palm Court)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 525,
-     "room": "Deluxe Room, 1 King Bed (Palm Court)"
     }
    ]
   },
@@ -2191,51 +2077,51 @@
     }
    ]
   },
-  "capella-sydney": {
-   "name": "Capella Sydney",
-   "liteapiName": "Capella Sydney",
+  "four-seasons-astir-palace-athens": {
+   "name": "Four Seasons Astir Palace Hotel Athens",
+   "liteapiName": "Four Seasons Astir Palace Hotel Athens",
    "g": 95,
-   "rc": 1856,
-   "nightlyGbp": 544,
+   "rc": 5443,
+   "nightlyGbp": 545,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 565,
-     "room": "Deluxe Room - Accessible King"
+     "nightlyGbp": 414,
+     "room": "Nafsika Sea View Room King Bed"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 413,
-     "room": "Deluxe Room - Twin"
+     "nightlyGbp": 545,
+     "room": "Nafsika Double room with sea view (full double bed)"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 544,
-     "room": "Deluxe Twin Room, 2 Twin Beds"
+     "nightlyGbp": 732,
+     "room": "Room, 1 King Bed, Sea View (Nafsika)"
     }
    ]
   },
-  "brenners-park-hotel-and-spa": {
-   "name": "Brenners Park-Hotel & Spa",
-   "liteapiName": "Brenners Park - Hotel & Spa, Oetker Hotels",
-   "g": 95,
-   "rc": 2281,
-   "nightlyGbp": 548,
+  "ritz-carlton-hong-kong": {
+   "name": "The Ritz-Carlton, Hong Kong",
+   "liteapiName": "The Ritz-Carlton, Hong Kong",
+   "g": 97,
+   "rc": 15226,
+   "nightlyGbp": 557,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 616,
-     "room": "Superior Park Room"
+     "nightlyGbp": 882,
+     "room": "Deluxe Seaview Room, Deluxe Guest room, 1 King, South China Sea view"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 324,
-     "room": "Superior Room, Accessible (Town)"
+     "nightlyGbp": 408,
+     "room": "Deluxe Guest room, 1 King, City view"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 548,
-     "room": "Superior Room, Accessible (Town)"
+     "nightlyGbp": 557,
+     "room": "Deluxe Guest room, 1 King, City view"
     }
    ]
   },
@@ -2244,16 +2130,16 @@
    "liteapiName": "Fairmont Udaipur Palace",
    "g": 96,
    "rc": 2871,
-   "nightlyGbp": 558,
+   "nightlyGbp": 564,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 558,
+     "nightlyGbp": 564,
      "room": "Fairmont Twin Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 660,
+     "nightlyGbp": 682,
      "room": "Fairmont Twin Room"
     },
     {
@@ -2263,22 +2149,22 @@
     }
    ]
   },
-  "casa-san-agustin": {
-   "name": "Casa San Agustin",
-   "liteapiName": "Hotel Casa San Agustin",
-   "g": 98,
-   "rc": 2600,
-   "nightlyGbp": 559,
+  "atelier-playa-mujeres": {
+   "name": "Atelier Playa Mujeres",
+   "liteapiName": "Atelier Playa Mujeres - Adults Only - All Inclusive",
+   "g": 96,
+   "rc": 17672,
+   "nightlyGbp": 565,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 599,
-     "room": "Junior Suite"
+     "nightlyGbp": 592,
+     "room": "Junior Suite - Two Double Bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 519,
-     "room": "Deluxe Room"
+     "nightlyGbp": 539,
+     "room": "Junior Suite - Two Double Bed"
     }
    ]
   },
@@ -2306,30 +2192,6 @@
     }
    ]
   },
-  "four-seasons-jimbaran": {
-   "name": "Four Seasons Resort Bali at Jimbaran Bay",
-   "liteapiName": "Four Seasons Resort Bali at Jimbaran Bay",
-   "g": 95,
-   "rc": 5437,
-   "nightlyGbp": 579,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 603,
-     "room": "Garden Pool Villa King"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 514,
-     "room": "Garden Pool Villa King"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 579,
-     "room": "Garden Pool Villa King"
-    }
-   ]
-  },
   "nolinski-venezia": {
    "name": "Nolinski Venezia",
    "liteapiName": "Nolinski Venezia - Evok Collection",
@@ -2354,44 +2216,6 @@
     }
    ]
   },
-  "casa-pestagua": {
-   "name": "Casa Pestagua",
-   "liteapiName": "Casa Pestagua Relais Châteaux",
-   "g": 95,
-   "rc": 2095,
-   "nightlyGbp": 580,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 587,
-     "room": "Junior Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 573,
-     "room": "Deluxe Room"
-    }
-   ]
-  },
-  "137-pillars-house": {
-   "name": "137 Pillars House",
-   "liteapiName": "137 Pillars House",
-   "g": 96,
-   "rc": 2423,
-   "nightlyGbp": 583,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 852,
-     "room": "Rajah Brooke Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 315,
-     "room": "Rajah Brooke Suite"
-    }
-   ]
-  },
   "six-senses-douro-valley": {
    "name": "Six Senses Douro Valley",
    "liteapiName": "Six Senses Douro Valley",
@@ -2411,8 +2235,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 584,
-     "room": "Quinta Deluxe - Prepay and Save"
+     "nightlyGbp": 578,
+     "room": "Quinta Deluxe"
     }
    ]
   },
@@ -2425,8 +2249,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 814,
-     "room": "Suite (Estate)"
+     "nightlyGbp": 751,
+     "room": "Estate Suite"
     },
     {
      "checkin": "2027-01-25",
@@ -2437,73 +2261,6 @@
      "checkin": "2027-03-26",
      "nightlyGbp": 588,
      "room": "Suite, Terrace"
-    }
-   ]
-  },
-  "four-seasons-hotel-hangzhou-at-west-lake": {
-   "name": "Four Seasons Hotel Hangzhou at West Lake",
-   "liteapiName": "Four Seasons Hotel Hangzhou at West Lake",
-   "g": 96,
-   "rc": 1223,
-   "nightlyGbp": 590,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 516,
-     "room": "Premier Garden View Room King Bed"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 664,
-     "room": "Garden View Room King Bed"
-    }
-   ]
-  },
-  "atelier-playa-mujeres": {
-   "name": "Atelier Playa Mujeres",
-   "liteapiName": "Atelier Playa Mujeres - Adults Only - All Inclusive",
-   "g": 96,
-   "rc": 17672,
-   "nightlyGbp": 592,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1245,
-     "room": "JUNIOR SUITE WITH DOUBLE BED"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 592,
-     "room": "Junior Suite - Two Double Bed"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 539,
-     "room": "Junior Suite - Two Double Bed"
-    }
-   ]
-  },
-  "the-ivy-hotel": {
-   "name": "The Ivy Hotel",
-   "liteapiName": "The Ivy Hotel",
-   "g": 97,
-   "rc": 873,
-   "nightlyGbp": 598,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 599,
-     "room": "Room (Five)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 597,
-     "room": "Room (Five)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 598,
-     "room": "Room (Five)"
     }
    ]
   },
@@ -2550,103 +2307,41 @@
     }
    ]
   },
-  "patina-maldives": {
-   "name": "Patina Maldives, Fari Islands",
-   "liteapiName": "Patina Maldives, Fari Islands",
+  "137-pillars-house": {
+   "name": "137 Pillars House",
+   "liteapiName": "137 Pillars House",
    "g": 96,
-   "rc": 359,
-   "nightlyGbp": 603,
+   "rc": 2423,
+   "nightlyGbp": 600,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 564,
-     "room": "Studio, 1 King Bed (15, Fari (for iWTX))"
+     "nightlyGbp": 885,
+     "room": "Rajah Brooke Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 643,
-     "room": "Fari Studio "
+     "nightlyGbp": 315,
+     "room": "Rajah Brooke Suite"
     }
    ]
   },
-  "qasr-al-sarab-anantara": {
-   "name": "Qasr Al Sarab Desert Resort by Anantara",
-   "liteapiName": "Qasr Al Sarab Desert Resort by Anantara",
-   "g": 95,
-   "rc": 10657,
-   "nightlyGbp": 604,
+  "four-seasons-hotel-hangzhou-at-west-lake": {
+   "name": "Four Seasons Hotel Hangzhou at West Lake",
+   "liteapiName": "Four Seasons Hotel Hangzhou at West Lake",
+   "g": 96,
+   "rc": 1223,
+   "nightlyGbp": 612,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 670,
-     "room": "DELUXE GARDEN"
+     "nightlyGbp": 560,
+     "room": "Premier Garden Room with king bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 539,
-     "room": "Room DELUXE WITH BALCONY"
-    }
-   ]
-  },
-  "buahan-a-banyan-tree-escape": {
-   "name": "Buahan, a Banyan Tree Escape",
-   "liteapiName": "Buahan, a Banyan Tree Escape",
-   "g": 98,
-   "rc": 920,
-   "nightlyGbp": 605,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 780,
-     "room": "River Valley Pool Bale"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 558,
-     "room": "River Valley Pool Bale"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 605,
-     "room": "Rainforest Pool Bale"
-    }
-   ]
-  },
-  "mandarin-oriental-bangkok": {
-   "name": "Mandarin Oriental, Bangkok",
-   "liteapiName": "Mandarin Oriental, Bangkok",
-   "g": 95,
-   "rc": 13707,
-   "nightlyGbp": 611,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 766,
-     "room": "PREMIER, DELUXE, KING BED"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 456,
-     "room": "Deluxe Premier room King"
-    }
-   ]
-  },
-  "secrets-playa-blanca-costa-mujeres": {
-   "name": "Secrets Playa Blanca Costa Mujeres",
-   "liteapiName": "Secrets Playa Blanca Costa Mujeres - All Inclusive Adults Only",
-   "g": 95,
-   "rc": 6106,
-   "nightlyGbp": 614,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 678,
-     "room": "Junior Suite Ocean View King"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 551,
-     "room": "Junior Suite Tropical View King - JSKTV"
+     "nightlyGbp": 664,
+     "room": "Garden View Room King Bed"
     }
    ]
   },
@@ -2669,12 +2364,55 @@
     }
    ]
   },
+  "secrets-playa-blanca-costa-mujeres": {
+   "name": "Secrets Playa Blanca Costa Mujeres",
+   "liteapiName": "Secrets Playa Blanca Costa Mujeres - All Inclusive Adults Only",
+   "g": 95,
+   "rc": 6106,
+   "nightlyGbp": 621,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 691,
+     "room": "Junior Suite Ocean View King  - JSKOV"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 551,
+     "room": "Junior Suite Tropical View King - JSKTV"
+    }
+   ]
+  },
+  "the-ungasan-bali": {
+   "name": "The Ungasan Clifftop Resort",
+   "liteapiName": "The Ungasan Clifftop Resort",
+   "g": 95,
+   "rc": 2180,
+   "nightlyGbp": 624,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 709,
+     "room": "Garden View Suite - Airport Transfer Included"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 584,
+     "room": " One-Bedroom Garden Suite with Terrace"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 624,
+     "room": "Garden View Suite - Airport Transfer Included"
+    }
+   ]
+  },
   "mandarin-oriental-hong-kong": {
    "name": "Mandarin Oriental, Hong Kong",
    "liteapiName": "Mandarin Oriental, Hong Kong",
    "g": 96,
    "rc": 14217,
-   "nightlyGbp": 620,
+   "nightlyGbp": 624,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -2683,128 +2421,32 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 620,
+     "nightlyGbp": 624,
      "room": "City View King Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 677,
-     "room": "City View Twin Room"
+     "nightlyGbp": 668,
+     "room": "City View King Room"
     }
    ]
   },
-  "haymarket-hotel-firmdale-hotels": {
-   "name": "Haymarket Hotel, Firmdale Hotels",
-   "liteapiName": "Haymarket Hotel, Firmdale Hotels",
+  "four-seasons-jimbaran": {
+   "name": "Four Seasons Resort Bali at Jimbaran Bay",
+   "liteapiName": "Four Seasons Resort Bali at Jimbaran Bay",
    "g": 95,
-   "rc": 1516,
-   "nightlyGbp": 621,
+   "rc": 5437,
+   "nightlyGbp": 640,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 765,
-     "room": "Luxury Room"
+     "nightlyGbp": 738,
+     "room": "Villa Pool View"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 546,
-     "room": "Luxury Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 621,
-     "room": "Luxury Room"
-    }
-   ]
-  },
-  "the-remote-resort": {
-   "name": "The Remote Resort",
-   "liteapiName": "The Remote Resort",
-   "g": 98,
-   "rc": 471,
-   "nightlyGbp": 627,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 903,
-     "room": "Royal Retreat"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 607,
-     "room": "Oceanfront Villa"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 627,
-     "room": "Oceanfront Villa"
-    }
-   ]
-  },
-  "jw-marriott-phu-quoc": {
-   "name": "JW Marriott Phu Quoc Emerald Bay Resort & Spa",
-   "liteapiName": "JW Marriott Phu Quoc Emerald Bay Resort & Spa",
-   "g": 95,
-   "rc": 6037,
-   "nightlyGbp": 636,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 821,
-     "room": "Emerald Bay, Guest room, 2 Double, Balcony"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 451,
-     "room": "Emerald Bay, Guest room, 1 King, Balcony"
-    }
-   ]
-  },
-  "riviera-maya-edition-kanai": {
-   "name": "The Riviera Maya EDITION at Kanai",
-   "liteapiName": "The Riviera Maya EDITION at Kanai",
-   "g": 96,
-   "rc": 1452,
-   "nightlyGbp": 642,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2487,
-     "room": "Deluxe Room, 1 King Bed, Terrace"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 558,
-     "room": "Deluxe Room, 1 King Bed, Terrace"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 642,
-     "room": "Deluxe Room, 1 King Bed, Terrace"
-    }
-   ]
-  },
-  "the-st-regis-cairo": {
-   "name": "The St. Regis Cairo",
-   "liteapiName": "The St. Regis Cairo",
-   "g": 95,
-   "rc": 9775,
-   "nightlyGbp": 644,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1027,
-     "room": "Grand Room, 1 King Bed (Grand Deluxe Room)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 414,
-     "room": "Superior Room, 1 King Bed (View)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 644,
-     "room": "Superior Room, Guest room, 1 King, Historic Cairo view"
+     "nightlyGbp": 542,
+     "room": "Garden Pool Villa King"
     }
    ]
   },
@@ -2813,7 +2455,7 @@
    "liteapiName": "The Cape, A Thompson Hotel, by Hyatt",
    "g": 95,
    "rc": 6739,
-   "nightlyGbp": 659,
+   "nightlyGbp": 642,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -2822,13 +2464,56 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 494,
-     "room": "Deluxe Room, 1 King Bed, Ocean View"
+     "nightlyGbp": 524,
+     "room": "Double room - Bed and breakfast - Sea View Deluxe one bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 659,
-     "room": "1 King Bed With Ocean View"
+     "nightlyGbp": 642,
+     "room": "Room, 1 King Bed, Ocean View"
+    }
+   ]
+  },
+  "patina-maldives": {
+   "name": "Patina Maldives, Fari Islands",
+   "liteapiName": "Patina Maldives, Fari Islands",
+   "g": 96,
+   "rc": 359,
+   "nightlyGbp": 643,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 643,
+     "room": "Fari Studio "
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 643,
+     "room": "Fari Studio "
+    }
+   ]
+  },
+  "buahan-a-banyan-tree-escape": {
+   "name": "Buahan, a Banyan Tree Escape",
+   "liteapiName": "Buahan, a Banyan Tree Escape",
+   "g": 98,
+   "rc": 920,
+   "nightlyGbp": 644,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 895,
+     "room": "River Valley Pool Bale"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 608,
+     "room": "River Valley Pool Bale"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 644,
+     "room": "Rainforest Pool Bale 1 King Bed"
     }
    ]
   },
@@ -2841,13 +2526,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1382,
+     "nightlyGbp": 1377,
      "room": "Bungalow with Sea View"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 599,
-     "room": "Ocean Villa with Private Plunge Pool"
+     "nightlyGbp": 664,
+     "room": "Bungalow with Sea View"
     },
     {
      "checkin": "2027-03-26",
@@ -2865,7 +2550,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 821,
+     "nightlyGbp": 835,
      "room": "Double room - Accommodation Only - Deluxe one bed"
     },
     {
@@ -2899,42 +2584,13 @@
     }
    ]
   },
-  "patina-osaka": {
-   "name": "Patina Osaka",
-   "liteapiName": "Patina Osaka",
-   "g": 96,
-   "rc": 773,
-   "nightlyGbp": 677,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 932,
-     "room": "Deluxe Room, 1 King Bed, City View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 424,
-     "room": "Deluxe"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 677,
-     "room": "Deluxe Room, 2 Double Beds, City View"
-    }
-   ]
-  },
   "six-senses-krabey-island": {
    "name": "Six Senses Krabey Island",
    "liteapiName": "Six Senses Krabey Island",
    "g": 96,
    "rc": 434,
-   "nightlyGbp": 677,
+   "nightlyGbp": 671,
    "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1281,
-     "room": "Hideaway Pool Villa Suite"
-    },
     {
      "checkin": "2027-01-25",
      "nightlyGbp": 677,
@@ -2947,6 +2603,78 @@
     }
    ]
   },
+  "patina-osaka": {
+   "name": "Patina Osaka",
+   "liteapiName": "Patina Osaka",
+   "g": 96,
+   "rc": 773,
+   "nightlyGbp": 677,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 960,
+     "room": "Deluxe Room, 2 Double Beds, City View"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 402,
+     "room": "Deluxe Room, 1 King Bed, City View"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 677,
+     "room": "Deluxe Room, 2 Double Beds, City View"
+    }
+   ]
+  },
+  "schloss-monchstein": {
+   "name": "Schloss Mönchstein",
+   "liteapiName": "Hotel Schloss Mönchstein",
+   "g": 97,
+   "rc": 936,
+   "nightlyGbp": 684,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1920,
+     "room": "Executive Suite"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 386,
+     "room": "Superior Double Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 684,
+     "room": "Executive Double Room, 1 King Bed, Park View"
+    }
+   ]
+  },
+  "riviera-maya-edition-kanai": {
+   "name": "The Riviera Maya EDITION at Kanai",
+   "liteapiName": "The Riviera Maya EDITION at Kanai",
+   "g": 96,
+   "rc": 1452,
+   "nightlyGbp": 688,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 2650,
+     "room": "DOUBLE DELUXE WITH TERRACE"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 615,
+     "room": "Deluxe, Guest room, 1 King, Terrace"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 688,
+     "room": "Deluxe, Guest room, 1 King, Terrace"
+    }
+   ]
+  },
   "waldorf-astoria-amsterdam": {
    "name": "Waldorf Astoria Amsterdam",
    "liteapiName": "Waldorf Astoria Amsterdam",
@@ -2956,8 +2684,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 668,
-     "room": "Deluxe Room, 1 King Bed"
+     "nightlyGbp": 640,
+     "room": "King Deluxe Room"
     },
     {
      "checkin": "2027-01-25",
@@ -2971,51 +2699,70 @@
     }
    ]
   },
-  "capella-shanghai-jian-ye-li": {
-   "name": "Capella Shanghai, Jian Ye Li",
-   "liteapiName": "Capella Shanghai, Jian Ye Li",
-   "g": 98,
-   "rc": 374,
-   "nightlyGbp": 695,
+  "mandarin-oriental-istanbul-bosphorus": {
+   "name": "Mandarin Oriental, Istanbul (Bosphorus)",
+   "liteapiName": "Mandarin Oriental Bosphorus, Istanbul",
+   "g": 95,
+   "rc": 5905,
+   "nightlyGbp": 691,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 841,
-     "room": "Villa"
+     "nightlyGbp": 624,
+     "room": "SUPERIOR, KING BED"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 643,
-     "room": "Shikumen Villa King"
+     "nightlyGbp": 697,
+     "room": "SUPERIOR, TWIN BEDS"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 695,
-     "room": "Shikumen Villa King"
+     "nightlyGbp": 691,
+     "room": "Superior Twin Room"
     }
    ]
   },
-  "four-seasons-hotel-london-at-park-lane": {
-   "name": "Four Seasons Hotel London at Park Lane",
-   "liteapiName": "Four Seasons Hotel London at Park Lane",
-   "g": 95,
-   "rc": 3829,
-   "nightlyGbp": 713,
+  "the-remote-resort": {
+   "name": "The Remote Resort",
+   "liteapiName": "The Remote Resort",
+   "g": 98,
+   "rc": 471,
+   "nightlyGbp": 702,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1200,
-     "room": "Superior Room, 1 King Bed"
+     "nightlyGbp": 952,
+     "room": "Royal Suite"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 666,
-     "room": "Superior Room, 1 King Bed"
+     "nightlyGbp": 654,
+     "room": "Oceanfront Villa"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 713,
-     "room": "Superior Room, 1 King Bed"
+     "nightlyGbp": 702,
+     "room": "Oceanfront Villa"
+    }
+   ]
+  },
+  "bardessono-hotel-and-spa": {
+   "name": "Bardessono Hotel and Spa",
+   "liteapiName": "Bardessono Hotel and Spa",
+   "g": 95,
+   "rc": 2285,
+   "nightlyGbp": 717,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 823,
+     "room": "King Spa Suite"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 612,
+     "room": "King Spa Suite"
     }
    ]
   },
@@ -3043,49 +2790,6 @@
     }
    ]
   },
-  "schloss-monchstein": {
-   "name": "Schloss Mönchstein",
-   "liteapiName": "Hotel Schloss Mönchstein",
-   "g": 97,
-   "rc": 936,
-   "nightlyGbp": 731,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1834,
-     "room": "Exclusive Suite, 1 King Bed, City View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 376,
-     "room": "DOUBLE SUPERIOR KING BED"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 731,
-     "room": "Superior Double Room"
-    }
-   ]
-  },
-  "copacabana-palace-belmond-rio": {
-   "name": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
-   "liteapiName": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
-   "g": 96,
-   "rc": 49044,
-   "nightlyGbp": 732,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 845,
-     "room": "Superior Room, City View"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 619,
-     "room": "Superior Room, City View"
-    }
-   ]
-  },
   "banyan-tree-samui": {
    "name": "Banyan Tree Samui",
    "liteapiName": "Banyan Tree Samui",
@@ -3110,51 +2814,70 @@
     }
    ]
   },
+  "copacabana-palace-belmond-rio": {
+   "name": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
+   "liteapiName": "Copacabana Palace, A Belmond Hotel, Rio de Janeiro",
+   "g": 96,
+   "rc": 49044,
+   "nightlyGbp": 736,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 852,
+     "room": "Superior Double or Twin Room with City View"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 621,
+     "room": "Superior Room, City View , 2 Twin Beds"
+    }
+   ]
+  },
+  "capella-shanghai-jian-ye-li": {
+   "name": "Capella Shanghai, Jian Ye Li",
+   "liteapiName": "Capella Shanghai, Jian Ye Li",
+   "g": 98,
+   "rc": 374,
+   "nightlyGbp": 737,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 841,
+     "room": "Villa"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 702,
+     "room": "Shikumen Villa King"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 737,
+     "room": "Shikumen Villa King"
+    }
+   ]
+  },
   "banyan-tree-krabi": {
    "name": "Banyan Tree Krabi",
    "liteapiName": "Banyan Tree Krabi",
    "g": 96,
    "rc": 3065,
-   "nightlyGbp": 739,
+   "nightlyGbp": 747,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1362,
+     "nightlyGbp": 1345,
      "room": "Partial Ocean Pool Suite Twin"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 739,
+     "nightlyGbp": 747,
+     "room": "Partial Ocean Pool Suite King"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 537,
      "room": "Partial Ocean Pool Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 492,
-     "room": "PARTIAL OCEAN POOL SUITE"
-    }
-   ]
-  },
-  "mandarin-oriental-istanbul-bosphorus": {
-   "name": "Mandarin Oriental, Istanbul (Bosphorus)",
-   "liteapiName": "Mandarin Oriental Bosphorus, Istanbul",
-   "g": 95,
-   "rc": 5905,
-   "nightlyGbp": 741,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 624,
-     "room": "SUPERIOR, KING BED"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 741,
-     "room": "Superior Twin Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 778,
-     "room": "Superior Twin Room"
     }
    ]
   },
@@ -3172,61 +2895,13 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 651,
-     "room": "Deluxe Room"
-    },
-    {
-     "checkin": "2027-03-26",
      "nightlyGbp": 747,
      "room": "Park View Deluxe Room"
-    }
-   ]
-  },
-  "collegio-alla-querce-florence": {
-   "name": "Collegio alla Querce, Auberge Resorts Collection",
-   "liteapiName": "Collegio alla Querce, Auberge Collection",
-   "g": 98,
-   "rc": 324,
-   "nightlyGbp": 748,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 748,
-     "room": "Classic Room, 1 King Bed (Arcata)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 523,
-     "room": "Classic Room, 1 King Bed (Arcata)"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 756,
-     "room": "Classic Room, 1 King Bed (Arcata)"
-    }
-   ]
-  },
-  "bardessono-hotel-and-spa": {
-   "name": "Bardessono Hotel and Spa",
-   "liteapiName": "Bardessono Hotel and Spa",
-   "g": 95,
-   "rc": 2285,
-   "nightlyGbp": 752,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 752,
-     "room": "Suite, 1 King Bed (Pure, Spa)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 450,
-     "room": "Suite, 1 King Bed (Spa)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 902,
-     "room": "Suite, 1 King Bed (Spa)"
+     "nightlyGbp": 666,
+     "room": "Deluxe Room"
     }
    ]
   },
@@ -3244,8 +2919,8 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 383,
-     "room": "Superior Room, 2 Twin Beds (Palm View)"
+     "nightlyGbp": 396,
+     "room": "SUPERIOR PALM VIEW ROOM"
     },
     {
      "checkin": "2027-03-26",
@@ -3259,7 +2934,7 @@
    "liteapiName": "Banyan Tree Mayakoba",
    "g": 95,
    "rc": 7057,
-   "nightlyGbp": 765,
+   "nightlyGbp": 768,
    "dates": [
     {
      "checkin": "2027-01-25",
@@ -3268,32 +2943,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 858,
-     "room": "Bliss Pool Villa"
-    }
-   ]
-  },
-  "awasi-santa-catarina": {
-   "name": "Awasi Santa Catarina",
-   "liteapiName": "Awasi Santa Catarina",
-   "g": 96,
-   "rc": 2132,
-   "nightlyGbp": 775,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1265,
-     "room": "Villa Arvoredo"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 771,
-     "room": "Villa Anhatomirim"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 775,
-     "room": "Villa Anhatomirim"
+     "nightlyGbp": 864,
+     "room": "Villa - Accommodation Only - Garden View King Size Bed 1 room Swimming Pool Access With views swimming pool"
     }
    ]
   },
@@ -3313,25 +2964,6 @@
      "checkin": "2027-03-26",
      "nightlyGbp": 772,
      "room": "Junior Suite Double"
-    }
-   ]
-  },
-  "grand-velas-riviera-maya": {
-   "name": "Grand Velas Riviera Maya",
-   "liteapiName": "Grand Velas Riviera Maya - All Inclusive",
-   "g": 96,
-   "rc": 11756,
-   "nightlyGbp": 798,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 784,
-     "room": "Zen Grand Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 813,
-     "room": "Zen Grand Suite"
     }
    ]
   },
@@ -3359,46 +2991,70 @@
     }
    ]
   },
-  "four-seasons-sayan": {
-   "name": "Four Seasons Resort Bali at Sayan",
-   "liteapiName": "Four Seasons Resort Bali at Sayan",
+  "st-regis-punta-mita": {
+   "name": "The St. Regis Punta Mita Resort",
+   "liteapiName": "The St. Regis Punta Mita Resort",
    "g": 96,
-   "rc": 4014,
-   "nightlyGbp": 847,
+   "rc": 3396,
+   "nightlyGbp": 819,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1042,
-     "room": "Premier Duplex Suite"
+     "nightlyGbp": 3166,
+     "room": "Casita, Guest room, 1 King, Ocean view"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 732,
-     "room": "Premier Duplex Suite"
+     "nightlyGbp": 819,
+     "room": "Casita, Guest room, 1 King, Garden view"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 847,
-     "room": "Premier Duplex Suite"
+     "nightlyGbp": 765,
+     "room": "Casita, Guest room, 1 King, Garden view"
     }
    ]
   },
-  "pendry-manhattan-west": {
-   "name": "Pendry Manhattan West",
-   "liteapiName": "Pendry Manhattan West",
-   "g": 97,
-   "rc": 1141,
-   "nightlyGbp": 848,
+  "grand-velas-riviera-maya": {
+   "name": "Grand Velas Riviera Maya",
+   "liteapiName": "Grand Velas Riviera Maya - All Inclusive",
+   "g": 96,
+   "rc": 11756,
+   "nightlyGbp": 826,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 829,
+     "room": "Grand Suite"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 824,
+     "room": "Grand Suite"
+    }
+   ]
+  },
+  "awasi-santa-catarina": {
+   "name": "Awasi Santa Catarina",
+   "liteapiName": "Awasi Santa Catarina",
+   "g": 96,
+   "rc": 2132,
+   "nightlyGbp": 827,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 805,
-     "room": "Deluxe Room, 1 King Bed (City King)"
+     "nightlyGbp": 1265,
+     "room": "Villa Arvoredo"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 891,
-     "room": "Accessible Deluxe City King"
+     "nightlyGbp": 827,
+     "room": "Villa Anhatomirim"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 775,
+     "room": "Villa Anhatomirim"
     }
    ]
   },
@@ -3474,46 +3130,22 @@
     }
    ]
   },
-  "el-silencio-lodge-and-spa": {
-   "name": "El Silencio Lodge & Spa",
-   "liteapiName": "El Silencio Lodge and Spa",
-   "g": 96,
-   "rc": 2042,
-   "nightlyGbp": 860,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1063,
-     "room": "Luxury Villa, 2 Bedrooms, Hot Tub, Mountain View"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 658,
-     "room": "Deluxe Suite"
-    }
-   ]
-  },
-  "amilla-maldives": {
-   "name": "Amilla Maldives",
-   "liteapiName": "Amilla Maldives",
+  "taj-lake-palace-udaipur": {
+   "name": "Taj Lake Palace",
+   "liteapiName": "Taj Lake Palace",
    "g": 97,
-   "rc": 3042,
-   "nightlyGbp": 870,
+   "rc": 14892,
+   "nightlyGbp": 873,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1872,
-     "room": "Water Pool Villa"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 866,
-     "room": "Water Pool Villa"
+     "nightlyGbp": 942,
+     "room": "Luxury Room Garden Non Lake View Twin Bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 870,
-     "room": "Water Pool Villa"
+     "nightlyGbp": 805,
+     "room": "Luxury Room with Garden View"
     }
    ]
   },
@@ -3541,22 +3173,22 @@
     }
    ]
   },
-  "capella-ubud": {
-   "name": "Capella Ubud, Bali",
-   "liteapiName": "Capella Ubud, Bali",
-   "g": 97,
-   "rc": 1546,
-   "nightlyGbp": 887,
+  "el-silencio-lodge-and-spa": {
+   "name": "El Silencio Lodge & Spa",
+   "liteapiName": "El Silencio Lodge and Spa",
+   "g": 96,
+   "rc": 2042,
+   "nightlyGbp": 884,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 922,
-     "room": "Luxury Tent, Terrace"
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1111,
+     "room": "Two-Bedroom Villa"
     },
     {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 852,
-     "room": "Terrace Tent"
+     "checkin": "2027-03-26",
+     "nightlyGbp": 658,
+     "room": "Deluxe Suite"
     }
    ]
   },
@@ -3565,12 +3197,12 @@
    "liteapiName": "Bulgari Hotel Shanghai",
    "g": 97,
    "rc": 335,
-   "nightlyGbp": 904,
+   "nightlyGbp": 894,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 967,
-     "room": "Premium Room, 1 King Bed, City View"
+     "nightlyGbp": 981,
+     "room": "Premium Guest Room, Guest room, 1 King, City view"
     },
     {
      "checkin": "2027-01-25",
@@ -3579,8 +3211,56 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 904,
-     "room": "Premium Guest Room, Guest room, 1 King, City view"
+     "nightlyGbp": 894,
+     "room": "Premium Room, 1 King Bed, City View"
+    }
+   ]
+  },
+  "oberoi-amarvilas-agra": {
+   "name": "The Oberoi Amarvilas, Agra",
+   "liteapiName": "The Oberoi Amarvilas Agra",
+   "g": 95,
+   "rc": 6315,
+   "nightlyGbp": 902,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 5313,
+     "room": "Luxury Suite"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 748,
+     "room": "Premier Room Twin"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 902,
+     "room": "Premier Room, 1 King Bed"
+    }
+   ]
+  },
+  "capella-bangkok": {
+   "name": "Capella Bangkok",
+   "liteapiName": "Capella Bangkok",
+   "g": 97,
+   "rc": 3982,
+   "nightlyGbp": 909,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1237,
+     "room": "Riverfront Premier King Room"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 775,
+     "room": "ROOM, DOUBLE BED, RIVER FRONT"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 909,
+     "room": "Twin Room (Riverfront)"
     }
    ]
   },
@@ -3589,17 +3269,17 @@
    "liteapiName": "Spice Island Beach Resort",
    "g": 96,
    "rc": 1707,
-   "nightlyGbp": 908,
+   "nightlyGbp": 910,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1025,
+     "nightlyGbp": 1038,
      "room": "Anthurium Pool Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 791,
-     "room": "Oleander Gardenview Suite"
+     "nightlyGbp": 783,
+     "room": "Oleander Superior Garden Suite"
     }
    ]
   },
@@ -3622,94 +3302,89 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1253,
-     "room": "Sequoia Suites"
+     "nightlyGbp": 938,
+     "room": "Luxury Room, 1 King Bed, Fireplace, Valley View"
     }
    ]
   },
-  "etereo-auberge-riviera-maya": {
-   "name": "Etéreo, Auberge Resorts Collection",
-   "liteapiName": "Etéreo, Auberge Collection",
-   "g": 96,
-   "rc": 459,
-   "nightlyGbp": 931,
+  "samujana-villas": {
+   "name": "Samujana Villas",
+   "liteapiName": "Samujana Villas",
+   "g": 95,
+   "rc": 501,
+   "nightlyGbp": 915,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2640,
-     "room": "Mangrove Studio"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 735,
-     "room": "Mangrove Studio"
+     "nightlyGbp": 1172,
+     "room": "Four-Bedroom Villa - Free Return Transfers"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 931,
-     "room": "Mangrove Studio"
+     "nightlyGbp": 658,
+     "room": "1 Bedroom Villa"
     }
    ]
   },
-  "the-oberoi-marrakech": {
-   "name": "The Oberoi, Marrakech",
-   "liteapiName": "The Oberoi Marrakech",
-   "g": 99,
-   "rc": 2880,
+  "haymarket-hotel-firmdale-hotels": {
+   "name": "Haymarket Hotel, Firmdale Hotels",
+   "liteapiName": "Haymarket Hotel, Firmdale Hotels",
+   "g": 95,
+   "rc": 1516,
+   "nightlyGbp": 928,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1236,
+     "room": "JUNIOR SUITE STANDARD"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 621,
+     "room": "Luxury Room"
+    }
+   ]
+  },
+  "amilla-maldives": {
+   "name": "Amilla Maldives",
+   "liteapiName": "Amilla Maldives",
+   "g": 97,
+   "rc": 3042,
    "nightlyGbp": 941,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1883,
-     "room": "Deluxe Villa, 2 Twin Beds (Private Pool)"
+     "nightlyGbp": 1872,
+     "room": "Water Pool Villa"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 502,
-     "room": "Deluxe Room, 1 King Bed, Terrace"
+     "nightlyGbp": 926,
+     "room": "Water Pool Villa"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 941,
-     "room": "Deluxe Villa with private Pool"
+     "room": "Water Pool Villa"
     }
    ]
   },
-  "royal-palm-beachcomber-mauritius": {
-   "name": "Royal Palm Beachcomber Luxury",
-   "liteapiName": "Royal Palm Beachcomber Luxury",
-   "g": 97,
-   "rc": 1920,
-   "nightlyGbp": 956,
+  "mount-nelson-belmond-cape-town": {
+   "name": "Mount Nelson, A Belmond Hotel, Cape Town",
+   "liteapiName": "Mount Nelson, A Belmond Hotel, Cape Town",
+   "g": 95,
+   "rc": 8673,
+   "nightlyGbp": 941,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 918,
-     "room": "Grand Bay Suite"
+     "nightlyGbp": 923,
+     "room": "Deluxe Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 995,
-     "room": "Grand Bay Suite"
-    }
-   ]
-  },
-  "palacio-nazarenas-cusco": {
-   "name": "Palacio Nazarenas, A Belmond Hotel",
-   "liteapiName": "Palacio Nazarenas, A Belmond Hotel, Cusco",
-   "g": 98,
-   "rc": 1771,
-   "nightlyGbp": 957,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 754,
-     "room": "Junior Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1161,
-     "room": "Studio Suite"
+     "nightlyGbp": 960,
+     "room": "Deluxe Room"
     }
    ]
   },
@@ -3732,122 +3407,84 @@
     }
    ]
   },
-  "mashpi-lodge": {
-   "name": "Mashpi Lodge",
-   "liteapiName": "Mashpi Lodge",
-   "g": 96,
-   "rc": 1465,
-   "nightlyGbp": 983,
+  "como-cocoa-island": {
+   "name": "COMO Cocoa Island",
+   "liteapiName": "COMO Cocoa Island",
+   "g": 97,
+   "rc": 2381,
+   "nightlyGbp": 964,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 983,
-     "room": "Luxury Double or Twin Room"
+     "nightlyGbp": 1363,
+     "room": "Dhoni Water Villa"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1044,
-     "room": "DOUBLE LUXURY"
+     "nightlyGbp": 964,
+     "room": "Dhoni Water Villa"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 758,
-     "room": "Luxury Double or Twin Room"
+     "nightlyGbp": 936,
+     "room": "Villa (Dhoni Water)"
     }
    ]
   },
-  "forestis-dolomites": {
-   "name": "Forestis Dolomites",
-   "liteapiName": "Forestis Dolomites",
-   "g": 96,
-   "rc": 1791,
-   "nightlyGbp": 985,
+  "palacio-nazarenas-cusco": {
+   "name": "Palacio Nazarenas, A Belmond Hotel",
+   "liteapiName": "Palacio Nazarenas, A Belmond Hotel, Cusco",
+   "g": 98,
+   "rc": 1771,
+   "nightlyGbp": 969,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 876,
-     "room": "Suite"
+     "nightlyGbp": 754,
+     "room": "Junior Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1094,
-     "room": "Suite"
+     "nightlyGbp": 1184,
+     "room": "Studio Suite"
     }
    ]
   },
-  "chable-yucatan": {
-   "name": "Chablé Yucatán",
-   "liteapiName": "Chablé Yucatán",
+  "four-seasons-hotel-london-at-park-lane": {
+   "name": "Four Seasons Hotel London at Park Lane",
+   "liteapiName": "Four Seasons Hotel London at Park Lane",
    "g": 95,
-   "rc": 1142,
-   "nightlyGbp": 999,
+   "rc": 3829,
+   "nightlyGbp": 972,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1231,
+     "room": "Superior Room King Bed"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 713,
+     "room": "Superior Room, 1 King Bed"
+    }
+   ]
+  },
+  "royal-palm-beachcomber-mauritius": {
+   "name": "Royal Palm Beachcomber Luxury",
+   "liteapiName": "Royal Palm Beachcomber Luxury",
+   "g": 97,
+   "rc": 1920,
+   "nightlyGbp": 983,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 949,
-     "room": "Room, 1 King Bed, Private Pool, Garden View (Casita)"
+     "nightlyGbp": 918,
+     "room": "Grand Bay Suite"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 1049,
-     "room": "Room, 1 King Bed, Private Pool, Garden View (Casita)"
-    }
-   ]
-  },
-  "mount-nelson-belmond-cape-town": {
-   "name": "Mount Nelson, A Belmond Hotel, Cape Town",
-   "liteapiName": "Mount Nelson, A Belmond Hotel, Cape Town",
-   "g": 95,
-   "rc": 8673,
-   "nightlyGbp": 1006,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 987,
-     "room": "Deluxe Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1026,
-     "room": "Deluxe Room"
-    }
-   ]
-  },
-  "nayara-gardens": {
-   "name": "Nayara Gardens",
-   "liteapiName": "Nayara Gardens",
-   "g": 98,
-   "rc": 6557,
-   "nightlyGbp": 1011,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1008,
-     "room": "Villa (Rainforest Pool)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1014,
-     "room": "Arenal Pool Casita"
-    }
-   ]
-  },
-  "cape-weligama-sri-lanka": {
-   "name": "Cape Weligama",
-   "liteapiName": "Cape Weligama - Relais and Chateaux",
-   "g": 95,
-   "rc": 2024,
-   "nightlyGbp": 1012,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1201,
-     "room": "Master Suite"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 824,
-     "room": "Junior Suite"
+     "room": "Grand Bay Suite"
     }
    ]
   },
@@ -3884,7 +3521,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1327,
+     "nightlyGbp": 1320,
      "room": "Ocean One Bedroom Pool Villa"
     },
     {
@@ -3899,84 +3536,22 @@
     }
    ]
   },
-  "ceylon-tea-trails": {
-   "name": "Ceylon Tea Trails",
-   "liteapiName": "Ceylon Tea Trails - Relais and Chateaux - All Inclusive",
-   "g": 98,
-   "rc": 2475,
-   "nightlyGbp": 1028,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1007,
-     "room": "Luxury Room"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1050,
-     "room": "Luxury Room"
-    }
-   ]
-  },
-  "taj-lake-palace-udaipur": {
-   "name": "Taj Lake Palace",
-   "liteapiName": "Taj Lake Palace",
-   "g": 97,
-   "rc": 14892,
-   "nightlyGbp": 1043,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 937,
-     "room": "Luxury Room, 1 Double Bed Garden View (Non Lake View)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1150,
-     "room": "Luxury"
-    }
-   ]
-  },
-  "capella-hanoi": {
-   "name": "Capella Hanoi",
-   "liteapiName": "Capella Hanoi",
-   "g": 97,
-   "rc": 2403,
-   "nightlyGbp": 1075,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1476,
-     "room": "Junior Suite"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 675,
-     "room": "Premier King Room"
-    }
-   ]
-  },
-  "four-seasons-tamarindo": {
-   "name": "Four Seasons Resort Tamarindo",
-   "liteapiName": "Four Seasons Resort Tamarindo, México",
+  "chable-yucatan": {
+   "name": "Chablé Yucatán",
+   "liteapiName": "Chablé Yucatán",
    "g": 95,
-   "rc": 590,
-   "nightlyGbp": 1075,
+   "rc": 1142,
+   "nightlyGbp": 1058,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 3387,
-     "room": "NATURE, RESORT, KING BED, GOLF COURSE VIEW, NEAR BEACH"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 965,
-     "room": "Room, 2 Queen Beds (Nature)"
+     "nightlyGbp": 1067,
+     "room": "Casita king"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1075,
-     "room": "Room, 2 Queen Beds (Nature)"
+     "nightlyGbp": 1049,
+     "room": "Room, 1 King Bed, Private Pool, Garden View (Casita)"
     }
    ]
   },
@@ -3994,8 +3569,8 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 871,
-     "room": "Reserve Suite, 1 Bedroom Suite, 1 King, Resort View, Balcony"
+     "nightlyGbp": 580,
+     "room": "Reserve Suite"
     },
     {
      "checkin": "2027-03-26",
@@ -4013,8 +3588,8 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 5963,
-     "room": "2 Bedroom Villa (RV09)"
+     "nightlyGbp": 6577,
+     "room": "2 Bedroom Ocean View Residence (RV09)"
     },
     {
      "checkin": "2027-01-25",
@@ -4023,7 +3598,7 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1090,
+     "nightlyGbp": 990,
      "room": "Ocean View Pool Junior Suite"
     }
    ]
@@ -4033,7 +3608,7 @@
    "liteapiName": "Phulay Bay, a Ritz-Carlton Reserve",
    "g": 96,
    "rc": 2822,
-   "nightlyGbp": 1106,
+   "nightlyGbp": 1111,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -4042,8 +3617,8 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1106,
-     "room": "Room, 1 King Bed with Sofa bed, Garden View"
+     "nightlyGbp": 1111,
+     "room": "Reserve Pavilion, Guest room, 1 King, Sofa bed, Garden view"
     },
     {
      "checkin": "2027-03-26",
@@ -4066,113 +3641,99 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 552,
-     "room": "Room, Deluxe, Garden view"
+     "nightlyGbp": 535,
+     "room": "PALM HOUSE, GARDEN"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1225,
-     "room": "Room, Deluxe, Garden view"
+     "nightlyGbp": 1188,
+     "room": "PALM HOUSE, GARDEN"
     }
    ]
   },
-  "pacuare-lodge": {
-   "name": "Pacuare Lodge",
-   "liteapiName": "Pacuare Lodge by Böëna",
-   "g": 96,
-   "rc": 1120,
-   "nightlyGbp": 1119,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1558,
-     "room": "River View Suites"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 681,
-     "room": "Garden Suites"
-    }
-   ]
-  },
-  "capella-bangkok": {
-   "name": "Capella Bangkok",
-   "liteapiName": "Capella Bangkok",
-   "g": 97,
-   "rc": 3982,
-   "nightlyGbp": 1126,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1160,
-     "room": "Premier Room, 1 King Bed (Riverfront)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 768,
-     "room": "Room STANDARD"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1126,
-     "room": "Riverfront King"
-    }
-   ]
-  },
-  "chileno-bay-auberge-cabo": {
-   "name": "Chileno Bay Resort & Residences, Auberge Resorts Collection",
-   "liteapiName": "Chileno Bay Resort & Residences, Auberge Collection",
-   "g": 96,
-   "rc": 1814,
-   "nightlyGbp": 1156,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 926,
-     "room": "Room, 1 King Bed, Resort View"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1387,
-     "room": "Room, 1 King Bed, Resort View"
-    }
-   ]
-  },
-  "sowaka-kyoto": {
-   "name": "Sowaka",
-   "liteapiName": "Sowaka",
+  "nimb-hotel-copenhagen": {
+   "name": "Nimb Hotel",
+   "liteapiName": "Nimb Hotel",
    "g": 95,
-   "rc": 793,
-   "nightlyGbp": 1160,
+   "rc": 3115,
+   "nightlyGbp": 1124,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1513,
-     "room": "109:Superior Room with City View, King Bed(Main)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 808,
-     "room": "106:Deluxe Room with Higashiyama View, Twin Bed(Main)"
-    }
-   ]
-  },
-  "spicers-peak-lodge": {
-   "name": "Spicers Peak Lodge",
-   "liteapiName": "Spicers Peak Lodge",
-   "g": 98,
-   "rc": 1072,
-   "nightlyGbp": 1183,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1097,
-     "room": "Lodge Suite"
+     "nightlyGbp": 1398,
+     "room": "Deluxe Double Room with Balcony"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1269,
-     "room": "Loft Suite"
+     "nightlyGbp": 851,
+     "room": "Deluxe Room, 1 Double Bed"
+    }
+   ]
+  },
+  "portrait-milano": {
+   "name": "Portrait Milano",
+   "liteapiName": "Portrait Milano - Lungarno Collection",
+   "g": 95,
+   "rc": 1515,
+   "nightlyGbp": 1144,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1203,
+     "room": "Studio Deluxe"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1088,
+     "room": "STUDIO KING SIZE BED"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1144,
+     "room": "Portrait Studio"
+    }
+   ]
+  },
+  "nihi-sumba": {
+   "name": "NIHI Sumba",
+   "liteapiName": "NIHI Sumba - 50 Best Hotels of the World",
+   "g": 95,
+   "rc": 2109,
+   "nightlyGbp": 1164,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1164,
+     "room": "Kasambi Pool Villa"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1109,
+     "room": "NIHI Passage (Seamless Nightly Transitions)"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1247,
+     "room": "Kasambi Suite"
+    }
+   ]
+  },
+  "cape-weligama-sri-lanka": {
+   "name": "Cape Weligama",
+   "liteapiName": "Cape Weligama - Relais and Chateaux",
+   "g": 95,
+   "rc": 2024,
+   "nightlyGbp": 1178,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1247,
+     "room": "SUITE KING SIZE BED"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1110,
+     "room": "Junior Suite"
     }
    ]
   },
@@ -4186,31 +3747,12 @@
     {
      "checkin": "2026-12-26",
      "nightlyGbp": 1348,
-     "room": "Superior Room (House)"
+     "room": "Superior Double Room"
     },
     {
      "checkin": "2027-03-26",
      "nightlyGbp": 1062,
      "room": "Classic Double Room"
-    }
-   ]
-  },
-  "esperanza-auberge-cabo": {
-   "name": "Esperanza, Auberge Resorts Collection",
-   "liteapiName": "Esperanza, Auberge Collection",
-   "g": 96,
-   "rc": 1424,
-   "nightlyGbp": 1209,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1161,
-     "room": "Room, 1 King Bed, Ocean View (Casita)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1257,
-     "room": "Room, 1 King Bed, Garden View (Spa Casita)"
     }
    ]
   },
@@ -4223,7 +3765,7 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1537,
+     "nightlyGbp": 1545,
      "room": "Superior Room, 1 King Bed (Courtyard or Street View)"
     },
     {
@@ -4238,60 +3780,46 @@
     }
    ]
   },
-  "como-cocoa-island": {
-   "name": "COMO Cocoa Island",
-   "liteapiName": "COMO Cocoa Island",
+  "four-seasons-kuda-huraa": {
+   "name": "Four Seasons Resort Maldives at Kuda Huraa",
+   "liteapiName": "Four Seasons Resort Maldives at Kuda Huraa",
    "g": 97,
-   "rc": 2381,
+   "rc": 3221,
    "nightlyGbp": 1218,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1162,
-     "room": "Villa (Dhoni Water)"
+     "nightlyGbp": 2504,
+     "room": "DELUXE BEACH PAVILLION WITH POOL"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1275,
-     "room": "Dhoni Water Villa"
-    }
-   ]
-  },
-  "calabash-hotel": {
-   "name": "Calabash Hotel",
-   "liteapiName": "Calabash Hotel",
-   "g": 98,
-   "rc": 1588,
-   "nightlyGbp": 1224,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1438,
-     "room": "Superior Deluxe Suite"
+     "nightlyGbp": 1218,
+     "room": "Garden Pavilion with Pool King Bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1011,
-     "room": "Westside Suite"
+     "nightlyGbp": 1148,
+     "room": "Room, 1 King Bed (Garden Pavillion with Pool)"
     }
    ]
   },
-  "delamore-lodge": {
-   "name": "Delamore Lodge",
-   "liteapiName": "Delamore Lodge",
-   "g": 97,
-   "rc": 521,
-   "nightlyGbp": 1228,
+  "spicers-peak-lodge": {
+   "name": "Spicers Peak Lodge",
+   "liteapiName": "Spicers Peak Lodge",
+   "g": 98,
+   "rc": 1072,
+   "nightlyGbp": 1223,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1498,
-     "room": "Luxury Two-Bedroom Villa"
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1130,
+     "room": "Lodge Suite, Accessible, Mountain View"
     },
     {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 959,
-     "room": "Luxury Suite"
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1316,
+     "room": "Loft Suite, Mountain View"
     }
    ]
   },
@@ -4328,13 +3856,13 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1393,
-     "room": "Deluxe King Room"
+     "nightlyGbp": 1329,
+     "room": "DELUXE, KING BED"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1063,
-     "room": "Superior Double Room"
+     "nightlyGbp": 939,
+     "room": "SUPERIOR"
     }
    ]
   },
@@ -4357,65 +3885,22 @@
     }
    ]
   },
-  "four-seasons-kuda-huraa": {
-   "name": "Four Seasons Resort Maldives at Kuda Huraa",
-   "liteapiName": "Four Seasons Resort Maldives at Kuda Huraa",
-   "g": 97,
-   "rc": 3221,
-   "nightlyGbp": 1267,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2451,
-     "room": "Deluxe Room, 1 King Bed (Beach Pavillion with Pool)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1218,
-     "room": "Garden Pavilion with Pool King Bed"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1267,
-     "room": "Garden Pavilion with Pool"
-    }
-   ]
-  },
-  "six-senses-laamu": {
-   "name": "Six Senses Laamu",
-   "liteapiName": "Six Senses Laamu",
+  "nayara-gardens": {
+   "name": "Nayara Gardens",
+   "liteapiName": "Nayara Gardens",
    "g": 98,
-   "rc": 6349,
-   "nightlyGbp": 1281,
+   "rc": 6557,
+   "nightlyGbp": 1277,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1287,
-     "room": "Lagoon Water Villa"
+     "nightlyGbp": 1300,
+     "room": "Villa, Rainforest View, Balcony"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1276,
-     "room": "Lagoon Water Villa "
-    }
-   ]
-  },
-  "las-ventanas-al-paraiso": {
-   "name": "Las Ventanas al Paraíso, A Rosewood Resort",
-   "liteapiName": "Las Ventanas al Paraiso, A Rosewood Resort",
-   "g": 96,
-   "rc": 1606,
-   "nightlyGbp": 1290,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 912,
-     "room": "JUNIOR SUITE GARDEN VIEW"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1669,
-     "room": "Gardenview King Junior Suite"
+     "nightlyGbp": 1255,
+     "room": "Arenal Casita, King, Balcony"
     }
    ]
   },
@@ -4424,17 +3909,36 @@
    "liteapiName": "Montage Los Cabos",
    "g": 96,
    "rc": 2140,
-   "nightlyGbp": 1316,
+   "nightlyGbp": 1284,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1166,
+     "nightlyGbp": 1180,
      "room": "A - Coastal View King"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1467,
-     "room": "Coastal View King"
+     "nightlyGbp": 1388,
+     "room": "A - Coastal View King"
+    }
+   ]
+  },
+  "four-seasons-serengeti": {
+   "name": "Four Seasons Safari Lodge Serengeti",
+   "liteapiName": "Four Seasons Safari Lodge Serengeti",
+   "g": 95,
+   "rc": 1935,
+   "nightlyGbp": 1285,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1488,
+     "room": "SAVANNAH, PREMIUM, KING BED, WITH VIEW, GROUND FLOOR"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1083,
+     "room": "Room, 2 Twin Beds (Savannah)"
     }
    ]
   },
@@ -4462,75 +3966,41 @@
     }
    ]
   },
-  "the-lodge-at-blue-sky-auberge-resorts-collection": {
-   "name": "The Lodge at Blue Sky, Auberge Resorts Collection",
-   "liteapiName": "The Lodge at Blue Sky, Auberge Collection",
-   "g": 96,
-   "rc": 328,
-   "nightlyGbp": 1406,
+  "the-oberoi-marrakech": {
+   "name": "The Oberoi, Marrakech",
+   "liteapiName": "The Oberoi Marrakech",
+   "g": 99,
+   "rc": 2880,
+   "nightlyGbp": 1407,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1524,
-     "room": "Room (Sky)"
+     "nightlyGbp": 2209,
+     "room": "Deluxe Villa with Private Pool King Bed "
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1178,
-     "room": "Room (Sky)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1406,
-     "room": "Room (Sky)"
+     "nightlyGbp": 606,
+     "room": "DELUXE, TERRACE"
     }
    ]
   },
-  "four-seasons-serengeti": {
-   "name": "Four Seasons Safari Lodge Serengeti",
-   "liteapiName": "Four Seasons Safari Lodge Serengeti",
-   "g": 95,
-   "rc": 1935,
-   "nightlyGbp": 1409,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1409,
-     "room": "Room, 1 King Bed (Savannah)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1409,
-     "room": "Room, 1 King Bed (Horizon)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1083,
-     "room": "Room, 2 Twin Beds (Savannah)"
-    }
-   ]
-  },
-  "anantara-golden-triangle-elephant-camp-and-resort": {
-   "name": "Anantara Golden Triangle Elephant Camp & Resort",
-   "liteapiName": "Anantara Golden Triangle Elephant Camp & Resort",
+  "chileno-bay-auberge-cabo": {
+   "name": "Chileno Bay Resort & Residences, Auberge Resorts Collection",
+   "liteapiName": "Chileno Bay Resort & Residences, Auberge Collection",
    "g": 96,
-   "rc": 2443,
+   "rc": 1814,
    "nightlyGbp": 1421,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2092,
-     "room": "Deluxe Three Country View room"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1421,
-     "room": "Deluxe Three Country View room"
+     "nightlyGbp": 1456,
+     "room": "Resort View Room - One King"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1385,
-     "room": "Deluxe Three Country View room"
+     "nightlyGbp": 1387,
+     "room": "Room, 1 King Bed, Resort View"
     }
    ]
   },
@@ -4539,132 +4009,155 @@
    "liteapiName": "Nayara Springs - Adults Only",
    "g": 100,
    "rc": 3303,
-   "nightlyGbp": 1458,
+   "nightlyGbp": 1426,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1450,
+     "nightlyGbp": 1385,
      "room": "Springs Villa"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1466,
+     "nightlyGbp": 1467,
      "room": "Springs Villa"
     }
    ]
   },
-  "st-regis-bora-bora": {
-   "name": "The St. Regis Bora Bora Resort",
-   "liteapiName": "The St. Regis Bora Bora Resort",
-   "g": 96,
-   "rc": 4297,
-   "nightlyGbp": 1474,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1702,
-     "room": "Villa, 1 King Bed with Sofa bed, Lagoon View (Beachside)"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 865,
-     "room": "Superior Villa, 1 King Bed, Lagoon View (Overwater)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1474,
-     "room": "Deluxe Villa, 1 King Bed, Overwater (View)"
-    }
-   ]
-  },
-  "nihi-sumba": {
-   "name": "NIHI Sumba",
-   "liteapiName": "NIHI Sumba - 50 Best Hotels of the World",
+  "mandarin-oriental-canouan": {
+   "name": "Mandarin Oriental, Canouan",
+   "liteapiName": "Mandarin Oriental, Canouan",
    "g": 95,
-   "rc": 2109,
-   "nightlyGbp": 1499,
+   "rc": 360,
+   "nightlyGbp": 1445,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 1999,
-     "room": "Kanatar, 1-Bedroom Villa, Ocean View, Private Plunge Pool"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1216,
-     "room": "Lulu Amahu, 1-Bedroom Villa, Ocean View, Private Plunge Pool"
+     "nightlyGbp": 1471,
+     "room": "One Bedroom Ocean View Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1499,
-     "room": "Lulu Amahu, 1-Bedroom Villa, Ocean View, Private Plunge Pool"
+     "nightlyGbp": 1420,
+     "room": "Suite, 1 Bedroom, Ocean View (King)"
     }
    ]
   },
-  "four-seasons-desroches-island": {
-   "name": "Four Seasons Resort Seychelles at Desroches Island",
-   "liteapiName": "Four Seasons Resort Seychelles at Desroches Island",
+  "lefay-resort-and-spa-dolomiti": {
+   "name": "Lefay Resort & Spa Dolomiti",
+   "liteapiName": "Lefay Resort & SPA Dolomiti",
    "g": 95,
-   "rc": 669,
-   "nightlyGbp": 1515,
+   "rc": 1742,
+   "nightlyGbp": 1459,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1859,
-     "room": "PREMIUM, VILLA, KING BED, BEACH SIDE, OCEAN VIEW, WITH POOL"
+     "nightlyGbp": 2337,
+     "room": "DOUBLE KING BED TWO BEDROOMS"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 998,
-     "room": "Villa, 1 King Bed, Ocean View (Pool)"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1515,
-     "room": "Villa, 1 King Bed, Ocean View (Pool)"
+     "nightlyGbp": 582,
+     "room": "Deluxe Guest Room, 2 Twin, Forest View"
     }
    ]
   },
-  "rancho-valencia-san-diego": {
-   "name": "Rancho Valencia Resort & Spa",
-   "liteapiName": "Rancho Valencia Resort and Spa",
+  "malliouhana-anguilla": {
+   "name": "Malliouhana",
+   "liteapiName": "Malliouhana Resort Anguilla",
+   "g": 95,
+   "rc": 1099,
+   "nightlyGbp": 1490,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1476,
+     "room": "DOUBLE PREMIUM WITH VIEWS"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1505,
+     "room": "QUADRUPLE PREMIUM OCEAN VIEW"
+    }
+   ]
+  },
+  "esperanza-auberge-cabo": {
+   "name": "Esperanza, Auberge Resorts Collection",
+   "liteapiName": "Esperanza, Auberge Collection",
    "g": 96,
-   "rc": 1434,
-   "nightlyGbp": 1517,
+   "rc": 1424,
+   "nightlyGbp": 1575,
    "dates": [
     {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2647,
-     "room": "Suite, 1 King Bed (Agave)"
-    },
-    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 960,
-     "room": "Eucalyptus Suite King ADA"
+     "nightlyGbp": 1893,
+     "room": "Oceanview Casita - One King"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1517,
-     "room": "Suite, 2 Queen Beds (Agave)"
+     "nightlyGbp": 1257,
+     "room": "Room, 1 King Bed, Garden View (Spa Casita)"
     }
    ]
   },
-  "hacienda-altagracia-auberge": {
-   "name": "Hacienda AltaGracia, Auberge Resorts Collection",
-   "liteapiName": "Hacienda AltaGracia, Auberge Collection",
-   "g": 98,
-   "rc": 858,
-   "nightlyGbp": 1576,
+  "anantara-golden-triangle-elephant-camp-and-resort": {
+   "name": "Anantara Golden Triangle Elephant Camp & Resort",
+   "liteapiName": "Anantara Golden Triangle Elephant Camp & Resort",
+   "g": 96,
+   "rc": 2443,
+   "nightlyGbp": 1635,
    "dates": [
     {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 2419,
+     "room": "Deluxe Three Country View"
+    },
+    {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1569,
-     "room": "Double Room (Casita)"
+     "nightlyGbp": 1635,
+     "room": "Deluxe Three Country View"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1584,
-     "room": "Room, 1 King Bed (Casita)"
+     "nightlyGbp": 1385,
+     "room": "Deluxe Three Country View room"
+    }
+   ]
+  },
+  "las-ventanas-al-paraiso": {
+   "name": "Las Ventanas al Paraíso, A Rosewood Resort",
+   "liteapiName": "Las Ventanas al Paraiso, A Rosewood Resort",
+   "g": 96,
+   "rc": 1606,
+   "nightlyGbp": 1639,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1610,
+     "room": "Gardenview King Junior Suite"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1669,
+     "room": "Gardenview King Junior Suite"
+    }
+   ]
+  },
+  "mandarin-oriental-marrakech": {
+   "name": "Mandarin Oriental, Marrakech",
+   "liteapiName": "Mandarin Oriental, Marrakech",
+   "g": 95,
+   "rc": 2751,
+   "nightlyGbp": 1652,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 741,
+     "room": "POOL, MANDARIN, VILLA"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2563,
+     "room": "POOL, MANDARIN, VILLA"
     }
    ]
   },
@@ -4673,22 +4166,65 @@
    "liteapiName": "W Maldives",
    "g": 96,
    "rc": 2981,
-   "nightlyGbp": 1602,
+   "nightlyGbp": 1671,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 2101,
-     "room": "Superior Villa, 1 Bedroom, Private Pool, Overwater"
+     "nightlyGbp": 2318,
+     "room": "Superior Overwater, 1 Bedroom Villa, 1 King, Private pool"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1602,
-     "room": "Villa, 1 Bedroom, Balcony"
+     "nightlyGbp": 1671,
+     "room": "Villa, 1 Bedroom, Balcony 1 King Bed"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1480,
-     "room": "Superior Villa, 1 Bedroom, Private Pool, Overwater"
+     "nightlyGbp": 1626,
+     "room": "Superior Overwater, 1 Bedroom Villa, 1 King, Private pool"
+    }
+   ]
+  },
+  "four-seasons-desroches-island": {
+   "name": "Four Seasons Resort Seychelles at Desroches Island",
+   "liteapiName": "Four Seasons Resort Seychelles at Desroches Island",
+   "g": 95,
+   "rc": 669,
+   "nightlyGbp": 1673,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1831,
+     "room": "Ocean View Pool Villa"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1515,
+     "room": "Villa, 1 King Bed, Ocean View (Pool)"
+    }
+   ]
+  },
+  "the-lodge-at-blue-sky-auberge-resorts-collection": {
+   "name": "The Lodge at Blue Sky, Auberge Resorts Collection",
+   "liteapiName": "The Lodge at Blue Sky, Auberge Collection",
+   "g": 96,
+   "rc": 328,
+   "nightlyGbp": 1716,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 1596,
+     "room": "DOUBLE KING SIZE BED"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 1716,
+     "room": "Sky Room"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1998,
+     "room": "Sky Room Accessible"
     }
    ]
   },
@@ -4701,13 +4237,13 @@
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 2042,
-     "room": "1 BEDROOM, OVERWATER, SUITE, KING BED, BEACH VIEW"
+     "nightlyGbp": 2131,
+     "room": "BUNGALOW One Bedroom Beach View Overwater Bungalow Suite King Bed"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1252,
-     "room": "1 BEDROOM, OVERWATER, SUITE, KING BED, BEACH VIEW"
+     "nightlyGbp": 1292,
+     "room": "BUNGALOW One Bedroom Beach View Overwater Bungalow Suite King Bed"
     },
     {
      "checkin": "2027-03-26",
@@ -4716,74 +4252,12 @@
     }
    ]
   },
-  "four-seasons-koh-samui": {
-   "name": "Four Seasons Resort Koh Samui",
-   "liteapiName": "Four Seasons Resort Koh Samui",
-   "g": 96,
-   "rc": 3404,
-   "nightlyGbp": 1724,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1782,
-     "room": "Serenity Pool Villa, 2 Twin Beds"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1667,
-     "room": "SERENITY, POOL, GULF, VILLA, KING BED, GARDEN VIEW"
-    }
-   ]
-  },
-  "gili-lankanfushi-maldives": {
-   "name": "Gili Lankanfushi Maldives",
-   "liteapiName": "Gili Lankanfushi Maldives",
-   "g": 100,
-   "rc": 5684,
-   "nightlyGbp": 1745,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2725,
-     "room": "Villa Suite"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1742,
-     "room": "Villa Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1745,
-     "room": "Villa Suite"
-    }
-   ]
-  },
-  "mandarin-oriental-marrakech": {
-   "name": "Mandarin Oriental, Marrakech",
-   "liteapiName": "Mandarin Oriental, Marrakech",
-   "g": 95,
-   "rc": 2751,
-   "nightlyGbp": 1814,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 774,
-     "room": "Mandarin Pool Villa"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 2855,
-     "room": "Mandarin Pool Villa"
-    }
-   ]
-  },
   "rosewood-castiglion-del-bosco": {
    "name": "Rosewood Castiglion del Bosco",
    "liteapiName": "Castiglion del Bosco, A Rosewood Hotel",
    "g": 95,
    "rc": 1361,
-   "nightlyGbp": 1837,
+   "nightlyGbp": 1759,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -4797,27 +4271,8 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1837,
-     "room": "Borgo Suite"
-    }
-   ]
-  },
-  "mandarin-oriental-canouan": {
-   "name": "Mandarin Oriental, Canouan",
-   "liteapiName": "Mandarin Oriental, Canouan",
-   "g": 95,
-   "rc": 360,
-   "nightlyGbp": 1870,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 1870,
-     "room": "One Bedroom Oceanview  Suite"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1870,
-     "room": "One Bedroom Oceanview  Suite"
+     "nightlyGbp": 1759,
+     "room": "Suite (Borgo)"
     }
    ]
   },
@@ -4826,7 +4281,7 @@
    "liteapiName": "Le Bristol Paris - Oetker Hotels",
    "g": 96,
    "rc": 5847,
-   "nightlyGbp": 1874,
+   "nightlyGbp": 1922,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -4835,12 +4290,12 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1874,
+     "nightlyGbp": 1922,
      "room": "Deluxe Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1510,
+     "nightlyGbp": 1507,
      "room": "Executive Room"
     }
    ]
@@ -4850,7 +4305,7 @@
    "liteapiName": "One&Only Palmilla",
    "g": 95,
    "rc": 3219,
-   "nightlyGbp": 1951,
+   "nightlyGbp": 1948,
    "dates": [
     {
      "checkin": "2026-12-26",
@@ -4859,56 +4314,99 @@
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1230,
+     "nightlyGbp": 1209,
      "room": "Oceanfront Palmilla Room - Two Queen Beds"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1951,
-     "room": "Room, King bed"
+     "nightlyGbp": 1948,
+     "room": "Oceanfront Palmilla Room - King Bed"
     }
    ]
   },
-  "susurros-del-corazon-auberge": {
-   "name": "Susurros del Corazón, Auberge Resorts Collection",
-   "liteapiName": "Susurros del Corazón, Auberge Collection",
-   "g": 97,
-   "rc": 357,
-   "nightlyGbp": 1963,
+  "gili-lankanfushi-maldives": {
+   "name": "Gili Lankanfushi Maldives",
+   "liteapiName": "Gili Lankanfushi Maldives",
+   "g": 100,
+   "rc": 5684,
+   "nightlyGbp": 2070,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 1963,
-     "room": "Studio (Garden)"
+     "nightlyGbp": 2876,
+     "room": "Villa Suites"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 6914,
-     "room": "Two Bedroom Oceanfront Cliffside Residence with Hot Tub"
+     "nightlyGbp": 1440,
+     "room": "Villa Suite"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 997,
-     "room": "Garden Studio - 1 King"
+     "nightlyGbp": 2070,
+     "room": "Villa Suites"
     }
    ]
   },
-  "st-regis-punta-mita": {
-   "name": "The St. Regis Punta Mita Resort",
-   "liteapiName": "The St. Regis Punta Mita Resort",
+  "rancho-valencia-san-diego": {
+   "name": "Rancho Valencia Resort & Spa",
+   "liteapiName": "Rancho Valencia Resort and Spa",
    "g": 96,
-   "rc": 3396,
-   "nightlyGbp": 1992,
+   "rc": 1434,
+   "nightlyGbp": 2082,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 3166,
-     "room": "Casita, Guest room, 1 King, Ocean view"
+     "nightlyGbp": 2647,
+     "room": "Suite, 1 King Bed (Agave)"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1517,
+     "room": "Suite, 2 Queen Beds (Agave)"
+    }
+   ]
+  },
+  "four-seasons-tamarindo": {
+   "name": "Four Seasons Resort Tamarindo",
+   "liteapiName": "Four Seasons Resort Tamarindo, México",
+   "g": 95,
+   "rc": 590,
+   "nightlyGbp": 2220,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 3366,
+     "room": "Nature Room King"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 1075,
+     "room": "Room, 2 Queen Beds (Nature)"
+    }
+   ]
+  },
+  "rosewood-kauri-cliffs": {
+   "name": "Rosewood Kauri Cliffs",
+   "liteapiName": "Rosewood Kauri Cliffs",
+   "g": 96,
+   "rc": 459,
+   "nightlyGbp": 2323,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 2548,
+     "room": "Ocean View Junior Suite"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 819,
-     "room": "Casita, Guest room, 1 King, Garden view"
+     "nightlyGbp": 2323,
+     "room": "Grand Ocean View Junior Suite"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2323,
+     "room": "Grand Ocean View Junior Suite"
     }
    ]
   },
@@ -4917,84 +4415,22 @@
    "liteapiName": "Anantara Kihavah Maldives Villas",
    "g": 98,
    "rc": 3643,
-   "nightlyGbp": 2047,
+   "nightlyGbp": 2347,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 2180,
+     "nightlyGbp": 2347,
      "room": "Over Water Pool Villa"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1789,
+     "nightlyGbp": 2084,
+     "room": "Beach Pool  Villa"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2552,
      "room": "Beach Pool Villa"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 2047,
-     "room": "Beach Pool Villa"
-    }
-   ]
-  },
-  "the-connaught-london": {
-   "name": "The Connaught",
-   "liteapiName": "The Connaught, Maybourne",
-   "g": 95,
-   "rc": 4675,
-   "nightlyGbp": 2096,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 3486,
-     "room": "Coburg Suite"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 707,
-     "room": "Courtyard Superior Room"
-    }
-   ]
-  },
-  "la-reserve-paris": {
-   "name": "La Réserve Paris",
-   "liteapiName": "La Reserve Paris Hotel and Spa",
-   "g": 97,
-   "rc": 1960,
-   "nightlyGbp": 2181,
-   "dates": [
-    {
-     "checkin": "2026-12-26",
-     "nightlyGbp": 2181,
-     "room": "Premier Room"
-    },
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 2234,
-     "room": "DOUBLE PREMIER KING BED"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1663,
-     "room": "Prestige Room"
-    }
-   ]
-  },
-  "four-seasons-landaa-giraavaru": {
-   "name": "Four Seasons Resort Maldives at Landaa Giraavaru",
-   "liteapiName": "Four Seasons Maldives at Landaa Giraavaru",
-   "g": 98,
-   "rc": 2304,
-   "nightlyGbp": 2329,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 2200,
-     "room": "Premier Oceanfront Bungalow with Pool"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 2459,
-     "room": "Sunrise Water Villa with Pool"
     }
    ]
   },
@@ -5003,22 +4439,65 @@
    "liteapiName": "The St. Regis Maldives Vommuli Resort",
    "g": 96,
    "rc": 680,
-   "nightlyGbp": 2335,
+   "nightlyGbp": 2349,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 5136,
-     "room": "Villa, 1 Bedroom"
+     "nightlyGbp": 5187,
+     "room": "Garden Villa with Pool, 1 Bedroom Villa, 1 King"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 2327,
-     "room": "Villa, 1 Bedroom"
+     "nightlyGbp": 2349,
+     "room": "Garden Villa with Pool, 1 Bedroom Villa, 1 King"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 2335,
-     "room": "Villa, 1 Bedroom"
+     "nightlyGbp": 2349,
+     "room": "Garden Villa with Pool, 1 Bedroom Villa, 1 King"
+    }
+   ]
+  },
+  "hacienda-altagracia-auberge": {
+   "name": "Hacienda AltaGracia, Auberge Resorts Collection",
+   "liteapiName": "Hacienda AltaGracia, Auberge Collection",
+   "g": 98,
+   "rc": 858,
+   "nightlyGbp": 2362,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 2362,
+     "room": "Casita Double"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2362,
+     "room": "Casita King"
+    }
+   ]
+  },
+  "susurros-del-corazon-auberge": {
+   "name": "Susurros del Corazón, Auberge Resorts Collection",
+   "liteapiName": "Susurros del Corazón, Auberge Collection",
+   "g": 97,
+   "rc": 357,
+   "nightlyGbp": 2389,
+   "dates": [
+    {
+     "checkin": "2026-12-26",
+     "nightlyGbp": 2389,
+     "room": "Garden Studio"
+    },
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 6914,
+     "room": "Two Bedroom Oceanfront Cliffside Residence with Hot Tub"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 933,
+     "room": "Studio (Garden)"
     }
    ]
   },
@@ -5041,51 +4520,75 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 1869,
+     "nightlyGbp": 1817,
      "room": "Hilltop Junior Suite"
     }
    ]
   },
-  "rosewood-kauri-cliffs": {
-   "name": "Rosewood Kauri Cliffs",
-   "liteapiName": "Rosewood Kauri Cliffs",
-   "g": 96,
-   "rc": 459,
-   "nightlyGbp": 2538,
+  "la-reserve-paris": {
+   "name": "La Réserve Paris",
+   "liteapiName": "La Reserve Paris Hotel and Spa",
+   "g": 97,
+   "rc": 1960,
+   "nightlyGbp": 2573,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 2548,
-     "room": "Ocean View Junior Suite"
+     "nightlyGbp": 2573,
+     "room": "Premier Room"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 2323,
-     "room": "Grand Ocean View Junior Suite"
+     "nightlyGbp": 2573,
+     "room": "Premier Room"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 2538,
-     "room": "Grand Junior Suite, King, Ocean View"
+     "nightlyGbp": 1400,
+     "room": "Room (Prestige)"
     }
    ]
   },
-  "oberoi-amarvilas-agra": {
-   "name": "The Oberoi Amarvilas, Agra",
-   "liteapiName": "The Oberoi Amarvilas Agra",
-   "g": 95,
-   "rc": 6315,
-   "nightlyGbp": 2974,
+  "four-seasons-tented-camp-golden-triangle": {
+   "name": "Four Seasons Tented Camp Golden Triangle",
+   "liteapiName": "Four Seasons Tented Camp Golden Triangle",
+   "g": 97,
+   "rc": 901,
+   "nightlyGbp": 2618,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 2594,
+     "room": "Bamboo Tent King Bed"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2643,
+     "room": "Tent, 1 King Bed (Bamboo)"
+    }
+   ]
+  },
+  "st-regis-bora-bora": {
+   "name": "The St. Regis Bora Bora Resort",
+   "liteapiName": "The St. Regis Bora Bora Resort",
+   "g": 96,
+   "rc": 4297,
+   "nightlyGbp": 2833,
    "dates": [
     {
      "checkin": "2026-12-26",
-     "nightlyGbp": 5201,
-     "room": "Luxury Suite"
+     "nightlyGbp": 3074,
+     "room": "Beachside, Villa, 1 King, Sofa bed, Lagoon view, Beach front access, Large Lagoon access"
     },
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 748,
-     "room": "Premier Room Twin"
+     "nightlyGbp": 862,
+     "room": "Superior Villa, 1 King Bed, Lagoon View (Overwater) 1 King Bed"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 2833,
+     "room": "Overwater Deluxe, Villa, 1 King, Island view, Lagoon access"
     }
    ]
   },
@@ -5094,11 +4597,11 @@
    "liteapiName": "JOALI Maldives",
    "g": 98,
    "rc": 1165,
-   "nightlyGbp": 3151,
+   "nightlyGbp": 3143,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 3151,
+     "nightlyGbp": 3135,
      "room": "Water Villa with Pool"
     },
     {
@@ -5113,12 +4616,12 @@
    "liteapiName": "Four Seasons Resort Lanai",
    "g": 95,
    "rc": 2058,
-   "nightlyGbp": 3159,
+   "nightlyGbp": 3185,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 1034,
-     "room": "Room, Accessible, Garden View"
+     "nightlyGbp": 1085,
+     "room": "Accessible King Room with Garden View"
     },
     {
      "checkin": "2027-03-26",
@@ -5127,60 +4630,22 @@
     }
    ]
   },
-  "four-seasons-punta-mita": {
-   "name": "Four Seasons Resort Punta Mita",
-   "liteapiName": "Four Seasons Resort Punta Mita",
-   "g": 95,
-   "rc": 6749,
-   "nightlyGbp": 3185,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 4934,
-     "room": "Ocean Residence"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 1436,
-     "room": "Garden Casita King"
-    }
-   ]
-  },
   "soneva-fushi": {
    "name": "Soneva Fushi",
    "liteapiName": "Soneva Fushi",
    "g": 98,
    "rc": 1858,
-   "nightlyGbp": 3263,
+   "nightlyGbp": 3279,
    "dates": [
     {
      "checkin": "2027-01-25",
-     "nightlyGbp": 3066,
-     "room": "Soneva Fushi Family Villa Suite with Pool"
+     "nightlyGbp": 2909,
+     "room": "VILLA STANDARD"
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 3460,
-     "room": "Soneva Fushi Family Villa Suite with Pool"
-    }
-   ]
-  },
-  "ritz-carlton-maldives-fari": {
-   "name": "The Ritz-Carlton Maldives, Fari Islands",
-   "liteapiName": "The Ritz-Carlton Maldives, Fari Islands",
-   "g": 97,
-   "rc": 1463,
-   "nightlyGbp": 4141,
-   "dates": [
-    {
-     "checkin": "2027-01-25",
-     "nightlyGbp": 2362,
-     "room": "Villa, 1 Bedroom"
-    },
-    {
-     "checkin": "2027-03-26",
-     "nightlyGbp": 5921,
-     "room": "Villa, 2 Bedrooms, Overwater"
+     "nightlyGbp": 3650,
+     "room": " Soneva Fushi Family Suite with Pool"
     }
    ]
   },
@@ -5203,8 +4668,27 @@
     },
     {
      "checkin": "2027-03-26",
-     "nightlyGbp": 3349,
-     "room": "Room, Balcony"
+     "nightlyGbp": 3135,
+     "room": "TREE HOUSE, FOREST"
+    }
+   ]
+  },
+  "ritz-carlton-maldives-fari": {
+   "name": "The Ritz-Carlton Maldives, Fari Islands",
+   "liteapiName": "The Ritz-Carlton Maldives, Fari Islands",
+   "g": 97,
+   "rc": 1463,
+   "nightlyGbp": 4248,
+   "dates": [
+    {
+     "checkin": "2027-01-25",
+     "nightlyGbp": 2575,
+     "room": "Ocean Pool Villa, 1 Bedroom Villa, 1 King, Sofa bed, Sunrise view"
+    },
+    {
+     "checkin": "2027-03-26",
+     "nightlyGbp": 5921,
+     "room": "Villa, 2 Bedrooms, Overwater"
     }
    ]
   }
