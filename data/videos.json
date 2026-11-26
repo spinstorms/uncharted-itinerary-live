@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T06:54:02Z",
+  "updatedAt": "2026-11-26T08:53:07Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -19,7 +19,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/E_DfGSAMeTU/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/E_DfGSAMeTU/hqdefault.jpg",
-      "views": 900,
+      "views": 902,
       "category": "Hotel Reviews",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -946,7 +946,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
-      "views": 1967,
+      "views": 1969,
       "category": "Hotel Reviews",
       "location": "Jimbaran, Bali",
       "chapters": [
@@ -1102,7 +1102,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/5H-BBvM9O70/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/5H-BBvM9O70/hqdefault.jpg",
-      "views": 5629,
+      "views": 5630,
       "category": "Travel Gear",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -2137,7 +2137,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4281,
+      "views": 4283,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6375,
+      "views": 6378,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
-      "views": 323,
+      "views": 375,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -5701,7 +5701,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/9ZTs2dVW63M/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/9ZTs2dVW63M/hqdefault.jpg",
-      "views": 320,
+      "views": 326,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -5853,7 +5853,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/yaCsQJKNt7Q/hqdefault.jpg",
-      "views": 1669,
+      "views": 1670,
       "category": "Maldives",
       "location": "Maldives",
       "chapters": [],
