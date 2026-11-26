@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T01:50:54Z",
+  "updatedAt": "2026-11-26T01:52:32Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -805,7 +805,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/n9RsiNReoFI/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/n9RsiNReoFI/hqdefault.jpg",
-      "views": 479,
+      "views": 476,
       "category": "Bali & Indonesia",
       "location": "Komodo National Park, Indonesia",
       "chapters": [
@@ -946,7 +946,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
-      "views": 1963,
+      "views": 1965,
       "category": "Hotel Reviews",
       "location": "Jimbaran, Bali",
       "chapters": [
@@ -1432,7 +1432,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/TMDrvTY7bKk/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/TMDrvTY7bKk/hqdefault.jpg",
-      "views": 1345,
+      "views": 1344,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [
@@ -1754,7 +1754,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2907,
+      "views": 2909,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
-      "views": 272,
+      "views": 254,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -5549,7 +5549,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/Xdwl17wHZ8w/hqdefault.jpg",
-      "views": 525,
+      "views": 515,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
