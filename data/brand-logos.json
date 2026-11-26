@@ -1,5 +1,5 @@
 {
-  "note": "Brand logos from Wikimedia Commons (file page linked for licence). Shown at small size beside the brand's name to identify it.",
+  "note": "Brand logos from Wikimedia Commons (file page linked for licence) or the brand's own website (page linked). Shown at small size beside the brand's name to identify it.",
   "brands": {
     "Banyan Tree": {
       "file": "assets/brand-logos/banyan-tree.png",
@@ -48,6 +48,74 @@
       "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Rsz_trc-primary-logo_blk3-memblue.jpg/500px-Rsz_trc-primary-logo_blk3-memblue.jpg",
       "commons": "https://commons.wikimedia.org/wiki/File:Rsz_trc-primary-logo_blk3-memblue.jpg",
       "licence": "CC BY-SA 4.0"
+    },
+    "Aman": {
+      "file": "assets/brand-logos/aman.png",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Aman_Resorts_logo.svg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Aman_Resorts_logo.svg",
+      "licence": "Public domain"
+    },
+    "Belmond": {
+      "file": "assets/brand-logos/belmond.png",
+      "source": "https://www.belmond.com/en",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "Four Seasons": {
+      "file": "assets/brand-logos/four-seasons.png",
+      "source": "https://www.fourseasons.com/alt/fshr/design3/images/FS_Brand_Logo2.svg",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "Six Senses": {
+      "file": "assets/brand-logos/six-senses.png",
+      "source": "https://www.sixsenses.com/images/icons/_logos/logo-main-white.svg",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "One&Only": {
+      "file": "assets/brand-logos/oneandonly.png",
+      "source": "https://www.oneandonlyresorts.com/",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "Jumeirah": {
+      "file": "assets/brand-logos/jumeirah.png",
+      "source": "https://www.jumeirah.com/_next/static/media/Jumeirah-wordmark-white.35iq_ludmn0hr.svg",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "Auberge Resorts Collection": {
+      "file": "assets/brand-logos/auberge-resorts-collection.png",
+      "source": "https://auberge.com/",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "Raffles": {
+      "file": "assets/brand-logos/raffles.png",
+      "source": "https://www.raffles.com/content/dam/remote/brands/raf/global-marketing/brand-identity/logos/SGK23juinE_RAFFLES_Logo_HORI_BLACK.svg",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "The Luxury Collection": {
+      "file": "assets/brand-logos/the-luxury-collection.png",
+      "source": "https://the-luxury-collection.marriott.com/wp-content/uploads/sites/13/2020/01/logo.svg",
+      "official": true,
+      "manual": true,
+      "note": "Official logo from the brand's website, rendered to PNG"
+    },
+    "W Hotels": {
+      "file": "assets/brand-logos/w-hotels.png",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/b/b5/W_Hotels_Logo.svg",
+      "commons": "https://commons.wikimedia.org/wiki/File:W_Hotels_Logo.svg",
+      "licence": "Public domain"
     }
   }
 }

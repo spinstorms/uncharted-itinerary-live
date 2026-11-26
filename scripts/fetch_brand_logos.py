@@ -20,6 +20,8 @@ def main() -> int:
     n = 0
     for brand, o in cfg.items():
         out = ROOT / o["file"]
+        if o.get("manual"):  # official-site logos are saved by hand; keep the committed file
+            continue
         try:
             raw = urllib.request.urlopen(urllib.request.Request(o["source"], headers=UA), timeout=30).read()
             im = Image.open(io.BytesIO(raw)).convert("RGBA")
