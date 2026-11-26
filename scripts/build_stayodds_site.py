@@ -1817,7 +1817,7 @@ def render_seo_page(
         _chips.append(f'<a class="so2-chip is-award" href="{esc(_a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(_a["label"])}</a>')
     _known = " ".join(a["label"] for a in o["awards"]).lower()
     _itwf_crit = [c for c in ((h.get("itwf") or {}).get("critics") or [])
-                  if re.search(r"telegraph|cond[eé] nast|travel \+ leisure|gault|la liste", c, re.I)
+                  if re.search(r"cond[eé] nast|travel \+ leisure|gault|la liste", c, re.I)
                   and not (re.search(r"la liste", c, re.I) and "laliste" in _known)]
     for _c in _itwf_crit[:2]:
         _chips.append(f'<a class="so2-chip is-award" href="{esc(h["itwf"]["url"])}" target="_blank" rel="noopener">{ICO_TROPHY} {esc(_c)}</a>')
