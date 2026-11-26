@@ -338,11 +338,19 @@ def sync_price_snapshots(props: list[dict[str, Any]], nuitee_key: str) -> None:
     batches = [unique_nids[i : i + 35] for i in range(0, len(unique_nids), 35)]
     print(f"Fetching indicative GBP nightly snapshots for {len(unique_nids)} LiteAPI hotels ({len(batches)} batches, {ci} -> {co})...")
 
-    nid_rates: dict[str, int] = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        futs = [ex.submit(fetch_liteapi_batch, b, ci, co, nuitee_key) for b in batches]
-        for f in concurrent.futures.as_completed(futs):
-            nid_rates.update(f.result())
+    # Three sample dates (about 1, 2 and 4 months out); the indicative price is the middle one, so a single odd
+    # cheap (or sold-out-premium) date can't set a hotel's "from" price.
+    import statistics as _st
+    samples: dict[str, list[int]] = {}
+    for days in (30, 60, 120):
+        w_ci = (date.today() + timedelta(days=days)).isoformat()
+        w_co = (date.today() + timedelta(days=days + 2)).isoformat()
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+            futs = [ex.submit(fetch_liteapi_batch, b, w_ci, w_co, nuitee_key) for b in batches]
+            for f in concurrent.futures.as_completed(futs):
+                for k, v in f.result().items():
+                    samples.setdefault(k, []).append(v)
+    nid_rates: dict[str, int] = {k: int(round(_st.median(v) / 5.0) * 5) for k, v in samples.items() if len(v) >= 2}
 
     # Retry misses once with a 75-day window (catches seasonal closures / sold-out weekends)
     misses = [nid for nid in unique_nids if nid not in nid_rates]
@@ -365,7 +373,7 @@ def sync_price_snapshots(props: list[dict[str, Any]], nuitee_key: str) -> None:
                 "nightlyGbp": rate_gbp,
                 "label": f"From £{rate_gbp:,}/nt",
                 "currency": "GBP",
-                "source": "LiteAPI Indicative Snapshot",
+                "source": "LiteAPI indicative price (middle of 3 sample dates)",
                 "sampleCheckin": ci,
                 "checkedAt": now_iso[:10],
             }

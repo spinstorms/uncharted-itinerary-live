@@ -301,18 +301,26 @@ def _data(hotels: list[dict[str, Any]], compute) -> dict[str, Any]:
     tel_over = sorted([x for x in tel if x["gap"] > 0], key=lambda x: -x["gap"])[:5]
     tel_under = sorted([x for x in tel if x["gap"] < 0], key=lambda x: x["gap"])[:5]
 
-    # 6. best value: guest score 95+ (300+ reviews) at the lowest nightly price
+    # 6. best value: guest score 95+ (300+ reviews), priced carefully by scripts/value_check.py
+    #    (LiteAPI id confirmed as the same hotel; middle price of 3 sample dates, 2 nights, 2 adults)
+    try:
+        vc = json.loads((ROOT / "data" / "value-check.json").read_text(encoding="utf-8"))
+    except Exception:
+        vc = {"hotels": {}}
+    byid = {r["h"]["id"]: r for r in guests}
     val = []
-    for r in guests:
-        gbp = int((r["h"].get("priceSnapshot") or {}).get("nightlyGbp") or 0)
-        if gbp >= 150 and r["g"] >= 95 and r["rc"] >= 300:
-            val.append({**_hid(r), "gbp": gbp, "where": _city(r["h"]) or _country(r["h"])})
+    for hid, v in (vc.get("hotels") or {}).items():
+        r = byid.get(hid)
+        if r and r["g"] >= 95 and r["rc"] >= 300:
+            val.append({**_hid(r), "gbp": v["nightlyGbp"], "where": _city(r["h"]) or _country(r["h"]),
+                        "dates": [f'{x["checkin"][5:]} £{x["nightlyGbp"]}' for x in v["dates"]]})
     val.sort(key=lambda x: (x["gbp"], -x["g"]))
+    value_checked = vc.get("checked", "")
 
     return {"disappoint": low[:6], "brands": brands, "tiers": tier_stats, "scatter": scatter, "n": len(guests),
             "price": price, "areas": areas, "favourites": favourites,
             "ours": ours[:10], "rivals": rivals, "dining": dining, "water": water, "waterCharged": water_charged,
-            "telOver": tel_over, "telUnder": tel_under, "telN": len(tel), "value": val[:10]}
+            "telOver": tel_over, "telUnder": tel_under, "telN": len(tel), "value": val[:10], "valueChecked": value_checked}
 
 
 def write_insights(dist: Path, hotels: list[dict[str, Any]], template: str, compute) -> list[str]:
@@ -343,7 +351,7 @@ def write_insights(dist: Path, hotels: list[dict[str, Any]], template: str, comp
                       "but every price level has hotels guests rate 98 or more, so a higher price is no guarantee.") if all(b["max"] >= 98 for b in pr) else (
                       f"Typical guest score: {pr[0]['median']:g} at {pr[0]['band']}, {pr[-1]['median']:g} at {pr[-1]['band']}.")
     data = {k: d[k] for k in ("disappoint", "brands", "tiers", "scatter", "price", "areas", "favourites", "ours", "rivals",
-                              "dining", "water", "waterCharged", "telOver", "telUnder", "telN", "value")}
+                              "dining", "water", "waterCharged", "telOver", "telUnder", "telN", "value", "valueChecked")}
     page = (page.replace("__DATA__", json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
             .replace("__DATE__", datetime.now(timezone.utc).strftime("%-d %B %Y"))
             .replace("__NHOTELS__", f"{d['n']:,}")

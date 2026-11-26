@@ -69,6 +69,15 @@
     },
     "mandarin-oriental-qianmen-beijing": {
       "hero_image_url": ""
+    },
+    "gangtey-lodge": {
+      "nuitee_hotel_id": null
+    },
+    "cataloochee-ranch": {
+      "nuitee_hotel_id": null
+    },
+    "carlton-hotel-st-moritz": {
+      "nuitee_hotel_id": null
     }
   },
   "property_facts": {
