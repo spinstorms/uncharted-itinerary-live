@@ -127,12 +127,6 @@
   <div class="note"><b>Where guests pay or are rationed:</b> <span id="waterCharged"></span></div>
 </section>
 
-<section class="panel" aria-labelledby="h14a">
-  <div class="eyebrow" id="value">Best value</div>
-  <h2 id="h14a">Guest scores of 95+ for the lowest prices</h2>
-  <p class="sub">Hotels guests rate 95 or higher (300+ reviews), cheapest first, from our latest nightly price check. Prices change, so check your dates.</p>
-  <ol id="valueList" style="margin:0;padding-left:22px;display:grid;gap:8px"></ol>
-</section>
 
 <p class="foot">Sources: StayOdds hotel scorecards (guest reviews from booking sites and Tripadvisor, published critic scores, World's 50 Best Hotels 2026, MICHELIN Guide 2026 Keys, Forbes Travel Guide 2026, The Telegraph and water policies via isthewaterfree.com, restaurant distinctions from the MICHELIN Guide). Groups and ranks are among hotels on StayOdds only.</p>
 </div>
@@ -272,8 +266,6 @@ function drawAll(){
       <b>${esc(w.brand)}</b><span style="background:var(--track);border-radius:99px;height:12px;overflow:hidden"><i style="display:block;height:100%;width:${w.pct}%;background:${w.pct >= 90 ? '#16A34A' : w.pct >= 70 ? '#F59E0B' : '#DC2626'};border-radius:99px"></i></span>
       <span style="text-align:right">${w.pct}% <span style="color:var(--muted)">of ${w.n}</span></span></div>`).join('');
   document.getElementById('waterCharged').innerHTML = (D.waterCharged || []).map((w) => `${link(w)} <span style="color:var(--muted)">(${esc(w.status.toLowerCase())})</span>`).join(' · ') || 'none found';
-  document.getElementById('valueList').innerHTML = (D.value || []).map((v) =>
-    `<li>${link(v)} <span style="color:var(--ink2)">· ${esc(v.where)}</span> · <b style="color:var(--accent)">${v.g}</b>/100 · from <b>${gbp(v.gbp)}</b>/night <span style="color:var(--muted)">(${v.rc.toLocaleString('en-GB')} reviews)</span></li>`).join('');
 }
 drawAll();
 </script>
