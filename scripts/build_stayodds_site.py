@@ -1790,8 +1790,9 @@ def render_seo_page(
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save</button>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share</button>
           </div>
-          <details class="so2-dates">
-            <summary>Pick dates for live prices</summary>
+          <section class="so2-dates" aria-label="Choose your dates">
+            <div class="so2-dates-head"><strong>When are you going?</strong><span id="soDatesPicked"></span></div>
+            <div class="so2-quick" id="soQuickDates" role="group" aria-label="Quick dates"></div>
             <div class="date-rate-bar" id="detailDateRateBar">
               <div class="date-rate-inputs">
                 <label><span>Check-in</span><input type="date" id="detailCheckin" /></label>
@@ -1805,7 +1806,7 @@ def render_seo_page(
                 {f"Indicative: <strong>{esc(h['priceSnapshot']['label'])}</strong> (updated {esc(h['priceSnapshot'].get('checkedAt', ''))})" if h.get("priceSnapshot") else date_hint}
               </div>
             </div>
-          </details>
+          </section>
 {DETAIL_OTA_STRIP}"""
 
     # Highlights strip (Nov 2026): videos and awards visible up top, details stay in the tab
@@ -1909,7 +1910,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
-  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=3" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=4" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -2163,12 +2164,62 @@ def render_seo_page(
     const rateBtn = document.getElementById("detailLiveRateBtn");
     const rateStatus = document.getElementById("detailLiveRateStatus");
 
-    const fmtDate = (d) => d.toISOString().slice(0, 10);
-    const defCi = new Date(Date.now() + 45 * 86400000);
-    const defCo = new Date(Date.now() + 47 * 86400000);
-    if (ciEl && !ciEl.value) ciEl.value = qsParams.get("checkin") || fmtDate(defCi);
-    if (coEl && !coEl.value) coEl.value = qsParams.get("checkout") || fmtDate(defCo);
-    if (adEl && qsParams.get("adults")) adEl.value = qsParams.get("adults");
+    const fmtDate = (d) => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    // Quick dates: the next upcoming occurrence of each, worked out from today
+    function easterSunday(y) {{
+      const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25),
+        g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4,
+        l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451), mo = Math.floor((h + l - 7 * m + 114) / 31);
+      return new Date(y, mo - 1, ((h + l - 7 * m + 114) % 31) + 1);
+    }}
+    function nextOf(fn) {{ const y = today.getFullYear(); let r = fn(y); if (r[0] <= today) r = fn(y + 1); return r; }}
+    const fri = addDays(today, ((5 - today.getDay() + 7) % 7) || 7);
+    const QUICK = [
+      {{ key: "weekend", label: (fri - today) <= 5 * 86400000 ? "This weekend" : "Next weekend", range: [fri, addDays(fri, 2)] }},
+      {{ key: "christmas", label: "Christmas", range: nextOf((y) => [new Date(y, 11, 23), new Date(y, 11, 27)]) }},
+      {{ key: "newyear", label: "New Year", range: nextOf((y) => [new Date(y, 11, 30), new Date(y + 1, 0, 2)]) }},
+      {{ key: "valentines", label: "Valentine's", range: nextOf((y) => [new Date(y, 1, 13), new Date(y, 1, 15)]) }},
+      {{ key: "easter", label: "Easter", range: nextOf((y) => {{ const e = easterSunday(y); return [addDays(e, -2), addDays(e, 2)]; }}) }},
+      {{ key: "summer", label: "Summer week", range: nextOf((y) => [new Date(y, 7, 1), new Date(y, 7, 8)]) }},
+    ];
+    const shortD = (d) => d.toLocaleDateString("en-GB", {{ day: "numeric", month: "short" }});
+    const quickWrap = document.getElementById("soQuickDates");
+    const pickedEl = document.getElementById("soDatesPicked");
+    const nights = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000);
+    function markPicked() {{
+      const ci = ciEl?.value, co = coEl?.value;
+      quickWrap?.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.ci === ci && b.dataset.co === co)));
+      if (pickedEl) pickedEl.textContent = ci && co && co > ci ? `${{shortD(new Date(ci + "T12:00"))}} – ${{shortD(new Date(co + "T12:00"))}} · ${{nights(ci, co)}} night${{nights(ci, co) === 1 ? "" : "s"}}` : "";
+      if (bookBtn && ci && co && co > ci) {{
+        const priceTxt = bookBtn.dataset.label || (bookBtn.dataset.label = bookBtn.textContent.replace(/\s*↗\s*$/, ""));
+        bookBtn.textContent = `Check prices · ${{shortD(new Date(ci + "T12:00"))}}–${{shortD(new Date(co + "T12:00"))}} ↗`;
+        bookBtn.title = priceTxt;
+      }}
+      try {{ localStorage.setItem("so_dates", JSON.stringify({{ ci, co, ad: adEl?.value || "2" }})); }} catch (_) {{}}
+    }}
+    QUICK.forEach((q) => {{
+      if (!quickWrap) return;
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "so2-qd";
+      b.dataset.ci = fmtDate(q.range[0]); b.dataset.co = fmtDate(q.range[1]); b.dataset.key = q.key;
+      b.innerHTML = `<b>${{q.label}}</b><span>${{shortD(q.range[0])}} – ${{shortD(q.range[1])}}</span>`;
+      b.addEventListener("click", () => {{
+        ciEl.value = b.dataset.ci; coEl.value = b.dataset.co;
+        updateDatedBookingLink(); markPicked();
+        if (rateBtn && rateBtn.getAttribute("data-nuitee-id")) rateBtn.click();
+      }});
+      quickWrap.appendChild(b);
+    }});
+    let saved = null;
+    try {{ saved = JSON.parse(localStorage.getItem("so_dates") || "null"); }} catch (_) {{}}
+    if (saved && !(saved.ci > fmtDate(today))) saved = null;
+    const whenQ = QUICK.find((q) => q.key === qsParams.get("when"));
+    const defCi = addDays(today, 45), defCo = addDays(today, 47);
+    if (ciEl && !ciEl.value) ciEl.value = qsParams.get("checkin") || (whenQ && fmtDate(whenQ.range[0])) || saved?.ci || fmtDate(defCi);
+    if (coEl && !coEl.value) coEl.value = qsParams.get("checkout") || (whenQ && fmtDate(whenQ.range[1])) || saved?.co || fmtDate(defCo);
+    if (adEl && (qsParams.get("adults") || saved?.ad)) adEl.value = qsParams.get("adults") || saved.ad;
 
     function updateDatedBookingLink() {{
       if (!bookBtn) return;
@@ -2198,8 +2249,10 @@ def render_seo_page(
         }}
       }} catch (_) {{}}
     }}
-    [ciEl, coEl, adEl].forEach((el) => el?.addEventListener("change", updateDatedBookingLink));
+    [ciEl, coEl, adEl].forEach((el) => el?.addEventListener("change", () => {{ updateDatedBookingLink(); markPicked(); }}));
     updateDatedBookingLink();
+    markPicked();
+    if (whenQ && rateBtn && rateBtn.getAttribute("data-nuitee-id")) rateBtn.click();
 
     rateBtn?.addEventListener("click", async () => {{
       const nid = rateBtn.getAttribute("data-nuitee-id");
