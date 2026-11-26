@@ -97,6 +97,7 @@ def _load_json(name: str) -> dict[str, Any]:
 
 
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
+NEARBY: dict[str, list[dict[str, Any]]] = {}  # closest scored hotels (build_insights.nearby_compare)
 ALTERNATIVES: dict[str, list[dict[str, Any]]] = {}  # better-rated hotels nearby (build_insights.better_alternatives)
 from water_rules import summarise as water_summary  # noqa: E402
 ITWF = _load_json("isthewaterfree.json")  # water policy, critic lists (isthewaterfree.com, shared by its owner)
@@ -1142,7 +1143,31 @@ def render_seo_page(
         rank_html += ('<div style="font-size:11px;opacity:.7;margin-top:6px">Ranked by guest score (20+ reviews). Price level from our latest nightly price check. '
                                  '<a href="/insights/" style="color:inherit">More guest insights</a></div>')
         alts = ALTERNATIVES.get(h.get("id", "")) or []
-        if alts:
+        near = NEARBY.get(h.get("id", "")) or []
+        my_g = (vg or {}).get("normalized100")
+        if near and my_g is not None:
+            rows = sorted([{"id": h["id"], "name": h["name"], "g": int(my_g), "rc": int((vg or {}).get("reviewCount") or 0), "km": 0, "gbp": int((h.get("priceSnapshot") or {}).get("nightlyGbp") or 0) or None, "me": True}]
+                          + near, key=lambda r: (-r["g"], -r["rc"]))
+            lo = min(r["g"] for r in rows) - 2
+            span = max(1, 100 - lo)
+
+            def _row(r: dict[str, Any]) -> str:
+                w = max(4, round((r["g"] - lo) / span * 100))
+                name = (f'<b>{esc(r["name"])}</b> <span style="font-size:11px;color:#C2410C">(this hotel)</span>' if r.get("me")
+                        else f'<a href="../../stayodds/{esc(r["id"])}/" style="font-weight:600">{esc(r["name"])}</a>')
+                meta = (f'{r["rc"]:,} reviews' + (f' · {r["km"]:g} km away' if not r.get("me") else "")
+                        + (f' · from £{r["gbp"]:,}' if r.get("gbp") else ""))
+                return (f'<div class="so2-near-row{" is-me" if r.get("me") else ""}">'
+                        f'<div class="so2-near-top"><span>{name}</span><b>{r["g"]}</b></div>'
+                        f'<div class="so2-near-bar"><i style="width:{w}%"></i></div>'
+                        f'<div class="so2-near-meta">{meta}</div></div>')
+
+            rank_html += ('<div class="so2-near"><div class="so2-near-head">How guests compare nearby</div>'
+                          + "".join(_row(r) for r in rows)
+                          + f'<div style="font-size:11px;opacity:.7;margin-top:6px">Guest scores out of 100 for the closest StayOdds hotels (within 15 km). '
+                          + (f'<a href="../../compare/?a={esc(h["id"])}&amp;b={esc(rows[0]["id"] if not rows[0].get("me") else rows[1]["id"])}" style="color:inherit">Compare side by side &rarr;</a>' if len(rows) > 1 else '')
+                          + '</div></div>')
+        elif alts:
             rank_html += (
                 '<div style="margin-top:14px;padding:12px 14px;border:1px solid rgba(100,110,130,.22);border-radius:12px">'
                 '<div style="font-size:13.5px;font-weight:700;margin-bottom:6px">Guests rate these higher nearby'
@@ -1882,7 +1907,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=46" />
-  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=2" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=3" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1939,12 +1964,9 @@ def render_seo_page(
           <h1 class="detail-title">{esc(h['name'])}</h1>
 
           {so_hero_html}
+          {so_highlights_html}
         </div>
       </section>
-
-      {so_highlights_html}
-
-      {so_voices_html}
 
       {f'''<section class="detail-section" id="guest-rank">
         <div class="key-facts-panel">
@@ -1953,6 +1975,8 @@ def render_seo_page(
           {rank_html}
         </div>
       </section>''' if rank_html else ''}
+
+      {so_voices_html}
 
       <section class="so2-section"><h2 class="so2-h2">Before you book</h2>{trip_context_html}{so_more_facts}</section>
       {so_love_html}
@@ -3192,6 +3216,7 @@ def main() -> None:
         json.dumps({"updatedAt": now_iso,
                     "ranks": {k: {t: {f: r[f] for f in ("rank", "of", "group", "top", "topScore", "low", "where") if f in r}
                                   for t, r in v.items()} for k, v in _gr(directory).items()},
+                    "nearby": {k: [{f: a[f] for f in ("id", "name", "g", "rc", "km")} for a in v] for k, v in NEARBY.items()},
                     "alternatives": {k: [{f: a[f] for f in ("id", "name", "g", "rc", "band")} for a in v]
                                      for k, v in better_alternatives(directory).items()},
                     "extras": {h["id"]: {k: v for k, v in {
@@ -3383,6 +3408,8 @@ def render_static_pages_from_directory(
     GUEST_RANKS.update(guest_ranks(directory))
     ALTERNATIVES.clear()
     ALTERNATIVES.update(better_alternatives(directory))
+    from build_insights import nearby_compare
+    NEARBY.update(nearby_compare(directory))
 
     stayodds_dir = out_dir / "stayodds"
     stayodds_dir.mkdir(parents=True, exist_ok=True)

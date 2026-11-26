@@ -43,6 +43,9 @@ jobs:
       - name: Forbes Travel Guide 2026 Star Awards (official list)
         run: python3 scripts/forbes_awards.py
         continue-on-error: true
+      - name: Telegraph review scores into the critics (from isthewaterfree.com)
+        run: python3 scripts/itwf_critics.py
+        continue-on-error: true
       - name: LaListe Top 1000 Hotels (published scores, shown as awards)
         run: python3 scripts/laliste_awards.py
         continue-on-error: true

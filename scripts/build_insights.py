@@ -313,3 +313,35 @@ def better_alternatives(hotels: list[dict[str, Any]], limit: int = 3) -> dict[st
         if alts:
             out[hid] = alts[:limit]
     return out
+
+
+def nearby_compare(hotels: list[dict[str, Any]], limit: int = 5, max_km: float = 15.0) -> dict[str, list[dict[str, Any]]]:
+    """The closest StayOdds hotels (within max_km) that have a guest score, nearest first, for a side-by-side
+    'how guests compare nearby' list. Same guest scores (20+ reviews) as the rank scales."""
+    import math
+
+    pts = []
+    for h in hotels:
+        g, rc = _guest(h)
+        if g is None or h.get("lat") is None or h.get("lng") is None:
+            continue
+        pts.append((h, g, rc, math.radians(float(h["lat"])), math.radians(float(h["lng"]))))
+    out: dict[str, list[dict[str, Any]]] = {}
+    for h in hotels:
+        if h.get("lat") is None or h.get("lng") is None:
+            continue
+        la, lo = math.radians(float(h["lat"])), math.radians(float(h["lng"]))
+        near = []
+        for o, g, rc, ola, olo in pts:
+            if o["id"] == h["id"]:
+                continue
+            a = math.sin((ola - la) / 2) ** 2 + math.cos(la) * math.cos(ola) * math.sin((olo - lo) / 2) ** 2
+            km = 6371 * 2 * math.asin(math.sqrt(a))
+            if km <= max_km:
+                near.append({"id": o["id"], "name": o["name"], "g": g, "rc": rc, "km": round(km, 1),
+                             "band": _price_band(o) or "",
+                             "gbp": int((o.get("priceSnapshot") or {}).get("nightlyGbp") or 0) or None})
+        near.sort(key=lambda x: x["km"])
+        if near:
+            out[h["id"]] = near[:limit]
+    return out

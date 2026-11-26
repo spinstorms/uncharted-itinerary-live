@@ -68,3 +68,15 @@
 .so2-chip.is-video{background:#FFF1F0;border-color:#FECACA;color:#B91C1C!important}
 .so2-chip.is-award{background:#FFFBEB;border-color:#FDE68A;color:#92400E!important}
 .so2-count{display:inline-block;min-width:20px;padding:0 6px;margin-left:4px;border-radius:99px;background:#FF5D22;color:#fff;font-size:11.5px;line-height:20px;text-align:center}
+.so2-near{margin-top:16px;padding:14px 16px;border:1px solid rgba(100,110,130,.22);border-radius:14px;background:#fff}
+.so2-near-head{font-size:15px;font-weight:700;margin-bottom:8px}
+.so2-near-row{padding:7px 0;border-bottom:1px solid #F1F5F9}
+.so2-near-row:last-of-type{border-bottom:0}
+.so2-near-row.is-me{background:#FFF7F2;margin:0 -8px;padding:7px 8px;border-radius:10px}
+.so2-near-top{display:flex;justify-content:space-between;gap:10px;font-size:14px}
+.so2-near-top b{font-size:16px;color:#0F172A}
+.so2-near-bar{height:8px;border-radius:99px;background:#EEF2F6;margin:5px 0 3px;overflow:hidden}
+.so2-near-bar i{display:block;height:100%;border-radius:99px;background:#94A3B8}
+.so2-near-row.is-me .so2-near-bar i{background:#FF5D22}
+.so2-near-meta{font-size:11.5px;color:#64748B}
+.so2-score + .so2-gap + .so2-actions ~ .so2-highlights,.so2-highlights{margin-top:14px}
