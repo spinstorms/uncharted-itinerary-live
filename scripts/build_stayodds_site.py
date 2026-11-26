@@ -3326,6 +3326,8 @@ def main() -> None:
                 }
                 for y in r["youtubeReviews"]
             ]
+        if r.get("dining"):
+            item["dining"] = [{"name": x["name"], "distinction": x["distinction"]} for x in r["dining"]]
         lean_hotels.append(item)
 
     lean_json = ROOT / "data" / "stayodds-index.json"

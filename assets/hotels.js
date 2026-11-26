@@ -219,6 +219,10 @@ function hasW50Best(h) {
   return getW50BestRank(h) != null;
 }
 
+function hasStarRestaurant(h) {
+  return Array.isArray(h.dining) && h.dining.some((r) => /MICHELIN Star/.test(r.distinction || ""));
+}
+
 function initCommonUi() {
   if (new URLSearchParams(window.location.search).get("embed") === "1") {
     document.body.classList.add("embed-mode");
@@ -279,6 +283,7 @@ function getScopedHotels() {
   if (state.scope === "global") return state.hotels.filter((h) => !isVisitedProperty(h));
   if (state.scope === "michelin") return state.hotels.filter(hasMichelinKey);
   if (state.scope === "w50") return state.hotels.filter(hasW50Best);
+  if (state.scope === "dining") return state.hotels.filter(hasStarRestaurant);
   const mk = /^michelin([123])$/.exec(state.scope || "");
   if (mk) return state.hotels.filter((h) => getMichelinKeyCount(h) === Number(mk[1]));
   return state.hotels;
@@ -431,6 +436,7 @@ function renderScopeTabs() {
   const globalCnt = state.hotels.length - visitedCnt;
   const michelinCnt = state.hotels.filter(hasMichelinKey).length;
   const w50Cnt = state.hotels.filter(hasW50Best).length;
+  const diningCnt = state.hotels.filter(hasStarRestaurant).length;
 
   const tabs = [
     { id: "all", label: `All Luxury Hotels (${state.hotels.length})` },
@@ -438,6 +444,7 @@ function renderScopeTabs() {
     { id: "global", label: `Global Directory (${globalCnt})` },
     { id: "michelin", label: `2026 MICHELIN Keys (${michelinCnt})` },
     { id: "w50", label: `World's 50 Best (${w50Cnt})` },
+    ...(diningCnt ? [{ id: "dining", label: `MICHELIN-starred restaurant (${diningCnt})` }] : []),
   ];
   for (const n of [3, 2, 1]) {
     const id = `michelin${n}`;
