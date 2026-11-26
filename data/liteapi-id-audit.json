@@ -1,0 +1,1603 @@
+{
+ "checked": 1141,
+ "flagged": [
+  {
+   "id": "radisson-blu-maldives",
+   "ours": "Radisson Blu Resort Maldives",
+   "liteapi": "Radisson Blu Resort Maldives with 50 percent off on Sea Plane round trip 03 nights & above",
+   "city": "Fenfushi",
+   "stars": 5,
+   "extra": [
+    "above",
+    "nights",
+    "off",
+    "on",
+    "percent",
+    "plane",
+    "round",
+    "trip"
+   ],
+   "missing": [],
+   "nuitee": "lp655d69ff"
+  },
+  {
+   "id": "w-algarve",
+   "ours": "W Algarve",
+   "liteapi": "Stunning Oceanview Algarve Villa 12 Bedrooms Quinta Beachfront Marinha",
+   "city": "Lagoa",
+   "stars": 4,
+   "extra": [
+    "beachfront",
+    "bedrooms",
+    "marinha",
+    "oceanview",
+    "quinta",
+    "stunning",
+    "villa"
+   ],
+   "missing": [
+    "w"
+   ],
+   "nuitee": "lp655cadce"
+  },
+  {
+   "id": "cap-karoso-sumba",
+   "ours": "Cap Karoso, Sumba",
+   "liteapi": "Cap Karoso Sumba - a member of Design Hotels",
+   "city": "Tambolaka",
+   "stars": 5,
+   "extra": [
+    "design",
+    "member"
+   ],
+   "missing": [],
+   "nuitee": "lp656dbdb1"
+  },
+  {
+   "id": "otahuna-lodge-christchurch",
+   "ours": "Otahuna Lodge",
+   "liteapi": "Otahuna Hideaway - Christchurch Holiday Homes",
+   "city": "Tai Tapu",
+   "stars": 4,
+   "extra": [
+    "christchurch",
+    "hideaway",
+    "holiday",
+    "homes"
+   ],
+   "missing": [
+    "lodge"
+   ],
+   "nuitee": "lp6569c8bf"
+  },
+  {
+   "id": "vakkaru-maldives",
+   "ours": "Vakkaru Maldives",
+   "liteapi": "Vakkaru Maldives - Luxury Private Island Resort",
+   "city": "Baa Atoll",
+   "stars": 5,
+   "extra": [
+    "island",
+    "private"
+   ],
+   "missing": [],
+   "nuitee": "lpab022"
+  },
+  {
+   "id": "wakax-hacienda",
+   "ours": "Wakax Hacienda",
+   "liteapi": "Wakax Hacienda - Cenote &amp; Boutique Hotel - Small Luxury Hotels of the World",
+   "city": "Tulum",
+   "stars": 4,
+   "extra": [
+    "amp",
+    "cenote"
+   ],
+   "missing": [],
+   "nuitee": "lp65577a2b"
+  },
+  {
+   "id": "annandale-coastal-farm",
+   "ours": "Annandale Coastal Farm Escape",
+   "liteapi": "Annandale Coastal Farm Escape & Luxury Villa Collection",
+   "city": "Akaroa",
+   "stars": 5,
+   "extra": [
+    "villa"
+   ],
+   "missing": [],
+   "nuitee": "lpa5b28"
+  },
+  {
+   "id": "bucuti-tara-beach-resort-aruba",
+   "ours": "Bucuti & Tara Beach Resort",
+   "liteapi": "Bucuti & Tara Boutique Beach Resort - Adult Only",
+   "city": "Palm-Eagle Beach",
+   "stars": 4,
+   "extra": [
+    "adult"
+   ],
+   "missing": [],
+   "nuitee": "lp34031"
+  },
+  {
+   "id": "canaves-oia-epitome",
+   "ours": "Canaves Ena & Epitome",
+   "liteapi": "Canaves Epitome - Small Luxury Hotels of the World",
+   "city": "Oia",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "ena"
+   ],
+   "nuitee": "lpba555"
+  },
+  {
+   "id": "corte-della-maesta",
+   "ours": "Corte della Maestà",
+   "liteapi": "Corte della Maestà Antica Residenza",
+   "city": "Bagnoregio",
+   "stars": null,
+   "extra": [
+    "antica",
+    "residenza"
+   ],
+   "missing": [],
+   "nuitee": "lp657cb152"
+  },
+  {
+   "id": "la-minervetta",
+   "ours": "La Minervetta",
+   "liteapi": "Maison La Minervetta",
+   "city": "Sorrento",
+   "stars": 4,
+   "extra": [
+    "maison"
+   ],
+   "missing": [],
+   "nuitee": "lp3b339"
+  },
+  {
+   "id": "seaside-grand-hotel-residencia-gran-canaria",
+   "ours": "Seaside Grand Hotel Residencia",
+   "liteapi": "Seaside Grand Hotel Residencia - Gran Lujo",
+   "city": "Maspalomas",
+   "stars": 5,
+   "extra": [
+    "lujo"
+   ],
+   "missing": [],
+   "nuitee": "lp5bd84"
+  },
+  {
+   "id": "shinta-mani-angkor-and-bensley-collection",
+   "ours": "Shinta Mani Angkor And Bensley Collection Pool Villas",
+   "liteapi": "Shinta Mani Angkor",
+   "city": "Siem Reap",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "bensley",
+    "pool",
+    "villas"
+   ],
+   "nuitee": "lp36205"
+  },
+  {
+   "id": "sofitel-legend-old-cataract-aswan",
+   "ours": "Sofitel Legend Old Cataract Aswan",
+   "liteapi": "Old Cataract, Aswan",
+   "city": "Aswan",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "legend",
+    "sofitel"
+   ],
+   "nuitee": "lp1d4f0"
+  },
+  {
+   "id": "tierra-patagonia-chile",
+   "ours": "Tierra Patagonia",
+   "liteapi": "Tierra Patagonia, Beckons",
+   "city": "Torres del Paine",
+   "stars": 5,
+   "extra": [
+    "beckons"
+   ],
+   "missing": [],
+   "nuitee": "lp5fe5d"
+  },
+  {
+   "id": "hotel-emma",
+   "ours": "Hotel Emma",
+   "liteapi": "Hotel Emma at Pearl",
+   "city": "San Antonio",
+   "stars": 5,
+   "extra": [
+    "pearl"
+   ],
+   "missing": [],
+   "nuitee": "lp87281"
+  },
+  {
+   "id": "nolinski-venezia",
+   "ours": "Nolinski Venezia",
+   "liteapi": "Nolinski Venezia - Evok Collection",
+   "city": "Venice",
+   "stars": 5,
+   "extra": [
+    "evok"
+   ],
+   "missing": [],
+   "nuitee": "lp656ca5d2"
+  },
+  {
+   "id": "royal-hideaway-corales-suites-tenerife",
+   "ours": "Royal Hideaway Corales Suites",
+   "liteapi": "Royal Hideaway Corales Suites, part of Barceló Hotel Group",
+   "city": "Adeje",
+   "stars": 5,
+   "extra": [
+    "barcelo",
+    "group",
+    "part"
+   ],
+   "missing": [],
+   "nuitee": "lpac224"
+  },
+  {
+   "id": "the-shinmonzen-kyoto",
+   "ours": "The Shinmonzen",
+   "liteapi": "Shinmonzen Ryugin",
+   "city": "Kyoto",
+   "stars": 3,
+   "extra": [
+    "ryugin"
+   ],
+   "missing": [],
+   "nuitee": "lpb4028"
+  },
+  {
+   "id": "rosewood-le-guanahani-st-barth",
+   "ours": "Airelles Le Guanahani",
+   "liteapi": "Rosewood Le Guanahani St Barth",
+   "city": "St. Barthelemy",
+   "stars": null,
+   "extra": [
+    "barth",
+    "rosewood"
+   ],
+   "missing": [
+    "airelles"
+   ],
+   "nuitee": "lp23071"
+  },
+  {
+   "id": "domaine-des-etangs",
+   "ours": "Domaine des Étangs",
+   "liteapi": "Domaine des Etangs, Auberge Collection",
+   "city": "Massignac",
+   "stars": 5,
+   "extra": [
+    "auberge"
+   ],
+   "missing": [],
+   "nuitee": "lp218999"
+  },
+  {
+   "id": "las-casitas-a-belmond-hotel",
+   "ours": "Las Casitas, A Belmond Hotel",
+   "liteapi": "Las Casitas, A Belmond Hotel, Colca Canyon",
+   "city": "Yanque",
+   "stars": 5,
+   "extra": [
+    "canyon",
+    "colca"
+   ],
+   "missing": [],
+   "nuitee": "lp6572749f"
+  },
+  {
+   "id": "milaidhoo-maldives",
+   "ours": "Milaidhoo Island Maldives",
+   "liteapi": "Milaidhoo Maldives",
+   "city": "Finolhus",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "island"
+   ],
+   "nuitee": "lp8c6fe"
+  },
+  {
+   "id": "pacuare-lodge",
+   "ours": "Pacuare Lodge",
+   "liteapi": "Pacuare Lodge by Böëna",
+   "city": "Siquirres",
+   "stars": 4,
+   "extra": [
+    "boena"
+   ],
+   "missing": [],
+   "nuitee": "lp69b59"
+  },
+  {
+   "id": "rio-perdido",
+   "ours": "Rio Perdido",
+   "liteapi": "Rio Perdido Hotel & Thermal River",
+   "city": "Fortuna",
+   "stars": 4,
+   "extra": [
+    "river",
+    "thermal"
+   ],
+   "missing": [],
+   "nuitee": "lp6b531"
+  },
+  {
+   "id": "sandals-dunns-river",
+   "ours": "Sandals Dunn's River",
+   "liteapi": "Sandals Dunns River  - Couples Only - All-inclusive",
+   "city": "Ocho Rios",
+   "stars": 4,
+   "extra": [
+    "dunns"
+   ],
+   "missing": [
+    "dunn",
+    "s"
+   ],
+   "nuitee": "lp656d9b90"
+  },
+  {
+   "id": "terra-dominicata",
+   "ours": "Terra Dominicata",
+   "liteapi": "Terra Dominicata - Hotel & Winery - Adults Only",
+   "city": "Escaladei",
+   "stars": 5,
+   "extra": [
+    "winery"
+   ],
+   "missing": [],
+   "nuitee": "lpd013e"
+  },
+  {
+   "id": "tortuga-bay-puntacana",
+   "ours": "Tortuga Bay Puntacana",
+   "liteapi": "Tortuga Bay",
+   "city": "Punta Cana",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "puntacana"
+   ],
+   "nuitee": "lp3b9a8"
+  },
+  {
+   "id": "ashford-castle",
+   "ours": "Ashford Castle",
+   "liteapi": "The Lodge at Ashford Castle",
+   "city": "Cong",
+   "stars": 4,
+   "extra": [
+    "lodge"
+   ],
+   "missing": [],
+   "nuitee": "lp76c26"
+  },
+  {
+   "id": "der-oschberghof",
+   "ours": "Der Öschberghof",
+   "liteapi": "Der Öschberghof - Golf-Resort des Jahres",
+   "city": "Donaueschingen",
+   "stars": 5,
+   "extra": [
+    "jahres"
+   ],
+   "missing": [],
+   "nuitee": "lp5a8dc"
+  },
+  {
+   "id": "four-seasons-cabo-del-sol",
+   "ours": "Four Seasons Resort and Residences Cabo San Lucas at Cabo Del Sol",
+   "liteapi": "Four Seasons Resort Cabo Del Sol",
+   "city": "El Tule",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "residences"
+   ],
+   "nuitee": "lp6575b16b"
+  },
+  {
+   "id": "grand-velas-boutique-los-cabos",
+   "ours": "Grand Velas Boutique Los Cabos",
+   "liteapi": "Grand Velas Boutique Hotel",
+   "city": "San José del Cabo",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "cabos"
+   ],
+   "nuitee": "lp656c9999"
+  },
+  {
+   "id": "hotel-de-la-ville-a-rocco-forte-hotel",
+   "ours": "Hotel de la Ville, a Rocco Forte Hotel",
+   "liteapi": "Grand Hotel de la Ville",
+   "city": "Sorrento",
+   "stars": 4,
+   "extra": [
+    "grand"
+   ],
+   "missing": [
+    "forte",
+    "rocco"
+   ],
+   "nuitee": "lp38ac8"
+  },
+  {
+   "id": "huka-lodge-taupo",
+   "ours": "Huka Lodge",
+   "liteapi": "Huka Lodge, Beckons",
+   "city": "Taupo",
+   "stars": 5,
+   "extra": [
+    "beckons"
+   ],
+   "missing": [],
+   "nuitee": "lp2a78a"
+  },
+  {
+   "id": "portrait-milano",
+   "ours": "Portrait Milano",
+   "liteapi": "Portrait Milano - Lungarno Collection",
+   "city": "Milan",
+   "stars": 5,
+   "extra": [
+    "lungarno"
+   ],
+   "missing": [],
+   "nuitee": "lp6558521f"
+  },
+  {
+   "id": "the-connaught-london",
+   "ours": "The Connaught",
+   "liteapi": "The Connaught, Maybourne",
+   "city": "London",
+   "stars": 5,
+   "extra": [
+    "maybourne"
+   ],
+   "missing": [],
+   "nuitee": "lp2a32e"
+  },
+  {
+   "id": "trisara-phuket",
+   "ours": "Trisara",
+   "liteapi": "Trisara Villas & Residences Phuket",
+   "city": "Nai Thon Beach",
+   "stars": 5,
+   "extra": [
+    "residences",
+    "villas"
+   ],
+   "missing": [],
+   "nuitee": "lp4fe17"
+  },
+  {
+   "id": "villa-santandrea-a-belmond-hotel",
+   "ours": "Villa Sant'Andrea, A Belmond Hotel",
+   "liteapi": "Villa Sant'Andrea, A Belmond Hotel, Taormina Mare",
+   "city": "Taormina",
+   "stars": 5,
+   "extra": [
+    "mare"
+   ],
+   "missing": [],
+   "nuitee": "lp57215"
+  },
+  {
+   "id": "budersand-hotel",
+   "ours": "BUDERSAND Hotel",
+   "liteapi": "BUDERSAND Hotel - Golf & Spa - Sylt",
+   "city": "Hörnum",
+   "stars": 5,
+   "extra": [
+    "sylt"
+   ],
+   "missing": [],
+   "nuitee": "lp655a5360"
+  },
+  {
+   "id": "blackberry-farm-tennessee",
+   "ours": "Blackberry Farm",
+   "liteapi": "Hidden Star Hideaway-Blackberry Farm-Smoky Mtn Nat Park-Hot Tub- Fire Pit- Fenced Yard- Pet Friendly",
+   "city": "Walland",
+   "stars": 4,
+   "extra": [
+    "fenced",
+    "fire",
+    "friendly",
+    "hidden",
+    "hideaway",
+    "hot",
+    "mtn",
+    "nat",
+    "park",
+    "pet",
+    "pit",
+    "smoky",
+    "tub",
+    "yard"
+   ],
+   "missing": [],
+   "nuitee": "lp6572f72b"
+  },
+  {
+   "id": "claridges-london",
+   "ours": "Claridge's",
+   "liteapi": "Claridge's, Maybourne",
+   "city": "London",
+   "stars": 5,
+   "extra": [
+    "maybourne"
+   ],
+   "missing": [],
+   "nuitee": "lp2a32c"
+  },
+  {
+   "id": "deplar-farm-iceland",
+   "ours": "Deplar Farm",
+   "liteapi": "Eleven Deplar Farm",
+   "city": "Skagafjörour",
+   "stars": 4,
+   "extra": [
+    "eleven"
+   ],
+   "missing": [],
+   "nuitee": "lp657cf3b1"
+  },
+  {
+   "id": "explora-torres-del-paine",
+   "ours": "Explora Torres del Paine",
+   "liteapi": "Explora en Torres del Paine",
+   "city": "Torres del Paine",
+   "stars": 5,
+   "extra": [
+    "en"
+   ],
+   "missing": [],
+   "nuitee": "lp5bd2a"
+  },
+  {
+   "id": "fairmont-mayakoba",
+   "ours": "Fairmont Mayakoba",
+   "liteapi": "Fairmont Mayakoba Riviera Maya - All Inclusive",
+   "city": "Playa del Carmen",
+   "stars": 5,
+   "extra": [
+    "maya",
+    "riviera"
+   ],
+   "missing": [],
+   "nuitee": "lp3a57e"
+  },
+  {
+   "id": "hotel-hacienda-de-abajo-la-palma",
+   "ours": "Hotel Hacienda de Abajo - Adults Only",
+   "liteapi": "Hotel Hacienda de Abajo-Adults Only-Lujo",
+   "city": "Tazacorte",
+   "stars": 4,
+   "extra": [
+    "lujo"
+   ],
+   "missing": [],
+   "nuitee": "lp6b146"
+  },
+  {
+   "id": "hotel-les-trois-rois",
+   "ours": "Hotel Les Trois Rois",
+   "liteapi": "Grand Hotel LES TROIS ROIS",
+   "city": "Basel",
+   "stars": 5,
+   "extra": [
+    "grand"
+   ],
+   "missing": [],
+   "nuitee": "lp1aae7"
+  },
+  {
+   "id": "hotel-de-crillon-paris",
+   "ours": "Hôtel de Crillon, A Rosewood Hotel",
+   "liteapi": "Hotel de Crillon",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "rosewood"
+   ],
+   "nuitee": "lp1b77b"
+  },
+  {
+   "id": "lapogee-courchevel",
+   "ours": "L'Apogée Courchevel",
+   "liteapi": "Apogée Courchevel, Oetker Hotels",
+   "city": "Courchevel",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "l"
+   ],
+   "nuitee": "lpb9723"
+  },
+  {
+   "id": "lux-grand-gaube",
+   "ours": "LUX Grand Gaube",
+   "liteapi": "LUX* Grand Gaube Resort & Villas",
+   "city": "Grand Gaube",
+   "stars": 5,
+   "extra": [
+    "villas"
+   ],
+   "missing": [],
+   "nuitee": "lp39e41"
+  },
+  {
+   "id": "nekajui-ritz-carlton-reserve-costa-rica",
+   "ours": "Nekajui, a Ritz-Carlton Reserve",
+   "liteapi": "Nekajui Peninsula Papagayo, a Ritz-Carlton Reserve Residence",
+   "city": "Papagayo",
+   "stars": 5,
+   "extra": [
+    "residence"
+   ],
+   "missing": [],
+   "nuitee": "lp6587ecec"
+  },
+  {
+   "id": "paradisus-gran-canaria",
+   "ours": "Paradisus by Meliá Gran Canaria",
+   "liteapi": "Paradisus Gran Canaria – All Inclusive",
+   "city": "San Bartolomé de Tirajana",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "melia"
+   ],
+   "nuitee": "lp1fce1"
+  },
+  {
+   "id": "spa-and-golf-hotel-weimarer-land",
+   "ours": "Spa & Golf Hotel Weimarer Land",
+   "liteapi": "Spa & GolfResort Weimarer Land",
+   "city": "Blankenhain",
+   "stars": 5,
+   "extra": [
+    "golfresort"
+   ],
+   "missing": [],
+   "nuitee": "lp690a0"
+  },
+  {
+   "id": "susana-balbo-winemakers-house-and-spa-suites-relais-and-chat",
+   "ours": "Susana Balbo Winemaker's House & Spa Suites – Relais & Châteaux",
+   "liteapi": "Susana Balbo Winemaker's House - Relais & Chateaux",
+   "city": "Ciudad Lujan de Cuyo",
+   "stars": null,
+   "extra": [],
+   "missing": [
+    "suites"
+   ],
+   "nuitee": "lp6557597f"
+  },
+  {
+   "id": "the-dolli-at-acropolis",
+   "ours": "THE DOLLI at Acropolis",
+   "liteapi": "THE DOLLI at Acropolis, A Hotel to Live",
+   "city": "Athens",
+   "stars": 5,
+   "extra": [
+    "live"
+   ],
+   "missing": [],
+   "nuitee": "lp6559265f"
+  },
+  {
+   "id": "the-brando",
+   "ours": "The Brando",
+   "liteapi": "The Brando, Tetiaroa Private Island",
+   "city": "Arue",
+   "stars": 5,
+   "extra": [
+    "island",
+    "private"
+   ],
+   "missing": [],
+   "nuitee": "lp776e2"
+  },
+  {
+   "id": "the-emory-london",
+   "ours": "The Emory",
+   "liteapi": "The Emory, Maybourne",
+   "city": "London",
+   "stars": 5,
+   "extra": [
+    "maybourne"
+   ],
+   "missing": [],
+   "nuitee": "lp656d28b6"
+  },
+  {
+   "id": "montage-kapalua-bay",
+   "ours": "The Resort at Kapalua Bay",
+   "liteapi": "Montage Kapalua Bay Collection by KBM - 2 Units (6301/6401)",
+   "city": "Kapalua",
+   "stars": 5,
+   "extra": [
+    "kbm",
+    "montage",
+    "units"
+   ],
+   "missing": [],
+   "nuitee": "lp658775fa"
+  },
+  {
+   "id": "the-woodward",
+   "ours": "The Woodward",
+   "liteapi": "The Woodward - Auberge Collection",
+   "city": "Geneva",
+   "stars": 5,
+   "extra": [
+    "auberge"
+   ],
+   "missing": [],
+   "nuitee": "lp6556d56c"
+  },
+  {
+   "id": "turtle-inn-belize",
+   "ours": "Turtle Inn",
+   "liteapi": "Turtle Inn by Francis Ford Coppola",
+   "city": "Placencia Village",
+   "stars": 5,
+   "extra": [
+    "coppola",
+    "ford",
+    "francis"
+   ],
+   "missing": [],
+   "nuitee": "lp274bdc"
+  },
+  {
+   "id": "villeroy",
+   "ours": "Villeroy",
+   "liteapi": "Maison Villeroy",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [
+    "maison"
+   ],
+   "missing": [],
+   "nuitee": "lp655a4707"
+  },
+  {
+   "id": "waldorf-astoria-riviera-maya",
+   "ours": "Waldorf Astoria Riviera Maya, an All-Inclusive Experience",
+   "liteapi": "Waldorf Astoria Riviera Maya",
+   "city": "Cancún",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "experience"
+   ],
+   "nuitee": "lp6556d9c9"
+  },
+  {
+   "id": "wellness-and-sport-hotel-jagdhof",
+   "ours": "Wellness & Sport Hotel Jagdhof",
+   "liteapi": "Wellness- & Sporthotel Jagdhof",
+   "city": "Roehrnbach",
+   "stars": 5,
+   "extra": [
+    "sporthotel"
+   ],
+   "missing": [
+    "sport"
+   ],
+   "nuitee": "lp28ae22"
+  },
+  {
+   "id": "zadun-ritz-carlton-reserve",
+   "ours": "Zadún, a Ritz-Carlton Reserve",
+   "liteapi": "Zadun Los Cabos, a Ritz-Carlton Reserve",
+   "city": "San José del Cabo",
+   "stars": 5,
+   "extra": [
+    "cabos"
+   ],
+   "missing": [],
+   "nuitee": "lp1e7d2e"
+  },
+  {
+   "id": "caldera-house",
+   "ours": "Caldera House",
+   "liteapi": "Caldera House Jackson Hole",
+   "city": "Teton Village",
+   "stars": 4,
+   "extra": [
+    "hole",
+    "jackson"
+   ],
+   "missing": [],
+   "nuitee": "lp35f318"
+  },
+  {
+   "id": "cavallo-point-lodge",
+   "ours": "Cavallo Point Lodge",
+   "liteapi": "Cavallo Point",
+   "city": "Sausalito",
+   "stars": 4,
+   "extra": [],
+   "missing": [
+    "lodge"
+   ],
+   "nuitee": "lp40f0e"
+  },
+  {
+   "id": "delaire-graff-estate",
+   "ours": "Delaire Graff Estate",
+   "liteapi": "Delaire Graff Lodges and Spa",
+   "city": "Stellenbosch",
+   "stars": 5,
+   "extra": [
+    "lodges"
+   ],
+   "missing": [],
+   "nuitee": "lp620be"
+  },
+  {
+   "id": "emiliano-rio-an-slh-hotel",
+   "ours": "Emiliano Rio, an SLH Hotel",
+   "liteapi": "Emiliano Rio",
+   "city": "Rio de Janeiro",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "slh"
+   ],
+   "nuitee": "lp9d91c"
+  },
+  {
+   "id": "four-seasons-whistler",
+   "ours": "Four Seasons Resort and Residences Whistler",
+   "liteapi": "Four Seasons Resort Whistler",
+   "city": "Whistler",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "residences"
+   ],
+   "nuitee": "lp35410"
+  },
+  {
+   "id": "grand-hotel-victoria",
+   "ours": "Grand Hotel Victoria",
+   "liteapi": "Grand Hotel Victoria concept & spa, by R Collection Hotels",
+   "city": "Menaggio",
+   "stars": 5,
+   "extra": [
+    "concept",
+    "r"
+   ],
+   "missing": [],
+   "nuitee": "lp65555bf6"
+  },
+  {
+   "id": "il-sereno",
+   "ours": "Il Sereno",
+   "liteapi": "Il Sereno Lago di Como",
+   "city": "Torno",
+   "stars": 5,
+   "extra": [
+    "como",
+    "lago"
+   ],
+   "missing": [],
+   "nuitee": "lp9d2e9"
+  },
+  {
+   "id": "la-bastide-de-gordes",
+   "ours": "La Bastide de Gordes",
+   "liteapi": "Airelles Gordes, La Bastide",
+   "city": "Gordes",
+   "stars": 5,
+   "extra": [
+    "airelles"
+   ],
+   "missing": [],
+   "nuitee": "lp4c4ac"
+  },
+  {
+   "id": "le-royal-monceau",
+   "ours": "Le Royal Monceau",
+   "liteapi": "Hôtel Le Royal Monceau Raffles Paris",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [
+    "raffles"
+   ],
+   "missing": [],
+   "nuitee": "lp2b5d3"
+  },
+  {
+   "id": "lucknam-park-hotel-and-spa",
+   "ours": "Lucknam Park Hotel & Spa",
+   "liteapi": "Lucknam Park, Emblems Collection",
+   "city": "Chippenham",
+   "stars": 5,
+   "extra": [
+    "emblems"
+   ],
+   "missing": [],
+   "nuitee": "lp2f175"
+  },
+  {
+   "id": "sanctuary-cap-cana",
+   "ours": "Sanctuary Cap Cana, a Luxury Collection Resort",
+   "liteapi": "Sanctuary Cap Cana, a Luxury Collection Resort, Dominican Republic, Adult All-Inclusive",
+   "city": "Punta Cana",
+   "stars": 5,
+   "extra": [
+    "adult"
+   ],
+   "missing": [],
+   "nuitee": "lp4b7ec"
+  },
+  {
+   "id": "santa-catalina-royal-hideaway-gran-canaria",
+   "ours": "Santa Catalina, a Royal Hideaway Hotel",
+   "liteapi": "Santa Catalina, a Royal Hideaway Hotel - Gran Lujo",
+   "city": "Las Palmas de Gran Canaria",
+   "stars": 5,
+   "extra": [
+    "lujo"
+   ],
+   "missing": [],
+   "nuitee": "lp1b6c2"
+  },
+  {
+   "id": "the-louise-barossa",
+   "ours": "The Louise",
+   "liteapi": "The Louise, Beckons",
+   "city": "Marananga",
+   "stars": 5,
+   "extra": [
+    "beckons"
+   ],
+   "missing": [],
+   "nuitee": "lp77040"
+  },
+  {
+   "id": "thyme",
+   "ours": "Thyme",
+   "liteapi": "Thyme Cottage",
+   "city": "Whitby",
+   "stars": 4,
+   "extra": [
+    "cottage"
+   ],
+   "missing": [],
+   "nuitee": "lp656a2a89"
+  },
+  {
+   "id": "roca-nivaria-gh-tenerife",
+   "ours": "Adrián Hoteles Roca Nivaria GH",
+   "liteapi": "Roca Nivaria Gran Hotel",
+   "city": "Adeje",
+   "stars": 5,
+   "extra": [
+    "gran"
+   ],
+   "missing": [
+    "adrian",
+    "gh",
+    "hoteles"
+   ],
+   "nuitee": "lp3946b"
+  },
+  {
+   "id": "alila-fort-bishangarh",
+   "ours": "Alila Fort Bishangarh",
+   "liteapi": "Alila Fort Bishangarh Jaipur - A Hyatt Brand",
+   "city": "Jaipur",
+   "stars": 5,
+   "extra": [
+    "brand"
+   ],
+   "missing": [],
+   "nuitee": "lpa3a7f"
+  },
+  {
+   "id": "alila-hinu-bay",
+   "ours": "Alila Hinu Bay",
+   "liteapi": "Alila Hinu Bay Salalah Mirbat",
+   "city": "Salalah",
+   "stars": 5,
+   "extra": [
+    "mirbat"
+   ],
+   "missing": [],
+   "nuitee": "lp6556d547"
+  },
+  {
+   "id": "armani-hotel-dubai",
+   "ours": "Armani Hotel Dubai",
+   "liteapi": "Armani Hotel Dubai, Burj Khalifa",
+   "city": "Dubai",
+   "stars": 5,
+   "extra": [
+    "burj",
+    "khalifa"
+   ],
+   "missing": [],
+   "nuitee": "lp52bdd"
+  },
+  {
+   "id": "bahia-del-duque-tenerife",
+   "ours": "Bahía del Duque",
+   "liteapi": "The Villas at Bahia del Duque",
+   "city": "Adeje",
+   "stars": 5,
+   "extra": [
+    "villas"
+   ],
+   "missing": [],
+   "nuitee": "lp2b5cb"
+  },
+  {
+   "id": "casamolle",
+   "ours": "CasaMolle",
+   "liteapi": "Casamolle Villa & Golf",
+   "city": "Vicuña",
+   "stars": 3,
+   "extra": [
+    "villa"
+   ],
+   "missing": [],
+   "nuitee": "lp1c6c69"
+  },
+  {
+   "id": "st-regis-bahia-beach-puerto-rico",
+   "ours": "Four Seasons Resort Puerto Rico",
+   "liteapi": "St. Regis Bahia Beach Resort, Puerto Rico",
+   "city": "Rio Grande",
+   "stars": 5,
+   "extra": [
+    "bahia",
+    "regis",
+    "st"
+   ],
+   "missing": [
+    "four",
+    "seasons"
+   ],
+   "nuitee": "lp5677e"
+  },
+  {
+   "id": "halekulani",
+   "ours": "Halekulani",
+   "liteapi": "Halepuna Waikiki by Halekulani - NO RESORT FEE",
+   "city": "Honolulu",
+   "stars": 4,
+   "extra": [
+    "fee",
+    "halepuna",
+    "no",
+    "waikiki"
+   ],
+   "missing": [],
+   "nuitee": "lp22856"
+  },
+  {
+   "id": "hotel-xcaret-arte",
+   "ours": "Hotel Xcaret Arte",
+   "liteapi": "Hotel Xcaret Arte - All Parks All Fun Inclusive - Adults Only",
+   "city": "Playa del Carmen",
+   "stars": 5,
+   "extra": [
+    "fun",
+    "parks"
+   ],
+   "missing": [],
+   "nuitee": "lp6556cff2"
+  },
+  {
+   "id": "hyatt-zilara-cancun-google-hoteles",
+   "ours": "Hyatt Zilara Cancun - Google Hoteles",
+   "liteapi": "Hyatt Zilara Cancun - All Inclusive - Adults Only",
+   "city": "Cancún",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "google",
+    "hoteles"
+   ],
+   "nuitee": "lp3da1d"
+  },
+  {
+   "id": "hotel-metropole-monte-carlo",
+   "ours": "Hôtel Métropole Monte-Carlo",
+   "liteapi": "Hôtel Métropole Monte-Carlo - Spa Guerlain",
+   "city": "Monte Carlo",
+   "stars": 5,
+   "extra": [
+    "guerlain"
+   ],
+   "missing": [],
+   "nuitee": "lp532b4"
+  },
+  {
+   "id": "hotel-plaza-athenee-paris",
+   "ours": "Hôtel Plaza Athénée",
+   "liteapi": "Hôtel Plaza Athénée - Dorchester Collection",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [
+    "dorchester"
+   ],
+   "missing": [],
+   "nuitee": "lp74fda"
+  },
+  {
+   "id": "kuda-villingili-maldives",
+   "ours": "Kuda Villingili Resort Maldives",
+   "liteapi": "Kuda Villingili Maldives, Free Return Transfers 03 nights & above",
+   "city": "North Male Atoll",
+   "stars": 5,
+   "extra": [
+    "above",
+    "free",
+    "nights",
+    "return",
+    "transfers"
+   ],
+   "missing": [],
+   "nuitee": "lp65570da1"
+  },
+  {
+   "id": "le-meurice",
+   "ours": "Le Meurice",
+   "liteapi": "Le Meurice – Dorchester Collection",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [
+    "dorchester"
+   ],
+   "missing": [],
+   "nuitee": "lp29c41"
+  },
+  {
+   "id": "majestic-hotel-and-spa-barcelona",
+   "ours": "Majestic Hotel & Spa Barcelona",
+   "liteapi": "Majestic Hotel & Spa Barcelona GL",
+   "city": "Barcelona",
+   "stars": 5,
+   "extra": [
+    "gl"
+   ],
+   "missing": [],
+   "nuitee": "lp1c589"
+  },
+  {
+   "id": "taj-cape-town-south-africa",
+   "ours": "Taj Cape Town, South Africa",
+   "liteapi": "Luxury Residence 906 at Taj Cape Town",
+   "city": "Cape Town",
+   "stars": 5,
+   "extra": [
+    "residence"
+   ],
+   "missing": [],
+   "nuitee": "lp657320b1"
+  },
+  {
+   "id": "the-berkeley-london",
+   "ours": "The Berkeley",
+   "liteapi": "The Berkeley, Maybourne",
+   "city": "London",
+   "stars": 5,
+   "extra": [
+    "maybourne"
+   ],
+   "missing": [],
+   "nuitee": "lp2a32d"
+  },
+  {
+   "id": "the-leela-hyderabad",
+   "ours": "The Leela Hyderabad",
+   "liteapi": "The Leela Hyderabad Banjara Hills",
+   "city": "Hyderabad",
+   "stars": 5,
+   "extra": [
+    "banjara",
+    "hills"
+   ],
+   "missing": [],
+   "nuitee": "lp657e01cd"
+  },
+  {
+   "id": "viceroy-riviera-maya",
+   "ours": "Viceroy Riviera Maya",
+   "liteapi": "Viceroy Riviera Maya, a Luxury Villa Resort - Adults Only",
+   "city": "Playa del Carmen",
+   "stars": 5,
+   "extra": [
+    "villa"
+   ],
+   "missing": [],
+   "nuitee": "lp3082f"
+  },
+  {
+   "id": "vitalhotel-alter-meierhof",
+   "ours": "Vitalhotel Alter Meierhof",
+   "liteapi": "Alter Meierhof Glücksburg",
+   "city": "Glücksburg",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "vitalhotel"
+   ],
+   "nuitee": "lp684b5"
+  },
+  {
+   "id": "commodore-perry-estate-auberge-collection",
+   "ours": "Commodore Perry Estate, Auberge Collection",
+   "liteapi": "Commodore Perry Estate",
+   "city": "Austin",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "auberge"
+   ],
+   "nuitee": "lp6554ae10"
+  },
+  {
+   "id": "gorgeous-george-hotel",
+   "ours": "Gorgeous George Hotel",
+   "liteapi": "Gorgeous George by Design Hotels ™",
+   "city": "Cape Town",
+   "stars": null,
+   "extra": [
+    "design",
+    "tm"
+   ],
+   "missing": [],
+   "nuitee": "lp1c5dfc"
+  },
+  {
+   "id": "hotel-barriere-fouquets-new-york",
+   "ours": "Hotel Barrière Fouquet's New York",
+   "liteapi": "Fouquet's New York",
+   "city": "New York",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "barriere"
+   ],
+   "nuitee": "lp6558ae8f"
+  },
+  {
+   "id": "luisenhohe",
+   "ours": "Luisenhöhe",
+   "liteapi": "Luisenhöhe - Gesundheitsresort Schwarzwald",
+   "city": "Horben",
+   "stars": 5,
+   "extra": [
+    "gesundheitsresort",
+    "schwarzwald"
+   ],
+   "missing": [],
+   "nuitee": "lp657fc5b7"
+  },
+  {
+   "id": "nolinski",
+   "ours": "Nolinski",
+   "liteapi": "Nolinski Paris - Evok Collection",
+   "city": "Paris",
+   "stars": 5,
+   "extra": [
+    "evok"
+   ],
+   "missing": [],
+   "nuitee": "lp9d2d7"
+  },
+  {
+   "id": "sandy-lane-barbados",
+   "ours": "Sandy Lane",
+   "liteapi": "Villa Highlands at Sandy Lane",
+   "city": "Holetown",
+   "stars": 5,
+   "extra": [
+    "highlands",
+    "villa"
+   ],
+   "missing": [],
+   "nuitee": "lp65557762"
+  },
+  {
+   "id": "andaz-maui-wailea",
+   "ours": "Andaz Maui at Wailea Resort",
+   "liteapi": "Andaz Maui at Wailea Resort - A Concept by Hyatt",
+   "city": "Wailea",
+   "stars": 5,
+   "extra": [
+    "concept"
+   ],
+   "missing": [],
+   "nuitee": "lp1bfc8"
+  },
+  {
+   "id": "cordis-auckland",
+   "ours": "Cordis, Auckland",
+   "liteapi": "Cordis, Auckland by Langham Hospitality Group",
+   "city": "Auckland",
+   "stars": 5,
+   "extra": [
+    "group",
+    "hospitality",
+    "langham"
+   ],
+   "missing": [],
+   "nuitee": "lp19dd6"
+  },
+  {
+   "id": "eclipse-at-half-moon-jamaica",
+   "ours": "Eclipse at Half Moon",
+   "liteapi": "Half Moon",
+   "city": "Montego Bay",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "eclipse"
+   ],
+   "nuitee": "lp34ce1"
+  },
+  {
+   "id": "la-cheneaudiere",
+   "ours": "La Cheneaudière",
+   "liteapi": "LA CHENEAUDIÈRE - Hôtel Spa - Relais & Châteaux - Restaurant étoilé",
+   "city": "Colroy-la-Roche",
+   "stars": 5,
+   "extra": [
+    "etoile",
+    "restaurant"
+   ],
+   "missing": [],
+   "nuitee": "lp605c6"
+  },
+  {
+   "id": "o2-beach-club-barbados",
+   "ours": "O2 Beach Club & Spa",
+   "liteapi": "O2 Beach Club & Spa All Inclusive by Ocean Hotels",
+   "city": "Christ Church",
+   "stars": 5,
+   "extra": [
+    "ocean"
+   ],
+   "missing": [],
+   "nuitee": "lp5a35e"
+  },
+  {
+   "id": "paradisus-salinas-lanzarote",
+   "ours": "Paradisus by Meliá Salinas Lanzarote - Adults Only",
+   "liteapi": "Paradisus Salinas Lanzarote - All Inclusive - Adults Only",
+   "city": "Costa Teguise",
+   "stars": 5,
+   "extra": [],
+   "missing": [
+    "melia"
+   ],
+   "nuitee": "lp29e8f"
+  },
+  {
+   "id": "sandals-saint-vincent",
+   "ours": "Sandals Saint Vincent and the Grenadines",
+   "liteapi": "Sandals St. Vincent and the Grenadines  Couples Only",
+   "city": "Kingstown",
+   "stars": 4,
+   "extra": [
+    "st"
+   ],
+   "missing": [],
+   "nuitee": "lp656dc330"
+  },
+  {
+   "id": "santa-monica-proper",
+   "ours": "Santa Monica Proper Hotel",
+   "liteapi": "Santa Monica Proper Hotel, a Member of Design Hotels",
+   "city": "Santa Monica",
+   "stars": 5,
+   "extra": [
+    "design",
+    "member"
+   ],
+   "missing": [],
+   "nuitee": "lp1c6c54"
+  },
+  {
+   "id": "airelles-courchevel",
+   "ours": "Airelles Courchevel, Les Airelles",
+   "liteapi": "Chalet Hôtel Les Airelles",
+   "city": "Pralognan-la-Vanoise",
+   "stars": 3,
+   "extra": [
+    "chalet"
+   ],
+   "missing": [],
+   "nuitee": "lp655bdfd2"
+  },
+  {
+   "id": "fontainebleau-las-vegas",
+   "ours": "Fontainebleau Las Vegas",
+   "liteapi": "Fontainebleau Las Vegas, MICHELIN Key Award Hotel",
+   "city": "Las Vegas",
+   "stars": 5,
+   "extra": [
+    "award",
+    "key",
+    "michelin"
+   ],
+   "missing": [],
+   "nuitee": "lp656bbd6b"
+  },
+  {
+   "id": "dreams-lanzarote-playa-dorada",
+   "ours": "Grand Hyatt Lanzarote Playa Dorada Resort",
+   "liteapi": "Dreams Lanzarote Playa Dorada Resort & Spa",
+   "city": "Yaiza",
+   "stars": 5,
+   "extra": [
+    "dreams"
+   ],
+   "missing": [
+    "grand"
+   ],
+   "nuitee": "lp2bd96"
+  },
+  {
+   "id": "the-lana-dorchester-dubai",
+   "ours": "The Lana, Dubai",
+   "liteapi": "The Lana - Dorchester Collection",
+   "city": "Dubai",
+   "stars": 5,
+   "extra": [
+    "dorchester"
+   ],
+   "missing": [],
+   "nuitee": "lp656d4622"
+  },
+  {
+   "id": "pendry-west-hollywood",
+   "ours": "The Sun Rose West Hollywood",
+   "liteapi": "The West Hollywood EDITION",
+   "city": "West Hollywood",
+   "stars": 5,
+   "extra": [
+    "edition"
+   ],
+   "missing": [
+    "rose",
+    "sun"
+   ],
+   "nuitee": "lp1fcda7"
+  },
+  {
+   "id": "arlo-midtown-building-skydb",
+   "ours": "Arlo Midtown - Building - SKYDB",
+   "liteapi": "Arlo Midtown",
+   "city": "New York",
+   "stars": 4,
+   "extra": [],
+   "missing": [
+    "building",
+    "skydb"
+   ],
+   "nuitee": "lp6556b4da"
+  },
+  {
+   "id": "grand-tirolia-kitzbuhel",
+   "ours": "Grand Tirolia Kitzbühel",
+   "liteapi": "Grand Tirolia Kitzbühel - Member of Hommage Luxury Hotels Collection",
+   "city": "Kitzbuehel",
+   "stars": 5,
+   "extra": [
+    "hommage",
+    "member"
+   ],
+   "missing": [],
+   "nuitee": "lp5212c"
+  },
+  {
+   "id": "anantara-uluwatu-bali-resort",
+   "ours": "Svanata Uluwatu Bali Resort",
+   "liteapi": "Anantara Uluwatu Bali Resort",
+   "city": "Uluwatu",
+   "stars": 5,
+   "extra": [
+    "anantara"
+   ],
+   "missing": [
+    "svanata"
+   ],
+   "nuitee": "lp5cbdf"
+  },
+  {
+   "id": "moor-hall",
+   "ours": "Moor Hall",
+   "liteapi": "Birmingham North Moor Hall Hotel BW Premier Collection",
+   "city": "Sutton Coldfield",
+   "stars": 4,
+   "extra": [
+    "birmingham",
+    "bw",
+    "north",
+    "premier"
+   ],
+   "missing": [],
+   "nuitee": "lp887e4"
+  },
+  {
+   "id": "melia-fuerteventura",
+   "ours": "Meliá Fuerteventura",
+   "liteapi": "SOL by Meliá Fuerteventura Jandia - All Suites",
+   "city": "Morro del Jable",
+   "stars": 4,
+   "extra": [
+    "jandia",
+    "sol",
+    "suites"
+   ],
+   "missing": [],
+   "nuitee": "lp29e8b"
+  },
+  {
+   "id": "kimpton-theta-new-york",
+   "ours": "Kimpton Hotel Theta New York",
+   "liteapi": "Kimpton Theta New York - Times Square by IHG",
+   "city": "New York",
+   "stars": 5,
+   "extra": [
+    "square",
+    "times"
+   ],
+   "missing": [],
+   "nuitee": "lp1a1b2"
+  },
+  {
+   "id": "the-siam-bangkok",
+   "ours": "The Siam",
+   "liteapi": "The Siam Heritage Hotel",
+   "city": "Bangkok",
+   "stars": 4,
+   "extra": [
+    "heritage"
+   ],
+   "missing": [],
+   "nuitee": "lp440a9"
+  },
+  {
+   "id": "twa-hotel",
+   "ours": "TWA Hotel",
+   "liteapi": "TWA Hotel at JFK Airport",
+   "city": "Jamaica",
+   "stars": 4,
+   "extra": [
+    "airport",
+    "jfk"
+   ],
+   "missing": [],
+   "nuitee": "lp655577b3"
+  }
+ ]
+}
