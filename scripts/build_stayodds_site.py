@@ -99,6 +99,7 @@ def _load_json(name: str) -> dict[str, Any]:
 GUEST_RANKS: dict[str, dict[str, Any]] = {}  # filled in render_static_pages_from_directory()
 ALTERNATIVES: dict[str, list[dict[str, Any]]] = {}  # better-rated hotels nearby (build_insights.better_alternatives)
 from water_rules import summarise as water_summary  # noqa: E402
+ITWF = _load_json("isthewaterfree.json")  # water policy, critic lists (isthewaterfree.com, shared by its owner)
 DINING = _load_json("hotel-dining.json")  # restaurants at the hotel, MICHELIN Guide (scripts/michelin_dining.py)
 GUEST_QUOTES = _load_json("guest-quotes.json")  # real guest comments (scripts/fetch_guest_quotes.py)
 COMMUNITY = _load_json("community-mentions.json").get("hotels", {})  # forum threads, blogs, press links
@@ -1473,9 +1474,22 @@ def render_seo_page(
             + '. Source: MICHELIN Guide.</span></div>'
         )
 
-    # Drinking water, as guests report it in their reviews (scripts/fetch_guest_quotes.py)
+    # Drinking water: isthewaterfree.com's checked policy first, else what guests say in our reviews feed
+    _iw = h.get("itwf") or {}
     _w = h.get("water") or {}
-    if _w.get("reports"):
+    if _iw.get("status"):
+        _st = _iw["status"]
+        _bad = bool(re.search(r"charg|rationed|paid|not free|cost", _st + " " + (_iw.get("summary") or ""), re.I))
+        _extra = " · ".join(f"{k}: {v}" for k, v in (("Pool", _iw.get("pool")), ("Gym", _iw.get("gym"))) if v and "not checked" not in v.lower())
+        trip_tiles.append(
+            f'<div class="detail-trip-tile {"is-alert" if _bad else ""}">'
+            f'<span class="detail-trip-kicker">Drinking water</span>'
+            f'<strong class="detail-trip-val">{esc(_st)}{(" · " + esc(_iw["label"])) if _iw.get("label") else ""}</strong>'
+            f'<span class="detail-trip-sub">{esc(_iw.get("summary") or "")}{(" " + esc(_extra) + ".") if _extra else ""} '
+            f'Source: <a href="{esc(_iw["url"])}" target="_blank" rel="noopener">isthewaterfree.com</a>.</span>'
+            f'</div>'
+        )
+    elif _w.get("reports"):
         _free, _paid = int(_w.get("free") or 0), int(_w.get("paid") or 0)
         if _paid and not _free:
             _wv, _wcls = "Guests say water isn't free", "is-alert"
@@ -1776,6 +1790,12 @@ def render_seo_page(
         _chips.append(f'<a class="so2-chip is-award" href="{esc(_r["url"])}" target="_blank" rel="noopener noreferrer">{esc(_r["name"])} · {esc(_r["distinction"])}</a>')
     for _a in o["awards"][:3]:
         _chips.append(f'<a class="so2-chip is-award" href="{esc(_a["sourceUrl"])}" target="_blank" rel="noopener noreferrer">{ICO_TROPHY} {esc(_a["label"])}</a>')
+    _known = " ".join(a["label"] for a in o["awards"]).lower()
+    _itwf_crit = [c for c in ((h.get("itwf") or {}).get("critics") or [])
+                  if re.search(r"telegraph|cond[eé] nast|travel \+ leisure|gault|la liste", c, re.I)
+                  and not (re.search(r"la liste", c, re.I) and "laliste" in _known)]
+    for _c in _itwf_crit[:2]:
+        _chips.append(f'<a class="so2-chip is-award" href="{esc(h["itwf"]["url"])}" target="_blank" rel="noopener">{ICO_TROPHY} {esc(_c)}</a>')
     _rest = max(0, len(o["awards"]) - 3) + len(o["editorial"])
     if _rest:
         _chips.append(f'<a class="so2-chip" href="#more-reviews" data-open-tab="reviews">+{_rest} more award{"s" if _rest != 1 else ""} &amp; critic review{"s" if _rest != 1 else ""}</a>')
@@ -3094,7 +3114,10 @@ def main() -> None:
             "officialAwards": awards_map.get(pid) or [],
             "guestQuotes": None if pid in wrong_lite else GUEST_QUOTES.get(pid),
             "water": None if pid in wrong_lite else water_summary((GUEST_QUOTES.get(pid) or {}).get("waterMentions")),
-            "dining": [r for r in ((DINING.get(pid) or {}).get("restaurants") or []) if r.get("distinction") != "MICHELIN Guide selected"][:3] or None,
+            "itwf": ITWF.get(pid),
+            "dining": ([r for r in ((DINING.get(pid) or {}).get("restaurants") or []) if r.get("distinction") != "MICHELIN Guide selected"][:3]
+                       or [{"name": m.group(1).strip(), "distinction": f"{m.group(2)} MICHELIN Star{'s' if m.group(2) != '1' else ''}", "url": (ITWF.get(pid) or {}).get("url", "")}
+                           for a in ((ITWF.get(pid) or {}).get("award") or []) for m in [re.match(r"(.+?):\s*(\d) Michelin Stars?", a)] if m][:3] or None),
             "communityMentions": COMMUNITY.get(pid) or [],
             "tripadvisor": TRIPADVISOR.get(pid),
         }
@@ -3176,7 +3199,9 @@ def main() -> None:
                                    "text": h["water"]["reports"][0]["text"], "source": h["water"]["reports"][0]["source"]}
                                   if h.get("water") else None),
                         "dining": [{f: r[f] for f in ("name", "distinction", "url")} for r in (h.get("dining") or [])] or None,
-                    }.items() if v} for h in directory if h.get("water") or h.get("dining")}},
+                        "waterPolicy": ({"status": h["itwf"]["status"], "summary": h["itwf"].get("summary", ""), "url": h["itwf"]["url"]}
+                                        if (h.get("itwf") or {}).get("status") else None),
+                    }.items() if v} for h in directory if h.get("water") or h.get("dining") or (h.get("itwf") or {}).get("status")}},
                    separators=(",", ":"), ensure_ascii=False),
         encoding="utf-8",
     )
