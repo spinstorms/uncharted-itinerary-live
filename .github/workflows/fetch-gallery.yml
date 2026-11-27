@@ -7,9 +7,12 @@ on:
         description: "Re-fetch every hotel (otherwise only hotels without a gallery)"
         type: boolean
         default: false
+      search:
+        description: "Only look up LiteAPI candidates: 'Name|CC;Name|CC'"
+        default: ""
   push:
     branches: [main]
-    paths: [scripts/fetch_gallery.py, .github/workflows/fetch-gallery.yml]
+    paths: [scripts/fetch_gallery.py, .github/workflows/fetch-gallery.yml, data/gallery-manual.json]
 
 permissions:
   contents: write
@@ -31,6 +34,7 @@ jobs:
       - name: Fetch galleries
         env:
           NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
+          GALLERY_SEARCH: ${{ inputs.search }}
         run: python3 scripts/fetch_gallery.py ${{ inputs.refresh && '--refresh' || '' }}
       - name: Commit
         id: commit

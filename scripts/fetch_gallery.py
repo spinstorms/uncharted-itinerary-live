@@ -58,9 +58,27 @@ def find_by_name(name: str, country: str, key: str) -> dict | None:
     return None
 
 
+def search(queries: list[str], key: str) -> None:
+    """Print LiteAPI candidates for 'Name|CC' queries, so a hotel can be pinned by hand in data/gallery-manual.json."""
+    for q in queries:
+        name, cc = (q.split("|") + [""])[:2]
+        qs = urllib.parse.urlencode({"countryCode": cc.strip(), "hotelName": name.strip(), "limit": 10})
+        items = ((nuitee_get(f"/v3.0/data/hotels?{qs}", key) or {}).get("data")) or []
+        print(f"## {q}")
+        for it in items:
+            print(f"   {it.get('id')} | {it.get('name')} | {it.get('city')} | {it.get('address')} | stars {it.get('stars')}")
+
+
 def main() -> None:
     load_env_local()
     key = os.environ["NUITEE_API_KEY"].strip()
+    if os.environ.get("GALLERY_SEARCH"):
+        search([q for q in os.environ["GALLERY_SEARCH"].split(";") if q.strip()], key)
+        return
+    manual = {}
+    mf = ROOT / "data" / "gallery-manual.json"
+    if mf.exists():
+        manual = json.loads(mf.read_text(encoding="utf-8")).get("liteapiIds") or {}
     hotels = json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"hotels": {}}
     only = set(a for a in sys.argv[1:] if not a.startswith("--"))
@@ -72,7 +90,7 @@ def main() -> None:
             return hid, old["hotels"].get(hid), None
         if not refresh and not only and old["hotels"].get(hid, {}).get("photos"):
             return hid, old["hotels"][hid], None
-        lid = h.get("nuiteeHotelId")
+        lid = manual.get(hid) or h.get("nuiteeHotelId")
         by_name = None
         if not lid:
             m = find_by_name(h["name"], h.get("country") or "", key)
