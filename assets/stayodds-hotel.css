@@ -92,3 +92,12 @@
 .so2-score + .so2-gap + .so2-actions ~ .so2-highlights,.so2-highlights{margin-top:14px}
 
 .so2-brand-logo{display:block;max-height:34px;max-width:150px;width:auto;margin:10px 0 2px;object-fit:contain}
+
+/* "Full details below": so the page reads as the StayOdds breakdown first, not a booking page */
+.so2-details-jump{display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:12px 16px;border-radius:14px;background:#F7F0E3;border:1px solid #E7DCC8;color:#0F2B33;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.so2-details-jump svg{flex:none;color:#0B7A7A}
+.so2-details-jump span{display:flex;flex-direction:column;gap:2px}
+.so2-details-jump strong{font-size:15px;font-weight:800}
+.so2-details-jump small{font-size:12.5px;color:#3E5A63}
+.so2-details-jump:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(15,43,51,.08)}
+html{scroll-behavior:smooth}

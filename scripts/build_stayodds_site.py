@@ -1791,6 +1791,10 @@ def render_seo_page(
             <button type="button" class="btn btn-outline shortlist-btn" data-shortlist-id="{esc(slug)}" data-resort-name="{esc(h['name'])}" aria-pressed="false">&#9825; Save</button>
             <button type="button" class="btn btn-outline" id="shareHotelCardBtn">{ICO_CAM} Share</button>
           </div>
+          <a class="so2-details-jump" href="#full-details">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l4 4 4-4M12 8v8"/></svg>
+            <span><strong>Full StayOdds details below</strong><small>What guests and critics say, best months, room tips and rivals</small></span>
+          </a>
           <section class="so2-dates" aria-label="Choose your dates">
             <div class="so2-dates-head"><strong>When are you going?</strong><span id="soDatesPicked"></span></div>
             <div class="so2-quick" id="soQuickDates" role="group" aria-label="Quick dates"></div>
@@ -1912,7 +1916,7 @@ def render_seo_page(
   <script>if(window.self!==window.top||location.search.includes("embed=1"))document.documentElement.classList.add("is-embedded");</script>
   <style>.site-header{{background:#071323!important;}}html.is-embedded .site-header,html.is-embedded .site-footer,html.is-embedded .hub-back-link{{display:none!important;}}</style>
   <link rel="stylesheet" href="../../assets/styles.min.css?v=47" />
-  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=5" />
+  <link rel="stylesheet" href="../../assets/stayodds-hotel.css?v=6" />
   <script data-goatcounter="https://stayodds.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){{
@@ -1973,6 +1977,7 @@ def render_seo_page(
           {so_highlights_html}
         </div>
       </section>
+      <div id="full-details" style="scroll-margin-top:84px"></div>
 
       {f'''<section class="detail-section" id="guest-rank">
         <div class="key-facts-panel">
