@@ -455,12 +455,14 @@ def compute_stayodds_py(h: dict[str, Any]) -> dict[str, Any]:
 
 
 CLIMATE_RULES_PY: list[tuple[re.Pattern[str], str, str]] = [
+    # specific Indian Ocean islands first: the Maldives rule would otherwise match their region name
+    (re.compile(r"seychelles|mah[eé]|praslin|f[eé]licit[eé]|platte|desroches|north island", re.I), "Apr–May & Oct–Nov", "Calmest seas & best diving in Apr–May and Oct–Nov transition windows"),
+    (re.compile(r"mauritius", re.I), "May–Nov", "Cool, dry winter & spring avoiding Jan–Mar cyclone season"),
+    (re.compile(r"sri lanka|yala|galle|tangalle|weligama|colombo", re.I), "Dec–Apr", "Dry south & west coast season with calm seas"),
     (re.compile(r"maldives|baa atoll|noonu|raa atoll|ari atoll|mal[eé]|lhaviyani|gaafu|laamu|dhaalu", re.I), "Nov–Apr", "Dry NE monsoon, calmest lagoons & clearest house-reef visibility"),
     (re.compile(r"bali|lombok|gili|labuan bajo|flores|sumba|ubud|seminyak|canggu|nusa dua|uluwatu|jimbaran|indonesia|penida|bintan|jakarta", re.I), "May–Oct", "Dry season with sunny skies, lower humidity & calm seas"),
     (re.compile(r"koh samui|samui|koh phangan", re.I), "Jan–Aug", "Gulf of Thailand dry window (avoids Oct–Dec NE monsoon)"),
     (re.compile(r"krabi|phuket|yao noi|bangkok|chiang mai|chiang rai|khao lak|koh kood|thailand", re.I), "Nov–Apr", "Cool dry season & calm Andaman Sea conditions"),
-    (re.compile(r"seychelles|mah[eé]|praslin|f[eé]licit[eé]|platte|desroches|north island", re.I), "Apr–May & Oct–Mar", "Calmest seas & best diving in Apr–May and Oct–Nov transition windows"),
-    (re.compile(r"mauritius", re.I), "May–Nov", "Cool, dry winter & spring avoiding Jan–Mar cyclone season"),
     (re.compile(r"bora bora|tahiti|tetiaroa|moorea|french polynesia", re.I), "May–Oct", "Dry winter season with lower humidity and clear turquoise lagoons"),
     (re.compile(r"fiji|laucala|vomo|kokomo|malolo", re.I), "May–Oct", "Dry trade-wind season outside Nov–Apr cyclone window"),
     (re.compile(r"riviera maya|cancun|canc[uú]n|costa mujeres|playa mujeres|tulum|mayakoba|caribbean|st\.?\s*barts|st\.?\s*lucia|anguilla|turks|caicos|antigua|barbados|jamaica|bahamas|grenada|aruba|cura[cç]ao|st\.?\s*kitts|dominican|punta cana|cap cana|la romana|puerto rico|bermuda|cayman|st\.?\s*vincent|canouan|nevis|british virgin|virgin gorda", re.I), "Dec–Apr", "Dry season with lower hurricane & summer sargassum seaweed risk"),
@@ -469,7 +471,6 @@ CLIMATE_RULES_PY: list[tuple[re.Pattern[str], str, str]] = [
     (re.compile(r"st\.?\s*moritz|gstaad|courchevel|meg[eè]ve|andermatt|zermatt|verbier|bürgenstock|burgenstock|alps|dolomites|aspen|vail|jackson hole|deer valley|park city|whistler|niseko|estes park|banff|chamonix|lech|kitzb", re.I), "Dec–Mar (Ski) & Jun–Sep", "Prime snowpack in winter; crisp alpine hiking & lakes in summer"),
     (re.compile(r"dubai|abu dhabi|oman|muscat|zighy|doha|qatar|red sea|alula|saudi|jordan|marrakech|morocco|egypt", re.I), "Nov–Apr", "Pleasant 22–30°C sunshine avoiding extreme summer heat"),
     (re.compile(r"udaipur|jaipur|jodhpur|mumbai|new delhi|delhi|hyderabad|bengaluru|chennai|rajasthan|ranthambore|jawai|india", re.I), "Oct–Mar", "Cool dry season outside summer heat and Jun–Sep monsoon"),
-    (re.compile(r"sri lanka|yala|galle|tangalle|weligama|colombo", re.I), "Dec–Apr", "Dry south & west coast season with calm seas"),
     (re.compile(r"tokyo|kyoto|osaka|hakone|amanemu|naoshima|okinawa|japan", re.I), "Mar–May & Oct–Nov", "Cherry blossom spring & crisp autumn foliage seasons"),
     (re.compile(r"singapore|langkawi|kuala lumpur|malaysia|hong kong|seoul|korea|vietnam|hanoi|ph[uú] qu[oố]c|ninh van|bai san ho|cambodia|song saa|phnom penh|siem reap|shanghai|beijing|china|taipei", re.I), "Nov–Apr", "Drier, less humid months across East & Southeast Asia"),
     (re.compile(r"serengeti|masai mara|kenya|tanzania|botswana|okavango|kruger|sabi|singita|rwanda|zambia|zimbabwe|namibia|safari", re.I), "Jun–Oct & Jan–Feb", "Dry safari game-viewing season with sparse bush & wildlife concentrations"),
