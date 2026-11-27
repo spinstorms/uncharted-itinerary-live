@@ -3293,6 +3293,17 @@ def main() -> None:
         raise RuntimeError(f"Brand & Loyalty Audit failed with {len(brand_errors)} error(s). Fix Supabase before building.")
 
     now_iso = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    # the app shows the same photos as the website (card photos, galleries, official photos): id -> absolute url
+    so_gallery("")
+    def _abs(u: str) -> str:
+        u = str(u or "")
+        return u if u.startswith("http") else f"https://uncharteditinerary.com/{u.lstrip('/')}" if u else ""
+    (ROOT / "data" / "app-photos.json").write_text(
+        json.dumps({"updatedAt": now_iso, "photos": {h["id"]: _abs(h.get("thumbnail")) for h in directory if h.get("thumbnail")},
+                    "galleries": {k: [p["u"] for p in v.get("photos", [])[:6]] for k, v in (_GALLERY or {}).items()}},
+                   separators=(",", ":"), ensure_ascii=False),
+        encoding="utf-8",
+    )
     out_json = ROOT / "data" / "stayodds-directory.json"
     out_json.write_text(
         json.dumps(

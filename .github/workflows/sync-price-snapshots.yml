@@ -38,7 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet data/; then
-            git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json
+            git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json data/app-photos.json
             git commit -m "chore: refresh weekly indicative hotel price snapshots"
             git pull --rebase -X ours origin main
             git push origin main
