@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T18:42:14Z",
+  "updatedAt": "2026-11-27T20:44:01Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -946,7 +946,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/1y19wX4Varg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/1y19wX4Varg/hqdefault.jpg",
-      "views": 2000,
+      "views": 2002,
       "category": "Hotel Reviews",
       "location": "Jimbaran, Bali",
       "chapters": [
@@ -1102,7 +1102,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/5H-BBvM9O70/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/5H-BBvM9O70/hqdefault.jpg",
-      "views": 5632,
+      "views": 5634,
       "category": "Travel Gear",
       "location": "Uluwatu, Bali",
       "chapters": [
@@ -1432,7 +1432,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/TMDrvTY7bKk/maxresdefault.jpg",
       "fallbackThumbnail": "https://i1.ytimg.com/vi/TMDrvTY7bKk/hqdefault.jpg",
-      "views": 1348,
+      "views": 1351,
       "category": "Hotel Reviews",
       "location": "Costa Smeralda, Sardinia",
       "chapters": [
@@ -1598,7 +1598,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
-      "views": 1945,
+      "views": 1949,
       "category": "Hotel Reviews",
       "location": "Labuan Bajo, Indonesia",
       "chapters": [
@@ -2784,7 +2784,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4792,
+      "views": 4793,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5397,7 +5397,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/7r_Mpj4IetQ/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7r_Mpj4IetQ/hqdefault.jpg",
-      "views": 128,
+      "views": 170,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -5701,7 +5701,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
-      "views": 548,
+      "views": 555,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
