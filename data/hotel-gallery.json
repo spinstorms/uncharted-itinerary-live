@@ -57,40 +57,10 @@
    "liteapiId": "lp46ea6"
   },
   {
-   "id": "macakizi-bodrum",
-   "name": "Maçakızı",
-   "liteapiName": "Maçakızı yatch",
-   "liteapiId": "lp6582fc35"
-  },
-  {
-   "id": "montage-kapalua-bay",
-   "name": "The Resort at Kapalua Bay",
-   "liteapiName": "The Resort at Kapalua Bay, Maui",
-   "liteapiId": "lp68c89"
-  },
-  {
-   "id": "moor-hall",
-   "name": "Moor Hall",
-   "liteapiName": "The Barn at Moor Hall",
-   "liteapiId": "lp656a1ccd"
-  },
-  {
    "id": "pendry-west-hollywood",
    "name": "The Sun Rose West Hollywood",
    "liteapiName": "The Sun Rose West Hollywood",
    "liteapiId": "lp6556c0eb"
-  },
-  {
-   "id": "sandy-lane-barbados",
-   "name": "Sandy Lane",
-   "liteapiName": "Villa Highlands at Sandy Lane",
-   "liteapiId": "lp65557762"
-  },
-  {
-   "id": "sujan-jawai-india",
-   "name": "SUJÁN JAWAI",
-   "liteapiName": "SUJÁN JAWAI - Relais & Chateaux",
-   "liteapiId": "lp6570093a"
   },
   {
    "id": "the-plaza-new-york",
@@ -22520,45 +22490,6 @@
     }
    ]
   },
-  "macakizi-bodrum": {
-   "src": "liteapi",
-   "liteapiId": "lp6582fc35",
-   "liteapiName": "Maçakızı yatch",
-   "photos": [
-    {
-     "u": "https://static.cupid.travel/hotels/604769789.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769832.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769826.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769838.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769843.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769815.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769808.jpg",
-     "c": "other"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/604769821.jpg",
-     "c": "other"
-    }
-   ]
-  },
   "majestic-hotel-and-spa-barcelona": {
    "src": "liteapi",
    "liteapiId": "lp1c589",
@@ -24392,45 +24323,6 @@
     }
    ]
   },
-  "montage-kapalua-bay": {
-   "src": "liteapi",
-   "liteapiId": "lp68c89",
-   "liteapiName": "The Resort at Kapalua Bay, Maui",
-   "photos": [
-    {
-     "u": "https://static.cupid.travel/hotels/28667396.jpg",
-     "c": "building"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/28667399.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/37378742.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/134204008.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/28667395.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/134224758.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/134224745.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/37378733.jpg",
-     "c": ""
-    }
-   ]
-  },
   "montage-laguna-beach": {
    "src": "liteapi",
    "liteapiId": "lp32e60",
@@ -24583,45 +24475,6 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/534607501.jpg",
-     "c": ""
-    }
-   ]
-  },
-  "moor-hall": {
-   "src": "liteapi",
-   "liteapiId": "lp656a1ccd",
-   "liteapiName": "The Barn at Moor Hall",
-   "photos": [
-    {
-     "u": "https://static.cupid.travel/hotels/399634266.jpg",
-     "c": "building"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634330.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634294.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634290.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634332.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634307.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634281.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/399634289.jpg",
      "c": ""
     }
    ]
@@ -32153,45 +32006,6 @@
     }
    ]
   },
-  "sandy-lane-barbados": {
-   "src": "liteapi",
-   "liteapiId": "lp65557762",
-   "liteapiName": "Villa Highlands at Sandy Lane",
-   "photos": [
-    {
-     "u": "https://static.cupid.travel/hotels/ex_e224040a_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_acc9118c_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_a680d772_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_477b626a_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_8ff17abe_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_656bfdae_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_de7617d6_z.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/ex_98065e25_z.jpg",
-     "c": ""
-    }
-   ]
-  },
   "sankara-hotel-yakushima": {
    "src": "liteapi",
    "liteapiId": "lp7c2e6",
@@ -35737,45 +35551,6 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/468526447.jpg",
-     "c": ""
-    }
-   ]
-  },
-  "sujan-jawai-india": {
-   "src": "liteapi",
-   "liteapiId": "lp6570093a",
-   "liteapiName": "SUJÁN JAWAI - Relais & Chateaux",
-   "photos": [
-    {
-     "u": "https://static.cupid.travel/hotels/324700410.jpg",
-     "c": "building"
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/552288608.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/324700324.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/552285004.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/324700319.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/552288612.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/552286494.jpg",
-     "c": ""
-    },
-    {
-     "u": "https://static.cupid.travel/hotels/552294208.jpg",
      "c": ""
     }
    ]

@@ -52,10 +52,10 @@ def find_by_name(name: str, country: str, key: str) -> dict | None:
         cand = norm_tokens(str(it.get("name") or ""))
         if not cand:
             continue
-        score = len(target & cand) / max(len(target | cand), 1)
-        if score > best_score:
-            best, best_score = it, score
-    return best if best is not None and best_score >= 0.6 else None
+        # exact name only: near-matches were other places ("Maçakızı yatch", "The Barn at Moor Hall")
+        if cand == target:
+            return it
+    return None
 
 
 def main() -> None:
