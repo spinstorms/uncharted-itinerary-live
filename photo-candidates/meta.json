@@ -1,8 +1,452 @@
 {
- "hero-maldives": [],
- "hero-bora-bora": [],
- "hero-seychelles": [],
- "hero-bali": [],
+ "hero-maldives": [
+  {
+   "title": "File:Aerial shot, Maldives.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Aerial_shot%2C_Maldives.jpg/960px-Aerial_shot%2C_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Aerial_shot%2C_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3888,
+   "h": 2592,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:HistoriaSalutis\" title=\"User:HistoriaSalutis\">Dr. Ond\u0159ej Havelka (cestovatel)</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Aerial_shot,_Maldives.jpg",
+   "file": "hero-maldives-c0.jpg"
+  },
+  {
+   "title": "File:Ariel View of Amilla Fushi Island Maldives.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Ariel_View_of_Amilla_Fushi_Island_Maldives.jpg/960px-Ariel_View_of_Amilla_Fushi_Island_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ariel_View_of_Amilla_Fushi_Island_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3711,
+   "h": 2504,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Joannaja&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Joannaja (page does not exist)\">Joannaja</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Ariel_View_of_Amilla_Fushi_Island_Maldives.jpg",
+   "file": "hero-maldives-c1.jpg"
+  },
+  {
+   "title": "File:Kudadoo YYA.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Kudadoo_YYA.jpg/960px-Kudadoo_YYA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Kudadoo_YYA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 5093,
+   "h": 3393,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Tyler_YYA&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Tyler YYA (page does not exist)\">Tyler </a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Kudadoo_YYA.jpg",
+   "file": "hero-maldives-c2.jpg"
+  },
+  {
+   "title": "File:Kuredo Resort Malediven (28800496576).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Kuredo_Resort_Malediven_%2828800496576%29.jpg/960px-Kuredo_Resort_Malediven_%2828800496576%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Kuredo_Resort_Malediven_%2828800496576%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3992,
+   "h": 2242,
+   "license": "CC BY 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132646954@N02\">dronepicr</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Kuredo_Resort_Malediven_(28800496576).jpg",
+   "file": "hero-maldives-c3.jpg"
+  },
+  {
+   "title": "File:Landaa Giraavaru vue du ciel.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Landaa_Giraavaru_vue_du_ciel.JPG/960px-Landaa_Giraavaru_vue_du_ciel.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Landaa_Giraavaru_vue_du_ciel.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3890,
+   "h": 2850,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=Use:FredD&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Use:FredD (page does not exist)\">Fr\u00e9d\u00e9ric Ducarme</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Landaa_Giraavaru_vue_du_ciel.JPG",
+   "file": "hero-maldives-c4.jpg"
+  },
+  {
+   "title": "File:Maldives-Vakarufalhi.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Maldives-Vakarufalhi.JPG/960px-Maldives-Vakarufalhi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Maldives-Vakarufalhi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3505,
+   "h": 2421,
+   "license": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Civvi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Civvi (page does not exist)\">Civvi</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Maldives-Vakarufalhi.JPG",
+   "file": "hero-maldives-c5.jpg"
+  },
+  {
+   "title": "File:Maldives-resort-island.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Maldives-resort-island.jpg/960px-Maldives-resort-island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Maldives-resort-island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3072,
+   "h": 2048,
+   "license": "CC BY-SA 2.5",
+   "artist": "",
+   "page": "https://commons.wikimedia.org/wiki/File:Maldives-resort-island.jpg",
+   "file": "hero-maldives-c6.jpg"
+  },
+  {
+   "title": "File:Maldives Resort, Indian Ocean.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Maldives_Resort%2C_Indian_Ocean.jpg/960px-Maldives_Resort%2C_Indian_Ocean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Maldives_Resort%2C_Indian_Ocean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3564,
+   "h": 1874,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:HistoriaSalutis\" title=\"User:HistoriaSalutis\">Dr. Ond\u0159ej Havelka (cestovatel)</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Maldives_Resort,_Indian_Ocean.jpg",
+   "file": "hero-maldives-c7.jpg"
+  },
+  {
+   "title": "File:Aerial shot of a small island on a coral reef in the Maldives.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Aerial_shot_of_a_small_island_on_a_coral_reef_in_the_Maldives.jpg/960px-Aerial_shot_of_a_small_island_on_a_coral_reef_in_the_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Aerial_shot_of_a_small_island_on_a_coral_reef_in_the_Maldives.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3756,
+   "h": 1872,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:HistoriaSalutis\" title=\"User:HistoriaSalutis\">Dr. Ond\u0159ej Havelka (cestovatel)</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Aerial_shot_of_a_small_island_on_a_coral_reef_in_the_Maldives.jpg",
+   "file": "hero-maldives-c8.jpg"
+  }
+ ],
+ "hero-bora-bora": [
+  {
+   "title": "File:Aerial view of Bora Bora Airport.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Aerial_view_of_Bora_Bora_Airport.jpg/960px-Aerial_view_of_Bora_Bora_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Aerial_view_of_Bora_Bora_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3264,
+   "h": 2448,
+   "license": "CC BY-SA 4.0",
+   "artist": "Kyprianos Biris",
+   "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Bora_Bora_Airport.jpg",
+   "file": "hero-bora-bora-c0.jpg"
+  },
+  {
+   "title": "File:BoraBoraAirportAerial.JPG",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/BoraBoraAirportAerial.JPG/960px-BoraBoraAirportAerial.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/BoraBoraAirportAerial.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3170,
+   "h": 1848,
+   "license": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Drdisque\" title=\"User:Drdisque\">Drdisque</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:BoraBoraAirportAerial.JPG",
+   "file": "hero-bora-bora-c1.jpg"
+  },
+  {
+   "title": "File:Bora Bora (16542797633).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bora_Bora_%2816542797633%29.jpg/960px-Bora_Bora_%2816542797633%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Bora_Bora_%2816542797633%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4974,
+   "h": 2652,
+   "license": "CC BY 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132228604@N08\">The TerraMar Project</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Bora_Bora_(16542797633).jpg",
+   "file": "hero-bora-bora-c2.jpg"
+  },
+  {
+   "title": "File:DL2A Four Seasons Bora Bora 20.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/DL2A_Four_Seasons_Bora_Bora_20.jpg/960px-DL2A_Four_Seasons_Bora_Bora_20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/DL2A_Four_Seasons_Bora_Bora_20.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3200,
+   "h": 2000,
+   "license": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Didierlefort&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Didierlefort (page does not exist)\">Didierlefort</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:DL2A_Four_Seasons_Bora_Bora_20.jpg",
+   "file": "hero-bora-bora-c3.jpg"
+  },
+  {
+   "title": "File:Gullestorpssj\u00f6n Bor\u00e5s kommun 0168.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0168.jpg/960px-Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0168.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0168.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3318,
+   "h": 1525,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nasko\" title=\"User:Nasko\">Nasko</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0168.jpg",
+   "file": "hero-bora-bora-c4.jpg"
+  },
+  {
+   "title": "File:Gullestorpssj\u00f6n Bor\u00e5s kommun 0173.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0173.jpg/960px-Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0173.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0173.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3334,
+   "h": 1901,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nasko\" title=\"User:Nasko\">Nasko</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Gullestorpssj%C3%B6n_Bor%C3%A5s_kommun_0173.jpg",
+   "file": "hero-bora-bora-c5.jpg"
+  },
+  {
+   "title": "File:Malsj\u00f6 Bor\u00e5s kommun 0268.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Malsj%C3%B6_Bor%C3%A5s_kommun_0268.jpg/960px-Malsj%C3%B6_Bor%C3%A5s_kommun_0268.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Malsj%C3%B6_Bor%C3%A5s_kommun_0268.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 2254,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nasko\" title=\"User:Nasko\">Nasko</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Malsj%C3%B6_Bor%C3%A5s_kommun_0268.jpg",
+   "file": "hero-bora-bora-c6.jpg"
+  },
+  {
+   "title": "File:Malsj\u00f6 Bor\u00e5s kommun 0273.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Malsj%C3%B6_Bor%C3%A5s_kommun_0273.jpg/960px-Malsj%C3%B6_Bor%C3%A5s_kommun_0273.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Malsj%C3%B6_Bor%C3%A5s_kommun_0273.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3835,
+   "h": 1848,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Nasko\" title=\"User:Nasko\">Nasko</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Malsj%C3%B6_Bor%C3%A5s_kommun_0273.jpg",
+   "file": "hero-bora-bora-c7.jpg"
+  },
+  {
+   "title": "File:Bora Bora WV banner.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Bora_Bora_WV_banner.jpg/960px-Bora_Bora_WV_banner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Bora_Bora_WV_banner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4974,
+   "h": 711,
+   "license": "CC BY 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132228604@N08\">The TerraMar Project</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Bora_Bora_WV_banner.jpg",
+   "file": "hero-bora-bora-c8.jpg"
+  }
+ ],
+ "hero-seychelles": [
+  {
+   "title": "File:Anse Source d'Argent, La Digue, Seychelles.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Anse_Source_d%27Argent%2C_La_Digue%2C_Seychelles.jpg/960px-Anse_Source_d%27Argent%2C_La_Digue%2C_Seychelles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Anse_Source_d%27Argent%2C_La_Digue%2C_Seychelles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3072,
+   "h": 2304,
+   "license": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Taktilis&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Taktilis (page does not exist)\">Taktilis</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent,_La_Digue,_Seychelles.jpg",
+   "file": "hero-seychelles-c0.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 01.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_01.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6141,
+   "h": 4094,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_01.jpg",
+   "file": "hero-seychelles-c1.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 02.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6066,
+   "h": 4044,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_02.jpg",
+   "file": "hero-seychelles-c2.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 03.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_03.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 5984,
+   "h": 3830,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_03.jpg",
+   "file": "hero-seychelles-c3.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 04.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_04.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6192,
+   "h": 3879,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_04.jpg",
+   "file": "hero-seychelles-c4.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 05.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_05.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6192,
+   "h": 4128,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_05.jpg",
+   "file": "hero-seychelles-c5.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 06.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_06.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6192,
+   "h": 4128,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_06.jpg",
+   "file": "hero-seychelles-c6.jpg"
+  },
+  {
+   "title": "File:Anse Source d'Argent - La Digue - Seychelles - 07.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_07.jpg/960px-Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 6192,
+   "h": 3818,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:NorbertNagel\" title=\"User:NorbertNagel\">NorbertNagel</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_07.jpg",
+   "file": "hero-seychelles-c7.jpg"
+  },
+  {
+   "title": "File:198 Granite rock in La Digue Island at sunset Photo by Giles Laurent.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/198_Granite_rock_in_La_Digue_Island_at_sunset_Photo_by_Giles_Laurent.jpg/960px-198_Granite_rock_in_La_Digue_Island_at_sunset_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/198_Granite_rock_in_La_Digue_Island_at_sunset_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 7952,
+   "h": 5304,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Giles_Laurent\" title=\"User:Giles Laurent\">Giles Laurent</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:198_Granite_rock_in_La_Digue_Island_at_sunset_Photo_by_Giles_Laurent.jpg",
+   "file": "hero-seychelles-c8.jpg"
+  }
+ ],
+ "hero-bali": [
+  {
+   "title": "File:Rice terraces, Bali.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Rice_terraces%2C_Bali.jpg/960px-Rice_terraces%2C_Bali.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Rice_terraces%2C_Bali.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 2688,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Argenberg\" title=\"User:Argenberg\">Vyacheslav Argenberg</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Rice_terraces,_Bali.jpg",
+   "file": "hero-bali-c0.jpg"
+  },
+  {
+   "title": "File:Rice terraces, Ubud, Bali.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Rice_terraces%2C_Ubud%2C_Bali.jpg/960px-Rice_terraces%2C_Ubud%2C_Bali.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Rice_terraces%2C_Ubud%2C_Bali.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 2688,
+   "license": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Argenberg\" title=\"User:Argenberg\">Vyacheslav Argenberg</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Rice_terraces,_Ubud,_Bali.jpg",
+   "file": "hero-bali-c1.jpg"
+  },
+  {
+   "title": "File:Rice terraces in Tegallalang 1.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Rice_terraces_in_Tegallalang_1.jpg/960px-Rice_terraces_in_Tegallalang_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Rice_terraces_in_Tegallalang_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 3024,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Christophe95\" title=\"User:Christophe95\">Christophe95</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Rice_terraces_in_Tegallalang_1.jpg",
+   "file": "hero-bali-c2.jpg"
+  },
+  {
+   "title": "File:Rice terraces in Tegallalang 2.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Rice_terraces_in_Tegallalang_2.jpg/960px-Rice_terraces_in_Tegallalang_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rice_terraces_in_Tegallalang_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 3024,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Christophe95\" title=\"User:Christophe95\">Christophe95</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Rice_terraces_in_Tegallalang_2.jpg",
+   "file": "hero-bali-c3.jpg"
+  },
+  {
+   "title": "File:Rice terraces in Tegallalang 5.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Rice_terraces_in_Tegallalang_5.jpg/960px-Rice_terraces_in_Tegallalang_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Rice_terraces_in_Tegallalang_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 3789,
+   "h": 2843,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Christophe95\" title=\"User:Christophe95\">Christophe95</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Rice_terraces_in_Tegallalang_5.jpg",
+   "file": "hero-bali-c4.jpg"
+  },
+  {
+   "title": "File:Tegalalang Rice Terraces.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Tegalalang_Rice_Terraces.jpg/960px-Tegalalang_Rice_Terraces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Tegalalang_Rice_Terraces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4080,
+   "h": 3072,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Freddy_eduardo\" title=\"User:Freddy eduardo\">Freddy eduardo</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Tegalalang_Rice_Terraces.jpg",
+   "file": "hero-bali-c5.jpg"
+  },
+  {
+   "title": "File:Tegallalang Rice Terrace.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Tegallalang_Rice_Terrace.jpg/960px-Tegallalang_Rice_Terrace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Tegallalang_Rice_Terrace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 3024,
+   "license": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Pinterpandai&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Pinterpandai (page does not exist)\">Pinterpandai</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Tegallalang_Rice_Terrace.jpg",
+   "file": "hero-bali-c6.jpg"
+  },
+  {
+   "title": "File:Tegallalang Rice Terraces.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Tegallalang_Rice_Terraces.jpg/960px-Tegallalang_Rice_Terraces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Tegallalang_Rice_Terraces.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 4032,
+   "h": 3024,
+   "license": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:EverettSlane&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:EverettSlane (page does not exist)\">EverettSlane</a>",
+   "page": "https://commons.wikimedia.org/wiki/File:Tegallalang_Rice_Terraces.jpg",
+   "file": "hero-bali-c7.jpg"
+  },
+  {
+   "title": "File:1 bali jatiluwih rice terrace panorama.jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/1_bali_jatiluwih_rice_terrace_panorama.jpg/960px-1_bali_jatiluwih_rice_terrace_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/1_bali_jatiluwih_rice_terrace_panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 7595,
+   "h": 2823,
+   "license": "CC BY-SA 4.0",
+   "artist": "chensiyuan",
+   "page": "https://commons.wikimedia.org/wiki/File:1_bali_jatiluwih_rice_terrace_panorama.jpg",
+   "file": "hero-bali-c8.jpg"
+  }
+ ],
+ "finolhu-baa-atoll-yt": [
+  {
+   "file": "finolhu-baa-atoll-yt-maxres1.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "maxres1"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-maxres2.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "maxres2"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-maxres3.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "maxres3"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-maxresdefault.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "maxresdefault"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-sd1.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "sd1"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-sd2.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "sd2"
+  },
+  {
+   "file": "finolhu-baa-atoll-yt-sd3.jpg",
+   "source": "youtube",
+   "video": "8ck7ZCsdtCQ",
+   "frame": "sd3"
+  }
+ ],
  "aman-tokyo": [
   {
    "title": "File:Edmond-Fran\u00e7ois Aman-Jean - Portrait of a Japanese Woman (Mrs. Kuroki) - Google Art Project.jpg",
@@ -16,273 +460,15 @@
    "file": "aman-tokyo-c0.jpg"
   }
  ],
- "amanfayun": [
-  {
-   "title": "File:\u5927\u6e56\u6cd5\u96f2\u79aa\u5bfa\u4e00\u9685 20200726222844.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/%E5%A4%A7%E6%B9%96%E6%B3%95%E9%9B%B2%E7%A6%AA%E5%AF%BA%E4%B8%80%E9%9A%85_20200726222844.jpg/960px-%E5%A4%A7%E6%B9%96%E6%B3%95%E9%9B%B2%E7%A6%AA%E5%AF%BA%E4%B8%80%E9%9A%85_20200726222844.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/%E5%A4%A7%E6%B9%96%E6%B3%95%E9%9B%B2%E7%A6%AA%E5%AF%BA%E4%B8%80%E9%9A%85_20200726222844.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1080,
-   "h": 1440,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E6%B9%96%E6%B3%95%E9%9B%B2%E7%A6%AA%E5%AF%BA%E4%B8%80%E9%9A%85_20200726222844.jpg",
-   "file": "amanfayun-c0.jpg"
-  },
-  {
-   "title": "File:\u73ca\u745a\u82b1 20200726222617 01.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_01.jpg/960px-%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1080,
-   "h": 1440,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_01.jpg",
-   "file": "amanfayun-c1.jpg"
-  },
-  {
-   "title": "File:\u73ca\u745a\u82b1 20200726222617 03.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_03.jpg/960px-%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1022,
-   "h": 1426,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E7%8F%8A%E7%91%9A%E8%8A%B1_20200726222617_03.jpg",
-   "file": "amanfayun-c2.jpg"
-  },
-  {
-   "title": "File:\u91d1\u82de\u82b1 20200726223011 01.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_01.jpg/960px-%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1080,
-   "h": 1440,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_01.jpg",
-   "file": "amanfayun-c3.jpg"
-  },
-  {
-   "title": "File:\u91d1\u82de\u82b1 20200726223011 02.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_02.jpg/960px-%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1080,
-   "h": 1440,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_02.jpg",
-   "file": "amanfayun-c4.jpg"
-  },
-  {
-   "title": "File:\u91d1\u82de\u82b1 20200726223011 06.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_06.jpg/960px-%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 1027,
-   "h": 1373,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ping_an_Chang&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ping an Chang (page does not exist)\">Ping an Chang</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:%E9%87%91%E8%8B%9E%E8%8A%B1_20200726223011_06.jpg",
-   "file": "amanfayun-c5.jpg"
-  }
- ],
+ "amanfayun": [],
  "bulgari-hotel-shanghai": [],
- "bulgari-hotel-tokyo": [
-  {
-   "title": "File:Anne Hathaway for Bvlgari.jpg",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Anne_Hathaway_for_Bvlgari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Anne_Hathaway_for_Bvlgari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 637,
-   "h": 716,
-   "license": "CC BY 3.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://vimeo.com/troispointzero\">3.0</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Anne_Hathaway_for_Bvlgari.jpg",
-   "file": "bulgari-hotel-tokyo-c0.jpg"
-  },
-  {
-   "title": "File:Anne Hathaway for Bvlgari 2.jpg",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Anne_Hathaway_for_Bvlgari_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Anne_Hathaway_for_Bvlgari_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 683,
-   "h": 715,
-   "license": "CC BY 3.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://vimeo.com/troispointzero\">3.0</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Anne_Hathaway_for_Bvlgari_2.jpg",
-   "file": "bulgari-hotel-tokyo-c1.jpg"
-  }
- ],
+ "bulgari-hotel-tokyo": [],
  "casa-chameleon-las-catalinas": [],
  "element-by-westin-ubud": [],
- "estancia-cristina": [
-  {
-   "title": "File:Casco Ea. 7.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Casco_Ea._7.jpg/960px-Casco_Ea._7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Casco_Ea._7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 9292,
-   "h": 3478,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Estancia_Cristina&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Estancia Cristina (page does not exist)\">Estancia Cristina</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Casco_Ea._7.jpg",
-   "file": "estancia-cristina-c0.jpg"
-  },
-  {
-   "title": "File:Cristina Fernandez con Jose Mujica.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Cristina_Fernandez_con_Jose_Mujica.jpg/960px-Cristina_Fernandez_con_Jose_Mujica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Cristina_Fernandez_con_Jose_Mujica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2134,
-   "h": 1585,
-   "license": "CC BY-SA 2.0",
-   "artist": "Presidencia de la Nacion Argentina",
-   "page": "https://commons.wikimedia.org/wiki/File:Cristina_Fernandez_con_Jose_Mujica.jpg",
-   "file": "estancia-cristina-c1.jpg"
-  },
-  {
-   "title": "File:El Calafate - Iglesita en estancia Cristina.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/El_Calafate_-_Iglesita_en_estancia_Cristina.jpg/960px-El_Calafate_-_Iglesita_en_estancia_Cristina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/El_Calafate_-_Iglesita_en_estancia_Cristina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2592,
-   "h": 3872,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LuigiStudio&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LuigiStudio (page does not exist)\">LuigiStudio</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:El_Calafate_-_Iglesita_en_estancia_Cristina.jpg",
-   "file": "estancia-cristina-c2.jpg"
-  },
-  {
-   "title": "File:Entrega del Premio Euskadi de Investigaci\u00f3n 2012 al matem\u00e1tico Luis Vega 02.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Entrega_del_Premio_Euskadi_de_Investigaci%C3%B3n_2012_al_matem%C3%A1tico_Luis_Vega_02.jpg/960px-Entrega_del_Premio_Euskadi_de_Investigaci%C3%B3n_2012_al_matem%C3%A1tico_Luis_Vega_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Entrega_del_Premio_Euskadi_de_Investigaci%C3%B3n_2012_al_matem%C3%A1tico_Luis_Vega_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2900,
-   "h": 1933,
-   "license": "CC BY 3.0 es",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.irekia.euskadi.eus/?locale=en\">Irekia</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Entrega_del_Premio_Euskadi_de_Investigaci%C3%B3n_2012_al_matem%C3%A1tico_Luis_Vega_02.jpg",
-   "file": "estancia-cristina-c3.jpg"
-  },
-  {
-   "title": "File:LU5XE QSL card - Estancia Cristina.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/LU5XE_QSL_card_-_Estancia_Cristina.jpg/960px-LU5XE_QSL_card_-_Estancia_Cristina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/LU5XE_QSL_card_-_Estancia_Cristina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 3456,
-   "h": 4608,
-   "license": "CC BY 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Py4nf\" title=\"User:Py4nf\">Py4nf</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:LU5XE_QSL_card_-_Estancia_Cristina.jpg",
-   "file": "estancia-cristina-c4.jpg"
-  }
- ],
+ "estancia-cristina": [],
  "finolhu-baa-atoll": [],
- "four-seasons-hotel-nashville": [
-  {
-   "title": "File:2nd Avenue from Broadway, Nashville, TN (54384474194).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/2nd_Avenue_from_Broadway%2C_Nashville%2C_TN_%2854384474194%29.jpg/960px-2nd_Avenue_from_Broadway%2C_Nashville%2C_TN_%2854384474194%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/2nd_Avenue_from_Broadway%2C_Nashville%2C_TN_%2854384474194%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 5291,
-   "h": 3968,
-   "license": "CC BY-SA 2.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/59081381@N03\">Warren LeMay</a> from Chicago, IL, United States",
-   "page": "https://commons.wikimedia.org/wiki/File:2nd_Avenue_from_Broadway,_Nashville,_TN_(54384474194).jpg",
-   "file": "four-seasons-hotel-nashville-c0.jpg"
-  },
-  {
-   "title": "File:4 Seasons Nashville.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/4_Seasons_Nashville.jpg/960px-4_Seasons_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/4_Seasons_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 4032,
-   "h": 3024,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jschnake&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jschnake (page does not exist)\">Jschnake</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:4_Seasons_Nashville.jpg",
-   "file": "four-seasons-hotel-nashville-c1.jpg"
-  },
-  {
-   "title": "File:Four Seasons Hotel Kyoto Higashioji-Dori Avenue Gate sign.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Four_Seasons_Hotel_Kyoto_Higashioji-Dori_Avenue_Gate_sign.jpg/960px-Four_Seasons_Hotel_Kyoto_Higashioji-Dori_Avenue_Gate_sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Four_Seasons_Hotel_Kyoto_Higashioji-Dori_Avenue_Gate_sign.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 4032,
-   "h": 3024,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Ominae\" title=\"User:Ominae\">Ominae</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Hotel_Kyoto_Higashioji-Dori_Avenue_Gate_sign.jpg",
-   "file": "four-seasons-hotel-nashville-c2.jpg"
-  },
-  {
-   "title": "File:Four Seasons Hotel and Private Residences Nashville.jpg",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Four_Seasons_Hotel_and_Private_Residences_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Four_Seasons_Hotel_and_Private_Residences_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 573,
-   "h": 840,
-   "license": "CC0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Wobbanight\" title=\"User:Wobbanight\">Wobbanight</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Hotel_and_Private_Residences_Nashville.jpg",
-   "file": "four-seasons-hotel-nashville-c3.jpg"
-  },
-  {
-   "title": "File:Four Seasons Toronto 2025-05-07.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Four_Seasons_Toronto_2025-05-07.jpg/960px-Four_Seasons_Toronto_2025-05-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Four_Seasons_Toronto_2025-05-07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 4980,
-   "h": 7470,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jkliu&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jkliu (page does not exist)\">JK Liu</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Toronto_2025-05-07.jpg",
-   "file": "four-seasons-hotel-nashville-c4.jpg"
-  },
-  {
-   "title": "File:Four Seasons Tower Nashville.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Four_Seasons_Tower_Nashville.jpg/960px-Four_Seasons_Tower_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Four_Seasons_Tower_Nashville.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 3024,
-   "h": 4032,
-   "license": "CC BY-SA 4.0",
-   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Brichar60&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Brichar60 (page does not exist)\">Brichar60</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Tower_Nashville.jpg",
-   "file": "four-seasons-hotel-nashville-c5.jpg"
-  }
- ],
- "four-seasons-hotel-ritz-lisbon": [
-  {
-   "title": "File:Est\u00e1tuas no Four Seasons Hotel Lisboa, 2024.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Est%C3%A1tuas_no_Four_Seasons_Hotel_Lisboa%2C_2024.jpg/960px-Est%C3%A1tuas_no_Four_Seasons_Hotel_Lisboa%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Est%C3%A1tuas_no_Four_Seasons_Hotel_Lisboa%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2688,
-   "h": 3586,
-   "license": "CC0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:JnpoJuwan\" class=\"mw-redirect\" title=\"User:JnpoJuwan\">JnpoJuwan</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Est%C3%A1tuas_no_Four_Seasons_Hotel_Lisboa,_2024.jpg",
-   "file": "four-seasons-hotel-ritz-lisbon-c0.jpg"
-  },
-  {
-   "title": "File:Four Seasons Hotel Lisboa, 2024.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Four_Seasons_Hotel_Lisboa%2C_2024.jpg/960px-Four_Seasons_Hotel_Lisboa%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Four_Seasons_Hotel_Lisboa%2C_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 3060,
-   "h": 4080,
-   "license": "CC0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:JnpoJuwan\" class=\"mw-redirect\" title=\"User:JnpoJuwan\">JnpoJuwan</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Hotel_Lisboa,_2024.jpg",
-   "file": "four-seasons-hotel-ritz-lisbon-c1.jpg"
-  },
-  {
-   "title": "File:Hotel Ritz (30945053435).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Hotel_Ritz_%2830945053435%29.jpg/960px-Hotel_Ritz_%2830945053435%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Hotel_Ritz_%2830945053435%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 3264,
-   "h": 2448,
-   "license": "CC0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/148156776@N05\">Arquiterura Moderna</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Hotel_Ritz_(30945053435).jpg",
-   "file": "four-seasons-hotel-ritz-lisbon-c2.jpg"
-  },
-  {
-   "title": "File:Hotel Ritz Lisboa 5529.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Hotel_Ritz_Lisboa_5529.jpg/960px-Hotel_Ritz_Lisboa_5529.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Hotel_Ritz_Lisboa_5529.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 3020,
-   "h": 2013,
-   "license": "CC BY-SA 3.0",
-   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Manuelvbotelho\" title=\"User:Manuelvbotelho\">Manuelvbotelho</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:Hotel_Ritz_Lisboa_5529.jpg",
-   "file": "four-seasons-hotel-ritz-lisbon-c3.jpg"
-  }
- ],
+ "four-seasons-hotel-nashville": [],
+ "four-seasons-hotel-ritz-lisbon": [],
  "four-seasons-hotel-san-francisco-at-embarcadero": [],
  "fufu-hakone": [],
  "heights-melasti-bali": [],
@@ -299,96 +485,18 @@
  "singita-kwitonda-lodge": [],
  "singita-sabora": [],
  "the-hornibrook-mansion": [],
- "the-pod-singapore": [
-  {
-   "title": "File:Morro Strand State Beach (1).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Morro_Strand_State_Beach_%281%29.jpg/960px-Morro_Strand_State_Beach_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Morro_Strand_State_Beach_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 2038,
-   "h": 1358,
-   "license": "CC BY 2.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/72825507@N00\">Mike Baird</a> from Morro Bay, USA",
-   "page": "https://commons.wikimedia.org/wiki/File:Morro_Strand_State_Beach_(1).jpg",
-   "file": "the-pod-singapore-c0.jpg"
-  },
-  {
-   "title": "File:Northward view of the United States Navy dirigible USS Shenandoah over Long Beach, ca.1920 (CHS-13022).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Northward_view_of_the_United_States_Navy_dirigible_USS_Shenandoah_over_Long_Beach%2C_ca.1920_%28CHS-13022%29.jpg/960px-Northward_view_of_the_United_States_Navy_dirigible_USS_Shenandoah_over_Long_Beach%2C_ca.1920_%28CHS-13022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Northward_view_of_the_United_States_Navy_dirigible_USS_Shenandoah_over_Long_Beach%2C_ca.1920_%28CHS-13022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 5656,
-   "h": 3394,
-   "license": "Public domain",
-   "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>",
-   "page": "https://commons.wikimedia.org/wiki/File:Northward_view_of_the_United_States_Navy_dirigible_USS_Shenandoah_over_Long_Beach,_ca.1920_(CHS-13022).jpg",
-   "file": "the-pod-singapore-c1.jpg"
-  },
-  {
-   "title": "File:The Beach Car Park - geograph.org.uk - 825893.jpg",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/04/The_Beach_Car_Park_-_geograph.org.uk_-_825893.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/The_Beach_Car_Park_-_geograph.org.uk_-_825893.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 480,
-   "h": 640,
-   "license": "CC BY-SA 2.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/14840\">Evelyn Simak</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:The_Beach_Car_Park_-_geograph.org.uk_-_825893.jpg",
-   "file": "the-pod-singapore-c2.jpg"
-  }
- ],
+ "the-pod-singapore": [],
  "the-times-square-edition-new-york": [
   {
-   "title": "File:(Contents to) List of Maps. (to accompany) The Times Atlas ; (New Edition). Containing 132 Pages of Maps (IA dr contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809003).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/%28Contents_to%29_List_of_Maps._%28to_accompany%29_The_Times_Atlas_%3B_%28New_Edition%29._Containing_132_Pages_of_Maps_%28IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809003%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/%28Contents_to%29_List_of_Maps._%28to_accompany%29_The_Times_Atlas_%3B_%28New_Edition%29._Containing_132_Pages_of_Maps_%28IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809003%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 6025,
-   "h": 7640,
+   "title": "File:\"TIMES SQUARE\" map in 1916 with \"HOTEL ASTOR\" \"BOOTH THEATRE\" \"SHUBERT THEATRE\" \"RIALTO THEATRE\" \"LYRIC THEATRE\" THE LITTLE THEATRE\" \"TIMES ANNEX\" \"ST. LUKES\" LUTHERN CHURCH, from- Bromley Manhattan Plate 071 publ. 1916 (cropped).jpg",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/%22TIMES_SQUARE%22_map_in_1916_with_%22HOTEL_ASTOR%22_%22BOOTH_THEATRE%22_%22SHUBERT_THEATRE%22_%22RIALTO_THEATRE%22_%22LYRIC_THEATRE%22_THE_LITTLE_THEATRE%22_%22TIMES_ANNEX%22_%22ST._LUKES%22_LUTHERN_CHURCH%2C_from-_Bromley_Manhattan_Plate_071_publ._1916_%28cropped%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/%22TIMES_SQUARE%22_map_in_1916_with_%22HOTEL_ASTOR%22_%22BOOTH_THEATRE%22_%22SHUBERT_THEATRE%22_%22RIALTO_THEATRE%22_%22LYRIC_THEATRE%22_THE_LITTLE_THEATRE%22_%22TIMES_ANNEX%22_%22ST._LUKES%22_LUTHERN_CHURCH%2C_from-_Bromley_Manhattan_Plate_071_publ._1916_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "w": 1442,
+   "h": 1805,
    "license": "Public domain",
-   "artist": "<div class=\"fn value\">\n<dl><dd>Andree, Richard</dd>\n<dd>Times (London, England)</dd></dl></div>",
-   "page": "https://commons.wikimedia.org/wiki/File:(Contents_to)_List_of_Maps._(to_accompany)_The_Times_Atlas_;_(New_Edition)._Containing_132_Pages_of_Maps_(IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809003).jpg",
+   "artist": "George W. Bromley and Walter S. Bromley",
+   "page": "https://commons.wikimedia.org/wiki/File:%22TIMES_SQUARE%22_map_in_1916_with_%22HOTEL_ASTOR%22_%22BOOTH_THEATRE%22_%22SHUBERT_THEATRE%22_%22RIALTO_THEATRE%22_%22LYRIC_THEATRE%22_THE_LITTLE_THEATRE%22_%22TIMES_ANNEX%22_%22ST._LUKES%22_LUTHERN_CHURCH,_from-_Bromley_Manhattan_Plate_071_publ._1916_(cropped).jpg",
    "file": "the-times-square-edition-new-york-c0.jpg"
-  },
-  {
-   "title": "File:(Contents to) List of Maps. (to accompany) The Times Atlas ; (New Edition). Containing 132 Pages of Maps (IA dr contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809004).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/%28Contents_to%29_List_of_Maps._%28to_accompany%29_The_Times_Atlas_%3B_%28New_Edition%29._Containing_132_Pages_of_Maps_%28IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809004%29.jpg/960px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/%28Contents_to%29_List_of_Maps._%28to_accompany%29_The_Times_Atlas_%3B_%28New_Edition%29._Containing_132_Pages_of_Maps_%28IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809004%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 5985,
-   "h": 7829,
-   "license": "Public domain",
-   "artist": "<div class=\"fn value\">\n<dl><dd>Andree, Richard</dd>\n<dd>Times (London, England)</dd></dl></div>",
-   "page": "https://commons.wikimedia.org/wiki/File:(Contents_to)_List_of_Maps._(to_accompany)_The_Times_Atlas_;_(New_Edition)._Containing_132_Pages_of_Maps_(IA_dr_contents-to-list-of-maps-to-accompany-the-times-atlas-new-edition-6809004).jpg",
-   "file": "the-times-square-edition-new-york-c1.jpg"
-  },
-  {
-   "title": "File:20 Times Square - The Times Square EDITION (55283756778).jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/20_Times_Square_-_The_Times_Square_EDITION_%2855283756778%29.jpg/960px-20_Times_Square_-_The_Times_Square_EDITION_%2855283756778%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/20_Times_Square_-_The_Times_Square_EDITION_%2855283756778%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 4753,
-   "h": 7129,
-   "license": "CC BY 4.0",
-   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/83136374@N05/\">83136374@N05</a>",
-   "page": "https://commons.wikimedia.org/wiki/File:20_Times_Square_-_The_Times_Square_EDITION_(55283756778).jpg",
-   "file": "the-times-square-edition-new-york-c2.jpg"
-  },
-  {
-   "title": "File:Denise Falasca Times Square Killer July 1969A.jpg",
-   "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Denise_Falasca_Times_Square_Killer_July_1969A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Denise_Falasca_Times_Square_Killer_July_1969A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 198,
-   "h": 261,
-   "license": "Public domain",
-   "artist": "Family portrait commissioned by Jacob and Jacqueline Falasca.",
-   "page": "https://commons.wikimedia.org/wiki/File:Denise_Falasca_Times_Square_Killer_July_1969A.jpg",
-   "file": "the-times-square-edition-new-york-c3.jpg"
-  },
-  {
-   "title": "File:Times Square subway station original plan.jpg",
-   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Times_Square_subway_station_original_plan.jpg/960px-Times_Square_subway_station_original_plan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Times_Square_subway_station_original_plan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-   "w": 4383,
-   "h": 2377,
-   "license": "Public domain",
-   "artist": "Unknown artist<span style=\"display: none;\">Unknown artist</span>",
-   "page": "https://commons.wikimedia.org/wiki/File:Times_Square_subway_station_original_plan.jpg",
-   "file": "the-times-square-edition-new-york-c4.jpg"
   }
  ]
 }
