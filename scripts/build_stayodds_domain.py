@@ -86,7 +86,11 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+assets/', r'\1/assets/', html)
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+data/', r'\1/data/', html)
-    html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+favicon\.ico', r'\1/favicon.ico?v=2', html)
+    html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+favicon\.ico(?:\?v=\d+)?', r'\1/favicon.ico?v=3', html)
+    # stayodds.com has its own Sun & Key icons (the Uncharted Itinerary site keeps its own)
+    html = re.sub(r'/assets/favicon\.svg(\?v=\d+)?', '/assets/stayodds-favicon.svg?v=3', html)
+    html = re.sub(r'/assets/favicon-32\.png(\?v=\d+)?', '/assets/stayodds-favicon-32.png?v=3', html)
+    html = re.sub(r'/assets/apple-touch-icon\.png(\?v=\d+)?', '/assets/stayodds-apple-touch-icon.png?v=3', html)
     html = re.sub(r"url\(['\"]?(?:\.\./)+assets/", "url('/assets/", html)
     html = re.sub(r'data-hero-base=["\'](?:\.\./)+assets/', 'data-hero-base="/assets/', html)
     html = html.replace('import("../../assets/stayodds-share-card.js', 'import("/assets/stayodds-share-card.js')
@@ -268,7 +272,7 @@ def write_404_page(out_dir: Path) -> None:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — StayOdds.</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2" />
+  <link rel="icon" type="image/svg+xml" href="/assets/stayodds-favicon.svg?v=3" />
   <link rel="stylesheet" href="/assets/styles.min.css?v=47" />
 {STAYODDS_GA4_SNIPPET}
 </head>
@@ -367,10 +371,14 @@ def main() -> None:
     )
     if (ROOT / "ads.txt").exists():
         shutil.copy2(ROOT / "ads.txt", DIST / "ads.txt")
-    for fav in ("favicon.ico", "favicon.ico?v=2"):
-        if (ROOT / fav).exists():
-            shutil.copy2(ROOT / fav, DIST / "favicon.ico")
-            break
+    # stayodds.com's own favicon.ico (Sun & Key), not the Uncharted Itinerary one
+    if (ROOT / "assets" / "stayodds-favicon.ico").exists():
+        shutil.copy2(ROOT / "assets" / "stayodds-favicon.ico", DIST / "favicon.ico")
+    else:
+        for fav in ("favicon.ico", "favicon.ico?v=2"):
+            if (ROOT / fav).exists():
+                shutil.copy2(ROOT / fav, DIST / "favicon.ico")
+                break
 
     # 2. Copy assets/ and required data/ JSONs
     from brand_logo_map import write_browser_map

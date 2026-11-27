@@ -69,7 +69,7 @@ def header(p: str, active: str = "") -> str:
     <div class="container header-inner">
       <div class="brand stayodds-brand-group">
         <a href="{p}compare/" class="stayodds-brand-emblem-link" aria-label="StayOdds Home">
-          <img src="{p}assets/stayodds-logo.png?v=2" alt="SO." width="36" height="36" class="stayodds-header-emblem" />
+          <img src="{p}assets/stayodds-logo.png?v=3" alt="StayOdds logo" width="36" height="36" class="stayodds-header-emblem" />
         </a>
         <span class="stayodds-brand-stack">
           <a class="stayodds-wordmark-lg" href="{p}compare/" rel="noopener">StayOdds<span class="stayodds-dot">.</span></a>

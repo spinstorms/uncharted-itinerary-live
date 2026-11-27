@@ -1889,10 +1889,10 @@ def render_seo_page(
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg?v=2" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png?v=2" />
-  <link rel="shortcut icon" href="../../favicon.ico?v=2" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/stayodds-favicon.svg?v=3" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/stayodds-favicon-32.png?v=3" />
+  <link rel="shortcut icon" href="../../favicon.ico?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/stayodds-apple-touch-icon.png?v=3" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(title_text)}</title>
@@ -2851,10 +2851,10 @@ def render_destination_page(
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg?v=2" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png?v=2" />
-  <link rel="shortcut icon" href="../../favicon.ico?v=2" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png?v=2" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/stayodds-favicon.svg?v=3" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/stayodds-favicon-32.png?v=3" />
+  <link rel="shortcut icon" href="../../favicon.ico?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/stayodds-apple-touch-icon.png?v=3" />
   <meta name="google-adsense-account" content="ca-pub-4618281487216833" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4618281487216833" crossorigin="anonymous"></script>
   <title>{esc(page_title)}</title>
@@ -2913,7 +2913,7 @@ def render_destination_page(
         <div class="hero-banner-card" style="--hero-bg: url('../../assets/banners/{esc(banner_file)}');">
           <div class="intro-row">
             <div class="hero-title-group">
-              <img class="hero-emblem" src="../../assets/stayodds-logo.png?v=2" alt="StayOdds." width="60" height="60" style="border-radius:14px;" />
+              <img class="hero-emblem" src="../../assets/stayodds-logo.png?v=3" alt="StayOdds." width="60" height="60" style="border-radius:14px;" />
               <div>
                 <h1 class="page-title">{esc(guide['headline'])}</h1>
                 <p class="page-lead">{esc(guide['lead'])}</p>
