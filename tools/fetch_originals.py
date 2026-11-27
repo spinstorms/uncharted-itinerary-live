@@ -7,7 +7,17 @@ URLS = {
  "seychelles": "https://upload.wikimedia.org/wikipedia/commons/7/73/Anse_Source_d%27Argent_-_La_Digue_-_Seychelles_-_06.jpg",
  "bali": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Rice_terraces%2C_Ubud%2C_Bali.jpg",
 }
+import time
+def thumb(u, w=2800):
+    base, name = u.rsplit("/", 1)
+    a, b = base.rsplit("/commons/", 1)
+    return f"{a}/commons/thumb/{b}/{name}/{w}px-{name}"
 for k, u in URLS.items():
-    req = urllib.request.Request(u, headers=UA)
-    (OUT / f"{k}.jpg").write_bytes(urllib.request.urlopen(req, timeout=120).read())
-    print(k, (OUT / f"{k}.jpg").stat().st_size)
+    for attempt in range(6):
+        try:
+            req = urllib.request.Request(thumb(u), headers=UA)
+            (OUT / f"{k}.jpg").write_bytes(urllib.request.urlopen(req, timeout=120).read())
+            print(k, (OUT / f"{k}.jpg").stat().st_size); break
+        except Exception as e:
+            print(k, "retry", e); time.sleep(20 * (attempt + 1))
+    time.sleep(8)
