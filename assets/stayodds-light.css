@@ -43,3 +43,8 @@ html .detail-top-band{background:linear-gradient(180deg,#F3EBDC 0%,rgba(251,247,
 html .detail-breadcrumb,html .detail-breadcrumb a,html .detail-breadcrumb strong,html .detail-breadcrumb span{color:var(--so-ink)!important}
 html .so2-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
 html .so2-photos img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block;background:#EDE5D6}
+/* header never runs into itself: no nav icons on smaller desktops, longer languages fit, and a last-resort clip */
+@media (max-width:1600px){html .site-header .nav-links a svg{display:none!important}html .site-header .nav-links a{padding-left:9px!important;padding-right:9px!important}html .site-header .nav-links{gap:2px!important}}
+@media (max-width:1300px){html .site-header .nav-uncharted-pill{display:none!important}}
+html .site-header .nav-links{min-width:0;overflow:hidden}
+html .site-header .header-actions,html .site-header .stayodds-brand-group,html #so-lang{flex-shrink:0}

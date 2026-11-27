@@ -13,12 +13,13 @@
     for (var i = 0; i < LANGS.length; i++) if (n.indexOf(LANGS[i][0].toLowerCase().slice(0, 2)) === 0) return LANGS[i][0];
     return "en";
   }
+  var SO_I18N_V = "20261128";
   var lang = pick(), dict = null, lc = {}, originals = new WeakMap();
   function norm(s) { return s.replace(/\s+/g, " ").trim(); }
   function swapNode(n) {
     var orig = originals.has(n) ? originals.get(n) : n.nodeValue;
     var key = norm(orig);
-    if (!key || key.length > 220) return;
+    if (!key || key.length > 2000) return;
     var tr = dict && (dict[key] || lc[key.toLowerCase()]);
     if (!tr && dict && /\d/.test(key)) {
       var nums = key.match(/\d[\d,]*/g), names = ["{n}", "{m}"];
@@ -39,8 +40,8 @@
       }
     });
     var n; while ((n = w.nextNode())) swapNode(n);
-    if (root.querySelectorAll) root.querySelectorAll("[placeholder],[aria-label],[title]").forEach(function (el) {
-      ["placeholder", "aria-label", "title"].forEach(function (a) {
+    if (root.querySelectorAll) root.querySelectorAll("[placeholder],[aria-label],[title],[alt]").forEach(function (el) {
+      ["placeholder", "aria-label", "title", "alt"].forEach(function (a) {
         var v = el.getAttribute(a); if (!v) return;
         var o = el.getAttribute("data-en-" + a) || v;
         var tr = dict && dict[norm(o)];
@@ -64,7 +65,13 @@
   }
   function load(l, cb) {
     if (l === "en") { dict = null; cb(); return; }
-    fetch("/assets/i18n/" + l + ".json?v=2").then(function (r) { return r.json(); }).then(function (d) { dict = d; lc = {}; for (var k in d) lc[k.toLowerCase()] = d[k]; cb(); }).catch(function () { dict = null; cb(); });
+    // the small UI dictionary, plus the full-site translations: text shared by many pages and this page's own text
+    var pk = location.pathname.replace(/index\.html$|\.html$/, "").replace(/^\/+|\/+$/g, "").replace(/[^A-Za-z0-9_-]+/g, "__") || "home";
+    function get(u) { return fetch(u).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }); }
+    Promise.all([get("/assets/i18n/" + l + ".json?v=2"), get("/assets/i18n/" + l + "/common.json?v=" + SO_I18N_V), get("/assets/i18n/" + l + "/p/" + pk + ".json?v=" + SO_I18N_V)]).then(function (ds) {
+      var d = {}; ds.forEach(function (x) { for (var k in x) d[k] = x[k]; });
+      dict = d; lc = {}; for (var k in d) lc[k.toLowerCase()] = d[k]; cb();
+    });
   }
   function setLang(l) {
     lang = l; try { localStorage.setItem(KEY, l); } catch (e) {}

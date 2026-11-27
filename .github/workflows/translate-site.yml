@@ -1,0 +1,49 @@
+name: Translate stayodds.com (all languages)
+
+# Run by hand. Uses the Gemini key (paid per use): only text not yet in data/i18n-cache is sent.
+on:
+  workflow_dispatch:
+    inputs:
+      langs:
+        description: "Languages, space-separated (blank = all 11)"
+        default: ""
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: translate-site
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Build the site
+        run: python3 scripts/build_stayodds_domain.py
+      - name: Translate new text
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TRANSLATE_BUDGET_SECONDS: "19000"
+        run: python3 scripts/translate_site.py --translate .stayodds-dist ${{ inputs.langs }}
+      - name: Save translations
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/i18n-cache
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: site translations"
+            git pull --rebase -X ours origin main
+            git push origin main
+          fi
+      - name: Publish stayodds.com
+        if: always()
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh workflow run publish-stayodds.yml --ref main

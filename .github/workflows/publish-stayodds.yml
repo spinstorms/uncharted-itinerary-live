@@ -9,6 +9,10 @@ on:
       - "assets/**"
       - "data/stayodds-*.json"
       - "data/price-snapshots.json"
+      - "data/i18n-cache/**"
+      - "data/hotel-gallery.json"
+      - "data/family-hotels.json"
+      - "data/bad-photos.json"
       - "scripts/build_stayodds_domain.py"
       - "scripts/build_stayodds_site.py"
       - "scripts/audit_brands_and_loyalty.py"
@@ -36,6 +40,9 @@ jobs:
 
       - name: Build stayodds.com standalone bundle
         run: python3 scripts/build_stayodds_domain.py
+
+      - name: Add full-site translations
+        run: python3 scripts/translate_site.py --shards .stayodds-dist
 
       - name: Sync bundle to spinstorms/stayodds-live via SSH Deploy Key
         env:
