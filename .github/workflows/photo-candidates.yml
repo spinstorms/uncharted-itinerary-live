@@ -2,7 +2,7 @@ name: Photo candidates (review only)
 on:
   push:
     branches: [photo-candidates]
-    paths: [tools/photo_candidates.py, tools/flagged.json, .github/workflows/photo-candidates.yml]
+    paths: [tools/fetch_originals.py, .github/workflows/photo-candidates.yml]
 permissions:
   contents: write
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 tools/photo_candidates.py
+      - run: python3 tools/fetch_originals.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
