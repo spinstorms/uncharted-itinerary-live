@@ -1,0 +1,19 @@
+name: Photo candidates (review only)
+on:
+  push:
+    branches: [photo-candidates]
+    paths: [tools/photo_candidates.py, tools/flagged.json, .github/workflows/photo-candidates.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/photo_candidates.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add photo-candidates
+          git commit -m "Photo candidates for review" || echo nothing
+          git push
