@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T08:53:08Z",
+  "updatedAt": "2026-11-27T10:44:41Z",
   "channel": {
     "channelId": "UCtSEMj7vSYDUYbDeIumnEOw",
     "handle": "@TheUnchartedItinerary",
@@ -1598,7 +1598,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/qUx1lEfMlRE/maxresdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qUx1lEfMlRE/hqdefault.jpg",
-      "views": 1940,
+      "views": 1942,
       "category": "Hotel Reviews",
       "location": "Labuan Bajo, Indonesia",
       "chapters": [
@@ -1754,7 +1754,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/7UF4R3g8gjc/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/7UF4R3g8gjc/hqdefault.jpg",
-      "views": 2933,
+      "views": 2934,
       "category": "Hotel Reviews",
       "location": "Canggu, Bali",
       "chapters": [
@@ -2137,7 +2137,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/JV1HuujJJ4k/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/JV1HuujJJ4k/hqdefault.jpg",
-      "views": 4304,
+      "views": 4306,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -2459,7 +2459,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/3ll3ENeUxJg/maxresdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/3ll3ENeUxJg/hqdefault.jpg",
-      "views": 6420,
+      "views": 6423,
       "category": "Hotel Reviews",
       "location": "Seminyak, Bali",
       "chapters": [
@@ -2784,7 +2784,7 @@
       "isShort": false,
       "thumbnail": "https://i.ytimg.com/vi/NL2ccUHteZs/maxresdefault.jpg",
       "fallbackThumbnail": "https://i3.ytimg.com/vi/NL2ccUHteZs/hqdefault.jpg",
-      "views": 4769,
+      "views": 4775,
       "category": "Hotel Reviews",
       "location": "Nusa Dua, Bali",
       "chapters": [
@@ -5389,6 +5389,158 @@
   ],
   "shorts": [
     {
+      "id": "7r_Mpj4IetQ",
+      "title": "Who says local islands of Maldives are boring.. Stones hotel in Dhiffushi ❤️",
+      "url": "https://www.youtube.com/shorts/7r_Mpj4IetQ",
+      "publishedAt": "2026-11-27T10:00:00+00:00",
+      "publishedDate": "2026-11-27",
+      "isShort": true,
+      "thumbnail": "https://i.ytimg.com/vi/7r_Mpj4IetQ/hqdefault.jpg",
+      "fallbackThumbnail": "https://i4.ytimg.com/vi/7r_Mpj4IetQ/hqdefault.jpg",
+      "views": 0,
+      "category": "Travel Gear",
+      "location": "Maldives",
+      "chapters": [],
+      "summary": {
+        "tldr": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay scores vs. verified guest ratings, published critics & official awards (MICHELIN Keys, Forbes & World’s 50 Best) on StayOdds: 👉 🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & Scorecards: 👉",
+        "highlights": [
+          "Destination focus: Maldives",
+          "First-hand walkthrough and honest impressions from The Uncharted Itinerary"
+        ],
+        "bestFor": "Quick visual preview from Maldives",
+        "aiGenerated": false,
+        "model": "auto-extracted"
+      },
+      "affiliateLinks": [
+        {
+          "title": "🏨 Compare 300 personally curated luxury hotels — my first-hand /25 stay ",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://stayodds.com"
+        },
+        {
+          "title": "🗺️ Explore all 300 luxury resorts on our interactive World Hotel Map & S",
+          "section": "Promotions & Codes",
+          "category": "Hotels & Booking",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/hotels/"
+        },
+        {
+          "title": "🎁 All Travel Deals, eSIM Discount Codes & Our Full Packing Gear",
+          "section": "Promotions & Codes",
+          "category": "Travel & Perks",
+          "badge": "From Video",
+          "buttonLabel": "Open Link",
+          "promoCode": "",
+          "url": "https://live.uncharteditinerary.com/links/"
+        },
+        {
+          "title": "Holafly Unlimited Travel eSIM",
+          "section": "Promotions & Codes",
+          "category": "eSIM & Travel",
+          "badge": "Discount Code",
+          "buttonLabel": "Get Holafly Discount",
+          "promoCode": "TRIPREADY",
+          "url": "https://holafly.sjv.io/Tripready"
+        },
+        {
+          "title": "American Express Preferred Rewards Gold (UK)",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Bonus Points",
+          "buttonLabel": "Claim Referral Bonus",
+          "promoCode": "",
+          "url": "https://americanexpress.com/en-gb/referral/gold-credit?ref=oLIVEK1B4w"
+        },
+        {
+          "title": "Marriott Bonvoy Currensea Debit Card",
+          "section": "Promotions & Codes",
+          "category": "Points & Cards",
+          "badge": "Up to 2,000 Bonus Pts",
+          "buttonLabel": "Get Card & Bonus",
+          "promoCode": "OKM2ZH",
+          "url": "https://marriottbonvoy.currensea.co.uk/refer-a-friend?utm_source=refer-a-friend&friend-referral-code=OKM2ZH"
+        },
+        {
+          "title": "Insta 360 Luna Ultra Standard Kit",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0fpiIMTi"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (Black)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B03YstgcC"
+        },
+        {
+          "title": "Insta360 Luna Ultra Creator Kit (White)",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B09TARLyD"
+        },
+        {
+          "title": "Luna Ultra Wide Angle Lens",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B00hjVInJ"
+        },
+        {
+          "title": "Luna Ultra Battery Handle",
+          "section": "Shopping & Gear",
+          "category": "Camera & Travel Gear",
+          "badge": "Filming Gear",
+          "buttonLabel": "Shop on Amazon",
+          "promoCode": "",
+          "url": "https://link.amazon/B0cxr0rKz"
+        },
+        {
+          "title": "Freetrade Commission-Free Investing",
+          "section": "Promotions & Codes",
+          "category": "Everyday Perks",
+          "badge": "Free Share £3–£200",
+          "buttonLabel": "Get Free Share",
+          "promoCode": "",
+          "url": "https://magic.freetrade.io/join/oliver/238af2d9"
+        },
+        {
+          "title": "Epidemic Sound — Royalty-Free Music",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Free Trial Referral",
+          "buttonLabel": "Try Epidemic Sound",
+          "promoCode": "",
+          "url": "https://www.epidemicsound.com/referral/vo2tr9/"
+        },
+        {
+          "title": "TubeBuddy — YouTube Growth Tool",
+          "section": "Promotions & Codes",
+          "category": "Creator Offers",
+          "badge": "Creator Offer",
+          "buttonLabel": "Explore TubeBuddy",
+          "promoCode": "",
+          "url": "https://www.tubebuddy.com/Techinthecar"
+        }
+      ]
+    },
+    {
       "id": "rF5dRW6wKpM",
       "title": "The Stones Hotel at Dhiffushi Maldives",
       "url": "https://www.youtube.com/shorts/rF5dRW6wKpM",
@@ -5549,7 +5701,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
       "fallbackThumbnail": "https://i4.ytimg.com/vi/ox6Qx7py-_E/hqdefault.jpg",
-      "views": 504,
+      "views": 522,
       "category": "Travel Gear",
       "location": "Maldives",
       "chapters": [],
@@ -7589,7 +7741,7 @@
       "isShort": true,
       "thumbnail": "https://i.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
       "fallbackThumbnail": "https://i2.ytimg.com/vi/qCS6Ro-Qxp4/hqdefault.jpg",
-      "views": 285,
+      "views": 286,
       "category": "Travel Gear",
       "location": "Global Travel",
       "chapters": [],
@@ -9619,29 +9771,6 @@
       "chapters": [],
       "summary": {
         "tldr": "View from the Regent Canggu Bali ❤️💙💜",
-        "highlights": [],
-        "bestFor": "Quick visual preview",
-        "aiGenerated": false,
-        "model": "short"
-      },
-      "affiliateLinks": []
-    },
-    {
-      "id": "VXS57v_NrWA",
-      "title": "Four Seasons Bali",
-      "url": "https://www.youtube.com/shorts/VXS57v_NrWA",
-      "publishedAt": "2026-01-01T00:03:00Z",
-      "publishedDate": "",
-      "isShort": true,
-      "thumbnail": "https://i.ytimg.com/vi/VXS57v_NrWA/hqdefault.jpg",
-      "fallbackThumbnail": "https://i.ytimg.com/vi/VXS57v_NrWA/hqdefault.jpg",
-      "views": 136,
-      "viewsText": "136 views",
-      "category": "Hotel Reviews",
-      "location": "Bali, Indonesia",
-      "chapters": [],
-      "summary": {
-        "tldr": "Four Seasons Bali",
         "highlights": [],
         "bestFor": "Quick visual preview",
         "aiGenerated": false,
