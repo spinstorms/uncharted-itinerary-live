@@ -124,6 +124,14 @@ def main() -> int:
             return False
 
     props = sb_all("properties", "id,name,city,country,lat,lng")
+    # hand pins: {"pins": {hotel id: {"id": Tripadvisor location id, "query": name as Tripadvisor spells it}}}
+    try:
+        pins = json.loads((ROOT / "data" / "tripadvisor-settings.json").read_text(encoding="utf-8")).get("pins") or {}
+    except Exception:
+        pins = {}
+    for pid in pins:
+        if pid not in store["hotels"]:
+            store["unmatched"].pop(pid, None)
     # drop stored matches that fail the strict same-hotel check (e.g. a sister hotel); they are searched again
     pmap = {p["id"]: p for p in props}
     for pid in list(store["hotels"]):
@@ -140,7 +148,8 @@ def main() -> int:
         if calls >= args.max_calls:
             break
         iso = (COUNTRY_TO_ISO2.get(p.get("country") or "") or "").upper()
-        params = [("query", p["name"]), ("category", "HOTEL"), ("size", "3"), ("version", "1")]
+        pin = pins.get(p["id"]) or {}
+        params = [("query", pin.get("query") or p["name"]), ("category", "HOTEL"), ("size", "3"), ("version", "1")]
         if iso:
             params.append(("country_code", iso))
         code, res = ta_get("/locations/search", params, key)
@@ -158,6 +167,11 @@ def main() -> int:
         hit = None
         for item in res.get("data") or []:
             loc = item.get("location") or {}
+            if pin:
+                if str(loc.get("id")) == str(pin.get("id")):
+                    hit = loc
+                    break
+                continue
             if not same_hotel(p["name"], primary_name(loc), p.get("city") or "", p.get("country") or ""):
                 continue
             c = loc.get("coordinates") or {}

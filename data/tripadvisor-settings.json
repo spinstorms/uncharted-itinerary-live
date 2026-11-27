@@ -1,1 +1,9 @@
-{"enabled": true}
+{
+ "enabled": true,
+ "pins": {
+  "macakizi-bodrum": {
+   "id": "307427",
+   "query": "Macakizi Hotel Bodrum"
+  }
+ }
+}
