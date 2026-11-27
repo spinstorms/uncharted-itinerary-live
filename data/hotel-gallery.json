@@ -1,14 +1,7 @@
 {
- "updatedAt": "2026-11-27T23:30:44+00:00",
+ "updatedAt": "2026-11-27T23:39:33+00:00",
  "note": "LiteAPI (Nuitee) hotel photos, licensed for display with bookings. Max 8 per hotel.",
- "matchedByName": [
-  {
-   "id": "half-moon-jamaica",
-   "name": "Half Moon",
-   "liteapiName": "Half Moon",
-   "liteapiId": "lp34ce1"
-  }
- ],
+ "matchedByName": [],
  "hotels": {
   "1-hotel-hanalei-bay-kauai": {
    "src": "liteapi",
@@ -37277,6 +37270,45 @@
     }
    ]
   },
+  "the-broadmoor": {
+   "src": "liteapi",
+   "liteapiId": "lp76873",
+   "liteapiName": "The Broadmoor",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/39631396.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/511609619.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/13238833.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/39631463.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/82036858.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/524948313.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/39631599.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/511610297.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-burman-hotel": {
    "src": "liteapi",
    "liteapiId": "lp65864121",
@@ -40826,6 +40858,45 @@
     }
    ]
   },
+  "the-ritz-carlton-guangzhou": {
+   "src": "liteapi",
+   "liteapiId": "lp3f3ec",
+   "liteapiName": "The Ritz-Carlton, Guangzhou",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/584026284.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/500352554.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/473046214.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/592000745.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/473048369.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/494041839.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/461714470.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/461714501.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-ritz-carlton-koh-samui": {
    "src": "liteapi",
    "liteapiId": "lpb8f7b",
@@ -41330,6 +41401,45 @@
     {
      "u": "https://static.cupid.travel/hotels/259846590.jpg",
      "c": "swimming pool"
+    }
+   ]
+  },
+  "the-shore-club-turks-and-caicos": {
+   "src": "liteapi",
+   "liteapiId": "lp9313c",
+   "liteapiName": "The Shore Club Turks & Caicos",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/173352787.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/340395102.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/83785037.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/83785022.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/83785015.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/77971146.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/340395091.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/83785023.jpg",
+     "c": ""
     }
    ]
   },
