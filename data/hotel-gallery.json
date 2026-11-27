@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T23:39:33+00:00",
+ "updatedAt": "2026-11-27T23:41:56+00:00",
  "note": "LiteAPI (Nuitee) hotel photos, licensed for display with bookings. Max 8 per hotel.",
  "matchedByName": [],
  "hotels": {
@@ -24907,6 +24907,45 @@
     }
    ]
   },
+  "montage-kapalua-bay": {
+   "src": "liteapi",
+   "liteapiId": "lp68c89",
+   "liteapiName": "The Resort at Kapalua Bay, Maui",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/28667396.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/28667399.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/37378742.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/134204008.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/28667395.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/134224758.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/134224745.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/37378733.jpg",
+     "c": ""
+    }
+   ]
+  },
   "montage-laguna-beach": {
    "src": "liteapi",
    "liteapiId": "lp32e60",
@@ -27049,6 +27088,45 @@
     {
      "u": "https://static.cupid.travel/hotels/ex_e6083a12_z.jpg",
      "c": "outdoor seating area"
+    }
+   ]
+  },
+  "paradisus-palma-real": {
+   "src": "liteapi",
+   "liteapiId": "lp65784324",
+   "liteapiName": "The Reserve At Paradisus Palma Real",
+   "photos": [
+    {
+     "u": "https://www.reserveparadisuspuntacana.com/images/slides/slide-28.jpg",
+     "c": "pool"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_9a51fe95_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_20927167_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_8da6eb4e_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_f7b4631a_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_92465f68_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_e0993663_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5b8ee664_z.jpg",
+     "c": ""
     }
    ]
   },
@@ -36373,6 +36451,45 @@
     }
    ]
   },
+  "sujan-jawai-india": {
+   "src": "liteapi",
+   "liteapiId": "lp6570093a",
+   "liteapiName": "SUJÁN JAWAI - Relais & Chateaux",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/324700410.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/552288608.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324700324.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/552285004.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324700319.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/552288612.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/552286494.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/552294208.jpg",
+     "c": ""
+    }
+   ]
+  },
   "sunscape-cancun-resort-and-spa": {
    "src": "liteapi",
    "liteapiId": "lp1f5dc",
@@ -40581,6 +40698,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/ex_e2ec49ad_z.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "the-puli-shanghai": {
+   "src": "liteapi",
+   "liteapiId": "lp43c54",
+   "liteapiName": "The PuLi Shanghai",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/8954639.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/317802290.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/8954797.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/292293925.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/317802001.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/183009443.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/8954631.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/43094109.jpg",
      "c": ""
     }
    ]
