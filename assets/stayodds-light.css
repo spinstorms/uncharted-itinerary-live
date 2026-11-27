@@ -1,0 +1,45 @@
+/* StayOdds light theme (Nov 2026): white header, brighter hero, sand page, light footer */
+:root{--so-ink:#1B2A42;--so-ink-2:#4B5768;--so-sand:#FBF7EF;--so-line:#EDE5D6;--so-coral:#E8501A}
+html body.stayodds-warm-canvas,html body{background:var(--so-sand)}
+/* header */
+html .site-header,html .site-header.stayodds-site-header{background:#FFFFFF!important;border-bottom:1px solid var(--so-line)!important;box-shadow:0 1px 0 rgba(27,42,66,.03)!important}
+html .site-header .stayodds-wordmark-lg{color:var(--so-ink)!important}
+html .site-header .nav-links a,html .site-header .stayodds-clean-nav a{color:var(--so-ink)!important}
+html .site-header .nav-links a svg,html .site-header .stayodds-clean-nav a svg{color:var(--so-ink)!important;stroke:currentColor}
+html .site-header .nav-links a.active{background:#F6EFE2!important;color:var(--so-ink)!important}
+html .site-header .nav-links a:hover{background:#FBF3E6!important;color:var(--so-coral)!important}
+html .site-header .nav-uncharted-pill{color:var(--so-coral)!important;background:#FFF1EA!important;border-color:#FFD9C7!important}
+html .site-header .nav-deals-btn{color:var(--so-coral)!important;border-color:var(--so-coral)!important;background:#FFFFFF!important}
+html .site-header .mobile-menu-btn{background:#F6EFE2!important;color:var(--so-ink)!important}
+html .site-header .mobile-menu-btn svg{stroke:var(--so-ink)!important}
+html .site-header .header-actions + div > button,html .site-header .so-lang-btn{color:var(--so-ink)!important;border-color:#E2D8C6!important}
+html .site-header .header-actions + div > button svg{stroke:var(--so-ink)!important}
+html .site-header .mobile-nav,html .mobile-nav{background:#FFFFFF!important;border-top:1px solid var(--so-line)}
+html .mobile-nav a{color:var(--so-ink)!important}
+html .mobile-nav a.active{color:var(--so-coral)!important}
+
+/* dark promo band -> light */
+html .compare-mode-banner{background:#FFFFFF!important;color:var(--so-ink)!important;border-top:1px solid var(--so-line);border-bottom:1px solid var(--so-line)}
+html .compare-mode-banner *{color:inherit}
+/* footer */
+html .site-footer{background:#F3EBDC!important;color:var(--so-ink)!important;border-top:1px solid var(--so-line)}
+html .site-footer a{color:var(--so-ink)!important}
+html .site-footer p,html .site-footer li,html .site-footer span{color:var(--so-ink-2)!important}
+html .site-footer h3,html .site-footer h4,html .site-footer strong{color:var(--so-ink)!important}
+/* home hero: brighter photo, shade only near the bottom for the headline */
+html .hero-bg-scrim{background:linear-gradient(rgba(7,19,35,.12) 0%,rgba(7,19,35,.10) 40%,rgba(7,19,35,.48) 100%)!important}
+html .discover-hero-section h1,html .discover-hero-section p{text-shadow:0 2px 14px rgba(7,19,35,.45)}
+html .discover-prompt-pill{background:rgba(255,255,255,.88)!important;color:var(--so-ink)!important;border-color:transparent!important;text-shadow:none!important}
+html .site-header .mobile-menu-btn svg,html .site-header .mobile-menu-btn svg *{stroke:var(--so-ink)!important;color:var(--so-ink)!important}
+/* photo-first cards: the details live on the hotel page */
+html .tf-card-body .tf-summary-line,html .tf-card-body .tf-room-box{display:none!important}
+html .tf-card-body .tf-summary-box{background:transparent!important;border:0!important;padding:0!important;margin:4px 0 8px!important}
+html .tf-card-body .tf-summary-lead{font-weight:500!important;color:var(--so-ink-2)!important;font-size:14px!important}
+html .tf-score-badge{background:rgba(255,255,255,.95)!important;color:var(--so-ink)!important;box-shadow:0 4px 12px rgba(7,19,35,.15)}
+html .tf-score-badge strong{color:var(--so-ink)!important}
+html .tf-score-badge small{color:#C2410C!important}
+/* hotel pages: no dark band, extra photos under the hero */
+html .detail-top-band{background:linear-gradient(180deg,#F3EBDC 0%,rgba(251,247,239,0) 100%)!important}
+html .detail-breadcrumb,html .detail-breadcrumb a,html .detail-breadcrumb strong,html .detail-breadcrumb span{color:var(--so-ink)!important}
+html .so2-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-top:8px}
+html .so2-photos img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block;background:#EDE5D6}

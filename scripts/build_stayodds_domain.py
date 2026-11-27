@@ -84,6 +84,8 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = html.replace("stayodds_v4_bright_og_hero_1200x630.png", "stayodds_v5_og_hero_1200x630.png")
 
     # languages: one small script + per-language JSON, no per-language page copies
+    if "stayodds-light.css" not in html and "</head>" in html:
+        html = html.replace("</head>", '  <link rel="stylesheet" href="/assets/stayodds-light.css?v=1" />\n</head>', 1)
     if "stayodds-i18n.js" not in html and "</head>" in html:
         html = html.replace("</head>", '  <script src="/assets/stayodds-i18n.js?v=1" defer></script>\n</head>', 1)
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
@@ -278,6 +280,7 @@ def write_404_page(out_dir: Path) -> None:
   <link rel="icon" type="image/svg+xml" href="/assets/stayodds-favicon.svg?v=4" />
   <link rel="stylesheet" href="/assets/styles.min.css?v=47" />
 {STAYODDS_GA4_SNIPPET}
+  <link rel="stylesheet" href="/assets/stayodds-light.css?v=1" />
   <script src="/assets/stayodds-i18n.js?v=1" defer></script>
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">

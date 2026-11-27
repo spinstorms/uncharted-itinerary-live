@@ -62,6 +62,23 @@ MARRIOTT_BRAND_RE = re.compile(
 MARRIOTT_NAME_RE = re.compile(r"ritz-carlton|st\.? regis|jw marriott|marriott|luxury collection|\bedition\b|bulgari|bvlgari", re.I)
 
 
+def so_photo_strip(h: dict, raw_thumb: str) -> str:
+    """Photo-first hotel pages: a small row of extra photos under the hero (clean card photo, main photo, our video frame)."""
+    pics = []
+    for cand in (f"assets/card-photos/{h['id']}.webp", f"assets/thumbs/{h['id']}.webp"):
+        if cand != raw_thumb and (ROOT / cand).exists():
+            pics.append(cand)
+    if h.get("videoId") and (ROOT / "assets" / "video-thumbs" / f"{h['videoId']}.jpg").exists():
+        pics.append(f"assets/video-thumbs/{h['videoId']}.jpg")
+    if not pics:
+        return ""
+    imgs = "".join(
+        f'<img src="../../{esc(p)}?v=169" alt="{esc(h["name"])}, photo {i + 1}" loading="lazy" decoding="async" />'
+        for i, p in enumerate(pics[:3])
+    )
+    return f'<div class="so2-photos">{imgs}</div>'
+
+
 def _marriott_camref() -> str:
     try:
         data = json.loads((ROOT / "data" / "partnerize-campaigns.json").read_text(encoding="utf-8"))
@@ -1957,6 +1974,7 @@ def render_seo_page(
             <img src="{esc(img_src)}" alt="{esc(h['name'])}" fetchpriority="high" decoding="async" />
             {yt_overlay(h, inline=True)}
           </div>
+          {so_photo_strip(h, raw_thumb)}
           {(f'<p class="photo-credit" style="font-size:11.5px;color:var(--ink-muted,#76736c);margin:6px 2px 0;"><a href="{esc(h["photoCredit"]["url"])}" target="_blank" rel="noopener" style="color:inherit;">{esc(h["photoCredit"]["text"])}</a></p>') if h.get("photoCredit") else ""}
           <div class="detail-hero-badges">
             <span class="tag {'tag-accent' if o['firstHand'] else 'tag-slate'}">{esc(o['tierLabel'])}</span>
