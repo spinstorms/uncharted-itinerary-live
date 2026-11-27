@@ -1,84 +1,12 @@
 {
- "updatedAt": "2026-11-27T21:50:36+00:00",
+ "updatedAt": "2026-11-27T23:30:44+00:00",
  "note": "LiteAPI (Nuitee) hotel photos, licensed for display with bookings. Max 8 per hotel.",
  "matchedByName": [
   {
-   "id": "aman-kyoto",
-   "name": "Aman Kyoto",
-   "liteapiName": "Aman Kyoto",
-   "liteapiId": "lp6554ebe2"
-  },
-  {
-   "id": "aman-new-york",
-   "name": "Aman New York",
-   "liteapiName": "Aman New York",
-   "liteapiId": "lp65573b38"
-  },
-  {
-   "id": "aman-tokyo",
-   "name": "Aman Tokyo",
-   "liteapiName": "Aman Tokyo",
-   "liteapiId": "lpefb0e"
-  },
-  {
-   "id": "ashford-castle",
-   "name": "Ashford Castle",
-   "liteapiName": "Ashford Castle",
-   "liteapiId": "lp62bb2"
-  },
-  {
-   "id": "cataloochee-ranch",
-   "name": "Cataloochee Ranch",
-   "liteapiName": "Cataloochee Ranch",
-   "liteapiId": "lp65892381"
-  },
-  {
-   "id": "four-seasons-hotel-new-york",
-   "name": "Four Seasons Hotel New York",
-   "liteapiName": "Four Seasons Hotel New York",
-   "liteapiId": "lp20296"
-  },
-  {
-   "id": "hotel-du-couvent-nice",
-   "name": "Hôtel du Couvent",
-   "liteapiName": "Hôtel du Couvent",
-   "liteapiId": "lpec251"
-  },
-  {
-   "id": "hotel-du-palais",
-   "name": "Hôtel du Palais",
-   "liteapiName": "Hôtel du Palais",
-   "liteapiId": "lp67f48"
-  },
-  {
-   "id": "hotel-tannenhof",
-   "name": "Hotel Tannenhof",
-   "liteapiName": "Hotel Tannenhof",
-   "liteapiId": "lp46ea6"
-  },
-  {
-   "id": "pendry-west-hollywood",
-   "name": "The Sun Rose West Hollywood",
-   "liteapiName": "The Sun Rose West Hollywood",
-   "liteapiId": "lp6556c0eb"
-  },
-  {
-   "id": "the-plaza-new-york",
-   "name": "The Plaza",
-   "liteapiName": "The Plaza Hotel",
-   "liteapiId": "lp6d2d1"
-  },
-  {
-   "id": "the-siam-bangkok",
-   "name": "The Siam",
-   "liteapiName": "The Siam",
-   "liteapiId": "lp606f5"
-  },
-  {
-   "id": "thyme",
-   "name": "Thyme",
-   "liteapiName": "Thyme",
-   "liteapiId": "lp655acbc2"
+   "id": "half-moon-jamaica",
+   "name": "Half Moon",
+   "liteapiName": "Half Moon",
+   "liteapiId": "lp34ce1"
   }
  ],
  "hotels": {
@@ -2383,6 +2311,45 @@
     }
    ]
   },
+  "atlantis-sanya": {
+   "src": "liteapi",
+   "liteapiId": "lpc2830",
+   "liteapiName": "Atlantis Sanya",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_3e20d2e8_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b9b2488e_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_43031543_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_e769ed5c_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_2279c1d7_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b1a0780c_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_577b9ddd_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_ac49f9c4_z.jpg",
+     "c": ""
+    }
+   ]
+  },
   "atlantis-the-royal": {
    "src": "liteapi",
    "liteapiId": "lp6556acf7",
@@ -2901,6 +2868,45 @@
     }
    ]
   },
+  "banyan-tree-anji": {
+   "src": "liteapi",
+   "liteapiId": "lpe96e9",
+   "liteapiName": "Banyan Tree Anji",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_00aca45c_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_4db8d21c_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_2e71b896_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_ac087fa2_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_0fbb1ee3_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_23c1ca50_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_12a383e9_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_6627ad76_z.jpg",
+     "c": ""
+    }
+   ]
+  },
   "banyan-tree-krabi": {
    "src": "liteapi",
    "liteapiId": "lp65562d36",
@@ -3014,6 +3020,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/27452977.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "banyan-tree-lijiang": {
+   "src": "liteapi",
+   "liteapiId": "lp3aecc",
+   "liteapiName": "Banyan Tree Lijiang",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/75289126.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/331481642.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/312486052.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/245065594.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/312483575.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/312483273.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/19008858.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/331483705.jpg",
      "c": ""
     }
    ]
@@ -3209,6 +3254,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/ex_a12c97b6_z.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "barcelo-bavaro-palace": {
+   "src": "liteapi",
+   "liteapiId": "lp4b5b0",
+   "liteapiName": "Barceló Bávaro Palace - All Inclusive",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_deee2bbb_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_03ee586e_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_55c8bf0a_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_07713847_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5bb21016_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_ae03e63c_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b39c24a5_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_a37850fa_z.jpg",
      "c": ""
     }
    ]
@@ -8673,6 +8757,45 @@
     }
    ]
   },
+  "daios-cove-crete": {
+   "src": "liteapi",
+   "liteapiId": "lp53022",
+   "liteapiName": "Daios Cove",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/555973091.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/622163604.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/556876153.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/556877790.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/21809377.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/576065363.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/576065615.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/75906485.jpg",
+     "c": ""
+    }
+   ]
+  },
   "das-achental-resort": {
    "src": "liteapi",
    "liteapiId": "lp28327",
@@ -10857,6 +10980,45 @@
     }
    ]
   },
+  "finest-punta-cana": {
+   "src": "liteapi",
+   "liteapiId": "lp6554b3cf",
+   "liteapiName": "Finest Punta Cana by The Excellence Collection - All Inclusive",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b61cc8fa_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_424ac908_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_60734353_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_0d1fd6be_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_40ce89b3_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5f57edee_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_c0954f46_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_8decf984_z.jpg",
+     "c": ""
+    }
+   ]
+  },
   "fogo-island-inn-canada": {
    "src": "liteapi",
    "liteapiId": "lp6589238a",
@@ -10958,6 +11120,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/242740014.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "forte-village-resort": {
+   "src": "liteapi",
+   "liteapiId": "lp3883d",
+   "liteapiName": "Forte Village Resort - Il Castello",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/141388050.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/160733719.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/351069610.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/141388348.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/141388338.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/141388056.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/141388214.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/142717254.jpg",
      "c": ""
     }
    ]
@@ -13848,6 +14049,45 @@
     }
    ]
   },
+  "garrya-tongsai-bay-samui": {
+   "src": "liteapi",
+   "liteapiId": "lp1d13a",
+   "liteapiName": "Garrya Tongsai Bay Samui",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_1119d4b5_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_64be9179_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_4f3ac7f9_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_a77d0121_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_13e56875_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_w8068h6050x0y3-3fa49f4b_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_24739572_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_3cd366f8_z.jpg",
+     "c": ""
+    }
+   ]
+  },
   "gf-fanabe-tenerife": {
    "src": "liteapi",
    "liteapiId": "lp36bcb",
@@ -15096,6 +15336,45 @@
     }
    ]
   },
+  "grand-wailea-waldorf-astoria": {
+   "src": "liteapi",
+   "liteapiId": "lp223fb",
+   "liteapiName": "Grand Wailea Resort Hotel & Spa, A Waldorf Astoria Resort",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/612344113.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344109.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344207.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344605.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344294.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344625.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344215.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/612344408.jpg",
+     "c": ""
+    }
+   ]
+  },
   "grantley-hall": {
    "src": "liteapi",
    "liteapiId": "lp1f65e2",
@@ -15638,6 +15917,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/218250690.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "half-moon-jamaica": {
+   "src": "liteapi",
+   "liteapiId": "lp34ce1",
+   "liteapiName": "Half Moon",
+   "photos": [
+    {
+     "u": "https://q-xx.bstatic.com/xdata/images/hotel/max500/834558129.jpg?k=5c0315f6dc19e763a3a0d35b327ebb75a91fb48c40d59e11b045d16175391232&o=&a=2002366",
+     "c": "exterior"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/91579216.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/602033235.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/142442997.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/289950750.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/290967979.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/80789792.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/140137698.jpg",
      "c": ""
     }
    ]
@@ -18099,6 +18417,45 @@
     }
    ]
   },
+  "hyatt-ziva-cap-cana": {
+   "src": "liteapi",
+   "liteapiId": "lp1c5336",
+   "liteapiName": "Hyatt Ziva Cap Cana",
+   "photos": [
+    {
+     "u": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2024/01/18/1618/PUJIF-P0285-General-Resort-View.jpg/PUJIF-P0285-General-Resort-View.16x9.jpg",
+     "c": "pool"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/232161008.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/534631522.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/534631502.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/534631549.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/264889490.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/534631571.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/266405725.jpg",
+     "c": ""
+    }
+   ]
+  },
   "i-borghi-delleremo": {
    "src": "liteapi",
    "liteapiId": "lp6557659f",
@@ -18369,6 +18726,84 @@
     {
      "u": "https://static.cupid.travel/hotels/136916121.jpg",
      "c": "breakfast buffet"
+    }
+   ]
+  },
+  "ikos-andalusia": {
+   "src": "liteapi",
+   "liteapiId": "lp2126ca",
+   "liteapiName": "Ikos Andalusia",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/583455208.jpg",
+     "c": "recepcion & lobby"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/583455280.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/595965944.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/583455303.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/595965949.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/583455218.jpg",
+     "c": "activities & amenities"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/583455285.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/595965941.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "ikos-aria": {
+   "src": "liteapi",
+   "liteapiId": "lp100c9a",
+   "liteapiName": "Ikos Aria - All Inclusive",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_909350b0_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_6a9a15f0_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5b44d1a6_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_7b59ed39_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_556553d4_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_57384891_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b102b6d4_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_d708f5b7_z.jpg",
+     "c": ""
     }
    ]
   },
@@ -22763,6 +23198,45 @@
     }
    ]
   },
+  "mandarin-oriental-doha": {
+   "src": "liteapi",
+   "liteapiId": "lp18dad4",
+   "liteapiName": "Mandarin Oriental, Doha",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/589089251.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/595030600.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/595030530.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/589089330.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/589089230.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/589089286.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/589089239.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/589089243.jpg",
+     "c": ""
+    }
+   ]
+  },
   "mandarin-oriental-downtown-dubai": {
    "src": "liteapi",
    "liteapiId": "lp657b8995",
@@ -23270,6 +23744,45 @@
     }
    ]
   },
+  "mandarin-oriental-pudong-shanghai": {
+   "src": "liteapi",
+   "liteapiId": "lp689e5",
+   "liteapiName": "Mandarin Oriental Pudong, Shanghai",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/488928257.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/572017720.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/621722019.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/621722025.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/489139316.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/590856350.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/621721997.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/30635372.jpg",
+     "c": "balance & terrace"
+    }
+   ]
+  },
   "mandarin-oriental-ritz-madrid": {
    "src": "liteapi",
    "liteapiId": "lp2a6ba",
@@ -23305,6 +23818,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/583566780.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "mandarin-oriental-sanya": {
+   "src": "liteapi",
+   "liteapiId": "lp52a0e",
+   "liteapiName": "Mandarin Oriental, Sanya",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/330164115.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/330164073.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/78806445.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/374868528.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/374867097.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/124102555.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/320084429.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/373748169.jpg",
      "c": ""
     }
    ]
@@ -23734,6 +24286,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/590093026.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "martinhal-sagres": {
+   "src": "liteapi",
+   "liteapiId": "lp51d6c",
+   "liteapiName": "Martinhal Sagres Beach Family Resort Hotel",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/186562393.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/186562198.jpg",
+     "c": "recepcion & lobby"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/158616345.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/186562422.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/4982550.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/14247310.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/186562265.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/4982526.jpg",
      "c": ""
     }
    ]
@@ -24904,6 +25495,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/ex_1ad9a930_z.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "nickelodeon-hotels-resorts-punta-cana": {
+   "src": "liteapi",
+   "liteapiId": "lp8af8e",
+   "liteapiName": "Nickelodeon Hotels & Resorts Punta Cana, Gourmet All Inclusive by Karisma",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_afc84f73_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_1858d692_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5367a8fb_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_59b5f062_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_d4c52e86_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_236c3a94_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_76c6cb98_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_d0e3a8ba_z.jpg",
      "c": ""
     }
    ]
@@ -26932,6 +27562,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/280051815.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "park-hyatt-shanghai": {
+   "src": "liteapi",
+   "liteapiId": "lp414bf",
+   "liteapiName": "Park Hyatt Shanghai",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_92affde6_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b1f2532d_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_7a121143_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b8b13e11_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_20b1e1b3_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_ebcb2356_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b016963a_z.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_e4c1cf63_z.jpg",
      "c": ""
     }
    ]
@@ -30953,6 +31622,45 @@
     }
    ]
   },
+  "rosewood-sanya": {
+   "src": "liteapi",
+   "liteapiId": "lpb02fb",
+   "liteapiName": "Rosewood Sanya",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/467156712.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/167791453.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/579842461.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/153858621.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/153858645.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/472340605.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/153858788.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/489436144.jpg",
+     "c": ""
+    }
+   ]
+  },
   "rosewood-sao-paulo": {
    "src": "liteapi",
    "liteapiId": "lp65575360",
@@ -32006,6 +32714,45 @@
     }
    ]
   },
+  "sani-resort": {
+   "src": "liteapi",
+   "liteapiId": "lp657be892",
+   "liteapiName": "Sani Resort Villa",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/521391543.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521391206.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521392049.jpg",
+     "c": "kitchen"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521392132.jpg",
+     "c": "balance & terrace"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521390962.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521391907.jpg",
+     "c": "bedroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521391286.jpg",
+     "c": "bedroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/521390759.jpg",
+     "c": "hotel room"
+    }
+   ]
+  },
   "sankara-hotel-yakushima": {
    "src": "liteapi",
    "liteapiId": "lp7c2e6",
@@ -32903,6 +33650,45 @@
     }
    ]
   },
+  "shangri-la-rasa-ria": {
+   "src": "liteapi",
+   "liteapiId": "lp22e76",
+   "liteapiName": "Shangri-La Rasa Ria, Kota Kinabalu",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/601490653.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/295683474.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/205310468.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/205301578.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/295683358.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/189419516.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/295683259.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/205309029.jpg",
+     "c": ""
+    }
+   ]
+  },
   "sheen-falls-lodge": {
    "src": "liteapi",
    "liteapiId": "lp223d7",
@@ -33640,6 +34426,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/352793979.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "six-senses-qing-cheng-mountain": {
+   "src": "liteapi",
+   "liteapiId": "lp82b7b",
+   "liteapiName": "Six Senses Qing Cheng Mountain",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/510586425.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/158324806.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/510586726.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/603778798.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/603779605.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/603780687.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/603796821.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/603796849.jpg",
      "c": ""
     }
    ]
@@ -35711,6 +36536,45 @@
     }
    ]
   },
+  "suvretta-house": {
+   "src": "liteapi",
+   "liteapiId": "lp75457",
+   "liteapiName": "Suvretta House",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/60055671.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/349928831.jpg",
+     "c": "breakfast buffet"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324128577.jpg",
+     "c": "restaurant"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/349928832.jpg",
+     "c": "food"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324127842.jpg",
+     "c": "hotel reception"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324127402.jpg",
+     "c": "balcony"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/219248446.jpg",
+     "c": "food"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/324128567.jpg",
+     "c": "banquet hall"
+    }
+   ]
+  },
   "tainaron-blue-retreat": {
    "src": "liteapi",
    "liteapiId": "lp655abe69",
@@ -36881,6 +37745,45 @@
     }
    ]
   },
+  "the-connaught-london": {
+   "src": "liteapi",
+   "liteapiId": "lp2a32e",
+   "liteapiName": "The Connaught, Maybourne",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/545911680.jpg",
+     "c": "hotel building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/273752143.jpg",
+     "c": "food"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/415320401.jpg",
+     "c": "bar"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606907778.jpg",
+     "c": "living area"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606907773.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/273727980.jpg",
+     "c": "food"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/618806925.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/415320534.jpg",
+     "c": "indoor pool"
+    }
+   ]
+  },
   "the-cosmopolitan-las-vegas": {
    "src": "liteapi",
    "liteapiId": "lp591b8",
@@ -36916,6 +37819,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/10473523-643e8cd5.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "the-cove-atlantis": {
+   "src": "liteapi",
+   "liteapiId": "lp3dc00",
+   "liteapiName": "The Cove at Atlantis",
+   "photos": [
+    {
+     "u": "https://atlantisbahamas.imgix.net/files/2024/12/The_Cove_Saphire_Bedroom_Water_View1.jpg?auto=compress%2Cformat&cs=srgb&fit=crop&w=1600&h=800",
+     "c": "bedroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/118100569.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/329472816.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/104036169.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/28375042.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/582374082.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/104043182.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/16614304.jpg",
      "c": ""
     }
    ]
@@ -37154,6 +38096,45 @@
     }
    ]
   },
+  "the-fife-arms": {
+   "src": "liteapi",
+   "liteapiId": "lp6567382b",
+   "liteapiName": "Fife Arms Guest House",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/75438491.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573883.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573645.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573864.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573856.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573824.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/242573835.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/48968414.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-fifth-avenue-hotel-new-york": {
    "src": "liteapi",
    "liteapiId": "lp656ca399",
@@ -37346,6 +38327,45 @@
     {
      "u": "https://static.cupid.travel/hotels/ex_9eb17f4e_z.jpg",
      "c": ""
+    }
+   ]
+  },
+  "the-grove-hertfordshire": {
+   "src": "liteapi",
+   "liteapiId": "lp3f480",
+   "liteapiName": "The Grove",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/ex_d1a29572_z.jpg",
+     "c": "view"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_091e3ea4_z.jpg",
+     "c": "lobby"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_f0fc1901_z.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_w6490h4040x7y460-68e6def3_z.jpg",
+     "c": "lobby"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_b8a6d3bc_z.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_5756ba9b_z.jpg",
+     "c": "bedroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_4da37bee_z.jpg",
+     "c": "view"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/ex_3b72b243_z.jpg",
+     "c": "dining"
     }
    ]
   },
@@ -37934,6 +38954,45 @@
     }
    ]
   },
+  "the-langham-shanghai-xintiandi": {
+   "src": "liteapi",
+   "liteapiId": "lp561e9",
+   "liteapiName": "The Langham, Shanghai, Xintiandi",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/220335273.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/14790615.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/220336521.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/220327255.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/530990976.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/220342666.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/535473574.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/544313344.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-leela-hyderabad": {
    "src": "liteapi",
    "liteapiId": "lp657e01cd",
@@ -38519,6 +39578,45 @@
     }
    ]
   },
+  "the-lowell": {
+   "src": "liteapi",
+   "liteapiId": "lp1cf66",
+   "liteapiName": "Lowell Hotel",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/152773179.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152773208.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152769883.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152772743.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152772925.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152773279.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152771149.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/152772897.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-madrona": {
    "src": "liteapi",
    "liteapiId": "lp77fa3",
@@ -39065,6 +40163,45 @@
     }
    ]
   },
+  "the-opposite-house-beijing": {
+   "src": "liteapi",
+   "liteapiId": "lp42e95",
+   "liteapiName": "The Opposite House",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/hd/318932201.jpg",
+     "c": "hotel reception"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/hd/342862851.jpg",
+     "c": "hotel reception"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/342862896.jpg",
+     "c": "hotel reception"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/hd/342862889.jpg",
+     "c": "restaurant"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/hd/148153492.jpg",
+     "c": "restaurant"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/342862880.jpg",
+     "c": "restaurant"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/hd/342862886.jpg",
+     "c": "restaurant"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/hd/103938599.jpg",
+     "c": "rooftop"
+    }
+   ]
+  },
   "the-peninsula-bangkok": {
    "src": "liteapi",
    "liteapiId": "lp22750",
@@ -39101,6 +40238,45 @@
     {
      "u": "https://static.cupid.travel/hotels/434993345.jpg",
      "c": "recepcion & lobby"
+    }
+   ]
+  },
+  "the-peninsula-beijing": {
+   "src": "liteapi",
+   "liteapiId": "lp23612",
+   "liteapiName": "The Peninsula Beijing",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/134719892.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/72740569.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/203301207.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/244293661.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/72740550.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/244293629.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/244294265.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/203298842.jpg",
+     "c": ""
     }
    ]
   },
@@ -39728,6 +40904,45 @@
     }
    ]
   },
+  "the-ritz-carlton-naples": {
+   "src": "liteapi",
+   "liteapiId": "lp923b9",
+   "liteapiName": "The Ritz-Carlton Residences, Waikiki Beach Hotel",
+   "photos": [
+    {
+     "u": "https://cache.marriott.com/is/image/marriotts7prod/rz-hnlrr-exterior-hero-17020:Wide-Hor?wid=1336&fit=constrain",
+     "c": "exterior"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/463619829.jpg",
+     "c": "hotel building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/463619906.jpg",
+     "c": "bedroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/463619830.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/600495099.jpg",
+     "c": "dining"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/463619893.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/463619973.jpg",
+     "c": "living area & kitchen"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/590323554.jpg",
+     "c": ""
+    }
+   ]
+  },
   "the-ritz-carlton-new-york-nomad": {
    "src": "liteapi",
    "liteapiId": "lp65578c02",
@@ -39803,6 +41018,45 @@
     {
      "u": "https://static.cupid.travel/hotels/461537556.jpg",
      "c": "hotel reception"
+    }
+   ]
+  },
+  "the-romanos-costa-navarino": {
+   "src": "liteapi",
+   "liteapiId": "lp5161d",
+   "liteapiName": "The Romanos, a Luxury Collection Resort, Costa Navarino",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/533628650.jpg",
+     "c": "building"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628578.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628447.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628442.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628396.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628724.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628736.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/533628775.jpg",
+     "c": ""
     }
    ]
   },
@@ -41433,6 +42687,45 @@
     {
      "u": "https://static.cupid.travel/hotels/34388216.jpg",
      "c": ""
+    }
+   ]
+  },
+  "tourists": {
+   "src": "liteapi",
+   "liteapiId": "lp657327a9",
+   "liteapiName": "NYC Cozy Private Bedroom with Free Parking & Near Subway - Business & Tourists",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/606582130.jpg",
+     "c": "other"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606582400.jpg",
+     "c": "bathroom"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606582346.jpg",
+     "c": "kitchen"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606582432.jpg",
+     "c": "other"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606582366.jpg",
+     "c": "other"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/606582443.jpg",
+     "c": "parking"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/494512969.jpg",
+     "c": "hotel room"
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/450123799.jpg",
+     "c": "other"
     }
    ]
   },
@@ -43304,6 +44597,45 @@
     },
     {
      "u": "https://static.cupid.travel/hotels/603145355.jpg",
+     "c": ""
+    }
+   ]
+  },
+  "waldorf-astoria-shanghai-on-the-bund": {
+   "src": "liteapi",
+   "liteapiId": "lp562a6",
+   "liteapiName": "Waldorf Astoria Shanghai on the Bund",
+   "photos": [
+    {
+     "u": "https://static.cupid.travel/hotels/613396537.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/490830393.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/611735672.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/540229982.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/490830315.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/490830353.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/490830397.jpg",
+     "c": ""
+    },
+    {
+     "u": "https://static.cupid.travel/hotels/490830408.jpg",
      "c": ""
     }
    ]
