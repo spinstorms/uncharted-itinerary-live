@@ -1,0 +1,10 @@
+{
+ "note": "LiteAPI ids pinned by hand where the name search fails (checked: same hotel, same address). 'photos' = official photos for hotels LiteAPI doesn't carry.",
+ "liteapiIds": {
+  "the-puli-shanghai": "lp43c54",
+  "montage-kapalua-bay": "lp68c89",
+  "sujan-jawai-india": "lp6570093a",
+  "paradisus-palma-real": "lp65784324"
+ },
+ "photos": {}
+}
