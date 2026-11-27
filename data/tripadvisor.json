@@ -396,6 +396,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "amandayan-lijiang": {
+   "locationId": 7902550,
+   "name": "Amandayan",
+   "rating": 4.4,
+   "reviewCount": 81,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g303783-d7902550-Reviews-Amandayan-Lijiang_Yunnan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "amanera-dominican-republic": {
    "locationId": 8658327,
    "name": "Amanera",
@@ -792,6 +803,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "atlantis-sanya": {
+   "locationId": 13391001,
+   "name": "Atlantis Sanya",
+   "rating": 4.9,
+   "reviewCount": 1859,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g297427-d13391001-Reviews-Atlantis_Sanya-Sanya_Hainan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "atlantis-the-royal": {
    "locationId": 25249570,
    "name": "Atlantis The Royal",
@@ -902,6 +924,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "banyan-tree-anji": {
+   "locationId": 14382029,
+   "name": "Banyan Tree Anji",
+   "rating": 5.0,
+   "reviewCount": 29563,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g644039-d14382029-Reviews-Banyan_Tree_Anji-Anji_County_Zhejiang.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "banyan-tree-krabi": {
    "locationId": 21275120,
    "name": "Banyan Tree Krabi",
@@ -923,6 +956,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g298570-d14166349-Reviews-Banyan_Tree_Kuala_Lumpur-Kuala_Lumpur_Wilayah_Persekutuan.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "banyan-tree-lijiang": {
+   "locationId": 1144010,
+   "name": "Banyan Tree Lijiang",
+   "rating": 4.8,
+   "reviewCount": 2091,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g303783-d1144010-Reviews-Banyan_Tree_Lijiang-Lijiang_Yunnan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "banyan-tree-macau": {
    "locationId": 2031569,
@@ -1980,6 +2024,39 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "club-med-kani": {
+   "locationId": 556493,
+   "name": "Club Med Kani - Maldives",
+   "rating": 4.7,
+   "reviewCount": 11296,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g6852289-d556493-Reviews-Club_Med_Kani__Maldives-Kanifinolhu_Island_North_Male_Atoll.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
+  "club-med-miches-playa-esmeralda": {
+   "locationId": 19092655,
+   "name": "Club Med Miches Playa Esmeralda - Dominican Republic",
+   "rating": 4.7,
+   "reviewCount": 5733,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g2441050-d19092655-Reviews-Club_Med_Miches_Playa_Esmeralda__Dominican_Republic-Miches_El_Seibo_Province.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
+  "club-med-seychelles": {
+   "locationId": 20238049,
+   "name": "Club Med Seychelles",
+   "rating": 4.6,
+   "reviewCount": 5040,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g298572-d20238049-Reviews-Club_Med_Seychelles-Victoria_Mahe_Island.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "cobblers-cove-barbados": {
    "locationId": 207141,
    "name": "Cobblers Cove",
@@ -2265,6 +2342,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g1184718-d148274-Reviews-Curtain_Bluff_Resort-Saint_Mary_s_Antigua.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "daios-cove-crete": {
+   "locationId": 34064259,
+   "name": "Daios Cove",
+   "rating": 5.0,
+   "reviewCount": 3,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g189414-d34064259-Reviews-Daios_Cove-Agios_Nikolaos_Lasithi_Prefecture.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "delaire-graff-estate": {
    "locationId": 1823342,
@@ -2761,6 +2849,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "finest-punta-cana": {
+   "locationId": 20410547,
+   "name": "Finest Punta Cana",
+   "rating": 4.5,
+   "reviewCount": 5139,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g147293-d20410547-Reviews-Finest_Punta_Cana-Punta_Cana_La_Altagracia_Province.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "finolhu-baa-atoll": {
    "locationId": 32763490,
    "name": "Seaside Finolhu Baa Atoll Maldives, a Member of Design Hotels",
@@ -2804,6 +2903,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g194703-d1723403-Reviews-Forestis_Dolomites-Bressanone_Province_of_South_Tyrol.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "forte-village-resort": {
+   "locationId": 234738,
+   "name": "Forte Village Resort - Waterfront Suites",
+   "rating": 5.0,
+   "reviewCount": 214,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g608921-d234738-Reviews-Forte_Village_Resort__Waterfront_Suites-Santa_Margherita_di_Pula_Pula.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "four-seasons-anguilla": {
    "locationId": 1456492,
@@ -3894,6 +4004,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "grand-wailea-waldorf-astoria": {
+   "locationId": 111788,
+   "name": "Grand Wailea, A Waldorf Astoria Resort",
+   "rating": 4.1,
+   "reviewCount": 9247,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g609129-d111788-Reviews-Grand_Wailea_A_Waldorf_Astoria_Resort-Wailea_Maui.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "grantley-hall": {
    "locationId": 17601074,
    "name": "Grantley Hall",
@@ -4653,6 +4774,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "hyatt-ziva-cap-cana": {
+   "locationId": 16663802,
+   "name": "Hyatt Ziva Cap Cana",
+   "rating": 4.9,
+   "reviewCount": 7644,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g16884615-d16663802-Reviews-Hyatt_Ziva_Cap_Cana-Cap_Cana_Punta_Cana.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "i-borghi-delleremo": {
    "locationId": 23807606,
    "name": "I Borghi Dell'eremo",
@@ -4707,6 +4839,28 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g652121-d319549-Reviews-Iberostar_Selection_Lanzarote_Park-Playa_Blanca_Lanzarote.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "ikos-andalusia": {
+   "locationId": 16578974,
+   "name": "Ikos Andalusia",
+   "rating": 4.9,
+   "reviewCount": 2987,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g187437-d16578974-Reviews-Ikos_Andalusia-Estepona_Costa_del_Sol.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
+  "ikos-aria": {
+   "locationId": 15182081,
+   "name": "Ikos Aria",
+   "rating": 4.9,
+   "reviewCount": 3663,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g910630-d15182081-Reviews-Ikos_Aria-Kefalos_Kós.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "il-borro": {
    "locationId": 195889,
@@ -5775,6 +5929,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "macakizi-bodrum": {
+   "locationId": 307427,
+   "name": "Macakizi Hotel Bodrum",
+   "rating": 4.4,
+   "reviewCount": 229,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g298660-d307427-Reviews-Macakizi_Hotel_Bodrum-Golturkbuku_Bodrum_District.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "majestic-hotel-and-spa-barcelona": {
    "locationId": 190616,
    "name": "Majestic Hotel & Spa Barcelona",
@@ -6017,6 +6182,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "mandarin-oriental-pudong-shanghai": {
+   "locationId": 3831513,
+   "name": "Mandarin Oriental Pudong, Shanghai",
+   "rating": 5.0,
+   "reviewCount": 21132,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d3831513-Reviews-Mandarin_Oriental_Pudong_Shanghai-Shanghai_Shanghai_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "mandarin-oriental-qianmen-beijing": {
    "locationId": 28161675,
    "name": "Mandarin Oriental Qianmen, Beijing",
@@ -6038,6 +6214,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g187514-d190570-Reviews-Mandarin_Oriental_Ritz_Madrid-Madrid_Community_of_Madrid.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "mandarin-oriental-sanya": {
+   "locationId": 729428,
+   "name": "Mandarin Oriental, Sanya",
+   "rating": 4.9,
+   "reviewCount": 8914,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g297427-d729428-Reviews-Mandarin_Oriental_Sanya-Sanya_Hainan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "mandarin-oriental-shenzhen": {
    "locationId": 23794305,
@@ -6435,6 +6622,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "nickelodeon-hotels-resorts-punta-cana": {
+   "locationId": 9762283,
+   "name": "Nickelodeon Hotels & Resorts Punta Cana",
+   "rating": 4.3,
+   "reviewCount": 8100,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g3200043-d9762283-Reviews-Nickelodeon_Hotels_&_Resorts_Punta_Cana-Uvero_Alto_Punta_Cana.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "nihi-sumba": {
    "locationId": 486594,
    "name": "NIHI Sumba",
@@ -6820,6 +7018,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "paradisus-palma-real": {
+   "locationId": 583034,
+   "name": "Paradisus Palma Real Golf & Spa Resort",
+   "rating": 4.5,
+   "reviewCount": 26741,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g3176298-d583034-Reviews-Paradisus_Palma_Real_Golf_&_Spa_Resort-Bavaro_Punta_Cana.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "parador-de-la-gomera": {
    "locationId": 190895,
    "name": "Parador de La Gomera",
@@ -6951,6 +7160,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g294197-d555275-Reviews-Park_Hyatt_Seoul-Seoul.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "park-hyatt-shanghai": {
+   "locationId": 1158822,
+   "name": "Park Hyatt Shanghai",
+   "rating": 4.5,
+   "reviewCount": 1646,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d1158822-Reviews-Park_Hyatt_Shanghai-Shanghai_Shanghai_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "park-hyatt-siem-reap": {
    "locationId": 568118,
@@ -7920,6 +8140,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "rosewood-sanya": {
+   "locationId": 12624912,
+   "name": "Rosewood Sanya",
+   "rating": 5.0,
+   "reviewCount": 5944,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g297427-d12624912-Reviews-Rosewood_Sanya-Sanya_Hainan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "rosewood-sao-paulo": {
    "locationId": 23623757,
    "name": "Rosewood São Paulo",
@@ -8393,6 +8624,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "shangri-la-rasa-ria": {
+   "locationId": 306368,
+   "name": "Shangri-La Rasa Ria Kota Kinabalu",
+   "rating": 4.6,
+   "reviewCount": 7704,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g2006071-d306368-Reviews-Shangri_La_Rasa_Ria_Kota_Kinabalu-Tuaran_Sabah.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "sheen-falls-lodge": {
    "locationId": 189757,
    "name": "Sheen Falls Lodge",
@@ -8623,6 +8865,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g20361194-d559946-Reviews-Six_Senses_Ninh_Van_Bay-Ninh_Van_Ninh_Hoa.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "six-senses-qing-cheng-mountain": {
+   "locationId": 7003117,
+   "name": "Six Senses Qing Cheng Mountain",
+   "rating": 4.9,
+   "reviewCount": 1245,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g297463-d7003117-Reviews-Six_Senses_Qing_Cheng_Mountain-Chengdu_Sichuan.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "six-senses-rome": {
    "locationId": 24678863,
@@ -9064,6 +9317,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "suvretta-house": {
+   "locationId": 196851,
+   "name": "Suvretta House",
+   "rating": 4.8,
+   "reviewCount": 602,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g188091-d196851-Reviews-Suvretta_House-St_Moritz_Engadin_St_Moritz.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "tainaron-blue-retreat": {
    "locationId": 7646708,
    "name": "Tainaron Blue Retreat",
@@ -9251,6 +9515,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "the-broadmoor": {
+   "locationId": 85145,
+   "name": "The Broadmoor",
+   "rating": 4.6,
+   "reviewCount": 2412,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g33364-d85145-Reviews-The_Broadmoor-Colorado_Springs_El_Paso_County.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "the-burman-hotel": {
    "locationId": 33053532,
    "name": "The Burman Hotel",
@@ -9393,6 +9668,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g186338-d187991-Reviews-The_Connaught-London_England.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "the-cove-atlantis": {
+   "locationId": 649623,
+   "name": "The Cove at Atlantis",
+   "rating": 3.9,
+   "reviewCount": 5834,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g147417-d649623-Reviews-The_Cove_at_Atlantis-Paradise_Island_New_Providence_Island.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "the-datai-langkawi": {
    "locationId": 302014,
@@ -9657,6 +9943,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g186338-d187569-Reviews-The_Langham_London-London_England.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "the-langham-shanghai-xintiandi": {
+   "locationId": 1945926,
+   "name": "The Langham Shanghai Xintiandi",
+   "rating": 4.9,
+   "reviewCount": 6277,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d1945926-Reviews-The_Langham_Shanghai_Xintiandi-Shanghai_Shanghai_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "the-leela-hyderabad": {
    "locationId": 31918067,
@@ -9955,6 +10252,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "the-peninsula-beijing": {
+   "locationId": 302020,
+   "name": "The Peninsula Beijing",
+   "rating": 4.9,
+   "reviewCount": 1217,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g294212-d302020-Reviews-The_Peninsula_Beijing-Beijing.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "the-peninsula-chicago": {
    "locationId": 225105,
    "name": "The Peninsula Chicago",
@@ -10020,6 +10328,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d1461776-Reviews-The_Peninsula_Shanghai-Shanghai_Shanghai_Region.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "the-puli-shanghai": {
+   "locationId": 1200824,
+   "name": "The PuLi Shanghai",
+   "rating": 4.9,
+   "reviewCount": 10450,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d1200824-Reviews-The_PuLi_Shanghai-Shanghai_Shanghai_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "the-remote-resort": {
    "locationId": 1886109,
@@ -10087,6 +10406,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "the-ritz-carlton-guangzhou": {
+   "locationId": 814220,
+   "name": "The Ritz-Carlton, Guangzhou",
+   "rating": 4.9,
+   "reviewCount": 7492,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g298555-d814220-Reviews-The_Ritz_Carlton_Guangzhou-Guangzhou_Guangdong.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "the-ritz-carlton-koh-samui": {
    "locationId": 12504573,
    "name": "The Ritz-Carlton, Koh Samui",
@@ -10109,6 +10439,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "the-ritz-carlton-naples": {
+   "locationId": 85228,
+   "name": "The Ritz-Carlton, Naples",
+   "rating": 4.4,
+   "reviewCount": 2733,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g34467-d85228-Reviews-The_Ritz_Carlton_Naples-Naples_Southwest_Gulf_Coast.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "the-ritz-carlton-new-york-nomad": {
    "locationId": 23947245,
    "name": "The Ritz-Carlton New York, NoMad",
@@ -10130,6 +10471,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g186338-d187591-Reviews-The_Ritz_London_Hotel-London_England.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "the-romanos-costa-navarino": {
+   "locationId": 1597519,
+   "name": "The Romanos, a Luxury Collection Resort, Costa Navarino",
+   "rating": 4.7,
+   "reviewCount": 1993,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g11805595-d1597519-Reviews-The_Romanos_a_Luxury_Collection_Resort_Costa_Navarino-Costa_Navarino_Messenia_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "the-royal-crescent-hotel-and-spa": {
    "locationId": 187614,
@@ -10196,6 +10548,17 @@
    "url": "https://www.tripadvisor.com/Hotel_Review-g298564-d20396334-Reviews-The_Shinmonzen-Kyoto_Kyoto_Prefecture.html?m=70260",
    "status": "OPEN",
    "fetched": "2026-11-25"
+  },
+  "the-shore-club-turks-and-caicos": {
+   "locationId": 11864394,
+   "name": "The Shore Club Turks & Caicos",
+   "rating": 4.7,
+   "reviewCount": 865,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g3208438-d11864394-Reviews-The_Shore_Club_Turks_&_Caicos-Long_Bay_Beach_Providenciales.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
   },
   "the-silo-hotel-cape-town": {
    "locationId": 12223139,
@@ -10956,6 +11319,17 @@
    "status": "OPEN",
    "fetched": "2026-11-25"
   },
+  "waldorf-astoria-shanghai-on-the-bund": {
+   "locationId": 1800802,
+   "name": "Waldorf Astoria Shanghai on the Bund",
+   "rating": 4.9,
+   "reviewCount": 7305,
+   "ranking": null,
+   "awards": [],
+   "url": "https://www.tripadvisor.com/Hotel_Review-g308272-d1800802-Reviews-Waldorf_Astoria_Shanghai_on_the_Bund-Shanghai_Shanghai_Region.html?m=70260",
+   "status": "OPEN",
+   "fetched": "2026-11-27"
+  },
   "wallingford-homestead": {
    "locationId": 6126213,
    "name": "Wallingford Homestead",
@@ -11171,8 +11545,10 @@
   "airelles-saint-tropez-chateau-de-la-messardiere": "2026-11-25",
   "airelles-venezia-a-virtuoso-preview-property": "2026-11-25",
   "al-maha-dubai": "2026-11-25",
+  "alila-yangshuo": "2026-11-27",
   "alpen-wellness-resort-hochfirst": "2026-11-25",
   "alpine-falls-ranch": "2026-11-25",
+  "aman-summer-palace-beijing": "2026-11-27",
   "amanemu-ise-shima": "2026-11-25",
   "amankila-bali": "2026-11-25",
   "amankora-bhutan": "2026-11-25",
@@ -11200,6 +11576,7 @@
   "banyan-tree-alula": "2026-11-25",
   "banyan-tree-lang-co": "2026-11-25",
   "baoase-luxury-resort-curacao": "2026-11-25",
+  "barcelo-bavaro-palace": "2026-11-27",
   "barcelo-corralejo-bay-fuerteventura": "2026-11-25",
   "beaverbrook-surrey": "2026-11-25",
   "bellevue-syrene-1820": "2026-11-25",
@@ -11215,6 +11592,7 @@
   "bulgari-hotel-roma": "2026-11-25",
   "bulgari-hotel-tokyo": "2026-11-25",
   "bulgari-resort-dubai": "2026-11-25",
+  "calcot-manor": "2026-11-27",
   "canaves-oia-epitome": "2026-11-25",
   "cannua-lodge": "2026-11-25",
   "cap-karoso-sumba": "2026-11-25",
@@ -11283,6 +11661,7 @@
   "gut-steinbach-hotel-chalets-spa": "2026-11-25",
   "hacienda-altagracia-auberge": "2026-11-25",
   "halcyon-house-cabarita": "2026-11-25",
+  "half-moon-jamaica": "2026-11-27",
   "ham-yard-hotel-firmdale-hotels": "2026-11-25",
   "haymarket-hotel-firmdale-hotels": "2026-11-25",
   "heights-melasti-bali": "2026-11-25",
@@ -11304,6 +11683,7 @@
   "iberostar-selection-sabila-tenerife": "2026-11-25",
   "il-sereno": "2026-11-25",
   "impression-moxche-by-secrets": "2026-11-25",
+  "intercontinental-hayman-island": "2026-11-27",
   "ishara-masai-mara": "2026-11-25",
   "jackalope-hotel-mornington-peninsula": "2026-11-25",
   "jardines-de-nivaria-tenerife": "2026-11-25",
@@ -11331,10 +11711,10 @@
   "lefay-resort-and-spa-dolomiti": "2026-11-25",
   "little-palm-island-florida-keys": "2026-11-25",
   "lucknam-park-hotel-and-spa": "2026-11-25",
-  "macakizi-bodrum": "2026-11-25",
   "maia-resort-quy-nhon": "2026-11-25",
   "mandarin-oriental-lake-como": "2026-11-25",
   "manor-house-castle-combe": "2026-11-25",
+  "martinhal-sagres": "2026-11-27",
   "masseria-torre-maizza-a-rocco-forte-hotel": "2026-11-25",
   "mauna-lani-auberge-hawaii": "2026-11-25",
   "melia-fuerteventura": "2026-11-25",
@@ -11381,6 +11761,7 @@
   "saii-koh-samui-villas-adult-only": "2026-11-25",
   "san-domenico-palace-taormina": "2026-11-25",
   "sandals-royal-curacao": "2026-11-25",
+  "sani-resort": "2026-11-27",
   "santa-caterina": "2026-11-25",
   "schloss-elmau-luxury-spa-retreat-and-cultural-hideaway": "2026-11-25",
   "schloss-monchstein": "2026-11-25",
@@ -11420,6 +11801,7 @@
   "the-dorchester-dorchester-collection": "2026-11-25",
   "the-edge-bali": "2026-11-25",
   "the-fife-arms": "2026-11-25",
+  "the-grove-hertfordshire": "2026-11-27",
   "the-hermitage-hotel": "2026-11-25",
   "the-hornibrook-mansion": "2026-11-25",
   "the-kumaon": "2026-11-25",
@@ -11429,8 +11811,10 @@
   "the-lodge-at-blue-sky-auberge-resorts-collection": "2026-11-25",
   "the-lowell": "2026-11-25",
   "the-marquesa-hotel": "2026-11-25",
+  "the-middle-house-shanghai": "2026-11-27",
   "the-oberoi-beach-resort-bali": "2026-11-25",
   "the-oberoi-beach-resort-lombok": "2026-11-25",
+  "the-opposite-house-beijing": "2026-11-27",
   "the-plaza-new-york": "2026-11-25",
   "the-pod-singapore": "2026-11-25",
   "the-resort-at-paws-up": "2026-11-25",
@@ -11438,6 +11822,7 @@
   "the-savoy-london": "2026-11-25",
   "the-siam-bangkok": "2026-11-25",
   "the-stanley-hotel-estes-park": "2026-11-25",
+  "the-temple-house-chengdu": "2026-11-27",
   "the-upper-house-hk": "2026-11-25",
   "the-vines-resort-mendoza": "2026-11-25",
   "the-whitby-hotel": "2026-11-25",
@@ -11466,5 +11851,5 @@
   "zadun-ritz-carlton-reserve": "2026-11-25",
   "zoetry-agua-punta-cana": "2026-11-25"
  },
- "updated": "2026-11-26"
+ "updated": "2026-11-27"
 }

@@ -256,104 +256,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "airelles-courchevel": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 39,
-  "quotes": [
-   {
-    "date": "2025-07-29",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Tour de France FTW",
-    "liked": "Nice hotel in nice environment. Pool, sauna.",
-    "disliked": "There was a little confusion with reservation, everything ok at end.",
-    "language": "en"
-   },
-   {
-    "date": "2025-07-02",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with young children",
-    "headline": "Superb",
-    "liked": "Very friendly owners, pool and sauna",
-    "disliked": "Very small parking lot and no elevator",
-    "language": "en"
-   },
-   {
-    "date": "2024-01-08",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "young couple",
-    "headline": "Exceptional",
-    "liked": "Very cozy hotel and nearby location for the sking area. Cathy and Stephane are helpful and very nice people. Cathy accompanied us to present the ski area and the facilities (many thanks for these). In the hotel , we had a very good breakfast and dinner to test the local specialities. Also there are free charge game room, library room, sauna for the hotel clients. I would strongly recommend this hotel.",
-    "disliked": "Almost nothing.",
-    "language": "en"
-   },
-   {
-    "date": "2023-10-23",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "young couple",
-    "headline": "Wonderful",
-    "liked": "Family run, superb breakfast, comfortable, clean, lovely in-dining options",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "airelles-saint-tropez-chateau-de-la-messardiere": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 80,
-  "quotes": [
-   {
-    "date": "2025-09-20",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "I’ve been around the world and stayed nicest places , Top 3 for sure in world .. no mistakes , stay here if you can",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Extraordinary as always",
-    "liked": "Everything...anything",
-    "disliked": "Not possible",
-    "language": "en"
-   },
-   {
-    "date": "2024-10-10",
-    "source": "Verified booking guest",
-    "score": 6.0,
-    "travellerType": "family with children",
-    "headline": "",
-    "liked": "sono un cliente abituale che ama questo hotel . stavolta il mio soggiorno molto deludente . la colazione e il pranzo a buffet , molto di bassa qualita ' . pesce d'allevamento. ostriche cattivo odore , gamberi e aragoste di bassa qualita ' Mi hanno tolto anche la torta al limone. . Le navette ( bus e rolls) sempre assenti . Ogni volta se va bene bisogna attendere 15 minuti al freddo sia in hotel che a St Tropez . ho o…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-06-26",
-    "source": "Verified booking guest",
-    "score": 4.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "We stayed here for 3 days in what was billed as a ‘junior suite’. The room was small and not really a suite, but a largish bedroom. Very disappointing for the 3k plus price charged. Style-less decor and a sweltering bathroom. Overall we were completely underwhelmed by our experience here. The hotel is charmless and ordinary. By day 2 we decided it was really like a Disney cruise ship experience. There are gaggles and…",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "aktiv-and-wellnesshotel-bergfried": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -1805,55 +1707,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "anantara-palais-hansen-vienna-hotel": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 479,
-  "quotes": [
-   {
-    "date": "2026-09-02",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "True 5 star luxury !",
-    "liked": "Everything ! Beautiful hotel - elegant rooms - wonderful staff - exceptional service.",
-    "disliked": "Nothing !",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-02",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Exceptional hospitality and a truly memorable stay",
-    "liked": "We absolutely loved everything about our stay. The hotel is beautiful, elegant and extremely well equipped, with great attention to every detail. Our room was exceptionally spacious and comfortable, and the bathroom was equally impressive, beautifully designed and equipped with premium amenities, including Dyson. What made our stay truly special was the wonderful service. A very special thank you to Alexandra, who to…",
-    "disliked": "Nothing at all – everything exceeded our expectations.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-31",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "couple",
-    "headline": "Good",
-    "liked": "It was beautifully appointed and had a grand atrium. The rooms were exceptionally spacious and very comfortable.",
-    "disliked": "The concierge services were below par.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-31",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Magnificent",
-    "liked": "I loved absolutely everything about this property. From the entrance, Guest Relations team (Dominik in particular), are making you feel so special. Everyone is helpful and friendly. The rooms are spacious and new. Location of the hotel is just wonderful 😍 definitely my favorite property in Vienna!",
-    "disliked": "Not a thing, everything was perfect!",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "anantara-stanley-and-livingstone-victoria-falls-hotel": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -2881,6 +2734,61 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "atlantis-sanya": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 128,
+  "quotes": [
+   {
+    "date": "2025-12-30",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Awesome Hotel, great for families with kids",
+    "liked": "We had a wonderful stay at Atlantis Sanya. The room was great—spacious, comfortable, and well maintained. Service was consistently good and attentive. The amenities are excellent: the aquarium, water park, and shows were especially impressive, and there were plenty of activities for both adults and children. Food quality was very good with lots of options. The location is also a big plus, with nice surroundings and a…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-12-27",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "Couples",
+    "headline": "There's still room for improvement",
+    "liked": "Room is spacious and clean. Finding food can be challenging as most restuarants here are fully booked unless you wanna travel out a bit for food. Luxury theme park hotel suitable for family with kids. Our package comes with breakfast, hi tea and light dinner. Service provided by Ms Farhana is excellent. But for a five star hotel I was expecting the room to be fully automated still it's very traditional settings. Ther…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-12-25",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Must see hotel",
+    "liked": "Location: nice and clean with fresh air neighborhood. Too bad that beach has constant waves and noone can swim there. I wish, with such a great hotel there was also a swimmable beach, so I did not have to split my family vacation into two separate areas of the city! Packing unpacking transfer and check ins take quite a time and uncomfortable. Thanks to a consultant ( butler) Shahzod made our check in process and intr…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-12-21",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "Family",
+    "headline": "Impeccable service, hotel layout could use some tweaks.",
+    "liked": "Excellent 3-night stay at Atlantis Sanya for our son’s birthday. Octonauts themed room was perfect for a family of 4. Best part of the stay was the staff, especially our butler Elena Hu, who accommodated our every request, from a delicious cake for our son to dinner and Beluga encounter reservations. Only complaint (and reason for 4 rather than 5 star review) is the layout/facilities of the hotel. Many of the hotel p…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [
+   {
+    "date": "2019-08-05",
+    "source": "Verified booking guest",
+    "text": "The only reason we stayed in this giant maze was because of the complimentary water park entry during the stay."
+   }
+  ],
+  "waterChecked": 2
+ },
  "atlantis-the-royal": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -3428,6 +3336,35 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "banyan-tree-anji": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 2,
+  "quotes": [
+   {
+    "date": "2018-11-15",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "Very good breakfast, a lot of variety both western and local dishes. Beautiful hotel and scenery.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2018-10-18",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "住宿地點偏僻 一定要有車 不然很難叫到車 早餐多樣 但味道普通 客房很舒適 空間寬敞 浴缸衛浴很棒 員工態度好 但看起來工讀生居多 很多事問了都不清楚 ～",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "banyan-tree-krabi": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -3569,6 +3506,55 @@
     "headline": "",
     "liked": "We absolutely loved our stay at Banyan Tree Lang Co. The resort is stunning, surrounded by beautiful nature and incredibly peaceful. The beach it’s beautiful and empty 🙂. The food at the restaurants was excellent and the spa was amazing . But what really makes this place special is the staff — everyone was so kind, warm and genuinely helpful. The service was excellent throughout our 5 days stay and everything felt ef…",
     "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "banyan-tree-lijiang": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 47,
+  "quotes": [
+   {
+    "date": "2026-10-26",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "Serene and pleasant getaway.",
+    "liked": "Design and comfort",
+    "disliked": "Having a heated pool outside would have been lovely",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-10",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "Loved the hotel, excellent stay, environment, and Lijiang Old Town is walkable with many anemities. Definitely recommend. Staff is friendly, very friendly and quick to respond.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-09-16",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "The jaccuzi was splendid for watching the night sky",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-09-14",
+    "source": "Verified booking guest",
+    "score": 5.0,
+    "travellerType": "couple",
+    "headline": "I hope they will renovate the rooms and upgrade some of the amenities.",
+    "liked": "Staff are very attentive, service is excellent",
+    "disliked": "Rooms are old and run down.",
     "language": "en"
    }
   ],
@@ -3813,6 +3799,55 @@
     "travellerType": "Couples",
     "headline": "Phenomenal",
     "liked": "The most luxurious resort in a beautiful location. Phenomenal customer service a slice of paradise! Rest relax eat adventure repeat",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "barcelo-bavaro-palace": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 697,
+  "quotes": [
+   {
+    "date": "2025-10-12",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "Rooms need updating. A lot of tear and wear",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-11",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "We stayed in Premium Sea View Suite and room was fabulous! Very clean and comfortable and super spacious. Housekeeping was on point and minibar got stocked daily. Premium has included room service and we utilized that twice. Food is not amazing, but options are plenty and we were not going hungry. Staff is exceptional, always polite and helpful! Buffets on adult side definitely had better food and all the restaurants…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-09",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "This is our second time going to this resort in 4 months. We absolutely love it there. Can’t wait to go back.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-09",
+    "source": "Verified booking guest",
+    "score": 2.0,
+    "travellerType": "family",
+    "headline": "",
+    "liked": "99% of the staff was downright rude, inattentive, and seemed annoyed anytime you needed something. Our room was dated, the paint job terrible, dusty on the furniture, closets, shelves and counters. The bathroom had black hairs in the shower upon checkin, the towels were threadbare and ripping, and it smelt like sewer. There was mold growing on the vents, and it was loud outside of our room. The property itself was be…",
     "disliked": "",
     "language": "en"
    }
@@ -4517,61 +4552,6 @@
     "date": "2026-02-23",
     "source": "Verified booking guest",
     "text": "There was no complimentary water in …"
-   }
-  ],
-  "waterChecked": 2
- },
- "bellevue-syrene-1820": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 289,
-  "quotes": [
-   {
-    "date": "2026-11-09",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "Everything was amazing, staff, structure, room, breakfast, facilities",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-05",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Overall exceptional",
-    "liked": "Absolutely stunning property. Phenomenal.",
-    "disliked": "The spa/ massage not great. Massage was actually bad.",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-04",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Fantastic hotel but maybe you want to cosider an outside restaurant for dinner.",
-    "liked": "We liked just about everything about this hotel. Thr location, amenities, the staff, decorations and more. It's an at least once in a lifetime event.",
-    "disliked": "One thing did catch my eye, the hotel has a 2 Michelin stars restaurant and cudos for that. They have three options on the menu; 3 course menu, 5 course and 10 courses. The cheapest is the 3 course for 195 Euros per person without drinks. The six of us who stayed at the hotel walked down to the Marina Grande and had dinner at one of the restaurants near the sea. The six of us had sea food for dinner with appetizers a…",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-21",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Best hotel experience of my life",
-    "liked": "Hands down the most beautiful place I’ve ever been to and the best experience I’ve ever had. The staff were all friendly and helpful and the hotel amenities, from the beach club all the way up to the room were unparalleled. Would absolutely recommend this place to anyone considering sorrento",
-    "disliked": "Nothing",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [
-   {
-    "date": "2026-07-05",
-    "source": "Tripadvisor",
-    "text": "Rooms were cleaned twice a day with tons of amenities (little snacks, multiple bottles of water, fully stocked fridge, and more)."
    }
   ],
   "waterChecked": 2
@@ -5757,115 +5737,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "bulgari-hotel-milano": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 222,
-  "quotes": [
-   {
-    "date": "2026-09-01",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Warm and cozy",
-    "liked": "Attention to details is amazing and the location of the hotel",
-    "disliked": "I didnt like that there is no sunbathing area",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-20",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Fabulous!",
-    "liked": "Gorgeous hotel in an amazing location. We loved the room and the terrace. Outstanding service.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-06-14",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "The gardens The staff The atmosphere and vibe created by unique design",
-    "disliked": "N/a",
-    "language": "en"
-   },
-   {
-    "date": "2026-05-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "We loved it and would certainly refer our friends.",
-    "liked": "Every thing is exquisite… wonderful design, lovely amenities, beautiful garden, but truly the best service and most helpful staff we’ve ever received.",
-    "disliked": "Nothing at all",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [
-   {
-    "date": "2024-11-30",
-    "source": "Verified booking guest",
-    "text": "what really threw us off was that as a five star hotel that emphasized on services, charging for bottled water was just ridiculous."
-   },
-   {
-    "date": "2024-11-30",
-    "source": "Verified booking guest",
-    "text": "this was the first five star hotel where we were charged for bottled water."
-   }
-  ],
-  "waterChecked": 2
- },
- "bulgari-hotel-shanghai": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 104,
-  "quotes": [
-   {
-    "date": "2026-11-14",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "the breakfast in the room was fantastic and the view of our room was unreal.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-22",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "Perfect 👌",
-    "liked": "Amazing experience place perfect 👌 staff very very good and friendly feel like family and hotel manager also very humble and friendly Very clean , butler group super in all request and helpful 😍",
-    "disliked": "Nothing",
-    "language": "en"
-   },
-   {
-    "date": "2026-06-21",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "extended group",
-    "headline": "The hotel was a totally different level. The vibe was exceptional",
-    "liked": "Everything",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-06-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "10/10 however they do need new thicker towels",
-    "liked": "",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "bulgari-resort-bali": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -7019,55 +6890,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "capri-palace-jumeirah": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 274,
-  "quotes": [
-   {
-    "date": "2026-11-07",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "solo traveller",
-    "headline": "Top option for Capri",
-    "liked": "The staff - very cooperative. The restaurant on site and the one by the sea.",
-    "disliked": "Bathroom was not up to standard. Why not the shuttle to downtown but to the port only?",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-08",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "NONE",
-    "headline": "The one and only top place to be in Capri",
-    "liked": "Settled in Anacapri within beautiful garden with amazing sunset and swimming pool . Beautiful room . Excellent staff always beyond expectations, food offer and services exceptional , cool vibes but also relaxing place, top level SPA . Not to be missed and to return to again",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-07-20",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "Bad and sad stay",
-    "liked": "The rooms is nice and clean",
-    "disliked": "I am extremely disappointed by the way my mother was treated at breakfast. There were several empty tables by the pool, and when she politely asked to sit at one of them, the manager refused, saying it was reserved for four people. Moments later, he allowed another guest who was dining alone to sit at that very same table. Not only was she asked to sit inside while the restaurant was nearly empty, but the manager’s a…",
-    "language": "en"
-   },
-   {
-    "date": "2026-07-05",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Couples",
-    "headline": "Wonderful experience",
-    "liked": "A lovely luxurious hotel in a great location. Staff are extremely friendly and welcoming, service is immaculate, our garden suite was stunning. The pool area is beautiful, the gym is huge and state of the art, the Spa offers many treatments we hadn't experienced elsewhere. The food is excellent, with various restaurants offering different style of food. I highly recommend the Amare restaurant, which is in an amazing …",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "carlisle-bay-antigua": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -7865,6 +7687,14 @@
   ],
   "waterChecked": 2
  },
+ "cataloochee-ranch": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 0,
+  "quotes": [],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "cavallo-point-lodge": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -8054,55 +7884,6 @@
     "travellerType": "",
     "headline": "Close enough to perfect. To be perfect.",
     "liked": "Honestly this place is incredible. Beautiful setting, beautiful rooms and buildings. The hotel has been open for 8 years, so there is a little bit of wear, but everything maintained very well. The rooms are big and very nice. The spa is lovely. And particular shout out to Monse who ran the yoga and fitness classes in the morning. Wonderful way to start the day, all orchestrated perfectly. The food at the two restaura…",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "chateau-de-la-chevre-dor": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 121,
-  "quotes": [
-   {
-    "date": "2025-09-21",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "Spectacular property with unbelievable views, and exceptional 5 star service!",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-05",
-    "source": "Verified booking guest",
-    "score": 4.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Unfortunately we did not have the best stay here. We stayed for 2 nights and were \"upgraded\" to some kinda suite. There is no central AC, we were left with 2 low powered AC units in the middle of summer. It was so uncomfortable to sleep. We asked for a fan that is how uncomfortable it was. The property is pretty outdated, you had to use a phone to call and get any kinda service by the pool. The location is super uniq…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-04",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Everything met expectations! Staff were exceptional, grounds gorgeous. View unbelievable.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-18",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "The welcome cocktail was tasty and the staff were very attentive. We had a fabulous time and thoroughly enjoyed our stay!",
     "disliked": "",
     "language": "en"
    }
@@ -9265,55 +9046,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "como-metropolitan-london": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 1074,
-  "quotes": [
-   {
-    "date": "2026-11-21",
-    "source": "Verified booking guest",
-    "score": 1.0,
-    "travellerType": "couple",
-    "headline": "Not good hotel",
-    "liked": "Good room but bad experience deposit rules",
-    "disliked": "Experience what was very and this stuff cannot help the customer, especially in the deposit payment policy and procedure",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-11",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "solo traveller",
-    "headline": "Good but must fix rooms with shared doors as they are unbearable if someone is making noises",
-    "liked": "Location",
-    "disliked": "Rooms with shared doors are not suitable for noise cancellation. You can hear even little low noises",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Great stay at COMO Metropolitan, it will continue to be my first choice when I’m visiting London!",
-    "liked": "Lovely staff, clean, reliable, great location and ginger tea too!",
-    "disliked": "Nothing",
-    "language": "en"
-   },
-   {
-    "date": "2026-11-09",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Our stay was great.",
-    "liked": "I did like everything.:room, location and breakfast",
-    "disliked": "It is a pity you do not have space enough so that guests can have a quick meal together.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "como-parrot-cay": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -10219,61 +9951,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "corinthia-hotel-london": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 610,
-  "quotes": [
-   {
-    "date": "2026-10-29",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with children",
-    "headline": "A real treat and for that purpose would recommend.",
-    "liked": "Beautiful building, spa facilities world class, comfy beds",
-    "disliked": "It is super premium price, discretionary service charge",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-11",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Allwaya a delight to stat at the Corinthia.",
-    "liked": "Wonderful as always",
-    "disliked": "Nothing",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-19",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "As fabulous as ever",
-    "liked": "It was immaculate",
-    "disliked": "Nothing to dislike",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-13",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "We stay here whenever we are in London as no other hotel compares.",
-    "liked": "Absolutely flawless!",
-    "disliked": "Nothing, every detail was thought of.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [
-   {
-    "date": "2025-10-09",
-    "source": "Verified booking guest",
-    "text": "Every detail reflected genuine hospitality and thoughtful marketing — from the complimentary bottled water and sweets for the children to the welcome bottle of champagne."
-   }
-  ],
-  "waterChecked": 2
- },
  "corte-della-maesta": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -10463,55 +10140,6 @@
     "travellerType": "family",
     "headline": "",
     "liked": "We were really looking forward to staying at Coworth Park after having a couple of lovely stays at The Dorchester. Unfortunately it just did not live up to our expectations. Upon arrival we weren’t greeted by any staff or doormen. Check-in was not very personable or overly friendly. It just felt a bit flat and awkward. Our son did an hours hack at the equestrian centre and that was lovely and the lady who took him ou…",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "cromlix-hotel": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 104,
-  "quotes": [
-   {
-    "date": "2025-09-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "The best hotel we have ever stayed in. Cromlix is situated in a lovely setting, each room in the house has been tastefully decorated and dressed. All the staff are so friendly and welcoming and put you at ease from the very beginning. The food options are a step above for evening dining and at breakfast. Could not fault it a superb stay that we will cherish for the rest of our lives.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-05-30",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "From the moment we arrived we felt looked after. Food was excellent. A really great hotel.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-04-20",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Great location, Great staff, Great food, Great History.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-04-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Great service and environment",
-    "liked": "A perfect overnight stay to celebrate our anniversary. Very attentive staff and nothing seemed to be too much trouble.",
     "disliked": "",
     "language": "en"
    }
@@ -10726,6 +10354,55 @@
     "headline": "",
     "liked": "I liked so many things about Curtain Bluff. The beach area is beautiful and all of the activities are within easy reach. The food was diverse and delicious. A new dinner menu every evening with wonderful choices. Everybody was extremely friends, including the people who were also vacationing there. I loved the open-ness of the public areas, so it was cool and comfortable without being air conditioned. It was a great …",
     "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "daios-cove-crete": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 594,
+  "quotes": [
+   {
+    "date": "2026-10-28",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "Fantastic location",
+    "disliked": "Need to be on all inclusive otherwise expensive. lots of stairs even with the lifts provided and therefore need good fitness. Couldn’t always get sun beds very easy",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-14",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Exceeded expectations, amazing resort, fantastic food and drink",
+    "liked": "Fabulous breakfast, anything you can think of on the menu. Room service was great too.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-05",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "Good for families with young children, couples only should avoid",
+    "liked": "Spacious room, good buffet and restaurants Staff very responsive and approachable",
+    "disliked": "Would not recommend to anyone who is looking for a relaxed trip without children. We knew it was family friendly but the extent of it was crazy. During summer it is essentially an expensive daycare that allows couples. Kids jumping into the tiny adult only pool, in most of the bars, buggies in corridors etc. Nice hotel but will not return if childfree",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-02",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "Despite these minor downsides, I would happily return. It’s a truly beautiful, high-quality hotel and an overall amazing",
+    "liked": "Amazing hotel with stunning views, a dreamy pool and beach, and a fantastic gym. Truly a wow experience!",
+    "disliked": "When the hotel is full, finding a spot by the pool or beach can be difficult. The food could be better, and the pool restaurant portions are surprisingly small. It’s also a shame that there are very few fitness classes, and those available cost extra.",
     "language": "en"
    }
   ],
@@ -11762,55 +11439,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "el-silencio-lodge-and-spa": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 78,
-  "quotes": [
-   {
-    "date": "2025-06-12",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "This is the best resort I have ever stayed at. The people who work here are incredibly nice. The amenities are incredible and the natural beauty of the place is unmatched. The place is surrounded by jungle, but somehow the resort’s cleanliness is top tier. The rooms have such an amazing feel, and the private hot tubs are incredible.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-05-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "El Silencio Lodge & Spa is an excellent retreat for a solo traveler. 5 star treatment across the board. The staff were welcoming and helpful. They took care of my every need. This property offered everything from food, drinks, spa, outdoor experiences, complimentary amenities and wellness activities all on-site. I felt safe and secure in this luxury environment that far exceeded my expectations. Best foodie experienc…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-04-13",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Property was beautiful and quiet. The drive up definitely had a few narrow and steep parts. You will need a 4 wheel drive car. The staff was warm and friendly. My only complaint was how difficult it was to make an appointment for the spa for a massage before my trip. I submitted through the contact form online and never heard anything. On the fourth day, I found the guest relations email and contacted them to book a …",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-02-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Gorgeous property, jacuzzi by the pool was broken but there was a private one. Food was amazing grounds were incredible. A bit cooler than arenal. Close to airport in the hills outside of San Jose. Luxury experience.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "elba-lanzarote-royal-village": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -12726,55 +12354,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "explora-torres-del-paine": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 21,
-  "quotes": [
-   {
-    "date": "2025-02-19",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Amazing location and staff.",
-    "liked": "Amazing experience in Explora Torres del Paine. The location is perfect, and the staff were amazing. Would definetly recommend the hotel and are already planning a new trip there in the future. Congradulations to all staff members for making us feel so good all the time we were there.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-12-02",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Amazing views",
-    "liked": "Amazing views. Great guides. Marisol, the manager is an absolute delight. Great option for hikers and families with different skill levels.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-11-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Sensacional",
-    "liked": "Magnífica. Atendimento perfeito. Funcionários e guias muito bem treinados. Alimentação, bar, passeios, tudo de excelência e elegância.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2019-12-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "I think this is what a six-star hotel is like",
-    "liked": "The hotel is in the middle of the park, and all the activities are within short distance. If you are into trekking and exploring Patagonia, this is for you. The hotel has activities and excursions fitting all ages and abilities; and there are lots of activities to choose from. You always go in small groups with a guide, and their guides are young, energetic, friendly and really know their park well. The food at the r…",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "faena-hotel-miami-beach": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -13394,6 +12973,55 @@
   ],
   "waterChecked": 2
  },
+ "finest-punta-cana": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 639,
+  "quotes": [
+   {
+    "date": "2025-11-08",
+    "source": "Tripadvisor",
+    "score": 4.0,
+    "travellerType": "NONE",
+    "headline": "Poor service",
+    "liked": "Poor service. Was woken up from loud talking from staff outside of the room in the morning. More than once, had to wait for food at the market buffet because staff were huddled up talking. Couldn’t make reservations at some of the restaurants because always packed. I don’t like making reviews but this time I had to. I have payed less at other resorts and had better experiences.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-11-07",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "NONE",
+    "headline": "Finest, more likely Okayest",
+    "liked": "The property at first impression is beautiful. The grounds are well-kept and flourishing, the bars are kept clean, and the beach is gorgeous. The restaurants are really nice and upscale, but the food is lacking. We stayed on the Adults Only side of the Excellence Club, and we found that the amenities are exactly the same as everyone else’s, except we had access to Dommo and the Excellence lounge. We did not visit the…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-11-07",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Only the finest at Finest Punta Cana!",
+    "liked": "We had an excellent time at Finest! We had a great time with Aracelli, she's amazing and fun. Elvis and Manuel are kind and lovely, beautiful souls! Ismael and Freddy are friendly and charming. The resort is very clean, the restaurant offers a little something for every palate, and the view....absolutely breathtakingly beautiful! We definitely recommend Finest and will he back!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-11-06",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Best memorable trip with my family!",
+    "liked": "Best trip ever. I didn’t want to leave, it was so much fun!! Service was pretty good, rooms were nice and clean when I arrived. The beach is so beautiful and the pools were amazing. The workers are so nice and beyond great service like Mayelin the bartender at the Golden Bar. The Sweet Corner has so many good options to eat or drink and great service from Flor and Ambar. Thank you to the entertainment crew like Soled…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "fogo-island-inn-canada": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -13499,6 +13127,55 @@
     "travellerType": "couple",
     "headline": "",
     "liked": "Hands down the best hotel we’ve ever been! Amazing experience from the first minute, you feel welcomed and seen. The hotel is amazing, the views spectacular and breakfast and dinners are top of the top. You need to go there at least once in your life.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "forte-village-resort": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 47,
+  "quotes": [
+   {
+    "date": "2026-10-11",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "solo traveller",
+    "headline": "Beautiful the place but not the room",
+    "liked": "The location of the hotel is lovely, and I really enjoyed walking around the surrounding area.",
+    "disliked": "Unfortunately, the room itself was a very unpleasant experience. There was a strong, disgusting sewage smell coming from somewhere in the bathroom, making the entire room smell like a toilet. I had to keep the bathroom door tightly closed at all times, but the unpleasant odor still spread into the bedroom. I stayed for four nights and was too busy to go through the hassle of changing rooms, especially for such a shor…",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-16",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "Great front desk and reception service. Splendid Cavalieri restaurant. No star Forte Grill, runaway",
+    "liked": "Cavalieri Restaurant superb service and attention from the staff, they are always nearby for any requirement, well manage and motivated staff. Daily breakfast was magnificent, one of the best I had in 5 stars hotels. Had 1 dinner at Cavalieri, a buffet dinner, amazing variety of good quality and diverse offers, as half-board package, included bottle of wine and water. The restaurant was packed of guest during my dinn…",
+    "disliked": "Forte Grill was a sad disappointment, As a \"Grill\", supposed to have freshly grill order and not \"grilled\" meat and reheat it for your meal and put it in a plate to serve you. The meat came rough, dried and no taste at all. Even as half-board package, you have to pay for your drinks, even simple water. The staff are there not to serve but to rush you out during and after the meal. There is no attention or caring duri…",
+    "language": "en"
+   },
+   {
+    "date": "2025-09-07",
+    "source": "Verified booking guest",
+    "score": 3.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "The property is ok, I mean for the price you pay its very average. Disappointed with the amenities provided. can’t scuba dive because you need a license- this should have been mentioned. Its so expensive, for example it is €20 per person for bowling. Coke is €5 - I get resorts or hotels are overpriced like that but when you’re paying like £700-£1000 per night, service, food and amenities should be top notch. They don…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-08-21",
+    "source": "Verified booking guest",
+    "score": 6.0,
+    "travellerType": "family",
+    "headline": "",
+    "liked": "It is hotel for the kids due to the sports and all activities. Don’t expect great service and luxury. The included food is average and only the good food could be found at the restaurants you pay. The staff is not completely fluent in English so if you order something expect receiving the incorrect order for example ordering a drink could be challenging unless is something straight forward like a Beer. The fact that …",
     "disliked": "",
     "language": "en"
    }
@@ -15017,6 +14694,55 @@
   ],
   "waterChecked": 2
  },
+ "four-seasons-hotel-new-york": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 318,
+  "quotes": [
+   {
+    "date": "2026-11-02",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "As always, the staff (from reception, room-service and cleaning) was fantastic. Always love staying here. Room service food is excellent, rooms are spacious and it always feels like a second home. After having stayed in many hotels in NYC, I will always favour the Four Seasons Downtown.",
+    "disliked": "Nothing! Wish the stay could have been longer!",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-26",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Location, view.",
+    "disliked": "I'd describe the hotel as okay, but at this price, I expected a \"wow\" factor. I'd previously stayed at a Four Seasons in Taormina, Italy, and expected something similar. The hotel was okay, but nothing more. They offered us a car to take us somewhere, but even though we were there for six days, it was always booked. I went to the wellness center, but to use the sauna, I had to pay extra and schedule an appointment. S…",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-08",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Another wonderful experience out of Four Seasons property",
+    "liked": "Another great experience at a four season property. Every staff member is friendly and knows your name. They who is trying to make sure you have the best experience.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-08",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Beautiful stay , Amaizing property",
+    "liked": "Absolutely Beautiful Property & Outstanding Four Seasons Service We spent a wonderful week at the Four Seasons Downtown New York with our children, and the experience was exceptional. The concierge team deserves a special mention — the best concierge service we have experienced so far this year! Nothing was ever left unresolved, and every request was handled efficiently and with genuine care. The rooms are beautiful,…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "four-seasons-hotel-new-york-downtown": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -16227,55 +15953,6 @@
     "headline": "We were not provided the service we paid for although showing evidence!",
     "liked": "N/A",
     "disliked": "Dirty and dated as per provided communication and images and a non functional toilet. Further, misleading information and no substitute room provided upon request. Not at all what was sold.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "four-seasons-resort-the-nam-hai-hoi-an": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 215,
-  "quotes": [
-   {
-    "date": "2026-11-03",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "",
-    "liked": "Design of \"ocean view\" bungalow wirh bed facing the view. Just fantastic. Big pool and Food were also amazing",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Top of the top! Very beautiful, luxurious and relaxing.",
-    "liked": "The villas are more than luxurious with top equipment and the whole resort is fantastic with a beautiful ocean view. Staff was very kind and the food excellent. We enjoyed it a lot and will come back one day.",
-    "disliked": "We didn’t miss anything.",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-18",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "Luxury, with Vietnamese vibes",
-    "liked": "Our 3-bedroom villas was HUGE. Got upgraded to a beachfront villa. Amazing service at every restaurant. Beautiful surroundings with great attention to detail. Everything was actually perfect. Fun free activities for the kids and adults (making lanterns). Great sport facilities, and cold towels everywhere!",
-    "disliked": "Some services were very expensive, knowing what they cost outside of the hotel, eg day trip fishing with the locals.",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-10",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "Beautiful resort with excellent customer service.",
-    "liked": "We enjoyed the layout of the resort - having breakfast overlooking the pool area was lovely every morning. We liked the autonomy afforded by the bikes instead of relying on buggies and the shuttle service into Hoi An. There was a good selection at breakfast. The staff were amazing: Not only did they cater for our every need, they were also very caring. We had a wonderful stay and would definitely return.",
-    "disliked": "",
     "language": "en"
    }
   ],
@@ -18850,6 +18527,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "grand-wailea-waldorf-astoria": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 268,
+  "quotes": [
+   {
+    "date": "2026-08-30",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "The room was very clean. Beautiful grounds.",
+    "disliked": "Very busy and my kids are teenagers now. This would have been the most perfect place to bring them when they were just a little younger.",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-22",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "Beautiful stay and memories, but felt extortionate",
+    "liked": "Access to the beach, the yoga and lessons available, learning about culture and beautiful grounds",
+    "disliked": "Absolutely extortionate spa and shopping. Same with the restaurants. Some things were x4 the price is the local stores. I didn’t like that the spa automatically charged 20% service charge and makes you wait till the end to edit it. Nor did I like the lack of transparency over the tax they add at the bill.",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-08",
+    "source": "Tripadvisor",
+    "score": 2.0,
+    "travellerType": "Couples",
+    "headline": "$4,000-a-night Royal Suite -- Far Below Luxury Expectations",
+    "liked": "My wife and I were attracted to the Grand Wailea for a four-day relaxing getaway from Honolulu. We knew that the hotel featured a Nobu restaurant on the property, the location and facility looked fabulous, a standard room started at just under $800 per night, and the Royal Suite was offered at about $4,000 per day plus the usual extra fees. Looking for the best experience we could possibly have, we reserved the Royal…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-01",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Business",
+    "headline": "Pacific Dream Photography at Grand Wailea",
+    "liked": "Pacific Dream Photography at the Grand Wailea Hotel Working with Cacoa and Jim from Pacific Dream Photography was an absolute delight! 🌴📸 Their energy and creativity made every moment of our beach photo session feel effortless and fun. They captured the beauty of Maui and the joy of our vacation perfectly — from the beautiful beach and hotel to the spontaneous laughter. Jim’s showing of the pictures was professional …",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "grantley-hall": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -19616,6 +19342,55 @@
     "travellerType": "couple",
     "headline": "",
     "liked": "Absolutely impeccable service. Fantastic restaurants. Stunning room and overall aesthetic. Couldn’t recommend the hotel more highly.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "half-moon-jamaica": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 241,
+  "quotes": [
+   {
+    "date": "2026-10-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Looking for a Luxury Resort with breath taking views and excellent hospitality - Half moon is the answer,",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-26",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "It was a great, relaxing vacation!",
+    "liked": "Beautiful setting, friendly staff, and excellent service",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-18",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "I am a repeat visitor and will continue for years to come.",
+    "liked": "The Half Moon staff is top notch! From the front desk to housekeeping to the gardener everyone was professional and attentive to every need. A special thank you to Charmaine on the housekeeping staff, she made my birthday extra special!!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-12",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "Beach| staff| ambiance| overall experience|facilities|",
     "disliked": "",
     "language": "en"
    }
@@ -20429,55 +20204,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "hotel-barriere-fouquets-new-york": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 97,
-  "quotes": [
-   {
-    "date": "2026-03-23",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Elegant, sophisticated, beautifully appointed French boutique hotel in Tribeca.",
-    "liked": "Great location in Tribeca. Beautifully appointed hotel and room. Very comfortable and quiet.",
-    "disliked": "Almost perfect could have used a lighter blanket in lieu of comforter, other than that we loved it!",
-    "language": "en"
-   },
-   {
-    "date": "2026-01-05",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "Excellent",
-    "liked": "Location..well known label in Europe ..always deliver",
-    "disliked": "No privacy in “pool”",
-    "language": "en"
-   },
-   {
-    "date": "2025-11-07",
-    "source": "Tripadvisor",
-    "score": 2.0,
-    "travellerType": "Solo travel",
-    "headline": "“Ignored and Disrespected — A Concerning Experience for Any Guest of Color”",
-    "liked": "Incredibly questionable level of code of conduct and class amongst the people who work here. After investigating, I’ve heard of multiple discriminatory incidents that others have experienced here. Here is my most recent direct incident. Please note I gave the hotel ample opportunity to address what should’ve been seen as a high priority. Lissy promised to call back and did not. I will be heard & this should’ve been a…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-10-10",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "Lovely staff. Incredible property. The hype is real. This is by far and away the nicest property we’ve stayed at in Manhattan in a long time.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "hotel-bel-air-la": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -21003,81 +20729,6 @@
     "date": "2026-01-24",
     "source": "Verified booking guest",
     "text": "It lacked extra touches like more water bottles, herbal teas and chocolate & notes after cleaning Also passed by the spa to get a tour but the receptionist was on the phone for more than 5 mins and didn’t accommodate us so I just left"
-   }
-  ],
-  "waterChecked": 2
- },
- "hotel-emma": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 105,
-  "quotes": [
-   {
-    "date": "2026-11-11",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "Amazing luxurious must visit historically interesting hotel in a great location",
-    "liked": "Beautiful hotel and location, rooms classy and comfortable, very generous with me on my birthday, location fabulous overall a must visit - David on coffee cart in library a font of knowledge and a joy to chat to",
-    "disliked": "Nothing! Lobby could be busy with the tours but it was big enough to not be a negative",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-26",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "EXCELLENT",
-    "liked": "EXCELLENT SERVICE",
-    "disliked": "MORE TIME TO ENJOY PROPERTY",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "score": 1.0,
-    "travellerType": "couple",
-    "headline": "It was sad to be treated indifferently after staying 5 days in this hotel.",
-    "liked": "What was luxurious was the Pearl's aluminum water bottle, I indulged in drinking from it every day because we don’t drink alcohol. We got cited for taking this aluminum water bottle from the library. I also love the lavender body wash and lotion. I love how we were given a short history of the hotel when we checked in. It took me 3 days to appreciate the place. The longer I stay, it grows on me and feels a lot more 5…",
-    "disliked": "Someone went into our room even with DND sign to deliver 6 glasses of bottled water for no reason. There are only 2 of us, and we still have 2 glass bottles in there. Someone wants to call us out for taking PEARLS aluminum water bottles instead of drinking the water in glass bottle. We were humiliated and, at the same time felt unsafe that DND was broken. It’s hard to sit on springy old upholstered chairs in the lobb…",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "This is my second time staying at Hotel Emma and will stay every time I come back to San Antonio!",
-    "liked": "Staff were excellent and helpful.",
-    "disliked": "Nothing",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "text": "What was luxurious was the Pearl's aluminum water bottle, I indulged in drinking from it every day because we don’t drink alcohol."
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "text": "We got cited for taking this aluminum water bottle from the library."
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "text": "Someone went into our room even with DND sign to deliver 6 glasses of bottled water for no reason."
-   },
-   {
-    "date": "2026-09-17",
-    "source": "Verified booking guest",
-    "text": "Someone wants to call us out for taking PEARLS aluminum water bottles instead of drinking the water in glass bottle."
-   },
-   {
-    "date": "2026-07-03",
-    "source": "Verified booking guest",
-    "text": "The bottled water did not taste good."
    }
   ],
   "waterChecked": 2
@@ -22696,6 +22347,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "hyatt-ziva-cap-cana": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 579,
+  "quotes": [
+   {
+    "date": "2026-10-21",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "It was okay",
+    "disliked": "They tried to sell us a Hyatt membership and staff was extremely rude to my husband and I - even before the presentation started. We had to get up and go",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-28",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "The hotel is amazing—spacious, well-maintained, and comfortable, with a calm and luxurious atmosphere. The staff is fr",
+    "liked": "The hotel is absolutely amazing — spacious, beautifully maintained, and very comfortable, with a truly relaxing and luxurious atmosphere. The staff is extremely friendly, helpful, and professional across all departments, and always willing to assist. There is a great water park for children, as well as huge, spacious swimming pools with bar service right by the pool, which makes the stay even more enjoyable and conve…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-27",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Yeidy is the best at the batting cage",
+    "liked": "Yeidy at the batting cage is the best. He taught my kid how to play baseball and was amazing. He is great!!!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-26",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Wonderful time",
+    "liked": "Amazing experience and luxurious pools. The service was spectacular and everyone was extremely polite. The food was tasty and good quality at every restaurant. The liquor was also great quality. Every area was clean and organized.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "i-borghi-delleremo": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -23071,6 +22771,104 @@
     "text": "Friendly attentive staff Good location Bracelets to replace key cards App to reserve sunbeds and the ability to see your bill Paella was alway so good Equipped gym Spa service was great Refillable water stations including sparkling water"
    }
   ],
+  "waterChecked": 2
+ },
+ "ikos-andalusia": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 412,
+  "quotes": [
+   {
+    "date": "2026-11-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Stunning resort, superb food and coffee, and a brilliant crèche team.",
+    "liked": "We had a brilliant stay at Ikos Andalusia. The food was exceptional and the resort itself is stunning. A special mention goes to the crèche manager and the whole team. They were fantastic with our toddler, who absolutely loved it there. And the Ikos baristas nailed the coffee too, something plenty of other five-star hotels still get wrong!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-12",
+    "source": "Verified booking guest",
+    "score": 5.0,
+    "travellerType": "family with children",
+    "headline": "Everything was excellent overall, except for one issue. When we first entered the room, I noticed some hair on the bed,",
+    "liked": "The facility",
+    "disliked": "I didn’t like that it wasn’t clean",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-03",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Great all inclusive family hotel.",
+    "liked": "Great all inclusive family hotel. The kids loved it and were free to roam the safe complex and we had some time to relax.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-11",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Wonderful memories from our stay at Ikos Andalusia.",
+    "liked": "Dear Ikos Andalusia Team, As our wonderful holiday has come to an end, we would like to express our heartfelt gratitude to everyone who made our stay so truly exceptional. Thank you for your outstanding hospitality, genuine care, and constant willingness to help. We are especially grateful for all the support and kindness you showed when my wife’s luggage was delayed. Your assistance during that stressful time meant …",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "ikos-aria": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 25,
+  "quotes": [
+   {
+    "date": "2025-09-30",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "What a fabulous experience. From the moment we arrived, we were made to feel very special. The staff were so polite & friendly & just could not do enough for you. We opted for the deluxe package & room was very spacious & cleaned extremely well each morning, the evening turn down service was also appreciated with sundries being restocked daily. The beach area was lovely with amazing views out to Kastri Island whilst …",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-06-30",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Einmalig, eine absolute Empfehlung. Der Preis ist hoch, jedoch angemessen",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-05-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Excellent hotel in all aspects especially the staff",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-05-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "Wunderschöner Familienurlaub im Ikos Aria",
+    "liked": "Wir hatten einen grossartigen Aufenthalt im Ikos Aria. Das Hotel ist nur 15min vom Flughafen Kos entfernt und hervorragend auf Familien mit Kindern ausgerichtet, was für uns ideal war. Die beheizten Pools, der aufmerksame Service am Strand und am Pool sowie die gepflegte Anlage haben uns begeistert. Die à la carte-Restaurants sind abwechslungsreich und von sehr hoher Qualität – besonders das Frühstück dort ist ein Hi…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
   "waterChecked": 2
  },
  "il-borro": {
@@ -24887,55 +24685,6 @@
     "headline": "",
     "liked": "The location is absolutely gorgeous and the facilities are welcoming and pristine. We loved the breakfast buffet and how easy it was to get to where we wanted to go from the hotel.",
     "disliked": "We wish we could have stayed longer!",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "kempinski-hotel-taschenbergpalais": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 114,
-  "quotes": [
-   {
-    "date": "2025-10-11",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Excellent breakfast, parking, and location. High level",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-10-11",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "The best property I have stayed at in my several visits through Europe. Ever smiling & helpful staff. Hotel has luxurious old world charm. The breakfast was outstanding. I would definitely recommend staying here.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Rooms were fabulous, hotel was very charming in a great location.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-26",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "friends",
-    "headline": "",
-    "liked": "Beautiful hotel room was stunning staff was very attentive",
-    "disliked": "",
     "language": "en"
    }
   ],
@@ -26925,55 +26674,6 @@
     "text": "Unlimited time use of spa on the day of the departure Complimentary slippers for in room use ( not the flip flops for the spa) Bottle of water offered at check out."
    }
   ],
-  "waterChecked": 2
- },
- "le-domaine-du-mas-de-pierre": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 791,
-  "quotes": [
-   {
-    "date": "2026-11-02",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "Spa is ok",
-    "liked": "I checked our at around 11 am. And leave the Luggages at Concierge for picking up at 3pm. However I left the pajamas in the room . Until I checked in at majesty hotel in Cannes , I found that my pajama wasn’t there. After call to hotel , they will send it to me in Cannes . Very bad service from housekeeping department. They should check with reception and concierge.",
-    "disliked": "Bad service at housekeeping department for not checking with reception and concierge.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-25",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "Great facilities and location",
-    "disliked": "Food was subpar and the rooms a bit old",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-23",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Except stay overall",
-    "liked": "Great staff, beautiful location",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-31",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with children",
-    "headline": "Perfect for kids",
-    "liked": "The lagoon for kids is amazing. The rooms are also great, we were with 2 young kids. Better than expected.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
   "waterChecked": 2
  },
  "le-k2-chogori": {
@@ -29088,61 +28788,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "mandarin-oriental-munich": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 289,
-  "quotes": [
-   {
-    "date": "2026-09-06",
-    "source": "Verified booking guest",
-    "score": 4.0,
-    "travellerType": "family with children",
-    "headline": "Ok, but not for the money paid.",
-    "liked": "The staff are kind and helpful. The rooms were clean and comfortable. The position of the hotel is excellent.",
-    "disliked": "This is perhaps true of many high end hotels these days, but I feel like everything is too expensive for what is being offered. Perhaps ironically, it becomes inhospitable if you attempt to extract the maximum amount of money from your guests with pricing that is completely detached from value.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "An unforgettable experience like a fictional world.",
-    "liked": "The most beautiful hotel , I love the details it's like a royailty hotel.",
-    "disliked": "Accessing the roof was a problem with a stroller.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-23",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "I fall in love with munich and this hotel was a crucial reason",
-    "liked": "Everything",
-    "disliked": "Nothing",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-07",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "It wasn’t just a hotel, it was a luxury home designed to keep you in Munich.",
-    "liked": "Absolutely everything",
-    "disliked": "Nothing",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [
-   {
-    "date": "2026-06-03",
-    "source": "Tripadvisor",
-    "text": "A nice touch was the included mini bar which had a sampling of various bavarian beers, and bottled water replenished daily."
-   }
-  ],
-  "waterChecked": 2
- },
  "mandarin-oriental-new-york": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -29253,6 +28898,55 @@
   ],
   "waterChecked": 2
  },
+ "mandarin-oriental-pudong-shanghai": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 1237,
+  "quotes": [
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Great place to stay in Shanghai",
+    "liked": "The location is really good; far from the maddening crowds. The bed, pillows and bedding were excellent. The hotel has a peaceful relaxed air to it with excellent helpful staff.",
+    "disliked": "The breakfast was not up to the standard of the rest of the hotel. Simply too busy. Also there should be a choice of jams / marmalade.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Splendid and Wonderful Stay",
+    "liked": "Every staff from reception to housekeeping was courteous, helpful and accommodating. I even dropped a pair of tiny earrings in the shower and did not realize it until a housekeeping staff (李莉） found it and left it on the bathroom together with a note. I appreciate such honesty. We will definitely come back.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-14",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "Nice hotel in a quiet place",
+    "liked": "It is in a good location not far from downtown but in a place less crowded.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-14",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "Incredible views from the room, even from the bath and shower. Very comfortable and clean. Friendly and helpful staff especially in the exec club. Great spa and the Michelin restaurant was excellent.",
+    "disliked": "The buffet restaurant was really poor.",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "mandarin-oriental-ritz-madrid": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -29296,6 +28990,55 @@
     "headline": "Best luxury hotel in Madrid",
     "liked": "Excellent hotel, super location, great food and top service. Highly recommended. The hotel design is absolutely marvellous.",
     "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "mandarin-oriental-sanya": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 120,
+  "quotes": [
+   {
+    "date": "2026-08-28",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Great location , amazing breakfast and staff.",
+    "liked": "The location and settings were amazing only shortfall as loads of rocks to get to the beach near the pools . Nicky and Chloe were amazing at the sunset bar. Evening entertainment needs to run longer",
+    "disliked": "The rocks at the beach and some of the rooms need updating , floorboard in our room was wobbly",
+    "language": "en"
+   },
+   {
+    "date": "2026-04-15",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Nice location, at the beach but now allowed to swim. Only nice pictures",
+    "disliked": "Staff doesn’t speak English , although very friendly and very helpful",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-01",
+    "source": "Verified booking guest",
+    "score": 6.0,
+    "travellerType": "",
+    "headline": "Viaje desde Mexico",
+    "liked": "Las instalaciones ya se ven viejas, la madera muy deteriorada, aunque. La atención en general fue aceptable fue un viaje muy lejano en donde esperábamos más por el precio comparativo con otros hoteles, el shuttle al centro comercial es una pérdida de tiempo para ir a un duty free, las albercas si están muy bien!! Había gente trabajando en la alberca principal por lo que no había mucha paz. El desayuno muy bien y la c…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-07-02",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Nice",
+    "liked": "The food was exceptional, the breakfast every morning was delicious and had many options including lobster wonton which was very refreshing. Staff was nice and I could call a call inside the hotel to travel everywhere. Hotel lobby is beautiful and the view is great. Highly recommend.",
+    "disliked": "The sand on this beach is grainy, more like rocks than coral. If you prefer, you should go to the Dadong beach instead for a nicer beach day.",
     "language": "en"
    }
   ],
@@ -29817,6 +29560,55 @@
     "headline": "Excellent location, service needs improvement",
     "liked": "You cannot find better Location if you want to visit Pyramids and Museum. Excellent territory of the hotel. Very clean.",
     "disliked": "1) Hotel rooms are in bad need of renovation. They are very old. Kept clean but are very old. 2) slow service in the morning at breakfast. Lots of personnel but efficiency is low and organization needs the improvement. 3) hotel rents the space in front of the main 2 restaurants for events. You pay for a view to Pyramids but they build a wedding city in front of the main restaurants. 2 days of hammering, plus evening …",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "martinhal-sagres": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 688,
+  "quotes": [
+   {
+    "date": "2026-10-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Wonderful place we will be back",
+    "liked": "Wonderful place feels adult luxury whilst having everything you need for under 5s . Excellent staff especially in the kids club.",
+    "disliked": "Adult pool could be heated",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-14",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "beautiful resort and location, nice gardens, pools...so much to do for the kids as well...",
+    "disliked": "it is definitely 5 star price level in the restaurants but quality was good",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-10",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "family with children",
+    "headline": "Nice stay",
+    "liked": "Great swimming pools and good selection of kids stuff provided in the house",
+    "disliked": "We had some problems with the cleaning and the steps and pavements are not so buggy friendly. No babybed",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-14",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Lovely villa- bay house. Great for kids. Everything you need. Beds very comfy!",
+    "disliked": "Nothing",
     "language": "en"
    }
   ],
@@ -31318,6 +31110,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "nickelodeon-hotels-resorts-punta-cana": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 267,
+  "quotes": [
+   {
+    "date": "2025-10-13",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "family",
+    "headline": "",
+    "liked": "Would give it a 5 star however my room AC was broken for 3 days - and we only got it changed on the 4th/7 nights. Food options are available, activities every day Recommended for families with babies to 8 years old, not worth it for teenagers, At your seat service was great.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-09",
+    "source": "Verified booking guest",
+    "score": 2.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Hice una reserva para mi cumpleanos, fui con mi mama, mi esposo, y mi hija reserve 3 dias 2 noches primero desde que llegamos al hotel se suponia que el check in era a las 3:00 pm, esperamos hasta las 3;30pm y me dicen pueden subir usted y su esposo a su habitacion y yo les dije como asi y mi mama su habitacion ? oh ella puede ir con ustedes su habitacion estara al lado que es que la estan terminando de limpiar me qu…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-10-05",
+    "source": "Verified booking guest",
+    "score": 2.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "Food options were terrible , our tv did not work until our 4th day , the power kept going in and out then we had to go a few hours without any water in our room so we couldn’t take a shower when we told customer service they did nothing to compensate us but give us a sorry",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-09-27",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Staying at an amazing hotel with great food is such a treat, isn't it? Imagine walking into a beautifully decorated room and instantly feeling relaxed. The smell of delicious food wafting from the restaurant always gets my attention. Having someone else cook amazing meals while on vacation is the best. I wish I was there right now!",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "nihi-sumba": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -32697,55 +32538,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "otahuna-lodge-christchurch": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 18,
-  "quotes": [
-   {
-    "date": "2026-10-21",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "Very tense and not relaxing.",
-    "liked": "The property was quiet. The bed was comfortable. The location was handy to what we were doing. Was nice to have a full kitchen and a whole house.",
-    "disliked": "I did not appreciate the rules. I did not appreciate the bond and being treated like we were second class citizens that were going to have a raging party and wreck the house. Our first morning we ran out of hot water. Our second night. The smoke alarm was beeping which would indicate to me that the batteries were not changed. The terms and conditions are beyond belief and if you are to soil anything you are charged e…",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-31",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "A relaxing weekend away.",
-    "liked": "This beautiful little cottage was the best spot for my wife and I to stay after a day of celebrating our wedding. It was the perfect spot for us to stay in and rest after the long day we had just had celebrating our wedding. We would love to stay here again in the future, and take our time exploring around the cottage, taking in some of the amazing scenery and views we had noticed in the area.",
-    "disliked": "N/a",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Thank you to the hosts, whom we didn’t meet, for the lovely touches and a stay in what feels like a home.",
-    "liked": "Lovely, cosy, welcoming home away from home.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-06-01",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Home from home",
-    "liked": "So clean, comfortable & a good location. Annabelle was lovely & welcoming. The bottle of bubbles was a lovely gesture & delicious.",
-    "disliked": "Nothing",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "pacuare-lodge": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -33824,6 +33616,55 @@
     "travellerType": "NONE",
     "headline": "Expectational property.",
     "liked": "Definitely one of the best Park Hyatt property we stayed in, particularly when it comes to service and attentiveness. Our family was also happy with the selection and the service received of the daily breakfast.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "park-hyatt-shanghai": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 139,
+  "quotes": [
+   {
+    "date": "2026-03-07",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Couples",
+    "headline": "Luxury Stay with Incredible Bund Views – Park Hyatt Shanghai",
+    "liked": "We stayed at Park Hyatt Shanghai for three nights in February and had a fantastic experience. This luxury hotel in Pudong truly delivers when it comes to service, comfort, and unforgettable skyline views. The staff were warm, attentive, and genuinely welcoming throughout our stay. Their attention to detail made the experience feel personal and effortless. One of the highlights was the pool and spa area. The indoor po…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-02-03",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Business",
+    "headline": "Great hospitality, quality and food w/ best views of Shanghai",
+    "liked": "This is a great spot if you are visiting Shanghai or China first time. The customer service here is above and beyond. They really make you feel special and welcomed. The staff there is very polite and try their best to remember your preference. They even made me custom dishes in Breakfast as I am a vegetarian. I wish I had more time to explore their infinity pool and gym. Definitely recommended.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-01-29",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Solo travel",
+    "headline": "Jan stay at Park Hyatt.",
+    "liked": "One of the best hotel in Shanghai with great view of the bund. Room was Spacious with top notch cleanliness. Service staff always ready to provide any assistance if necessary",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-01-16",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "Business",
+    "headline": "Darkest rooms ever!",
+    "liked": "The rooms are large, have amazing views of the city, and top-notch amenities like a Dyson hair dryer. The big issue is that they are incredibly dark - good luck putting on makeup and my colleague struggled with shaving his beard. Its shocking they haven’t added a light up makeup mirror by now. Staff are friendly and attentive, breakfast is extensive, and the fitness center has tons of equipment (albeit quite crowded …",
     "disliked": "",
     "language": "en"
    }
@@ -37659,55 +37500,6 @@
   ],
   "waterChecked": 2
  },
- "rocco-forte-charles-hotel": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 1105,
-  "quotes": [
-   {
-    "date": "2026-09-18",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "",
-    "liked": "The place is beautiful, we'll located and everyone was very friendly and helpful including the Wellness Spa.",
-    "disliked": "That I had to leave!",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Treat yourself with exceptional service and facilities",
-    "liked": "The staff, the elegance of colors and designs, cleanness, interior design, views of park and landmarks, the spa and wellness facilities",
-    "disliked": "The only issue was pillows. They are very think and won’t be comfortable for anyone with cervical disc. The hotel offered another pillow but it wasn’t comfortable",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-04",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "Excellent stay",
-    "liked": "Room size Room design and equipment Air conditioning efficient and quiet Bathroom Well insulated Excellent breakfast and service Personnel very kind and helpful",
-    "disliked": "Obviously not enough personnel to operate the hotel bar Next tram, bus and tube station relatively far",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-04",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "couple",
-    "headline": "Excellent hotel.",
-    "liked": "Comfortable room . Quiet. No traffic noise. Great staff",
-    "disliked": "Inadequate public areas",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "rock-house-turks-caicos": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -38937,6 +38729,55 @@
     "travellerType": "Couples",
     "headline": "Absolutely charming and memorable stay!",
     "liked": "Spectacular experience for a birthday celebration! Our stay was most memorable, as our suite overlooked the cathedral and the beautiful town of San Miguel de Allende. If you're planning on a trip, this property is the place to stay! Do not hesitate to dine at Pirules - the food was unbelievable. The rooftop bar is special too with phenomenal views.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "rosewood-sanya": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 77,
+  "quotes": [
+   {
+    "date": "2026-11-02",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Excellent property with excellent service",
+    "liked": "The service was amazing. The facilities and pools were well maintained and staffed. The concierge Carmen checked on us and suggested things for us we didn’t even know we wanted.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-23",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "great service. mason is great",
+    "liked": "Mason is great staff for take care guests",
+    "disliked": "very expensive restaurants",
+    "language": "en"
+   },
+   {
+    "date": "2026-03-30",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Very good amenities: rooftop pool, gardens and beach access. Fantastic view from our room.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-03-24",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "An absolutely magnificent, fabulous hotel. My absolute favorite! Very fresh and clean! Excellent breakfast. Cozy, beautiful room. The children's pool is very beautiful and comfortable for children.",
     "disliked": "",
     "language": "en"
    }
@@ -40280,6 +40121,14 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "sani-resort": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 3,
+  "quotes": [],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "sankara-hotel-yakushima": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -41436,6 +41285,55 @@
   ],
   "waterChecked": 2
  },
+ "shangri-la-rasa-ria": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 2166,
+  "quotes": [
+   {
+    "date": "2026-11-14",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "The staff friendly & very helpfull, The view very nice",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-10",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "family with children",
+    "headline": "Awesome stay and will come back in future.",
+    "liked": "The space, nature and kids friendly facilities especially the swimming pools and kids club. The selection of f&b at the restaurants are nice and affordable. The staffs are friendly, housekeeping was fast to cleanup our room.",
+    "disliked": "The rooms were not ready during check in.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-10",
+    "source": "Verified booking guest",
+    "score": 4.0,
+    "travellerType": "family with children",
+    "headline": "Boring too far from amenities and other activities",
+    "liked": "Nothing",
+    "disliked": "It was boring Overgrown grass and plants Breakfast was so boring and unpleasant Location is not handy at all unless you want a lazy holiday and stay indoors Reception didn’t even give us a good handover about services and activities available Staff were flat and unfriendly Showed Horse ride hours couldn’t find a horse Broken umbrellas in the beach area No staff to serve drinks in beach area",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-06",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Best hotel I ever stayed in",
+    "disliked": "More vegetarian option on menu but that is more a regional thing",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "sheen-falls-lodge": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -42384,6 +42282,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "six-senses-qing-cheng-mountain": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 96,
+  "quotes": [
+   {
+    "date": "2026-11-14",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "Staff were warm, very friendly and helpful. Hotel was great with beautiful natural areas, farms, kids area, kids centre etc. Great location in Qingchengshan. Breakfast was fantastic.",
+    "disliked": "na",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-15",
+    "source": "Verified booking guest",
+    "score": 6.0,
+    "travellerType": "couple",
+    "headline": "Run-down old hotel but still decent",
+    "liked": "It has potential, a nice pool, a mini farm a decent facilities",
+    "disliked": "It looks very run down, in desperate need of maintenance or a refresh, certainly not luxury. Not enough guests so it feels eerie or abandoned. Too many staff who are useless and clueless. Food is average at best in some instances quite bad, certainly appalling value for money and not on par with Sichuan / China / 4 or 5 star hotels.",
+    "language": "en"
+   },
+   {
+    "date": "2026-06-25",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "Fantastic",
+    "liked": "Amazing place for families",
+    "disliked": "Service is great, kids activities etc",
+    "language": "en"
+   },
+   {
+    "date": "2026-06-04",
+    "source": "Verified booking guest",
+    "score": 1.0,
+    "travellerType": "couple",
+    "headline": "Not recommended for foreigners or guests who do not speak the local lingo.",
+    "liked": "",
+    "disliked": "The staff are clearly friendlier and more helpful towards local guests who can speak their language. We do not feel welcomed.",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "six-senses-rome": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -42733,55 +42680,6 @@
     "headline": "Amazing",
     "liked": "Exceptional staff. Very pleasant check-in experience. Room was amazing. Breakfast was wonderful. It was the best breakfast spread I have ever tried. Pool was great also.",
     "disliked": "Nothing",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "sofitel-frankfurt-opera": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 671,
-  "quotes": [
-   {
-    "date": "2026-10-23",
-    "source": "Verified booking guest",
-    "score": 3.0,
-    "travellerType": "couple",
-    "headline": "Unpleasant. Staff were rude. Practically had to beg them for one hour late check out. So not accommodating",
-    "liked": "",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "An exceptional stay at a beautiful and peaceful hotel with outstanding service and wonderful staff. Highly recommended,",
-    "liked": "A truly beautiful and peaceful hotel with an elegant and relaxing atmosphere. The staff were extremely friendly, welcoming, and professional. The service was excellent, and the location was perfect and very quiet. I really enjoyed my stay and felt completely comfortable throughout my visit. The hotel exceeded my expectations, and I would definitely love to stay here again.",
-    "disliked": "There was absolutely nothing I disliked. Everything was wonderful, and I had a fantastic experience.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Beautiful, refined, and exceptional service.",
-    "liked": "The hotel is beautiful and well-located. The service was exceptional.",
-    "disliked": "We loved everything.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-27",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Unbeatable location",
-    "liked": "Really good location and friendly staff.",
-    "disliked": "I did like everything",
     "language": "en"
    }
   ],
@@ -43525,45 +43423,6 @@
     "headline": "Outstanding japanese room",
     "liked": "Amazing old property with exceptionally beautiful and comfortable rooms. Food excellent and arranged tea ceremony was a very authentic experience",
     "disliked": "Pre check in concierge and comms a little slow and difficult to get information from",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "spa-and-golf-hotel-weimarer-land": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 45,
-  "quotes": [
-   {
-    "date": "2024-03-06",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "review category business travellers",
-    "headline": "Exceptional",
-    "liked": "Pool, gym and spa were excellent, the view from the room was very nice and the room very cosy and warm,",
-    "disliked": "One sheltered / underground parking facility would be nice",
-    "language": "en"
-   },
-   {
-    "date": "2023-11-23",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "family with young children",
-    "headline": "Worth the money, nice and cosy",
-    "liked": "Second time in this place with the family. First time we were in summer and we enjoyed outside pool. Now we were in November and could nicely swim in the warm inside pool. Happy for us and kids the water temperature was really comfortable for those who do not like cold water. Breakfast is perfect and the children enjoyed the kids club (which is often not the case for the golf hotel, thanks for that!) We would definit…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2023-08-11",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "solo traveller",
-    "headline": "Superb",
-    "liked": "Excellent spa,service and friendly golf club",
-    "disliked": "Breakfast sometimes crowded. Do not go between 9:00 to 9:30",
     "language": "en"
    }
   ],
@@ -44822,55 +44681,6 @@
   ],
   "waterChecked": 2
  },
- "susana-balbo-winemakers-house-and-spa-suites-relais-and-chat": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 14,
-  "quotes": [
-   {
-    "date": "2025-09-09",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Quarto lindo, funcionários educados e atenciosos.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-11-24",
-    "source": "Verified booking guest",
-    "score": 6.0,
-    "travellerType": "",
-    "headline": "Unfortunately not worth the splurge",
-    "liked": "The pros: - Room, bed, bath, shower, firepit & patio, all 10/10. We loved sitting outside with the firepit, the waitstaff in the evening were fantastic, and had one of the best massages of my life in the comfort of my room. What they get right they really get right!! The cons: We were given an incorrect menu 4 times during our short 3-night stay, so meant we weren’t able to order *any* cocktails or most of the food o…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-06-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Lugar maravilhoso, com muito capricho. Equipe do hotel são formidáveis.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2024-04-13",
-    "source": "Verified booking guest",
-    "score": 2.0,
-    "travellerType": "",
-    "headline": "Péssimo serviço",
-    "liked": "No fim da viagem ( 9 dias em MDZ) decidimos fechar com chave de ouro e nos hospedarmos dois dias no SB. Lamentável e Péssima escolha! Primeiro: o hotel não fornece uma prestação de serviço de excelência, há muito que ser melhorado pelo preço da diária que pagamos (US$ 2.500,00 dólares). O gerente, Sr. Marcos, veio nos perguntar se havia algo para melhorar e demos nossas sugestões com relação aos serviços. (Fomos sinc…",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "susurros-del-corazon-auberge": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -44913,6 +44723,55 @@
     "travellerType": "NONE",
     "headline": "Can't recommend this place enough!",
     "liked": "My family and older kids had a fantastic time! The food, drink, and accommodations were all amazing, couldn't have had a more fun and relaxing time. Especially enjoyed drinks and lunch on the beach while watching the boys surf. Also loved the in-room dining experience, the Fourth of July party and fireworks, and the wine tasting experience – we've been to Napa and Italy but who knew Mexico had such amazing wines!!?? …",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "suvretta-house": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 120,
+  "quotes": [
+   {
+    "date": "2026-10-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Lifetime experience",
+    "liked": "Excellent property",
+    "disliked": "All services and property are excellent",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-11",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "The friendliest and most professional staff I have ever encountered 🧡",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-30",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "A beautiful Alpine stay with an exceptional location, although the experience was somewhat inconsistent in terms of serv",
+    "liked": "I really enjoyed the excellent location and appreciated that the manager personally arranged a room change for me.",
+    "disliked": "What I didn’t like was that some rooms are completely outdated and in need of renovation. The attitude of some staff members felt slightly arrogant and distant, and it seemed that unless you were considered a top-tier guest, you didn’t receive the same level of attention or personalized service.",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-23",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "A few days in St.Moritz",
+    "liked": "This is a splendid property, where the service was great, the location spectacular, the food excellent. Every member of the staff was extremely nice. Wonderful breakfast, and fantastic spa. Access to the Corviglia mountain side was very convenient with the chair lift walking distance from the hotel (lift and public transportation passes were included in the price of the room)",
     "disliked": "",
     "language": "en"
    }
@@ -45842,6 +45701,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-broadmoor": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 210,
+  "quotes": [
+   {
+    "date": "2026-08-07",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "extended group",
+    "headline": "Overall fantastic as it usually is",
+    "liked": "Views, golf, and pool",
+    "disliked": "The Primrose dinner. For what that restaurant costs, the food was very subpar. Bland I guess you could say, the staff was great.",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-30",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Couples",
+    "headline": "Outstanding Valets! Outstanding Bellmen!",
+    "liked": "I want to give a shout out to the outstanding Valets, and Bellmen at the Broadmoor. They are on top of their game. Very prompt, efficient and organized. If you call for your car they bring it to the front door in a couple minutes. If you call for the Bellman they are at your door in a couple minutes. The Bellmen transport your luggage very quickly. All the Valets were great, but I can't remember their names. I'd like…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-27",
+    "source": "Tripadvisor",
+    "score": 2.0,
+    "travellerType": "Business",
+    "headline": "Luxury prices for great staff and sub-par food and unairconditioned room.",
+    "liked": "nice staff, very nice staff. room was roasting hot so I couldn't sleep either of the two nights I was there. The management solution was a small portable fan to blow the hot air on me the first night and to tell me that another room was not an option. nice! prices are crazy high for all on-site dining (to be expected) but the food was like microwaved Sysco dinners at the Italian restaurant. Again, nice staff but more…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-25",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "Luxurious Adult Getaway",
+    "liked": "The staff was very attentive and welcoming. I loved the coffee in the room, the comfy robes and the luggage tags they gave us. The pool is especially beautiful. The room was luxurious and comfortable. Complimentary transportation to 7 falls and other nearby sites was also available.",
+    "disliked": "The food we had was delicious but all the restaurants are very expensive. I would have loved to bring my kids and grandkids here in the future but the cost of food ($19.00 kids chicken fingers) makes it undoable.",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "the-burman-hotel": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -46498,6 +46406,71 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-cove-atlantis": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 515,
+  "quotes": [
+   {
+    "date": "2026-09-02",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "Outstanding!",
+    "liked": "Room and bed was the best in the Caribbean! Beach and pool area were excellent. Staff...especially the front desk staff we outstanding. I arrived late Thursday evening Aug 27th...unfortunately I did not get the young lady's name at the desk; however, she was SUPER helpful and polite...best experience we've had in the Caribbean...and I travel there 8-10 times per year for work.",
+    "disliked": "If I had to say anything...would like to see the cost of simple water less than $10 per bottle.",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-24",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "NONE",
+    "headline": "Atlantis- amazing resort with something for every age",
+    "liked": "Amazing resort, so much to do and see and something for all ages, it was super simple to get between properties with the shuttles, the pools were amazing and the beaches were clean and easy to get to. The most memorable part is all of the sea life in the aquariums, we got up early to watch the shark and stingray feedings which was amazing. The only big qualm I have is the availability of affordable food options every…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-23",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Best trip to the Bahamas yet!",
+    "liked": "Strongly recommend Atlantis. Amazing visit made so by the super friendly staff! We spent our time going from the beach to the adults only pool to the casino and to eat. Loved it all!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-23",
+    "source": "Tripadvisor",
+    "score": 2.0,
+    "travellerType": "Family",
+    "headline": "RIP Off - Avoid",
+    "liked": "We stayed at The Cove, supposedly one of the most luxurious and exclusive parts of Atlantis. Unfortunately, the entire experience felt like a very polished and extremely expensive scam. Atlantis is exceptionally good at marketing. It presents The Cove as top-end luxury and the wider resort as a world-class destination. The reality is an ageing, tired and aggressively monetised resort that charges extraordinary prices…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [
+   {
+    "date": "2026-03-21",
+    "source": "Tripadvisor",
+    "text": "It’s not worth the exorbitant prices you will pay — from $10 for a bottle of water to $20 for four dumplings in a restaurant."
+   },
+   {
+    "date": "2026-02-06",
+    "source": "Tripadvisor",
+    "text": "The suite is spacious—there’s a separate living room area with couch, walk-in closet, huge bathroom, fridge & coffeemaker—and they give you two complimentary reusable water bottles & a beach bag."
+   },
+   {
+    "date": "2025-12-04",
+    "source": "Tripadvisor",
+    "text": "The first night we were offered turn down service and bottled water."
+   }
+  ],
+  "waterChecked": 2
+ },
  "the-datai-langkawi": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -46859,6 +46832,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-fife-arms": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 129,
+  "quotes": [
+   {
+    "date": "2025-07-28",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "solo traveller",
+    "headline": "Superb",
+    "liked": "Comfy bed!! Very clean rooms, would recommend 👌",
+    "disliked": "Never saw a face, to ask questions, the stairs are very dodgy, I fell up them and down!!",
+    "language": "en"
+   },
+   {
+    "date": "2025-07-10",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "Exceptional",
+    "liked": "Excellent friendly service nice rooms great shower. Very good value",
+    "disliked": "No downsides",
+    "language": "en"
+   },
+   {
+    "date": "2025-06-19",
+    "source": "Verified booking guest",
+    "score": 6.0,
+    "travellerType": "review category business travellers",
+    "headline": "Pleasant",
+    "liked": "The room was clean and tidy.",
+    "disliked": "I was greeted with a key in a room and a note to call someone if i had issues. In the morning, no workers were around as I was leaving. The room was small and did not have WiFi (room 8) at the end of the building, this affected my work. Breakfast was some bits of bread, a bagel, cereal, cereal bars or some near rotten fruit, very poor. Very basic room, breakfast options poor, interaction with anyone non existent.",
+    "language": "en"
+   },
+   {
+    "date": "2025-06-14",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "solo traveller",
+    "headline": "I completed my resion for my trip and am happy",
+    "liked": "Basik but ok i prefer a crooked breakfast for the money it was good",
+    "disliked": "It's self service i would have liked some staf input and some local information",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "the-fifth-avenue-hotel-new-york": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -47097,6 +47119,55 @@
     "travellerType": "family",
     "headline": "",
     "liked": "10/10, room is magnificent, people are very nice and respectable, they accomodated what we needed.",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "the-grove-hertfordshire": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 89,
+  "quotes": [
+   {
+    "date": "2025-09-08",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "partner",
+    "headline": "",
+    "liked": "I booked with the intention of proposing to me lovely girlfriend. The reception arranged with my friends access to decorate the room whilst we were out to dinner. Staff were amazing, location was gorgeous and food option 10/10….. SHE SAID YES!!!! A perfect trip and over the moon I chose the Grove",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-08-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "",
+    "headline": "Gorgeous stay as always",
+    "liked": "Always an amazing stay, staff can’t do enough for you, room very comfortable and clean. Lots to do for all ages.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-08-02",
+    "source": "Verified booking guest",
+    "score": 6.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "We enjoyed our stay at The Grove. It’s unfortunate that most of their summer events & special dining experience are all in late July/august, so we didn’t get a chance to experience them. Loved the variety of activities & the stunning grounds. Rooms are spacious and comfortable. The hotel is a big events space and thus loses the charm of a country escape, and keeps a more corporate feel.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2025-07-30",
+    "source": "Verified booking guest",
+    "score": 2.0,
+    "travellerType": "",
+    "headline": "",
+    "liked": "The main issue is that there is a lack of experienced staff. This is why they got so many thing's wrong for me.",
     "disliked": "",
     "language": "en"
    }
@@ -47693,55 +47764,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "the-langham-boston": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 1217,
-  "quotes": [
-   {
-    "date": "2026-11-16",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "solo traveller",
-    "headline": "Great stay, I would return on my next trip to Boston.",
-    "liked": "Everything was great.",
-    "disliked": "WIFI did not work the entire stay.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-26",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Welcoming and helpful",
-    "liked": "Great staff and attitude",
-    "disliked": "Small rooms but service made up for it.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family with children",
-    "headline": "Fabulous hotel in a super location, highly recommend!",
-    "liked": "We had a family suite which worked really well for my teenage son. Loved the access to the Langham club, that was a real bonus.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-22",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "One of my top 10 hotels of all time!",
-    "liked": "Great location, amazing staff, wonderful rooms, and the Langham Club!",
-    "disliked": "Couldn’t stay longer",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "the-langham-chicago": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -47888,6 +47910,55 @@
     "travellerType": "family with children",
     "headline": "We had the most wonderful stay at The Langham. From the moment we arrived, the service was exceptional. The hotel is bea",
     "liked": "Excellent location, staff couldn’t do enough from the minute we arrived.. The doormen were absolutely fantastic, always welcoming us with a smile and making us feel special from the moment we arrived. Nothing was ever too much trouble. Spa and pool 10/10 and gorgeous cocktail bar.. even brought me a cake the night of my birthday in the bar. The best breakfast in gorgeous surroundings, eggs royal was tremendous 👌",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "the-langham-shanghai-xintiandi": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 1830,
+  "quotes": [
+   {
+    "date": "2026-11-21",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "Good but not value for money",
+    "liked": "Location",
+    "disliked": "Junior suite not comfortably distributed",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-17",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "Fabulous.",
+    "liked": "Staff are exceptional. All of the staff cannot do enough for you, rooms are amazing location is fantastic and has good access to all the key sites, as well as greats shops, bars and restaurants within close walking distance",
+    "disliked": "Nothing.",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-04",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "extended group",
+    "headline": "",
+    "liked": "The staff are very friendly and the hotel is beautiful. They have live music each night",
+    "disliked": "The hotel is quite old and not as clean as I would expect for the value. For example, the showers get water all over the floor outside and the inside was not very clean. Next time I will probably stay in a more updated hotel",
+    "language": "en"
+   },
+   {
+    "date": "2026-10-29",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Very good stay both accommodation and service",
+    "liked": "Service was excellent. Club service too.",
     "disliked": "",
     "language": "en"
    }
@@ -48653,6 +48724,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-lowell": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 138,
+  "quotes": [
+   {
+    "date": "2026-08-11",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Luxury Beyond Expectations",
+    "liked": "The most magical, beautiful, enchanting places in NYC! Unbelievably kind staff, stunning accommodations, spectacular food and an overall wonderful experience! There is no place that compares! Love The Lowell!!!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-10",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Amazing Hotel",
+    "liked": "We loved our stay here ! the staff was amazing, Jennifer is the best ! the rooms are simply perfect, but the service is even better ! thank you for making us feel at home",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-30",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "Outstanding staff",
+    "liked": "Excellent staff and nice quiet room made this a pleasant stay. Jacques restaurant was very good. Housekeeping was excellent.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-28",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "NONE",
+    "headline": "A New York stay that feels like a residence.",
+    "liked": "The Lowell is just that good. The suites are genuinely spacious, with working fireplaces and furnishings that feel collected. It's more private apartment than hotel room. The staff remembered small details: coffee order, room setup, prior requests, without making a show of it. Tucked on a quiet Upper East Side block, it's close to Central Park and Madison Avenue, yet worlds away from NYC's noise. A New York stay that…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "the-madrona": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -49355,6 +49475,14 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-opposite-house-beijing": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 100,
+  "quotes": [],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "the-peninsula-bangkok": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -49398,6 +49526,55 @@
     "headline": "Fantastic hotel",
     "liked": "The staff were so helpful with everything. The rooms are nice and the food is delicious.",
     "disliked": "Nothing",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "the-peninsula-beijing": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 664,
+  "quotes": [
+   {
+    "date": "2026-11-09",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Overall exceptional stay in terms of staff, hotel location, facilities",
+    "liked": "Very nice location, helpful staff, clean rooms, many facilities, exceptional breakfast and top notch concierge",
+    "disliked": "Nothing",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-05",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Beautiful",
+    "liked": "Location. Cleanliness. Very cordial staff. Thank you Jupiter, Rita, housekeeping staff, all front desk & concierge staff, breakfast buffet hosts & hostesses.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-05",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "Really excellent, location, staff, comfort and all",
+    "liked": "Location, Staff, ambiance and breakfast were all excellent",
+    "disliked": "everything was superb",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-04",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "couple",
+    "headline": "Very comfortable, home away from home.",
+    "liked": "Hotel location is excellent, we walked most of the evenings for our dinners, many restaurants around us. Breakfast was very good, the international choices fit all guests. My husband being Italian loved the local food they provide. I see people complaining about the location of the breakfast area, I am not sure what the fuss was about, there was no disturbance of external people walking around at all as far as we are…",
+    "disliked": "the day we checked in the room, the room wasn't so clean, I believe they in a hurry as they kindly accorded us early check in. But thereafter all was good!",
     "language": "en"
    }
   ],
@@ -49747,14 +49924,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "the-resort-at-paws-up": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 0,
-  "quotes": [],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "the-retreat-blue-lagoon-iceland": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -50000,6 +50169,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-ritz-carlton-guangzhou": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 664,
+  "quotes": [
+   {
+    "date": "2026-11-15",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Comfortable stay",
+    "liked": "Close proximity to places of interest",
+    "disliked": "Nothing in particular",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-12",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "family with children",
+    "headline": "",
+    "liked": "The way the restaurant smells when you walk in.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-04",
+    "source": "Verified booking guest",
+    "score": 8.0,
+    "travellerType": "extended group",
+    "headline": "",
+    "liked": "",
+    "disliked": "I arrived early.I asked for an earlu occupancy.I got an answer that only rooms with a better view are available and I had to pay extra 500 yuan to get the room.I Think that there were also rooms available at my rate.It was a trick to charge more for my saty",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-02",
+    "source": "Verified booking guest",
+    "score": 7.0,
+    "travellerType": "couple",
+    "headline": "Not bad",
+    "liked": "Staff and clean beds",
+    "disliked": "Old and limited menu and bad breakfast variety",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "the-ritz-carlton-koh-samui": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -50098,6 +50316,61 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "the-ritz-carlton-naples": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 375,
+  "quotes": [
+   {
+    "date": "2026-11-20",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "",
+    "liked": "It was amazing! And everyone was so so so nice!",
+    "disliked": "Everything!! Really!",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-11",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Loved it!",
+    "liked": "EVERYTHING!We had a late flight and they pushed our check out time to 4 pm.",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-05",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "solo traveller",
+    "headline": "",
+    "liked": "I like the ambiance! Very professional and clean. Hotel staff was very attentive and prompt with you needs. Will visit again!",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-23",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Family",
+    "headline": "Truly amazing hospitality",
+    "liked": "This was our first stay at The Ritz-Carlton Residences, Waikiki Beach, and it will absolutely not be our last. The hospitality here was some of the best I've experienced. When we had a small issue with the dryer, the team apologized with a box of chocolates, a small gesture that said a lot about how much they care about guest experience. The concierge and every staff member was truly so kind and helpful. Having an in…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [
+   {
+    "date": "2026-06-29",
+    "source": "Tripadvisor",
+    "text": "Great attention to detail: The pack and play arrived quickly with comfy sheets and kids bath amenities, water bottles for all of us (not just adults), and they even gave us a diaper genie to dispose of used diapers."
+   }
+  ],
+  "waterChecked": 2
+ },
  "the-ritz-carlton-new-york-nomad": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -50190,6 +50463,55 @@
     "headline": "Secret Garden minimum spend needs reviewing!",
     "liked": "We were pleasantly surprised to discover the new secret garden was open, but even more surprised with the £75 per person minimum spend ! Despite spending over the minimum spend service was slow, no recognition was given for two birthdays being celebrated. Very disappointed as it’s a beautiful space with lovely live music and atmosphere the rest is just a let down …",
     "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
+ "the-romanos-costa-navarino": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 459,
+  "quotes": [
+   {
+    "date": "2026-10-22",
+    "source": "Verified booking guest",
+    "score": 5.0,
+    "travellerType": "couple",
+    "headline": "A tired gem, over priced. Has potential but management need to review approach to guests.",
+    "liked": "Romanos is meant to be a luxury stay. It was by far the more expensive options in our stay for Greece. The property is big but run down. The service is questionable and indifferent. The rooms need a refresh especially the furniture.",
+    "disliked": "6:30am law mowing over the golf course. Loud and very inconvenient for guests. staff were not overly accomodating. The resort needs a refresh.",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-16",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Peace and serenity with an amazing energy",
+    "liked": "We keep coming back, which shows just how much we love Costa Navarino, and especially The Romanos. Luxury, peace, and tranquility. Amazing energy. The breakfast is spectacular, and the entire staff is incredibly helpful. Thank you!",
+    "disliked": "The musty smell in the rooms needs some attention",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-14",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "Elite",
+    "liked": "Exceptional service facilities location settings etc Faultless",
+    "disliked": "Leaving",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-03",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "family with children",
+    "headline": "A nice resort for a family vacation",
+    "liked": "Great location and facilities, especially suitable for families with infants.",
+    "disliked": "The bed was not very comfortable, as the mattress was a little too firm; there was no flexibility with late check-out, not even for an extra 30 minutes.",
     "language": "en"
    }
   ],
@@ -50578,6 +50900,61 @@
   "reviewsInFeed": 0,
   "quotes": [],
   "waterMentions": [],
+  "waterChecked": 2
+ },
+ "the-shore-club-turks-and-caicos": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 339,
+  "quotes": [
+   {
+    "date": "2026-08-24",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Beautiful property and so comfortable, they thought of everything and took care of it before you could even ask",
+    "disliked": "I think the food left a little to be desired but overall it was so good",
+    "language": "en"
+   },
+   {
+    "date": "2026-08-12",
+    "source": "Verified booking guest",
+    "score": 4.0,
+    "travellerType": "couple",
+    "headline": "",
+    "liked": "Design, brandnew",
+    "disliked": "Staff rude, sea was not clean",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-19",
+    "source": "Tripadvisor",
+    "score": 10.0,
+    "travellerType": "Couples",
+    "headline": "Great Experience because of Service",
+    "liked": "The Shore Club is a beautiful property with gorgeous turquoise water. There was a bit of seaweed during our stay, but the beach was still beautiful. What truly made our stay exceptional was our butler, Mark Sanchez. He was absolutely amazing—attentive, thoughtful, and always made sure everything was perfectly taken care of. Our experience truly would not have been the same without him! Special thanks as well to Miken…",
+    "disliked": "",
+    "language": "en"
+   },
+   {
+    "date": "2026-07-17",
+    "source": "Tripadvisor",
+    "score": 8.0,
+    "travellerType": "Family",
+    "headline": "Stunning Property on Long Bay, Service Falls Just Short of Five Stars",
+    "liked": "Four stars. The Shore Club is a stunning property, recently built, beautifully completed, and clearly well maintained. The design throughout is gorgeous, from the tastefully decorated lobby to the rooms themselves. We had the chance to stay in a two bedroom penthouse on the top floor, and it was spacious, private, clean, and laid out in a way that truly felt like home. The views of the beach were breathtaking, especi…",
+    "disliked": "",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [
+   {
+    "date": "2025-06-29",
+    "source": "Tripadvisor",
+    "text": "There was complimentary water bottles given at bars, the beach, restaurants, everywhere and our room was always clean."
+   }
+  ],
   "waterChecked": 2
  },
  "the-siam-bangkok": {
@@ -51727,55 +52104,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "therasia-resort-sea-and-spa": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 288,
-  "quotes": [
-   {
-    "date": "2026-10-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Incredible spot for our honeymoon!!",
-    "liked": "Amazing property with impeccable food and the best staff. Truly 5 star service!!!",
-    "disliked": "The gym could use a bit of updating",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-08",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "This place hands down had the best breakfast included by far",
-    "liked": "attention to detail , layout location .etc",
-    "disliked": "Spa could use some updating but it was still very nice",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-23",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "There’s a very high potentional but still not enough well presented to the guest",
-    "liked": "The land and the view",
-    "disliked": "Some things look a bit outdated and in need to be refreshed",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-10",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "The staff, food, location, service, gym, massage- everything was excellent",
-    "disliked": "My only issue was that it’s pet friendly and another guests dog was barking all night.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "thorngrove-manor": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -52800,55 +53128,6 @@
   ],
   "waterChecked": 2
  },
- "villa-bokeh": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 57,
-  "quotes": [
-   {
-    "date": "2025-07-05",
-    "source": "Verified booking guest",
-    "score": 8.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "Beautiful property and great service. Food is very good. Very kind staff.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-07-05",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "My home in Guatemala",
-    "liked": "Our stay was phenomenal. Attention to detail is their specialty. Left us wanting to come back very soon. The experience was cozy, luxurious, and sublime!",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-07-01",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "I was trying to decide between this hotel and hotel, Santa Domingo, and I decided to spend one night at both properties. For me, it was the perfect mix because the first hotel is a larger, bustling hotel close to the city center, while this one is in a beautiful, tranquil setting just outside of town.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-06-14",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Property is well maintained and has immaculate gardens and views. Accesibility driving or walking, definetely a gem.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "villa-contessa": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -52995,55 +53274,6 @@
     "travellerType": "",
     "headline": "Sorry kid location.",
     "liked": "Not a bad place. The location could’ve been a little better. Nice people.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "villa-eden-the-private-retreat": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 23,
-  "quotes": [
-   {
-    "date": "2025-10-14",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Friends getaway",
-    "headline": "Until next time!",
-    "liked": "Villa Eden is perfectly located just 20 min drive from Bolzano airport. It’s a 2 hrs direct flight from London Gatwick with Skyalps which makes it a very convenient journey. The ambience truly envisions heaven on Earth with the Lily Pond being my favourite place in the entire hotel, whether it was for a sauna with a view, a morning workout with a personal tutor or just chilling. My Suite was spacious with a walk-in w…",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-23",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Couples",
-    "headline": "Lugnt och fint hotell",
-    "liked": "what an incredible hotel! so quiet and peaceful. incredibly nicely decorated. friendly staff. such a good breakfast. many healthy options. the food was delicious. What I liked less was that you could add a tip after you've eaten, but then when you check out, the hotel still automatically adds a service tip to the final bill. And no hair conditioner in the bathroom.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-06",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Family",
-    "headline": "Fantastic",
-    "liked": "My wife and I were extremely pleased with the entire experience during our stay at Villa Eden. Our suite was well appointed and comfortable. I can't say enough about the food and staff. Merano is a gem of a town and a short walk from the resort. We will be back to Villa Eden.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-13",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Friends getaway",
-    "headline": "A True Sanctuary for Body and Soul",
-    "liked": "Our stay at Villa Eden was an unforgettable experience. The magnificent grounds, nestled in a beautiful park, are a true sanctuary—a place of strength and tranquility where everything is immaculately maintained. The spa is among the most stunning we have ever seen. Culinary delights awaited us every day; the food was outstanding, and the service was warm, attentive, and genuinely caring. A heartfelt thank you goes to…",
     "disliked": "",
     "language": "en"
    }
@@ -53453,63 +53683,6 @@
     "text": "There was no drinking water provided in the ro…"
    }
   ],
-  "waterChecked": 2
- },
- "vitalhotel-alter-meierhof": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 184,
-  "quotes": [
-   {
-    "date": "2025-10-06",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Altid en fornøjelse. Håber på opgradering næste gang😅gad godt prøve værelse med balkon",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-10-05",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Meget venligt og imødekommende personale alle steder. Lækker mad både morgen og aften. Fine værelser dog med meget bløde senge. Fantastisk udsigt og lækker spa. Vi manglede absolut intet og kommer gerne igen.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Amazing and newly renovated",
-    "liked": "Wonderful, newly renovated spa hotel. Everything was amazing incl food and drinks",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-15",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "Fremragende",
-    "liked": "Dejligt hotel, lækkert spa og pool område. Venligt personale.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "w-algarve": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 0,
-  "quotes": [],
-  "waterMentions": [],
   "waterChecked": 2
  },
  "w-bali-seminyak": {
@@ -54068,55 +54241,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "waldorf-astoria-berlin": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 423,
-  "quotes": [
-   {
-    "date": "2026-11-15",
-    "source": "Verified booking guest",
-    "score": 6.0,
-    "travellerType": "solo traveller",
-    "headline": "Disappointment",
-    "liked": "",
-    "disliked": "Hotel entrance did not look like a 5 star hotel entrance. Unwelcoming staff at the check-in. No welcome drink offered at the check-in. Requested for a quiet room on a higher floor > received a room facing the street on a lower floor. Overall disappointing experience.",
-    "language": "en"
-   },
-   {
-    "date": "2026-09-10",
-    "source": "Verified booking guest",
-    "score": 7.0,
-    "travellerType": "couple",
-    "headline": "",
-    "liked": "Staff is very nice and professional, location is top.",
-    "disliked": "Room was not clean. We were too tired to deal with it. Broken glass pieces on the shower floor. Bathroom and toilet zone in general was dirty. Did not experience from this hotel such a poor hygiene. Breakfast is not good. Won’t come back.",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-16",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "",
-    "liked": "Predrag took great care of us already from the start. From leaving our car keys to checking in. Andreas was very helpful at the breakfast. We had two rooms with connecting doors, so specious and carefully planned. Loved the fact that the bathroom had so many mirrors and also the light so you can apply makeup. Great service at the restaurant, we had deserts in the evening. Location I could not have asked for more.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-14",
-    "source": "Tripadvisor",
-    "score": 10.0,
-    "travellerType": "Family",
-    "headline": "Excellent suite",
-    "liked": "Great hotel, excellent service. We were satisfied with our suit and happy with the birthday arrangements that hotel offered and did. Very good breakfast. Recommended.",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "waldorf-astoria-beverly-hills": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -54642,6 +54766,55 @@
   "waterMentions": [],
   "waterChecked": 2
  },
+ "waldorf-astoria-shanghai-on-the-bund": {
+  "fetched": "2026-11-27",
+  "provider": "LiteAPI (Nuitée)",
+  "reviewsInFeed": 665,
+  "quotes": [
+   {
+    "date": "2026-11-19",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "couple",
+    "headline": "Excellent location and historical hotel",
+    "liked": "Historic central location",
+    "disliked": "O",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-18",
+    "source": "Verified booking guest",
+    "score": 9.0,
+    "travellerType": "couple",
+    "headline": "Great stat",
+    "liked": "Amazing.",
+    "disliked": "A bit expensive for china's prices. Even for luxury",
+    "language": "en"
+   },
+   {
+    "date": "2026-11-01",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Stay at Waldorf Astoria Shanghai to enjoy and relax",
+    "liked": "Very good location clean friendly staff",
+    "disliked": "Nothing",
+    "language": "en"
+   },
+   {
+    "date": "2026-09-19",
+    "source": "Verified booking guest",
+    "score": 10.0,
+    "travellerType": "extended group",
+    "headline": "Thank you for most lovely week.",
+    "liked": "Extremely clean. The staff was amazing. From the bell buys and the cleaners, the Waiters, receptionists up to the most friendly manager.",
+    "disliked": "The design is not my taste. But it's me... Too big and bombastic.",
+    "language": "en"
+   }
+  ],
+  "waterMentions": [],
+  "waterChecked": 2
+ },
  "wallingford-homestead": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -54720,55 +54893,6 @@
   "waterMentions": [],
   "waterChecked": 2
  },
- "washington-school-house-hotel": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 54,
-  "quotes": [
-   {
-    "date": "2025-10-08",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "amazing level of service. front desk was able to make all y dinner reservations at the best places in town. The provided breakfast was outstanding. One of the best hotel experiences I have ever had",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-14",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "This property is far and away the best hotel I have stayed in. Better than the large 5 star brands by virtue of size and quality of staff. The service was excellent and personalized. The decor understated and elegant.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-07-06",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "partner",
-    "headline": "",
-    "liked": "Fantastic, luxurious experience. The staff was fantastic. This location was a wonderful way to enjoy Park City while also privately enjoying dining and the pool.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-06-19",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Great place ,perfect service and the very best staff",
-    "disliked": "",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
  "weissenhaus-private-nature-luxury-resort": {
   "fetched": "2026-11-25",
   "provider": "LiteAPI (Nuitée)",
@@ -54812,55 +54936,6 @@
     "headline": "We will be back.",
     "liked": "Beautiful, park-like location on the Baltic. Personalized service. The spa and pool areas are exquisite. Breakfast is fabulous, whether enjoyed inside or out. Very good service, by a friendly team.",
     "disliked": "The rooms could be equipped with 2 comfortable chairs so a couple can sit together. The Strandkörbe should be free of charge given the price points.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
-  "waterChecked": 2
- },
- "wellness-and-sport-hotel-jagdhof": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 5,
-  "quotes": [
-   {
-    "date": "2025-10-05",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Everything was wonderful staff so friendly helpful and pleasant. A most enjoyable stay. Even better than the last time we stayed.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-09-23",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "",
-    "liked": "Das Personal war immer freundlich und vermittelte den Eindruck willkommen zu sein.",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-24",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "family",
-    "headline": "",
-    "liked": "Absolut empfehlenswert Hervorragende Unterkunft Sehr freundliches Personal hier ist einfach alles perfekt",
-    "disliked": "",
-    "language": "en"
-   },
-   {
-    "date": "2025-08-04",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "",
-    "headline": "A solid 10 out of 10!",
-    "liked": "Our stay here was perfect. It takes a while to get to the hotel, which is situated in a small town. The attention to detail is remarkable. The indoor pool area is extremely beautiful and continues to the outside area. The water is warm, probably above 30 degrees Celsius, but there is a small mini lake with colder water which is really nice. The food is fantastic. 5 course menus in the evening with minimum waiting for…",
-    "disliked": "",
     "language": "en"
    }
   ],
@@ -54920,55 +54995,6 @@
     "text": "They had refillable water bottles at check in and water filling stations throughout the resort."
    }
   ],
-  "waterChecked": 2
- },
- "whatley-manor-hotel-and-spa": {
-  "fetched": "2026-11-25",
-  "provider": "LiteAPI (Nuitée)",
-  "reviewsInFeed": 262,
-  "quotes": [
-   {
-    "date": "2026-11-17",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "couple",
-    "headline": "Fantastic, will go back",
-    "liked": "Everything was great, staff extremelt helpful and friendly, food great; pool fantastic",
-    "disliked": "Signage around the hotel could be improved. Some people had difficulty finding the pool from the changing room.",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-29",
-    "source": "Verified booking guest",
-    "score": 9.0,
-    "travellerType": "couple",
-    "headline": "Stunning, Relaxed & Peaceful",
-    "liked": "Location is private and grounds are beautiful even in the rain. Well maintained throughout and clean. Staff were attentive, friendly, knowledgeable and welcoming. We thoroughly enjoyed such a relaxed environment following Cancer Treatment. Just what we needed.",
-    "disliked": "It was pretty much perfect however although the service charges on services received, such as in the lounge or bar etc were acceptable, we did not particularly feel like the service charge applied to the room booking itself were required. We did accept the charges upon check out as we were advised of this on a welcome email after we had booked, but the price agreed when we booked the room should be the price we pay. …",
-    "language": "en"
-   },
-   {
-    "date": "2026-10-11",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Excellent staff",
-    "liked": "Beautiful house and stunning gardens",
-    "disliked": "Large bedroom Very peaceful and elegant hotel",
-    "language": "en"
-   },
-   {
-    "date": "2026-08-28",
-    "source": "Verified booking guest",
-    "score": 10.0,
-    "travellerType": "solo traveller",
-    "headline": "Excellent",
-    "liked": "The hotel's ambience, service, staff, and cleanliness were exceptional. A beautiful setting in the Cotswolds, very pleasantly located, with excellent accessibility to Highgrove and other local attractions. Friends of the middle ages will find the grave of Englands first King (Æthelstan) only minutes away.",
-    "disliked": "We found it unfortunate that a hotel so dedicated to its guests does not hold a contingent of tickets for Highgrove. This is regrettable as many guests will travel here specifically for that reason. Highgrove must be booked separately far in advance. It would be highly recommended for the management to always keep a contingency of tickets available.",
-    "language": "en"
-   }
-  ],
-  "waterMentions": [],
   "waterChecked": 2
  },
  "wild-coast-tented-lodge": {
