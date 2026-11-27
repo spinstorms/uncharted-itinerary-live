@@ -72,7 +72,7 @@
   }
   function switcher() {
     var css = document.createElement("style");
-    css.textContent = "#so-lang{position:relative;display:inline-flex;margin-left:10px}#so-lang-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:6px 11px;font:600 12px/1 inherit;cursor:pointer}#so-lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:#fff;color:#0F2B33;border-radius:14px;box-shadow:0 12px 32px rgba(15,43,51,.18);padding:6px;min-width:190px;z-index:9999;display:none}#so-lang-menu.open{display:block}#so-lang-menu button{display:block;width:100%;text-align:start;background:none;border:0;padding:9px 12px;border-radius:9px;font:500 14px/1.2 inherit;color:inherit;cursor:pointer}#so-lang-menu button:hover,#so-lang-menu button[aria-current]{background:#E6F2F2;color:#0B7A7A}html.so-rtl [dir=auto]{unicode-bidi:plaintext}";
+    css.textContent = "#so-lang{position:relative;display:inline-flex;margin-left:10px}#so-lang-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:6px 11px;font:600 12px/1 inherit;cursor:pointer}#so-lang-menu{position:fixed;right:12px;top:64px;max-height:calc(100vh - 80px);overflow:auto;background:#fff;color:#0F2B33;border-radius:14px;box-shadow:0 12px 32px rgba(15,43,51,.18);padding:6px;min-width:190px;z-index:2147483000;display:none}#so-lang-menu.open{display:block}#so-lang-menu button{display:block;width:100%;text-align:start;background:none;border:0;padding:9px 12px;border-radius:9px;font:500 14px/1.2 inherit;color:inherit;cursor:pointer}#so-lang-menu button:hover,#so-lang-menu button[aria-current]{background:#E6F2F2;color:#0B7A7A}html.so-rtl [dir=auto]{unicode-bidi:plaintext}";
     document.head.appendChild(css);
     var host = document.querySelector(".stayodds-site-header .header-inner") || document.querySelector("header");
     if (!host) return;
@@ -88,7 +88,16 @@
       };
       menu.appendChild(b);
     });
-    wrap.querySelector("#so-lang-btn").onclick = function (e) { e.stopPropagation(); menu.classList.toggle("open"); };
+    wrap.querySelector("#so-lang-btn").onclick = function (e) {
+      e.stopPropagation();
+      // fixed to the screen so a header with overflow:hidden can't clip it (was invisible on phones)
+      var r = this.getBoundingClientRect();
+      menu.style.top = Math.round(r.bottom + 8) + "px";
+      menu.style.right = Math.max(8, Math.round(window.innerWidth - r.right)) + "px";
+      if (menu.parentNode !== document.body) document.body.appendChild(menu);
+      menu.classList.toggle("open");
+    };
+    window.addEventListener("scroll", function () { menu.classList.remove("open"); }, { passive: true });
     document.addEventListener("click", function () { menu.classList.remove("open"); });
     var burger = host.querySelector(".mobile-menu-toggle, .menu-toggle, button[aria-controls]");
     if (burger) host.insertBefore(wrap, burger); else host.appendChild(wrap);

@@ -12,7 +12,7 @@ html .site-header .nav-uncharted-pill{color:var(--so-coral)!important;background
 html .site-header .nav-deals-btn{color:var(--so-coral)!important;border-color:var(--so-coral)!important;background:#FFFFFF!important}
 html .site-header .mobile-menu-btn{background:#F6EFE2!important;color:var(--so-ink)!important}
 html .site-header .mobile-menu-btn svg{stroke:var(--so-ink)!important}
-html .site-header .header-actions + div > button,html .site-header .so-lang-btn{color:var(--so-ink)!important;border-color:#E2D8C6!important}
+html .site-header .header-actions + div > button,html #so-lang-btn{color:var(--so-ink)!important;border-color:#E2D8C6!important}
 html .site-header .header-actions + div > button svg{stroke:var(--so-ink)!important}
 html .site-header .mobile-nav,html .mobile-nav{background:#FFFFFF!important;border-top:1px solid var(--so-line)}
 html .mobile-nav a{color:var(--so-ink)!important}

@@ -3,7 +3,7 @@
    awards, prices, seasons, dining, water). Nothing is estimated. Same rules as the StayOdds app
    (stayscore-app lib/compareInsights.ts). */
 import { computeStayOdds } from "./stayodds-engine.js?v=14";
-import { getBestMonthsMeta, getGuestProfile } from "./stayodds-insights.js?v=7";
+import { getBestMonthsMeta, getGuestProfile } from "./stayodds-insights.js?v=8";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const esc = (s) =>

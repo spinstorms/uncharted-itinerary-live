@@ -1,5 +1,5 @@
 import { computeStayOdds, formatPersonalScore, isFirstHandVerified } from "./stayodds-engine.js?v=14";
-import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTipText } from "./stayodds-insights.js?v=7";
+import { normalizeBrandName, getBrandCategories, getPartnerPrograms, getVerifiedRoomTipText } from "./stayodds-insights.js?v=8";
 
 const qs = (s) => document.querySelector(s);
 const oddsCache = new WeakMap();
