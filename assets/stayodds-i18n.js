@@ -1,6 +1,6 @@
 /* StayOdds languages: one small JSON per language, swapped in on the page. No extra page copies. */
 (function () {
-  var LANGS = [["en","English"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["ar","العربية"],["ja","日本語"],["id","Bahasa Indonesia"],["fa","فارسی"]];
+  var LANGS = [["en","English"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["ar","العربية"],["ja","日本語"],["id","Bahasa Indonesia"],["fa","فارسی"],["zh-Hans","简体中文"],["ko","한국어"]];
   var RTL = { ar: 1, fa: 1 };
   var KEY = "stayodds-lang";
   function pick() {
@@ -9,6 +9,7 @@
     n = n.toLowerCase();
     if (n.indexOf("pt") === 0) return "pt-BR";
     if (n.indexOf("in") === 0) return "id";
+    if (n.indexOf("zh") === 0) return "zh-Hans";
     for (var i = 0; i < LANGS.length; i++) if (n.indexOf(LANGS[i][0].toLowerCase().slice(0, 2)) === 0) return LANGS[i][0];
     return "en";
   }
@@ -63,7 +64,7 @@
   }
   function load(l, cb) {
     if (l === "en") { dict = null; cb(); return; }
-    fetch("/assets/i18n/" + l + ".json?v=1").then(function (r) { return r.json(); }).then(function (d) { dict = d; lc = {}; for (var k in d) lc[k.toLowerCase()] = d[k]; cb(); }).catch(function () { dict = null; cb(); });
+    fetch("/assets/i18n/" + l + ".json?v=2").then(function (r) { return r.json(); }).then(function (d) { dict = d; lc = {}; for (var k in d) lc[k.toLowerCase()] = d[k]; cb(); }).catch(function () { dict = null; cb(); });
   }
   function setLang(l) {
     lang = l; try { localStorage.setItem(KEY, l); } catch (e) {}
