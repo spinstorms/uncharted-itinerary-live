@@ -83,6 +83,9 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = html.replace("stayodds_v3_bright_og_hero_1200x630.png", "stayodds_v5_og_hero_1200x630.png")
     html = html.replace("stayodds_v4_bright_og_hero_1200x630.png", "stayodds_v5_og_hero_1200x630.png")
 
+    # languages: one small script + per-language JSON, no per-language page copies
+    if "stayodds-i18n.js" not in html and "</head>" in html:
+        html = html.replace("</head>", '  <script src="/assets/stayodds-i18n.js?v=1" defer></script>\n</head>', 1)
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+assets/', r'\1/assets/', html)
     html = re.sub(r'((?:href|src)=["\'])(?:\.\./)+data/', r'\1/data/', html)
@@ -275,6 +278,7 @@ def write_404_page(out_dir: Path) -> None:
   <link rel="icon" type="image/svg+xml" href="/assets/stayodds-favicon.svg?v=3" />
   <link rel="stylesheet" href="/assets/styles.min.css?v=47" />
 {STAYODDS_GA4_SNIPPET}
+  <script src="/assets/stayodds-i18n.js?v=1" defer></script>
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
   <div style="max-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:32px;text-align:center;box-shadow:0 14px 36px rgba(15,23,42,0.08);">
