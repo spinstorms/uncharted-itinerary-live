@@ -36,12 +36,15 @@ jobs:
           NUITEE_API_KEY: ${{ secrets.NUITEE_API_KEY }}
           GALLERY_SEARCH: ${{ inputs.search }}
         run: python3 scripts/fetch_gallery.py ${{ inputs.refresh && '--refresh' || '' }}
+      - name: Save official photos (data/gallery-manual.json)
+        if: ${{ !inputs.search }}
+        run: pip install -q pillow && python3 scripts/fetch_official_photos.py
       - name: Commit
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/hotel-gallery.json
+          git add data/hotel-gallery.json assets/card-photos
           if ! git diff --cached --quiet; then
             git commit -m "chore: hotel photo galleries"
             git pull --rebase -X ours origin main

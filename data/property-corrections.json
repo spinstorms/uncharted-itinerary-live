@@ -122,6 +122,22 @@
     },
     "the-siam-bangkok": {
       "nuitee_hotel_id": null
+    },
+    "aman-summer-palace-beijing": {
+      "name": "Beijing Yihe Hotel (formerly Aman Summer Palace)",
+      "brand": "Independent"
+    },
+    "the-middle-house-shanghai": {
+      "name": "Upper House Shanghai (formerly The Middle House)"
+    },
+    "the-temple-house-chengdu": {
+      "name": "Upper House Chengdu (formerly The Temple House)"
+    },
+    "intercontinental-hayman-island": {
+      "name": "InterContinental Hayman Great Barrier Reef"
+    },
+    "calcot-manor": {
+      "name": "Calcot Manor & Spa"
     }
   },
   "property_facts": {

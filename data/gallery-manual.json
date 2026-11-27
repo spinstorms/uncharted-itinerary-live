@@ -1,10 +1,20 @@
 {
- "note": "LiteAPI ids pinned by hand where the name search fails (checked: same hotel, same address). 'photos' = official photos for hotels LiteAPI doesn't carry.",
+ "note": "LiteAPI ids pinned by hand where the name search fails (checked: same hotel, same address). 'photos' = official photos for hotels LiteAPI doesn't carry. Official photos are saved once as assets/card-photos/<id>.webp by scripts/fetch_official_photos.py.",
  "liteapiIds": {
   "the-puli-shanghai": "lp43c54",
   "montage-kapalua-bay": "lp68c89",
   "sujan-jawai-india": "lp6570093a",
   "paradisus-palma-real": "lp65784324"
  },
- "photos": {}
+ "photos": {
+  "amandayan-lijiang": "https://www.aman.com/sites/default/files/2021-02/210204_AmanHero_Landscape_Amandayan.jpg",
+  "the-middle-house-shanghai": "https://edge.sitecorecloud.io/swirehotels1-swirehotels-production-ebf6/media/Project/Upper-House/upper-house/shanghai/menu/gallery.jpg?h=2000&iar=0&w=3000",
+  "the-temple-house-chengdu": "https://edge.sitecorecloud.io/swirehotels1-swirehotels-production-ebf6/media/Project/Upper-House/upper-house/chengdu/menu/gallery.jpg?h=2000&iar=0&w=3000",
+  "macakizi-bodrum": "https://www.macakizi.com/static/uploads/2026/10/macakizi-deck.webp",
+  "club-med-miches-playa-esmeralda": "https://assets.dream.clubmed/pm_7531_358_358936-lvnun1obk6-swhr.jpg",
+  "club-med-seychelles": "https://assets.dream.clubmed/pm_7531_335_335518-10pl6c860l-swhr.jpg",
+  "club-med-kani": "https://assets.dream.clubmed/pm_7531_489_489441-m310fbj6ax-swhr.jpg",
+  "intercontinental-hayman-island": "https://haymanisland.intercontinental.com/wp-content/uploads/2024/09/ICHAYM1-e1727151695979.jpg",
+  "calcot-manor": "https://hotelcms-production.imgix.net/calcot.co/wp-content/uploads/2026/04/imgi_42_22_May_Calcot_WR_-55.jpg"
+ }
 }
