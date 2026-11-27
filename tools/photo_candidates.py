@@ -15,6 +15,8 @@ def save(url, path):
         print("fail", url, e); return False
 meta = {}
 HERO = {"maldives": "maldives aerial", "bora-bora": "bora bora", "seychelles": "seychelles beach", "bali": "bali rice terraces"}
+COMMONS_HERO = {"maldives": ["Maldives aerial resort", "Maldives island aerial"], "bora-bora": ["Bora Bora aerial", "Bora Bora Mount Otemanu lagoon"],
+                "seychelles": ["Anse Source d'Argent", "La Digue Seychelles beach"], "bali": ["Tegallalang rice terraces", "Bali rice terraces Jatiluwih"]}
 for key, q in HERO.items():
     items = []
     try:
@@ -39,11 +41,39 @@ def commons(query, n):
                     "license": em.get("LicenseShortName", {}).get("value"), "artist": em.get("Artist", {}).get("value", "")[:200],
                     "page": ii.get("descriptionurl")})
     return res
+for key, qs in COMMONS_HERO.items():
+    items = meta.get(f"hero-{key}", [])
+    seen = set()
+    for q in qs:
+        try:
+            for r in commons(q + " filetype:bitmap", 20):
+                if r["title"] in seen or (r["w"] or 0) < 3000 or (r["w"] or 0) < (r["h"] or 0): continue
+                seen.add(r["title"])
+                fn = f"hero-{key}-c{len(items)}.jpg"
+                if r["thumb"] and save(r["thumb"], OUT / fn):
+                    r["file"] = fn; items.append(r)
+                if len(items) >= 8: break
+        except Exception as e:
+            print("commons hero fail", key, e)
+    meta[f"hero-{key}"] = items
+
+# our own filmed stays: frames YouTube makes from the video itself (no title text on them)
+VIDEOS = {"finolhu-baa-atoll": "8ck7ZCsdtCQ"}
+for hid, vid in VIDEOS.items():
+    items = []
+    for fr in ["maxres1", "maxres2", "maxres3", "maxresdefault", "sd1", "sd2", "sd3"]:
+        fn = f"{hid}-yt-{fr}.jpg"
+        if save(f"https://i.ytimg.com/vi/{vid}/{fr}.jpg", OUT / fn):
+            items.append({"file": fn, "source": "youtube", "video": vid, "frame": fr})
+    meta[hid + "-yt"] = items
+
 hotels = json.loads(pathlib.Path("tools/flagged.json").read_text())
 for hid, name in hotels.items():
     items = []
     try:
-        for j, r in enumerate(commons(name, 8)[:6]):
+        short = name.split(",")[0].replace("a Luxury Collection", "").strip()
+        res = commons(short + " hotel", 8) or commons(short, 8)
+        for j, r in enumerate(res[:6]):
             fn = f"{hid}-c{j}.jpg"
             if r["thumb"] and save(r["thumb"], OUT / fn):
                 r["file"] = fn; items.append(r)
