@@ -1,0 +1,4 @@
+{
+ "note": "Hotels whose saved photo shows the wrong place. The site uses the hotel's own LiteAPI gallery photo instead (data/hotel-gallery.json).",
+ "ids": ["macakizi-bodrum"]
+}

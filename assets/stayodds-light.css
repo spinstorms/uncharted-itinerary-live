@@ -41,5 +41,5 @@ html .tf-score-badge small{color:#C2410C!important}
 /* hotel pages: no dark band, extra photos under the hero */
 html .detail-top-band{background:linear-gradient(180deg,#F3EBDC 0%,rgba(251,247,239,0) 100%)!important}
 html .detail-breadcrumb,html .detail-breadcrumb a,html .detail-breadcrumb strong,html .detail-breadcrumb span{color:var(--so-ink)!important}
-html .so2-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-top:8px}
+html .so2-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
 html .so2-photos img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;display:block;background:#EDE5D6}

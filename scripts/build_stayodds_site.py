@@ -62,19 +62,32 @@ MARRIOTT_BRAND_RE = re.compile(
 MARRIOTT_NAME_RE = re.compile(r"ritz-carlton|st\.? regis|jw marriott|marriott|luxury collection|\bedition\b|bulgari|bvlgari", re.I)
 
 
+_GALLERY = None
+# local thumbnails that show the wrong place (checked by hand)
+try:
+    _BAD_LOCAL_THUMBS = set(json.loads((ROOT / "data" / "bad-photos.json").read_text(encoding="utf-8")).get("ids") or [])
+except Exception:
+    _BAD_LOCAL_THUMBS = set()
+
+
+def so_gallery(hid: str) -> list[dict]:
+    global _GALLERY
+    if _GALLERY is None:
+        try:
+            _GALLERY = json.loads((ROOT / "data" / "hotel-gallery.json").read_text(encoding="utf-8")).get("hotels") or {}
+        except Exception:
+            _GALLERY = {}
+    return (_GALLERY.get(hid) or {}).get("photos") or []
+
+
 def so_photo_strip(h: dict, raw_thumb: str) -> str:
-    """Photo-first hotel pages: a small row of extra photos under the hero (clean card photo, main photo, our video frame)."""
-    pics = []
-    for cand in (f"assets/card-photos/{h['id']}.webp", f"assets/thumbs/{h['id']}.webp"):
-        if cand != raw_thumb and (ROOT / cand).exists():
-            pics.append(cand)
-    if h.get("videoId") and (ROOT / "assets" / "video-thumbs" / f"{h['videoId']}.jpg").exists():
-        pics.append(f"assets/video-thumbs/{h['videoId']}.jpg")
-    if not pics:
+    """Photo-first hotel pages: a row of the hotel's own photos (LiteAPI gallery) under the hero."""
+    pics = [p["u"] for p in so_gallery(h["id"]) if p.get("u") and p["u"] != raw_thumb][:4]
+    if len(pics) < 2:
         return ""
     imgs = "".join(
-        f'<img src="../../{esc(p)}?v=169" alt="{esc(h["name"])}, photo {i + 1}" loading="lazy" decoding="async" />'
-        for i, p in enumerate(pics[:3])
+        f'<img src="{esc(p)}" alt="{esc(h["name"])}, photo {i + 1}" loading="lazy" decoding="async" referrerpolicy="no-referrer" />'
+        for i, p in enumerate(pics)
     )
     return f'<div class="so2-photos">{imgs}</div>'
 
@@ -3143,8 +3156,11 @@ def main() -> None:
         if card_photo.exists() and card_photo.stat().st_size > 1500:
             # Clean hotel photo (no YouTube thumbnail text/faces). Video is flagged with a badge + in-page player.
             resolved_thumb = f"assets/card-photos/{pid}.webp"
-        elif local_thumb.exists() and local_thumb.stat().st_size > 1500:
+        elif local_thumb.exists() and local_thumb.stat().st_size > 1500 and pid not in _BAD_LOCAL_THUMBS:
             resolved_thumb = f"assets/thumbs/{pid}.webp"
+        elif (not raw_hero or is_blocked or is_self_hosted_ph or pid in _BAD_LOCAL_THUMBS) and so_gallery(pid):
+            # the hotel's own licensed photo (LiteAPI gallery) beats a placeholder graphic or a wrong photo
+            resolved_thumb = so_gallery(pid)[0]["u"]
         elif (not raw_hero or is_blocked or is_self_hosted_ph) and local_ph.exists() and local_ph.stat().st_size > 1500:
             resolved_thumb = f"assets/placeholders/{pid}.webp"
         elif raw_hero and not is_blocked:
