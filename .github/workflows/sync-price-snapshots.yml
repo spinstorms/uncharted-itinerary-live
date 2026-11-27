@@ -40,7 +40,7 @@ jobs:
           if ! git diff --quiet data/; then
             git add data/price-snapshots.json data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json data/app-photos.json
             git commit -m "chore: refresh weekly indicative hotel price snapshots"
-            git pull --rebase -X ours origin main
+            git pull --rebase --autostash -X ours origin main
             git push origin main
           else
             echo "No price snapshot changes."

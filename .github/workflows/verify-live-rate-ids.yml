@@ -54,7 +54,7 @@ jobs:
                   data/stayodds-index.json data/stayodds-directory.json data/stayodds-visited.json data/app-photos.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: verify LiteAPI hotel ids and refresh live-rate coverage"
-            git pull --rebase -X ours origin main
+            git pull --rebase --autostash -X ours origin main
             git push origin main
             echo "pushed=true" >> "$GITHUB_OUTPUT"
           else
