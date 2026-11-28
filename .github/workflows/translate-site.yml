@@ -52,3 +52,15 @@ jobs:
               sleep $((RANDOM % 20 + 5))
             done
           fi
+
+  # Commits made by this workflow do not trigger other workflows, so ask for a
+  # stayodds.com publish once the languages are done (free: build and copy only).
+  # Approved by Oliver, 28 Nov 2026.
+  publish:
+    needs: translate
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run publish-stayodds.yml -R "${{ github.repository }}" --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
