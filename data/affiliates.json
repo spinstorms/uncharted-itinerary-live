@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-28T01:05:43Z",
-  "sheetConnected": true,
+  "updatedAt": "2026-11-28T01:12:06Z",
+  "sheetConnected": false,
   "googleSheetCsvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vReaBX1pAGFHSTaAnu2fb1N3cCqJQRrlNUqjC_5dBfP5vl0_jYHUaCQ62ZoCGPcJJvqyeF9WO0l62w_/pub?gid=0&single=true&output=csv",
   "disclosure": "Some links on this page are affiliate or referral links. If you book, sign up, or buy through them, we may earn a small commission or bonus points at no extra cost to you — helping us keep creating honest, independent travel reviews.",
   "curated": [
     {
-      "id": "sheet-1",
+      "id": "curated-holafly-esim",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "sheet-2",
+      "id": "curated-amex-gold-uk",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "id": "sheet-3",
+      "id": "curated-marriott-currensea",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": true,
@@ -128,48 +128,7 @@
       ]
     },
     {
-      "id": "sheet-8",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": true,
-      "category": "Camera & Travel Gear",
-      "title": "Insta360 Luna Ultra — Standard Kit",
-      "badge": "Filming Setup",
-      "description": "Our compact main travel camera used to film resort walkthroughs, room tours, and island adventures.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0fpiIMTi",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 10,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "sheet-4",
+      "id": "curated-fuse-energy",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": false,
@@ -210,7 +169,7 @@
       ]
     },
     {
-      "id": "sheet-5",
+      "id": "curated-epidemic-sound",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": false,
@@ -251,7 +210,7 @@
       ]
     },
     {
-      "id": "sheet-6",
+      "id": "curated-tubebuddy",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": false,
@@ -292,7 +251,7 @@
       ]
     },
     {
-      "id": "sheet-7",
+      "id": "curated-freetrade",
       "source": "curated",
       "section": "Promotions & Codes",
       "featured": false,
@@ -333,7 +292,48 @@
       ]
     },
     {
-      "id": "sheet-9",
+      "id": "curated-insta360-standard",
+      "source": "curated",
+      "section": "Shopping & Gear",
+      "featured": true,
+      "category": "Camera & Travel Gear",
+      "title": "Insta360 Luna Ultra — Standard Kit",
+      "badge": "Filming Setup",
+      "description": "Our compact main travel camera used to film resort walkthroughs, room tours, and island adventures.",
+      "promoCode": "",
+      "url": "https://link.amazon/B0fpiIMTi",
+      "buttonLabel": "Shop on Amazon",
+      "sortOrder": 10,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "curated-insta360-creator-black",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -374,7 +374,7 @@
       ]
     },
     {
-      "id": "sheet-10",
+      "id": "curated-insta360-creator-white",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -415,7 +415,7 @@
       ]
     },
     {
-      "id": "sheet-11",
+      "id": "curated-insta360-wide-lens",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -456,7 +456,7 @@
       ]
     },
     {
-      "id": "sheet-12",
+      "id": "curated-insta360-battery",
       "source": "curated",
       "section": "Shopping & Gear",
       "featured": false,
@@ -495,689 +495,11 @@
           "date": "2026-05-05"
         }
       ]
-    },
-    {
-      "id": "sheet-13",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Osmo Pocket 4P Vlog Combo, Dual-Lens Vlog Camera, Cinematic 4K",
-      "badge": "Gear Essential",
-      "description": "Osmo Pocket 4P features a 1-inch wide-angle camera with 17-stop dynamic range* and D-Log 2* for stunning light and shadow, plus a 60mm lens with an f/1.8 aperture for natural portraits. With 3-axis stabilization, ActiveTrack 8.0*, and up to 8× ultra HD slow motion*, cinematic 4K footage* is always within reach.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0i23UUah",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 15,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "sheet-14",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Osmo Pocket 4P Vlog Combo, Pearl White, Dual-Lens Vlog, Cinematic 4K",
-      "badge": "",
-      "description": "Osmo Pocket 4P features a 1-inch wide-angle camera with 17-stop dynamic range* and D-Log 2* for stunning light and shadow, plus a 60mm lens with an f/1.8 aperture for natural portraits. With 3-axis stabilization, ActiveTrack 8.0*, and up to 8× ultra HD slow motion*, cinematic 4K footage* is always within reach.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0cFNVPHy",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 16,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-1",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Booking.com (via Travelpayouts)",
-      "badge": "Hotel Partner",
-      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
-      "promoCode": "",
-      "url": "https://booking.tpx.lu/dddKFSMf",
-      "buttonLabel": "Check Live Rates",
-      "sortOrder": 31
-    },
-    {
-      "id": "trending-2",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Agoda Hotel Partner (via Travelpayouts)",
-      "badge": "Hotel Partner",
-      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
-      "promoCode": "",
-      "url": "https://agoda.tpx.lu/p5JSiiU0",
-      "buttonLabel": "Check Live Rates",
-      "sortOrder": 32
-    },
-    {
-      "id": "trending-3",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Trip.com Hotels & Flights",
-      "badge": "Hotel Partner",
-      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
-      "promoCode": "",
-      "url": "https://trip.tpx.lu/BbtDtE5w",
-      "buttonLabel": "Check Live Rates",
-      "sortOrder": 33
-    },
-    {
-      "id": "trending-4",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Expedia / Hotels.com Partner Program",
-      "badge": "Hotel Partner",
-      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
-      "promoCode": "",
-      "url": "https://expedia.tpx.lu/9LHschol",
-      "buttonLabel": "Check Live Rates",
-      "sortOrder": 34
-    },
-    {
-      "id": "trending-5",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": true,
-      "category": "eSIM & Connectivity",
-      "title": "Airalo Global & Regional eSIM",
-      "badge": "Travel eSIM",
-      "description": "Affordable global and regional travel eSIM data plans across 200+ destinations.",
-      "promoCode": "",
-      "url": "https://airalo.tpx.lu/WSdkjcJz",
-      "buttonLabel": "Explore Airalo",
-      "sortOrder": 35,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-7",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Tours & Experiences",
-      "title": "GetYourGuide Partner Program",
-      "badge": "Tours & Excursions",
-      "description": "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.",
-      "promoCode": "",
-      "url": "https://getyourguide.tpx.lu/q0UlPSkz",
-      "buttonLabel": "Browse Experiences",
-      "sortOrder": 37
-    },
-    {
-      "id": "trending-8",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": true,
-      "category": "Tours & Experiences",
-      "title": "Klook Travel Activities & Transfers",
-      "badge": "Tours & Transfers",
-      "description": "Book airport transfers, island day trips, beach clubs, and local tours across Asia and worldwide.",
-      "promoCode": "",
-      "url": "https://klook.tpx.lu/TsCmTC1L",
-      "buttonLabel": "Browse Klook",
-      "sortOrder": 38,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-9",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Tours & Experiences",
-      "title": "Viator (TripAdvisor Experiences)",
-      "badge": "Tours & Excursions",
-      "description": "Trusted private drivers, boat excursions, and guided day trips with flexible cancellation.",
-      "promoCode": "",
-      "url": "https://viator.tpx.lu/ByHwSqC5",
-      "buttonLabel": "Browse Experiences",
-      "sortOrder": 39
-    },
-    {
-      "id": "trending-10",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": true,
-      "category": "Points & Travel Money",
-      "title": "Wise Multi-Currency Travel Card",
-      "badge": "Travel Money",
-      "description": "Multi-currency travel card with the real exchange rate and low fees in IDR, THB, EUR, and USD.",
-      "promoCode": "",
-      "url": "https://wise.com/invite/dic/oliverarrashk",
-      "buttonLabel": "Get Wise Card",
-      "sortOrder": 40,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-11",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Osmo Pocket 3 Creator Combo",
-      "badge": "Filming Gear",
-      "description": "Compact 4K pocket gimbal camera gear featured in our real-world travel camera tests.",
-      "promoCode": "",
-      "url": "https://link.amazon/B09YrzbtD",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 41,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-12",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Apple AirTag (4-Pack) — Luggage Trackers",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0dbSsPB9",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 42
-    },
-    {
-      "id": "trending-13",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Twelve South AirFly Pro (Flight Bluetooth Adapter)",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B05jf5y5l",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 43
-    },
-    {
-      "id": "trending-14",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Anker MagGo Qi2 3-in-1 Foldable Travel Charger",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B02HKwrm7",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 44
-    },
-    {
-      "id": "trending-15",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Anker Prime 20,000mAh+ Airline-Safe Power Bank",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0czEBL1z",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 45
-    },
-    {
-      "id": "trending-16",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Universal GaN Travel Adapter (USB-C PD 65W+)",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0j8zbXPL",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 46
-    },
-    {
-      "id": "trending-17",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Sony WH-1000XM5 / Bose QuietComfort Ultra",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0iL03Bao",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 47
-    },
-    {
-      "id": "trending-18",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Travel Tech & Gadgets",
-      "title": "Loop Quiet 2 / Switch Travel Earplugs",
-      "badge": "Travel Pick",
-      "description": "One of our go-to travel tech & gadgets essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0cv0D74a",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 48
-    },
-    {
-      "id": "trending-19",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Flights & Comfort",
-      "title": "Trtl Travel Pillow Plus (Ergonomic Neck Pillow)",
-      "badge": "Travel Pick",
-      "description": "One of our go-to flights & comfort essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B02vlt0pY",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 49
-    },
-    {
-      "id": "trending-22",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": true,
-      "category": "eSIM & Connectivity",
-      "title": "Saily eSIM (by Nord Security)",
-      "badge": "Travel eSIM",
-      "description": "Fast, reliable international travel eSIM by Nord Security — install in minutes and skip roaming fees.",
-      "promoCode": "",
-      "url": "https://saily.tpx.lu/bIVFTBvq",
-      "buttonLabel": "Get Saily eSIM",
-      "sortOrder": 52,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-24",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Luggage & Packing",
-      "title": "Peak Design Packing Cubes & Travel Tech Pouch",
-      "badge": "Travel Pick",
-      "description": "One of our go-to luggage & packing essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0avm7UHJ",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 54
-    },
-    {
-      "id": "trending-25",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Luggage & Packing",
-      "title": "Antler / Level8 / Samsonite Carry-On Suitcase",
-      "badge": "Travel Pick",
-      "description": "One of our go-to luggage & packing essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B085bupkO",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 55
-    },
-    {
-      "id": "trending-26",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Resort & Beach Essentials",
-      "title": "Reef-Safe Sunscreen (Stream2Sea / Sun Bum)",
-      "badge": "Travel Pick",
-      "description": "One of our go-to resort & beach essentials essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0izEdtGX",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 56
-    },
-    {
-      "id": "trending-27",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Resort & Beach Essentials",
-      "title": "DEET-Free Tropical Mosquito Repellent (Incognito/Picaridin)",
-      "badge": "Travel Pick",
-      "description": "One of our go-to resort & beach essentials essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B02euxVHy",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 57
-    },
-    {
-      "id": "trending-28",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Resort & Beach Essentials",
-      "title": "Waterproof 10L Dry Bag & Floating Phone Pouch",
-      "badge": "Travel Pick",
-      "description": "One of our go-to resort & beach essentials essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B09jsoPRK",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 58
-    },
-    {
-      "id": "trending-29",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Resort & Beach Essentials",
-      "title": "Dual-Voltage Compact Travel Steamer",
-      "badge": "Travel Pick",
-      "description": "One of our go-to resort & beach essentials essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0dKIY1SV",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 59
-    },
-    {
-      "id": "trending-30",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Luggage & Packing",
-      "title": "Digital Hanging Luggage Scale",
-      "badge": "Travel Pick",
-      "description": "One of our go-to luggage & packing essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B052mv1sw",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 60
-    },
-    {
-      "id": "trending-31",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Resort & Beach Essentials",
-      "title": "Kindle Paperwhite (Waterproof) + Bellroy Travel Wallet",
-      "badge": "Travel Pick",
-      "description": "One of our go-to resort & beach essentials essentials we pack for luxury resort trips and long-haul flights.",
-      "promoCode": "",
-      "url": "https://link.amazon/B04kfX3sH",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 61
-    },
-    {
-      "id": "trending-32",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": false,
-      "category": "Camera & Travel Gear",
-      "title": "SanDisk Extreme Pro MicroSD + DJI Mini 4 Pro Drone",
-      "badge": "Filming Gear",
-      "description": "Compact 4K pocket gimbal camera gear featured in our real-world travel camera tests.",
-      "promoCode": "",
-      "url": "https://link.amazon/B01pEzMDD",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 62
-    },
-    {
-      "id": "trending-33",
-      "source": "curated",
-      "section": "Shopping & Gear",
-      "featured": true,
-      "category": "Camera & Travel Gear",
-      "title": "DJI Mic Mini 2 Wireless Microphone",
-      "badge": "Travel Audio",
-      "description": "Ultra-compact wireless microphone we tested head-to-head on our Bali camera shootout.",
-      "promoCode": "",
-      "url": "https://link.amazon/B0fl4hwFa",
-      "buttonLabel": "Shop on Amazon",
-      "sortOrder": 63,
-      "mentionedIn": [
-        {
-          "id": "E_DfGSAMeTU",
-          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
-          "date": "2026-10-17"
-        },
-        {
-          "id": "pyfGUOlFr3A",
-          "title": "Is Cocana The Best Resort in Gili T?",
-          "date": "2026-09-29"
-        },
-        {
-          "id": "5H-BBvM9O70",
-          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
-          "date": "2026-07-05"
-        },
-        {
-          "id": "JV1HuujJJ4k",
-          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
-          "date": "2026-05-08"
-        },
-        {
-          "id": "3ll3ENeUxJg",
-          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
-          "date": "2026-05-05"
-        }
-      ]
-    },
-    {
-      "id": "trending-34",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Hotels.com Hotels & Resorts",
-      "badge": "Hotel Partner",
-      "description": "Compare live luxury resort rates, member deals, and flexible cancellation options.",
-      "promoCode": "",
-      "url": "https://hotels.tpx.lu/2JsCNIZh",
-      "buttonLabel": "Check Live Rates",
-      "sortOrder": 64
-    },
-    {
-      "id": "trending-35",
-      "source": "curated",
-      "section": "Promotions & Codes",
-      "featured": false,
-      "category": "Hotels & Booking",
-      "title": "Kiwi.com Flights",
-      "badge": "Travel Pick",
-      "description": "Recommended hotels & booking partner we use on trips around the world.",
-      "promoCode": "",
-      "url": "https://kiwi.tpx.lu/fDgPG9Ew",
-      "buttonLabel": "Explore Offer",
-      "sortOrder": 65
     }
   ],
   "fromVideos": [
     {
-      "id": "yt-1680887",
+      "id": "yt-6476731",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1218,7 +540,7 @@
       ]
     },
     {
-      "id": "yt-3036015",
+      "id": "yt-996794",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1259,7 +581,7 @@
       ]
     },
     {
-      "id": "yt-283465",
+      "id": "yt-7174274",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1300,7 +622,171 @@
       ]
     },
     {
-      "id": "yt-655150",
+      "id": "yt-5201730",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "Saily eSIM (by Nord Security)",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://saily.tpx.lu/bIVFTBvq",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-9137683",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "Airalo Global & Regional eSIMs",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://airalo.tpx.lu/WSdkjcJz",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-7101293",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "Klook Travel Activities & Airport Transfers",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://klook.tpx.lu/TsCmTC1L",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-5826752",
+      "source": "youtube",
+      "section": "Promotions & Codes",
+      "featured": false,
+      "category": "Travel & Perks",
+      "title": "Wise Multi-Currency Travel Card (spend abroad with zero hidden FX fees)",
+      "badge": "From Video",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://wise.com/invite/dic/oliverarrashk",
+      "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-2499038",
       "source": "youtube",
       "section": "Promotions & Codes",
       "featured": false,
@@ -1311,6 +797,170 @@
       "promoCode": "",
       "url": "https://live.uncharteditinerary.com/cameras/",
       "buttonLabel": "Open Link",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-3724744",
+      "source": "youtube",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket 4P Vlog Combo (Black)",
+      "badge": "Filming Gear",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://link.amazon/B0i23UUah",
+      "buttonLabel": "Shop on Amazon",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-3079542",
+      "source": "youtube",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket 4P Vlog Combo (Pearl White)",
+      "badge": "Filming Gear",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://link.amazon/B0cFNVPHy",
+      "buttonLabel": "Shop on Amazon",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-542863",
+      "source": "youtube",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Osmo Pocket Creator Combo",
+      "badge": "Filming Gear",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://link.amazon/B09YrzbtD",
+      "buttonLabel": "Shop on Amazon",
+      "inCurated": false,
+      "mentionedIn": [
+        {
+          "id": "E_DfGSAMeTU",
+          "title": "Inside Bali’s Ultimate Clifftop Escape: The Ungasan",
+          "date": "2026-10-17"
+        },
+        {
+          "id": "pyfGUOlFr3A",
+          "title": "Is Cocana The Best Resort in Gili T?",
+          "date": "2026-09-29"
+        },
+        {
+          "id": "5H-BBvM9O70",
+          "title": "DJI Pocket 4P vs Luna Ultra: Ultimate 2026 Travel Setup?",
+          "date": "2026-07-05"
+        },
+        {
+          "id": "JV1HuujJJ4k",
+          "title": "St. Regis Bali Resort Review: Is the $1,500/Night Villa Worth It?",
+          "date": "2026-05-08"
+        },
+        {
+          "id": "3ll3ENeUxJg",
+          "title": "W Bali Seminyak Review: The Best Luxury Value in Bali?",
+          "date": "2026-05-05"
+        }
+      ]
+    },
+    {
+      "id": "yt-7876897",
+      "source": "youtube",
+      "section": "Shopping & Gear",
+      "featured": false,
+      "category": "Camera & Travel Gear",
+      "title": "DJI Mic Mini 2 Wireless Microphone",
+      "badge": "Filming Gear",
+      "description": "Featured in \"Inside Bali’s Ultimate Clifftop Escape: The Ungasan\"",
+      "promoCode": "",
+      "url": "https://link.amazon/B0fl4hwFa",
+      "buttonLabel": "Shop on Amazon",
       "inCurated": false,
       "mentionedIn": [
         {
