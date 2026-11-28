@@ -62,3 +62,5 @@ html .score-bar-row>.score-bar-track{grid-area:bar;width:100%!important}
 html .score-bar-row>.score-bar-val{grid-area:val;text-align:right}
 /* score badge sits left, clear of the heart */
 html .scorecard-badge-overall{left:12px!important;right:auto!important;max-width:calc(100% - 70px)}
+/* hotel pages: price button quieter than the score (prices live in the last tab) */
+html .so2-actions .check-prices-btn,html .so2-actions .btn-primary.check-prices-btn{background:#FFFFFF!important;color:#1F8A4C!important;border:1.5px solid #BFE3CC!important;box-shadow:none!important}

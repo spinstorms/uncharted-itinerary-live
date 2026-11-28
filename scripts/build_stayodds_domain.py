@@ -87,7 +87,7 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     if "so2-details-jump" in html and "stayodds-hotel-tabs.js" not in html and "</body>" in html:
         html = html.replace("</body>", '  <script src="/assets/stayodds-hotel-tabs.js?v=1" defer></script>\n</body>', 1)
     if "stayodds-light.css" not in html and "</head>" in html:
-        html = html.replace("</head>", '  <link rel="stylesheet" href="/assets/stayodds-light.css?v=3" />\n</head>', 1)
+        html = html.replace("</head>", '  <link rel="stylesheet" href="/assets/stayodds-light.css?v=4" />\n</head>', 1)
     if "stayodds-i18n.js" not in html and "</head>" in html:
         html = html.replace("</head>", '  <script src="/assets/stayodds-i18n.js?v=3" defer></script>\n</head>', 1)
     # 2. Root-absolute assets, favicons, data preloads & banner CSS vars
@@ -282,7 +282,7 @@ def write_404_page(out_dir: Path) -> None:
   <link rel="icon" type="image/svg+xml" href="/assets/stayodds-favicon.svg?v=4" />
   <link rel="stylesheet" href="/assets/styles.min.css?v=47" />
 {STAYODDS_GA4_SNIPPET}
-  <link rel="stylesheet" href="/assets/stayodds-light.css?v=3" />
+  <link rel="stylesheet" href="/assets/stayodds-light.css?v=4" />
   <script src="/assets/stayodds-i18n.js?v=3" defer></script>
 </head>
 <body style="background:#f8f6f1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
