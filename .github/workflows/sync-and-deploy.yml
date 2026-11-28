@@ -34,8 +34,8 @@ jobs:
 
       - name: Sync YouTube videos, travel notes, hotel map, and live affiliates
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ github.event_name == 'workflow_dispatch' && secrets.GEMINI_API_KEY || '' }}  # AI summaries only when run by hand
+          OPENAI_API_KEY: ${{ github.event_name == 'workflow_dispatch' && secrets.OPENAI_API_KEY || '' }}
           AFFILIATE_SHEET_CSV_URL: ${{ vars.AFFILIATE_SHEET_CSV_URL }}
           HOTEL_BOOKING_SHEET_CSV_URL: ${{ vars.HOTEL_BOOKING_SHEET_CSV_URL }}
         run: python3 scripts/sync.py

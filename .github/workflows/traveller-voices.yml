@@ -8,8 +8,7 @@ on:
       tripadvisor_calls:
         description: "Most Tripadvisor API calls to use this run (1,000 free a month)"
         default: "900"
-  schedule:
-    - cron: "17 4 2 * *"   # monthly: new free Tripadvisor allowance, fresh guest comments
+  # no schedule: uses paid APIs (Tripadvisor, Google Places), so it only runs when Oliver starts it
 
 permissions:
   contents: write
