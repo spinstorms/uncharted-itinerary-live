@@ -1,8 +1,11 @@
 name: Translate stayodds.com (all languages)
 
-# Run by hand. Uses the Gemini key (paid per use): only text not yet in data/i18n-cache is sent.
-# Each language runs as its own job, side by side.
+# Approved by Oliver (28 Nov 2026): runs once a day until every language is done. The Gemini key is on the
+# free tier, so each run stops at the daily quota and the next day carries on. Only text not yet in
+# data/i18n-cache is sent; once everything is translated a run sends nothing.
 on:
+  schedule:
+    - cron: "23 2 * * *"
   workflow_dispatch:
     inputs:
       langs:
@@ -19,9 +22,9 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 1
       matrix:
-        lang: ${{ fromJSON(inputs.langs != '' && inputs.langs || '["es","pt-BR","fr","de","it","ar","ja","id","fa","zh-Hans","ko"]') }}
+        lang: ${{ fromJSON(inputs.langs || '["es","pt-BR","fr","de","it","ar","ja","id","fa","zh-Hans","ko"]') }}
     steps:
       - uses: actions/checkout@v4
         with: { ref: main }
