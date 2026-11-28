@@ -64,3 +64,9 @@ html .score-bar-row>.score-bar-val{grid-area:val;text-align:right}
 html .scorecard-badge-overall{left:12px!important;right:auto!important;max-width:calc(100% - 70px)}
 /* hotel pages: price button quieter than the score (prices live in the last tab) */
 html .so2-actions .check-prices-btn,html .so2-actions .btn-primary.check-prices-btn{background:#FFFFFF!important;color:#1F8A4C!important;border:1.5px solid #BFE3CC!important;box-shadow:none!important}
+/* orange title band on every page with a plain title header (same as the map page) */
+html .so-band{position:relative;background:linear-gradient(135deg,#E8501A 0%,#F2763F 100%)!important;color:#FFFFFF!important;box-shadow:0 0 0 100vmax #EC6230;clip-path:inset(0 -100vmax);padding:26px 0 28px!important;margin-bottom:22px!important;border:0!important;border-radius:0!important}
+html .so-band *:not(a):not(button):not(input):not(select){color:#FFFFFF!important}
+html .so-band .al-eyebrow,html .so-band .eyebrow{color:#FFE7DA!important}
+html .so-band a.btn,html .so-band .btn{background:#FFFFFF!important;color:#E8501A!important;border-color:#FFFFFF!important}
+html .compare-mode-banner.so-band,html .brands-banner.so-band{box-shadow:none;clip-path:none;padding:30px 0!important}
