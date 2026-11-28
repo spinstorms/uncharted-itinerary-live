@@ -3,9 +3,10 @@ name: Translate stayodds.com (all languages)
 # Approved by Oliver (28 Nov 2026): runs once a day until every language is done. The Gemini key is on the
 # free tier, so each run stops at the daily quota and the next day carries on. Only text not yet in
 # data/i18n-cache is sent; once everything is translated a run sends nothing.
+# Runs at 09:23 UTC, after the free-tier daily quota resets (midnight Pacific).
 on:
   schedule:
-    - cron: "23 2 * * *"
+    - cron: "23 9 * * *"
   workflow_dispatch:
     inputs:
       langs:

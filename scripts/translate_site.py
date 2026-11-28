@@ -190,12 +190,16 @@ def gemini(items: list[str], lang_name: str, key: str) -> list[str] | None:
             print(f"  [warn] wrong length ({len(out) if isinstance(out, list) else '?'} vs {len(items)})", flush=True)
         except urllib.error.HTTPError as e:
             if e.code == 429:
-                msg = e.read()[:300].decode("utf-8", "ignore")
-                if "quota" in msg.lower() or "exhausted" in msg.lower() or attempt == 4:
+                msg = e.read().decode("utf-8", "ignore")
+                # Free tier: a per-DAY limit means stop until tomorrow; a per-minute
+                # limit just means wait and retry.
+                if "PerDay" in msg or attempt == 4:
                     QUOTA_HIT.set()
-                    print(f"  [stop] Gemini quota reached: {msg[:200]}", flush=True)
+                    qid = re.findall(r'"quotaId":\s*"([^"]+)"', msg)
+                    print(f"  [stop] Gemini daily quota reached ({', '.join(sorted(set(qid))) or 'no id'})", flush=True)
                     return None
-                time.sleep(6 * (attempt + 1))
+                wait = re.findall(r'"retryDelay":\s*"(\d+)', msg)
+                time.sleep(int(wait[0]) + 2 if wait else 20 * (attempt + 1))
                 continue
             if e.code in (500, 502, 503, 504):
                 time.sleep(4 * (attempt + 1))
