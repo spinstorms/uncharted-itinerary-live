@@ -277,7 +277,19 @@ def shards(dist: Path) -> None:
             if d:
                 (out / "p" / f"{pk}.json").write_text(json.dumps(d, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
                 n += 1
-        print(f"[{lang}] common {len(common):,} strings, {n} page files")
+        # the app translates hotel text with the same work: verdicts, highlights, caveats, places
+        try:
+            hotels = json.loads((ROOT / "data" / "stayodds-directory.json").read_text(encoding="utf-8"))["hotels"]
+        except Exception:
+            hotels = []
+        app = {}
+        for h in hotels:
+            for k in ("verdict", "standout", "watchOut", "whereWeDiffer", "location", "priceRange"):
+                v = norm(str(h.get(k) or ""))
+                if v and v in cache:
+                    app[v] = cache[v]
+        (out / "hotels.json").write_text(json.dumps(app, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print(f"[{lang}] common {len(common):,} strings, {n} page files, app {len(app):,}")
 
 
 def main() -> None:
