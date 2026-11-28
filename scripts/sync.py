@@ -22,6 +22,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -241,8 +242,19 @@ def http_get_text(url: str, timeout: int = 20) -> str:
             "Accept": "application/xml,text/csv,text/plain,*/*",
         },
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="replace")
+    # YouTube's feed sometimes answers 503 for a minute; retry before failing the whole run.
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 502, 503, 504) or attempt == 3:
+                raise
+        except (urllib.error.URLError, TimeoutError):
+            if attempt == 3:
+                raise
+        time.sleep(15 * (attempt + 1))
+    raise RuntimeError("unreachable")
 
 
 def normalize_url(raw: str) -> str:
