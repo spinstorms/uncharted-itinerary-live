@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      max-parallel: 11
+      max-parallel: 2
       matrix:
         lang: ${{ fromJSON(inputs.langs != '' && inputs.langs || '["es","pt-BR","fr","de","it","ar","ja","id","fa","zh-Hans","ko"]') }}
     steps:
@@ -33,7 +33,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TRANSLATE_BUDGET_SECONDS: "19000"
-          TRANSLATE_THREADS: "16"
+          TRANSLATE_THREADS: "4"
         run: python3 scripts/translate_site.py --translate .stayodds-dist ${{ matrix.lang }}
       - name: Save translations
         if: always()

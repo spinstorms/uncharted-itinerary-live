@@ -47,7 +47,7 @@ SKIP_TAGS = {"script", "style", "noscript", "svg", "code", "pre"}
 ATTRS = ("placeholder", "aria-label", "title", "alt")
 COMMON_MIN_PAGES = 20
 MAX_LEN = 2000
-BATCH = 60
+BATCH = 150
 
 
 def norm(s: str) -> str:
@@ -161,6 +161,9 @@ def save_cache(lang: str, cache: dict[str, str]) -> None:
     tmp.replace(CACHE_DIR / f"{lang}.json")
 
 
+QUOTA_HIT = threading.Event()
+
+
 def gemini(items: list[str], lang_name: str, key: str) -> list[str] | None:
     prompt = (
         f"Translate each string in this JSON array from English into {lang_name} for a luxury hotel comparison website "
@@ -186,7 +189,15 @@ def gemini(items: list[str], lang_name: str, key: str) -> list[str] | None:
                 return out
             print(f"  [warn] wrong length ({len(out) if isinstance(out, list) else '?'} vs {len(items)})", flush=True)
         except urllib.error.HTTPError as e:
-            if e.code in (429, 500, 502, 503, 504):
+            if e.code == 429:
+                msg = e.read()[:300].decode("utf-8", "ignore")
+                if "quota" in msg.lower() or "exhausted" in msg.lower() or attempt == 4:
+                    QUOTA_HIT.set()
+                    print(f"  [stop] Gemini quota reached: {msg[:200]}", flush=True)
+                    return None
+                time.sleep(6 * (attempt + 1))
+                continue
+            if e.code in (500, 502, 503, 504):
                 time.sleep(4 * (attempt + 1))
                 continue
             print(f"  [warn] HTTP {e.code}: {e.read()[:200]!r}", flush=True)
@@ -213,7 +224,7 @@ def translate(dist: Path, langs: list[str], budget_s: int) -> None:
         print(f"[{lang}] {len(cache):,} cached, {len(todo):,} to translate", flush=True)
         batches, cur, size = [], [], 0
         for s in todo:
-            if cur and (len(cur) >= BATCH or size + len(s) > 6000):
+            if cur and (len(cur) >= BATCH or size + len(s) > 14000):
                 batches.append(cur)
                 cur, size = [], 0
             cur.append(s)
@@ -223,7 +234,7 @@ def translate(dist: Path, langs: list[str], budget_s: int) -> None:
         lock, done = threading.Lock(), [0]
 
         def run(b: list[str]) -> None:
-            if time.time() > deadline:
+            if time.time() > deadline or QUOTA_HIT.is_set():
                 return
             out = gemini(b, LANGS[lang], key)
             if not out:
@@ -243,8 +254,8 @@ def translate(dist: Path, langs: list[str], budget_s: int) -> None:
                 f.result()
         save_cache(lang, cache)
         print(f"[{lang}] now {len(cache):,} cached", flush=True)
-        if time.time() > deadline:
-            print("Time budget used up; the next run carries on.", flush=True)
+        if time.time() > deadline or QUOTA_HIT.is_set():
+            print("Stopped (time budget or Gemini daily quota); the next run carries on from here.", flush=True)
             break
 
 
