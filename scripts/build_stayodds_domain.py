@@ -84,8 +84,8 @@ def rewrite_html_for_stayodds(html: str, page_kind: str) -> str:
     html = html.replace("stayodds_v4_bright_og_hero_1200x630.png", "stayodds_v5_og_hero_1200x630.png")
 
     # languages: one small script + per-language JSON, no per-language page copies
-    if "so2-details-jump" in html and "stayodds-hotel-acc.js" not in html and "</body>" in html:
-        html = html.replace("</body>", '  <script src="/assets/stayodds-hotel-acc.js?v=1" defer></script>\n</body>', 1)
+    if "so2-details-jump" in html and "stayodds-hotel-tabs.js" not in html and "</body>" in html:
+        html = html.replace("</body>", '  <script src="/assets/stayodds-hotel-tabs.js?v=1" defer></script>\n</body>', 1)
     if "stayodds-light.css" not in html and "</head>" in html:
         html = html.replace("</head>", '  <link rel="stylesheet" href="/assets/stayodds-light.css?v=3" />\n</head>', 1)
     if "stayodds-i18n.js" not in html and "</head>" in html:

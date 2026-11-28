@@ -131,6 +131,12 @@ SCRIPT_STRINGS = {
     "How guests rank it", "Where it sits among hotels nearby", "Why this score", "Our stay, guests and critics, side by side",
     "Before you book", "Best months, prices and tips", "What guests love", "And what to know before you go",
     "Every review and score", "Each source and how we weigh it",
+    # stayodds-hotel-tabs.js
+    "Scores", "What guests say", "Before you book", "Prices",
+    "Our filmed stay, guests and critics side by side, and how it ranks against hotels nearby",
+    "What guests love, what to know, and every review source with how we weigh it",
+    "Best months to go, the room to book, tips and similar hotels to compare",
+    "Live prices for your dates, holiday dates and partner sites",
 }
 
 
