@@ -48,3 +48,17 @@ html .so2-photos img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radiu
 @media (max-width:1300px){html .site-header .nav-uncharted-pill{display:none!important}}
 html .site-header .nav-links{min-width:0;overflow:hidden}
 html .site-header .header-actions,html .site-header .stayodds-brand-group,html #so-lang{flex-shrink:0}
+/* map page: orange band above the map (like the app's Watch page), light frame round the map */
+html .map-search-hero{background:linear-gradient(135deg,#E8501A 0%,#F2763F 100%)!important}
+html .map-search-hero .map-search-title,html .map-search-hero .map-search-sub,html .map-search-hero .map-search-kicker,html .map-search-hero .map-search-hero-copy *{color:#FFFFFF!important}
+html .map-section>.container{background:#FFFFFF!important;border:1px solid var(--so-line)!important;box-shadow:0 10px 30px rgba(27,42,66,.06)!important}
+html .map-section .scope-pill,html .map-section .pill{background:#F6EFE2!important;color:var(--so-ink)!important;border-color:transparent!important}
+html .map-section .scope-pill.active,html .map-section .pill.active{background:var(--so-coral)!important;color:#FFFFFF!important}
+html .map-section .award-row-label{color:var(--so-ink-2)!important}
+/* scorecards: label on its own line, so longer languages never run into the bar */
+html .score-bar-row{grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"lbl val" "bar bar";row-gap:4px!important;align-items:center}
+html .score-bar-row>.score-bar-label{grid-area:lbl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:auto!important}
+html .score-bar-row>.score-bar-track{grid-area:bar;width:100%!important}
+html .score-bar-row>.score-bar-val{grid-area:val;text-align:right}
+/* score badge sits left, clear of the heart */
+html .scorecard-badge-overall{left:12px!important;right:auto!important;max-width:calc(100% - 70px)}

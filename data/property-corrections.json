@@ -55,10 +55,12 @@
       "hero_image_url": ""
     },
     "cheval-blanc-randheli": {
-      "hero_image_url": ""
+      "hero_image_url": "",
+      "region": "Maldives & Indian Ocean"
     },
     "cheval-blanc-st-barth": {
-      "hero_image_url": ""
+      "hero_image_url": "",
+      "region": "Caribbean & Mexico"
     },
     "eden-rock-st-barths": {
       "hero_image_url": ""
@@ -138,6 +140,39 @@
     },
     "calcot-manor": {
       "name": "Calcot Manor & Spa"
+    },
+    "four-seasons-bangkok": {
+      "region": "Asia"
+    },
+    "westin-bora-bora": {
+      "region": "Australia & Pacific"
+    },
+    "park-hyatt-maldives": {
+      "region": "Maldives & Indian Ocean"
+    },
+    "singita-kruger": {
+      "region": "Africa"
+    },
+    "bawah-reserve": {
+      "region": "Asia"
+    },
+    "velaa-private-island": {
+      "region": "Maldives & Indian Ocean"
+    },
+    "mandarin-oriental-bangkok": {
+      "region": "Asia"
+    },
+    "esencia-riviera-maya": {
+      "region": "Caribbean & Mexico"
+    },
+    "amangiri-utah": {
+      "region": "Americas"
+    },
+    "amanyara-turks-caicos": {
+      "region": "Caribbean & Mexico"
+    },
+    "fairmont-miramar-santa-monica": {
+      "region": "Americas"
     }
   },
   "property_facts": {
