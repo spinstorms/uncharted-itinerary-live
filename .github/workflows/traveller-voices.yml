@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       tripadvisor_calls:
-        description: "Most Tripadvisor API calls to use this run (1,000 free a month)"
+        description: "Most Tripadvisor locations to pay for this run (pay per location returned, from $0.009 each)"
         default: "900"
   # no schedule: uses paid APIs (Tripadvisor, Google Places), so it only runs when Oliver starts it
 
