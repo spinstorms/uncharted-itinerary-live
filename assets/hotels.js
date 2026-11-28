@@ -18,7 +18,7 @@ import {
   getGuestProfile,
   exportHotelsToCsv,
   parseNaturalTripQuery,
-} from "./stayodds-insights.js?v=8";
+} from "./stayodds-insights.js?v=9";
 
 const PAGE_SIZE = 24;
 const MAP_STATE_KEY = "stayodds_map_state_v1";

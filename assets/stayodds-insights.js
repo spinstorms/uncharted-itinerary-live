@@ -857,6 +857,16 @@ const NLP_MONTH_REGEXES = [
 ];
 
 const NLP_PLACE_RULES = [
+  { re: /\b(?:dominican republic|punta cana|cap cana|la romana|miches|samana)\b/i, region: "Caribbean & Mexico", search: "Dominican Republic", label: "Dominican Republic" },
+  { re: /\b(?:turks (?:and|&) caicos|providenciales)\b/i, region: "Caribbean & Mexico", search: "Turks", label: "Turks & Caicos" },
+  { re: /\b(?:bahamas|nassau)\b/i, region: "Caribbean & Mexico", search: "Bahamas", label: "Bahamas" },
+  { re: /\bjamaica\b/i, region: "Caribbean & Mexico", search: "Jamaica", label: "Jamaica" },
+  { re: /\b(?:china|beijing|shanghai|chengdu|lijiang|sanya|hangzhou|guangzhou|shenzhen)\b/i, region: "Asia", search: "China", label: "China" },
+  { re: /\b(?:sri lanka|galle|yala|tangalle)\b/i, search: "Sri Lanka", label: "Sri Lanka" },
+  { re: /\b(?:india|rajasthan|udaipur|jaipur|goa)\b/i, region: "Asia", search: "India", label: "India" },
+  { re: /\b(?:vietnam|hoi an|phu quoc)\b/i, region: "Asia", search: "Vietnam", label: "Vietnam" },
+  { re: /\b(?:hawaii|maui|kauai|oahu)\b/i, region: "Americas", search: "Hawaii", label: "Hawaii" },
+  { re: /\b(?:portugal|algarve|lisbon|comporta)\b/i, region: "Europe", search: "Portugal", label: "Portugal" },
   { re: /\bcaribbean\b/i, region: "Caribbean & Mexico", excludeCountries: ["mexico"], label: "Caribbean Islands" },
   { re: /\bmexico|riviera maya|cancun|cancún|los cabos|cabo|tulum|punta mita\b/i, region: "Caribbean & Mexico", search: "Mexico", label: "Mexico" },
   {
